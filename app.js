@@ -400,6 +400,11 @@ async function syncToGitHub() {
     }
 }
 
+function clearToken() {
+    localStorage.removeItem('github_token');
+    alert("Connection Reset! You can now paste a new token when you click Sync.");
+}
+
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
         return String.fromCharCode('0x' + p1);
