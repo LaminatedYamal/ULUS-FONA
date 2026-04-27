@@ -232,26 +232,19 @@ function stripAccents(str) {
 
 function mergeKeywords(existing, incoming, metricKey) {
     const map = new Map();
-    // Add existing keywords to map (using stripped version as key)
+    // Add existing keywords to map (using exact term as key)
     existing.forEach(k => {
-        const key = stripAccents(k.term.toLowerCase().trim());
+        const key = k.term.toLowerCase().trim();
         map.set(key, k);
     });
     // Merge incoming
     incoming.forEach(k => {
-        const termClean = k.term.toLowerCase().trim();
-        const key = stripAccents(termClean);
-        
+        const key = k.term.toLowerCase().trim();
         if (map.has(key)) {
             const current = map.get(key);
             // Update metric if higher
             if ((k[metricKey] || 0) > (current[metricKey] || 0)) {
                 current[metricKey] = k[metricKey];
-            }
-            // If the new one has more accents/special chars than the old one, keep the new term string
-            // (e.g. replace 'informatica' with 'informática')
-            if (termClean.length >= current.term.length && termClean !== stripAccents(termClean)) {
-                current.term = k.term;
             }
         } else {
             map.set(key, k);
