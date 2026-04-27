@@ -283,31 +283,18 @@ const rawCourses = [
     { "name": "Direito Do Trabalho E Da Seguranca Social Pt", "degree": "Mestrados", "institution": "ISMAT" },
     { "name": "Ensino De Artes Visuais No 3O Ciclo Do Ensino Basico E No Ensino Secundario Pt", "degree": "Mestrados", "institution": "ISMAT" },
     { "name": "Gestao De Recursos Humanos E Intervencao Organizacional Pt", "degree": "Mestrados", "institution": "ISMAT" },
-    { "name": "Gestao E Inovacao Em Turismo E Hospitalidade Pt", "degree": "Mestrados", "institution": "ISMAT" },
-    { "name": "Psicologia Do Trabalho E Da Saude Ocupacional Pt", "degree": "Mestrados", "institution": "ISMAT" },
-    { "name": "Reabilitacao De Edificios E Sitios Pt", "degree": "Mestrados", "institution": "ISMAT" }
-];
+let courses = [];
+let activeCourseId = 0;
 
-// Add IDs and Mock Keywords to the full list
-const courses = rawCourses.map((c, i) => ({
-    id: i + 1,
-    ...c,
-    description: `${c.degree} in ${c.name} at ${c.institution}.`,
-    gscKeywords: [
-        { term: `${c.name.toLowerCase()} course`, clicks: Math.floor(Math.random() * 1000) },
-        { term: `${c.name.toLowerCase()} university`, clicks: Math.floor(Math.random() * 500) }
-    ],
-    adsKeywords: [
-        { term: `${c.name.toLowerCase()} course`, impressions: Math.floor(Math.random() * 10000) },
-        { term: `best ${c.name.toLowerCase()} degree`, impressions: Math.floor(Math.random() * 5000) }
-    ]
-}));
-
-let activeCourseId = 1;
-
-function init() {
+async function init() {
+    await fetchServerData();
     renderCourseList();
-    loadCourse(activeCourseId);
+    
+    // Set initial course
+    if (courses.length > 0) {
+        activeCourseId = courses[0].id;
+        loadCourse(activeCourseId);
+    }
     
     document.getElementById('keyword-search').addEventListener('input', (e) => {
         filterKeywords(e.target.value);
@@ -316,9 +303,25 @@ function init() {
     document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
     
-    // Ensure course list is rendered even if no local data
-    renderCourseList();
     loadData();
+}
+
+async function fetchServerData() {
+    try {
+        const response = await fetch('courses.json?v=' + Date.now()); // Prevent caching
+        if (!response.ok) throw new Error("Failed to load cloud data.");
+        const data = await response.json();
+        
+        // Map the data to include IDs for navigation
+        courses = data.map((c, index) => ({
+            ...c,
+            id: index,
+            gscKeywords: c.gscKeywords || [],
+            adsKeywords: c.adsKeywords || []
+        }));
+    } catch (error) {
+        console.error("Cloud data failed, using local fallback.", error);
+    }
 }
 
 async function syncToGitHub() {
