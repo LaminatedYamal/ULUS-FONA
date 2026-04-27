@@ -308,9 +308,9 @@ function parseCSV(csvString) {
         }
     }
     
-    const delimiter = detectDelimiter(lines[headerRowIndex]);
-    const headers = splitCSVLine(lines[headerRowIndex], delimiter).map(h => h.toLowerCase().trim());
-    const keywordColIndex = headers.findIndex(h => 
+    const fbDelimiter = detectDelimiter(lines[headerRowIndex]);
+    const fbHeaders = splitCSVLine(lines[headerRowIndex], fbDelimiter).map(h => h.toLowerCase().trim());
+    const keywordColIndex = fbHeaders.findIndex(h => 
         h.includes('keyword') || h.includes('palavra-chave') || 
         h.includes('search term') || h.includes('consulta') || 
         h.includes('termo') || h === 'keyword'
