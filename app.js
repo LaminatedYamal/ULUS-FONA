@@ -320,19 +320,27 @@ async function init() {
 
 async function fetchServerData() {
     try {
-        const response = await fetch('courses.json?v=' + Date.now()); // Prevent caching
+        const response = await fetch('courses.json?v=' + Date.now());
         if (!response.ok) throw new Error("Failed to load cloud data.");
         const data = await response.json();
         
-        // Map the data to include IDs for navigation
-        courses = data.map((c, index) => ({
-            ...c,
-            id: index,
-            gscKeywords: c.gscKeywords || [],
-            adsKeywords: c.adsKeywords || []
-        }));
+        // SAFE MERGE: Only copy keyword data from server, never replace the course list
+        // This prevents crashes from corrupted institution names
+        data.forEach(serverCourse => {
+            const localCourse = courses.find(c => 
+                c.name.toLowerCase() === (serverCourse.name || '').toLowerCase()
+            );
+            if (localCourse) {
+                if (serverCourse.gscKeywords && serverCourse.gscKeywords.length > 0) {
+                    localCourse.gscKeywords = serverCourse.gscKeywords;
+                }
+                if (serverCourse.adsKeywords && serverCourse.adsKeywords.length > 0) {
+                    localCourse.adsKeywords = serverCourse.adsKeywords;
+                }
+            }
+        });
     } catch (error) {
-        console.error("Cloud data failed, using local fallback.", error);
+        console.warn("Cloud data unavailable, running on local data only.", error);
     }
 }
 
