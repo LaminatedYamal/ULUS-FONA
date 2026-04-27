@@ -178,6 +178,7 @@ function loadData() {
                     }
                 });
             }
+            renderCourseList();
             loadCourse(activeCourseId);
         } catch (e) {
             console.error("Error loading local data:", e);
