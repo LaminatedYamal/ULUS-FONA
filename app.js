@@ -470,7 +470,8 @@ function renderCourseList() {
 
 function resetApp() {
     if (confirm("This will clear all uploaded keywords and reset the dashboard. Are you sure?")) {
-        localStorage.removeItem('antigravity_courses');
+        localStorage.removeItem('antigravity_data_v2');
+        localStorage.removeItem('antigravity_courses'); // Clean up old version too
         location.reload();
     }
 }
