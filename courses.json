@@ -55,22 +55,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "artes dramaticas formacao de atores course",
-        "clicks": 471
+        "term": "artes visuais course",
+        "clicks": 891
       },
       {
-        "term": "artes dramaticas formacao de atores university",
-        "clicks": 38
+        "term": "artes visuais university",
+        "clicks": 359
       }
     ],
     "adsKeywords": [
       {
-        "term": "artes dramaticas formacao de atores course",
-        "impressions": 1340
+        "term": "artes visuais course",
+        "impressions": 9757
       },
       {
-        "term": "best artes dramaticas formacao de atores degree",
-        "impressions": 559
+        "term": "best artes visuais degree",
+        "impressions": 26
       }
     ]
   },
@@ -81,21 +81,21 @@
     "gscKeywords": [
       {
         "term": "design de comunicacao course",
-        "clicks": 835
+        "clicks": 202
       },
       {
         "term": "design de comunicacao university",
-        "clicks": 149
+        "clicks": 158
       }
     ],
     "adsKeywords": [
       {
         "term": "design de comunicacao course",
-        "impressions": 9802
+        "impressions": 1786
       },
       {
         "term": "best design de comunicacao degree",
-        "impressions": 150
+        "impressions": 4067
       }
     ]
   },
@@ -305,22 +305,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "estudos cinematograficos course",
-        "clicks": 776
+        "term": "formacao de atores cinema televisao teatro course",
+        "clicks": 534
       },
       {
-        "term": "estudos cinematograficos university",
-        "clicks": 156
+        "term": "formacao de atores cinema televisao teatro university",
+        "clicks": 311
       }
     ],
     "adsKeywords": [
       {
-        "term": "estudos cinematograficos course",
-        "impressions": 3600
+        "term": "formacao de atores cinema televisao teatro course",
+        "impressions": 7722
       },
       {
-        "term": "best estudos cinematograficos degree",
-        "impressions": 1624
+        "term": "best formacao de atores cinema televisao teatro degree",
+        "impressions": 1457
       }
     ]
   },
@@ -355,22 +355,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "videojogos e aplicacoes multimedia course",
-        "clicks": 777
+        "term": "videojogos course",
+        "clicks": 552
       },
       {
-        "term": "videojogos e aplicacoes multimedia university",
-        "clicks": 247
+        "term": "videojogos university",
+        "clicks": 58
       }
     ],
     "adsKeywords": [
       {
-        "term": "videojogos e aplicacoes multimedia course",
-        "impressions": 4859
+        "term": "videojogos course",
+        "impressions": 1735
       },
       {
-        "term": "best videojogos e aplicacoes multimedia degree",
-        "impressions": 475
+        "term": "best videojogos degree",
+        "impressions": 3784
       }
     ]
   },
@@ -430,22 +430,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "comunicacao aplicada course",
-        "clicks": 481
+        "term": "comunicacao e jornalismo course",
+        "clicks": 173
       },
       {
-        "term": "comunicacao aplicada university",
-        "clicks": 12
+        "term": "comunicacao e jornalismo university",
+        "clicks": 296
       }
     ],
     "adsKeywords": [
       {
-        "term": "comunicacao aplicada course",
-        "impressions": 3131
+        "term": "comunicacao e jornalismo course",
+        "impressions": 2156
       },
       {
-        "term": "best comunicacao aplicada degree",
-        "impressions": 3565
+        "term": "best comunicacao e jornalismo degree",
+        "impressions": 2129
       }
     ]
   },
@@ -480,22 +480,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "ciencias juridico criminais course",
-        "clicks": 183
+        "term": "criminologia course",
+        "clicks": 198
       },
       {
-        "term": "ciencias juridico criminais university",
-        "clicks": 247
+        "term": "criminologia university",
+        "clicks": 436
       }
     ],
     "adsKeywords": [
       {
-        "term": "ciencias juridico criminais course",
-        "impressions": 9587
+        "term": "criminologia course",
+        "impressions": 8506
       },
       {
-        "term": "best ciencias juridico criminais degree",
-        "impressions": 4050
+        "term": "best criminologia degree",
+        "impressions": 2267
       }
     ]
   },
@@ -530,22 +530,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "direito course",
-        "clicks": 15
+        "term": "contabilidade fiscalidade e auditoria course",
+        "clicks": 586
       },
       {
-        "term": "direito university",
-        "clicks": 157
+        "term": "contabilidade fiscalidade e auditoria university",
+        "clicks": 164
       }
     ],
     "adsKeywords": [
       {
-        "term": "direito course",
-        "impressions": 8514
+        "term": "contabilidade fiscalidade e auditoria course",
+        "impressions": 122
       },
       {
-        "term": "best direito degree",
-        "impressions": 356
+        "term": "best contabilidade fiscalidade e auditoria degree",
+        "impressions": 3037
       }
     ]
   },
@@ -555,22 +555,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "gestao avancada de recursos humanos course",
-        "clicks": 145
+        "term": "economia course",
+        "clicks": 546
       },
       {
-        "term": "gestao avancada de recursos humanos university",
-        "clicks": 298
+        "term": "economia university",
+        "clicks": 62
       }
     ],
     "adsKeywords": [
       {
-        "term": "gestao avancada de recursos humanos course",
-        "impressions": 7760
+        "term": "economia course",
+        "impressions": 5853
       },
       {
-        "term": "best gestao avancada de recursos humanos degree",
-        "impressions": 148
+        "term": "best economia degree",
+        "impressions": 1090
       }
     ]
   },
@@ -580,22 +580,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "gestao de organizacoes da economia social course",
-        "clicks": 267
+        "term": "gestao de empresas course",
+        "clicks": 901
       },
       {
-        "term": "gestao de organizacoes da economia social university",
-        "clicks": 464
+        "term": "gestao de empresas university",
+        "clicks": 371
       }
     ],
     "adsKeywords": [
       {
-        "term": "gestao de organizacoes da economia social course",
-        "impressions": 3304
+        "term": "gestao de empresas course",
+        "impressions": 6212
       },
       {
-        "term": "best gestao de organizacoes da economia social degree",
-        "impressions": 3308
+        "term": "best gestao de empresas degree",
+        "impressions": 4026
       }
     ]
   },
@@ -730,22 +730,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "computacao e matematica aplicada course",
-        "clicks": 877
+        "term": "engenharia biomedica course",
+        "clicks": 539
       },
       {
-        "term": "computacao e matematica aplicada university",
-        "clicks": 232
+        "term": "engenharia biomedica university",
+        "clicks": 283
       }
     ],
     "adsKeywords": [
       {
-        "term": "computacao e matematica aplicada course",
-        "impressions": 1119
+        "term": "engenharia biomedica course",
+        "impressions": 9448
       },
       {
-        "term": "best computacao e matematica aplicada degree",
-        "impressions": 2201
+        "term": "best engenharia biomedica degree",
+        "impressions": 889
       }
     ]
   },
@@ -755,22 +755,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "engenharia de protecao civil course",
-        "clicks": 440
+        "term": "engenharia civil course",
+        "clicks": 570
       },
       {
-        "term": "engenharia de protecao civil university",
-        "clicks": 392
+        "term": "engenharia civil university",
+        "clicks": 5
       }
     ],
     "adsKeywords": [
       {
-        "term": "engenharia de protecao civil course",
-        "impressions": 8418
+        "term": "engenharia civil course",
+        "impressions": 3060
       },
       {
-        "term": "best engenharia de protecao civil degree",
-        "impressions": 4312
+        "term": "best engenharia civil degree",
+        "impressions": 2026
       }
     ]
   },
@@ -781,21 +781,21 @@
     "gscKeywords": [
       {
         "term": "engenharia do ambiente course",
-        "clicks": 331
+        "clicks": 63
       },
       {
         "term": "engenharia do ambiente university",
-        "clicks": 344
+        "clicks": 156
       }
     ],
     "adsKeywords": [
       {
         "term": "engenharia do ambiente course",
-        "impressions": 7260
+        "impressions": 859
       },
       {
         "term": "best engenharia do ambiente degree",
-        "impressions": 811
+        "impressions": 1423
       }
     ]
   },
@@ -855,22 +855,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "engenharia e gestao industrial course",
-        "clicks": 965
+        "term": "tecnologias e gestao do ambiente course",
+        "clicks": 523
       },
       {
-        "term": "engenharia e gestao industrial university",
-        "clicks": 391
+        "term": "tecnologias e gestao do ambiente university",
+        "clicks": 226
       }
     ],
     "adsKeywords": [
       {
-        "term": "engenharia e gestao industrial course",
-        "impressions": 7011
+        "term": "tecnologias e gestao do ambiente course",
+        "impressions": 4880
       },
       {
-        "term": "best engenharia e gestao industrial degree",
-        "impressions": 4471
+        "term": "best tecnologias e gestao do ambiente degree",
+        "impressions": 1881
       }
     ]
   },
@@ -880,22 +880,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "ciencias da educacao course",
-        "clicks": 985
+        "term": "ciencia de dados course",
+        "clicks": 430
       },
       {
-        "term": "ciencias da educacao university",
-        "clicks": 261
+        "term": "ciencia de dados university",
+        "clicks": 33
       }
     ],
     "adsKeywords": [
       {
-        "term": "ciencias da educacao course",
-        "impressions": 7773
+        "term": "ciencia de dados course",
+        "impressions": 1580
       },
       {
-        "term": "best ciencias da educacao degree",
-        "impressions": 4490
+        "term": "best ciencia de dados degree",
+        "impressions": 207
       }
     ]
   },
@@ -905,22 +905,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "protecao civil course",
-        "clicks": 680
+        "term": "computacao e matematica aplicada course",
+        "clicks": 236
       },
       {
-        "term": "protecao civil university",
-        "clicks": 248
+        "term": "computacao e matematica aplicada university",
+        "clicks": 122
       }
     ],
     "adsKeywords": [
       {
-        "term": "protecao civil course",
-        "impressions": 4026
+        "term": "computacao e matematica aplicada course",
+        "impressions": 2211
       },
       {
-        "term": "best protecao civil degree",
-        "impressions": 4532
+        "term": "best computacao e matematica aplicada degree",
+        "impressions": 3521
       }
     ]
   },
@@ -980,22 +980,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "engenharia informatica course",
-        "clicks": 502
+        "term": "informatica de gestao course",
+        "clicks": 718
       },
       {
-        "term": "engenharia informatica university",
-        "clicks": 433
+        "term": "informatica de gestao university",
+        "clicks": 470
       }
     ],
     "adsKeywords": [
       {
-        "term": "engenharia informatica course",
-        "impressions": 4199
+        "term": "informatica de gestao course",
+        "impressions": 8870
       },
       {
-        "term": "best engenharia informatica degree",
-        "impressions": 1765
+        "term": "best informatica de gestao degree",
+        "impressions": 4427
       }
     ]
   },
@@ -1130,22 +1130,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "psicologia course",
-        "clicks": 206
+        "term": "estudos de seguranca interna course",
+        "clicks": 888
       },
       {
-        "term": "psicologia university",
-        "clicks": 481
+        "term": "estudos de seguranca interna university",
+        "clicks": 8
       }
     ],
     "adsKeywords": [
       {
-        "term": "psicologia course",
-        "impressions": 3219
+        "term": "estudos de seguranca interna course",
+        "impressions": 6719
       },
       {
-        "term": "best psicologia degree",
-        "impressions": 4102
+        "term": "best estudos de seguranca interna degree",
+        "impressions": 3548
       }
     ]
   },
@@ -1180,22 +1180,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "medicina em animais de companhia course",
-        "clicks": 144
+        "term": "turismo course",
+        "clicks": 123
       },
       {
-        "term": "medicina em animais de companhia university",
-        "clicks": 119
+        "term": "turismo university",
+        "clicks": 111
       }
     ],
     "adsKeywords": [
       {
-        "term": "medicina em animais de companhia course",
-        "impressions": 7181
+        "term": "turismo course",
+        "impressions": 2135
       },
       {
-        "term": "best medicina em animais de companhia degree",
-        "impressions": 3038
+        "term": "best turismo degree",
+        "impressions": 4910
       }
     ]
   },
@@ -1255,22 +1255,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "arquitetura course",
-        "clicks": 818
+        "term": "medicina veterinaria course",
+        "clicks": 966
       },
       {
-        "term": "arquitetura university",
-        "clicks": 329
+        "term": "medicina veterinaria university",
+        "clicks": 270
       }
     ],
     "adsKeywords": [
       {
-        "term": "arquitetura course",
-        "impressions": 2243
+        "term": "medicina veterinaria course",
+        "impressions": 6738
       },
       {
-        "term": "best arquitetura degree",
-        "impressions": 4364
+        "term": "best medicina veterinaria degree",
+        "impressions": 4556
       }
     ]
   },
@@ -1303,8 +1303,26 @@
     "name": "Design E Producao De Moda",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "design course",
+        "clicks": 893
+      },
+      {
+        "term": "design university",
+        "clicks": 107
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "design course",
+        "impressions": 6802
+      },
+      {
+        "term": "best design degree",
+        "impressions": 1343
+      }
+    ]
   },
   {
     "name": "Pintura",
@@ -1437,22 +1455,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "urbanismo course",
-        "clicks": 545
+        "term": "patrimonio cultural imaterial course",
+        "clicks": 476
       },
       {
-        "term": "urbanismo university",
-        "clicks": 419
+        "term": "patrimonio cultural imaterial university",
+        "clicks": 385
       }
     ],
     "adsKeywords": [
       {
-        "term": "urbanismo course",
-        "impressions": 6587
+        "term": "patrimonio cultural imaterial course",
+        "impressions": 9631
       },
       {
-        "term": "best urbanismo degree",
-        "impressions": 1777
+        "term": "best patrimonio cultural imaterial degree",
+        "impressions": 2229
       }
     ]
   },
@@ -1535,8 +1553,26 @@
     "name": "Fotografia",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "estudos cinematograficos course",
+        "clicks": 776
+      },
+      {
+        "term": "estudos cinematograficos university",
+        "clicks": 156
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "estudos cinematograficos course",
+        "impressions": 3600
+      },
+      {
+        "term": "best estudos cinematograficos degree",
+        "impressions": 1624
+      }
+    ]
   },
   {
     "name": "Inteligencia Artificial Para Jogos",
@@ -1669,22 +1705,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "relacoes internacionais course",
-        "clicks": 542
+        "term": "comunicacao nas organizacoes course",
+        "clicks": 494
       },
       {
-        "term": "relacoes internacionais university",
-        "clicks": 296
+        "term": "comunicacao nas organizacoes university",
+        "clicks": 275
       }
     ],
     "adsKeywords": [
       {
-        "term": "relacoes internacionais course",
-        "impressions": 8277
+        "term": "comunicacao nas organizacoes course",
+        "impressions": 794
       },
       {
-        "term": "best relacoes internacionais degree",
-        "impressions": 1894
+        "term": "best comunicacao nas organizacoes degree",
+        "impressions": 4306
       }
     ]
   },
@@ -1744,22 +1780,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "media e cidadania digital course",
-        "clicks": 968
+        "term": "jornalismo aplicado inovacao digital e tecnologias emergentes course",
+        "clicks": 775
       },
       {
-        "term": "media e cidadania digital university",
-        "clicks": 141
+        "term": "jornalismo aplicado inovacao digital e tecnologias emergentes university",
+        "clicks": 248
       }
     ],
     "adsKeywords": [
       {
-        "term": "media e cidadania digital course",
-        "impressions": 4008
+        "term": "jornalismo aplicado inovacao digital e tecnologias emergentes course",
+        "impressions": 7795
       },
       {
-        "term": "best media e cidadania digital degree",
-        "impressions": 453
+        "term": "best jornalismo aplicado inovacao digital e tecnologias emergentes degree",
+        "impressions": 2725
       }
     ]
   },
@@ -1770,21 +1806,21 @@
     "gscKeywords": [
       {
         "term": "ensino de educacao fisica nos ensinos basico e secundario course",
-        "clicks": 935
+        "clicks": 519
       },
       {
         "term": "ensino de educacao fisica nos ensinos basico e secundario university",
-        "clicks": 261
+        "clicks": 120
       }
     ],
     "adsKeywords": [
       {
         "term": "ensino de educacao fisica nos ensinos basico e secundario course",
-        "impressions": 2945
+        "impressions": 4996
       },
       {
         "term": "best ensino de educacao fisica nos ensinos basico e secundario degree",
-        "impressions": 2174
+        "impressions": 2008
       }
     ]
   },
@@ -1867,8 +1903,26 @@
     "name": "Direito",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias criminais course",
+        "clicks": 925
+      },
+      {
+        "term": "ciencias criminais university",
+        "clicks": 120
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciencias criminais course",
+        "impressions": 8220
+      },
+      {
+        "term": "best ciencias criminais degree",
+        "impressions": 478
+      }
+    ]
   },
   {
     "name": "Direito Do Mercado",
@@ -1999,8 +2053,26 @@
     "name": "Economia",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "contabilidade fiscalidade e financas course",
+        "clicks": 964
+      },
+      {
+        "term": "contabilidade fiscalidade e financas university",
+        "clicks": 460
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "contabilidade fiscalidade e financas course",
+        "impressions": 4603
+      },
+      {
+        "term": "best contabilidade fiscalidade e financas degree",
+        "impressions": 4730
+      }
+    ]
   },
   {
     "name": "Gestao Avancada De Recursos Humanos",
@@ -2031,8 +2103,26 @@
     "name": "Gestao De Empresas",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao avancada de recursos humanos course",
+        "clicks": 145
+      },
+      {
+        "term": "gestao avancada de recursos humanos university",
+        "clicks": 298
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao avancada de recursos humanos course",
+        "impressions": 7760
+      },
+      {
+        "term": "best gestao avancada de recursos humanos degree",
+        "impressions": 148
+      }
+    ]
   },
   {
     "name": "Gestao Financeira",
@@ -2040,22 +2130,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "gestao de recursos humanos course",
-        "clicks": 122
+        "term": "gestao de empresas course",
+        "clicks": 177
       },
       {
-        "term": "gestao de recursos humanos university",
-        "clicks": 217
+        "term": "gestao de empresas university",
+        "clicks": 246
       }
     ],
     "adsKeywords": [
       {
-        "term": "gestao de recursos humanos course",
-        "impressions": 4164
+        "term": "gestao de empresas course",
+        "impressions": 2695
       },
       {
-        "term": "best gestao de recursos humanos degree",
-        "impressions": 1040
+        "term": "best gestao de empresas degree",
+        "impressions": 3407
       }
     ]
   },
@@ -2090,22 +2180,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "gestao financeira course",
-        "clicks": 176
+        "term": "ciencia cognitiva e educacao course",
+        "clicks": 596
       },
       {
-        "term": "gestao financeira university",
-        "clicks": 232
+        "term": "ciencia cognitiva e educacao university",
+        "clicks": 133
       }
     ],
     "adsKeywords": [
       {
-        "term": "gestao financeira course",
-        "impressions": 3918
+        "term": "ciencia cognitiva e educacao course",
+        "impressions": 4774
       },
       {
-        "term": "best gestao financeira degree",
-        "impressions": 3693
+        "term": "best ciencia cognitiva e educacao degree",
+        "impressions": 3995
       }
     ]
   },
@@ -2165,22 +2255,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "ciencias da educacao course",
-        "clicks": 532
+        "term": "ensino de artes visuais no 3o ciclo do ensino basico e no ensino secundario course",
+        "clicks": 91
       },
       {
-        "term": "ciencias da educacao university",
-        "clicks": 125
+        "term": "ensino de artes visuais no 3o ciclo do ensino basico e no ensino secundario university",
+        "clicks": 432
       }
     ],
     "adsKeywords": [
       {
-        "term": "ciencias da educacao course",
-        "impressions": 9635
+        "term": "ensino de artes visuais no 3o ciclo do ensino basico e no ensino secundario course",
+        "impressions": 8714
       },
       {
-        "term": "best ciencias da educacao degree",
-        "impressions": 2098
+        "term": "best ensino de artes visuais no 3o ciclo do ensino basico e no ensino secundario degree",
+        "impressions": 2172
       }
     ]
   },
@@ -2213,29 +2303,101 @@
     "name": "Engenharia Civil",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "biotecnologia alimentar e molecular course",
+        "clicks": 352
+      },
+      {
+        "term": "biotecnologia alimentar e molecular university",
+        "clicks": 336
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "biotecnologia alimentar e molecular course",
+        "impressions": 6169
+      },
+      {
+        "term": "best biotecnologia alimentar e molecular degree",
+        "impressions": 2999
+      }
+    ]
   },
   {
     "name": "Engenharia Do Ambiente",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia civil course",
+        "clicks": 751
+      },
+      {
+        "term": "engenharia civil university",
+        "clicks": 288
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia civil course",
+        "impressions": 4094
+      },
+      {
+        "term": "best engenharia civil degree",
+        "impressions": 3924
+      }
+    ]
   },
   {
     "name": "Engenharia E Gestao Industrial",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia do ambiente course",
+        "clicks": 331
+      },
+      {
+        "term": "engenharia do ambiente university",
+        "clicks": 344
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia do ambiente course",
+        "impressions": 7260
+      },
+      {
+        "term": "best engenharia do ambiente degree",
+        "impressions": 811
+      }
+    ]
   },
   {
     "name": "Ciencia De Dados",
     "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia e gestao industrial course",
+        "clicks": 965
+      },
+      {
+        "term": "engenharia e gestao industrial university",
+        "clicks": 391
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia e gestao industrial course",
+        "impressions": 7011
+      },
+      {
+        "term": "best engenharia e gestao industrial degree",
+        "impressions": 4471
+      }
+    ]
   },
   {
     "name": "Ciencias De Dados Aplicada A Sistemas De Informacao Geografica",
@@ -2243,22 +2405,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "sistemas de energia inteligentes e sustentaveis course",
-        "clicks": 553
+        "term": "ciencia de dados course",
+        "clicks": 825
       },
       {
-        "term": "sistemas de energia inteligentes e sustentaveis university",
-        "clicks": 145
+        "term": "ciencia de dados university",
+        "clicks": 67
       }
     ],
     "adsKeywords": [
       {
-        "term": "sistemas de energia inteligentes e sustentaveis course",
-        "impressions": 2729
+        "term": "ciencia de dados course",
+        "impressions": 5894
       },
       {
-        "term": "best sistemas de energia inteligentes e sustentaveis degree",
-        "impressions": 1141
+        "term": "best ciencia de dados degree",
+        "impressions": 4042
       }
     ]
   },
@@ -2368,22 +2530,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "neuropsicologia clinica course",
-        "clicks": 862
+        "term": "neuropsicologia aplicada course",
+        "clicks": 286
       },
       {
-        "term": "neuropsicologia clinica university",
-        "clicks": 443
+        "term": "neuropsicologia aplicada university",
+        "clicks": 479
       }
     ],
     "adsKeywords": [
       {
-        "term": "neuropsicologia clinica course",
-        "impressions": 7287
+        "term": "neuropsicologia aplicada course",
+        "impressions": 5773
       },
       {
-        "term": "best neuropsicologia clinica degree",
-        "impressions": 2935
+        "term": "best neuropsicologia aplicada degree",
+        "impressions": 2825
       }
     ]
   },
@@ -2668,22 +2830,22 @@
     "institution": "Lusófona Lisboa",
     "gscKeywords": [
       {
-        "term": "psicologia da justica vitimas de crime course",
-        "clicks": 714
+        "term": "desenvolvimento e gestao de destinos turisticos course",
+        "clicks": 131
       },
       {
-        "term": "psicologia da justica vitimas de crime university",
-        "clicks": 374
+        "term": "desenvolvimento e gestao de destinos turisticos university",
+        "clicks": 112
       }
     ],
     "adsKeywords": [
       {
-        "term": "psicologia da justica vitimas de crime course",
-        "impressions": 6826
+        "term": "desenvolvimento e gestao de destinos turisticos course",
+        "impressions": 2846
       },
       {
-        "term": "best psicologia da justica vitimas de crime degree",
-        "impressions": 4648
+        "term": "best desenvolvimento e gestao de destinos turisticos degree",
+        "impressions": 3257
       }
     ]
   },
@@ -2816,22 +2978,76 @@
     "name": "Arquitetura",
     "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "medicina em animais de companhia course",
+        "clicks": 144
+      },
+      {
+        "term": "medicina em animais de companhia university",
+        "clicks": 119
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "medicina em animais de companhia course",
+        "impressions": 7181
+      },
+      {
+        "term": "best medicina em animais de companhia degree",
+        "impressions": 3038
+      }
+    ]
   },
   {
     "name": "Urbanismo",
     "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "arquitetura course",
+        "clicks": 818
+      },
+      {
+        "term": "arquitetura university",
+        "clicks": 329
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "arquitetura course",
+        "impressions": 2243
+      },
+      {
+        "term": "best arquitetura degree",
+        "impressions": 4364
+      }
+    ]
   },
   {
     "name": "Sociomuseologia",
     "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "urbanismo course",
+        "clicks": 545
+      },
+      {
+        "term": "urbanismo university",
+        "clicks": 419
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "urbanismo course",
+        "impressions": 6587
+      },
+      {
+        "term": "best urbanismo degree",
+        "impressions": 1777
+      }
+    ]
   },
   {
     "name": "Arte Dos Media E Comunicacao",
@@ -2862,22 +3078,76 @@
     "name": "Ciencias Da Comunicacao",
     "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "arte dos media e comunicacao course",
+        "clicks": 965
+      },
+      {
+        "term": "arte dos media e comunicacao university",
+        "clicks": 182
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "arte dos media e comunicacao course",
+        "impressions": 3150
+      },
+      {
+        "term": "best arte dos media e comunicacao degree",
+        "impressions": 751
+      }
+    ]
   },
   {
     "name": "Educacao Fisica E Desporto",
     "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias da comunicacao course",
+        "clicks": 329
+      },
+      {
+        "term": "ciencias da comunicacao university",
+        "clicks": 291
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciencias da comunicacao course",
+        "impressions": 6749
+      },
+      {
+        "term": "best ciencias da comunicacao degree",
+        "impressions": 3
+      }
+    ]
   },
   {
     "name": "Direito",
     "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "educacao fisica e desporto course",
+        "clicks": 352
+      },
+      {
+        "term": "educacao fisica e desporto university",
+        "clicks": 499
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "educacao fisica e desporto course",
+        "impressions": 5303
+      },
+      {
+        "term": "best educacao fisica e desporto degree",
+        "impressions": 2375
+      }
+    ]
   },
   {
     "name": "Educacao",
@@ -2983,15 +3253,51 @@
     "name": "Design De Comunicacao",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "artes dramaticas formacao de atores course",
+        "clicks": 471
+      },
+      {
+        "term": "artes dramaticas formacao de atores university",
+        "clicks": 38
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "artes dramaticas formacao de atores course",
+        "impressions": 1340
+      },
+      {
+        "term": "best artes dramaticas formacao de atores degree",
+        "impressions": 559
+      }
+    ]
   },
   {
     "name": "Design E Producao De Moda",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "design de comunicacao course",
+        "clicks": 835
+      },
+      {
+        "term": "design de comunicacao university",
+        "clicks": 149
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "design de comunicacao course",
+        "impressions": 9802
+      },
+      {
+        "term": "best design de comunicacao degree",
+        "impressions": 150
+      }
+    ]
   },
   {
     "name": "Estudos Europeus Estudos Lusofonos E Relacoes Internacionais",
@@ -3072,8 +3378,26 @@
     "name": "Ciencias Da Comunicacao",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "videojogos e aplicacoes multimedia course",
+        "clicks": 777
+      },
+      {
+        "term": "videojogos e aplicacoes multimedia university",
+        "clicks": 247
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "videojogos e aplicacoes multimedia course",
+        "impressions": 4859
+      },
+      {
+        "term": "best videojogos e aplicacoes multimedia degree",
+        "impressions": 475
+      }
+    ]
   },
   {
     "name": "Comunicacao Aplicada",
@@ -3104,22 +3428,76 @@
     "name": "Educacao Fisica E Desporto",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "comunicacao aplicada course",
+        "clicks": 481
+      },
+      {
+        "term": "comunicacao aplicada university",
+        "clicks": 12
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "comunicacao aplicada course",
+        "impressions": 3131
+      },
+      {
+        "term": "best comunicacao aplicada degree",
+        "impressions": 3565
+      }
+    ]
   },
   {
     "name": "Direito",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "educacao fisica e desporto course",
+        "clicks": 426
+      },
+      {
+        "term": "educacao fisica e desporto university",
+        "clicks": 20
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "educacao fisica e desporto course",
+        "impressions": 4420
+      },
+      {
+        "term": "best educacao fisica e desporto degree",
+        "impressions": 1814
+      }
+    ]
   },
   {
     "name": "Economia",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "direito course",
+        "clicks": 15
+      },
+      {
+        "term": "direito university",
+        "clicks": 157
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "direito course",
+        "impressions": 8514
+      },
+      {
+        "term": "best direito degree",
+        "impressions": 356
+      }
+    ]
   },
   {
     "name": "Gestao",
@@ -3127,22 +3505,39 @@
     "institution": "Lusófona Porto",
     "gscKeywords": [
       {
-        "term": "direito course",
-        "clicks": 508
+        "term": "ctesp marketing",
+        "clicks": 6,
+        "impressions": 110
       },
       {
-        "term": "direito university",
-        "clicks": 315
+        "term": "gestão de marketing",
+        "clicks": 2,
+        "impressions": 292
+      },
+      {
+        "term": "curso superior de marketing",
+        "clicks": 2,
+        "impressions": 26
+      },
+      {
+        "term": "gestao de marketing",
+        "clicks": 1,
+        "impressions": 104
+      },
+      {
+        "term": "curso de gestão e marketing",
+        "clicks": 1,
+        "impressions": 103
       }
     ],
     "adsKeywords": [
       {
-        "term": "direito course",
-        "impressions": 2577
+        "term": "economia course",
+        "impressions": 7984
       },
       {
-        "term": "best direito degree",
-        "impressions": 3918
+        "term": "best economia degree",
+        "impressions": 3497
       }
     ]
   },
@@ -3200,22 +3595,76 @@
     "name": "Ciencias Da Educacao",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao e desenvolvimento de recursos humanos course",
+        "clicks": 35
+      },
+      {
+        "term": "gestao e desenvolvimento de recursos humanos university",
+        "clicks": 216
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao e desenvolvimento de recursos humanos course",
+        "impressions": 1352
+      },
+      {
+        "term": "best gestao e desenvolvimento de recursos humanos degree",
+        "impressions": 2205
+      }
+    ]
   },
   {
     "name": "Computacao E Matematica Aplicada",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias da educacao course",
+        "clicks": 985
+      },
+      {
+        "term": "ciencias da educacao university",
+        "clicks": 261
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciencias da educacao course",
+        "impressions": 7773
+      },
+      {
+        "term": "best ciencias da educacao degree",
+        "impressions": 4490
+      }
+    ]
   },
   {
     "name": "Engenharia Civil",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "computacao e matematica aplicada course",
+        "clicks": 877
+      },
+      {
+        "term": "computacao e matematica aplicada university",
+        "clicks": 232
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "computacao e matematica aplicada course",
+        "impressions": 1119
+      },
+      {
+        "term": "best computacao e matematica aplicada degree",
+        "impressions": 2201
+      }
+    ]
   },
   {
     "name": "Engenharia De Protecao Civil",
@@ -3246,8 +3695,26 @@
     "name": "Engenharia Do Ambiente",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia de protecao civil course",
+        "clicks": 440
+      },
+      {
+        "term": "engenharia de protecao civil university",
+        "clicks": 392
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia de protecao civil course",
+        "impressions": 8418
+      },
+      {
+        "term": "best engenharia de protecao civil degree",
+        "impressions": 4312
+      }
+    ]
   },
   {
     "name": "Engenharia Eletrotecnica De Sistemas De Energia",
@@ -3280,22 +3747,22 @@
     "institution": "Lusófona Porto",
     "gscKeywords": [
       {
-        "term": "mediacao gestao de conflitos e cidadania course",
-        "clicks": 969
+        "term": "engenharia eletrotecnica de sistemas de energia course",
+        "clicks": 354
       },
       {
-        "term": "mediacao gestao de conflitos e cidadania university",
-        "clicks": 483
+        "term": "engenharia eletrotecnica de sistemas de energia university",
+        "clicks": 362
       }
     ],
     "adsKeywords": [
       {
-        "term": "mediacao gestao de conflitos e cidadania course",
-        "impressions": 8504
+        "term": "engenharia eletrotecnica de sistemas de energia course",
+        "impressions": 4601
       },
       {
-        "term": "best mediacao gestao de conflitos e cidadania degree",
-        "impressions": 4402
+        "term": "best engenharia eletrotecnica de sistemas de energia degree",
+        "impressions": 851
       }
     ]
   },
@@ -3303,22 +3770,76 @@
     "name": "Engenharia Informatica",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "protecao civil course",
+        "clicks": 680
+      },
+      {
+        "term": "protecao civil university",
+        "clicks": 248
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "protecao civil course",
+        "impressions": 4026
+      },
+      {
+        "term": "best protecao civil degree",
+        "impressions": 4532
+      }
+    ]
   },
   {
     "name": "Psicologia",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia informatica course",
+        "clicks": 502
+      },
+      {
+        "term": "engenharia informatica university",
+        "clicks": 433
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia informatica course",
+        "impressions": 4199
+      },
+      {
+        "term": "best engenharia informatica degree",
+        "impressions": 1765
+      }
+    ]
   },
   {
     "name": "Servico Social",
     "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "psicologia course",
+        "clicks": 206
+      },
+      {
+        "term": "psicologia university",
+        "clicks": 481
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "psicologia course",
+        "impressions": 3219
+      },
+      {
+        "term": "best psicologia degree",
+        "impressions": 4102
+      }
+    ]
   },
   {
     "name": "Arquitetura Cup",
@@ -3374,8 +3895,26 @@
     "name": "Comunicacao Marketing E Media Digitais",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "relacoes internacionais course",
+        "clicks": 542
+      },
+      {
+        "term": "relacoes internacionais university",
+        "clicks": 296
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "relacoes internacionais course",
+        "impressions": 8277
+      },
+      {
+        "term": "best relacoes internacionais degree",
+        "impressions": 1894
+      }
+    ]
   },
   {
     "name": "Comunicacao Redes E Tecnologias",
@@ -3456,15 +3995,51 @@
     "name": "Ensino De Educacao Fisica Nos Ensinos Basico E Secundario",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "media e cidadania digital course",
+        "clicks": 968
+      },
+      {
+        "term": "media e cidadania digital university",
+        "clicks": 141
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "media e cidadania digital course",
+        "impressions": 4008
+      },
+      {
+        "term": "best media e cidadania digital degree",
+        "impressions": 453
+      }
+    ]
   },
   {
     "name": "Exercicio E Saude",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ensino de educacao fisica nos ensinos basico e secundario course",
+        "clicks": 935
+      },
+      {
+        "term": "ensino de educacao fisica nos ensinos basico e secundario university",
+        "clicks": 261
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ensino de educacao fisica nos ensinos basico e secundario course",
+        "impressions": 2945
+      },
+      {
+        "term": "best ensino de educacao fisica nos ensinos basico e secundario degree",
+        "impressions": 2174
+      }
+    ]
   },
   {
     "name": "Treino Desportivo Em Futebol",
@@ -3520,15 +4095,51 @@
     "name": "Direito",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias juridico criminais course",
+        "clicks": 183
+      },
+      {
+        "term": "ciencias juridico criminais university",
+        "clicks": 247
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciencias juridico criminais course",
+        "impressions": 9587
+      },
+      {
+        "term": "best ciencias juridico criminais degree",
+        "impressions": 4050
+      }
+    ]
   },
   {
     "name": "Gestao",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "direito course",
+        "clicks": 508
+      },
+      {
+        "term": "direito university",
+        "clicks": 315
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "direito course",
+        "impressions": 2577
+      },
+      {
+        "term": "best direito degree",
+        "impressions": 3918
+      }
+    ]
   },
   {
     "name": "Gestao De Organizacoes Da Economia Social",
@@ -3559,29 +4170,101 @@
     "name": "Gestao De Recursos Humanos",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao de organizacoes da economia social course",
+        "clicks": 267
+      },
+      {
+        "term": "gestao de organizacoes da economia social university",
+        "clicks": 464
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao de organizacoes da economia social course",
+        "impressions": 3304
+      },
+      {
+        "term": "best gestao de organizacoes da economia social degree",
+        "impressions": 3308
+      }
+    ]
   },
   {
     "name": "Gestao Financeira",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao de recursos humanos course",
+        "clicks": 122
+      },
+      {
+        "term": "gestao de recursos humanos university",
+        "clicks": 217
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao de recursos humanos course",
+        "impressions": 4164
+      },
+      {
+        "term": "best gestao de recursos humanos degree",
+        "impressions": 1040
+      }
+    ]
   },
   {
     "name": "Ciencias Da Educacao",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao financeira course",
+        "clicks": 176
+      },
+      {
+        "term": "gestao financeira university",
+        "clicks": 232
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao financeira course",
+        "impressions": 3918
+      },
+      {
+        "term": "best gestao financeira degree",
+        "impressions": 3693
+      }
+    ]
   },
   {
     "name": "Ensino De Informatica",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias da educacao course",
+        "clicks": 532
+      },
+      {
+        "term": "ciencias da educacao university",
+        "clicks": 125
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciencias da educacao course",
+        "impressions": 9635
+      },
+      {
+        "term": "best ciencias da educacao degree",
+        "impressions": 2098
+      }
+    ]
   },
   {
     "name": "Mediacao Gestao De Conflitos E Cidadania",
@@ -3612,8 +4295,26 @@
     "name": "Protecao Civil",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "mediacao gestao de conflitos e cidadania course",
+        "clicks": 969
+      },
+      {
+        "term": "mediacao gestao de conflitos e cidadania university",
+        "clicks": 483
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "mediacao gestao de conflitos e cidadania course",
+        "impressions": 8504
+      },
+      {
+        "term": "best mediacao gestao de conflitos e cidadania degree",
+        "impressions": 4402
+      }
+    ]
   },
   {
     "name": "Sistemas De Energia Inteligentes E Sustentaveis",
@@ -3644,8 +4345,26 @@
     "name": "Ciencias De Dados Aplicada A Sistemas De Informacao Geografica",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "sistemas de energia inteligentes e sustentaveis course",
+        "clicks": 553
+      },
+      {
+        "term": "sistemas de energia inteligentes e sustentaveis university",
+        "clicks": 145
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "sistemas de energia inteligentes e sustentaveis course",
+        "impressions": 2729
+      },
+      {
+        "term": "best sistemas de energia inteligentes e sustentaveis degree",
+        "impressions": 1141
+      }
+    ]
   },
   {
     "name": "Neuropsicologia Clinica",
@@ -3676,8 +4395,26 @@
     "name": "Psicologia Clinica E Da Saude",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "neuropsicologia clinica course",
+        "clicks": 862
+      },
+      {
+        "term": "neuropsicologia clinica university",
+        "clicks": 443
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "neuropsicologia clinica course",
+        "impressions": 7287
+      },
+      {
+        "term": "best neuropsicologia clinica degree",
+        "impressions": 2935
+      }
+    ]
   },
   {
     "name": "Psicologia Da Justica Vitimas De Crime",
@@ -3708,8 +4445,26 @@
     "name": "Gestao E Inovacao Em Turismo E Hospitalidade",
     "degree": "Mestrados",
     "institution": "Lusófona Porto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "psicologia da justica vitimas de crime course",
+        "clicks": 714
+      },
+      {
+        "term": "psicologia da justica vitimas de crime university",
+        "clicks": 374
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "psicologia da justica vitimas de crime course",
+        "impressions": 6826
+      },
+      {
+        "term": "best psicologia da justica vitimas de crime degree",
+        "impressions": 4648
+      }
+    ]
   },
   {
     "name": "Arte Multimedia Pt",
@@ -4317,220 +5072,29 @@
     "institution": "IPLUSO",
     "gscKeywords": [
       {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
+        "term": "acompanhamento de crianças e jovens",
+        "clicks": 6,
+        "impressions": 69
       },
       {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
+        "term": "ctesp acompanhamento de crianças e jovens",
+        "clicks": 5,
+        "impressions": 43
       },
       {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
+        "term": "ctesp psicologia",
+        "clicks": 1,
+        "impressions": 46
       },
       {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
+        "term": "ctesp educadora de infância",
+        "clicks": 1,
+        "impressions": 38
       },
       {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
-      },
-      {
-        "term": "Lusófona Lisboa",
-        "clicks": 0
+        "term": "assistente social curso técnico",
+        "clicks": 1,
+        "impressions": 4
       }
     ],
     "adsKeywords": [
@@ -4992,22 +5556,39 @@
     "institution": "IPLUSO",
     "gscKeywords": [
       {
-        "term": "sistemas de telecomunicacoes eletronica e comunicacoes pt course",
-        "clicks": 973
+        "term": "ctesp cibersegurança",
+        "clicks": 29,
+        "impressions": 291
       },
       {
-        "term": "sistemas de telecomunicacoes eletronica e comunicacoes pt university",
-        "clicks": 212
+        "term": "cibersegurança curso",
+        "clicks": 26,
+        "impressions": 956
+      },
+      {
+        "term": "curso de cibersegurança",
+        "clicks": 14,
+        "impressions": 449
+      },
+      {
+        "term": "curso cibersegurança",
+        "clicks": 10,
+        "impressions": 473
+      },
+      {
+        "term": "cet cibersegurança",
+        "clicks": 5,
+        "impressions": 66
       }
     ],
     "adsKeywords": [
       {
-        "term": "sistemas de telecomunicacoes eletronica e comunicacoes pt course",
-        "impressions": 7527
+        "term": "bioanalises e controlo pt course",
+        "impressions": 988
       },
       {
-        "term": "best sistemas de telecomunicacoes eletronica e comunicacoes pt degree",
-        "impressions": 4466
+        "term": "best bioanalises e controlo pt degree",
+        "impressions": 1305
       }
     ]
   },
@@ -5017,22 +5598,22 @@
     "institution": "IPLUSO",
     "gscKeywords": [
       {
-        "term": "comunicacao digital pt course",
-        "clicks": 770
+        "term": "ciberseguranca pt course",
+        "clicks": 334
       },
       {
-        "term": "comunicacao digital pt university",
-        "clicks": 438
+        "term": "ciberseguranca pt university",
+        "clicks": 381
       }
     ],
     "adsKeywords": [
       {
-        "term": "comunicacao digital pt course",
-        "impressions": 291
+        "term": "ciberseguranca pt course",
+        "impressions": 4702
       },
       {
-        "term": "best comunicacao digital pt degree",
-        "impressions": 3843
+        "term": "best ciberseguranca pt degree",
+        "impressions": 1030
       }
     ]
   },
@@ -5067,22 +5648,39 @@
     "institution": "IPLUSO",
     "gscKeywords": [
       {
-        "term": "desenvolvimento de produtos multimedia pt course",
-        "clicks": 221
+        "term": "ctesp online",
+        "clicks": 8,
+        "impressions": 123
       },
       {
-        "term": "desenvolvimento de produtos multimedia pt university",
-        "clicks": 384
+        "term": "cursos tecnicos superiores online",
+        "clicks": 2,
+        "impressions": 15
+      },
+      {
+        "term": "técnico de desenvolvimento de software",
+        "clicks": 1,
+        "impressions": 45
+      },
+      {
+        "term": "ipluso cursos",
+        "clicks": 1,
+        "impressions": 42
+      },
+      {
+        "term": "curso desenvolvimento web",
+        "clicks": 1,
+        "impressions": 20
       }
     ],
     "adsKeywords": [
       {
-        "term": "desenvolvimento de produtos multimedia pt course",
-        "impressions": 6761
+        "term": "desenvolvimento de sistemas para internet das coisas pt course",
+        "impressions": 3429
       },
       {
-        "term": "best desenvolvimento de produtos multimedia pt degree",
-        "impressions": 4204
+        "term": "best desenvolvimento de sistemas para internet das coisas pt degree",
+        "impressions": 679
       }
     ]
   },
@@ -5092,22 +5690,22 @@
     "institution": "IPLUSO",
     "gscKeywords": [
       {
-        "term": "gastronomia vinhos e turismo pt course",
-        "clicks": 138
+        "term": "desenvolvimento para a web e dispositivos moveis pt course",
+        "clicks": 462
       },
       {
-        "term": "gastronomia vinhos e turismo pt university",
-        "clicks": 202
+        "term": "desenvolvimento para a web e dispositivos moveis pt university",
+        "clicks": 35
       }
     ],
     "adsKeywords": [
       {
-        "term": "gastronomia vinhos e turismo pt course",
-        "impressions": 3901
+        "term": "desenvolvimento para a web e dispositivos moveis pt course",
+        "impressions": 5536
       },
       {
-        "term": "best gastronomia vinhos e turismo pt degree",
-        "impressions": 4384
+        "term": "best desenvolvimento para a web e dispositivos moveis pt degree",
+        "impressions": 3088
       }
     ]
   },
@@ -5433,8 +6031,26 @@
     "name": "Ciberseguranca Pt",
     "degree": "Ctesp",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "sistemas de telecomunicacoes eletronica e comunicacoes pt course",
+        "clicks": 973
+      },
+      {
+        "term": "sistemas de telecomunicacoes eletronica e comunicacoes pt university",
+        "clicks": 212
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "sistemas de telecomunicacoes eletronica e comunicacoes pt course",
+        "impressions": 7527
+      },
+      {
+        "term": "best sistemas de telecomunicacoes eletronica e comunicacoes pt degree",
+        "impressions": 4466
+      }
+    ]
   },
   {
     "name": "Comunicacao Digital Pt",
@@ -5442,22 +6058,22 @@
     "institution": "ISLA Gaia",
     "gscKeywords": [
       {
-        "term": "turismo e informacao turistica pt course",
-        "clicks": 947
+        "term": "ciberseguranca pt course",
+        "clicks": 74
       },
       {
-        "term": "turismo e informacao turistica pt university",
-        "clicks": 258
+        "term": "ciberseguranca pt university",
+        "clicks": 140
       }
     ],
     "adsKeywords": [
       {
-        "term": "turismo e informacao turistica pt course",
-        "impressions": 8262
+        "term": "ciberseguranca pt course",
+        "impressions": 4728
       },
       {
-        "term": "best turismo e informacao turistica pt degree",
-        "impressions": 2285
+        "term": "best ciberseguranca pt degree",
+        "impressions": 1168
       }
     ]
   },
@@ -5465,8 +6081,26 @@
     "name": "Contabilidade E Gestao Pt",
     "degree": "Ctesp",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "comunicacao digital pt course",
+        "clicks": 770
+      },
+      {
+        "term": "comunicacao digital pt university",
+        "clicks": 438
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "comunicacao digital pt course",
+        "impressions": 291
+      },
+      {
+        "term": "best comunicacao digital pt degree",
+        "impressions": 3843
+      }
+    ]
   },
   {
     "name": "Controlo Da Qualidade E Analises Laboratoriais Pt",
@@ -5547,8 +6181,26 @@
     "name": "Desenvolvimento Para A Web E Dispositivos Moveis Pt",
     "degree": "Ctesp",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "desenvolvimento de produtos multimedia pt course",
+        "clicks": 221
+      },
+      {
+        "term": "desenvolvimento de produtos multimedia pt university",
+        "clicks": 384
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "desenvolvimento de produtos multimedia pt course",
+        "impressions": 6761
+      },
+      {
+        "term": "best desenvolvimento de produtos multimedia pt degree",
+        "impressions": 4204
+      }
+    ]
   },
   {
     "name": "Gastronomia Vinhos E Turismo Pt",
@@ -5579,8 +6231,26 @@
     "name": "Gestao Administrativa De Recursos Humanos Pt",
     "degree": "Ctesp",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gastronomia vinhos e turismo pt course",
+        "clicks": 138
+      },
+      {
+        "term": "gastronomia vinhos e turismo pt university",
+        "clicks": 202
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gastronomia vinhos e turismo pt course",
+        "impressions": 3901
+      },
+      {
+        "term": "best gastronomia vinhos e turismo pt degree",
+        "impressions": 4384
+      }
+    ]
   },
   {
     "name": "Gestao Da Qualidade Ambiente E Seguranca Pt",
@@ -5811,8 +6481,26 @@
     "name": "Comunicacao Digital Pt",
     "degree": "Licenciaturas",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "turismo e informacao turistica pt course",
+        "clicks": 947
+      },
+      {
+        "term": "turismo e informacao turistica pt university",
+        "clicks": 258
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "turismo e informacao turistica pt course",
+        "impressions": 8262
+      },
+      {
+        "term": "best turismo e informacao turistica pt degree",
+        "impressions": 2285
+      }
+    ]
   },
   {
     "name": "Engenharia Da Seguranca Do Trabalho Pt",
@@ -5845,22 +6533,22 @@
     "institution": "ISLA Gaia",
     "gscKeywords": [
       {
-        "term": "direito pt course",
-        "clicks": 621
+        "term": "engenharia da seguranca do trabalho pt course",
+        "clicks": 24
       },
       {
-        "term": "direito pt university",
-        "clicks": 95
+        "term": "engenharia da seguranca do trabalho pt university",
+        "clicks": 156
       }
     ],
     "adsKeywords": [
       {
-        "term": "direito pt course",
-        "impressions": 8540
+        "term": "engenharia da seguranca do trabalho pt course",
+        "impressions": 2851
       },
       {
-        "term": "best direito pt degree",
-        "impressions": 4762
+        "term": "best engenharia da seguranca do trabalho pt degree",
+        "impressions": 1000
       }
     ]
   },
@@ -5871,21 +6559,21 @@
     "gscKeywords": [
       {
         "term": "engenharia informatica pt course",
-        "clicks": 678
+        "clicks": 405
       },
       {
         "term": "engenharia informatica pt university",
-        "clicks": 73
+        "clicks": 370
       }
     ],
     "adsKeywords": [
       {
         "term": "engenharia informatica pt course",
-        "impressions": 2482
+        "impressions": 9383
       },
       {
         "term": "best engenharia informatica pt degree",
-        "impressions": 2856
+        "impressions": 3178
       }
     ]
   },
@@ -5896,21 +6584,21 @@
     "gscKeywords": [
       {
         "term": "gestao de empresas pt course",
-        "clicks": 56
+        "clicks": 966
       },
       {
         "term": "gestao de empresas pt university",
-        "clicks": 89
+        "clicks": 422
       }
     ],
     "adsKeywords": [
       {
         "term": "gestao de empresas pt course",
-        "impressions": 5323
+        "impressions": 5846
       },
       {
         "term": "best gestao de empresas pt degree",
-        "impressions": 2482
+        "impressions": 3928
       }
     ]
   },
@@ -5921,21 +6609,21 @@
     "gscKeywords": [
       {
         "term": "gestao de recursos humanos pt course",
-        "clicks": 281
+        "clicks": 946
       },
       {
         "term": "gestao de recursos humanos pt university",
-        "clicks": 268
+        "clicks": 46
       }
     ],
     "adsKeywords": [
       {
         "term": "gestao de recursos humanos pt course",
-        "impressions": 3919
+        "impressions": 1348
       },
       {
         "term": "best gestao de recursos humanos pt degree",
-        "impressions": 3332
+        "impressions": 1276
       }
     ]
   },
@@ -6043,8 +6731,26 @@
     "name": "Engenharia Informatica Pt",
     "degree": "Mestrados",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia de tecnologias e sistemas web pt course",
+        "clicks": 430
+      },
+      {
+        "term": "engenharia de tecnologias e sistemas web pt university",
+        "clicks": 260
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia de tecnologias e sistemas web pt course",
+        "impressions": 287
+      },
+      {
+        "term": "best engenharia de tecnologias e sistemas web pt degree",
+        "impressions": 4670
+      }
+    ]
   },
   {
     "name": "Financas E Fiscalidade Pt",
@@ -6150,8 +6856,26 @@
     "name": "Gestao De Recursos Humanos Pt",
     "degree": "Mestrados",
     "institution": "ISLA Gaia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao de projetos pt course",
+        "clicks": 738
+      },
+      {
+        "term": "gestao de projetos pt university",
+        "clicks": 114
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao de projetos pt course",
+        "impressions": 2133
+      },
+      {
+        "term": "best gestao de projetos pt degree",
+        "impressions": 3105
+      }
+    ]
   },
   {
     "name": "Ciencia De Dados Pt",
@@ -6307,29 +7031,101 @@
     "name": "Engenharia Informatica Pt",
     "degree": "Licenciaturas",
     "institution": "ISMAT",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "direito pt course",
+        "clicks": 621
+      },
+      {
+        "term": "direito pt university",
+        "clicks": 95
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "direito pt course",
+        "impressions": 8540
+      },
+      {
+        "term": "best direito pt degree",
+        "impressions": 4762
+      }
+    ]
   },
   {
     "name": "Gestao De Empresas Pt",
     "degree": "Licenciaturas",
     "institution": "ISMAT",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia informatica pt course",
+        "clicks": 678
+      },
+      {
+        "term": "engenharia informatica pt university",
+        "clicks": 73
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia informatica pt course",
+        "impressions": 2482
+      },
+      {
+        "term": "best engenharia informatica pt degree",
+        "impressions": 2856
+      }
+    ]
   },
   {
     "name": "Gestao De Recursos Humanos Pt",
     "degree": "Licenciaturas",
     "institution": "ISMAT",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao de empresas pt course",
+        "clicks": 56
+      },
+      {
+        "term": "gestao de empresas pt university",
+        "clicks": 89
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao de empresas pt course",
+        "impressions": 5323
+      },
+      {
+        "term": "best gestao de empresas pt degree",
+        "impressions": 2482
+      }
+    ]
   },
   {
     "name": "Gestao Do Turismo Pt",
     "degree": "Licenciaturas",
     "institution": "ISMAT",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao de recursos humanos pt course",
+        "clicks": 281
+      },
+      {
+        "term": "gestao de recursos humanos pt university",
+        "clicks": 268
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "gestao de recursos humanos pt course",
+        "impressions": 3919
+      },
+      {
+        "term": "best gestao de recursos humanos pt degree",
+        "impressions": 3332
+      }
+    ]
   },
   {
     "name": "Psicologia Pt",
@@ -6387,6 +7183,31 @@
     "institution": "ISMAT",
     "gscKeywords": [
       {
+        "term": "tecnologias criativas pt course",
+        "clicks": 560
+      },
+      {
+        "term": "tecnologias criativas pt university",
+        "clicks": 377
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "tecnologias criativas pt course",
+        "impressions": 7051
+      },
+      {
+        "term": "best tecnologias criativas pt degree",
+        "impressions": 3828
+      }
+    ]
+  },
+  {
+    "name": "Arquitetura Pt",
+    "degree": "Mestrados",
+    "institution": "ISMAT",
+    "gscKeywords": [
+      {
         "term": "arquitetura pt course",
         "clicks": 875
       },
@@ -6405,13 +7226,6 @@
         "impressions": 3411
       }
     ]
-  },
-  {
-    "name": "Arquitetura Pt",
-    "degree": "Mestrados",
-    "institution": "ISMAT",
-    "gscKeywords": [],
-    "adsKeywords": []
   },
   {
     "name": "Biodesign Pt",
