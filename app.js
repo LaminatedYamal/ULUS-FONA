@@ -150,15 +150,20 @@ function saveData() {
 function loadData() {
     const saved = localStorage.getItem('antigravity_data_v2');
     if (saved) {
-        const parsed = JSON.parse(saved);
-        parsed.forEach(savedItem => {
-            const target = courses.find(c => normalizeUrl(c.url) === normalizeUrl(savedItem.url));
-            if (target) {
-                target.gscKeywords = savedItem.gscKeywords || [];
-                target.adsKeywords = savedItem.adsKeywords || [];
-            }
-        });
-        loadCourse(activeCourseId);
+        try {
+            const parsed = JSON.parse(saved);
+            Object.keys(parsed).forEach(urlKey => {
+                const data = parsed[urlKey];
+                const target = courses.find(c => normalizeUrl(c.url) === urlKey);
+                if (target) {
+                    target.gscKeywords = data.gsc || [];
+                    target.adsKeywords = data.ads || [];
+                }
+            });
+            loadCourse(activeCourseId);
+        } catch (e) {
+            console.error("Error loading local data:", e);
+        }
     }
 }
 
