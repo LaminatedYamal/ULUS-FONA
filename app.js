@@ -675,13 +675,17 @@ function renderTables(gsc = [], ads = []) {
     gscBody.innerHTML = '';
     adsBody.innerHTML = '';
     
-    const gscTerms = gsc.map(k => k.term.toLowerCase());
-    const adsTerms = ads.map(k => k.term.toLowerCase());
+    // Sort Alphabetically
+    const sortedGsc = [...gsc].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
+    const sortedAds = [...ads].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     
-    if (gsc.length === 0) {
+    const gscTerms = sortedGsc.map(k => k.term.toLowerCase());
+    const adsTerms = sortedAds.map(k => k.term.toLowerCase());
+    
+    if (sortedGsc.length === 0) {
         gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data to see keywords</td></tr>`;
     } else {
-        gsc.forEach(k => {
+        sortedGsc.forEach(k => {
             const tr = document.createElement('tr');
             const isMatch = adsTerms.includes(k.term.toLowerCase());
             tr.innerHTML = `
@@ -693,10 +697,10 @@ function renderTables(gsc = [], ads = []) {
         });
     }
     
-    if (ads.length === 0) {
+    if (sortedAds.length === 0) {
         adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Ads data to see keywords</td></tr>`;
     } else {
-        ads.forEach(k => {
+        sortedAds.forEach(k => {
             const tr = document.createElement('tr');
             const isMatch = gscTerms.includes(k.term.toLowerCase());
             tr.innerHTML = `
