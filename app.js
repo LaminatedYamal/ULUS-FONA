@@ -406,7 +406,13 @@ function renderCourseList() {
 function loadCourse(id) {
     activeCourseId = id;
     const course = courses.find(c => c.id === id);
-    const brand = BRANDING[course.institution];
+    if (!course) return;
+    
+    let instName = course.institution || "";
+    if (instName.includes('Lus') && instName.includes('fona')) {
+        instName = instName.includes('Porto') ? 'Lusófona Porto' : 'Lusófona Lisboa';
+    }
+    const brand = BRANDING[instName] || { hex: "#444444", bgSub: "#222222", logo: "" };
     
     // Apply Branding
     document.documentElement.style.setProperty('--accent-primary', brand.hex);
