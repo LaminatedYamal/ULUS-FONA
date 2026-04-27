@@ -196,24 +196,51 @@ async function handleFileUpload(e, type) {
             }
 
             if (targetCourse) {
+                console.log(`[Matcher] Match found: ${item.url} -> ${targetCourse.name}`);
+                
                 if (type === 'gsc') {
-                    targetCourse.gscKeywords = res.keywords;
+                    targetCourse.gscKeywords = mergeKeywords(targetCourse.gscKeywords || [], item.keywords, 'clicks');
                 } else {
-                    targetCourse.adsKeywords = res.keywords;
+                    targetCourse.adsKeywords = mergeKeywords(targetCourse.adsKeywords || [], item.keywords, 'impressions');
                 }
                 totalUpdated++;
+            } else {
+                console.warn(`[Matcher] No match found for URL: ${item.url}`);
             }
         });
     }
 
     if (totalUpdated > 0) {
-        alert(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses from files.\nSuccessfully updated ${totalUpdated} courses in the dashboard.`);
+        alert(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses from files.\nSuccessfully merged new data into ${totalUpdated} courses.`);
         renderCourseList(); // Refresh sidebar badges
         loadCourse(activeCourseId); // Refresh view
         saveData();
     } else {
-        alert(`No matching courses found.\n\nParsed ${coursesInFiles} courses from the file, but none matched the 450 courses in our database.\n\nCheck the Browser Console (F12) for details.`);
+        alert(`No matching courses found.\n\nParsed ${coursesInFiles} courses from the file, but none matched the 450 courses in our database.`);
     }
+}
+
+function mergeKeywords(existing, incoming, metricKey) {
+    const map = new Map();
+    // Add existing keywords to map
+    existing.forEach(k => {
+        const key = k.term.toLowerCase().trim();
+        map.set(key, k);
+    });
+    // Merge incoming
+    incoming.forEach(k => {
+        const key = k.term.toLowerCase().trim();
+        if (map.has(key)) {
+            // Update metric if higher
+            const current = map.get(key);
+            if ((k[metricKey] || 0) > (current[metricKey] || 0)) {
+                current[metricKey] = k[metricKey];
+            }
+        } else {
+            map.set(key, k);
+        }
+    });
+    return Array.from(map.values());
 }
 
 function parseSmartXML(xmlText) {
@@ -506,25 +533,48 @@ function renderCourseList() {
         });
     });
 
-    // Add Reset Button at the bottom
+    // Add Reset Buttons at the bottom
     const resetContainer = document.createElement('div');
-    resetContainer.style.padding = '20px';
-    resetContainer.style.marginTop = 'auto';
+    resetContainer.className = 'reset-grid';
     resetContainer.innerHTML = `
-        <button onclick="resetApp()" class="btn-reset">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-            Reset Dashboard
+        <button onclick="resetApp('gsc')" class="btn-reset gsc-only">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Clear GSC Only
+        </button>
+        <button onclick="resetApp('ads')" class="btn-reset ads-only">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Clear Ads Only
+        </button>
+        <button onclick="resetApp('all')" class="btn-reset danger">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            Clear ALL Data
         </button>
     `;
     list.appendChild(resetContainer);
 }
 
 // Make resetApp global
-window.resetApp = function() {
-    if (confirm("This will clear all uploaded keywords and reset the dashboard. Are you sure?")) {
-        localStorage.removeItem('antigravity_data_v2');
-        localStorage.removeItem('antigravity_courses'); 
-        location.reload();
+window.resetApp = function(mode) {
+    let msg = "Are you sure? This will clear all data.";
+    if (mode === 'gsc') msg = "Clear all GSC (Search Console) keywords?";
+    if (mode === 'ads') msg = "Clear all Google Ads keywords?";
+
+    if (confirm(msg)) {
+        if (mode === 'all') {
+            localStorage.removeItem('antigravity_data_v2');
+            localStorage.removeItem('antigravity_courses'); 
+            location.reload();
+        } else {
+            // Selective clear
+            courses.forEach(c => {
+                if (mode === 'gsc') c.gscKeywords = [];
+                if (mode === 'ads') c.adsKeywords = [];
+            });
+            saveData();
+            renderCourseList();
+            loadCourse(activeCourseId);
+            alert(`${mode.toUpperCase()} data cleared successfully.`);
+        }
     }
 };
 
