@@ -470,18 +470,11 @@ async function handleFileUpload(e, type) {
             coursesInFiles++;
             let targetCourse;
             
-            if (res.slug === 'current') {
+            if (res.url === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // Convert course name to slug and match against XML slug
-                // e.g. "Arte Dos Media E Comunicacao" -> "arte-dos-media-e-comunicacao"
-                targetCourse = courses.find(c => {
-                    const nameSlug = c.name.toLowerCase()
-                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove accents
-                        .replace(/\s+/g, '-')
-                        .replace(/[^a-z0-9-]/g, '');
-                    return nameSlug === res.slug || nameSlug.includes(res.slug) || res.slug.includes(nameSlug);
-                });
+                // Strict match by exact URL instead of guessing from name slugs
+                targetCourse = courses.find(c => c.url && c.url.trim().toLowerCase() === res.url.trim().toLowerCase());
             }
 
             if (targetCourse) {
@@ -514,17 +507,16 @@ function parseSmartXML(xmlText) {
     if (courseNodes.length === 0) courseNodes = xml.querySelectorAll('curso');
     
     if (courseNodes.length === 0) {
-        return [{ slug: 'current', keywords: parseXMLNodes(xml) }];
+        return [{ url: 'current', keywords: parseXMLNodes(xml) }];
     }
 
     const allResults = [];
     courseNodes.forEach(node => {
-        const slugAttr = node.getAttribute('name') || node.getAttribute('Name');
         const filtroUrl = node.querySelector('Filtro, filtro, FILTRO')?.textContent || '';
-        const slug = (slugAttr || filtroUrl.split('/').filter(Boolean).pop() || '').trim().toLowerCase();
+        const url = filtroUrl.trim().toLowerCase();
         
         const keywords = parseXMLNodes(node);
-        if (slug) allResults.push({ slug, keywords });
+        if (url) allResults.push({ url, keywords });
     });
 
     return allResults;
@@ -556,9 +548,42 @@ function parseCSV(csvString) {
     const clean = csvString.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
     const lines = clean.split('\n').filter(l => l.trim() !== '');
     
-    if (lines.length < 2) return results;
+    if (lines.length < 2) return [{ url: 'current', keywords: [] }];
     
-    // Find the header row - Google Ads sometimes has metadata rows at the top
+    // Check if it's the custom multi-course CSV (Instituição, Grau, Curso, Link, Keywords)
+    const headerLine = lines[0].toLowerCase();
+    const isCustomFormat = headerLine.includes('link') && headerLine.includes('keywords');
+    
+    if (isCustomFormat) {
+        const headers = splitCSVLine(lines[0]).map(h => h.toLowerCase().trim());
+        const linkCol = headers.findIndex(h => h.includes('link'));
+        const kwCol = headers.findIndex(h => h.includes('keywords'));
+        
+        if (linkCol >= 0 && kwCol >= 0) {
+            for (let i = 1; i < lines.length; i++) {
+                const cols = splitCSVLine(lines[i]);
+                if (cols.length <= Math.max(linkCol, kwCol)) continue;
+                
+                const url = cols[linkCol].trim().toLowerCase();
+                const rawKeywords = cols[kwCol].trim();
+                
+                if (url && rawKeywords) {
+                    // Split the comma-separated keyword string
+                    const keywords = rawKeywords.split(',')
+                        .map(k => k.trim())
+                        .filter(k => k.length > 0)
+                        .map(term => ({ term, clicks: 0, impressions: 0 }));
+                    
+                    if (keywords.length > 0) {
+                        results.push({ url, keywords });
+                    }
+                }
+            }
+            return results;
+        }
+    }
+    
+    // Fallback: Standard Google Ads single-course export
     let headerRowIndex = 0;
     for (let i = 0; i < Math.min(lines.length, 10); i++) {
         const lower = lines[i].toLowerCase();
@@ -568,7 +593,6 @@ function parseCSV(csvString) {
         }
     }
     
-    // Parse header to find keyword column index
     const headers = splitCSVLine(lines[headerRowIndex]).map(h => h.toLowerCase().trim());
     const keywordColIndex = headers.findIndex(h => 
         h.includes('keyword') || h.includes('palavra-chave') || 
@@ -576,22 +600,20 @@ function parseCSV(csvString) {
         h.includes('termo') || h === 'keyword'
     );
     
-    // If no header found, fall back to first column
     const colIndex = keywordColIndex >= 0 ? keywordColIndex : 0;
+    const keywords = [];
     
-    // Parse data rows
     for (let i = headerRowIndex + 1; i < lines.length; i++) {
         const cols = splitCSVLine(lines[i]);
         if (cols.length <= colIndex) continue;
         
         const term = cols[colIndex].trim();
-        // Skip empty terms, totals rows, or obviously non-keyword rows
         if (!term || term.toLowerCase().includes('total') || term.startsWith('--')) continue;
         
-        if (term) results.push({ term, clicks: 0 });
+        keywords.push({ term, clicks: 0 });
     }
     
-    return results;
+    return [{ url: 'current', keywords }];
 }
 
 // Properly splits a CSV line respecting quoted fields
