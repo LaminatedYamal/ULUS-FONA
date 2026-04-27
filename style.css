@@ -225,9 +225,14 @@ body {
     box-shadow: 0 0 15px rgba(var(--accent-primary-rgb), 0.3);
 }
 
-.sync-cloud-btn {
-    width: 100%;
+.sync-actions {
+    display: flex;
+    gap: 8px;
     margin-top: 8px;
+}
+
+.sync-cloud-btn {
+    flex: 1;
     padding: 12px;
     background: linear-gradient(135deg, rgba(var(--accent-primary-rgb), 0.2), rgba(255, 0, 200, 0.2));
     border: 1px solid rgba(var(--accent-primary-rgb), 0.4);
@@ -242,6 +247,25 @@ body {
     gap: 8px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-shadow: 0 0 10px rgba(var(--accent-primary-rgb), 0.5);
+}
+
+.reset-token-btn {
+    width: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--panel-border);
+    color: var(--text-muted);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.reset-token-btn:hover {
+    background: rgba(255, 77, 77, 0.1);
+    border-color: var(--danger);
+    color: var(--danger);
 }
 
 .sync-cloud-btn:hover {

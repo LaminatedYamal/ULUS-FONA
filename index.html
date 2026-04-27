@@ -40,12 +40,14 @@
                     </div>
                     <input type="file" id="gsc-upload" hidden accept=".xml,.csv">
                     <input type="file" id="ads-upload" hidden accept=".xml,.csv">
-                    <button class="sync-cloud-btn" id="sync-btn" onclick="syncToGitHub()">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                        🚀 Sync to Team
-                    </button>
-                    <div style="text-align: center; margin-top: 10px;">
-                        <a href="javascript:void(0)" onclick="clearToken()" style="color: var(--text-muted); font-size: 10px; text-decoration: none; opacity: 0.7;">🔄 Reset Connection</a>
+                    <div class="sync-actions">
+                        <button class="sync-cloud-btn" id="sync-btn" onclick="syncToGitHub()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                            🚀 Sync to Team
+                        </button>
+                        <button class="reset-token-btn" onclick="clearToken()" title="Reset Connection">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1z"/><path d="M20.5 4.5l-2.4 2.4a2 2 0 0 1-2.8 0L7 2 2 7l7.1 7.1a2 2 0 0 1 0 2.8l2.4 2.4"/><path d="M14 7l5 5"/></svg>
+                        </button>
                     </div>
                     <p id="sync-status" class="sync-tip" style="display:none; color: var(--success);"></p>
                     <p class="sync-tip">Sync your changes to the live dashboard</p>
