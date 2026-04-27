@@ -485,13 +485,14 @@ function renderCourseList() {
     list.appendChild(resetContainer);
 }
 
-function resetApp() {
+// Make resetApp global
+window.resetApp = function() {
     if (confirm("This will clear all uploaded keywords and reset the dashboard. Are you sure?")) {
         localStorage.removeItem('antigravity_data_v2');
-        localStorage.removeItem('antigravity_courses'); // Clean up old version too
+        localStorage.removeItem('antigravity_courses'); 
         location.reload();
     }
-}
+};
 
 function loadCourse(id) {
     activeCourseId = id;
