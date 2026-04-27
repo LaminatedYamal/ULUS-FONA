@@ -191,12 +191,14 @@ async function handleFileUpload(e, type) {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
                 // STRICT MATCH ONLY: Prevents "Engenharia Informatica" from stealing from "Engenharia Informatica e Redes"
+                // SMART MATCH: URL First (Strict), then Name (Exact)
                 targetCourse = courses.find(c => {
                     const n1 = normalizeUrl(c.url);
                     const n2 = normalizeUrl(res.url);
+                    // Match by URL first
                     if (n1 && n2 && n1 === n2) return true;
-                    // Fallback to name ONLY if URL match is impossible
-                    if (!n1 && !n2 && c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
+                    // Fallback to EXACT name match if URL fails or is missing
+                    if (c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
                     return false;
                 });
             }
@@ -545,7 +547,10 @@ function renderCourseList() {
             degreeDetails.appendChild(summary);
 
             const ul = document.createElement('ul');
-            grouped[inst][degree].forEach(course => {
+            // Sort courses alphabetically A-Z
+            const sortedCourses = [...grouped[inst][degree]].sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+            
+            sortedCourses.forEach(course => {
                 const li = document.createElement('li');
                 const gscCount = course.gscKeywords.length;
                 const adsCount = course.adsKeywords.length;
