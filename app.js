@@ -256,14 +256,17 @@ function parseSmartXML(xmlText) {
     const potentialCourseNodes = [];
     
     // Strategy: Any element that has a child containing 'http' is likely a course container
+    // We skip the root element to avoid "Total/Summary" blocks that contain everything
     for (let i = 0; i < allElements.length; i++) {
         const el = allElements[i];
+        if (el === xml.documentElement) continue; // SKIP ROOT
+        
         const tagName = el.tagName.toLowerCase();
         
         // Skip common leaf/metric nodes
         if (['texto', 'filtro', 'cliques', 'impressoes', 'dimension', 'query'].includes(tagName)) continue;
         
-        // Does this node contain a URL?
+        // Does this node contain a direct child with a URL?
         let hasUrl = false;
         for (let child of el.children) {
             if (child.textContent.includes('http')) {
@@ -280,8 +283,13 @@ function parseSmartXML(xmlText) {
         }
     }
 
+    // Deduplicate: If one potential node is inside another, keep the deeper one (more specific)
+    const specificNodes = potentialCourseNodes.filter(n => {
+        return !potentialCourseNodes.some(other => other !== n && n.parentElement === other);
+    });
+
     // If we found specific containers (like <Curso>), use them
-    const courseNodes = potentialCourseNodes.length > 0 ? potentialCourseNodes : 
+    const courseNodes = specificNodes.length > 0 ? specificNodes : 
         xml.querySelectorAll('Curso, curso, CURSO, Course, course, COURSE, Item, item, row, Row, entry, Entry');
     
     courseNodes.forEach(node => {
