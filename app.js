@@ -221,10 +221,24 @@ function parseSmartXML(xmlText) {
     
     courseNodes.forEach(node => {
         const nameNode = node.querySelector('Nome, nome, NOME, Course, course, COURSE, Title, title, label, Label');
-        const urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website');
+        // Very aggressive URL search
+        let urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website, Dimension_0, dimension_0, Dimension_1, dimension_1');
         
+        let url = urlNode ? urlNode.textContent.trim().toLowerCase() : '';
+        
+        // Final URL fallback: search all children for something starting with http
+        if (!url) {
+            const allChildren = node.querySelectorAll('*');
+            for (let child of allChildren) {
+                const text = child.textContent.trim();
+                if (text.startsWith('http')) {
+                    url = text.toLowerCase();
+                    break;
+                }
+            }
+        }
+
         const name = nameNode ? nameNode.textContent.trim() : '';
-        const url = urlNode ? urlNode.textContent.trim().toLowerCase() : '';
         const keywords = parseXMLNodes(node);
         
         if ((url || name) && keywords.length > 0) {
@@ -235,7 +249,7 @@ function parseSmartXML(xmlText) {
     if (allResults.length > 0) return allResults;
     
     // Fallback: If no course-wrapped nodes found, try to find a URL in the root and keywords globally
-    const rootUrlNode = xml.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website');
+    const rootUrlNode = xml.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website, Dimension_0, dimension_0, Dimension_1, dimension_1');
     const rootUrl = rootUrlNode ? rootUrlNode.textContent.trim().toLowerCase() : 'current';
     return [{ url: rootUrl, name: 'current', keywords: parseXMLNodes(xml) }];
 }
@@ -243,13 +257,16 @@ function parseSmartXML(xmlText) {
 function parseXMLNodes(parentNode) {
     const results = [];
     // Super-flexible selector for keywords from GSC, Ads, and custom XMLs
-    const nodes = parentNode.querySelectorAll('Texto, texto, TEXTO, term, Term, keyword, Keyword, query, Query, Key, key, Keys, keys');
+    const nodes = parentNode.querySelectorAll('Texto, texto, TEXTO, term, Term, keyword, Keyword, query, Query, Key, key, Keys, keys, Dimension_0, dimension_0, Dimension_1, dimension_1, Dimension_2, dimension_2');
     
     nodes.forEach(node => {
         const term = node.textContent.trim();
         // If the node itself has children (like <Key><Query>...</Query></Key>), we want the deepest text
         if (node.children.length > 0) return; 
         
+        // Skip if it looks like a URL
+        if (term.startsWith('http')) return;
+
         const p = node.parentNode;
         
         // Flexible selectors for metrics
