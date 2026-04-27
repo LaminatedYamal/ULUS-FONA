@@ -294,7 +294,6 @@ function parseCSV(csvString) {
         }
         return results;
     }
-    }
     
     // Fallback: Standard Google Ads single-course export
     let headerRowIndex = 0;
