@@ -425,73 +425,86 @@ function loadData() {
 }
 
 async function handleFileUpload(e, type) {
-    const file = e.target.files[0];
-    if (!file) return;
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
 
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const content = event.target.result;
-        let keywords = [];
+    let totalUpdated = 0;
+    let coursesInFiles = 0;
 
-        if (file.name.endsWith('.xml')) {
-            keywords = parseXML(content);
-        } else if (file.name.endsWith('.csv')) {
-            keywords = parseCSV(content);
-        }
+    for (let file of files) {
+        const text = await file.text();
+        // Check if it's the new multi-course XML format
+        const results = file.name.toLowerCase().endsWith('.xml') ? parseSmartXML(text) : [{ slug: 'current', keywords: parseCSV(text) }];
 
-        if (keywords.length > 0) {
-            // Update the active course data temporarily
-            const course = courses.find(c => c.id === activeCourseId);
+        results.forEach(res => {
+            coursesInFiles++;
+            let targetCourse;
             
-            if (type === 'gsc') {
-                course.gscKeywords = keywords;
-                alert(`Successfully synced ${keywords.length} GSC keywords!`);
+            if (res.slug === 'current') {
+                targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // If it's ads, we map the 'clicks' property to 'impressions'
-                course.adsKeywords = keywords.map(k => ({ 
-                    term: k.term, 
-                    impressions: k.clicks || Math.floor(Math.random() * 1000) 
-                }));
-                alert(`Successfully synced ${keywords.length} Ads keywords!`);
+                // Match by URL slug or normalized name
+                targetCourse = courses.find(c => {
+                    const courseSlug = c.url.split('/').filter(Boolean).pop();
+                    return courseSlug === res.slug || c.name.toLowerCase().replace(/\s+/g, '-') === res.slug;
+                });
             }
-            
-            renderTables(course.gscKeywords, course.adsKeywords);
-            updateStats(course);
-            saveData();
-        } else {
-            alert('Could not find valid keyword data in this file.');
-        }
-    };
-    reader.readAsText(file);
+
+            if (targetCourse) {
+                if (type === 'gsc') {
+                    targetCourse.gscKeywords = res.keywords;
+                } else {
+                    // For Ads, we just need the terms for now as requested
+                    targetCourse.adsKeywords = res.keywords.map(k => ({ term: k.term }));
+                }
+                totalUpdated++;
+            }
+        });
+    }
+
+    if (totalUpdated > 0) {
+        alert(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses from files.\nSuccessfully updated ${totalUpdated} courses in the dashboard.`);
+        loadCourse(activeCourseId); // Refresh view
+        saveData();
+    } else {
+        alert('No matching courses found. Ensure the course names or URLs in the file match the dashboard.');
+    }
 }
 
-function parseXML(xmlString) {
+function parseSmartXML(xmlText) {
     const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlString, "text/xml");
-    const results = [];
+    const xml = parser.parseFromString(xmlText, "text/xml");
+    const courseNodes = xml.querySelectorAll('Curso');
     
-    // Support common GSC or tool XML exports
-    const tags = ['keyword', 'query', 'term', 'Keyword', 'Query'];
-    let nodes = [];
-    
-    for (const tag of tags) {
-        const found = xmlDoc.getElementsByTagName(tag);
-        if (found.length > 0) {
-            nodes = found;
-            break;
-        }
+    if (courseNodes.length === 0) {
+        // Fallback to legacy single-course parser if no <Curso> tags found
+        return [{ slug: 'current', keywords: parseXMLNodes(xml) }];
     }
 
-    for (let i = 0; i < nodes.length; i++) {
-        const term = nodes[i].textContent.trim();
-        // Look for sibling metric nodes
-        const parent = nodes[i].parentNode;
-        // Search for clicks OR impressions
-        const metricNode = parent.querySelector('clicks, Clicks, impressions, Impressions, volume, Volume');
-        const metricValue = parseInt(metricNode?.textContent || Math.floor(Math.random() * 500));
+    const allResults = [];
+    courseNodes.forEach(node => {
+        // Extract slug from name attribute or Filtro URL
+        const slug = node.getAttribute('name') || node.querySelector('Filtro')?.textContent.split('/').filter(Boolean).pop() || '';
+        const keywords = parseXMLNodes(node);
+        if (slug) allResults.push({ slug, keywords });
+    });
+
+    return allResults;
+}
+
+function parseXMLNodes(parentNode) {
+    const results = [];
+    // Support both 'Texto' from your screenshot and standard GSC 'term'
+    const nodes = parentNode.querySelectorAll('Texto, Texto, term, Term');
+    
+    nodes.forEach(node => {
+        const term = node.textContent.trim();
+        const p = node.parentNode;
+        const clicks = parseInt(p.querySelector('Cliques, clicks, Clicks')?.textContent || 0);
+        const impressions = parseInt(p.querySelector('Impressoes, impressions, Impressions, Impressoes')?.textContent || 0);
         
-        if (term) results.push({ term, clicks: metricValue });
-    }
+        if (term) results.push({ term, clicks, impressions });
+    });
     
     return results;
 }
@@ -499,8 +512,6 @@ function parseXML(xmlString) {
 function parseCSV(csvString) {
     const lines = csvString.split('\n');
     const results = [];
-    
-    // Simple CSV parser
     for (let i = 1; i < lines.length; i++) {
         const cols = lines[i].split(',');
         if (cols.length >= 2) {
