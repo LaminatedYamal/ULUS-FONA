@@ -138,19 +138,24 @@ function b64EncodeUnicode(str) {
 }
 
 function saveData() {
-    localStorage.setItem('antigravity_courses', JSON.stringify(courses));
+    // Save data using URL as key for stability
+    const exportData = courses.map(c => ({
+        url: c.url,
+        gscKeywords: c.gscKeywords,
+        adsKeywords: c.adsKeywords
+    }));
+    localStorage.setItem('antigravity_data_v2', JSON.stringify(exportData));
 }
 
 function loadData() {
-    const saved = localStorage.getItem('antigravity_courses');
+    const saved = localStorage.getItem('antigravity_data_v2');
     if (saved) {
         const parsed = JSON.parse(saved);
-        // Merge saved data back into the courses array
-        parsed.forEach(savedCourse => {
-            const index = courses.findIndex(c => c.id === savedCourse.id);
-            if (index !== -1) {
-                courses[index].gscKeywords = savedCourse.gscKeywords;
-                courses[index].adsKeywords = savedCourse.adsKeywords;
+        parsed.forEach(savedItem => {
+            const target = courses.find(c => normalizeUrl(c.url) === normalizeUrl(savedItem.url));
+            if (target) {
+                target.gscKeywords = savedItem.gscKeywords || [];
+                target.adsKeywords = savedItem.adsKeywords || [];
             }
         });
         loadCourse(activeCourseId);
@@ -209,29 +214,30 @@ async function handleFileUpload(e, type) {
 function parseSmartXML(xmlText) {
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlText, "text/xml");
-    
-    // Support multiple grouping nodes
-    const courseNodes = xml.querySelectorAll('Curso, curso, CURSO, Filter, filter, FILTER, Row, row, ROW, Dataset, dataset, DATASET');
-    
-    if (courseNodes.length === 0) {
-        return [{ url: 'current', name: 'current', keywords: parseXMLNodes(xml) }];
-    }
-
     const allResults = [];
+    
+    // Look for rows/items/courses
+    const courseNodes = xml.querySelectorAll('Curso, curso, CURSO, Course, course, COURSE, Item, item, row, Row, entry, Entry');
+    
     courseNodes.forEach(node => {
-        const urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK');
+        const nameNode = node.querySelector('Nome, nome, NOME, Course, course, COURSE, Title, title, label, Label');
+        const urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website');
+        
+        const name = nameNode ? nameNode.textContent.trim() : '';
         const url = urlNode ? urlNode.textContent.trim().toLowerCase() : '';
-        
-        const nameNode = node.querySelector('Nome, nome, NOME, Curso, curso, CURSO, Name, name, NAME');
-        const name = nameNode ? nameNode.textContent.trim().toLowerCase() : '';
-        
         const keywords = parseXMLNodes(node);
+        
         if ((url || name) && keywords.length > 0) {
             allResults.push({ url, name, keywords });
         }
     });
 
-    return allResults.length > 0 ? allResults : [{ url: 'current', name: 'current', keywords: parseXMLNodes(xml) }];
+    if (allResults.length > 0) return allResults;
+    
+    // Fallback: If no course-wrapped nodes found, try to find a URL in the root and keywords globally
+    const rootUrlNode = xml.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website');
+    const rootUrl = rootUrlNode ? rootUrlNode.textContent.trim().toLowerCase() : 'current';
+    return [{ url: rootUrl, name: 'current', keywords: parseXMLNodes(xml) }];
 }
 
 function parseXMLNodes(parentNode) {
