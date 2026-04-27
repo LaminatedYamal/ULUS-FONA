@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Keyword Hub | Antigravity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-container">
+                    <img id="brand-logo" src="" alt="Brand Logo">
+                </div>
+                <span class="logo-text" id="brand-name">Grupo Lusófona</span>
+            </div>
+            <nav class="course-nav">
+                <h3>COURSES</h3>
+                <nav class="course-nav" id="course-list">
+                <!-- Grouped courses will be injected here -->
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="data-sync-zone">
+                    <h3>Data Sync</h3>
+                    <button class="upload-btn" onclick="document.getElementById('file-upload').click()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                        Upload GSC Data
+                    </button>
+                    <input type="file" id="file-upload" hidden accept=".xml,.csv">
+                    <p class="sync-tip">Upload XML/CSV to sync colleague data</p>
+                </div>
+                <div class="status-indicator">
+                    <span class="pulse"></span> System Active
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="header-left">
+                    <h1 id="active-course-title">Select a Course</h1>
+                    <p id="active-course-desc">Global SEO & Ads Keyword Analysis</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search keywords..." id="keyword-search">
+                    </div>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Keyword Parity</span>
+                    <span class="stat-value" id="parity-score">--%</span>
+                    <div class="stat-chart"><div class="chart-bar" id="parity-bar"></div></div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">GSC Keywords</span>
+                    <span class="stat-value" id="gsc-count">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Ads Keywords</span>
+                    <span class="stat-value" id="ads-count">0</span>
+                </div>
+                <div class="stat-card accent">
+                    <span class="stat-label">Organic Gaps</span>
+                    <span class="stat-value" id="gap-count">0</span>
+                </div>
+            </section>
+
+            <section class="dashboard-grid">
+                <div class="data-panel">
+                    <div class="panel-header">
+                        <div class="header-title-group">
+                            <img src="https://dl.svgcdn.com/png/logos/google-search-console-800.png" alt="GSC" class="panel-logo">
+                            <h2>Search Console Keywords</h2>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="pulse"></span> Live Data
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Keyword</th>
+                                    <th>Clicks (30d)</th>
+                                    <th>Ads Synergy</th>
+                                </tr>
+                            </thead>
+                            <tbody id="gsc-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Google Ads Panel -->
+                <div class="data-panel">
+                    <div class="panel-header">
+                        <div class="header-title-group">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/1024px-Google_Ads_logo.svg.png" alt="Ads" class="panel-logo">
+                            <h2>Ads Performance</h2>
+                        </div>
+                        <div class="status-indicator">
+                            <span class="pulse"></span> Active Campaigns
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Keyword</th>
+                                    <th>Impressions</th>
+                                    <th>Organic Match</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ads-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
