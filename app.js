@@ -223,21 +223,32 @@ async function handleFileUpload(e, type) {
     }
 }
 
+function stripAccents(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function mergeKeywords(existing, incoming, metricKey) {
     const map = new Map();
-    // Add existing keywords to map
+    // Add existing keywords to map (using stripped version as key)
     existing.forEach(k => {
-        const key = k.term.toLowerCase().trim();
+        const key = stripAccents(k.term.toLowerCase().trim());
         map.set(key, k);
     });
     // Merge incoming
     incoming.forEach(k => {
-        const key = k.term.toLowerCase().trim();
+        const termClean = k.term.toLowerCase().trim();
+        const key = stripAccents(termClean);
+        
         if (map.has(key)) {
-            // Update metric if higher
             const current = map.get(key);
+            // Update metric if higher
             if ((k[metricKey] || 0) > (current[metricKey] || 0)) {
                 current[metricKey] = k[metricKey];
+            }
+            // If the new one has more accents/special chars than the old one, keep the new term string
+            // (e.g. replace 'informatica' with 'informática')
+            if (termClean.length >= current.term.length && termClean !== stripAccents(termClean)) {
+                current.term = k.term;
             }
         } else {
             map.set(key, k);
