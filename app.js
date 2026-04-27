@@ -481,17 +481,21 @@ async function handleFileUpload(e, type) {
 function parseSmartXML(xmlText) {
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlText, "text/xml");
-    const courseNodes = xml.querySelectorAll('Curso');
+    
+    // Support both <Curso> and <curso>
+    let courseNodes = xml.querySelectorAll('Curso');
+    if (courseNodes.length === 0) courseNodes = xml.querySelectorAll('curso');
     
     if (courseNodes.length === 0) {
-        // Fallback to legacy single-course parser if no <Curso> tags found
         return [{ slug: 'current', keywords: parseXMLNodes(xml) }];
     }
 
     const allResults = [];
     courseNodes.forEach(node => {
-        // Extract slug from name attribute or Filtro URL
-        const slug = node.getAttribute('name') || node.querySelector('Filtro')?.textContent.split('/').filter(Boolean).pop() || '';
+        const slugAttr = node.getAttribute('name') || node.getAttribute('Name');
+        const filtroUrl = node.querySelector('Filtro, filtro, FILTRO')?.textContent || '';
+        const slug = (slugAttr || filtroUrl.split('/').filter(Boolean).pop() || '').trim().toLowerCase();
+        
         const keywords = parseXMLNodes(node);
         if (slug) allResults.push({ slug, keywords });
     });
@@ -501,14 +505,16 @@ function parseSmartXML(xmlText) {
 
 function parseXMLNodes(parentNode) {
     const results = [];
-    // Support both 'Texto' from your screenshot and standard GSC 'term'
-    const nodes = parentNode.querySelectorAll('Texto, Texto, term, Term');
+    // Super-flexible selector for keywords
+    const nodes = parentNode.querySelectorAll('Texto, texto, TEXTO, term, Term, keyword, Keyword');
     
     nodes.forEach(node => {
         const term = node.textContent.trim();
         const p = node.parentNode;
-        const clicks = parseInt(p.querySelector('Cliques, clicks, Clicks')?.textContent || 0);
-        const impressions = parseInt(p.querySelector('Impressoes, impressions, Impressions, Impressoes')?.textContent || 0);
+        
+        // Flexible selectors for metrics
+        const clicks = parseInt(p.querySelector('Cliques, cliques, CLIQUES, clicks, Clicks')?.textContent || 0);
+        const impressions = parseInt(p.querySelector('Impressoes, impressoes, IMPRESSOES, impressions, Impressions')?.textContent || 0);
         
         if (term) results.push({ term, clicks, impressions });
     });
