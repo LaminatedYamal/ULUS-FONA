@@ -198,6 +198,7 @@ async function handleFileUpload(e, type) {
 
     if (totalUpdated > 0) {
         alert(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses from files.\nSuccessfully updated ${totalUpdated} courses in the dashboard.`);
+        renderCourseList(); // Refresh sidebar badges
         loadCourse(activeCourseId); // Refresh view
         saveData();
     } else {
