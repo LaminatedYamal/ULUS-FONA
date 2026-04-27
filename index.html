@@ -40,7 +40,12 @@
                     </div>
                     <input type="file" id="gsc-upload" hidden accept=".xml,.csv">
                     <input type="file" id="ads-upload" hidden accept=".xml,.csv">
-                    <p class="sync-tip">Upload XML/CSV to sync your keywords</p>
+                    <button class="sync-cloud-btn" id="sync-btn" onclick="syncToGitHub()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        🚀 Sync to Team
+                    </button>
+                    <p id="sync-status" class="sync-tip" style="display:none; color: var(--success);"></p>
+                    <p class="sync-tip">Sync your changes to the live dashboard</p>
                 </div>
                 <div class="status-indicator">
                     <span class="pulse"></span> System Active

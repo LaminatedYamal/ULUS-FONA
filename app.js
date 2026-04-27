@@ -316,7 +316,92 @@ function init() {
     document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
     
+    // Ensure course list is rendered even if no local data
+    renderCourseList();
     loadData();
+}
+
+async function syncToGitHub() {
+    let token = localStorage.getItem('github_token');
+    if (!token) {
+        token = prompt("Please enter your GitHub Personal Access Token (PAT) to sync with the team:");
+        if (!token) return;
+        localStorage.setItem('github_token', token);
+    }
+
+    const btn = document.getElementById('sync-btn');
+    const status = document.getElementById('sync-status');
+    
+    btn.disabled = true;
+    btn.innerHTML = "⏳ Syncing...";
+    status.style.display = "block";
+    status.textContent = "Connecting to GitHub...";
+
+    const repo = "LaminatedYamal/ULUS-FONA";
+    const path = "courses.json";
+    
+    try {
+        // 1. Get the current file SHA
+        const getRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        
+        if (!getRes.ok) throw new Error("Could not find courses.json on GitHub.");
+        const fileData = await getRes.json();
+        const sha = fileData.sha;
+
+        // 2. Prepare the new content
+        // We only sync the raw data to keep the file clean
+        const exportData = courses.map(c => ({
+            name: c.name,
+            degree: c.degree,
+            institution: c.institution,
+            gscKeywords: c.gscKeywords,
+            adsKeywords: c.adsKeywords
+        }));
+
+        const content = b64EncodeUnicode(JSON.stringify(exportData, null, 2));
+
+        // 3. Push to GitHub
+        const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: "Update keywords via Antigravity Dashboard",
+                content: content,
+                sha: sha,
+                branch: "main"
+            })
+        });
+
+        if (putRes.ok) {
+            status.textContent = "✅ Sync Successful! Dashboard will update for everyone in ~60s.";
+            setTimeout(() => { status.style.display = "none"; }, 5000);
+        } else {
+            const err = await putRes.json();
+            throw new Error(err.message || "Failed to push to GitHub.");
+        }
+
+    } catch (error) {
+        alert("Sync Failed: " + error.message);
+        status.textContent = "❌ Sync Failed";
+        if (error.message.includes("401")) {
+            localStorage.removeItem('github_token');
+            alert("Token invalid or expired. Please try again.");
+        }
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = "🚀 Sync to Team";
+    }
+}
+
+function b64EncodeUnicode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+        return String.fromCharCode('0x' + p1);
+    }));
 }
 
 function saveData() {

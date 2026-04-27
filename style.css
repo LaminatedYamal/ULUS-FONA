@@ -194,7 +194,7 @@ body {
 .sync-buttons {
     display: flex;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .upload-btn {
@@ -223,6 +223,38 @@ body {
     background: var(--accent-primary);
     color: #000000;
     box-shadow: 0 0 15px rgba(var(--accent-primary-rgb), 0.3);
+}
+
+.sync-cloud-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(var(--accent-primary-rgb), 0.2), rgba(255, 0, 200, 0.2));
+    border: 1px solid rgba(var(--accent-primary-rgb), 0.4);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 0 10px rgba(var(--accent-primary-rgb), 0.5);
+}
+
+.sync-cloud-btn:hover {
+    background: linear-gradient(135deg, var(--accent-primary), #ff00c8);
+    color: #000000;
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(var(--accent-primary-rgb), 0.4);
+}
+
+.sync-cloud-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(1);
 }
 
 .sync-tip {
