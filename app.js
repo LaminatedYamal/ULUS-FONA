@@ -185,15 +185,13 @@ async function handleFileUpload(e, type) {
             if (res.url === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // Multi-stage match: Normalization + Fuzzy Containment + Name
+                // STRICT MATCH ONLY: Prevents "Engenharia Informatica" from stealing from "Engenharia Informatica e Redes"
                 targetCourse = courses.find(c => {
                     const n1 = normalizeUrl(c.url);
                     const n2 = normalizeUrl(res.url);
-                    if (n1 && n2) {
-                        if (n1 === n2) return true;
-                        if (n1.includes(n2) || n2.includes(n1)) return true;
-                    }
-                    if (c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
+                    if (n1 && n2 && n1 === n2) return true;
+                    // Fallback to name ONLY if URL match is impossible
+                    if (!n1 && !n2 && c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
                     return false;
                 });
             }
