@@ -473,8 +473,8 @@ async function handleFileUpload(e, type) {
             if (res.url === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // Strict match by exact URL instead of guessing from name slugs
-                targetCourse = courses.find(c => c.url && c.url.trim().toLowerCase() === res.url.trim().toLowerCase());
+                // Strict match by exact URL with normalization (removes http, www, trailing slashes)
+                targetCourse = courses.find(c => c.url && normalizeUrl(c.url) === normalizeUrl(res.url));
             }
 
             if (targetCourse) {
@@ -554,15 +554,15 @@ function parseCSV(csvString) {
     const headerLine = lines[0].toLowerCase();
     const isCustomFormat = headerLine.includes('link') && headerLine.includes('keywords');
     
-    if (isCustomFormat) {
-        const headers = splitCSVLine(lines[0]).map(h => h.toLowerCase().trim());
-        const linkCol = headers.findIndex(h => h.includes('link'));
-        const kwCol = headers.findIndex(h => h.includes('keywords'));
-        
-        if (linkCol >= 0 && kwCol >= 0) {
-            for (let i = 1; i < lines.length; i++) {
-                const cols = splitCSVLine(lines[i]);
-                if (cols.length <= Math.max(linkCol, kwCol)) continue;
+    const delimiter = detectDelimiter(lines[0]);
+    const headers = splitCSVLine(lines[0], delimiter).map(h => h.toLowerCase().trim());
+    const linkCol = headers.findIndex(h => h.includes('link'));
+    const kwCol = headers.findIndex(h => h.includes('keywords'));
+    
+    if (linkCol >= 0 && kwCol >= 0) {
+        for (let i = 1; i < lines.length; i++) {
+            const cols = splitCSVLine(lines[i], delimiter);
+            if (cols.length <= Math.max(linkCol, kwCol)) continue;
                 
                 const url = cols[linkCol].trim().toLowerCase();
                 const rawKeywords = cols[kwCol].trim();
@@ -593,7 +593,8 @@ function parseCSV(csvString) {
         }
     }
     
-    const headers = splitCSVLine(lines[headerRowIndex]).map(h => h.toLowerCase().trim());
+    const delimiter = detectDelimiter(lines[headerRowIndex]);
+    const headers = splitCSVLine(lines[headerRowIndex], delimiter).map(h => h.toLowerCase().trim());
     const keywordColIndex = headers.findIndex(h => 
         h.includes('keyword') || h.includes('palavra-chave') || 
         h.includes('search term') || h.includes('consulta') || 
@@ -604,7 +605,7 @@ function parseCSV(csvString) {
     const keywords = [];
     
     for (let i = headerRowIndex + 1; i < lines.length; i++) {
-        const cols = splitCSVLine(lines[i]);
+        const cols = splitCSVLine(lines[i], delimiter);
         if (cols.length <= colIndex) continue;
         
         const term = cols[colIndex].trim();
@@ -616,8 +617,22 @@ function parseCSV(csvString) {
     return [{ url: 'current', keywords }];
 }
 
-// Properly splits a CSV line respecting quoted fields
-function splitCSVLine(line) {
+function normalizeUrl(url) {
+    if (!url) return '';
+    return url.toLowerCase()
+              .replace(/^https?:\/\//, '') // remove http/https
+              .replace(/^www\./, '')       // remove www
+              .replace(/\/$/, '')          // remove trailing slash
+              .trim();
+}
+
+function detectDelimiter(line) {
+    if (line.includes('\t')) return '\t';
+    if (line.includes(';')) return ';';
+    return ',';
+}
+
+function splitCSVLine(line, delimiter) {
     const cols = [];
     let current = '';
     let inQuotes = false;
@@ -626,7 +641,7 @@ function splitCSVLine(line) {
         const ch = line[i];
         if (ch === '"') {
             inQuotes = !inQuotes;
-        } else if ((ch === ',' || ch === ';' || ch === '\t') && !inQuotes) {
+        } else if (ch === delimiter && !inQuotes) {
             cols.push(current.replace(/^"|"$/g, '').trim());
             current = '';
         } else {
