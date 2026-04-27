@@ -196,16 +196,16 @@ async function handleFileUpload(e, type) {
             }
 
             if (targetCourse) {
-                console.log(`[Matcher] Match found: ${item.url} -> ${targetCourse.name}`);
+                console.log(`[Matcher] Match found: ${res.url} -> ${targetCourse.name}`);
                 
                 if (type === 'gsc') {
-                    targetCourse.gscKeywords = mergeKeywords(targetCourse.gscKeywords || [], item.keywords, 'clicks');
+                    targetCourse.gscKeywords = mergeKeywords(targetCourse.gscKeywords || [], res.keywords, 'clicks');
                 } else {
-                    targetCourse.adsKeywords = mergeKeywords(targetCourse.adsKeywords || [], item.keywords, 'impressions');
+                    targetCourse.adsKeywords = mergeKeywords(targetCourse.adsKeywords || [], res.keywords, 'impressions');
                 }
                 totalUpdated++;
             } else {
-                console.warn(`[Matcher] No match found for URL: ${item.url}`);
+                console.warn(`[Matcher] No match found for URL: ${res.url}`);
             }
         });
     }
