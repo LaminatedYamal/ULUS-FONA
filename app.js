@@ -282,27 +282,28 @@ function parseSmartXML(xmlText) {
     const allElements = xml.getElementsByTagName("*");
     const potentialCourseNodes = [];
     
-    // Strategy: Any element that has a child containing 'http' is likely a course container
+    // Strategy: Any element that has a descendant containing 'http' is likely a course container
     // We skip the root element to avoid "Total/Summary" blocks that contain everything
     for (let i = 0; i < allElements.length; i++) {
         const el = allElements[i];
-        if (el === xml.documentElement) continue; // SKIP ROOT
+        if (el === xml.documentElement) continue; 
         
         const tagName = el.tagName.toLowerCase();
         
         // Skip common leaf/metric nodes
         if (['texto', 'filtro', 'cliques', 'impressoes', 'dimension', 'query'].includes(tagName)) continue;
         
-        // Does this node contain a direct child with a URL?
+        // Does this node contain a URL anywhere inside?
         let hasUrl = false;
-        for (let child of el.children) {
-            if (child.textContent.includes('http')) {
+        const descendants = el.querySelectorAll('*');
+        for (let desc of descendants) {
+            if (desc.children.length === 0 && desc.textContent.includes('http')) {
                 hasUrl = true;
                 break;
             }
         }
         
-        // Does it contain keywords/texto?
+        // Does it contain keywords?
         let hasKeywords = el.querySelectorAll('Texto, texto, Query, query, TEXTO, QUERY').length > 0;
 
         if (hasUrl && hasKeywords) {
@@ -310,12 +311,14 @@ function parseSmartXML(xmlText) {
         }
     }
 
-    // Deduplicate: If one potential node is inside another, keep the deeper one (more specific)
+    // Deduplicate: If one potential node is inside another, keep the CHILD (the more specific course block)
     const specificNodes = potentialCourseNodes.filter(n => {
-        return !potentialCourseNodes.some(other => other !== n && n.parentElement === other);
+        // Only keep n if there is no other node inside n that is also a potential course node
+        const hasChildCourse = potentialCourseNodes.some(other => other !== n && n.contains(other));
+        return !hasChildCourse;
     });
 
-    // If we found specific containers (like <Curso>), use them
+    // If we found specific containers, use them
     const courseNodes = specificNodes.length > 0 ? specificNodes : 
         xml.querySelectorAll('Curso, curso, CURSO, Course, course, COURSE, Item, item, row, Row, entry, Entry');
     
