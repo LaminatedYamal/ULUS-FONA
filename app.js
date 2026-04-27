@@ -315,6 +315,28 @@ function init() {
 
     document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+    
+    loadData();
+}
+
+function saveData() {
+    localStorage.setItem('antigravity_courses', JSON.stringify(courses));
+}
+
+function loadData() {
+    const saved = localStorage.getItem('antigravity_courses');
+    if (saved) {
+        const parsed = JSON.parse(saved);
+        // Merge saved data back into the courses array
+        parsed.forEach(savedCourse => {
+            const index = courses.findIndex(c => c.id === savedCourse.id);
+            if (index !== -1) {
+                courses[index].gscKeywords = savedCourse.gscKeywords;
+                courses[index].adsKeywords = savedCourse.adsKeywords;
+            }
+        });
+        loadCourse(activeCourseId);
+    }
 }
 
 async function handleFileUpload(e, type) {
@@ -350,6 +372,7 @@ async function handleFileUpload(e, type) {
             
             renderTables(course.gscKeywords, course.adsKeywords);
             updateStats(course);
+            saveData();
         } else {
             alert('Could not find valid keyword data in this file.');
         }
