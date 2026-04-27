@@ -386,11 +386,13 @@ async function syncToGitHub() {
         }
 
     } catch (error) {
+        console.error("Sync Error:", error);
         alert("Sync Failed: " + error.message);
         status.textContent = "❌ Sync Failed";
-        if (error.message.includes("401")) {
+        
+        // Help the user reset if they are stuck with a bad token
+        if (confirm("Sync failed. Would you like to clear your saved GitHub Token and try again?")) {
             localStorage.removeItem('github_token');
-            alert("Token invalid or expired. Please try again.");
         }
     } finally {
         btn.disabled = false;
