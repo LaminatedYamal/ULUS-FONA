@@ -208,31 +208,40 @@ async function handleFileUpload(e, type) {
             if (res.url === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // STRICT MATCH ONLY: Prevents "Engenharia Informatica" from stealing from "Engenharia Informatica e Redes"
-                // SMART MATCH: URL First (Strict), then Name (Exact)
-                targetCourse = courses.find(c => {
-                    const n1 = normalizeUrl(c.url);
-                    const n2 = normalizeUrl(res.url);
-                    // Match by URL first
-                    if (n1 && n2 && n1 === n2) return true;
-                    // Fallback to EXACT name match if URL fails or is missing
-                    if (c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
-                    return false;
-                });
-            }
-
-            if (targetCourse) {
-                console.log(`[Matcher] Match found: ${res.url} -> ${targetCourse.name}`);
+                // 3-STAGE SMART MATCH
+                // Stage 1: Exact URL Match
+                targetCourse = courses.find(c => normalizeUrl(c.url) === normalizeUrl(res.url));
                 
-                if (type === 'gsc') {
-                    targetCourse.gscKeywords = mergeKeywords(targetCourse.gscKeywords || [], res.keywords, 'clicks');
-                } else {
-                    targetCourse.adsKeywords = mergeKeywords(targetCourse.adsKeywords || [], res.keywords, 'impressions');
+                // Stage 2: Exact Name Match
+                if (!targetCourse && res.name) {
+                    targetCourse = courses.find(c => c.name.trim().toLowerCase() === res.name.trim().toLowerCase());
                 }
-                totalUpdated++;
-            } else {
-                console.warn(`[Matcher] No match found for URL: ${res.url}`);
-            }
+
+                // Stage 3: Safe Fuzzy URL Match (only if one is a direct subpath of the other)
+                if (!targetCourse) {
+                    targetCourse = courses.find(c => {
+                        const n1 = normalizeUrl(c.url);
+                        const n2 = normalizeUrl(res.url);
+                        if (n1 && n2) {
+                            // Only match if one is a perfect sub-path or has a minor suffix difference
+                            return n1.startsWith(n2) || n2.startsWith(n1);
+                        }
+                        return false;
+                    });
+                }
+
+                if (targetCourse) {
+                    console.log(`[Matcher] Match found: ${res.url} -> ${targetCourse.name}`);
+                    
+                    if (type === 'gsc') {
+                        targetCourse.gscKeywords = mergeKeywords(targetCourse.gscKeywords || [], res.keywords, 'clicks');
+                    } else {
+                        targetCourse.adsKeywords = mergeKeywords(targetCourse.adsKeywords || [], res.keywords, 'impressions');
+                    }
+                    totalUpdated++;
+                } else {
+                    console.warn(`[Matcher] No match found for URL: ${res.url}`);
+                }           }
         });
     }
 
