@@ -708,7 +708,7 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function renderTables(gsc, ads) {
+function renderTables(gsc = [], ads = []) {
     const gscBody = document.getElementById('gsc-body');
     const adsBody = document.getElementById('ads-body');
     
@@ -718,26 +718,34 @@ function renderTables(gsc, ads) {
     const gscTerms = gsc.map(k => k.term.toLowerCase());
     const adsTerms = ads.map(k => k.term.toLowerCase());
     
-    gsc.forEach(k => {
-        const tr = document.createElement('tr');
-        const isMatch = adsTerms.includes(k.term.toLowerCase());
-        tr.innerHTML = `
-            <td>${k.term}</td>
-            <td>${k.clicks.toLocaleString()}</td>
-            <td>${isMatch ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>
-        `;
-        gscBody.appendChild(tr);
-    });
+    if (gsc.length === 0) {
+        gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data to see keywords</td></tr>`;
+    } else {
+        gsc.forEach(k => {
+            const tr = document.createElement('tr');
+            const isMatch = adsTerms.includes(k.term.toLowerCase());
+            tr.innerHTML = `
+                <td>${k.term}</td>
+                <td>${k.clicks.toLocaleString()}</td>
+                <td>${isMatch ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>
+            `;
+            gscBody.appendChild(tr);
+        });
+    }
     
-    ads.forEach(k => {
-        const tr = document.createElement('tr');
-        const isMatch = gscTerms.includes(k.term.toLowerCase());
-        tr.innerHTML = `
-            <td>${k.term}</td>
-            <td>${isMatch ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
-        `;
-        adsBody.appendChild(tr);
-    });
+    if (ads.length === 0) {
+        adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Ads data to see keywords</td></tr>`;
+    } else {
+        ads.forEach(k => {
+            const tr = document.createElement('tr');
+            const isMatch = gscTerms.includes(k.term.toLowerCase());
+            tr.innerHTML = `
+                <td>${k.term}</td>
+                <td>${isMatch ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
+            `;
+            adsBody.appendChild(tr);
+        });
+    }
 }
 
 function updateStats(course) {
