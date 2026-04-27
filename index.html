@@ -28,12 +28,19 @@
             <div class="sidebar-footer">
                 <div class="data-sync-zone">
                     <h3>Data Sync</h3>
-                    <button class="upload-btn" onclick="document.getElementById('file-upload').click()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-                        Upload GSC Data
-                    </button>
-                    <input type="file" id="file-upload" hidden accept=".xml,.csv">
-                    <p class="sync-tip">Upload XML/CSV to sync colleague data</p>
+                    <div class="sync-buttons">
+                        <button class="upload-btn gsc" onclick="document.getElementById('gsc-upload').click()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                            GSC Data
+                        </button>
+                        <button class="upload-btn ads" onclick="document.getElementById('ads-upload').click()">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                            Ads Data
+                        </button>
+                    </div>
+                    <input type="file" id="gsc-upload" hidden accept=".xml,.csv">
+                    <input type="file" id="ads-upload" hidden accept=".xml,.csv">
+                    <p class="sync-tip">Upload XML/CSV to sync your keywords</p>
                 </div>
                 <div class="status-indicator">
                     <span class="pulse"></span> System Active
@@ -79,7 +86,7 @@
                 <div class="data-panel">
                     <div class="panel-header">
                         <div class="header-title-group">
-                            <img src="https://dl.svgcdn.com/png/logos/google-search-console-800.png" alt="GSC" class="panel-logo">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/search_console_64dp.png" alt="GSC" class="panel-logo">
                             <h2>Search Console Keywords</h2>
                         </div>
                         <div class="status-indicator">
@@ -104,7 +111,7 @@
                 <div class="data-panel">
                     <div class="panel-header">
                         <div class="header-title-group">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Ads_logo.svg/1024px-Google_Ads_logo.svg.png" alt="Ads" class="panel-logo">
+                            <img src="https://www.gstatic.com/images/branding/product/2x/google_ads_64dp.png" alt="Ads" class="panel-logo">
                             <h2>Ads Performance</h2>
                         </div>
                         <div class="status-indicator">

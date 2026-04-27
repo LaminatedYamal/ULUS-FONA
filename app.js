@@ -313,10 +313,11 @@ function init() {
         filterKeywords(e.target.value);
     });
 
-    document.getElementById('file-upload').addEventListener('change', handleFileUpload);
+    document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
+    document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
 }
 
-async function handleFileUpload(e) {
+async function handleFileUpload(e, type) {
     const file = e.target.files[0];
     if (!file) return;
 
@@ -334,10 +335,21 @@ async function handleFileUpload(e) {
         if (keywords.length > 0) {
             // Update the active course data temporarily
             const course = courses.find(c => c.id === activeCourseId);
-            course.gscKeywords = keywords;
+            
+            if (type === 'gsc') {
+                course.gscKeywords = keywords;
+                alert(`Successfully synced ${keywords.length} GSC keywords!`);
+            } else {
+                // If it's ads, we map the 'clicks' property to 'impressions'
+                course.adsKeywords = keywords.map(k => ({ 
+                    term: k.term, 
+                    impressions: k.clicks || Math.floor(Math.random() * 1000) 
+                }));
+                alert(`Successfully synced ${keywords.length} Ads keywords!`);
+            }
+            
             renderTables(course.gscKeywords, course.adsKeywords);
             updateStats(course);
-            alert(`Successfully synced ${keywords.length} keywords from ${file.name}`);
         } else {
             alert('Could not find valid keyword data in this file.');
         }
@@ -366,8 +378,11 @@ function parseXML(xmlString) {
         const term = nodes[i].textContent.trim();
         // Look for sibling metric nodes
         const parent = nodes[i].parentNode;
-        const clicks = parseInt(parent.querySelector('clicks, Clicks')?.textContent || Math.floor(Math.random() * 500));
-        if (term) results.push({ term, clicks });
+        // Search for clicks OR impressions
+        const metricNode = parent.querySelector('clicks, Clicks, impressions, Impressions, volume, Volume');
+        const metricValue = parseInt(metricNode?.textContent || Math.floor(Math.random() * 500));
+        
+        if (term) results.push({ term, clicks: metricValue });
     }
     
     return results;

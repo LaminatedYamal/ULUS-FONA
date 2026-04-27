@@ -191,27 +191,38 @@ body {
     margin-bottom: 12px;
 }
 
+.sync-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
 .upload-btn {
-    width: 100%;
-    padding: 12px;
+    flex: 1;
+    padding: 10px 6px;
     background: rgba(var(--accent-primary-rgb), 0.1);
     border: 1px solid rgba(var(--accent-primary-rgb), 0.3);
     color: var(--accent-primary);
-    border-radius: 10px;
-    font-size: 13px;
+    border-radius: 8px;
+    font-size: 11px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     transition: all 0.2s;
+}
+
+.upload-btn.ads {
+    background: rgba(var(--accent-primary-rgb), 0.05);
+    border-color: rgba(var(--accent-primary-rgb), 0.2);
 }
 
 .upload-btn:hover {
     background: var(--accent-primary);
     color: #000000;
-    box-shadow: 0 0 20px rgba(var(--accent-primary-rgb), 0.3);
+    box-shadow: 0 0 15px rgba(var(--accent-primary-rgb), 0.3);
 }
 
 .sync-tip {
