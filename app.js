@@ -216,17 +216,48 @@ function parseSmartXML(xmlText) {
     const xml = parser.parseFromString(xmlText, "text/xml");
     const allResults = [];
     
-    // Look for rows/items/courses
-    const courseNodes = xml.querySelectorAll('Curso, curso, CURSO, Course, course, COURSE, Item, item, row, Row, entry, Entry');
+    // Get all elements in the document
+    const allElements = xml.getElementsByTagName("*");
+    const potentialCourseNodes = [];
+    
+    // Strategy: Any element that has a child containing 'http' is likely a course container
+    for (let i = 0; i < allElements.length; i++) {
+        const el = allElements[i];
+        const tagName = el.tagName.toLowerCase();
+        
+        // Skip common leaf/metric nodes
+        if (['texto', 'filtro', 'cliques', 'impressoes', 'dimension', 'query'].includes(tagName)) continue;
+        
+        // Does this node contain a URL?
+        let hasUrl = false;
+        for (let child of el.children) {
+            if (child.textContent.includes('http')) {
+                hasUrl = true;
+                break;
+            }
+        }
+        
+        // Does it contain keywords/texto?
+        let hasKeywords = el.getElementsByTagName('Texto').length > 0 || 
+                          el.getElementsByTagName('texto').length > 0 ||
+                          el.getElementsByTagName('Query').length > 0 ||
+                          el.getElementsByTagName('query').length > 0;
+
+        if (hasUrl && hasKeywords) {
+            potentialCourseNodes.push(el);
+        }
+    }
+
+    // If we found specific containers (like <Curso>), use them
+    const courseNodes = potentialCourseNodes.length > 0 ? potentialCourseNodes : 
+        xml.querySelectorAll('Curso, curso, CURSO, Course, course, COURSE, Item, item, row, Row, entry, Entry');
     
     courseNodes.forEach(node => {
         const nameNode = node.querySelector('Nome, nome, NOME, Course, course, COURSE, Title, title, label, Label');
-        // Very aggressive URL search
         let urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website, Dimension_0, dimension_0, Dimension_1, dimension_1');
         
         let url = urlNode ? urlNode.textContent.trim().toLowerCase() : '';
         
-        // Final URL fallback: search all children for something starting with http
         if (!url) {
             const allChildren = node.querySelectorAll('*');
             for (let child of allChildren) {
@@ -246,9 +277,10 @@ function parseSmartXML(xmlText) {
         }
     });
 
+    console.log(`[XML Parser] Found ${allResults.length} course blocks.`);
     if (allResults.length > 0) return allResults;
     
-    // Fallback: If no course-wrapped nodes found, try to find a URL in the root and keywords globally
+    // Absolute Fallback
     const rootUrlNode = xml.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website, Dimension_0, dimension_0, Dimension_1, dimension_1');
     const rootUrl = rootUrlNode ? rootUrlNode.textContent.trim().toLowerCase() : 'current';
     return [{ url: rootUrl, name: 'current', keywords: parseXMLNodes(xml) }];
