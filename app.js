@@ -283,14 +283,25 @@ const rawCourses = [
     { "name": "Direito Do Trabalho E Da Seguranca Social Pt", "degree": "Mestrados", "institution": "ISMAT" },
     { "name": "Ensino De Artes Visuais No 3O Ciclo Do Ensino Basico E No Ensino Secundario Pt", "degree": "Mestrados", "institution": "ISMAT" },
     { "name": "Gestao De Recursos Humanos E Intervencao Organizacional Pt", "degree": "Mestrados", "institution": "ISMAT" },
-let courses = [];
+    { "name": "Gestao E Inovacao Em Turismo E Hospitalidade Pt", "degree": "Mestrados", "institution": "ISMAT" },
+    { "name": "Psicologia Do Trabalho E Da Saude Ocupacional Pt", "degree": "Mestrados", "institution": "ISMAT" },
+    { "name": "Reabilitacao De Edificios E Sitios Pt", "degree": "Mestrados", "institution": "ISMAT" }
+];
+
+// Initialize courses from the static list with empty keyword arrays
+let courses = rawCourses.map((c, i) => ({
+    id: i,
+    ...c,
+    gscKeywords: [],
+    adsKeywords: []
+}));
+
 let activeCourseId = 0;
 
 async function init() {
-    await fetchServerData();
+    await fetchServerData(); // Merge cloud keywords on top of the baseline
     renderCourseList();
     
-    // Set initial course
     if (courses.length > 0) {
         activeCourseId = courses[0].id;
         loadCourse(activeCourseId);
@@ -303,8 +314,9 @@ async function init() {
     document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
     
-    loadData();
+    loadData(); // Also apply any local browser data
 }
+
 
 async function fetchServerData() {
     try {
