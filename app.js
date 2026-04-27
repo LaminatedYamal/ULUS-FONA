@@ -176,8 +176,12 @@ async function handleFileUpload(e, type) {
             if (res.url === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // Strict match by exact URL with normalization (removes http, www, trailing slashes)
-                targetCourse = courses.find(c => c.url && normalizeUrl(c.url) === normalizeUrl(res.url));
+                // Strict match by exact URL with normalization, fallback to Name
+                targetCourse = courses.find(c => {
+                    if (c.url && res.url && normalizeUrl(c.url) === normalizeUrl(res.url)) return true;
+                    if (c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
+                    return false;
+                });
             }
 
             if (targetCourse) {
@@ -205,24 +209,28 @@ function parseSmartXML(xmlText) {
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlText, "text/xml");
     
-    // Support both <Curso> and <curso>
-    let courseNodes = xml.querySelectorAll('Curso');
-    if (courseNodes.length === 0) courseNodes = xml.querySelectorAll('curso');
+    // Support multiple grouping nodes
+    const courseNodes = xml.querySelectorAll('Curso, curso, CURSO, Filter, filter, FILTER, Row, row, ROW, Dataset, dataset, DATASET');
     
     if (courseNodes.length === 0) {
-        return [{ url: 'current', keywords: parseXMLNodes(xml) }];
+        return [{ url: 'current', name: 'current', keywords: parseXMLNodes(xml) }];
     }
 
     const allResults = [];
     courseNodes.forEach(node => {
-        const filtroUrl = node.querySelector('Filtro, filtro, FILTRO')?.textContent || '';
-        const url = filtroUrl.trim().toLowerCase();
+        const urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK');
+        const url = urlNode ? urlNode.textContent.trim().toLowerCase() : '';
+        
+        const nameNode = node.querySelector('Nome, nome, NOME, Curso, curso, CURSO, Name, name, NAME');
+        const name = nameNode ? nameNode.textContent.trim().toLowerCase() : '';
         
         const keywords = parseXMLNodes(node);
-        if (url) allResults.push({ url, keywords });
+        if ((url || name) && keywords.length > 0) {
+            allResults.push({ url, name, keywords });
+        }
     });
 
-    return allResults;
+    return allResults.length > 0 ? allResults : [{ url: 'current', name: 'current', keywords: parseXMLNodes(xml) }];
 }
 
 function parseXMLNodes(parentNode) {
@@ -261,29 +269,31 @@ function parseCSV(csvString) {
     const headers = splitCSVLine(lines[0], delimiter).map(h => h.toLowerCase().trim());
     const linkCol = headers.findIndex(h => h.includes('link'));
     const kwCol = headers.findIndex(h => h.includes('keywords'));
+    const nameCol = headers.findIndex(h => h === 'curso' || h === 'nome' || h === 'name' || h.includes('curso'));
     
     if (linkCol >= 0 && kwCol >= 0) {
         for (let i = 1; i < lines.length; i++) {
             const cols = splitCSVLine(lines[i], delimiter);
             if (cols.length <= Math.max(linkCol, kwCol)) continue;
+            
+            const url = cols[linkCol] ? cols[linkCol].trim().toLowerCase() : '';
+            const name = (nameCol >= 0 && cols[nameCol]) ? cols[nameCol].trim() : '';
+            const rawKeywords = cols[kwCol] ? cols[kwCol].trim() : '';
+            
+            if ((url || name) && rawKeywords) {
+                // Split the comma-separated keyword string
+                const keywords = rawKeywords.split(',')
+                    .map(k => k.trim())
+                    .filter(k => k.length > 0)
+                    .map(term => ({ term, clicks: 0, impressions: 0 }));
                 
-                const url = cols[linkCol].trim().toLowerCase();
-                const rawKeywords = cols[kwCol].trim();
-                
-                if (url && rawKeywords) {
-                    // Split the comma-separated keyword string
-                    const keywords = rawKeywords.split(',')
-                        .map(k => k.trim())
-                        .filter(k => k.length > 0)
-                        .map(term => ({ term, clicks: 0, impressions: 0 }));
-                    
-                    if (keywords.length > 0) {
-                        results.push({ url, keywords });
-                    }
+                if (keywords.length > 0) {
+                    results.push({ url, name, keywords });
                 }
             }
-            return results;
         }
+        return results;
+    }
     }
     
     // Fallback: Standard Google Ads single-course export
@@ -322,11 +332,19 @@ function parseCSV(csvString) {
 
 function normalizeUrl(url) {
     if (!url) return '';
-    return url.toLowerCase()
-              .replace(/^https?:\/\//, '') // remove http/https
-              .replace(/^www\./, '')       // remove www
-              .replace(/\/$/, '')          // remove trailing slash
-              .trim();
+    try { url = decodeURI(url); } catch(e) {}
+    let u = url.toLowerCase().trim();
+    
+    // Remove query params and hashes first
+    u = u.split('?')[0].split('#')[0];
+    
+    // Remove http/https and www
+    u = u.replace(/^https?:\/\//, '').replace(/^www\./, '');
+    
+    // Remove trailing slash
+    u = u.replace(/\/$/, '');
+    
+    return u;
 }
 
 function detectDelimiter(line) {
