@@ -138,13 +138,20 @@ function b64EncodeUnicode(str) {
 }
 
 function saveData() {
-    // Save data using URL as key for stability
-    const exportData = courses.map(c => ({
-        url: c.url,
-        gscKeywords: c.gscKeywords,
-        adsKeywords: c.adsKeywords
-    }));
-    localStorage.setItem('antigravity_data_v2', JSON.stringify(exportData));
+    // Save data using normalized URL as key for maximum stability
+    const localData = {};
+    courses.forEach(c => {
+        if ((c.gscKeywords && c.gscKeywords.length > 0) || (c.adsKeywords && c.adsKeywords.length > 0)) {
+            const key = normalizeUrl(c.url);
+            if (key) {
+                localData[key] = {
+                    gsc: c.gscKeywords || [],
+                    ads: c.adsKeywords || []
+                };
+            }
+        }
+    });
+    localStorage.setItem('antigravity_data_v2', JSON.stringify(localData));
 }
 
 function loadData() {
@@ -152,14 +159,25 @@ function loadData() {
     if (saved) {
         try {
             const parsed = JSON.parse(saved);
-            Object.keys(parsed).forEach(urlKey => {
-                const data = parsed[urlKey];
-                const target = courses.find(c => normalizeUrl(c.url) === urlKey);
-                if (target) {
-                    target.gscKeywords = data.gsc || [];
-                    target.adsKeywords = data.ads || [];
-                }
-            });
+            // Handle both legacy array and new object formats for safety
+            if (Array.isArray(parsed)) {
+                parsed.forEach(item => {
+                    const target = courses.find(c => normalizeUrl(c.url) === normalizeUrl(item.url));
+                    if (target) {
+                        target.gscKeywords = item.gscKeywords || item.gsc || [];
+                        target.adsKeywords = item.adsKeywords || item.ads || [];
+                    }
+                });
+            } else {
+                Object.keys(parsed).forEach(urlKey => {
+                    const data = parsed[urlKey];
+                    const target = courses.find(c => normalizeUrl(c.url) === urlKey);
+                    if (target) {
+                        target.gscKeywords = data.gsc || [];
+                        target.adsKeywords = data.ads || [];
+                    }
+                });
+            }
             loadCourse(activeCourseId);
         } catch (e) {
             console.error("Error loading local data:", e);
