@@ -387,7 +387,16 @@ function renderCourseList() {
         grouped[course.institution][course.degree].push(course);
     });
 
-    Object.keys(grouped).forEach(inst => {
+    const instOrder = ['Lusófona Lisboa', 'Lusófona Porto', 'IPLUSO', 'ISLA Gaia', 'ISMAT'];
+    
+    Object.keys(grouped).sort((a, b) => {
+        const indexA = instOrder.indexOf(a);
+        const indexB = instOrder.indexOf(b);
+        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+        return indexA - indexB;
+    }).forEach(inst => {
         // Institution Header
         const instHeader = document.createElement('div');
         instHeader.className = 'nav-group-header';
