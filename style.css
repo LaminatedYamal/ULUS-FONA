@@ -572,3 +572,45 @@ td {
         width: 0px;
     }
 }
+
+.course-badges {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+    padding-left: 10px;
+}
+
+.badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.gsc-count { background: #4285f4; }
+.ads-count { background: #34a853; }
+
+.btn-reset {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s;
+    margin-bottom: 20px;
+}
+
+.btn-reset:hover {
+    background: rgba(231, 76, 60, 0.1);
+    border-color: #e74c3c;
+    color: #e74c3c;
+}

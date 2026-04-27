@@ -415,7 +415,16 @@ function renderCourseList() {
             const ul = document.createElement('ul');
             grouped[inst][degree].forEach(course => {
                 const li = document.createElement('li');
-                li.innerHTML = `<span class="course-name">${course.name}</span>`;
+                const gscCount = course.gscKeywords.length;
+                const adsCount = course.adsKeywords.length;
+                let badges = '';
+                if (gscCount > 0) badges += `<span class="badge gsc-count">${gscCount}</span>`;
+                if (adsCount > 0) badges += `<span class="badge ads-count">${adsCount}</span>`;
+
+                li.innerHTML = `
+                    <span class="course-name">${course.name}</span>
+                    <div class="course-badges">${badges}</div>
+                `;
                 li.dataset.id = course.id;
                 if (course.id === activeCourseId) li.classList.add('active');
                 
@@ -430,6 +439,25 @@ function renderCourseList() {
             list.appendChild(degreeDetails);
         });
     });
+
+    // Add Reset Button at the bottom
+    const resetContainer = document.createElement('div');
+    resetContainer.style.padding = '20px';
+    resetContainer.style.marginTop = 'auto';
+    resetContainer.innerHTML = `
+        <button onclick="resetApp()" class="btn-reset">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Reset Dashboard
+        </button>
+    `;
+    list.appendChild(resetContainer);
+}
+
+function resetApp() {
+    if (confirm("This will clear all uploaded keywords and reset the dashboard. Are you sure?")) {
+        localStorage.removeItem('antigravity_courses');
+        location.reload();
+    }
 }
 
 function loadCourse(id) {
