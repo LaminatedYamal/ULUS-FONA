@@ -724,6 +724,8 @@ function renderTables(gsc = [], ads = []) {
         sortedGsc.forEach(k => {
             const tr = document.createElement('tr');
             const isMatch = adsTerms.includes(k.term.toLowerCase());
+            if (isMatch) tr.className = 'synergy-aura';
+            
             tr.innerHTML = `
                 <td>${k.term}</td>
                 <td>${k.clicks.toLocaleString()}</td>
@@ -739,6 +741,8 @@ function renderTables(gsc = [], ads = []) {
         sortedAds.forEach(k => {
             const tr = document.createElement('tr');
             const isMatch = gscTerms.includes(k.term.toLowerCase());
+            if (isMatch) tr.className = 'synergy-aura';
+
             tr.innerHTML = `
                 <td>${k.term}</td>
                 <td>${isMatch ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
