@@ -724,7 +724,7 @@ function renderTables(gsc = [], ads = []) {
         sortedGsc.forEach(k => {
             const tr = document.createElement('tr');
             const isMatch = adsTerms.includes(k.term.toLowerCase());
-            if (isMatch) tr.className = 'synergy-aura';
+            tr.className = isMatch ? 'synergy-aura' : 'gap-aura';
             
             tr.innerHTML = `
                 <td>${k.term}</td>
@@ -741,7 +741,7 @@ function renderTables(gsc = [], ads = []) {
         sortedAds.forEach(k => {
             const tr = document.createElement('tr');
             const isMatch = gscTerms.includes(k.term.toLowerCase());
-            if (isMatch) tr.className = 'synergy-aura';
+            tr.className = isMatch ? 'synergy-aura' : 'gap-aura';
 
             tr.innerHTML = `
                 <td>${k.term}</td>
