@@ -473,10 +473,14 @@ async function handleFileUpload(e, type) {
             if (res.slug === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // Match by URL slug or normalized name
+                // Convert course name to slug and match against XML slug
+                // e.g. "Arte Dos Media E Comunicacao" -> "arte-dos-media-e-comunicacao"
                 targetCourse = courses.find(c => {
-                    const courseSlug = c.url.split('/').filter(Boolean).pop();
-                    return courseSlug === res.slug || c.name.toLowerCase().replace(/\s+/g, '-') === res.slug;
+                    const nameSlug = c.name.toLowerCase()
+                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove accents
+                        .replace(/\s+/g, '-')
+                        .replace(/[^a-z0-9-]/g, '');
+                    return nameSlug === res.slug || nameSlug.includes(res.slug) || res.slug.includes(nameSlug);
                 });
             }
 
