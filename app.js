@@ -182,9 +182,14 @@ async function handleFileUpload(e, type) {
             if (res.url === 'current') {
                 targetCourse = courses.find(c => c.id === activeCourseId);
             } else {
-                // Strict match by exact URL with normalization, fallback to Name
+                // Multi-stage match: Normalization + Fuzzy Containment + Name
                 targetCourse = courses.find(c => {
-                    if (c.url && res.url && normalizeUrl(c.url) === normalizeUrl(res.url)) return true;
+                    const n1 = normalizeUrl(c.url);
+                    const n2 = normalizeUrl(res.url);
+                    if (n1 && n2) {
+                        if (n1 === n2) return true;
+                        if (n1.includes(n2) || n2.includes(n1)) return true;
+                    }
                     if (c.name && res.name && c.name.trim().toLowerCase() === res.name.trim().toLowerCase()) return true;
                     return false;
                 });
@@ -238,10 +243,7 @@ function parseSmartXML(xmlText) {
         }
         
         // Does it contain keywords/texto?
-        let hasKeywords = el.getElementsByTagName('Texto').length > 0 || 
-                          el.getElementsByTagName('texto').length > 0 ||
-                          el.getElementsByTagName('Query').length > 0 ||
-                          el.getElementsByTagName('query').length > 0;
+        let hasKeywords = el.querySelectorAll('Texto, texto, Query, query, TEXTO, QUERY').length > 0;
 
         if (hasUrl && hasKeywords) {
             potentialCourseNodes.push(el);
@@ -256,14 +258,14 @@ function parseSmartXML(xmlText) {
         const nameNode = node.querySelector('Nome, nome, NOME, Course, course, COURSE, Title, title, label, Label');
         let urlNode = node.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website, Dimension_0, dimension_0, Dimension_1, dimension_1');
         
-        let url = urlNode ? urlNode.textContent.trim().toLowerCase() : '';
+        let url = urlNode ? urlNode.textContent.trim() : '';
         
         if (!url) {
             const allChildren = node.querySelectorAll('*');
             for (let child of allChildren) {
                 const text = child.textContent.trim();
                 if (text.startsWith('http')) {
-                    url = text.toLowerCase();
+                    url = text;
                     break;
                 }
             }
@@ -273,11 +275,11 @@ function parseSmartXML(xmlText) {
         const keywords = parseXMLNodes(node);
         
         if ((url || name) && keywords.length > 0) {
-            allResults.push({ url, name, keywords });
+            allResults.push({ url: url.toLowerCase(), name, keywords });
         }
     });
 
-    console.log(`[XML Parser] Found ${allResults.length} course blocks.`);
+    console.log(`[XML Parser] Identified ${allResults.length} separate course blocks in file.`);
     if (allResults.length > 0) return allResults;
     
     // Absolute Fallback
