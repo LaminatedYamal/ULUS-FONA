@@ -1,3151 +1,4051 @@
 [
   {
+    "id": 0,
     "name": "Gestao Aeronautica",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 1,
     "name": "Artes Visuais",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 2,
     "name": "Design De Comunicacao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 3,
     "name": "Design E Producao De Moda",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 4,
     "name": "Ciencia Politica E Relacoes Internacionais",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 5,
     "name": "Estudos Europeus E Relacoes Internacionais",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 6,
     "name": "Estudos Portugueses",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 7,
     "name": "Sociologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 8,
     "name": "Animacao Digital",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 9,
     "name": "Ciencia E Tecnologias Do Som",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 10,
     "name": "Cinema E Artes Dos Media",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 11,
     "name": "Formacao De Atores Cinema Televisao Teatro",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 12,
     "name": "Fotografia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 13,
     "name": "Videojogos",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 14,
     "name": "Ciencias Da Comunicacao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 15,
     "name": "Comunicacao Aplicada Marketing Publicidade E Relacoes Publicas",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 16,
     "name": "Comunicacao E Jornalismo",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 17,
     "name": "Educacao Fisica E Desporto",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 18,
     "name": "Criminologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 19,
     "name": "Direito",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 20,
     "name": "Contabilidade Fiscalidade E Auditoria",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 21,
     "name": "Economia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 22,
     "name": "Gestao De Empresas",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 23,
     "name": "Gestao De Recursos Humanos",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 24,
     "name": "Ciencias Da Educacao Educacao Social",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 25,
     "name": "Bioeconomia Circular E Tecnologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 26,
     "name": "Biomedicina Computacional E Inteligencia Artificial",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 27,
     "name": "Biotecnologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 28,
     "name": "Engenharia Biomedica",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 29,
     "name": "Engenharia Civil",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 30,
     "name": "Engenharia Do Ambiente",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 31,
     "name": "Engenharia E Gestao Industrial",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 32,
     "name": "Engenharia Eletrotecnica E De Computadores",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 33,
     "name": "Tecnologias E Gestao Do Ambiente",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 34,
     "name": "Ciencia De Dados",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 35,
     "name": "Computacao E Matematica Aplicada",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 36,
     "name": "Engenharia Informatica",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 37,
     "name": "Engenharia Informatica Redes E Telecomunicacoes",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 38,
     "name": "Informatica De Gestao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 39,
     "name": "Psicologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 40,
     "name": "Biologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 41,
     "name": "Bioquimica",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 42,
     "name": "Ciencias Da Nutricao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 43,
     "name": "Cuidados De Beleza E Bem Estar",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 44,
     "name": "Estudos De Seguranca Interna",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 45,
     "name": "Servico Social",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 46,
     "name": "Turismo",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 47,
     "name": "Arquitetura",
-    "degree": "Mestrados Integrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 48,
     "name": "Ciencias Farmaceuticas",
-    "degree": "Mestrados Integrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 49,
     "name": "Medicina Veterinaria",
-    "degree": "Mestrados Integrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 50,
     "name": "Urbanismo",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 51,
     "name": "Design",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 52,
     "name": "Design E Producao De Moda",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 53,
     "name": "Pintura",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 54,
     "name": "Ciencia Politica Cidadania E Governacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 55,
     "name": "Comunicacao Politica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 56,
     "name": "Diplomacia E Relacoes Internacionais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 57,
     "name": "Patrimonio Cultural Imaterial",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 58,
     "name": "Sociomuseologia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 59,
     "name": "Artes Da Animacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 60,
     "name": "Design De Jogos E Media Jogaveis",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 61,
     "name": "Estudos Cinematograficos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 62,
     "name": "Fotografia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 63,
     "name": "Inteligencia Artificial Para Jogos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 64,
     "name": "Patrimonio Cinematografico E Audiovisual",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 65,
     "name": "Producao E Tecnologias Do Som",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 66,
     "name": "Realizacao Para Cinema Documental",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 67,
     "name": "Comunicacao Nas Organizacoes",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 68,
     "name": "Comunicacao Marketing E Media Digitais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 69,
     "name": "Estudos Em Jornalismo E Media",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 70,
     "name": "Jornalismo Aplicado Inovacao Digital E Tecnologias Emergentes",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 71,
     "name": "Ensino De Educacao Fisica Nos Ensinos Basico E Secundario",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 72,
     "name": "Exercicio E Saude",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 73,
     "name": "Futebol Da Formacao A Alta Competicao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 74,
     "name": "Treino Desportivo",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 75,
     "name": "Ciencias Criminais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 76,
     "name": "Direito",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 77,
     "name": "Direito Do Mercado",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 78,
     "name": "Direito Do Trabalho E Da Seguranca Social",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 79,
     "name": "Direito Empresarial",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 80,
     "name": "Direito Publico E Regulacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 81,
     "name": "Contabilidade Fiscalidade E Financas",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 82,
     "name": "Economia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 83,
     "name": "Gestao Avancada De Recursos Humanos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 84,
     "name": "Gestao De Empresas",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 85,
     "name": "Gestao Financeira",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 86,
     "name": "Ciencia Cognitiva E Educacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 87,
     "name": "Ciencias Da Educacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 88,
     "name": "Ciencias Da Educacao Educacao Especial Dominio Cognitivo E Motor",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 89,
     "name": "Ensino De Artes Visuais No 3O Ciclo Do Ensino Basico E No Ensino Secundario",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 90,
     "name": "Ensino De Informatica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 91,
     "name": "Biotecnologia Alimentar E Molecular",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 92,
     "name": "Engenharia Civil",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 93,
     "name": "Engenharia Do Ambiente",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 94,
     "name": "Engenharia E Gestao Industrial",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 95,
     "name": "Ciencia De Dados",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 96,
     "name": "Ciencias De Dados Aplicada A Sistemas De Informacao Geografica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 97,
     "name": "Engenharia Informatica E Sistemas De Informacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 98,
     "name": "Inteligencia Artificial Aplicada E Computacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 99,
     "name": "Ciberespaco Comportamento E Terapia Digital",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 100,
     "name": "Neuropsicologia Aplicada",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 101,
     "name": "Psicologia Clinica E Da Saude",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 102,
     "name": "Psicologia Forense",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 103,
     "name": "Psicologia Social E Das Organizacoes",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 104,
     "name": "Transdisciplinar De Sexologia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 105,
     "name": "Ciencia Das Religioes",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 106,
     "name": "Bioquimica Aplicada",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 107,
     "name": "Embriologia E Reproducao Humana",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 108,
     "name": "Nutricao Clinica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 109,
     "name": "Quimica De Bioativos Naturais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 110,
     "name": "Gerontologia Social Qualidade De Programas E Servicos Gerontologicos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 111,
     "name": "Servico Social E Politica Social",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 112,
     "name": "Desenvolvimento E Gestao De Destinos Turisticos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 113,
     "name": "Gestao E Inovacao Em Turismo E Hospitalidade",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 114,
     "name": "Cirurgia Em Animais De Companhia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 115,
     "name": "Clinica De Equinos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 116,
     "name": "Enfermagem Veterinaria Clinica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 117,
     "name": "Imagiologia Clinica Em Animais De Companhia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 118,
     "name": "Medicina Em Animais De Companhia",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 119,
     "name": "Arquitetura",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 120,
     "name": "Urbanismo",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 121,
     "name": "Sociomuseologia",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 122,
     "name": "Arte Dos Media E Comunicacao",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 123,
     "name": "Ciencias Da Comunicacao",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 124,
     "name": "Educacao Fisica E Desporto",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 125,
     "name": "Direito",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 126,
     "name": "Educacao",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 127,
     "name": "Informatica",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 128,
     "name": "Psicologia Clinica Orientacao Cognitivo Comportamental",
-    "degree": "Doutoramentos",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 129,
     "name": "Gestao E Operacao Aerea Com Aeronaves Nao Tripuladas",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 130,
     "name": "Marca Pessoal Gestao E Consultoria",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 131,
     "name": "Intervencao Em Riscos E Promocao Da Inclusao",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 132,
     "name": "Patrimonio Cultural Imaterial",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 133,
     "name": "Psicologia Politica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 134,
     "name": "Relacoes Internacionais Investimento E Internacionalizacao Empresarial Bancaria E Financeira",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 135,
     "name": "Relacoes Internacionais Negocios E Diplomacia Economica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 136,
     "name": "E Commerce Edicao Online",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 137,
     "name": "Escrita De Ficcao",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 138,
     "name": "Marketing Digital",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 139,
     "name": "Marketing E Estrategias De Marca",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 140,
     "name": "Publicidade E Estrategias De Comunicacao Digital",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 141,
     "name": "Gestao E Marketing Do Desporto",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 142,
     "name": "Criminologia E Investigacao Criminal",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 143,
     "name": "Direitos Das Criancas",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 144,
     "name": "Contabilidade E Fiscalidade",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 145,
     "name": "Descarbonizacao Do Transporte Maritimo Estrategias E Tecnologias De Futuro",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 146,
     "name": "Employee Experience Management",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 147,
     "name": "Gestao Bancaria Seguros E Mercados Financeiros",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 148,
     "name": "Gestao De Empresas E Organizacoes Para Nao Gestores E Learning",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 149,
     "name": "Gestao Desportiva",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 150,
     "name": "Gestao E Direcao Na Protecao Civil",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 151,
     "name": "Gestao Integrada Das Organizacoes E Auditoria",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 152,
     "name": "Gestao Sustentavel Na Saude",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 153,
     "name": "Lideranca Inovacao E Transformacao Digital",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 154,
     "name": "Logistica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 155,
     "name": "Modelos Ageis De Gestao E Transformacao Organizacional",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 156,
     "name": "Praticas Avancadas De Gestao De Pessoas",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 157,
     "name": "Seguranca E Higiene Do Trabalho",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 158,
     "name": "Aprendizagem Da Matematica Do Ensino As Dificuldades",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 159,
     "name": "Educacao Especial E Educacao Inclusiva Dominio Cognitivo E Motor",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 160,
     "name": "Enologia",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 161,
     "name": "Gestao Integrada E Governanca Da Agua",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 162,
     "name": "Lean And Operations Management",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 163,
     "name": "Railway Systems And Management",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 164,
     "name": "Blockchain E Inteligencia Artificial",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 165,
     "name": "Blockchain Criptoeconomia E Inovacao Tecnologica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 166,
     "name": "Ciberseguranca Aplicada",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 167,
     "name": "Ciberseguranca Para Gestores",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 168,
     "name": "Comunicacao Digital",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 169,
     "name": "Data Science Aplicada Big Data E Ai",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 170,
     "name": "Gestao De Projetos",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 171,
     "name": "Lideranca Em Transformacao Digital E Inovacao Estrategica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 172,
     "name": "Seguranca Informatica E Ethical Hacking",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 173,
     "name": "Gestao E Empreendedorismo Dos Eventos",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 174,
     "name": "Tour Guiding",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 175,
     "name": "Cirurgia Em Animais De Companhia",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 176,
     "name": "Clinica De Equinos",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 177,
     "name": "Enfermagem Veterinaria Clinica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 178,
     "name": "Imagiologia Clinica Em Animais De Companhia",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 179,
     "name": "Medicina Em Animais De Companhia",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 180,
     "name": "A Nova Regulacao Dos Dados Na Ue O Caso Da Saude",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 181,
     "name": "Analise Forense De Documentos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 182,
     "name": "Analise Quantitativa Da Questao De Investigacao Ao Artigo Cientifico",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 183,
     "name": "Anestesia Loco Regional Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 184,
     "name": "Anestesia Cirurgia E Odontologia Equina Em Regime Ambulatorio",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 185,
     "name": "Atividade Fisica Para Seniores",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 186,
     "name": "Cardiologia E Sistema Respiratorio Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 187,
     "name": "Cerveja Do Grao Ao Copo Fundamentos Producao E Servicos Tecnicos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 188,
     "name": "Child Friendly Justice",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 189,
     "name": "Ciencia De Dados Para Gestao De Ativos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 190,
     "name": "Cirurgia Em Animais Exoticos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 191,
     "name": "Cirurgia Minimamente Invasiva Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 192,
     "name": "Cirurgia Ortopedica Em Animais De Companhia I",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 193,
     "name": "Complementos De Investigacao Operacional",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 194,
     "name": "Conversas Sobre Parasitas No Sushi Consciencia E Prevencao",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 195,
     "name": "Cooperacao Para O Desenvolvimento Em Arquitectura",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 196,
     "name": "Criminology",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 197,
     "name": "Direito Vamos Desfolhar O Direito E Ver Alguns Direitos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 198,
     "name": "Ecocardiografia Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 199,
     "name": "Educacao Social E Metodos Criativos E Ativos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 200,
     "name": "Emergencia E Resgate Tecnico De Animais De Grande Porte Salvamento Em Meio Aquatico",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 201,
     "name": "Emergencia E Socorro De Animais De Companhia Em Situacoes Acidente E Catastrofe",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 202,
     "name": "Emergencia E Socorro De Animais Silvestres Em Situacao De Emergencia E Catastrofe",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 203,
     "name": "Environmental Law And Human Rights",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 204,
     "name": "Escola Senior Estilo De Vida Ativo Desenvolvimento E Bem Estar",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 205,
     "name": "Escola Senior Historia Cultura E Sociedade",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 206,
     "name": "Fundos Europeus Para Empresas Estrategia E Gestao",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 207,
     "name": "Gestao De Ativos Fisicos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 208,
     "name": "Gestao Integrada E Sustentabilidade Dos Recursos Hidricos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 209,
     "name": "Gestao Sustentavel De Producao Audiovisual Green Consultants",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 210,
     "name": "Imagiologia De Urgencia E Intervencao Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 211,
     "name": "Imagiologia Oncologica Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 212,
     "name": "Incerteza Risco E Apoio A Decisao",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 213,
     "name": "Inteligencia Artificial E Direito",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 214,
     "name": "Inteligencia Ayurvedica Para Equilibrio Mente Corpo",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 215,
     "name": "Introducao A Acupuntura Veterinaria Do Antigo Ao Moderno",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 216,
     "name": "Introducao Ao Direito Publico",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 217,
     "name": "Introducao Ao Yoga",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 218,
     "name": "Introduction To Structural Health Monitoring",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 219,
     "name": "Law Of The Sea And Human Rights",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 220,
     "name": "Lei Direito E Religiao",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 221,
     "name": "Logistica Nas Operacoes De Socorro",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 222,
     "name": "Medicina De Abrigo E Programas Ced Da Ciencia A Pratica Em Retroviroses Felinas Fiv E Felv",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 223,
     "name": "Medicina De Exoticos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 224,
     "name": "Metodologias Inovadoras Na Gestao Da Agua",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 225,
     "name": "Nos E Os Animais De Estimacao Curso De Verao Campus Lusofona Para Jovens",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 226,
     "name": "One Cancer Simposio De Oncologia Comparada",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 227,
     "name": "Planeamento Da Emergencia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 228,
     "name": "Politicas Economia E Governanca Da Agua",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 229,
     "name": "Portugues Lingua Estrangeira Nivel A1",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 230,
     "name": "Prancha De Surf Design E Performance",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 231,
     "name": "Prep Year Curso Preparatorio Para Alunos Nao Falantes Da Lingua Portuguesa",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 232,
     "name": "Prep Year Curso Preparatorio Para Falantes Da Lingua Portuguesa",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 233,
     "name": "Programa Preparar",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 234,
     "name": "Radiologia Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 235,
     "name": "Recuperacao De Empresas Pre Insolventes Da Teoria A Pratica",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 236,
     "name": "Sensibilizacao E Informacao Publica",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 237,
     "name": "Surf E Performance Formacao De Treinadores Grau I Lisboa Costa Da Caparica",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 238,
     "name": "Surf E Performance Formacao De Treinadores Grau I Peniche",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 239,
     "name": "Surf E Performance Formacao De Treinadores Grau I Praia Grande Ericeira",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 240,
     "name": "Surf E Performance Formacao De Treinadores Grau Ii Lisboa Costa Da Caparica",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 241,
     "name": "Surf E Performance Formacao De Treinadores Grau Ii Peniche",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 242,
     "name": "Surf E Performance Formacao De Treinadores Grau Ii Praia Grande Ericeira",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 243,
     "name": "Surf E Performance Formacao De Treinadores Grau Iii Lisboa Costa Da Caparica",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 244,
     "name": "Tecnicas De Apoio A Decisao Na Gestao Da Operacoes",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 245,
     "name": "Tomografia Computorizada E Ressonancia Magnetica Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 246,
     "name": "Transformacao Digital Para Gestores",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 247,
     "name": "Transformacao Digital Para Gestores",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 248,
     "name": "Treino Nacional Resgate Tecnico De Animais De Grande E Pequeno Porte Em Emergencia E Catastrofe",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 249,
     "name": "Ultrassonografia Clinica Em Animais De Companhia",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 250,
     "name": "Ultrassonografia Para Monitorizacao E Controlo De Doencas Em Efetivos Bovinos",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 251,
     "name": "Workshop Qupath Um Software De Codigo Aberto Para Analise De Imagem Em Patologia Digital",
-    "degree": "Formação",
+    "degree": "",
     "institution": "Lusófona Lisboa",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 252,
     "name": "Artes Dramaticas Formacao De Atores",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 253,
     "name": "Design De Comunicacao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 254,
     "name": "Design E Producao De Moda",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 255,
     "name": "Estudos Europeus Estudos Lusofonos E Relacoes Internacionais",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 256,
     "name": "Comunicacao Audiovisual E Multimedia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 257,
     "name": "Videojogos E Aplicacoes Multimedia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 258,
     "name": "Ciencias Da Comunicacao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 259,
     "name": "Comunicacao Aplicada",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 260,
     "name": "Educacao Fisica E Desporto",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 261,
     "name": "Direito",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 262,
     "name": "Economia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 263,
     "name": "Gestao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 264,
     "name": "Gestao Comercial",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 265,
     "name": "Gestao E Desenvolvimento De Recursos Humanos",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 266,
     "name": "Ciencias Da Educacao",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 267,
     "name": "Computacao E Matematica Aplicada",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 268,
     "name": "Engenharia Civil",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 269,
     "name": "Engenharia De Protecao Civil",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 270,
     "name": "Engenharia Do Ambiente",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 271,
     "name": "Engenharia Eletrotecnica De Sistemas De Energia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 272,
     "name": "Protecao Civil",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 273,
     "name": "Engenharia Informatica",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 274,
     "name": "Psicologia",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 275,
     "name": "Servico Social",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 276,
     "name": "Arquitetura Cup",
-    "degree": "Mestrados Integrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 277,
     "name": "Relacoes Internacionais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 278,
     "name": "Comunicacao Marketing E Media Digitais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 279,
     "name": "Comunicacao Redes E Tecnologias",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 280,
     "name": "Gestao Cultural",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 281,
     "name": "Media E Cidadania Digital",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 282,
     "name": "Ensino De Educacao Fisica Nos Ensinos Basico E Secundario",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 283,
     "name": "Exercicio E Saude",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 284,
     "name": "Treino Desportivo Em Futebol",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 285,
     "name": "Ciencias Juridico Criminais",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 286,
     "name": "Direito",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 287,
     "name": "Gestao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 288,
     "name": "Gestao De Organizacoes Da Economia Social",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 289,
     "name": "Gestao De Recursos Humanos",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 290,
     "name": "Gestao Financeira",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 291,
     "name": "Ciencias Da Educacao",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 292,
     "name": "Ensino De Informatica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 293,
     "name": "Mediacao Gestao De Conflitos E Cidadania",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 294,
     "name": "Protecao Civil",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 295,
     "name": "Sistemas De Energia Inteligentes E Sustentaveis",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 296,
     "name": "Ciencias De Dados Aplicada A Sistemas De Informacao Geografica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 297,
     "name": "Neuropsicologia Clinica",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 298,
     "name": "Psicologia Clinica E Da Saude",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 299,
     "name": "Psicologia Da Justica Vitimas De Crime",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 300,
     "name": "Gestao E Inovacao Em Turismo E Hospitalidade",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 301,
     "name": "Marca Pessoal Gestao E Consultoria",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 302,
     "name": "Relacoes Internacionais E Diplomacia Politica E Economica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 303,
     "name": "Concecoes E Praticas Metodologicas E Decisionais No Futebol",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 304,
     "name": "Registos E Notariado",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 305,
     "name": "Mediacao De Conflitos Em Contexto Escolar",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 306,
     "name": "Cartografia De Risco E Planeamento De Protecao Civil",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 307,
     "name": "Gestao De Emergencias Com Materias Perigosas",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 308,
     "name": "Gestao Integrada De Emergencias Safety Security",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 309,
     "name": "Informatica E Sistemas De Informacao",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 310,
     "name": "Inovacao E Lideranca Em Protecao Civil Autarquica",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 311,
     "name": "Projeto Certificacao E Peritagem De Protecao Civil",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 312,
     "name": "Sustentabilidade Ambiente E Qualidade",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 313,
     "name": "Ciberseguranca Aplicada",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 314,
     "name": "Sustentabilidade Na Gestao De Residuos Especializacao Em Biorresiduos",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 315,
     "name": "Coordenador Municipal De Protecao Civil",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "Lusófona Porto",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 316,
     "name": "Arte Multimedia Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 317,
     "name": "Automacao E Sistemas Informaticos Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 318,
     "name": "Ciencias Biomedicas Laboratoriais Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 319,
     "name": "Contabilidade E Financas Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 320,
     "name": "Educacao Basica Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 321,
     "name": "Enfermagem Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 322,
     "name": "Enfermagem Veterinaria Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 323,
     "name": "Engenharia Informatica E Aplicacoes Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 324,
     "name": "Farmacia Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 325,
     "name": "Gestao Comercial Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 326,
     "name": "Gestao De Empresas Do Turismo Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 327,
     "name": "Gestao Empresarial Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 328,
     "name": "Ilustracao E Desenho Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 329,
     "name": "Imagem Medica E Radioterapia Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 330,
     "name": "Osteopatia Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 331,
     "name": "Artes Visuais E Media Digitais Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 332,
     "name": "Desenho Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 333,
     "name": "Educacao Pre Escolar Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 334,
     "name": "Educacao Pre Escolar E Ensino Do 1O Ciclo Do Ensino Basico Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 335,
     "name": "Enfermagem Veterinaria Clinica Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 336,
     "name": "Ensino Do 1O Ciclo Do Ensino Basico E De Matematica E Ciencias Naturais No 2O Ciclo Do Ensino Basico Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 337,
     "name": "Gestao Empresarial E Negocios Digitais Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 338,
     "name": "Ilustracao Experimental E Narrativas Graficas Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 339,
     "name": "Saude Digital Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 340,
     "name": "Automacao E Seguranca Em Sistemas Informaticos Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 341,
     "name": "Enfermagem Veterinaria Clinica Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 342,
     "name": "Gestao De Recursos Humanos Na Area Socioeducativa Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 343,
     "name": "Gestao Financeira E Fiscalidade Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 344,
     "name": "Mandarim E Cultura Chinesa Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 345,
     "name": "Osteopatia Estrutural No Desporto Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 346,
     "name": "Recursos Graficos E Visualizacao Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 347,
     "name": "Acompanhamento De Criancas E Jovens Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 348,
     "name": "Aplicacoes Informaticas Para Ciencias De Dados Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 349,
     "name": "Assessoria Em Administracao E Gestao Publica Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 350,
     "name": "Automacao E Robotica Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 351,
     "name": "Bioanalises E Controlo Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 352,
     "name": "Ciberseguranca Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 353,
     "name": "Contabilidade E Gestao Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 354,
     "name": "Desenvolvimento De Sistemas Para Internet Das Coisas Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 355,
     "name": "Desenvolvimento Para A Web E Dispositivos Moveis Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 356,
     "name": "Gestao Administrativa De Recursos Humanos Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 357,
     "name": "Gestao Comercial E Vendas Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 358,
     "name": "Gestao De Hotelaria E Restauracao Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 359,
     "name": "Gestao De Marketing Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 360,
     "name": "Gestao De Negocios E Comercio Eletronico Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 361,
     "name": "Gestao De Sistemas De Informacao Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 362,
     "name": "Instalacoes Eletricas E Automacao Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 363,
     "name": "Laboratorio Forense E Criminal Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 364,
     "name": "Marketing Digital Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 365,
     "name": "Producao De Conteudos Audiovisuais Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 366,
     "name": "Sistemas De Telecomunicacoes Eletronica E Comunicacoes Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 367,
     "name": "Cuidados A Pessoa Em Fim De Vida Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 368,
     "name": "Sustentabilidade Em Servicos De Saude Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "IPLUSO",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 369,
     "name": "Ciberseguranca Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 370,
     "name": "Comunicacao Digital Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 371,
     "name": "Contabilidade E Gestao Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 372,
     "name": "Controlo Da Qualidade E Analises Laboratoriais Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 373,
     "name": "Desenvolvimento De Aplicacoes De Inteligencia Artificial Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 374,
     "name": "Desenvolvimento De Produtos Multimedia Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 375,
     "name": "Desenvolvimento Para A Web E Dispositivos Moveis Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 376,
     "name": "Gastronomia Vinhos E Turismo Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 377,
     "name": "Gestao Administrativa De Recursos Humanos Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 378,
     "name": "Gestao Da Qualidade Ambiente E Seguranca Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 379,
     "name": "Gestao De Atividades Desportivas Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 380,
     "name": "Gestao De Redes Sociais E Estrategias Digitais Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 381,
     "name": "Gestao De Turismo Hotelaria E Restauracao Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 382,
     "name": "Gestao De Vendas E Marketing Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 383,
     "name": "Marketing Digital E Comercio Eletronico Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 384,
     "name": "Redes E Sistemas Informaticos Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 385,
     "name": "Som E Imagem Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 386,
     "name": "Turismo E Informacao Turistica Pt",
-    "degree": "CTeSP",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 387,
     "name": "Comunicacao Digital Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 388,
     "name": "Engenharia Da Seguranca Do Trabalho Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 389,
     "name": "Engenharia Informatica Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 390,
     "name": "Gestao De Empresas Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 391,
     "name": "Gestao De Recursos Humanos Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 392,
     "name": "Gestao Do Turismo Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 393,
     "name": "Informatica Para Comercio Eletronico Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 394,
     "name": "Inteligencia Artificial Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 395,
     "name": "Multimedia Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 396,
     "name": "Engenharia De Tecnologias E Sistemas Web Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 397,
     "name": "Engenharia Informatica Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 398,
     "name": "Financas E Fiscalidade Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 399,
     "name": "Gestao Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 400,
     "name": "Gestao Da Seguranca E Saude Do Trabalho Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 401,
     "name": "Gestao De Projetos Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 402,
     "name": "Gestao De Recursos Humanos Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 403,
     "name": "Analytics E Data Science Empresarial Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 404,
     "name": "Ciberseguranca Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 405,
     "name": "Enfermagem Do Trabalho Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 406,
     "name": "Entrepreneurship Tech Startups Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 407,
     "name": "Gestao Avancada De Recursos Humanos Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 408,
     "name": "Gestao Das Organizacoes Sustentaveis Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 409,
     "name": "Gestao De Bibliotecas Escolares Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 410,
     "name": "Gestao De Projetos Para Empreendedorismo E Inovacao Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 411,
     "name": "Gestao De Servicos De Saude Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 412,
     "name": "Gestao Empresarial Aplicada A Micro E Pequenas Empresas Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 413,
     "name": "Inteligencia Artificial Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 414,
     "name": "Mba Executivo Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 415,
     "name": "Mba Executivo Pessoas Saude Mental E Felicidade Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 416,
     "name": "Psicologia Social E Organizacional Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 417,
     "name": "Redes Cisco Networking Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 418,
     "name": "Sistemas Integrados De Gestao Qualidade Ambiente E Seguranca Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 419,
     "name": "Transformacao Digital E Inovacao Pt",
-    "degree": "Pós-Graduações",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 420,
     "name": "Global Innovation Challenge Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 421,
     "name": "Inteligencia Artificial Para Negocios Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 422,
     "name": "The 2Nd Businet International Startup Competition Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISLA Gaia",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 423,
     "name": "Ciencia De Dados Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 424,
     "name": "Ciencias Do Desporto Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 425,
     "name": "Computacao E Matematica Aplicada Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 426,
     "name": "Design Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 427,
     "name": "Design E Producao De Moda E Textil Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 428,
     "name": "Direito Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 429,
     "name": "Engenharia Informatica Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 430,
     "name": "Gestao De Empresas Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 431,
     "name": "Gestao De Recursos Humanos Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 432,
     "name": "Gestao Do Turismo Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 433,
     "name": "Psicologia Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 434,
     "name": "Tecnologias Criativas Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 435,
     "name": "Arquitetura Pt",
-    "degree": "Licenciaturas",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 436,
     "name": "Arquitetura Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 437,
     "name": "Biodesign Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 438,
     "name": "Design Para A Economia Circular Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 439,
     "name": "Direito Do Trabalho E Da Seguranca Social Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 440,
     "name": "Ensino De Artes Visuais No 3O Ciclo Do Ensino Basico E No Ensino Secundario Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 441,
     "name": "Gestao De Recursos Humanos E Intervencao Organizacional Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 442,
     "name": "Gestao E Inovacao Em Turismo E Hospitalidade Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 443,
     "name": "Psicologia Do Trabalho E Da Saude Ocupacional Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 444,
     "name": "Reabilitacao De Edificios E Sitios Pt",
-    "degree": "Mestrados",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 445,
     "name": "Congresso De Psicologia Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 446,
     "name": "Desenho E Programacao De Videojogos Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 447,
     "name": "Iniciacao A Geometria Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 448,
     "name": "Processos E Ferramentas De Criatividade Para O Ensino Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   },
   {
+    "id": 449,
     "name": "Transformacao Digital Para Gestores Pt",
-    "degree": "Formação",
+    "degree": "",
     "institution": "ISMAT",
+    "url": "",
     "gscKeywords": [],
     "adsKeywords": []
   }
