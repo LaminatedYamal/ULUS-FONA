@@ -523,7 +523,6 @@ function renderTables(gsc, ads) {
         const isMatch = gscTerms.includes(k.term.toLowerCase());
         tr.innerHTML = `
             <td>${k.term}</td>
-            <td>${k.impressions.toLocaleString()}</td>
             <td>${isMatch ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
         `;
         adsBody.appendChild(tr);
