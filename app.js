@@ -318,15 +318,33 @@ function parseSmartXML(xmlText) {
     return [{ url: rootUrl, name: 'current', keywords: parseXMLNodes(xml) }];
 }
 
+function fixEncoding(str) {
+    if (!str) return '';
+    try {
+        // Fix for "UTF-8 as Latin1" double-encoding (common in Excel/GSheet exports)
+        // If it shows Ã© instead of é, this restores it.
+        const encoded = escape(str);
+        if (encoded.includes('%C3')) {
+            return decodeURIComponent(encoded);
+        }
+        return str;
+    } catch (e) {
+        return str;
+    }
+}
+
 function parseXMLNodes(parentNode) {
     const results = [];
     // Super-flexible selector for keywords from GSC, Ads, and custom XMLs
     const nodes = parentNode.querySelectorAll('Texto, texto, TEXTO, term, Term, keyword, Keyword, query, Query, Key, key, Keys, keys, Dimension_0, dimension_0, Dimension_1, dimension_1, Dimension_2, dimension_2');
     
     nodes.forEach(node => {
-        const term = node.textContent.trim();
+        let term = node.textContent.trim();
         // If the node itself has children (like <Key><Query>...</Query></Key>), we want the deepest text
         if (node.children.length > 0) return; 
+        
+        // Repair encoding
+        term = fixEncoding(term);
         
         // Skip if it looks like a URL
         if (term.startsWith('http')) return;
@@ -411,8 +429,11 @@ function parseCSV(csvString) {
         const cols = splitCSVLine(lines[i], delimiter);
         if (cols.length <= colIndex) continue;
         
-        const term = cols[colIndex].trim();
+        let term = cols[colIndex].trim();
         if (!term || term.toLowerCase().includes('total') || term.startsWith('--')) continue;
+        
+        // Repair encoding
+        term = fixEncoding(term);
         
         keywords.push({ term, clicks: 0 });
     }
