@@ -170,7 +170,10 @@ async function handleFileUpload(e, type) {
     let coursesInFiles = 0;
 
     for (let file of files) {
-        const text = await file.text();
+        // Use TextDecoder for reliable UTF-8 handling
+        const buffer = await file.arrayBuffer();
+        const decoder = new TextDecoder('utf-8');
+        const text = decoder.decode(buffer);
         const results = file.name.toLowerCase().endsWith('.xml') ? parseSmartXML(text) : parseCSV(text);
         
         console.log(`Processing ${file.name}: Found ${results.length} course groups.`);
