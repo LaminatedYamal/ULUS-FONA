@@ -341,10 +341,9 @@ function parseCSV(csvString) {
 
 function normalizeUrl(url) {
     if (!url) return '';
-    try { url = decodeURI(url); } catch(e) {}
-    let u = url.toLowerCase().trim();
+    let u = url.trim().toLowerCase();
     
-    // Remove query params and hashes first
+    // Strip query parameters and hashes
     u = u.split('?')[0].split('#')[0];
     
     // Remove http/https and www
