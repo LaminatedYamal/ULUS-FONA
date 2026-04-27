@@ -166,8 +166,9 @@ async function handleFileUpload(e, type) {
 
     for (let file of files) {
         const text = await file.text();
-        // Check if it's the new multi-course XML format
-        const results = file.name.toLowerCase().endsWith('.xml') ? parseSmartXML(text) : [{ slug: 'current', keywords: parseCSV(text) }];
+        const results = file.name.toLowerCase().endsWith('.xml') ? parseSmartXML(text) : parseCSV(text);
+        
+        console.log(`Processing ${file.name}: Found ${results.length} course groups.`);
 
         results.forEach(res => {
             coursesInFiles++;
@@ -188,8 +189,7 @@ async function handleFileUpload(e, type) {
                 if (type === 'gsc') {
                     targetCourse.gscKeywords = res.keywords;
                 } else {
-                    // For Ads, we just need the terms for now as requested
-                    targetCourse.adsKeywords = res.keywords.map(k => ({ term: k.term }));
+                    targetCourse.adsKeywords = res.keywords;
                 }
                 totalUpdated++;
             }
@@ -201,7 +201,7 @@ async function handleFileUpload(e, type) {
         loadCourse(activeCourseId); // Refresh view
         saveData();
     } else {
-        alert('No matching courses found. Ensure the course names or URLs in the file match the dashboard.');
+        alert(`No matching courses found.\n\nParsed ${coursesInFiles} courses from the file, but none matched the 450 courses in our database.\n\nCheck the Browser Console (F12) for details.`);
     }
 }
 
@@ -235,11 +235,14 @@ function parseSmartXML(xmlText) {
 
 function parseXMLNodes(parentNode) {
     const results = [];
-    // Super-flexible selector for keywords
-    const nodes = parentNode.querySelectorAll('Texto, texto, TEXTO, term, Term, keyword, Keyword');
+    // Super-flexible selector for keywords from GSC, Ads, and custom XMLs
+    const nodes = parentNode.querySelectorAll('Texto, texto, TEXTO, term, Term, keyword, Keyword, query, Query, Key, key, Keys, keys');
     
     nodes.forEach(node => {
         const term = node.textContent.trim();
+        // If the node itself has children (like <Key><Query>...</Query></Key>), we want the deepest text
+        if (node.children.length > 0) return; 
+        
         const p = node.parentNode;
         
         // Flexible selectors for metrics
