@@ -550,17 +550,69 @@ function parseXMLNodes(parentNode) {
 }
 
 function parseCSV(csvString) {
-    const lines = csvString.split('\n');
     const results = [];
-    for (let i = 1; i < lines.length; i++) {
-        const cols = lines[i].split(',');
-        if (cols.length >= 2) {
-            const term = cols[0].replace(/"/g, '').trim();
-            const clicks = parseInt(cols[1].replace(/"/g, '').trim()) || 0;
-            if (term) results.push({ term, clicks });
+    
+    // Remove BOM if present and normalize line endings
+    const clean = csvString.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+    const lines = clean.split('\n').filter(l => l.trim() !== '');
+    
+    if (lines.length < 2) return results;
+    
+    // Find the header row - Google Ads sometimes has metadata rows at the top
+    let headerRowIndex = 0;
+    for (let i = 0; i < Math.min(lines.length, 10); i++) {
+        const lower = lines[i].toLowerCase();
+        if (lower.includes('keyword') || lower.includes('palavra') || lower.includes('search term') || lower.includes('consulta')) {
+            headerRowIndex = i;
+            break;
         }
     }
+    
+    // Parse header to find keyword column index
+    const headers = splitCSVLine(lines[headerRowIndex]).map(h => h.toLowerCase().trim());
+    const keywordColIndex = headers.findIndex(h => 
+        h.includes('keyword') || h.includes('palavra-chave') || 
+        h.includes('search term') || h.includes('consulta') || 
+        h.includes('termo') || h === 'keyword'
+    );
+    
+    // If no header found, fall back to first column
+    const colIndex = keywordColIndex >= 0 ? keywordColIndex : 0;
+    
+    // Parse data rows
+    for (let i = headerRowIndex + 1; i < lines.length; i++) {
+        const cols = splitCSVLine(lines[i]);
+        if (cols.length <= colIndex) continue;
+        
+        const term = cols[colIndex].trim();
+        // Skip empty terms, totals rows, or obviously non-keyword rows
+        if (!term || term.toLowerCase().includes('total') || term.startsWith('--')) continue;
+        
+        if (term) results.push({ term, clicks: 0 });
+    }
+    
     return results;
+}
+
+// Properly splits a CSV line respecting quoted fields
+function splitCSVLine(line) {
+    const cols = [];
+    let current = '';
+    let inQuotes = false;
+    
+    for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (ch === '"') {
+            inQuotes = !inQuotes;
+        } else if ((ch === ',' || ch === ';' || ch === '\t') && !inQuotes) {
+            cols.push(current.replace(/^"|"$/g, '').trim());
+            current = '';
+        } else {
+            current += ch;
+        }
+    }
+    cols.push(current.replace(/^"|"$/g, '').trim());
+    return cols;
 }
 
 function renderCourseList() {
