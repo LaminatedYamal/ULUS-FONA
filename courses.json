@@ -5,8 +5,60 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestao aeronautica",
+        "clicks": 129,
+        "impressions": 808
+      },
+      {
+        "term": "gestão aeronáutica",
+        "clicks": 76,
+        "impressions": 382
+      },
+      {
+        "term": "gestao aeronautica lusofona",
+        "clicks": 49,
+        "impressions": 329
+      },
+      {
+        "term": "gestão aeronautica",
+        "clicks": 21,
+        "impressions": 147
+      },
+      {
+        "term": "lusofona gestao aeronautica",
+        "clicks": 17,
+        "impressions": 68
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia aeronautica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "gestao aeronautica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso aeronautica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade aviação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura aeronautica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 1,
@@ -14,8 +66,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura em artes visuais",
+        "clicks": 9,
+        "impressions": 110
+      },
+      {
+        "term": "licenciatura artes visuais",
+        "clicks": 9,
+        "impressions": 76
+      },
+      {
+        "term": "curso de artes visuais",
+        "clicks": 7,
+        "impressions": 308
+      },
+      {
+        "term": "curso artes visuais",
+        "clicks": 6,
+        "impressions": 204
+      },
+      {
+        "term": "faculdade de artes",
+        "clicks": 5,
+        "impressions": 127
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso artes",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "Licenciatura em Artes Visuais",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura artes",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 2,
@@ -23,8 +117,70 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-de-comunicacao",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "design de comunicação",
+        "clicks": 32,
+        "impressions": 1324
+      },
+      {
+        "term": "design comunicação",
+        "clicks": 7,
+        "impressions": 192
+      },
+      {
+        "term": "licenciatura design lisboa",
+        "clicks": 6,
+        "impressions": 141
+      },
+      {
+        "term": "design gráfico licenciatura",
+        "clicks": 5,
+        "impressions": 57
+      },
+      {
+        "term": "curso de design",
+        "clicks": 3,
+        "impressions": 133
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "design de comunicação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso de design",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura design",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade design",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "design comunicacao",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "design comunicação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "comunicação design",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 3,
@@ -32,8 +188,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "marketing de moda",
+        "clicks": 4,
+        "impressions": 99
+      },
+      {
+        "term": "marketing de moda universidades",
+        "clicks": 1,
+        "impressions": 25
+      },
+      {
+        "term": "marketing moda",
+        "clicks": 1,
+        "impressions": 23
+      },
+      {
+        "term": "sociologia da moda",
+        "clicks": 1,
+        "impressions": 6
+      },
+      {
+        "term": "comunicação de moda",
+        "clicks": 1,
+        "impressions": 2
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso design moda",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura moda",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 4,
@@ -41,8 +234,60 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "relações internacionais",
+        "clicks": 26,
+        "impressions": 1735
+      },
+      {
+        "term": "ciencia politica e relaçoes internacionais",
+        "clicks": 21,
+        "impressions": 525
+      },
+      {
+        "term": "ciencias politicas e relaçoes internacionais",
+        "clicks": 21,
+        "impressions": 471
+      },
+      {
+        "term": "ciência política e relações internacionais",
+        "clicks": 10,
+        "impressions": 147
+      },
+      {
+        "term": "ciencia politica",
+        "clicks": 7,
+        "impressions": 350
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso relações internacionais",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura ciencia politica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso politica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade relações internacionais",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "relações internacionais universidades",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 5,
@@ -51,7 +296,23 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-europeus-e-relacoes-internacionais",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "curso relações internacionais",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura relações internacionais",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura ciência política",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 6,
@@ -59,7 +320,33 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-portugueses",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "estudos portugueses",
+        "clicks": 6,
+        "impressions": 313
+      },
+      {
+        "term": "licenciatura em estudos portugueses",
+        "clicks": 4,
+        "impressions": 89
+      },
+      {
+        "term": "licenciatura em português",
+        "clicks": 3,
+        "impressions": 63
+      },
+      {
+        "term": "licenciatura portugues",
+        "clicks": 1,
+        "impressions": 37
+      },
+      {
+        "term": "licenciatura lingua portuguesa",
+        "clicks": 1,
+        "impressions": 9
+      }
+    ],
     "adsKeywords": []
   },
   {
@@ -68,8 +355,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/sociologia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura em sociologia",
+        "clicks": 11,
+        "impressions": 201
+      },
+      {
+        "term": "sociologia licenciatura",
+        "clicks": 3,
+        "impressions": 83
+      },
+      {
+        "term": "licenciatura sociologia",
+        "clicks": 2,
+        "impressions": 155
+      },
+      {
+        "term": "sociologia curso",
+        "clicks": 2,
+        "impressions": 143
+      },
+      {
+        "term": "curso sociologia",
+        "clicks": 2,
+        "impressions": 134
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "sociologia licenciatura",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso sociologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade sociologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura sociologia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 8,
@@ -78,7 +412,33 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/animacao-digital",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "licenciatura animação digital",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso animação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "escola animação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade animação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "escola ilustração",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 9,
@@ -86,8 +446,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia de som",
+        "clicks": 19,
+        "impressions": 249
+      },
+      {
+        "term": "engenharia do som",
+        "clicks": 9,
+        "impressions": 73
+      },
+      {
+        "term": "engenheiro de som curso",
+        "clicks": 5,
+        "impressions": 24
+      },
+      {
+        "term": "engenharia de som portugal",
+        "clicks": 4,
+        "impressions": 26
+      },
+      {
+        "term": "universidade lusófona",
+        "clicks": 4,
+        "impressions": 14
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso sonoplastia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso audio",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura som",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 10,
@@ -95,8 +497,65 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "lusofona cinema",
+        "clicks": 64,
+        "impressions": 290
+      },
+      {
+        "term": "cinema e artes dos media",
+        "clicks": 55,
+        "impressions": 86
+      },
+      {
+        "term": "cinema lusofona",
+        "clicks": 34,
+        "impressions": 509
+      },
+      {
+        "term": "licenciatura cinema",
+        "clicks": 16,
+        "impressions": 112
+      },
+      {
+        "term": "curso de cinema",
+        "clicks": 12,
+        "impressions": 280
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso cinema",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura cinema",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "universidade cinema",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade cinema",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "cinema curso superior",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "escola cinema",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 11,
@@ -105,7 +564,18 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/formacao-de-atores-cinema-televisao-teatro",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "licenciatura teatro",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "formação atores",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 12,
@@ -113,8 +583,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "curso de fotografia",
+        "clicks": 22,
+        "impressions": 1023
+      },
+      {
+        "term": "licenciatura em fotografia",
+        "clicks": 19,
+        "impressions": 191
+      },
+      {
+        "term": "licenciatura fotografia",
+        "clicks": 18,
+        "impressions": 142
+      },
+      {
+        "term": "faculdade de fotografia",
+        "clicks": 17,
+        "impressions": 183
+      },
+      {
+        "term": "curso de fotografia lisboa",
+        "clicks": 9,
+        "impressions": 280
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "licenciatura fotografia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "universidades fotografia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 13,
@@ -122,8 +629,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/videojogos",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "lusofona videojogos",
+        "clicks": 39,
+        "impressions": 238
+      },
+      {
+        "term": "videojogos lusofona",
+        "clicks": 27,
+        "impressions": 256
+      },
+      {
+        "term": "licenciatura em jogos digitais e multimédia",
+        "clicks": 5,
+        "impressions": 53
+      },
+      {
+        "term": "cursos de videojogos em portugal",
+        "clicks": 4,
+        "impressions": 119
+      },
+      {
+        "term": "curso de jogos",
+        "clicks": 3,
+        "impressions": 17
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "licenciatura videojogos",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso videojogos",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso games",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade jogos",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 14,
@@ -131,8 +685,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias da comunicação lusofona",
+        "clicks": 75,
+        "impressions": 547
+      },
+      {
+        "term": "ciencias da comunicação",
+        "clicks": 60,
+        "impressions": 2584
+      },
+      {
+        "term": "lusofona ciencias da comunicação",
+        "clicks": 47,
+        "impressions": 400
+      },
+      {
+        "term": "ciencias da comunicacao",
+        "clicks": 6,
+        "impressions": 261
+      },
+      {
+        "term": "ciências da comunicação",
+        "clicks": 5,
+        "impressions": 282
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciencias comunicação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso comunicação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade comunicação social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura comunicação",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 15,
@@ -140,8 +741,65 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "comunicação aplicada lusofona",
+        "clicks": 69,
+        "impressions": 406
+      },
+      {
+        "term": "lusofona marketing",
+        "clicks": 45,
+        "impressions": 449
+      },
+      {
+        "term": "marketing lusofona",
+        "clicks": 24,
+        "impressions": 123
+      },
+      {
+        "term": "lusofona comunicação aplicada",
+        "clicks": 22,
+        "impressions": 83
+      },
+      {
+        "term": "comunicação aplicada",
+        "clicks": 17,
+        "impressions": 157
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso marketing",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura marketing",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso relações publicas",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade marketing",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso publicidade",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura publicidade",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 16,
@@ -149,8 +807,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "comunicação e jornalismo lusofona",
+        "clicks": 35,
+        "impressions": 270
+      },
+      {
+        "term": "comunicação e jornalismo",
+        "clicks": 18,
+        "impressions": 129
+      },
+      {
+        "term": "curso de jornalismo",
+        "clicks": 12,
+        "impressions": 286
+      },
+      {
+        "term": "jornalismo desportivo",
+        "clicks": 8,
+        "impressions": 406
+      },
+      {
+        "term": "licenciatura jornalismo",
+        "clicks": 7,
+        "impressions": 197
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso jornalismo",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura jornalismo",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade jornalismo",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 17,
@@ -158,8 +858,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "lusofona desporto",
+        "clicks": 32,
+        "impressions": 200
+      },
+      {
+        "term": "desporto lusofona",
+        "clicks": 20,
+        "impressions": 80
+      },
+      {
+        "term": "faculdade de desporto",
+        "clicks": 11,
+        "impressions": 148
+      },
+      {
+        "term": "faculdade de desporto lisboa",
+        "clicks": 10,
+        "impressions": 86
+      },
+      {
+        "term": "licenciatura em desporto",
+        "clicks": 8,
+        "impressions": 161
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso desporto",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura desporto",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade educação fisica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso educação fisica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 18,
@@ -167,8 +914,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/criminologia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "criminologia",
+        "clicks": 288,
+        "impressions": 3844
+      },
+      {
+        "term": "criminologia lusofona",
+        "clicks": 232,
+        "impressions": 1075
+      },
+      {
+        "term": "criminologia curso",
+        "clicks": 170,
+        "impressions": 1659
+      },
+      {
+        "term": "lusofona criminologia",
+        "clicks": 113,
+        "impressions": 572
+      },
+      {
+        "term": "licenciatura criminologia",
+        "clicks": 58,
+        "impressions": 349
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso criminologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura criminologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "criminologia faculdade",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 19,
@@ -177,7 +966,23 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "[curso direito]",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura direito",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso advocacia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 20,
@@ -185,8 +990,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/contabilidade-fiscalidade-e-auditoria",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "contabilidade fiscalidade e auditoria",
+        "clicks": 32,
+        "impressions": 106
+      },
+      {
+        "term": "licenciatura em contabilidade",
+        "clicks": 29,
+        "impressions": 463
+      },
+      {
+        "term": "licenciatura contabilidade",
+        "clicks": 21,
+        "impressions": 327
+      },
+      {
+        "term": "licenciatura contabilidade online",
+        "clicks": 16,
+        "impressions": 203
+      },
+      {
+        "term": "curso contabilidade",
+        "clicks": 8,
+        "impressions": 547
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso contabilidade",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura contabilidade",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura fiscalidade",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura auditoria",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 21,
@@ -194,8 +1046,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura economia",
+        "clicks": 11,
+        "impressions": 208
+      },
+      {
+        "term": "lusofona economia",
+        "clicks": 7,
+        "impressions": 54
+      },
+      {
+        "term": "economia licenciatura",
+        "clicks": 4,
+        "impressions": 90
+      },
+      {
+        "term": "licenciatura economia pós laboral",
+        "clicks": 4,
+        "impressions": 14
+      },
+      {
+        "term": "curso de economia",
+        "clicks": 3,
+        "impressions": 328
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "licenciatura economia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade economia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 22,
@@ -203,8 +1092,60 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "lusofona gestao de empresas",
+        "clicks": 104,
+        "impressions": 477
+      },
+      {
+        "term": "gestao de empresas lusofona",
+        "clicks": 90,
+        "impressions": 504
+      },
+      {
+        "term": "gestao de empresas",
+        "clicks": 22,
+        "impressions": 660
+      },
+      {
+        "term": "gestão empresarial",
+        "clicks": 21,
+        "impressions": 746
+      },
+      {
+        "term": "lusofona gestao",
+        "clicks": 21,
+        "impressions": 96
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso gestão empresarial",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade gestão empresarial",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso administração empresas",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura gestão empresas",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "gestão empresas",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 23,
@@ -212,8 +1153,65 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-recursos-humanos",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "gestão de recursos humanos",
+        "clicks": 22,
+        "impressions": 2633
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "clicks": 18,
+        "impressions": 277
+      },
+      {
+        "term": "licenciatura em recursos humanos",
+        "clicks": 11,
+        "impressions": 307
+      },
+      {
+        "term": "lusofona gestao de recursos humanos",
+        "clicks": 10,
+        "impressions": 34
+      },
+      {
+        "term": "curso recursos humanos",
+        "clicks": 9,
+        "impressions": 437
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso recursos humanos",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso rh",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade recursos humanos",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso de gestão de hr",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso de hr",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 24,
@@ -221,8 +1219,65 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-educacao-educacao-social",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencias da educação",
+        "clicks": 11,
+        "impressions": 708
+      },
+      {
+        "term": "educação social",
+        "clicks": 8,
+        "impressions": 1009
+      },
+      {
+        "term": "licenciatura em ciências da educação",
+        "clicks": 5,
+        "impressions": 79
+      },
+      {
+        "term": "licenciatura educação social",
+        "clicks": 4,
+        "impressions": 67
+      },
+      {
+        "term": "educação social saídas profissionais",
+        "clicks": 3,
+        "impressions": 258
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "educação social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura educação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura em educação social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura educação social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade educação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso educação",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 25,
@@ -230,8 +1285,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioeconomia-circular-e-tecnologia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "bioeconomia",
+        "clicks": 2,
+        "impressions": 132
+      },
+      {
+        "term": "bioeconomia circular",
+        "clicks": 2,
+        "impressions": 67
+      },
+      {
+        "term": "ingles tecnico",
+        "clicks": 2,
+        "impressions": 45
+      },
+      {
+        "term": "gestão ambiental e sustentabilidade",
+        "clicks": 1,
+        "impressions": 18
+      },
+      {
+        "term": "curso de toxicologia",
+        "clicks": 1,
+        "impressions": 4
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "bioeconomia circular",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso bioeconomia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 26,
@@ -239,8 +1331,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biomedicina-computacional-e-inteligencia-artificial",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "biomedicina computacional",
+        "clicks": 17,
+        "impressions": 43
+      },
+      {
+        "term": "biomedicina",
+        "clicks": 4,
+        "impressions": 2048
+      },
+      {
+        "term": "licenciatura inteligência artificial",
+        "clicks": 3,
+        "impressions": 63
+      },
+      {
+        "term": "licenciatura em inteligência artificial",
+        "clicks": 2,
+        "impressions": 74
+      },
+      {
+        "term": "biomedicina computacional e inteligência artificial",
+        "clicks": 2,
+        "impressions": 4
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "bioeconomia circular",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso bioeconomia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 27,
@@ -248,8 +1377,60 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biotecnologia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "biotecnologia",
+        "clicks": 31,
+        "impressions": 2631
+      },
+      {
+        "term": "biotecnologia lusofona",
+        "clicks": 16,
+        "impressions": 139
+      },
+      {
+        "term": "biotecnologia licenciatura",
+        "clicks": 15,
+        "impressions": 88
+      },
+      {
+        "term": "licenciatura em biotecnologia",
+        "clicks": 7,
+        "impressions": 123
+      },
+      {
+        "term": "licenciatura biotecnologia",
+        "clicks": 7,
+        "impressions": 101
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso ciencias biologicas",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso biotecnologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura biotecnologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "engenharia biotecnologica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura engenharia biotecnologica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 28,
@@ -257,8 +1438,60 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-biomedica",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia biomedica",
+        "clicks": 18,
+        "impressions": 4521
+      },
+      {
+        "term": "engenharia biomédica",
+        "clicks": 12,
+        "impressions": 1331
+      },
+      {
+        "term": "biomedica",
+        "clicks": 4,
+        "impressions": 526
+      },
+      {
+        "term": "licenciatura em gestão hospitalar",
+        "clicks": 3,
+        "impressions": 36
+      },
+      {
+        "term": "estágio engenharia biomédica",
+        "clicks": 3,
+        "impressions": 25
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia biomedica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso biomedicina",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "biomedicina faculdade",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura biomedica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso biomedica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 29,
@@ -266,8 +1499,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura engenharia civil online",
+        "clicks": 19,
+        "impressions": 141
+      },
+      {
+        "term": "engenharia civil lusofona",
+        "clicks": 11,
+        "impressions": 27
+      },
+      {
+        "term": "engenharia civil lisboa",
+        "clicks": 8,
+        "impressions": 176
+      },
+      {
+        "term": "engenharia civil online portugal",
+        "clicks": 8,
+        "impressions": 70
+      },
+      {
+        "term": "engenharia civil",
+        "clicks": 7,
+        "impressions": 1235
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "faculdade engenharia civil",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso engenheiro civil",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura civil",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 30,
@@ -276,7 +1551,33 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "licenciatura engenharia ambiente",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso ambiental",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura ambiente",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso ambiente",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade ambiental",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 31,
@@ -285,7 +1586,23 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "engenharia gestão industrial",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso engenharia produção",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura industrial",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 32,
@@ -293,8 +1610,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-eletrotecnica-e-de-computadores",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia eletrotécnica",
+        "clicks": 2,
+        "impressions": 1544
+      },
+      {
+        "term": "engenharia eletrotécnica e de computadores",
+        "clicks": 1,
+        "impressions": 90
+      },
+      {
+        "term": "curso de engenharia eletrotécnica",
+        "clicks": 1,
+        "impressions": 15
+      },
+      {
+        "term": "engenharia eletrotecnica",
+        "clicks": 0,
+        "impressions": 242
+      },
+      {
+        "term": "eletrotecnia",
+        "clicks": 0,
+        "impressions": 210
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso eletrotecnica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "engenharia eletrotecnica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "engenharia de eletrotecnica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 33,
@@ -311,8 +1670,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "ciencia de dados",
+        "clicks": 6,
+        "impressions": 612
+      },
+      {
+        "term": "ciencias de dados",
+        "clicks": 5,
+        "impressions": 145
+      },
+      {
+        "term": "licenciatura ciência de dados",
+        "clicks": 5,
+        "impressions": 66
+      },
+      {
+        "term": "ciência de dados",
+        "clicks": 2,
+        "impressions": 244
+      },
+      {
+        "term": "licenciatura em ciência de dados",
+        "clicks": 2,
+        "impressions": 104
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "ciência de dados ISCTE",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura ciência de dados",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura data science",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 35,
@@ -320,8 +1721,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/computacao-e-matematica-aplicada",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "análise exploratória de dados",
+        "clicks": 2,
+        "impressions": 7
+      },
+      {
+        "term": "matematica aplicada",
+        "clicks": 1,
+        "impressions": 421
+      },
+      {
+        "term": "matematica aplicada e computacao",
+        "clicks": 1,
+        "impressions": 58
+      },
+      {
+        "term": "matematica aplicada a computacao",
+        "clicks": 1,
+        "impressions": 31
+      },
+      {
+        "term": "ciência da computação",
+        "clicks": 1,
+        "impressions": 20
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "matemática computação",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura matemática",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 36,
@@ -329,8 +1767,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia informatica lusofona",
+        "clicks": 69,
+        "impressions": 579
+      },
+      {
+        "term": "lusofona engenharia informatica",
+        "clicks": 59,
+        "impressions": 576
+      },
+      {
+        "term": "engenharia informatica",
+        "clicks": 45,
+        "impressions": 3588
+      },
+      {
+        "term": "engenharia informática",
+        "clicks": 8,
+        "impressions": 448
+      },
+      {
+        "term": "licenciatura engenharia informática",
+        "clicks": 7,
+        "impressions": 438
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "engenharia informatica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura informatica",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade informatica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 37,
@@ -338,8 +1818,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica-redes-e-telecomunicacoes",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "engenharia de redes e segurança informática",
+        "clicks": 3,
+        "impressions": 85
+      },
+      {
+        "term": "engenharia de redes",
+        "clicks": 2,
+        "impressions": 255
+      },
+      {
+        "term": "curso de redes",
+        "clicks": 2,
+        "impressions": 18
+      },
+      {
+        "term": "engenharia de telecomunicações e informática",
+        "clicks": 1,
+        "impressions": 173
+      },
+      {
+        "term": "engenharia informatica lusofona",
+        "clicks": 1,
+        "impressions": 108
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso telecomunicações",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura telecomunicações",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 38,
@@ -348,7 +1865,18 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/informatica-de-gestao",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "informática gestão",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura informatica gestão",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 39,
@@ -356,8 +1884,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "lusofona psicologia",
+        "clicks": 186,
+        "impressions": 883
+      },
+      {
+        "term": "psicologia lusofona",
+        "clicks": 160,
+        "impressions": 724
+      },
+      {
+        "term": "lusófona psicologia",
+        "clicks": 55,
+        "impressions": 228
+      },
+      {
+        "term": "licenciatura psicologia",
+        "clicks": 36,
+        "impressions": 965
+      },
+      {
+        "term": "licenciatura em psicologia",
+        "clicks": 20,
+        "impressions": 1018
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "psicologia lisboa",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso psicologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura psicologia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 40,
@@ -365,8 +1935,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "biologia lusofona",
+        "clicks": 47,
+        "impressions": 330
+      },
+      {
+        "term": "licenciatura em biologia",
+        "clicks": 19,
+        "impressions": 303
+      },
+      {
+        "term": "biologia licenciatura",
+        "clicks": 8,
+        "impressions": 120
+      },
+      {
+        "term": "licenciatura biologia",
+        "clicks": 7,
+        "impressions": 211
+      },
+      {
+        "term": "curso de biologia",
+        "clicks": 6,
+        "impressions": 261
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "faculdade biologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "universidade biologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso ciencias biologicas",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura biologia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 41,
@@ -375,7 +1992,13 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica",
     "gscKeywords": [],
-    "adsKeywords": []
+    "adsKeywords": [
+      {
+        "term": "bioquimica",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 42,
@@ -383,8 +2006,60 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura nutrição pós laboral",
+        "clicks": 31,
+        "impressions": 188
+      },
+      {
+        "term": "ciencias da nutrição",
+        "clicks": 25,
+        "impressions": 771
+      },
+      {
+        "term": "curso nutrição",
+        "clicks": 18,
+        "impressions": 440
+      },
+      {
+        "term": "licenciatura em nutrição",
+        "clicks": 18,
+        "impressions": 338
+      },
+      {
+        "term": "curso de nutrição",
+        "clicks": 15,
+        "impressions": 548
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso nutrição",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura nutrição",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso nutricionista",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade nutrição",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade nutricionista",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 43,
@@ -392,8 +2067,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cuidados-de-beleza-e-bem-estar",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura estetica",
+        "clicks": 29,
+        "impressions": 66
+      },
+      {
+        "term": "licenciatura em estética e cosmética",
+        "clicks": 23,
+        "impressions": 98
+      },
+      {
+        "term": "licenciatura em estética portugal",
+        "clicks": 22,
+        "impressions": 95
+      },
+      {
+        "term": "curso superior de estética e cosmética em lisboa",
+        "clicks": 16,
+        "impressions": 102
+      },
+      {
+        "term": "licenciatura em estetica",
+        "clicks": 15,
+        "impressions": 59
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso de cosmetologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "curso em cosmetologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "estética e cosmetologia",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura cosmetologia",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 44,
@@ -401,8 +2123,45 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-de-seguranca-interna",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "estudos de segurança interna",
+        "clicks": 54,
+        "impressions": 98
+      },
+      {
+        "term": "estudos de segurança",
+        "clicks": 17,
+        "impressions": 73
+      },
+      {
+        "term": "curso de diretor de segurança",
+        "clicks": 3,
+        "impressions": 27
+      },
+      {
+        "term": "segurança interna",
+        "clicks": 1,
+        "impressions": 91
+      },
+      {
+        "term": "curso diretor de segurança",
+        "clicks": 1,
+        "impressions": 28
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso segurança",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura segurança",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 45,
@@ -410,8 +2169,55 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/servico-social",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura em serviço social",
+        "clicks": 16,
+        "impressions": 385
+      },
+      {
+        "term": "licenciatura serviço social",
+        "clicks": 13,
+        "impressions": 228
+      },
+      {
+        "term": "serviço social licenciatura",
+        "clicks": 13,
+        "impressions": 145
+      },
+      {
+        "term": "licenciatura serviço social online",
+        "clicks": 10,
+        "impressions": 92
+      },
+      {
+        "term": "serviço social",
+        "clicks": 9,
+        "impressions": 822
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso assistente social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade serviço social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade assistente social",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura servico social",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 46,
@@ -419,8 +2225,50 @@
     "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/turismo",
-    "gscKeywords": [],
-    "adsKeywords": []
+    "gscKeywords": [
+      {
+        "term": "licenciatura em turismo",
+        "clicks": 25,
+        "impressions": 307
+      },
+      {
+        "term": "licenciatura turismo",
+        "clicks": 24,
+        "impressions": 194
+      },
+      {
+        "term": "curso turismo",
+        "clicks": 10,
+        "impressions": 803
+      },
+      {
+        "term": "gestão hoteleira universidades lisboa",
+        "clicks": 9,
+        "impressions": 90
+      },
+      {
+        "term": "turismo licenciatura",
+        "clicks": 9,
+        "impressions": 57
+      }
+    ],
+    "adsKeywords": [
+      {
+        "term": "curso turismo",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "licenciatura turismo",
+        "clicks": 0,
+        "impressions": 0
+      },
+      {
+        "term": "faculdade turismo",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ]
   },
   {
     "id": 47,
