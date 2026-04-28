@@ -26,6 +26,26 @@ async function init() {
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
     
     loadData(); // Also apply any local browser data
+    initTheme();
+}
+
+function initTheme() {
+    const saved = localStorage.getItem('antigravity_theme');
+    if (saved === 'light') {
+        document.body.classList.add('light-mode');
+        updateThemeIcons(true);
+    }
+}
+
+function toggleTheme() {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('antigravity_theme', isLight ? 'light' : 'dark');
+    updateThemeIcons(isLight);
+}
+
+function updateThemeIcons(isLight) {
+    document.querySelector('.sun-icon').style.display = isLight ? 'none' : 'block';
+    document.querySelector('.moon-icon').style.display = isLight ? 'block' : 'none';
 }
 
 
