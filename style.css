@@ -647,18 +647,68 @@ td {
     100% { box-shadow: inset 0 0 15px rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.3); }
 }
 
-.synergy-aura {
-    background: linear-gradient(90deg, rgba(52, 211, 153, 0.12) 0%, transparent 100%) !important;
-    border: 1px solid rgba(52, 211, 153, 0.4) !important;
-    animation: synergy-pulse 3s infinite ease-in-out;
-    transition: all 0.3s ease;
-}
-
 .synergy-aura td:first-child {
     font-weight: 700;
     color: #34d399;
-    text-shadow: 0 0 20px rgba(52, 211, 153, 0.8);
+    text-shadow: 0 0 25px rgba(52, 211, 153, 0.9);
     position: relative;
+    padding-left: 45px !important; /* Space for Rayquaza icon */
+}
+
+.synergy-aura td:first-child::before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    background: url('rayquaza_pixel_icon.png') no-repeat center center;
+    background-size: contain;
+    filter: drop-shadow(0 0 10px #34d399);
+    animation: float-rayquaza 3s infinite ease-in-out;
+    z-index: 10;
+}
+
+@keyframes float-rayquaza {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-65%) translateX(4px); }
+}
+
+.synergy-aura {
+    background: linear-gradient(90deg, rgba(52, 211, 153, 0.15) 0%, transparent 100%) !important;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(52, 211, 153, 0.1);
+    animation: synergy-pulse 3s infinite ease-in-out;
+    border: none !important; /* Managed by the pseudo-border snake */
+}
+
+/* Circling Lightning Border (Snake) */
+.synergy-aura::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 40%, 
+        #fbbf24 50%, 
+        transparent 60%, 
+        transparent 100%
+    ) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    background-size: 300% 100%;
+    animation: snake-ray 2.5s infinite linear;
+}
+
+@keyframes snake-ray {
+    0% { background-position: 150% 0; }
+    100% { background-position: -150% 0; }
 }
 
 /* Rayquaza Lightning Tags */
