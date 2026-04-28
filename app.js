@@ -141,6 +141,13 @@ function clearToken() {
     alert("Connection Reset! You can now paste a new token when you click Sync.");
 }
 
+function hardReset() {
+    if (confirm("🚨 HARD RESET: This will clear your local browser memory and reload fresh from the cloud. Continue?")) {
+        localStorage.removeItem('antigravity_data_v2');
+        location.reload();
+    }
+}
+
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
         return String.fromCharCode('0x' + p1);
