@@ -965,8 +965,8 @@ body.light-mode .theme-toggle {
 }
 
 .gap-aura {
-    background: linear-gradient(90deg, rgba(239, 68, 68, 0.06) 0%, transparent 100%) !important;
-    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.15) 0%, transparent 100%) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
     animation: gap-pulse 4s infinite ease-in-out;
 }
 
