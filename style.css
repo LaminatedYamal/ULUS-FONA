@@ -859,6 +859,8 @@ td {
     align-items: center;
     justify-content: flex-end;
     gap: 15px;
+}
+
 body.light-mode .synergy-aura::after {
     background: linear-gradient(90deg, 
         transparent 0%, 
