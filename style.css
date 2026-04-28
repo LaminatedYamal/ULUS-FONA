@@ -107,6 +107,37 @@ body {
     height: 100vh;
 }
 
+/* Sleek Pill Scrollbar (Legendary Button Style) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+body.light-mode ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode ::-webkit-scrollbar-thumb:hover {
+    background: var(--success);
+}
+
 .app-container {
     display: flex;
     height: 100%;
@@ -918,4 +949,53 @@ body.light-mode .theme-toggle {
 
 .main-content::-webkit-scrollbar {
     width: 6px;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 242, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 242, 255, 0.4);
+    color: #00f2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #00f2ff;
+    color: #000000;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    transform: translateY(-5px);
+}
+
+body.light-mode .back-to-top {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.1);
+    color: #10b981;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+body.light-mode .back-to-top:hover {
+    background: #10b981;
+    color: #ffffff;
 }

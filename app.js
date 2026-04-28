@@ -48,6 +48,29 @@ function updateThemeIcons(isLight) {
     document.querySelector('.moon-icon').style.display = isLight ? 'block' : 'none';
 }
 
+function scrollToTop() {
+    document.querySelector('.main-content').scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/Hide Back to Top button
+document.addEventListener('DOMContentLoaded', () => {
+    const mainContent = document.querySelector('.main-content');
+    const bttBtn = document.getElementById('back-to-top');
+    
+    if (mainContent && bttBtn) {
+        mainContent.addEventListener('scroll', () => {
+            if (mainContent.scrollTop > 300) {
+                bttBtn.classList.add('visible');
+            } else {
+                bttBtn.classList.remove('visible');
+            }
+        });
+    }
+});
+
 
 async function fetchServerData() {
     try {
