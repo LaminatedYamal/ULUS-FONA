@@ -722,6 +722,7 @@ td {
         transparent
     );
     animation: lightning-strike 1.5s infinite ease-in-out;
+    animation-delay: calc(var(--lightning-delay, 0s) + 0.2s);
 }
 
 @keyframes lightning-strike {
@@ -739,6 +740,7 @@ td {
     border-radius: 7px;
     opacity: 0;
     animation: flash-border 2s infinite;
+    animation-delay: calc(var(--lightning-delay, 0s) + 0.4s);
 }
 
 @keyframes flash-border {
