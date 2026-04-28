@@ -15,16 +15,82 @@
 }
 
 body.light-mode {
-    --bg-dark: #f0f2f5;
+    --bg-dark: #f8fafc;
     --panel-bg: #ffffff;
-    --panel-border: rgba(0, 0, 0, 0.1);
-    --text-main: #1a1a1a;
-    --text-muted: #666666;
-    --success: #10b981; 
-    --warning: #f59e0b;
-    --danger: #ef4444;
+    --panel-border: rgba(0, 0, 0, 0.08);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --success: #059669; 
+    --warning: #d97706;
+    --danger: #dc2626;
     --glass-blur: 0px;
-    --card-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+body.light-mode .sidebar {
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+}
+
+body.light-mode .logo-text, 
+body.light-mode .logo-container {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #0f172a;
+}
+
+body.light-mode .nav-group-header {
+    background: #f1f5f9;
+    color: #64748b;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .nav-degree-group summary,
+body.light-mode .nav-degree-group li {
+    color: #334155;
+    background: transparent;
+    border-color: transparent;
+}
+
+body.light-mode .nav-degree-group li:hover {
+    background: #f1f5f9;
+}
+
+body.light-mode .nav-degree-group summary:hover {
+    background: #f1f5f9;
+}
+
+body.light-mode .stat-card {
+    background: #ffffff;
+    box-shadow: var(--card-shadow);
+}
+
+body.light-mode .stat-value {
+    color: #0f172a;
+}
+
+body.light-mode .main-content {
+    background: #f8fafc;
+}
+
+body.light-mode .synergy-aura {
+    background: rgba(16, 185, 129, 0.08) !important;
+    box-shadow: inset 0 0 15px rgba(16, 185, 129, 0.05);
+}
+
+body.light-mode .synergy-aura td:first-child {
+    color: #047857;
+    text-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+body.light-mode .match-tag {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #047857;
+}
+
+body.light-mode .snake-ray {
+    background: linear-gradient(90deg, transparent, #d97706, transparent);
 }
 
 * {
@@ -712,6 +778,14 @@ td {
     align-items: center;
     justify-content: flex-end;
     gap: 15px;
+body.light-mode .synergy-aura::after {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 40%, 
+        #d97706 50%, 
+        transparent 60%, 
+        transparent 100%
+    ) border-box;
 }
 
 .theme-toggle {
