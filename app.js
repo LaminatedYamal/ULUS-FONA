@@ -76,14 +76,24 @@ async function syncToGitHub() {
         const fileData = await getRes.json();
         const sha = fileData.sha;
 
+        // Safety Check: Prevent syncing if memory is empty
+        const hasKeywords = courses.some(c => (c.gscKeywords && c.gscKeywords.length > 0) || (c.adsKeywords && c.adsKeywords.length > 0));
+        if (!hasKeywords) {
+            if (!confirm("🚨 WARNING: Your dashboard appears to be EMPTY. If you sync now, you will ERASE all keywords from the team database. Are you sure?")) {
+                throw new Error("Sync cancelled to prevent data loss.");
+            }
+        }
+
         // 2. Prepare the new content
         // We only sync the raw data to keep the file clean
         const exportData = courses.map(c => ({
+            id: c.id,
             name: c.name,
             degree: c.degree,
             institution: c.institution,
-            gscKeywords: c.gscKeywords,
-            adsKeywords: c.adsKeywords
+            url: c.url,
+            gscKeywords: c.gscKeywords || [],
+            adsKeywords: c.adsKeywords || []
         }));
 
         const content = b64EncodeUnicode(JSON.stringify(exportData, null, 2));
