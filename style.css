@@ -34,30 +34,38 @@ body.light-mode .sidebar {
 
 body.light-mode .logo-text, 
 body.light-mode .logo-container {
-    background: #f1f5f9;
-    border-color: #e2e8f0;
+    background: #e2e8f0;
+    border-color: #cbd5e1;
     color: #0f172a;
 }
 
 body.light-mode .nav-group-header {
-    background: #f1f5f9;
-    color: #64748b;
-    border-color: #e2e8f0;
+    background: #e2e8f0;
+    color: #475569;
+    border-color: #cbd5e1;
 }
 
 body.light-mode .nav-degree-group summary,
 body.light-mode .nav-degree-group li {
-    color: #334155;
+    color: #1e293b; /* Much darker for accessibility */
     background: transparent;
     border-color: transparent;
 }
 
 body.light-mode .nav-degree-group li:hover {
-    background: #f1f5f9;
+    background: #e2e8f0;
 }
 
 body.light-mode .nav-degree-group summary:hover {
-    background: #f1f5f9;
+    background: #e2e8f0;
+}
+
+body.light-mode .gsc-count {
+    background: #2563eb; /* Deeper blue */
+}
+
+body.light-mode .ads-count {
+    background: #16a34a; /* Deeper green */
 }
 
 body.light-mode .stat-card {
