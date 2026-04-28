@@ -1,6 +1,7 @@
 const BRANDING = {
     "Lusófona Lisboa": { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
     "Lusófona Porto":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
+    "Grupo Lusófona":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
     "IPLUSO":          { hex: "#A20736", bgSub: "#780528", logo: "https://i.postimg.cc/fLR0Nksd/Logo-IPLUSO-ECIA-2.png" },
     "ISLA Gaia":       { hex: "#BB969B", bgSub: "#9C797E", logo: "https://i.postimg.cc/kGyZtjz7/Versa-o-Horizontal-Branco-2048x853.png" },
     "ISMAT":           { hex: "#7AC7CD", bgSub: "#5CA2A8", logo: "https://i.postimg.cc/0jpvXd31/logo-ISMAT-02.png" }
@@ -10,7 +11,12 @@ let courses = [];
 let activeCourseId = 0;
 
 async function init() {
-    await fetchServerData(); // Merge cloud keywords on top of the baseline
+    try {
+        await fetchServerData();
+    } catch (e) {
+        console.warn("Could not load cloud data, falling back to local storage.", e);
+    }
+    
     renderCourseList();
     
     if (courses.length > 0) {
@@ -74,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchServerData() {
     try {
-        const response = await fetch('courses.json?v=' + Date.now());
+        // Remove cache-buster if on local filesystem to avoid CORS/access errors
+        const url = window.location.protocol === 'file:' ? 'courses.json' : 'courses.json?v=' + Date.now();
+        const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to load cloud data.");
         const data = await response.json();
         
@@ -558,6 +566,26 @@ function normalizeUrl(url) {
     return u;
 }
 
+function normalizeKeyword(term) {
+    if (!term) return '';
+    // Strip punctuation, symbols, and extra whitespace, and handle accents
+    // We use a more aggressive approach for Portuguese accents
+    return term.toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // Remove accents
+        .replace(/[^\w\s]/g, "")        // Remove punctuation
+        .replace(/\s+/g, " ")           // Normalize whitespace
+        .trim();
+}
+
+function getContrastColor(hex) {
+    const rgb = hexToRgb(hex);
+    if (!rgb) return '#ffffff';
+    // Luma formula
+    const brightness = (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000;
+    return brightness > 125 ? '#000000' : '#ffffff';
+}
+
 function detectDelimiter(line) {
     if (line.includes('\t')) return '\t';
     if (line.includes(';')) return ';';
@@ -584,16 +612,29 @@ function splitCSVLine(line, delimiter) {
     return cols;
 }
 
-function renderCourseList() {
+function renderCourseList(searchQuery = '') {
     const list = document.getElementById('course-list');
     list.innerHTML = '';
+    const q = searchQuery.toLowerCase().trim();
 
-    // Grouping Logic
+    // Grouping Logic with Filtering
     const grouped = {};
+    let totalMatches = 0;
+
     courses.forEach(course => {
-        if (!grouped[course.institution]) grouped[course.institution] = {};
-        if (!grouped[course.institution][course.degree]) grouped[course.institution][course.degree] = [];
-        grouped[course.institution][course.degree].push(course);
+        // Search Logic: Match name OR any keyword (GSC or Ads)
+        const nameMatch = course.name.toLowerCase().includes(q);
+        const keywordMatch = q && (
+            course.gscKeywords.some(k => k.term.toLowerCase().includes(q)) || 
+            course.adsKeywords.some(k => k.term.toLowerCase().includes(q))
+        );
+
+        if (!q || nameMatch || keywordMatch) {
+            if (!grouped[course.institution]) grouped[course.institution] = {};
+            if (!grouped[course.institution][course.degree]) grouped[course.institution][course.degree] = [];
+            grouped[course.institution][course.degree].push(course);
+            totalMatches++;
+        }
     });
 
     const instOrder = ['Lusófona Lisboa', 'Lusófona Porto', 'IPLUSO', 'ISLA Gaia', 'ISMAT'];
@@ -606,10 +647,17 @@ function renderCourseList() {
         if (indexB === -1) return -1;
         return indexA - indexB;
     }).forEach(inst => {
-        // Institution Header
+        // Institution Header with Dynamic Branding
+        const brand = BRANDING[inst] || { hex: "#444444", bgSub: "#222222" };
         const instHeader = document.createElement('div');
         instHeader.className = 'nav-group-header';
         instHeader.textContent = inst;
+        
+        // Apply Branding
+        instHeader.style.backgroundColor = brand.hex;
+        instHeader.style.color = getContrastColor(brand.hex);
+        instHeader.style.borderColor = brand.bgSub;
+        
         list.appendChild(instHeader);
 
         const degreeOrder = ['CTeSP', 'Licenciaturas', 'Mestrados Integrados', 'Mestrados', 'Doutoramentos', 'Pós-Graduações', 'Formação'];
@@ -657,6 +705,8 @@ function renderCourseList() {
                 ul.appendChild(li);
             });
             degreeDetails.appendChild(ul);
+            // Auto-open if searching
+            if (q) degreeDetails.open = true;
             list.appendChild(degreeDetails);
         });
     });
@@ -768,8 +818,8 @@ function renderTables(gsc = [], ads = []) {
     const sortedGsc = [...gsc].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     const sortedAds = [...ads].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     
-    const gscTerms = sortedGsc.map(k => k.term.toLowerCase());
-    const adsTerms = sortedAds.map(k => k.term.toLowerCase());
+    const gscNorms = sortedGsc.map(k => normalizeKeyword(k.term));
+    const adsNorms = sortedAds.map(k => normalizeKeyword(k.term));
     
     if (sortedGsc.length === 0) {
         gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data to see keywords</td></tr>`;
@@ -777,7 +827,7 @@ function renderTables(gsc = [], ads = []) {
         let matchCountGsc = 0;
         sortedGsc.forEach((k) => {
             const tr = document.createElement('tr');
-            const isMatch = adsTerms.includes(k.term.toLowerCase());
+            const isMatch = adsNorms.includes(normalizeKeyword(k.term));
             
             if (isMatch) {
                 tr.className = 'synergy-aura';
@@ -802,7 +852,7 @@ function renderTables(gsc = [], ads = []) {
         let matchCountAds = 0;
         sortedAds.forEach((k) => {
             const tr = document.createElement('tr');
-            const isMatch = gscTerms.includes(k.term.toLowerCase());
+            const isMatch = gscNorms.includes(normalizeKeyword(k.term));
             
             if (isMatch) {
                 tr.className = 'synergy-aura';
@@ -824,11 +874,11 @@ function renderTables(gsc = [], ads = []) {
 function updateStats(course) {
     const gscCount = course.gscKeywords.length;
     const adsCount = course.adsKeywords.length;
-    const gscTerms = course.gscKeywords.map(k => k.term.toLowerCase());
-    const adsTerms = course.adsKeywords.map(k => k.term.toLowerCase());
-    const matches = adsTerms.filter(term => gscTerms.includes(term)).length;
+    const gscNorms = course.gscKeywords.map(k => normalizeKeyword(k.term));
+    const adsNorms = course.adsKeywords.map(k => normalizeKeyword(k.term));
+    const matches = adsNorms.filter(norm => gscNorms.includes(norm)).length;
     const parity = adsCount > 0 ? Math.round((matches / adsCount) * 100) : 0;
-    const gaps = adsTerms.filter(term => !gscTerms.includes(term)).length;
+    const gaps = adsNorms.filter(norm => !gscNorms.includes(norm)).length;
     
     document.getElementById('gsc-count').textContent = gscCount;
     document.getElementById('ads-count').textContent = adsCount;
@@ -839,10 +889,15 @@ function updateStats(course) {
 
 function filterKeywords(query) {
     const q = query.toLowerCase();
+    
+    // 1. Filter currently visible tables
     const course = courses.find(c => c.id === activeCourseId);
     const filteredGsc = course.gscKeywords.filter(k => k.term.toLowerCase().includes(q));
     const filteredAds = course.adsKeywords.filter(k => k.term.toLowerCase().includes(q));
     renderTables(filteredGsc, filteredAds);
+
+    // 2. Refresh sidebar to show which courses have matches (Global Search)
+    renderCourseList(query);
 }
 
 document.addEventListener('DOMContentLoaded', init);
