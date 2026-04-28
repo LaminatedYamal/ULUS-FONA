@@ -731,13 +731,15 @@ function renderTables(gsc = [], ads = []) {
     if (sortedGsc.length === 0) {
         gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data to see keywords</td></tr>`;
     } else {
-        sortedGsc.forEach((k, index) => {
+        let matchCountGsc = 0;
+        sortedGsc.forEach((k) => {
             const tr = document.createElement('tr');
             const isMatch = adsTerms.includes(k.term.toLowerCase());
             
             if (isMatch) {
                 tr.className = 'synergy-aura';
-                tr.style.setProperty('--lightning-delay', `${(Math.random() * 2).toFixed(2)}s`);
+                tr.style.setProperty('--lightning-delay', `${(matchCountGsc * 0.5).toFixed(2)}s`);
+                matchCountGsc++;
             } else {
                 tr.className = 'gap-aura';
             }
@@ -754,13 +756,15 @@ function renderTables(gsc = [], ads = []) {
     if (sortedAds.length === 0) {
         adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Ads data to see keywords</td></tr>`;
     } else {
-        sortedAds.forEach((k, index) => {
+        let matchCountAds = 0;
+        sortedAds.forEach((k) => {
             const tr = document.createElement('tr');
             const isMatch = gscTerms.includes(k.term.toLowerCase());
             
             if (isMatch) {
                 tr.className = 'synergy-aura';
-                tr.style.setProperty('--lightning-delay', `${(Math.random() * 2).toFixed(2)}s`);
+                tr.style.setProperty('--lightning-delay', `${(matchCountAds * 0.5).toFixed(2)}s`);
+                matchCountAds++;
             } else {
                 tr.className = 'gap-aura';
             }
