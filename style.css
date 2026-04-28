@@ -652,27 +652,6 @@ td {
     color: #34d399;
     text-shadow: 0 0 25px rgba(52, 211, 153, 0.9);
     position: relative;
-    padding-left: 45px !important; /* Space for Rayquaza icon */
-}
-
-.synergy-aura td:first-child::before {
-    content: '';
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 26px;
-    height: 26px;
-    background: url('rayquaza_pixel_icon.png') no-repeat center center;
-    background-size: contain;
-    filter: drop-shadow(0 0 10px #34d399);
-    animation: float-rayquaza 3s infinite ease-in-out;
-    z-index: 10;
-}
-
-@keyframes float-rayquaza {
-    0%, 100% { transform: translateY(-50%) translateX(0); }
-    50% { transform: translateY(-65%) translateX(4px); }
 }
 
 .synergy-aura {
