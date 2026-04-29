@@ -11,13 +11,7 @@ let courses = [];
 let activeCourseId = 0;
 
 async function init() {
-    try {
-        await fetchServerData();
-    } catch (e) {
-        console.warn("Could not load cloud data, falling back to local storage.", e);
-    }
-    
-    renderCourseList();
+    checkAuth();
     
     if (courses.length > 0) {
         activeCourseId = courses[0].id;
@@ -153,6 +147,7 @@ async function syncToGitHub() {
         }));
 
         const content = b64EncodeUnicode(JSON.stringify(exportData, null, 2));
+        const currentUser = localStorage.getItem('hub_user_name') || 'Anonymous';
 
         // 3. Push to GitHub
         const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
@@ -162,7 +157,7 @@ async function syncToGitHub() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                message: `Sync: ${new Date().toLocaleString('pt-PT')} [v${Date.now()}]`,
+                message: `Sync: ${new Date().toLocaleString('pt-PT')} [${currentUser}]`,
                 content: content,
                 sha: sha,
                 branch: "main"
@@ -368,6 +363,52 @@ function closeSyncModal() {
         localStorage.setItem('hide_sync_reminder', 'true');
     }
     document.querySelector('.modal-overlay').remove();
+}
+
+// TEAM AUTHENTICATION
+const TEAM_ACCESS_KEY = "Antigravity2024";
+
+function checkAuth() {
+    const user = localStorage.getItem('hub_user_name');
+    if (!user) {
+        document.getElementById('login-overlay').style.display = 'flex';
+    } else {
+        fetchServerData().then(() => {
+            renderCourseList();
+            if (courses.length > 0) loadCourse(activeCourseId);
+        });
+    }
+}
+
+async function handleLogin() {
+    const name = document.getElementById('login-name').value.trim();
+    const key = document.getElementById('login-key').value.trim();
+    const error = document.getElementById('login-error');
+
+    if (!name) {
+        error.textContent = "Please enter your name.";
+        return;
+    }
+
+    if (key !== TEAM_ACCESS_KEY) {
+        error.textContent = "Invalid Access Key.";
+        return;
+    }
+
+    // Success
+    localStorage.setItem('hub_user_name', name);
+    document.getElementById('login-overlay').style.opacity = '0';
+    setTimeout(() => {
+        document.getElementById('login-overlay').style.display = 'none';
+        checkAuth(); // This will trigger the data load
+    }, 500);
+}
+
+function logout() {
+    if (confirm("Logout and lock dashboard?")) {
+        localStorage.removeItem('hub_user_name');
+        location.reload();
+    }
 }
 
 function stripAccents(str) {
