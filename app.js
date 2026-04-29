@@ -945,6 +945,9 @@ window.resetApp = function(mode) {
             loadCourse(activeCourseId);
             alert(`${mode.toUpperCase()} data cleared successfully.`);
         }
+    }
+};
+
 window.selectDegreeHub = function(inst, degree, degreeCourses) {
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
