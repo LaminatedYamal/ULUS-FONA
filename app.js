@@ -820,7 +820,16 @@ function renderCourseList(searchQuery = '') {
         
         list.appendChild(instHeader);
 
-        const degreeOrder = ['CTeSP', 'Licenciaturas', 'Mestrados Integrados', 'Mestrados', 'Doutoramentos', 'Pós-Graduações', 'Formações'];
+        const degreeOrder = ['TeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
+        const displayMapping = {
+            'TeSP': 'CTESP',
+            'Licenciatura': 'Licenciaturas',
+            'Mestrado Integrado': 'Mestrados Integrados',
+            'Mestrado': 'Mestrados',
+            'Doutoramento': 'Doutoramentos',
+            'Pós-Graduação': 'Pós-Graduações',
+            'Formações': 'Formações'
+        };
         
         Object.keys(grouped[inst]).sort((a, b) => {
             const indexA = degreeOrder.indexOf(a);
@@ -835,7 +844,7 @@ function renderCourseList(searchQuery = '') {
             degreeDetails.className = 'nav-degree-group';
             
             const summary = document.createElement('summary');
-            summary.textContent = degree;
+            summary.textContent = displayMapping[degree] || degree;
             degreeDetails.appendChild(summary);
 
             const ul = document.createElement('ul');
