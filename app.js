@@ -40,11 +40,15 @@ async function init() {
 }
 
 
-function initGreeting() {
-    const userName = localStorage.getItem('hub_user_name') || 'Agent';
+function initGreeting(nameOverride) {
+    const userName = nameOverride || localStorage.getItem('hub_user_name');
     const greetingEl = document.getElementById('greeting-text');
     if (greetingEl) {
-        greetingEl.textContent = `Olá, ${userName}!`;
+        if (userName) {
+            greetingEl.textContent = `Olá, ${userName}!`;
+        } else {
+            greetingEl.textContent = "Olá!";
+        }
     }
 }
 
@@ -441,7 +445,7 @@ async function handleLogin() {
     // Success
     localStorage.setItem('hub_user_name', name);
     localStorage.setItem('hub_is_authed', 'true');
-    initGreeting(); // Update greeting text right now
+    initGreeting(name); // Update greeting text right now with the actual name
     
     document.getElementById('login-overlay').style.opacity = '0';
     setTimeout(() => {
