@@ -951,15 +951,13 @@ function splitCSVLine(line, delimiter) {
 
 function renderCourseList(searchQuery = '') {
     const list = document.getElementById('course-list');
+    if (!list) return;
     list.innerHTML = '';
     const q = searchQuery.toLowerCase().trim();
 
-    // Grouping Logic with Filtering
+    // Grouping Logic
     const grouped = {};
-    let totalMatches = 0;
-
     courses.forEach(course => {
-        // Search Logic: Match name OR any keyword (GSC or Ads)
         const nameMatch = course.name.toLowerCase().includes(q);
         const keywordMatch = q && (
             course.gscKeywords.some(k => k.term.toLowerCase().includes(q)) || 
@@ -972,11 +970,12 @@ function renderCourseList(searchQuery = '') {
             if (degreeName.toLowerCase() === 'unknown' || degreeName.toLowerCase() === 'formação') degreeName = 'Formações';
             if (!grouped[course.institution][degreeName]) grouped[course.institution][degreeName] = [];
             grouped[course.institution][degreeName].push(course);
-            totalMatches++;
         }
     });
 
-    const instOrder = ['Lusófona Lisboa', 'Lusófona Porto', 'IPLUSO', 'ISLA Gaia', 'ISMAT'];
+    const instOrder = ['Lusófona Lisboa', 'Lusófona Porto', 'IPLUSO', 'ISLA Gaia', 'ISMAT', 'Grupo Lusófona'];
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+    const displayMapping = t["degree-mapping"];
     
     Object.keys(grouped).sort((a, b) => {
         const indexA = instOrder.indexOf(a);
@@ -986,22 +985,16 @@ function renderCourseList(searchQuery = '') {
         if (indexB === -1) return -1;
         return indexA - indexB;
     }).forEach(inst => {
-        // Institution Header with Dynamic Branding
         const brand = BRANDING[inst] || { hex: "#444444", bgSub: "#222222" };
         const instHeader = document.createElement('div');
         instHeader.className = 'nav-group-header';
-        instHeader.textContent = inst;
-        
-        // Apply Branding
+        instHeader.textContent = inst.toUpperCase();
         instHeader.style.backgroundColor = brand.hex;
         instHeader.style.color = getContrastColor(brand.hex);
         instHeader.style.borderColor = brand.bgSub;
-        
         list.appendChild(instHeader);
 
         const degreeOrder = ['TeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
-        const displayMapping = TRANSLATIONS[currentLang]["degree-mapping"];
-        
         Object.keys(grouped[inst]).sort((a, b) => {
             const indexA = degreeOrder.indexOf(a);
             const indexB = degreeOrder.indexOf(b);
@@ -1010,38 +1003,25 @@ function renderCourseList(searchQuery = '') {
             if (indexB === -1) return -1;
             return indexA - indexB;
         }).forEach(degree => {
-            // Degree Category Button (Replaces Accordion)
             const degreeBtn = document.createElement('div');
             degreeBtn.className = 'nav-degree-btn';
             degreeBtn.textContent = displayMapping[degree] || degree;
-            
-            // Clicking category opens the Landing Hub for this degree
             degreeBtn.addEventListener('click', () => {
                 document.querySelectorAll('.nav-degree-btn').forEach(b => b.classList.remove('active'));
                 degreeBtn.classList.add('active');
                 selectDegreeHub(inst, degree, grouped[inst][degree]);
             });
-            
             list.appendChild(degreeBtn);
         });
     });
 
-    // Add Reset Buttons at the bottom
+    // Add Reset Buttons
     const resetContainer = document.createElement('div');
     resetContainer.className = 'reset-grid';
     resetContainer.innerHTML = `
-        <button onclick="resetApp('gsc')" class="btn-reset gsc-only">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-            Clear GSC Only
-        </button>
-        <button onclick="resetApp('ads')" class="btn-reset ads-only">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-            Clear Ads Only
-        </button>
-        <button onclick="resetApp('all')" class="btn-reset danger">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
-            Clear ALL Data
-        </button>
+        <button onclick="resetApp('gsc')" class="btn-reset gsc-only">Clear GSC</button>
+        <button onclick="resetApp('ads')" class="btn-reset ads-only">Clear Ads</button>
+        <button onclick="resetApp('all')" class="btn-reset danger">Clear All</button>
     `;
     list.appendChild(resetContainer);
 }
@@ -1132,27 +1112,8 @@ function loadCourse(id) {
     if (switcher && switcherContainer) {
         const sameCatCourses = courses.filter(c => c.institution === course.institution && (c.degree === course.degree || c.degree_type === course.degree_type));
         if (sameCatCourses.length > 1) {
-            switcher.innerHTML = '<option value="">Quick Switch...</option>';
-            sameCatCourses.sort((a,b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c.id;
-                opt.textContent = c.name;
-                if (c.id === id) opt.selected = true;
-                switcher.appendChild(opt);
-            });
-            switcherContainer.style.display = 'block';
-        } else {
-            switcherContainer.style.display = 'none';
-        }
-    }
-    
-    // Quick Switcher in Header
-    const switcherContainer = document.getElementById('header-switcher-container');
-    const switcher = document.getElementById('header-course-switcher');
-    if (switcher && switcherContainer) {
-        const sameCatCourses = courses.filter(c => c.institution === course.institution && (c.degree === course.degree || c.degree_type === course.degree_type));
-        if (sameCatCourses.length > 1) {
-            switcher.innerHTML = '<option value="">Quick Switch...</option>';
+            const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+            switcher.innerHTML = `<option value="">${t["quick-switch"]}</option>`;
             sameCatCourses.sort((a,b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
                 const opt = document.createElement('option');
                 opt.value = c.id;
