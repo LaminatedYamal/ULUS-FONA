@@ -915,33 +915,33 @@ select, option {
 
 /* Triple Match Synergy (Lightning) */
 .triple-synergy-aura {
-    background: rgba(255, 0, 200, 0.12) !important;
-    box-shadow: 0 0 40px rgba(255, 0, 200, 0.2), inset 0 0 20px rgba(255, 0, 200, 0.1) !important;
+    background: rgba(255, 255, 0, 0.08) !important;
+    box-shadow: 0 0 40px rgba(255, 255, 0, 0.15), inset 0 0 20px rgba(255, 255, 0, 0.05) !important;
     position: relative;
-    border: 2px solid var(--accent-secondary) !important;
+    border: 2px solid #ffcc00 !important;
 }
 
 .triple-synergy-aura td {
-    border-top: 2px solid var(--accent-secondary) !important;
-    border-bottom: 2px solid var(--accent-secondary) !important;
+    border-top: 2px solid #ffcc00 !important;
+    border-bottom: 2px solid #ffcc00 !important;
 }
 
 .triple-synergy-aura td:first-child {
-    border-left: 2px solid var(--accent-secondary) !important;
+    border-left: 2px solid #ffcc00 !important;
     color: #ffffff !important;
     font-weight: 900;
-    text-shadow: 0 0 15px var(--accent-secondary);
+    text-shadow: 0 0 15px #ffcc00;
 }
 
 .triple-synergy-aura td:last-child {
-    border-right: 2px solid var(--accent-secondary) !important;
+    border-right: 2px solid #ffcc00 !important;
 }
 
 .triple-synergy-aura td:first-child::after {
     content: "⚡";
     margin-left: 10px;
     font-size: 14px;
-    filter: drop-shadow(0 0 8px var(--accent-secondary));
+    filter: drop-shadow(0 0 8px #ffcc00);
     animation: lightningPulse 1.5s infinite alternate;
     display: inline-block;
 }
