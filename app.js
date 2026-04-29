@@ -389,7 +389,12 @@ const TEAM_ACCESS_KEY = "MKTULUSOFONA2026";
 
 function checkAuth() {
     const user = localStorage.getItem('hub_user_name');
-    if (!user) {
+    const savedKey = localStorage.getItem('hub_access_key');
+    
+    // Security Reset: Force logout if the saved key doesn't match the new one
+    if (!user || savedKey !== TEAM_ACCESS_KEY) {
+        localStorage.removeItem('hub_user_name');
+        localStorage.removeItem('hub_access_key');
         document.getElementById('login-overlay').style.display = 'flex';
     } else {
         fetchServerData().then(() => {
