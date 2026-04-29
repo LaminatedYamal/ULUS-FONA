@@ -79,8 +79,13 @@
         <main class="main-content">
             <header class="top-bar">
                 <div class="header-left">
-                    <h1 id="active-course-title">Select a Course</h1>
-                    <p id="active-course-desc">Global SEO & Ads Keyword Analysis</p>
+                    <h1 id="active-course-title">Select a Category</h1>
+                    <p id="active-course-desc">Drill down via sidebar</p>
+                </div>
+                <div class="header-center" id="header-selector-container" style="display: none;">
+                    <select id="course-dropdown" class="course-select-premium" onchange="loadCourseFromDropdown(this.value)">
+                        <option value="">Select Course...</option>
+                    </select>
                 </div>
                 <div class="header-right">
                     <div class="search-bar">
@@ -93,159 +98,111 @@
                 </div>
             </header>
 
-            <div id="dashboard-view">
+            <!-- Landing / Selection View -->
+            <div id="landing-view" class="landing-hero">
+                <div class="hero-logo-container">
+                    <img id="landing-logo" src="" alt="Institution Logo">
+                </div>
+                <div class="hero-text">
+                    <h2>Select a course from the header menu</h2>
+                    <p>To begin analyzing search performance and keyword synergy</p>
+                </div>
+            </div>
+
+            <div id="dashboard-view" style="display: none;">
+                <!-- Stats Row -->
                 <section class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-label">Keyword Parity</span>
-                    <span class="stat-value" id="parity-score">--%</span>
-                    <div class="stat-chart"><div class="chart-bar" id="parity-bar"></div></div>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">GSC Keywords</span>
-                    <span class="stat-value" id="gsc-count">0</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Ads Keywords</span>
-                    <span class="stat-value" id="ads-count">0</span>
-                </div>
-                <div class="stat-card accent">
-                    <span class="stat-label">Organic Gaps</span>
-                    <span class="stat-value" id="gap-count">0</span>
-                </div>
-            </section>
+                    <div class="stat-card">
+                        <span class="stat-label">Keyword Parity</span>
+                        <span class="stat-value" id="parity-score">--%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">GSC Keywords</span>
+                        <span class="stat-value" id="gsc-total">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Ads Keywords</span>
+                        <span class="stat-value" id="ads-total">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Organic Caps</span>
+                        <span class="stat-value" id="organic-total">--</span>
+                    </div>
+                </section>
 
-            <section class="dashboard-grid">
-                <div class="data-panel">
-                    <div class="panel-header">
-                        <div class="header-title-group">
-                            <svg class="panel-logo" width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z"/><path fill="#FFF" d="M12 18L12 11L7 11L12 18Z"/><path fill="#FBBC05" d="M12 8L12 11L17 11L12 8Z"/></svg>
-                            <h2>Search Console Keywords</h2>
+                <!-- Data Tables Grid -->
+                <div class="dashboard-grid">
+                    <!-- GSC Panel -->
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <div class="header-title-group">
+                                <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                <h2>Search Console <span class="text-muted">(Organic)</span></h2>
+                            </div>
                         </div>
-                        <div class="status-indicator">
-                            <span class="pulse"></span> Live Data
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Clicks</th>
+                                        <th>Ads Gap</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gsc-body"></tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Keyword</th>
-                                    <th>Clicks (30d)</th>
-                                    <th>Ads Synergy</th>
-                                </tr>
-                            </thead>
-                            <tbody id="gsc-body"></tbody>
-                        </table>
-                    </div>
-                </div>
 
-                <!-- Google Ads Panel -->
-                <div class="data-panel">
-                    <div class="panel-header">
-                        <div class="header-title-group">
-                            <svg class="panel-logo" width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M6 2L2 8l4 6h12l4-6-4-6H6z"/><path fill="#FBBC05" d="M2 8l4 6h12l4-6H2z"/><path fill="#34A853" d="M18 14l4-6-4-6h-12l-4 6 4 6h12z"/></svg>
-                            <h2>Ads Performance</h2>
+                    <!-- Ads Panel -->
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <div class="header-title-group">
+                                <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                <h2>Google Ads <span class="text-muted">(Active)</span></h2>
+                            </div>
                         </div>
-                        <div class="status-indicator">
-                            <span class="pulse"></span> Active Campaigns
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Synergy</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ads-body"></tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Keyword</th>
-                                    <th>Organic Match</th>
-                                </tr>
-                    <section class="stats-grid">
-                        <div class="stat-card">
-                            <span class="stat-label">Keyword Parity</span>
-                            <span class="stat-value" id="parity-score">--%</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-label">GSC Keywords</span>
-                            <span class="stat-value" id="gsc-total">--</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-label">Ads Keywords</span>
-                            <span class="stat-value" id="ads-total">--</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-label">Organic Caps</span>
-                            <span class="stat-value" id="organic-total">--</span>
-                        </div>
-                    </section>
 
-                    <div class="dashboard-grid">
-                        <div class="data-panel">
-                            <div class="panel-header">
-                                <div class="header-title-group">
-                                    <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                    <h2>Search Console <span class="text-muted">(Organic)</span></h2>
-                                </div>
+                    <!-- Rankings Panel -->
+                    <div class="data-panel full-width">
+                        <div class="panel-header">
+                            <div class="header-title-group">
+                                <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                <h2>Organic Search Rankings</h2>
                             </div>
-                            <div class="table-container">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Keyword</th>
-                                            <th>Clicks</th>
-                                            <th>Ads Gap</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="gsc-body"></tbody>
-                                </table>
+                            <div class="status-indicator">
+                                <span style="width: 8px; height: 8px; background: #a855f7; border-radius: 50%; display: inline-block;"></span>
+                                <span style="font-size: 11px; opacity: 0.7;">Tracked Keywords</span>
                             </div>
                         </div>
-
-                        <div class="data-panel">
-                            <div class="panel-header">
-                                <div class="header-title-group">
-                                    <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                                    <h2>Google Ads <span class="text-muted">(Active)</span></h2>
-                                </div>
-                            </div>
-                            <div class="table-container">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Keyword</th>
-                                            <th>Synergy</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="ads-body"></tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="data-panel full-width">
-                            <div class="panel-header">
-                                <div class="header-title-group">
-                                    <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-                                    <h2>Organic Search Rankings</h2>
-                                </div>
-                                <div class="status-indicator">
-                                    <span style="width: 8px; height: 8px; background: #a855f7; border-radius: 50%; display: inline-block;"></span>
-                                    <span style="font-size: 11px; opacity: 0.7;">Tracked Keywords</span>
-                                </div>
-                            </div>
-                            <div class="table-container">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Keyword</th>
-                                            <th>Current Rank</th>
-                                            <th>3-Month Trend</th>
-                                            <th>Ranking URL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="rankings-body"></tbody>
-                                </table>
-                            </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Current Rank</th>
+                                        <th>3-Month Trend</th>
+                                        <th>Ranking URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rankings-body"></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
     </div>
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
