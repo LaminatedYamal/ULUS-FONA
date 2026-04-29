@@ -406,13 +406,7 @@ async function handleLogin() {
     }, 500);
 }
 
-function logout() {
-    if (confirm("Logout and lock dashboard?")) {
-        localStorage.removeItem('hub_user_name');
-        localStorage.removeItem('hub_is_authed');
-        location.reload();
-    }
-}
+// Dashboard Lock Logic (No Logout Button)
 
 function stripAccents(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
