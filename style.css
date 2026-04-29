@@ -908,6 +908,10 @@ body.light-mode .theme-toggle {
     color: #1a1a1a;
 }
 
+select, option {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 /* Premium Select Inputs */
 select {
     appearance: none;
