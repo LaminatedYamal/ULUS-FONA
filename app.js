@@ -11,6 +11,7 @@ let courses = [];
 let activeCourseId = 0;
 
 async function init() {
+    initLanguage(); // Load language preference
     await checkAuth(); // Await data loading
     
     // Load cached sync info immediately for better UX
@@ -69,6 +70,159 @@ function toggleTheme() {
 function updateThemeIcons(isLight) {
     document.querySelector('.sun-icon').style.display = isLight ? 'none' : 'block';
     document.querySelector('.moon-icon').style.display = isLight ? 'block' : 'none';
+}
+
+const TRANSLATIONS = {
+    en: {
+        "greeting": "Hello",
+        "select-course": "Select a Course",
+        "global-analysis": "Global SEO & Ads Keyword Analysis",
+        "search-placeholder": "Search keywords...",
+        "browsing": "Browsing",
+        "at": "at",
+        "choose-course": "Choose a Course...",
+        "quick-switch": "Quick Switch...",
+        "degree-mapping": {
+            'TeSP': 'CTeSP',
+            'Licenciatura': 'Bachelor\'s',
+            'Mestrado Integrado': 'Integrated Master\'s',
+            'Mestrado': 'Master\'s',
+            'Doutoramento': 'Doctorate',
+            'Pós-Graduação': 'Post-Graduate',
+            'Formações': 'Training'
+        },
+        "parity": "Keyword Parity",
+        "gsc-title": "GSC Keywords",
+        "ads-title": "Ads Keywords",
+        "organic-caps": "Organic Gaps",
+        "organic-header": "Search Console (Organic)",
+        "ads-header": "Google Ads (Active)",
+        "rankings-header": "Organic Search Rankings",
+        "keyword": "Keyword",
+        "clicks": "Clicks",
+        "ads-gap": "Ads Gap",
+        "synergy": "Synergy",
+        "rank": "Current Rank",
+        "trend": "3-Month Trend",
+        "url": "Ranking URL",
+        "sync": "Data Sync",
+        "sync-team": "🚀 Sync to Team",
+        "system-active": "System Active",
+        "loading": "Loading sync status..."
+    },
+    pt: {
+        "greeting": "Olá",
+        "select-course": "Selecionar um Curso",
+        "global-analysis": "Análise Global de Keywords SEO & Ads",
+        "search-placeholder": "Procurar keywords...",
+        "browsing": "A ver cursos de",
+        "at": "na",
+        "choose-course": "Escolher um Curso...",
+        "quick-switch": "Troca Rápida...",
+        "degree-mapping": {
+            'TeSP': 'CTeSP',
+            'Licenciatura': 'Licenciaturas',
+            'Mestrado Integrado': 'Mestrados Integrados',
+            'Mestrado': 'Mestrados',
+            'Doutoramento': 'Doutoramentos',
+            'Pós-Graduação': 'Pós-Graduações',
+            'Formações': 'Formações'
+        },
+        "parity": "Paridade de Keywords",
+        "gsc-title": "Keywords GSC",
+        "ads-title": "Keywords Ads",
+        "organic-caps": "Gaps Orgânicos",
+        "organic-header": "Search Console (Orgânico)",
+        "ads-header": "Google Ads (Ativo)",
+        "rankings-header": "Rankings de Pesquisa Orgânica",
+        "keyword": "Palavra-Chave",
+        "clicks": "Cliques",
+        "ads-gap": "Gap de Ads",
+        "synergy": "Sinergia",
+        "rank": "Rank Atual",
+        "trend": "Tendência 3 Meses",
+        "url": "URL de Ranking",
+        "sync": "Sincronização Dados",
+        "sync-team": "🚀 Sincronizar Equipa",
+        "system-active": "Sistema Ativo",
+        "loading": "A carregar status..."
+    }
+};
+
+let currentLang = 'en';
+
+function initLanguage() {
+    currentLang = localStorage.getItem('hub_lang') || 'en';
+    updateUILanguage();
+}
+
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'pt' : 'en';
+    localStorage.setItem('hub_lang', currentLang);
+    updateUILanguage();
+    renderCourseList(); // Refresh sidebar with new labels
+    if (activeCourseId) loadCourse(activeCourseId); // Refresh dashboard
+}
+
+function updateUILanguage() {
+    const t = TRANSLATIONS[currentLang];
+    
+    // Update simple text elements
+    const elements = {
+        'active-course-title': t["select-course"],
+        'active-course-desc': t["global-analysis"],
+        'keyword-search': 'placeholder',
+        'sync-header': t["sync"],
+        'sync-btn': t["sync-team"],
+        'system-active-text': t["system-active"],
+        'last-sync-info': t["loading"]
+    };
+
+    // Apply to DOM
+    for (const [id, val] of Object.entries(elements)) {
+        const el = document.getElementById(id);
+        if (el) {
+            if (val === 'placeholder') {
+                el.placeholder = t["search-placeholder"];
+            } else {
+                el.textContent = val;
+            }
+        }
+    }
+    
+    // Update Greeting (Special case)
+    initGreeting(); 
+    
+    // Update sections with headers
+    document.querySelectorAll('.stat-label').forEach(el => {
+        const txt = el.textContent.trim();
+        if (txt.includes('Parity') || txt.includes('Paridade')) el.textContent = t["parity"];
+        if (txt.includes('GSC')) el.textContent = t["gsc-title"];
+        if (txt.includes('Ads')) el.textContent = t["ads-title"];
+        if (txt.includes('Gaps') || txt.includes('Caps')) el.textContent = t["organic-caps"];
+    });
+
+    document.querySelectorAll('.data-panel h2').forEach(el => {
+        const txt = el.textContent.trim();
+        if (txt.includes('Search Console')) el.innerHTML = `Search Console <span class="text-muted">(${currentLang === 'en' ? 'Organic' : 'Orgânico'})</span>`;
+        if (txt.includes('Google Ads')) el.innerHTML = `Google Ads <span class="text-muted">(${currentLang === 'en' ? 'Active' : 'Ativo'})</span>`;
+        if (txt.includes('Rankings') || txt.includes('Pesquisa')) el.textContent = t["rankings-header"];
+    });
+
+    // Update table headers
+    document.querySelectorAll('th').forEach(el => {
+        const txt = el.textContent.trim();
+        if (txt === 'Keyword' || txt === 'Palavra-Chave') el.textContent = t["keyword"];
+        if (txt === 'Clicks' || txt === 'Cliques') el.textContent = t["clicks"];
+        if (txt === 'Ads Gap' || txt === 'Gap de Ads') el.textContent = t["ads-gap"];
+        if (txt === 'Synergy' || txt === 'Sinergia') el.textContent = t["synergy"];
+        if (txt === 'Current Rank' || txt === 'Rank Atual') el.textContent = t["rank"];
+        if (txt === '3-Month Trend' || txt === 'Tendência 3 Meses') el.textContent = t["trend"];
+        if (txt === 'Ranking URL' || txt === 'URL de Ranking') el.textContent = t["url"];
+    });
+
+    const langBtn = document.getElementById('lang-toggle-text');
+    if (langBtn) langBtn.textContent = currentLang.toUpperCase();
 }
 
 function scrollToTop() {
@@ -844,15 +998,7 @@ function renderCourseList(searchQuery = '') {
         list.appendChild(instHeader);
 
         const degreeOrder = ['TeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
-        const displayMapping = {
-            'TeSP': 'CTeSP',
-            'Licenciatura': 'Licenciaturas',
-            'Mestrado Integrado': 'Mestrados Integrados',
-            'Mestrado': 'Mestrados',
-            'Doutoramento': 'Doutoramentos',
-            'Pós-Graduação': 'Pós-Graduações',
-            'Formações': 'Formações'
-        };
+        const displayMapping = TRANSLATIONS[currentLang]["degree-mapping"];
         
         Object.keys(grouped[inst]).sort((a, b) => {
             const indexA = degreeOrder.indexOf(a);
