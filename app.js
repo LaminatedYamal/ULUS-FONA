@@ -30,6 +30,7 @@ async function init() {
 
     document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+    document.getElementById('rankings-upload').addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
     loadData(); // Also apply any local browser data
     initTheme();
@@ -91,7 +92,8 @@ async function fetchServerData() {
             id: i,
             ...c,
             gscKeywords: c.gscKeywords || [],
-            adsKeywords: c.adsKeywords || []
+            adsKeywords: c.adsKeywords || [],
+            rankingsKeywords: c.rankingsKeywords || []
         }));
     } catch (e) {
         console.error('Cloud sync failed:', e);
@@ -144,7 +146,8 @@ async function syncToGitHub() {
             institution: c.institution,
             url: c.url,
             gscKeywords: c.gscKeywords || [],
-            adsKeywords: c.adsKeywords || []
+            adsKeywords: c.adsKeywords || [],
+            rankingsKeywords: c.rankingsKeywords || []
         }));
 
         const content = b64EncodeUnicode(JSON.stringify(exportData, null, 2));
@@ -207,7 +210,8 @@ function saveData() {
             if (key) {
                 localData[key] = {
                     gsc: c.gscKeywords || [],
-                    ads: c.adsKeywords || []
+                    ads: c.adsKeywords || [],
+                    rankings: c.rankingsKeywords || []
                 };
             }
         }
@@ -236,6 +240,7 @@ function loadData() {
                     if (target) {
                         target.gscKeywords = data.gsc || [];
                         target.adsKeywords = data.ads || [];
+                        target.rankingsKeywords = data.rankings || [];
                     }
                 });
             }
@@ -259,7 +264,12 @@ async function handleFileUpload(e, type) {
         const buffer = await file.arrayBuffer();
         const decoder = new TextDecoder('utf-8');
         const text = decoder.decode(buffer);
-        const results = file.name.toLowerCase().endsWith('.xml') ? parseSmartXML(text) : parseCSV(text);
+        let results;
+        if (type === 'rankings') {
+            results = parseRankingsXML(text);
+        } else {
+            results = file.name.toLowerCase().endsWith('.xml') ? parseSmartXML(text) : parseCSV(text);
+        }
         
         console.log(`Processing ${file.name}: Found ${results.length} course groups.`);
 
@@ -297,8 +307,10 @@ async function handleFileUpload(e, type) {
                     
                     if (type === 'gsc') {
                         targetCourse.gscKeywords = mergeKeywords(targetCourse.gscKeywords || [], res.keywords, 'clicks');
-                    } else {
+                    } else if (type === 'ads') {
                         targetCourse.adsKeywords = mergeKeywords(targetCourse.adsKeywords || [], res.keywords, 'impressions');
+                    } else if (type === 'rankings') {
+                        targetCourse.rankingsKeywords = mergeRankings(targetCourse.rankingsKeywords || [], res.keywords);
                     }
                     totalUpdated++;
                 } else {
@@ -425,6 +437,48 @@ function parseSmartXML(xmlText) {
     const rootUrlNode = xml.querySelector('Filtro, filtro, FILTRO, Url, url, URL, Link, link, LINK, website, Website, Dimension_0, dimension_0, Dimension_1, dimension_1');
     const rootUrl = rootUrlNode ? rootUrlNode.textContent.trim().toLowerCase() : 'current';
     return [{ url: rootUrl, name: 'current', keywords: parseXMLNodes(xml) }];
+}
+
+function parseRankingsXML(xmlText) {
+    // 1. CLEANUP: Fix the <3Month> tags before parsing (The 'diag.ps1' fix)
+    const fixedXml = xmlText.replace(/<3Month/g, '<Month3').replace(/<\/3Month/g, '</Month3');
+    
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(fixedXml, "text/xml");
+    const results = [];
+    
+    // Look for records (PositionRecords/record)
+    const records = xml.querySelectorAll('record');
+    records.forEach(rec => {
+        const keyword = rec.querySelector('Keyword')?.textContent.trim();
+        const url = rec.querySelector('Url')?.textContent.trim();
+        const rank = parseInt(rec.querySelector('Position')?.textContent || 0);
+        const prevRank = parseInt(rec.querySelector('Month3')?.textContent || 0); // Normalized tag
+        
+        if (keyword && url) {
+            results.push({
+                url: url.toLowerCase(),
+                name: 'current',
+                keywords: [{
+                    term: keyword,
+                    rank: rank,
+                    prevRank: prevRank,
+                    url: url
+                }]
+            });
+        }
+    });
+
+    return results;
+}
+
+function mergeRankings(existing, incoming) {
+    const map = new Map();
+    existing.forEach(k => map.set(k.term.toLowerCase().trim(), k));
+    incoming.forEach(k => {
+        map.set(k.term.toLowerCase().trim(), k); // Rankings always overwrite with latest
+    });
+    return Array.from(map.values());
 }
 
 function fixEncoding(str) {
@@ -787,7 +841,7 @@ function loadCourse(id) {
     document.getElementById('active-course-title').textContent = course.name;
     document.getElementById('active-course-desc').textContent = `${course.degree} | ${course.institution}`;
     
-    renderTables(course.gscKeywords, course.adsKeywords);
+    renderTables(course.gscKeywords, course.adsKeywords, course.rankingsKeywords);
     updateStats(course);
 
     // Auto-open parent accordion
@@ -807,32 +861,38 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function renderTables(gsc = [], ads = []) {
+function renderTables(gsc = [], ads = [], rankings = []) {
     const gscBody = document.getElementById('gsc-body');
     const adsBody = document.getElementById('ads-body');
+    const rankingsBody = document.getElementById('rankings-body');
     
     gscBody.innerHTML = '';
     adsBody.innerHTML = '';
+    rankingsBody.innerHTML = '';
     
     // Sort Alphabetically
     const sortedGsc = [...gsc].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     const sortedAds = [...ads].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
+    const sortedRankings = [...rankings].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     
     const gscNorms = sortedGsc.map(k => normalizeKeyword(k.term));
     const adsNorms = sortedAds.map(k => normalizeKeyword(k.term));
+    const rankNorms = sortedRankings.map(k => normalizeKeyword(k.term));
     
+    // 1. Render GSC Table
     if (sortedGsc.length === 0) {
-        gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data to see keywords</td></tr>`;
+        gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data</td></tr>`;
     } else {
-        let matchCountGsc = 0;
-        sortedGsc.forEach((k) => {
+        sortedGsc.forEach((k, i) => {
             const tr = document.createElement('tr');
-            const isMatch = adsNorms.includes(normalizeKeyword(k.term));
+            const norm = normalizeKeyword(k.term);
+            const isMatchAds = adsNorms.includes(norm);
+            const isMatchRank = rankNorms.includes(norm);
             
-            if (isMatch) {
+            if (isMatchAds && isMatchRank) {
+                tr.className = 'triple-synergy-aura'; // Special rainbow for all three!
+            } else if (isMatchAds) {
                 tr.className = 'synergy-aura';
-                tr.style.setProperty('--lightning-delay', `${(matchCountGsc * 0.5).toFixed(2)}s`);
-                matchCountGsc++;
             } else {
                 tr.className = 'gap-aura';
             }
@@ -840,33 +900,70 @@ function renderTables(gsc = [], ads = []) {
             tr.innerHTML = `
                 <td>${k.term}</td>
                 <td>${k.clicks.toLocaleString()}</td>
-                <td>${isMatch ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>
+                <td>${isMatchAds ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>
             `;
             gscBody.appendChild(tr);
         });
     }
     
+    // 2. Render Ads Table
     if (sortedAds.length === 0) {
-        adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Ads data to see keywords</td></tr>`;
+        adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Ads data</td></tr>`;
     } else {
-        let matchCountAds = 0;
-        sortedAds.forEach((k) => {
+        sortedAds.forEach((k, i) => {
             const tr = document.createElement('tr');
-            const isMatch = gscNorms.includes(normalizeKeyword(k.term));
+            const norm = normalizeKeyword(k.term);
+            const isMatchGsc = gscNorms.includes(norm);
+            const isMatchRank = rankNorms.includes(norm);
             
-            if (isMatch) {
+            if (isMatchGsc && isMatchRank) {
+                tr.className = 'triple-synergy-aura';
+            } else if (isMatchGsc) {
                 tr.className = 'synergy-aura';
-                tr.style.setProperty('--lightning-delay', `${(matchCountAds * 0.5).toFixed(2)}s`);
-                matchCountAds++;
             } else {
                 tr.className = 'gap-aura';
             }
 
             tr.innerHTML = `
                 <td>${k.term}</td>
-                <td>${isMatch ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
+                <td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
             `;
             adsBody.appendChild(tr);
+        });
+    }
+
+    // 3. Render Rankings Table (Full Width)
+    if (sortedRankings.length === 0) {
+        rankingsBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Rankings XML to see positions</td></tr>`;
+    } else {
+        sortedRankings.forEach((k, i) => {
+            const tr = document.createElement('tr');
+            const norm = normalizeKeyword(k.term);
+            const isMatchGsc = gscNorms.includes(norm);
+            const isMatchAds = adsNorms.includes(norm);
+            
+            if (isMatchGsc && isMatchAds) {
+                tr.className = 'triple-synergy-aura';
+            } else if (isMatchGsc || isMatchAds) {
+                tr.className = 'synergy-aura';
+            }
+
+            const diff = (k.prevRank || 0) - (k.rank || 0);
+            const trendIcon = diff > 0 ? `<span style="color:var(--success);">▲ ${diff}</span>` : 
+                             diff < 0 ? `<span style="color:var(--danger);">▼ ${Math.abs(diff)}</span>` : 
+                             `<span style="color:var(--text-muted);">● Stable</span>`;
+
+            tr.innerHTML = `
+                <td style="font-weight:700;">${k.term}</td>
+                <td style="text-align:center;"><span style="font-size:18px; font-weight:800;">#${k.rank}</span></td>
+                <td>${trendIcon}</td>
+                <td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>
+                <td>
+                    ${isMatchGsc ? '<span class="match-tag">✓ Captured</span> ' : ''}
+                    ${isMatchAds ? '<span class="match-tag" style="border-color:#34d399; color:#34d399;">✓ Paid</span>' : ''}
+                </td>
+            `;
+            rankingsBody.appendChild(tr);
         });
     }
 }
@@ -874,8 +971,11 @@ function renderTables(gsc = [], ads = []) {
 function updateStats(course) {
     const gscCount = course.gscKeywords.length;
     const adsCount = course.adsKeywords.length;
+    const rankCount = course.rankingsKeywords.length;
+    
     const gscNorms = course.gscKeywords.map(k => normalizeKeyword(k.term));
     const adsNorms = course.adsKeywords.map(k => normalizeKeyword(k.term));
+    
     const matches = adsNorms.filter(norm => gscNorms.includes(norm)).length;
     const parity = adsCount > 0 ? Math.round((matches / adsCount) * 100) : 0;
     const gaps = adsNorms.filter(norm => !gscNorms.includes(norm)).length;
