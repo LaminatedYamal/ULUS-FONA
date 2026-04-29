@@ -45,10 +45,12 @@ function initGreeting(nameOverride) {
     const userName = nameOverride || localStorage.getItem('hub_user_name');
     const greetingEl = document.getElementById('greeting-text');
     if (greetingEl) {
+        const t = TRANSLATIONS[currentLang || 'en'];
+        const hello = t["greeting"] || (currentLang === 'pt' ? 'Olá' : 'Hello');
         if (userName) {
-            greetingEl.textContent = `Olá, ${userName}!`;
+            greetingEl.textContent = `${hello}, ${userName}!`;
         } else {
-            greetingEl.textContent = "Olá!";
+            greetingEl.textContent = `${hello}!`;
         }
     }
 }
