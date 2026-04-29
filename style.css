@@ -916,12 +916,41 @@ select, option {
 /* Triple Match Synergy (Lightning) */
 .triple-synergy-aura {
     background: rgba(255, 255, 0, 0.08) !important;
-    box-shadow: 0 0 40px rgba(255, 255, 0, 0.15), inset 0 0 20px rgba(255, 255, 0, 0.05) !important;
     position: relative;
     border: 2px solid #ffcc00 !important;
+    overflow: hidden;
+}
+
+.triple-synergy-aura::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 204, 0, 0.3),
+        rgba(255, 204, 0, 0.6),
+        rgba(255, 204, 0, 0.3),
+        transparent
+    );
+    animation: row-lightning-strike 2.5s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes row-lightning-strike {
+    0% { left: -100%; opacity: 0; }
+    20% { opacity: 1; }
+    40% { left: 100%; opacity: 0; }
+    100% { left: 100%; opacity: 0; }
 }
 
 .triple-synergy-aura td {
+    position: relative;
+    z-index: 2;
     border-top: 2px solid #ffcc00 !important;
     border-bottom: 2px solid #ffcc00 !important;
 }
