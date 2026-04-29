@@ -281,51 +281,32 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     margin-bottom: 6px;
 }
 
-.nav-degree-group summary {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
+.nav-degree-btn {
+    padding: 10px 15px;
+    margin: 4px 0;
     background: rgba(255, 255, 255, 0.03);
-    padding: 12px 14px;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.2s;
-    user-select: none; /* Prevent text cursor on click */
-}
-
-.nav-degree-group summary:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(var(--accent-primary-rgb), 0.4);
-}
-
-.nav-degree-group summary::after {
-    content: '›';
-    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--text-muted);
-    transition: transform 0.3s;
+    transition: all 0.2s ease;
+    user-select: none;
 }
 
-.nav-degree-group[open] summary {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(var(--accent-primary-rgb), 0.2);
+.nav-degree-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
 }
 
-.nav-degree-group[open] summary::after {
-    transform: rotate(90deg);
+.nav-degree-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-left: 3px solid var(--primary-color);
 }
-
-.nav-degree-group ul {
-    list-style: none;
-    margin-top: 4px;
-    padding-left: 4px;
-}
-
-.nav-degree-group li {
     padding: 10px 16px;
     margin-bottom: 2px;
     border-radius: 8px;
