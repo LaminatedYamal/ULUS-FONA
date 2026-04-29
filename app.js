@@ -110,7 +110,9 @@ const TRANSLATIONS = {
         "sync": "Data Sync",
         "sync-team": "🚀 Sync to Team",
         "system-active": "System Active",
-        "loading": "Loading sync status..."
+        "loading": "Loading sync status...",
+        "search-courses": "Search courses...",
+        "search-keywords": "Search keywords..."
     },
     pt: {
         "greeting": "Olá",
@@ -147,9 +149,25 @@ const TRANSLATIONS = {
         "sync": "Sincronização Dados",
         "sync-team": "🚀 Sincronizar Equipa",
         "system-active": "Sistema Ativo",
-        "loading": "A carregar status..."
+        "loading": "A carregar status...",
+        "search-courses": "Procurar cursos...",
+        "search-keywords": "Procurar keywords..."
     }
 };
+
+function renderTablesFromHeader(q) {
+    const course = courses.find(c => c.id === activeCourseId);
+    if (!course) return;
+    
+    const term = q.toLowerCase().trim();
+    const filterFn = k => k.term.toLowerCase().includes(term);
+    
+    renderTables(
+        course.gscKeywords.filter(filterFn),
+        course.adsKeywords.filter(filterFn),
+        course.rankingsKeywords.filter(filterFn)
+    );
+}
 
 let currentLang = 'en';
 
@@ -1054,11 +1072,17 @@ window.resetApp = function(mode) {
 window.selectDegreeHub = function(inst, degree, degreeCourses) {
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
-    const topHeader = document.querySelector('.top-bar');
     
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
-    if (topHeader) topHeader.style.display = "none";
+    
+    const headerLeft = document.getElementById('dashboard-header-left');
+    if (headerLeft) headerLeft.style.visibility = "hidden";
+    
+    const sidebarSearch = document.getElementById('sidebar-search-container');
+    const headerSearch = document.getElementById('header-search-container');
+    if (sidebarSearch) sidebarSearch.style.display = "block";
+    if (headerSearch) headerSearch.style.display = "none";
     
     // Update Header Text
     document.getElementById('active-course-title').textContent = inst;
@@ -1110,11 +1134,17 @@ function loadCourse(id) {
     // Switch Views
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
-    const topHeader = document.querySelector('.top-bar');
     
     if (landingView) landingView.style.display = "none";
     if (dashboardView) dashboardView.style.display = "block";
-    if (topHeader) topHeader.style.display = "flex";
+    
+    const headerLeft = document.getElementById('dashboard-header-left');
+    if (headerLeft) headerLeft.style.visibility = "visible";
+    
+    const sidebarSearch = document.getElementById('sidebar-search-container');
+    const headerSearch = document.getElementById('header-search-container');
+    if (sidebarSearch) sidebarSearch.style.display = "none";
+    if (headerSearch) headerSearch.style.display = "block";
     
     let instName = course.institution || "";
     if (instName.includes('Lus') && instName.includes('fona')) {
