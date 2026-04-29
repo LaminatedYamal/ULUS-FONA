@@ -83,16 +83,13 @@
                     <h1 id="active-course-title">Select a Course</h1>
                     <p id="active-course-desc">Global SEO & Ads Keyword Analysis</p>
                 </div>
-                <div class="header-actions">
-                    <div class="search-box">
-                        <input type="text" id="course-search" placeholder="Search keywords..." onkeyup="filterCourses()">
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search keywords..." id="keyword-search">
                     </div>
-                    <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle Light/Dark Mode">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Light/Dark Mode" style="margin-right: 0; margin-left: 12px;">
                         <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
                         <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                    </button>
-                    <button id="account-btn" class="account-btn" onclick="logout()" title="Logout / Change User">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </button>
                 </div>
             </header>
