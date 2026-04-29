@@ -31,8 +31,8 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <div class="search-bar" style="width: 100%; margin-bottom: 20px;">
-                    <input type="text" placeholder="Search keywords..." id="keyword-search" style="width: 100%;">
+                <div class="search-bar" id="sidebar-search-container" style="width: 100%; margin-bottom: 20px;">
+                    <input type="text" placeholder="Search courses..." id="course-search-sidebar" oninput="renderCourseList(this.value)" style="width: 100%;">
                 </div>
                 <div class="logo-container">
                     <img id="brand-logo" src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Brand Logo">
@@ -78,8 +78,8 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="top-bar" style="display: none;">
-                <div class="header-left">
+            <header class="top-bar">
+                <div class="header-left" id="dashboard-header-left" style="visibility: hidden;">
                     <div style="display: flex; align-items: baseline; gap: 12px;">
                         <h1 id="active-course-title">Select a Course</h1>
                     </div>
@@ -87,6 +87,9 @@
                 </div>
                 
                 <div class="header-right">
+                    <div class="search-bar" id="header-search-container" style="display: none;">
+                        <input type="text" placeholder="Search keywords..." id="keyword-search-header" oninput="renderTablesFromHeader(this.value)">
+                    </div>
                     <button class="theme-toggle" onclick="toggleLanguage()" title="Switch Language" style="margin-right: 8px;">
                         <span id="lang-toggle-text" class="lang-btn-text">EN</span>
                     </button>
@@ -219,6 +222,6 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <script src="app.js?v=v22_branding_hardened"></script>
+    <script src="app.js?v=v23_dynamic_search"></script>
 </body>
 </html>
