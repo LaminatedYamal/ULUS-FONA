@@ -94,7 +94,7 @@
   },
   {
     "name": "Design E Producao De Moda",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda",
     "gscKeywords": [],
@@ -125,7 +125,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Ciencia Politica E Relacoes Internacionais",
@@ -443,7 +443,7 @@
   },
   {
     "name": "Fotografia",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia",
     "gscKeywords": [],
@@ -474,7 +474,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Videojogos",
@@ -519,7 +519,7 @@
   },
   {
     "name": "Ciencias Da Comunicacao",
-    "degree": "Doutoramentos",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao",
     "gscKeywords": [],
@@ -538,7 +538,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Comunicacao Aplicada Marketing Publicidade E Relacoes Publicas",
@@ -642,7 +642,7 @@
   },
   {
     "name": "Educacao Fisica E Desporto",
-    "degree": "Doutoramentos",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto",
     "gscKeywords": [],
@@ -667,7 +667,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Criminologia",
@@ -700,7 +700,7 @@
   },
   {
     "name": "Direito",
-    "degree": "Doutoramentos",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito",
     "gscKeywords": [],
@@ -725,7 +725,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Contabilidade Fiscalidade E Auditoria",
@@ -770,7 +770,7 @@
   },
   {
     "name": "Economia",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia",
     "gscKeywords": [],
@@ -789,11 +789,11 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Gestao De Empresas",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas",
     "gscKeywords": [],
@@ -836,7 +836,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Gestao De Recursos Humanos",
@@ -1014,7 +1014,7 @@
   },
   {
     "name": "Engenharia Civil",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil",
     "gscKeywords": [],
@@ -1039,11 +1039,11 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Engenharia Do Ambiente",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente",
     "gscKeywords": [],
@@ -1068,11 +1068,11 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Engenharia E Gestao Industrial",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial",
     "gscKeywords": [],
@@ -1103,7 +1103,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Engenharia Eletrotecnica E De Computadores",
@@ -1134,7 +1134,7 @@
   },
   {
     "name": "Ciencia De Dados",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados",
     "gscKeywords": [],
@@ -1159,7 +1159,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Computacao E Matematica Aplicada",
@@ -1589,7 +1589,7 @@
   },
   {
     "name": "Arquitetura",
-    "degree": "Doutoramentos",
+    "degree": "Mestrados Integrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura",
     "gscKeywords": [],
@@ -1632,11 +1632,11 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Mestrado Integrado"
   },
   {
     "name": "Ciencias Farmaceuticas",
-    "degree": "Mestrado Integrados",
+    "degree": "Mestrados Integrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas",
     "gscKeywords": [],
@@ -1677,7 +1677,7 @@
   },
   {
     "name": "Medicina Veterinaria",
-    "degree": "Mestrado Integrados",
+    "degree": "Mestrados Integrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/medicina-veterinaria",
     "gscKeywords": [],
@@ -1700,7 +1700,7 @@
   },
   {
     "name": "Urbanismo",
-    "degree": "Doutoramentos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/urbanismo",
     "gscKeywords": [],
@@ -1713,7 +1713,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/urbanismo"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Design",
@@ -1823,17 +1823,17 @@
   },
   {
     "name": "Patrimonio Cultural Imaterial",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/patrimonio-cultural-imaterial",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Pós-Graduação"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Sociomuseologia",
-    "degree": "Doutoramentos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/sociomuseologia",
     "gscKeywords": [],
@@ -1852,7 +1852,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/sociomuseologia"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Artes Da Animacao",
@@ -2145,7 +2145,7 @@
   },
   {
     "name": "Direito",
-    "degree": "Doutoramentos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/direito",
     "gscKeywords": [],
@@ -2158,7 +2158,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/direito"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Direito Do Mercado",
@@ -2901,47 +2901,47 @@
   },
   {
     "name": "Cirurgia Em Animais De Companhia",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/cirurgia-em-animais-de-companhia",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Pós-Graduação"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Clinica De Equinos",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/clinica-de-equinos",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Pós-Graduação"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Enfermagem Veterinaria Clinica",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/enfermagem-veterinaria-clinica",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Pós-Graduação"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Imagiologia Clinica Em Animais De Companhia",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/imagiologia-clinica-em-animais-de-companhia",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Pós-Graduação"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Medicina Em Animais De Companhia",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/medicina-em-animais-de-companhia",
     "gscKeywords": [],
@@ -2954,7 +2954,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/medicina-em-animais-de-companhia"
       }
     ],
-    "degree_type": "Pós-Graduação"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Arquitetura",
@@ -3175,7 +3175,7 @@
   },
   {
     "name": "Gestao E Operacao Aerea Com Aeronaves Nao Tripuladas",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-operacao-aerea-com-aeronaves-nao-tripuladas",
     "gscKeywords": [],
@@ -3185,7 +3185,7 @@
   },
   {
     "name": "Marca Pessoal Gestao E Consultoria",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marca-pessoal-gestao-e-consultoria",
     "gscKeywords": [],
@@ -3195,7 +3195,7 @@
   },
   {
     "name": "Intervencao Em Riscos E Promocao Da Inclusao",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/intervencao-em-riscos-e-promocao-da-inclusao",
     "gscKeywords": [],
@@ -3205,7 +3205,7 @@
   },
   {
     "name": "Patrimonio Cultural Imaterial",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/patrimonio-cultural-imaterial",
     "gscKeywords": [],
@@ -3215,7 +3215,7 @@
   },
   {
     "name": "Psicologia Politica",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/psicologia-politica",
     "gscKeywords": [],
@@ -3225,7 +3225,7 @@
   },
   {
     "name": "Relacoes Internacionais Investimento E Internacionalizacao Empresarial Bancaria E Financeira",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/relacoes-internacionais-investimento-e-internacionalizacao-empresarial-bancaria-e-financeira",
     "gscKeywords": [],
@@ -3235,7 +3235,7 @@
   },
   {
     "name": "Relacoes Internacionais Negocios E Diplomacia Economica",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/relacoes-internacionais-negocios-e-diplomacia-economica",
     "gscKeywords": [],
@@ -3245,7 +3245,7 @@
   },
   {
     "name": "E Commerce Edicao Online",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/e-commerce-edicao-online",
     "gscKeywords": [],
@@ -3268,7 +3268,7 @@
   },
   {
     "name": "Escrita De Ficcao",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/escrita-de-ficcao",
     "gscKeywords": [],
@@ -3278,7 +3278,7 @@
   },
   {
     "name": "Marketing Digital",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital",
     "gscKeywords": [],
@@ -3295,7 +3295,7 @@
   },
   {
     "name": "Marketing E Estrategias De Marca",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-e-estrategias-de-marca",
     "gscKeywords": [],
@@ -3330,7 +3330,7 @@
   },
   {
     "name": "Publicidade E Estrategias De Comunicacao Digital",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/publicidade-e-estrategias-de-comunicacao-digital",
     "gscKeywords": [],
@@ -3340,7 +3340,7 @@
   },
   {
     "name": "Gestao E Marketing Do Desporto",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-marketing-do-desporto",
     "gscKeywords": [],
@@ -3350,7 +3350,7 @@
   },
   {
     "name": "Criminologia E Investigacao Criminal",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/criminologia-e-investigacao-criminal",
     "gscKeywords": [],
@@ -3360,7 +3360,7 @@
   },
   {
     "name": "Direitos Das Criancas",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/direitos-das-criancas",
     "gscKeywords": [],
@@ -3370,7 +3370,7 @@
   },
   {
     "name": "Contabilidade E Fiscalidade",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/contabilidade-e-fiscalidade",
     "gscKeywords": [],
@@ -3387,7 +3387,7 @@
   },
   {
     "name": "Descarbonizacao Do Transporte Maritimo Estrategias E Tecnologias De Futuro",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/descarbonizacao-do-transporte-maritimo-estrategias-e-tecnologias-de-futuro",
     "gscKeywords": [],
@@ -3397,7 +3397,7 @@
   },
   {
     "name": "Employee Experience Management",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/employee-experience-management",
     "gscKeywords": [],
@@ -3407,7 +3407,7 @@
   },
   {
     "name": "Gestao Bancaria Seguros E Mercados Financeiros",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-bancaria-seguros-e-mercados-financeiros",
     "gscKeywords": [],
@@ -3417,7 +3417,7 @@
   },
   {
     "name": "Gestao De Empresas E Organizacoes Para Nao Gestores E Learning",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-de-empresas-e-organizacoes-para-nao-gestores-e-learning",
     "gscKeywords": [],
@@ -3427,7 +3427,7 @@
   },
   {
     "name": "Gestao Desportiva",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-desportiva",
     "gscKeywords": [],
@@ -3437,7 +3437,7 @@
   },
   {
     "name": "Gestao E Direcao Na Protecao Civil",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-direcao-na-protecao-civil",
     "gscKeywords": [],
@@ -3447,7 +3447,7 @@
   },
   {
     "name": "Gestao Integrada Das Organizacoes E Auditoria",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-integrada-das-organizacoes-e-auditoria",
     "gscKeywords": [],
@@ -3457,7 +3457,7 @@
   },
   {
     "name": "Gestao Sustentavel Na Saude",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-sustentavel-na-saude",
     "gscKeywords": [],
@@ -3467,7 +3467,7 @@
   },
   {
     "name": "Lideranca Inovacao E Transformacao Digital",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/lideranca-inovacao-e-transformacao-digital",
     "gscKeywords": [],
@@ -3477,7 +3477,7 @@
   },
   {
     "name": "Logistica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/logistica",
     "gscKeywords": [],
@@ -3487,7 +3487,7 @@
   },
   {
     "name": "Modelos Ageis De Gestao E Transformacao Organizacional",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/modelos-ageis-de-gestao-e-transformacao-organizacional",
     "gscKeywords": [],
@@ -3497,7 +3497,7 @@
   },
   {
     "name": "Praticas Avancadas De Gestao De Pessoas",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/praticas-avancadas-de-gestao-de-pessoas",
     "gscKeywords": [],
@@ -3507,7 +3507,7 @@
   },
   {
     "name": "Seguranca E Higiene Do Trabalho",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/seguranca-e-higiene-do-trabalho",
     "gscKeywords": [],
@@ -3536,7 +3536,7 @@
   },
   {
     "name": "Aprendizagem Da Matematica Do Ensino As Dificuldades",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/aprendizagem-da-matematica-do-ensino-as-dificuldades",
     "gscKeywords": [],
@@ -3546,7 +3546,7 @@
   },
   {
     "name": "Educacao Especial E Educacao Inclusiva Dominio Cognitivo E Motor",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/educacao-especial-e-educacao-inclusiva-dominio-cognitivo-e-motor",
     "gscKeywords": [],
@@ -3556,7 +3556,7 @@
   },
   {
     "name": "Enologia",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/enologia",
     "gscKeywords": [],
@@ -3566,7 +3566,7 @@
   },
   {
     "name": "Gestao Integrada E Governanca Da Agua",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-integrada-e-governanca-da-agua",
     "gscKeywords": [],
@@ -3576,7 +3576,7 @@
   },
   {
     "name": "Lean And Operations Management",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/lean-and-operations-management",
     "gscKeywords": [],
@@ -3586,7 +3586,7 @@
   },
   {
     "name": "Railway Systems And Management",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/railway-systems-and-management",
     "gscKeywords": [],
@@ -3596,7 +3596,7 @@
   },
   {
     "name": "Blockchain E Inteligencia Artificial",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/blockchain-e-inteligencia-artificial",
     "gscKeywords": [],
@@ -3606,7 +3606,7 @@
   },
   {
     "name": "Blockchain Criptoeconomia E Inovacao Tecnologica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/blockchain-criptoeconomia-e-inovacao-tecnologica",
     "gscKeywords": [],
@@ -3616,7 +3616,7 @@
   },
   {
     "name": "Ciberseguranca Aplicada",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/ciberseguranca-aplicada",
     "gscKeywords": [],
@@ -3626,7 +3626,7 @@
   },
   {
     "name": "Ciberseguranca Para Gestores",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/ciberseguranca-para-gestores",
     "gscKeywords": [],
@@ -3636,7 +3636,7 @@
   },
   {
     "name": "Comunicacao Digital",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/comunicacao-digital",
     "gscKeywords": [],
@@ -3646,7 +3646,7 @@
   },
   {
     "name": "Data Science Aplicada Big Data E Ai",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/data-science-aplicada-big-data-e-ai",
     "gscKeywords": [],
@@ -3656,7 +3656,7 @@
   },
   {
     "name": "Gestao De Projetos",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-de-projetos",
     "gscKeywords": [],
@@ -3666,7 +3666,7 @@
   },
   {
     "name": "Lideranca Em Transformacao Digital E Inovacao Estrategica",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/lideranca-em-transformacao-digital-e-inovacao-estrategica",
     "gscKeywords": [],
@@ -3676,7 +3676,7 @@
   },
   {
     "name": "Seguranca Informatica E Ethical Hacking",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/seguranca-informatica-e-ethical-hacking",
     "gscKeywords": [],
@@ -3686,7 +3686,7 @@
   },
   {
     "name": "Gestao E Empreendedorismo Dos Eventos",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-empreendedorismo-dos-eventos",
     "gscKeywords": [],
@@ -3709,7 +3709,7 @@
   },
   {
     "name": "Tour Guiding",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/tour-guiding",
     "gscKeywords": [],
@@ -3719,7 +3719,7 @@
   },
   {
     "name": "Cirurgia Em Animais De Companhia",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/cirurgia-em-animais-de-companhia",
     "gscKeywords": [],
@@ -3729,7 +3729,7 @@
   },
   {
     "name": "Clinica De Equinos",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/clinica-de-equinos",
     "gscKeywords": [],
@@ -3739,7 +3739,7 @@
   },
   {
     "name": "Enfermagem Veterinaria Clinica",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/enfermagem-veterinaria-clinica",
     "gscKeywords": [],
@@ -3749,7 +3749,7 @@
   },
   {
     "name": "Imagiologia Clinica Em Animais De Companhia",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/imagiologia-clinica-em-animais-de-companhia",
     "gscKeywords": [],
@@ -3759,7 +3759,7 @@
   },
   {
     "name": "Medicina Em Animais De Companhia",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/medicina-em-animais-de-companhia",
     "gscKeywords": [],
@@ -4523,7 +4523,7 @@
   },
   {
     "name": "Design E Producao De Moda",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda",
     "gscKeywords": [],
@@ -4560,7 +4560,7 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Estudos Europeus Estudos Lusofonos E Relacoes Internacionais",
@@ -4608,7 +4608,7 @@
   },
   {
     "name": "Ciencias Da Comunicacao",
-    "degree": "Doutoramentos",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-comunicacao",
     "gscKeywords": [],
@@ -4621,7 +4621,7 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-comunicacao"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Comunicacao Aplicada",
@@ -4635,17 +4635,17 @@
   },
   {
     "name": "Educacao Fisica E Desporto",
-    "degree": "Doutoramentos",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/educacao-fisica-e-desporto",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Doutoramento"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Direito",
-    "degree": "Doutoramentos",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/direito",
     "gscKeywords": [],
@@ -4658,17 +4658,17 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/direito"
       }
     ],
-    "degree_type": "Doutoramento"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Economia",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/economia",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Gestao",
@@ -4702,13 +4702,13 @@
   },
   {
     "name": "Ciencias Da Educacao",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-educacao",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Computacao E Matematica Aplicada",
@@ -4722,7 +4722,7 @@
   },
   {
     "name": "Engenharia Civil",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil",
     "gscKeywords": [],
@@ -4735,7 +4735,7 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Engenharia De Protecao Civil",
@@ -4749,13 +4749,13 @@
   },
   {
     "name": "Engenharia Do Ambiente",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-do-ambiente",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Engenharia Eletrotecnica De Sistemas De Energia",
@@ -4847,13 +4847,13 @@
   },
   {
     "name": "Arquitetura Cup",
-    "degree": "Mestrado",
+    "degree": "Mestrados Integrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/mestrados-integrados/arquitetura-cup",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Mestrado"
+    "degree_type": "Mestrado Integrado"
   },
   {
     "name": "Relacoes Internacionais",
@@ -4998,13 +4998,13 @@
   },
   {
     "name": "Direito",
-    "degree": "Doutoramentos",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/mestrados/direito",
     "gscKeywords": [],
     "adsKeywords": [],
     "rankingsKeywords": [],
-    "degree_type": "Doutoramento"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Gestao",
@@ -5035,7 +5035,7 @@
   },
   {
     "name": "Gestao De Recursos Humanos",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/mestrados/gestao-de-recursos-humanos",
     "gscKeywords": [],
@@ -5048,7 +5048,7 @@
         "url": "https://www.ulusofona.pt/porto/mestrados/gestao-de-recursos-humanos"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Gestao Financeira",
@@ -5212,7 +5212,7 @@
   },
   {
     "name": "Marca Pessoal Gestao E Consultoria",
-    "degree": "Pós-Graduaçãos",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/marca-pessoal-gestao-e-consultoria",
     "gscKeywords": [],
@@ -5222,7 +5222,7 @@
   },
   {
     "name": "Relacoes Internacionais E Diplomacia Politica E Economica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/relacoes-internacionais-e-diplomacia-politica-e-economica",
     "gscKeywords": [],
@@ -5232,7 +5232,7 @@
   },
   {
     "name": "Concecoes E Praticas Metodologicas E Decisionais No Futebol",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/concecoes-e-praticas-metodologicas-e-decisionais-no-futebol",
     "gscKeywords": [],
@@ -5242,7 +5242,7 @@
   },
   {
     "name": "Registos E Notariado",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/registos-e-notariado",
     "gscKeywords": [],
@@ -5252,7 +5252,7 @@
   },
   {
     "name": "Mediacao De Conflitos Em Contexto Escolar",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/mediacao-de-conflitos-em-contexto-escolar",
     "gscKeywords": [],
@@ -5262,7 +5262,7 @@
   },
   {
     "name": "Cartografia De Risco E Planeamento De Protecao Civil",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/cartografia-de-risco-e-planeamento-de-protecao-civil",
     "gscKeywords": [],
@@ -5272,7 +5272,7 @@
   },
   {
     "name": "Gestao De Emergencias Com Materias Perigosas",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/gestao-de-emergencias-com-materias-perigosas",
     "gscKeywords": [],
@@ -5282,7 +5282,7 @@
   },
   {
     "name": "Gestao Integrada De Emergencias Safety Security",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/gestao-integrada-de-emergencias-safety-security",
     "gscKeywords": [],
@@ -5292,7 +5292,7 @@
   },
   {
     "name": "Informatica E Sistemas De Informacao",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/informatica-e-sistemas-de-informacao",
     "gscKeywords": [],
@@ -5309,7 +5309,7 @@
   },
   {
     "name": "Inovacao E Lideranca Em Protecao Civil Autarquica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/inovacao-e-lideranca-em-protecao-civil-autarquica",
     "gscKeywords": [],
@@ -5319,7 +5319,7 @@
   },
   {
     "name": "Projeto Certificacao E Peritagem De Protecao Civil",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/projeto-certificacao-e-peritagem-de-protecao-civil",
     "gscKeywords": [],
@@ -5329,7 +5329,7 @@
   },
   {
     "name": "Sustentabilidade Ambiente E Qualidade",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/sustentabilidade-ambiente-e-qualidade",
     "gscKeywords": [],
@@ -5358,7 +5358,7 @@
   },
   {
     "name": "Ciberseguranca Aplicada",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/ciberseguranca-aplicada",
     "gscKeywords": [],
@@ -5368,7 +5368,7 @@
   },
   {
     "name": "Sustentabilidade Na Gestao De Residuos Especializacao Em Biorresiduos",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/sustentabilidade-na-gestao-de-residuos-especializacao-em-biorresiduos",
     "gscKeywords": [],
@@ -5378,7 +5378,7 @@
   },
   {
     "name": "Coordenador Municipal De Protecao Civil",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/coordenador-municipal-de-protecao-civil",
     "gscKeywords": [],
@@ -5628,7 +5628,7 @@
   },
   {
     "name": "Automacao E Seguranca Em Sistemas Informaticos Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/automacao-e-seguranca-em-sistemas-informaticos-pt",
     "gscKeywords": [],
@@ -5638,7 +5638,7 @@
   },
   {
     "name": "Enfermagem Veterinaria Clinica Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/enfermagem-veterinaria-clinica-pt",
     "gscKeywords": [],
@@ -5648,7 +5648,7 @@
   },
   {
     "name": "Gestao De Recursos Humanos Na Area Socioeducativa Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/gestao-de-recursos-humanos-na-area-socioeducativa-pt",
     "gscKeywords": [],
@@ -5658,7 +5658,7 @@
   },
   {
     "name": "Gestao Financeira E Fiscalidade Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/gestao-financeira-e-fiscalidade-pt",
     "gscKeywords": [],
@@ -5668,7 +5668,7 @@
   },
   {
     "name": "Mandarim E Cultura Chinesa Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/mandarim-e-cultura-chinesa-pt",
     "gscKeywords": [],
@@ -5678,7 +5678,7 @@
   },
   {
     "name": "Osteopatia Estrutural No Desporto Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/osteopatia-estrutural-no-desporto-pt",
     "gscKeywords": [],
@@ -5688,7 +5688,7 @@
   },
   {
     "name": "Recursos Graficos E Visualizacao Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/pos-graduacoes/recursos-graficos-e-visualizacao-pt",
     "gscKeywords": [],
@@ -5698,7 +5698,7 @@
   },
   {
     "name": "Acompanhamento De Criancas E Jovens Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/acompanhamento-de-criancas-e-jovens-pt",
     "gscKeywords": [],
@@ -5708,7 +5708,7 @@
   },
   {
     "name": "Aplicacoes Informaticas Para Ciencias De Dados Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/aplicacoes-informaticas-para-ciencias-de-dados-pt",
     "gscKeywords": [],
@@ -5718,7 +5718,7 @@
   },
   {
     "name": "Assessoria Em Administracao E Gestao Publica Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/assessoria-em-administracao-e-gestao-publica-pt",
     "gscKeywords": [],
@@ -5728,7 +5728,7 @@
   },
   {
     "name": "Automacao E Robotica Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/automacao-e-robotica-pt",
     "gscKeywords": [],
@@ -5738,7 +5738,7 @@
   },
   {
     "name": "Bioanalises E Controlo Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/bioanalises-e-controlo-pt",
     "gscKeywords": [],
@@ -5748,7 +5748,7 @@
   },
   {
     "name": "Ciberseguranca Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/ciberseguranca-pt",
     "gscKeywords": [],
@@ -5758,7 +5758,7 @@
   },
   {
     "name": "Contabilidade E Gestao Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/contabilidade-e-gestao-pt",
     "gscKeywords": [],
@@ -5768,7 +5768,7 @@
   },
   {
     "name": "Desenvolvimento De Sistemas Para Internet Das Coisas Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/desenvolvimento-de-sistemas-para-internet-das-coisas-pt",
     "gscKeywords": [],
@@ -5778,7 +5778,7 @@
   },
   {
     "name": "Desenvolvimento Para A Web E Dispositivos Moveis Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/desenvolvimento-para-a-web-e-dispositivos-moveis-pt",
     "gscKeywords": [],
@@ -5788,7 +5788,7 @@
   },
   {
     "name": "Gestao Administrativa De Recursos Humanos Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-administrativa-de-recursos-humanos-pt",
     "gscKeywords": [],
@@ -5798,7 +5798,7 @@
   },
   {
     "name": "Gestao Comercial E Vendas Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-comercial-e-vendas-pt",
     "gscKeywords": [],
@@ -5808,7 +5808,7 @@
   },
   {
     "name": "Gestao De Hotelaria E Restauracao Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-hotelaria-e-restauracao-pt",
     "gscKeywords": [],
@@ -5818,7 +5818,7 @@
   },
   {
     "name": "Gestao De Marketing Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-marketing-pt",
     "gscKeywords": [],
@@ -5828,7 +5828,7 @@
   },
   {
     "name": "Gestao De Negocios E Comercio Eletronico Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-negocios-e-comercio-eletronico-pt",
     "gscKeywords": [],
@@ -5838,17 +5838,17 @@
   },
   {
     "name": "Gestao De Sistemas De Informacao Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-sistemas-de-informacao-pt",
     "gscKeywords": [],
     "adsKeywords": [],
-    "degree_type": "Formações",
+    "degree_type": "TeSP",
     "rankingsKeywords": []
   },
   {
     "name": "Instalacoes Eletricas E Automacao Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/instalacoes-eletricas-e-automacao-pt",
     "gscKeywords": [],
@@ -5858,7 +5858,7 @@
   },
   {
     "name": "Laboratorio Forense E Criminal Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/laboratorio-forense-e-criminal-pt",
     "gscKeywords": [],
@@ -5868,7 +5868,7 @@
   },
   {
     "name": "Marketing Digital Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/marketing-digital-pt",
     "gscKeywords": [],
@@ -5878,7 +5878,7 @@
   },
   {
     "name": "Producao De Conteudos Audiovisuais Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/producao-de-conteudos-audiovisuais-pt",
     "gscKeywords": [],
@@ -5888,7 +5888,7 @@
   },
   {
     "name": "Sistemas De Telecomunicacoes Eletronica E Comunicacoes Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/sistemas-de-telecomunicacoes-eletronica-e-comunicacoes-pt",
     "gscKeywords": [],
@@ -5918,7 +5918,7 @@
   },
   {
     "name": "Ciberseguranca Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/ciberseguranca-pt",
     "gscKeywords": [],
@@ -5928,7 +5928,7 @@
   },
   {
     "name": "Comunicacao Digital Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/comunicacao-digital-pt",
     "gscKeywords": [],
@@ -5938,7 +5938,7 @@
   },
   {
     "name": "Contabilidade E Gestao Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/contabilidade-e-gestao-pt",
     "gscKeywords": [],
@@ -5948,7 +5948,7 @@
   },
   {
     "name": "Controlo Da Qualidade E Analises Laboratoriais Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/controlo-da-qualidade-e-analises-laboratoriais-pt",
     "gscKeywords": [],
@@ -5958,7 +5958,7 @@
   },
   {
     "name": "Desenvolvimento De Aplicacoes De Inteligencia Artificial Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/desenvolvimento-de-aplicacoes-de-inteligencia-artificial-pt",
     "gscKeywords": [],
@@ -5968,7 +5968,7 @@
   },
   {
     "name": "Desenvolvimento De Produtos Multimedia Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/desenvolvimento-de-produtos-multimedia-pt",
     "gscKeywords": [],
@@ -5978,7 +5978,7 @@
   },
   {
     "name": "Desenvolvimento Para A Web E Dispositivos Moveis Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/desenvolvimento-para-a-web-e-dispositivos-moveis-pt",
     "gscKeywords": [],
@@ -5988,7 +5988,7 @@
   },
   {
     "name": "Gastronomia Vinhos E Turismo Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gastronomia-vinhos-e-turismo-pt",
     "gscKeywords": [],
@@ -5998,7 +5998,7 @@
   },
   {
     "name": "Gestao Administrativa De Recursos Humanos Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-administrativa-de-recursos-humanos-pt",
     "gscKeywords": [],
@@ -6008,7 +6008,7 @@
   },
   {
     "name": "Gestao Da Qualidade Ambiente E Seguranca Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-da-qualidade-ambiente-e-seguranca-pt",
     "gscKeywords": [],
@@ -6018,7 +6018,7 @@
   },
   {
     "name": "Gestao De Atividades Desportivas Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-atividades-desportivas-pt",
     "gscKeywords": [],
@@ -6028,7 +6028,7 @@
   },
   {
     "name": "Gestao De Redes Sociais E Estrategias Digitais Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-redes-sociais-e-estrategias-digitais-pt",
     "gscKeywords": [],
@@ -6038,7 +6038,7 @@
   },
   {
     "name": "Gestao De Turismo Hotelaria E Restauracao Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-turismo-hotelaria-e-restauracao-pt",
     "gscKeywords": [],
@@ -6048,7 +6048,7 @@
   },
   {
     "name": "Gestao De Vendas E Marketing Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-vendas-e-marketing-pt",
     "gscKeywords": [],
@@ -6058,7 +6058,7 @@
   },
   {
     "name": "Marketing Digital E Comercio Eletronico Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/marketing-digital-e-comercio-eletronico-pt",
     "gscKeywords": [],
@@ -6068,7 +6068,7 @@
   },
   {
     "name": "Redes E Sistemas Informaticos Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/redes-e-sistemas-informaticos-pt",
     "gscKeywords": [],
@@ -6078,7 +6078,7 @@
   },
   {
     "name": "Som E Imagem Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/som-e-imagem-pt",
     "gscKeywords": [],
@@ -6088,12 +6088,12 @@
   },
   {
     "name": "Turismo E Informacao Turistica Pt",
-    "degree": "Ctesp",
+    "degree": "CTESP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/turismo-e-informacao-turistica-pt",
     "gscKeywords": [],
     "adsKeywords": [],
-    "degree_type": "Formações",
+    "degree_type": "TeSP",
     "rankingsKeywords": []
   },
   {
@@ -6258,7 +6258,7 @@
   },
   {
     "name": "Analytics E Data Science Empresarial Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/analytics-e-data-science-empresarial-pt",
     "gscKeywords": [],
@@ -6268,7 +6268,7 @@
   },
   {
     "name": "Ciberseguranca Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/ciberseguranca-pt",
     "gscKeywords": [],
@@ -6278,7 +6278,7 @@
   },
   {
     "name": "Enfermagem Do Trabalho Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/enfermagem-do-trabalho-pt",
     "gscKeywords": [],
@@ -6288,7 +6288,7 @@
   },
   {
     "name": "Entrepreneurship Tech Startups Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/entrepreneurship-tech-startups-pt",
     "gscKeywords": [],
@@ -6298,7 +6298,7 @@
   },
   {
     "name": "Gestao Avancada De Recursos Humanos Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/gestao-avancada-de-recursos-humanos-pt",
     "gscKeywords": [],
@@ -6308,7 +6308,7 @@
   },
   {
     "name": "Gestao Das Organizacoes Sustentaveis Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/gestao-das-organizacoes-sustentaveis-pt",
     "gscKeywords": [],
@@ -6318,7 +6318,7 @@
   },
   {
     "name": "Gestao De Bibliotecas Escolares Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/gestao-de-bibliotecas-escolares-pt",
     "gscKeywords": [],
@@ -6328,7 +6328,7 @@
   },
   {
     "name": "Gestao De Projetos Para Empreendedorismo E Inovacao Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/gestao-de-projetos-para-empreendedorismo-e-inovacao-pt",
     "gscKeywords": [],
@@ -6338,7 +6338,7 @@
   },
   {
     "name": "Gestao De Servicos De Saude Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/gestao-de-servicos-de-saude-pt",
     "gscKeywords": [],
@@ -6348,7 +6348,7 @@
   },
   {
     "name": "Gestao Empresarial Aplicada A Micro E Pequenas Empresas Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/gestao-empresarial-aplicada-a-micro-e-pequenas-empresas-pt",
     "gscKeywords": [],
@@ -6358,7 +6358,7 @@
   },
   {
     "name": "Inteligencia Artificial Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/inteligencia-artificial-pt",
     "gscKeywords": [],
@@ -6368,7 +6368,7 @@
   },
   {
     "name": "Mba Executivo Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/mba-executivo-pt",
     "gscKeywords": [],
@@ -6378,7 +6378,7 @@
   },
   {
     "name": "Mba Executivo Pessoas Saude Mental E Felicidade Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/mba-executivo-pessoas-saude-mental-e-felicidade-pt",
     "gscKeywords": [],
@@ -6388,7 +6388,7 @@
   },
   {
     "name": "Psicologia Social E Organizacional Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/psicologia-social-e-organizacional-pt",
     "gscKeywords": [],
@@ -6398,7 +6398,7 @@
   },
   {
     "name": "Redes Cisco Networking Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/redes-cisco-networking-pt",
     "gscKeywords": [],
@@ -6408,7 +6408,7 @@
   },
   {
     "name": "Sistemas Integrados De Gestao Qualidade Ambiente E Seguranca Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/sistemas-integrados-de-gestao-qualidade-ambiente-e-seguranca-pt",
     "gscKeywords": [],
@@ -6418,7 +6418,7 @@
   },
   {
     "name": "Transformacao Digital E Inovacao Pt",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduações",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/pos-graduacoes/transformacao-digital-e-inovacao-pt",
     "gscKeywords": [],
