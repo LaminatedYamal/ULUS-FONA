@@ -978,6 +978,46 @@ function loadCourse(id) {
     }
     const brand = BRANDING[instName] || { hex: "#444444", bgSub: "#222222", logo: "" };
     
+    // Quick Switcher in Header
+    const switcherContainer = document.getElementById('header-switcher-container');
+    const switcher = document.getElementById('header-course-switcher');
+    if (switcher && switcherContainer) {
+        const sameCatCourses = courses.filter(c => c.institution === course.institution && (c.degree === course.degree || c.degree_type === course.degree_type));
+        if (sameCatCourses.length > 1) {
+            switcher.innerHTML = '<option value="">Quick Switch...</option>';
+            sameCatCourses.sort((a,b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.id;
+                opt.textContent = c.name;
+                if (c.id === id) opt.selected = true;
+                switcher.appendChild(opt);
+            });
+            switcherContainer.style.display = 'block';
+        } else {
+            switcherContainer.style.display = 'none';
+        }
+    }
+    
+    // Quick Switcher in Header
+    const switcherContainer = document.getElementById('header-switcher-container');
+    const switcher = document.getElementById('header-course-switcher');
+    if (switcher && switcherContainer) {
+        const sameCatCourses = courses.filter(c => c.institution === course.institution && (c.degree === course.degree || c.degree_type === course.degree_type));
+        if (sameCatCourses.length > 1) {
+            switcher.innerHTML = '<option value="">Quick Switch...</option>';
+            sameCatCourses.sort((a,b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c.id;
+                opt.textContent = c.name;
+                if (c.id === id) opt.selected = true;
+                switcher.appendChild(opt);
+            });
+            switcherContainer.style.display = 'block';
+        } else {
+            switcherContainer.style.display = 'none';
+        }
+    }
+    
     // Apply Branding
     document.documentElement.style.setProperty('--accent-primary', brand.hex);
     document.documentElement.style.setProperty('--accent-secondary', brand.bgSub);
