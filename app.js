@@ -1149,11 +1149,10 @@ function updateStats(course) {
     const parity = adsCount > 0 ? Math.round((matches / adsCount) * 100) : 0;
     const gaps = adsNorms.filter(norm => !gscNorms.includes(norm)).length;
     
-    document.getElementById('gsc-count').textContent = gscCount;
-    document.getElementById('ads-count').textContent = adsCount;
+    document.getElementById('gsc-total').textContent = gscCount;
+    document.getElementById('ads-total').textContent = adsCount;
     document.getElementById('parity-score').textContent = `${parity}%`;
-    document.getElementById('parity-bar').style.width = `${parity}%`;
-    document.getElementById('gap-count').textContent = gaps;
+    document.getElementById('organic-total').textContent = gaps;
 }
 
 function filterKeywords(query) {
