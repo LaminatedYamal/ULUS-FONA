@@ -913,57 +913,47 @@ select, option {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-/* Triple Match Synergy (Lightning) */
+/* Triple Match Synergy (Lightning Bolt Yellow) */
 .triple-synergy-aura {
-    background: rgba(255, 255, 0, 0.08) !important;
+    background: rgba(255, 255, 0, 0.05) !important;
     position: relative;
     border: 2px solid #ffcc00 !important;
-    overflow: hidden;
 }
 
-.triple-synergy-aura::before {
+.triple-synergy-aura::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: -2px;
     left: -100%;
-    width: 200%;
-    height: 100%;
+    width: 100%;
+    height: calc(100% + 4px);
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 204, 0, 0.3),
-        rgba(255, 204, 0, 0.6),
-        rgba(255, 204, 0, 0.3),
+        rgba(255, 255, 255, 0.8),
         transparent
     );
-    animation: row-lightning-strike 2.5s infinite ease-in-out;
+    animation: border-lightning-strike 2s infinite ease-in-out;
     pointer-events: none;
-    z-index: 1;
+    z-index: 5;
+    /* Only visible on the border area */
+    clip-path: polygon(
+        0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 
+        2px 2px, 2px calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 2px, 2px 2px
+    );
 }
 
-@keyframes row-lightning-strike {
+@keyframes border-lightning-strike {
     0% { left: -100%; opacity: 0; }
     20% { opacity: 1; }
-    40% { left: 100%; opacity: 0; }
+    50% { left: 100%; opacity: 0; }
     100% { left: 100%; opacity: 0; }
 }
 
-.triple-synergy-aura td {
-    position: relative;
-    z-index: 2;
-    border-top: 2px solid #ffcc00 !important;
-    border-bottom: 2px solid #ffcc00 !important;
-}
-
 .triple-synergy-aura td:first-child {
-    border-left: 2px solid #ffcc00 !important;
     color: #ffffff !important;
     font-weight: 900;
-    text-shadow: 0 0 15px #ffcc00;
-}
-
-.triple-synergy-aura td:last-child {
-    border-right: 2px solid #ffcc00 !important;
+    text-shadow: 0 0 10px #ffcc00;
 }
 
 .triple-synergy-aura td:first-child::after {
