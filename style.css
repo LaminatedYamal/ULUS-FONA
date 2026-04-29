@@ -1272,3 +1272,128 @@ body.light-mode .back-to-top:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* --- NAVIGATION REFACTOR STYLES --- */
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.course-select-premium {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.course-select-premium:hover {
+    background-color: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-1px);
+}
+
+.course-select-premium:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.1);
+}
+
+.course-select-premium option {
+    background: #1a1a1a;
+    color: white;
+    padding: 10px;
+}
+
+.landing-hero {
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    animation: loginFadeIn 0.8s ease-out;
+}
+
+.hero-logo-container {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.hero-logo-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+#landing-logo {
+    max-width: 400px;
+    max-height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+
+.hero-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 18px;
+    max-width: 500px;
+}
+
+/* Sidebar Nav Tweak */
+.nav-degree-btn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-degree-btn:hover {
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+.nav-degree-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-left: 3px solid var(--accent);
+}
+
+
