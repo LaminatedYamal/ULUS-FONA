@@ -789,8 +789,8 @@ function renderCourseList(searchQuery = '') {
 
         if (!q || nameMatch || keywordMatch) {
             if (!grouped[course.institution]) grouped[course.institution] = {};
-            let degreeName = course.degree_type || 'Formação';
-            if (degreeName.toLowerCase() === 'unknown' || degreeName.toLowerCase() === 'formações') degreeName = 'Formação';
+            let degreeName = course.degree_type || 'Formações';
+            if (degreeName.toLowerCase() === 'unknown' || degreeName.toLowerCase() === 'formação') degreeName = 'Formações';
             if (!grouped[course.institution][degreeName]) grouped[course.institution][degreeName] = [];
             grouped[course.institution][degreeName].push(course);
             totalMatches++;
@@ -820,7 +820,7 @@ function renderCourseList(searchQuery = '') {
         
         list.appendChild(instHeader);
 
-        const degreeOrder = ['CTeSP', 'Licenciaturas', 'Mestrados Integrados', 'Mestrados', 'Doutoramentos', 'Pós-Graduações', 'Formação'];
+        const degreeOrder = ['CTeSP', 'Licenciaturas', 'Mestrados Integrados', 'Mestrados', 'Doutoramentos', 'Pós-Graduações', 'Formações'];
         
         Object.keys(grouped[inst]).sort((a, b) => {
             const indexA = degreeOrder.indexOf(a);
@@ -945,7 +945,7 @@ function loadCourse(id) {
     document.getElementById('brand-name').textContent = course.institution;
     
     document.getElementById('active-course-title').textContent = course.name;
-    const displayDegree = (course.degree && course.degree !== 'Unknown') ? course.degree : (course.degree_type || 'Formação');
+    const displayDegree = (course.degree && course.degree !== 'Unknown') ? course.degree : (course.degree_type || 'Formações');
     document.getElementById('active-course-desc').textContent = `${displayDegree} | ${course.institution}`;
     
     renderTables(course.gscKeywords, course.adsKeywords, course.rankingsKeywords);
