@@ -979,7 +979,37 @@ body.light-mode .theme-toggle {
     5% { opacity: 1; transform: scale(1.05); }
 }
 
-/* Gap Aura Effect (Red) - INTENSE */
+/* Synergy Aura Effect (Green/Yellow) - THE LIGHTNING EFFECT */
+@keyframes synergy-pulse {
+    0% { box-shadow: inset 0 0 15px rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.3); }
+    50% { box-shadow: inset 0 0 35px rgba(52, 211, 153, 0.35); border-color: rgba(52, 211, 153, 0.6); }
+    100% { box-shadow: inset 0 0 15px rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.3); }
+}
+
+.synergy-aura {
+    background: linear-gradient(90deg, rgba(52, 211, 153, 0.12) 0%, transparent 100%) !important;
+    animation: synergy-pulse 3s infinite ease-in-out;
+    border-left: 4px solid #34d399 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.synergy-aura::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+    animation: lightning-strike 2.5s infinite linear;
+}
+
+.synergy-aura td:first-child {
+    color: #34d399;
+    text-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
+}
+
 @keyframes gap-pulse {
     0% { box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.08); border-color: rgba(239, 68, 68, 0.15); }
     50% { box-shadow: inset 0 0 30px rgba(239, 68, 68, 0.25); border-color: rgba(239, 68, 68, 0.5); }
