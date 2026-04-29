@@ -13,6 +13,13 @@ let activeCourseId = 0;
 async function init() {
     checkAuth();
     
+    // Load cached sync info immediately for better UX
+    const cachedSync = localStorage.getItem('hub_last_sync');
+    if (cachedSync) {
+        const infoEl = document.getElementById('last-sync-info');
+        if (infoEl) infoEl.innerText = cachedSync;
+    }
+
     document.getElementById('keyword-search').addEventListener('input', (e) => {
         filterKeywords(e.target.value);
     });
@@ -98,7 +105,7 @@ async function fetchServerData() {
     }
 }
 
-async function syncToGitHub() {
+async function syncToTeam() {
     let token = localStorage.getItem('github_token');
     if (!token) {
         token = prompt("Please enter your GitHub Personal Access Token (PAT) to sync with the team:");
@@ -782,8 +789,10 @@ function renderCourseList(searchQuery = '') {
 
         if (!q || nameMatch || keywordMatch) {
             if (!grouped[course.institution]) grouped[course.institution] = {};
-            if (!grouped[course.institution][course.degree]) grouped[course.institution][course.degree] = [];
-            grouped[course.institution][course.degree].push(course);
+            let degreeName = course.degree_type || 'Formação';
+            if (degreeName.toLowerCase() === 'unknown' || degreeName.toLowerCase() === 'formações') degreeName = 'Formação';
+            if (!grouped[course.institution][degreeName]) grouped[course.institution][degreeName] = [];
+            grouped[course.institution][degreeName].push(course);
             totalMatches++;
         }
     });
@@ -936,7 +945,8 @@ function loadCourse(id) {
     document.getElementById('brand-name').textContent = course.institution;
     
     document.getElementById('active-course-title').textContent = course.name;
-    document.getElementById('active-course-desc').textContent = `${course.degree} | ${course.institution}`;
+    const displayDegree = (course.degree && course.degree !== 'Unknown') ? course.degree : (course.degree_type || 'Formação');
+    document.getElementById('active-course-desc').textContent = `${displayDegree} | ${course.institution}`;
     
     renderTables(course.gscKeywords, course.adsKeywords, course.rankingsKeywords);
     updateStats(course);
