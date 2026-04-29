@@ -94,7 +94,7 @@
   },
   {
     "name": "Design E Producao De Moda",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda",
     "gscKeywords": [],
@@ -125,7 +125,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Ciencia Politica E Relacoes Internacionais",
@@ -697,7 +697,7 @@
   },
   {
     "name": "Fotografia",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia",
     "gscKeywords": [],
@@ -728,7 +728,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Videojogos",
@@ -773,7 +773,7 @@
   },
   {
     "name": "Ciencias Da Comunicacao",
-    "degree": "Licenciaturas",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao",
     "gscKeywords": [],
@@ -792,7 +792,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Comunicacao Aplicada Marketing Publicidade E Relacoes Publicas",
@@ -896,7 +896,7 @@
   },
   {
     "name": "Educacao Fisica E Desporto",
-    "degree": "Licenciaturas",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto",
     "gscKeywords": [],
@@ -921,7 +921,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Criminologia",
@@ -954,7 +954,7 @@
   },
   {
     "name": "Direito",
-    "degree": "Licenciaturas",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito",
     "gscKeywords": [],
@@ -979,7 +979,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Contabilidade Fiscalidade E Auditoria",
@@ -1024,7 +1024,7 @@
   },
   {
     "name": "Economia",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia",
     "gscKeywords": [],
@@ -1043,11 +1043,11 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Gestao De Empresas",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas",
     "gscKeywords": [],
@@ -1090,7 +1090,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Gestao De Recursos Humanos",
@@ -1268,7 +1268,7 @@
   },
   {
     "name": "Engenharia Civil",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil",
     "gscKeywords": [],
@@ -1293,11 +1293,11 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Engenharia Do Ambiente",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente",
     "gscKeywords": [],
@@ -1322,11 +1322,11 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Engenharia E Gestao Industrial",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial",
     "gscKeywords": [],
@@ -1357,7 +1357,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Engenharia Eletrotecnica E De Computadores",
@@ -1515,7 +1515,7 @@
   },
   {
     "name": "Ciencia De Dados",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados",
     "gscKeywords": [],
@@ -1540,7 +1540,7 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Computacao E Matematica Aplicada",
@@ -1970,7 +1970,7 @@
   },
   {
     "name": "Arquitetura",
-    "degree": "Unknown",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura",
     "gscKeywords": [],
@@ -2013,11 +2013,11 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Ciencias Farmaceuticas",
-    "degree": "Unknown",
+    "degree": "Mestrado Integrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas",
     "gscKeywords": [],
@@ -2054,11 +2054,11 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Mestrado Integrado"
   },
   {
     "name": "Medicina Veterinaria",
-    "degree": "Unknown",
+    "degree": "Mestrado Integrados",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/medicina-veterinaria",
     "gscKeywords": [],
@@ -2077,11 +2077,11 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/medicina-veterinaria"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Mestrado Integrado"
   },
   {
     "name": "Urbanismo",
-    "degree": "Mestrados",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/urbanismo",
     "gscKeywords": [],
@@ -2094,7 +2094,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/urbanismo"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Design",
@@ -2458,7 +2458,7 @@
   },
   {
     "name": "Patrimonio Cultural Imaterial",
-    "degree": "Mestrados",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/patrimonio-cultural-imaterial",
     "gscKeywords": [],
@@ -2591,11 +2591,11 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Pós-Graduação"
   },
   {
     "name": "Sociomuseologia",
-    "degree": "Mestrados",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/sociomuseologia",
     "gscKeywords": [],
@@ -2614,7 +2614,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/sociomuseologia"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Artes Da Animacao",
@@ -3669,7 +3669,7 @@
   },
   {
     "name": "Direito",
-    "degree": "Mestrados",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/direito",
     "gscKeywords": [],
@@ -3682,7 +3682,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/direito"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Direito Do Mercado",
@@ -5455,7 +5455,7 @@
   },
   {
     "name": "Cirurgia Em Animais De Companhia",
-    "degree": "Mestrados",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/cirurgia-em-animais-de-companhia",
     "gscKeywords": [],
@@ -5588,11 +5588,11 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Pós-Graduação"
   },
   {
     "name": "Clinica De Equinos",
-    "degree": "Mestrados",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/clinica-de-equinos",
     "gscKeywords": [],
@@ -5725,11 +5725,11 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Pós-Graduação"
   },
   {
     "name": "Enfermagem Veterinaria Clinica",
-    "degree": "Mestrados",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/enfermagem-veterinaria-clinica",
     "gscKeywords": [],
@@ -5862,11 +5862,11 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Pós-Graduação"
   },
   {
     "name": "Imagiologia Clinica Em Animais De Companhia",
-    "degree": "Mestrados",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/imagiologia-clinica-em-animais-de-companhia",
     "gscKeywords": [],
@@ -5999,11 +5999,11 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Pós-Graduação"
   },
   {
     "name": "Medicina Em Animais De Companhia",
-    "degree": "Mestrados",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/medicina-em-animais-de-companhia",
     "gscKeywords": [],
@@ -6016,7 +6016,7 @@
         "url": "https://www.ulusofona.pt/lisboa/mestrados/medicina-em-animais-de-companhia"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Pós-Graduação"
   },
   {
     "name": "Arquitetura",
@@ -6364,7 +6364,7 @@
   },
   {
     "name": "Gestao E Operacao Aerea Com Aeronaves Nao Tripuladas",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-operacao-aerea-com-aeronaves-nao-tripuladas",
     "gscKeywords": [],
@@ -6501,7 +6501,7 @@
   },
   {
     "name": "Marca Pessoal Gestao E Consultoria",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marca-pessoal-gestao-e-consultoria",
     "gscKeywords": [],
@@ -6638,7 +6638,7 @@
   },
   {
     "name": "Intervencao Em Riscos E Promocao Da Inclusao",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/intervencao-em-riscos-e-promocao-da-inclusao",
     "gscKeywords": [],
@@ -6775,7 +6775,7 @@
   },
   {
     "name": "Patrimonio Cultural Imaterial",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/patrimonio-cultural-imaterial",
     "gscKeywords": [],
@@ -6912,7 +6912,7 @@
   },
   {
     "name": "Psicologia Politica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/psicologia-politica",
     "gscKeywords": [],
@@ -7186,7 +7186,7 @@
   },
   {
     "name": "Relacoes Internacionais Negocios E Diplomacia Economica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/relacoes-internacionais-negocios-e-diplomacia-economica",
     "gscKeywords": [],
@@ -7323,7 +7323,7 @@
   },
   {
     "name": "E Commerce Edicao Online",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/e-commerce-edicao-online",
     "gscKeywords": [],
@@ -7346,7 +7346,7 @@
   },
   {
     "name": "Escrita De Ficcao",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/escrita-de-ficcao",
     "gscKeywords": [],
@@ -7483,7 +7483,7 @@
   },
   {
     "name": "Marketing Digital",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital",
     "gscKeywords": [],
@@ -7500,7 +7500,7 @@
   },
   {
     "name": "Marketing E Estrategias De Marca",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-e-estrategias-de-marca",
     "gscKeywords": [],
@@ -7535,7 +7535,7 @@
   },
   {
     "name": "Publicidade E Estrategias De Comunicacao Digital",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/publicidade-e-estrategias-de-comunicacao-digital",
     "gscKeywords": [],
@@ -7672,7 +7672,7 @@
   },
   {
     "name": "Gestao E Marketing Do Desporto",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-marketing-do-desporto",
     "gscKeywords": [],
@@ -7809,7 +7809,7 @@
   },
   {
     "name": "Criminologia E Investigacao Criminal",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/criminologia-e-investigacao-criminal",
     "gscKeywords": [],
@@ -7946,7 +7946,7 @@
   },
   {
     "name": "Direitos Das Criancas",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/direitos-das-criancas",
     "gscKeywords": [],
@@ -8083,7 +8083,7 @@
   },
   {
     "name": "Contabilidade E Fiscalidade",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/contabilidade-e-fiscalidade",
     "gscKeywords": [],
@@ -8237,7 +8237,7 @@
   },
   {
     "name": "Employee Experience Management",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/employee-experience-management",
     "gscKeywords": [],
@@ -8374,7 +8374,7 @@
   },
   {
     "name": "Gestao Bancaria Seguros E Mercados Financeiros",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-bancaria-seguros-e-mercados-financeiros",
     "gscKeywords": [],
@@ -8648,7 +8648,7 @@
   },
   {
     "name": "Gestao Desportiva",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-desportiva",
     "gscKeywords": [],
@@ -8785,7 +8785,7 @@
   },
   {
     "name": "Gestao E Direcao Na Protecao Civil",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-direcao-na-protecao-civil",
     "gscKeywords": [],
@@ -11417,7 +11417,7 @@
   },
   {
     "name": "Gestao De Projetos",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-de-projetos",
     "gscKeywords": [],
@@ -11554,7 +11554,7 @@
   },
   {
     "name": "Lideranca Em Transformacao Digital E Inovacao Estrategica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/lideranca-em-transformacao-digital-e-inovacao-estrategica",
     "gscKeywords": [],
@@ -11691,7 +11691,7 @@
   },
   {
     "name": "Seguranca Informatica E Ethical Hacking",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/seguranca-informatica-e-ethical-hacking",
     "gscKeywords": [],
@@ -11828,7 +11828,7 @@
   },
   {
     "name": "Gestao E Empreendedorismo Dos Eventos",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-empreendedorismo-dos-eventos",
     "gscKeywords": [],
@@ -11851,7 +11851,7 @@
   },
   {
     "name": "Tour Guiding",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/tour-guiding",
     "gscKeywords": [],
@@ -11988,7 +11988,7 @@
   },
   {
     "name": "Cirurgia Em Animais De Companhia",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/cirurgia-em-animais-de-companhia",
     "gscKeywords": [],
@@ -12125,7 +12125,7 @@
   },
   {
     "name": "Clinica De Equinos",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/clinica-de-equinos",
     "gscKeywords": [],
@@ -12262,7 +12262,7 @@
   },
   {
     "name": "Enfermagem Veterinaria Clinica",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/enfermagem-veterinaria-clinica",
     "gscKeywords": [],
@@ -12399,7 +12399,7 @@
   },
   {
     "name": "Imagiologia Clinica Em Animais De Companhia",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/imagiologia-clinica-em-animais-de-companhia",
     "gscKeywords": [],
@@ -12536,7 +12536,7 @@
   },
   {
     "name": "Medicina Em Animais De Companhia",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/medicina-em-animais-de-companhia",
     "gscKeywords": [],
@@ -22571,7 +22571,7 @@
   },
   {
     "name": "Design E Producao De Moda",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda",
     "gscKeywords": [],
@@ -22608,7 +22608,7 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Estudos Europeus Estudos Lusofonos E Relacoes Internacionais",
@@ -22783,7 +22783,7 @@
   },
   {
     "name": "Ciencias Da Comunicacao",
-    "degree": "Licenciaturas",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-comunicacao",
     "gscKeywords": [],
@@ -22796,7 +22796,7 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-comunicacao"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Comunicacao Aplicada",
@@ -22937,7 +22937,7 @@
   },
   {
     "name": "Educacao Fisica E Desporto",
-    "degree": "Licenciaturas",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/educacao-fisica-e-desporto",
     "gscKeywords": [],
@@ -23070,11 +23070,11 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Direito",
-    "degree": "Licenciaturas",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/direito",
     "gscKeywords": [],
@@ -23087,11 +23087,11 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/direito"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Economia",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/economia",
     "gscKeywords": [],
@@ -23224,7 +23224,7 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Gestao",
@@ -23639,7 +23639,7 @@
   },
   {
     "name": "Ciencias Da Educacao",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-educacao",
     "gscKeywords": [],
@@ -23772,7 +23772,7 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Computacao E Matematica Aplicada",
@@ -23913,7 +23913,7 @@
   },
   {
     "name": "Engenharia Civil",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil",
     "gscKeywords": [],
@@ -23926,7 +23926,7 @@
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Engenharia De Protecao Civil",
@@ -24067,7 +24067,7 @@
   },
   {
     "name": "Engenharia Do Ambiente",
-    "degree": "Licenciaturas",
+    "degree": "Mestrados",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-do-ambiente",
     "gscKeywords": [],
@@ -24200,7 +24200,7 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Licenciatura"
+    "degree_type": "Mestrado"
   },
   {
     "name": "Engenharia Eletrotecnica De Sistemas De Energia",
@@ -25713,7 +25713,7 @@
   },
   {
     "name": "Direito",
-    "degree": "Mestrados",
+    "degree": "Doutoramentos",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/mestrados/direito",
     "gscKeywords": [],
@@ -25846,7 +25846,7 @@
         "url": "https://www.ulusofona.pt/"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Doutoramento"
   },
   {
     "name": "Gestao",
@@ -25884,7 +25884,7 @@
   },
   {
     "name": "Gestao De Recursos Humanos",
-    "degree": "Mestrados",
+    "degree": "Licenciaturas",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/mestrados/gestao-de-recursos-humanos",
     "gscKeywords": [],
@@ -25897,7 +25897,7 @@
         "url": "https://www.ulusofona.pt/porto/mestrados/gestao-de-recursos-humanos"
       }
     ],
-    "degree_type": "Mestrado"
+    "degree_type": "Licenciatura"
   },
   {
     "name": "Gestao Financeira",
@@ -27204,7 +27204,7 @@
   },
   {
     "name": "Marca Pessoal Gestao E Consultoria",
-    "degree": "Pos-graduacoes",
+    "degree": "Pós-Graduaçãos",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/marca-pessoal-gestao-e-consultoria",
     "gscKeywords": [],
