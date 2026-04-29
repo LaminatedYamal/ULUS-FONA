@@ -154,7 +154,8 @@ const TRANSLATIONS = {
 let currentLang = 'en';
 
 function initLanguage() {
-    currentLang = localStorage.getItem('hub_lang') || 'en';
+    currentLang = (localStorage.getItem('hub_lang') || 'en').toLowerCase();
+    if (currentLang !== 'en' && currentLang !== 'pt') currentLang = 'en';
     updateUILanguage();
 }
 
@@ -167,13 +168,12 @@ function toggleLanguage() {
 }
 
 function updateUILanguage() {
-    const t = TRANSLATIONS[currentLang];
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
     
     // Update simple text elements
     const elements = {
         'active-course-title': t["select-course"],
         'active-course-desc': t["global-analysis"],
-        'keyword-search': 'placeholder',
         'sync-header': t["sync"],
         'sync-btn': t["sync-team"],
         'system-active-text': t["system-active"],
