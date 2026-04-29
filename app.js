@@ -958,10 +958,6 @@ function renderTables(gsc = [], ads = [], rankings = []) {
                 <td style="text-align:center;"><span style="font-size:18px; font-weight:800;">#${k.rank}</span></td>
                 <td>${trendIcon}</td>
                 <td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>
-                <td>
-                    ${isMatchGsc ? '<span class="match-tag">✓ Captured</span> ' : ''}
-                    ${isMatchAds ? '<span class="match-tag" style="border-color:#34d399; color:#34d399;">✓ Paid</span>' : ''}
-                </td>
             `;
             rankingsBody.appendChild(tr);
         });
