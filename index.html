@@ -66,9 +66,6 @@
                         <button class="btn-reset" onclick="clearToken()" title="Reset Connection" style="width: 44px; margin-bottom: 0;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1z"/><path d="M20.5 4.5l-2.4 2.4a2 2 0 0 1-2.8 0L7 2 2 7l7.1 7.1a2 2 0 0 1 0 2.8l2.4 2.4"/><path d="M14 7l5 5"/></svg>
                         </button>
-                        <button class="btn-reset" id="game-toggle" onclick="toggleGame()" title="Roulette Hub" style="width: 44px; margin-bottom: 0; background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); color: gold;">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M7.75 7.75l8.5 8.5M7.75 16.25l8.5-8.5"/></svg>
-                        </button>
                     </div>
                     <p id="sync-status" class="sync-tip" style="display:none; color: var(--success);"></p>
                 </div>
@@ -160,95 +157,94 @@
                                     <th>Keyword</th>
                                     <th>Organic Match</th>
                                 </tr>
-                            </thead>
-                            <tbody id="ads-body"></tbody>
-                        </table>
+                    <section class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-label">Keyword Parity</span>
+                            <span class="stat-value" id="parity-score">--%</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">GSC Keywords</span>
+                            <span class="stat-value" id="gsc-total">--</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Ads Keywords</span>
+                            <span class="stat-value" id="ads-total">--</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-label">Organic Caps</span>
+                            <span class="stat-value" id="organic-total">--</span>
+                        </div>
+                    </section>
+
+                    <div class="dashboard-grid">
+                        <div class="data-panel">
+                            <div class="panel-header">
+                                <div class="header-title-group">
+                                    <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                    <h2>Search Console <span class="text-muted">(Organic)</span></h2>
+                                </div>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Keyword</th>
+                                            <th>Clicks</th>
+                                            <th>Ads Gap</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="gsc-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="data-panel">
+                            <div class="panel-header">
+                                <div class="header-title-group">
+                                    <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                    <h2>Google Ads <span class="text-muted">(Active)</span></h2>
+                                </div>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Keyword</th>
+                                            <th>Synergy</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ads-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="data-panel full-width">
+                            <div class="panel-header">
+                                <div class="header-title-group">
+                                    <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                    <h2>Organic Search Rankings</h2>
+                                </div>
+                                <div class="status-indicator">
+                                    <span style="width: 8px; height: 8px; background: #a855f7; border-radius: 50%; display: inline-block;"></span>
+                                    <span style="font-size: 11px; opacity: 0.7;">Tracked Keywords</span>
+                                </div>
+                            </div>
+                            <div class="table-container">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Keyword</th>
+                                            <th>Current Rank</th>
+                                            <th>3-Month Trend</th>
+                                            <th>Ranking URL</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="rankings-body"></tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Organic Rankings Panel (Full Width) -->
-                <div class="data-panel full-width">
-                    <div class="panel-header">
-                        <div class="header-title-group">
-                            <svg class="panel-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                            <h2>Organic Search Rankings</h2>
-                        </div>
-                        <div class="status-indicator">
-                            <span class="pulse" style="background: #8b5cf6; box-shadow: 0 0 8px #8b5cf6;"></span> Tracked Keywords
-                        </div>
-                    </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Keyword</th>
-                                    <th>Current Rank</th>
-                                    <th>3-Month Trend</th>
-                                    <th>Ranking URL</th>
-                                </tr>
-                            </thead>
-                            <tbody id="rankings-body"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-                <!-- Roulette Game View (Hidden by default) -->
-                <section id="roulette-view" class="game-view" style="display: none;">
-                    <div class="game-layout">
-                        <div class="game-left">
-                            <div class="wheel-outer">
-                                <div id="wheel" class="wheel">
-                                    <!-- Numbers will be injected by JS -->
-                                </div>
-                                <div id="ball" class="ball"></div>
-                                <div class="wheel-center">
-                                    <div class="wheel-logo">
-                                        <img src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Logo">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-right">
-                            <div class="game-header">
-                                <h2>Casino Royale <span class="accent-text">Antigravity</span></h2>
-                                <p>Place your bets for a chance to win the SEO Jackpot!</p>
-                            </div>
-                            
-                            <div class="betting-board">
-                                <div class="board-top">
-                                    <div class="bet-btn green" onclick="placeBet('color', 'green')">0 (GREEN)</div>
-                                </div>
-                                <div class="board-grid">
-                                    <div class="bet-btn red" onclick="placeBet('color', 'red')">RED</div>
-                                    <div class="bet-btn black" onclick="placeBet('color', 'black')">BLACK</div>
-                                    <div class="bet-btn" onclick="placeBet('type', 'even')">EVEN</div>
-                                    <div class="bet-btn" onclick="placeBet('type', 'odd')">ODD</div>
-                                </div>
-                                <div class="number-grid" id="number-bet-grid">
-                                    <!-- Numbers 1-36 injected here -->
-                                </div>
-                            </div>
-
-                            <div class="game-controls">
-                                <div class="wallet-info">
-                                    <span class="wallet-label">Balance</span>
-                                    <span id="wallet-balance" class="wallet-value">1,000 GPT</span>
-                                </div>
-                                <div class="current-bet">
-                                    <span class="wallet-label">Current Bet</span>
-                                    <span id="current-bet-display" class="wallet-value">None</span>
-                                </div>
-                                <button id="roll-btn" class="roll-btn" onclick="spinWheel()">
-                                    SPIN WHEEL
-                                </button>
-                            </div>
-
-                            <div id="game-result" class="game-result">
-                                <!-- Result message here -->
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </section>
         </main>
     </div>
