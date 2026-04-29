@@ -196,13 +196,14 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
+    flex-shrink: 0;
     background: rgba(15, 17, 23, 0.9);
     border-right: 1px solid var(--panel-border);
     display: flex;
     flex-direction: column;
     padding: 24px;
     backdrop-filter: blur(var(--glass-blur));
-    z-index: 10;
+    z-index: 100;
 }
 
 .logo {
@@ -910,6 +911,34 @@ body.light-mode .theme-toggle {
 
 select, option {
     font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Triple Match Synergy (Lightning) */
+.triple-synergy-aura {
+    background: rgba(255, 0, 200, 0.08) !important;
+    border-left: 4px solid var(--accent-secondary) !important;
+    box-shadow: 0 0 30px rgba(255, 0, 200, 0.1) !important;
+    position: relative;
+}
+
+.triple-synergy-aura td:first-child {
+    color: var(--accent-secondary) !important;
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255, 0, 200, 0.3);
+}
+
+.triple-synergy-aura td:first-child::after {
+    content: "⚡";
+    margin-left: 10px;
+    font-size: 14px;
+    filter: drop-shadow(0 0 8px var(--accent-secondary));
+    animation: lightningPulse 1.5s infinite alternate;
+    display: inline-block;
+}
+
+@keyframes lightningPulse {
+    0% { opacity: 0.5; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1.2); }
 }
 
 /* Premium Select Inputs */
