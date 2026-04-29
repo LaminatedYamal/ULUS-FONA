@@ -591,10 +591,20 @@ async function checkAuth() {
         document.getElementById('login-overlay').style.display = 'flex';
         return false;
     } else {
+        const display = document.getElementById('user-display-name');
+        if (display) display.textContent = user;
         initGreeting(); // Update greeting immediately
         await fetchServerData();
         renderCourseList();
         return true;
+    }
+}
+
+window.handleLogout = function() {
+    if (confirm("Are you sure you want to logout?")) {
+        localStorage.removeItem('hub_user_name');
+        localStorage.removeItem('hub_is_authed');
+        location.reload();
     }
 }
 
