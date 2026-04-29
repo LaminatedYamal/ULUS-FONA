@@ -405,17 +405,18 @@ function closeSyncModal() {
 // TEAM AUTHENTICATION (Hashed for safety)
 const TEAM_KEY_HASH = "4b2f3441839150da6ecf8de37d2298160aa3ee96e8d64159f2837a30c3b4f220";
 
-function checkAuth() {
+async function checkAuth() {
     const user = localStorage.getItem('hub_user_name');
     const authed = localStorage.getItem('hub_is_authed');
     
     if (!user || authed !== 'true') {
         document.getElementById('login-overlay').style.display = 'flex';
+        return false;
     } else {
-        fetchServerData().then(() => {
-            renderCourseList();
-            // Start collapsed: Removed auto-load of course 0
-        });
+        initGreeting(); // Update greeting immediately
+        await fetchServerData();
+        renderCourseList();
+        return true;
     }
 }
 
@@ -440,6 +441,8 @@ async function handleLogin() {
     // Success
     localStorage.setItem('hub_user_name', name);
     localStorage.setItem('hub_is_authed', 'true');
+    initGreeting(); // Update greeting text right now
+    
     document.getElementById('login-overlay').style.opacity = '0';
     setTimeout(() => {
         document.getElementById('login-overlay').style.display = 'none';
