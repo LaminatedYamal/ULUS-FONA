@@ -99,7 +99,13 @@
                 </div>
                 <div class="hero-text">
                     <h2 id="greeting-text">Olá, Agent!</h2>
-                    <p>To begin analyzing search performance and keyword synergy</p>
+                    <p id="landing-subtitle">Select a degree category from the sidebar to begin</p>
+                    
+                    <div id="degree-selection-hub" style="display: none; margin-top: 30px;">
+                        <select id="course-dropdown-hub" class="course-select-premium" onchange="loadCourse(parseInt(this.value))" style="width: 100%; max-width: 400px; padding: 15px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: inherit; font-size: 16px; outline: none; cursor: pointer;">
+                            <option value="">Choose a Course...</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -202,6 +208,6 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <script src="app.js?v=v5_sidebar_fix"></script>
+    <script src="app.js?v=v6_hybrid_nav"></script>
 </body>
 </html>
