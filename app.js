@@ -191,8 +191,10 @@ async function syncToGitHub() {
 }
 
 function clearToken() {
-    localStorage.removeItem('github_token');
-    alert("Connection Reset! You can now paste a new token when you click Sync.");
+    if (confirm("Are you sure you want to reset your GitHub connection? You will need to paste your PAT again to sync.")) {
+        localStorage.removeItem('github_token');
+        alert("Connection Reset! You can now paste a new token when you click Sync.");
+    }
 }
 
 function b64EncodeUnicode(str) {
@@ -320,13 +322,34 @@ async function handleFileUpload(e, type) {
     }
 
     if (totalUpdated > 0) {
-        alert(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses from files.\nSuccessfully merged new data into ${totalUpdated} courses.`);
+        showSyncReminder(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses.\nSuccessfully merged data into ${totalUpdated} courses.`);
         renderCourseList(); // Refresh sidebar badges
         loadCourse(activeCourseId); // Refresh view
         saveData();
     } else {
-        alert(`No matching courses found.\n\nParsed ${coursesInFiles} courses from the file, but none matched the 450 courses in our database.`);
+        alert(`No matching courses found.\n\nParsed ${coursesInFiles} courses, but none matched the database.`);
     }
+}
+
+function showSyncReminder(message) {
+    // Create a stylish modal overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    
+    const modal = document.createElement('div');
+    modal.className = 'sync-modal';
+    modal.innerHTML = `
+        <div class="modal-icon">🚀</div>
+        <h2>Data Uploaded Locally</h2>
+        <p>${message.replace(/\n/g, '<br>')}</p>
+        <div class="modal-warning">
+            <strong>IMPORTANT:</strong> These changes are currently ONLY in your browser. To save them for the whole team, you <u>MUST</u> click the <strong>Sync to Team</strong> button.
+        </div>
+        <button class="modal-close-btn" onclick="this.parentElement.parentElement.remove()">Got it!</button>
+    `;
+    
+    overlay.appendChild(modal);
+    document.body.appendChild(overlay);
 }
 
 function stripAccents(str) {
