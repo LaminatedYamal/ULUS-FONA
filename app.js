@@ -1072,13 +1072,18 @@ window.selectDegreeHub = function(inst, degree, degreeCourses) {
     
     // Update Subtitle
     const subtitle = document.getElementById('landing-subtitle');
-    if (subtitle) subtitle.textContent = `Browsing ${degree} courses at ${inst}`;
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+    const displayDegree = t["degree-mapping"][degree] || degree;
+    
+    if (subtitle) {
+        subtitle.textContent = `${t["browsing"]} ${displayDegree} ${t["at"]} ${inst}`;
+    }
     
     // Populate Hub Dropdown
     const hubDropdownContainer = document.getElementById('degree-selection-hub');
     const dropdown = document.getElementById('course-dropdown-hub');
     if (dropdown && hubDropdownContainer) {
-        dropdown.innerHTML = '<option value="">Choose a Course...</option>';
+        dropdown.innerHTML = `<option value="">${t["choose-course"]}</option>`;
         degreeCourses.sort((a, b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
             const opt = document.createElement('option');
             opt.value = c.id;
