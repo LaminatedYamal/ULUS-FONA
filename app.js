@@ -11,7 +11,7 @@ let courses = [];
 let activeCourseId = 0;
 
 async function init() {
-    checkAuth();
+    await checkAuth(); // Await data loading
     
     // Load cached sync info immediately for better UX
     const cachedSync = localStorage.getItem('hub_last_sync');
@@ -28,12 +28,15 @@ async function init() {
     document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
     document.getElementById('rankings-upload').addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
-    loadData(); // Also apply any local browser data
+    loadData(); 
     initTheme();
     initGreeting();
-    // Show Landing by default
-    document.getElementById("landing-view").style.display = "flex";
-    document.getElementById("dashboard-view").style.display = "none";
+
+    // Default View: Show Landing Hero
+    const landingView = document.getElementById("landing-view");
+    const dashboardView = document.getElementById("dashboard-view");
+    if (landingView) landingView.style.display = "flex";
+    if (dashboardView) dashboardView.style.display = "none";
 }
 
 
@@ -948,9 +951,6 @@ function loadCourse(id) {
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "none";
     if (dashboardView) dashboardView.style.display = "block";
-    activeCourseId = id;
-    const course = courses.find(c => c.id === id);
-    if (!course) return;
     
     let instName = course.institution || "";
     if (instName.includes('Lus') && instName.includes('fona')) {
