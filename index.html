@@ -77,7 +77,14 @@
         <main class="main-content">
             <header class="top-bar">
                 <div class="header-left">
-                    <h1 id="active-course-title">Select a Course</h1>
+                    <div style="display: flex; align-items: baseline; gap: 12px;">
+                        <h1 id="active-course-title">Select a Course</h1>
+                        <div id="header-switcher-container" style="display: none;">
+                            <select id="header-course-switcher" class="header-select" onchange="loadCourse(parseInt(this.value))" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; outline: none;">
+                                <option value="">Switch Course...</option>
+                            </select>
+                        </div>
+                    </div>
                     <p id="active-course-desc">Global SEO & Ads Keyword Analysis</p>
                 </div>
                 
@@ -208,6 +215,6 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <script src="app.js?v=v13_categorical_nav"></script>
+    <script src="app.js?v=v14_portal_switcher"></script>
 </body>
 </html>
