@@ -24,12 +24,18 @@ async function init() {
         filterKeywords(e.target.value);
     });
 
-    // File upload listeners are handled via onchange in index.html to prevent double-triggering
+    document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
+    document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+    document.getElementById('rankings-upload').addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
     loadData(); // Also apply any local browser data
     initTheme();
     initGreeting();
+    // Show Landing by default
+    document.getElementById("landing-view").style.display = "flex";
+    document.getElementById("dashboard-view").style.display = "none";
 }
+
 
 function initGreeting() {
     const userName = localStorage.getItem('hub_user_name') || 'Agent';
@@ -405,6 +411,7 @@ function checkAuth() {
     } else {
         fetchServerData().then(() => {
             renderCourseList();
+            // Start collapsed: Removed auto-load of course 0
         });
     }
 }
@@ -436,6 +443,8 @@ async function handleLogin() {
         checkAuth();
     }, 500);
 }
+
+// Dashboard Lock Logic (No Logout Button)
 
 function stripAccents(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -779,13 +788,26 @@ function renderCourseList(searchQuery = '') {
     list.innerHTML = '';
     const q = searchQuery.toLowerCase().trim();
 
+    // Grouping Logic with Filtering
     const grouped = {};
+    let totalMatches = 0;
+
     courses.forEach(course => {
-        if (!grouped[course.institution]) grouped[course.institution] = {};
-        let degreeName = course.degree_type || 'Formações';
-        if (degreeName.toLowerCase() === 'unknown' || degreeName.toLowerCase() === 'formação') degreeName = 'Formações';
-        if (!grouped[course.institution][degreeName]) grouped[course.institution][degreeName] = [];
-        grouped[course.institution][degreeName].push(course);
+        // Search Logic: Match name OR any keyword (GSC or Ads)
+        const nameMatch = course.name.toLowerCase().includes(q);
+        const keywordMatch = q && (
+            course.gscKeywords.some(k => k.term.toLowerCase().includes(q)) || 
+            course.adsKeywords.some(k => k.term.toLowerCase().includes(q))
+        );
+
+        if (!q || nameMatch || keywordMatch) {
+            if (!grouped[course.institution]) grouped[course.institution] = {};
+            let degreeName = course.degree_type || 'Formações';
+            if (degreeName.toLowerCase() === 'unknown' || degreeName.toLowerCase() === 'formação') degreeName = 'Formações';
+            if (!grouped[course.institution][degreeName]) grouped[course.institution][degreeName] = [];
+            grouped[course.institution][degreeName].push(course);
+            totalMatches++;
+        }
     });
 
     const instOrder = ['Lusófona Lisboa', 'Lusófona Porto', 'IPLUSO', 'ISLA Gaia', 'ISMAT'];
@@ -798,12 +820,17 @@ function renderCourseList(searchQuery = '') {
         if (indexB === -1) return -1;
         return indexA - indexB;
     }).forEach(inst => {
+        // Institution Header with Dynamic Branding
         const brand = BRANDING[inst] || { hex: "#444444", bgSub: "#222222" };
         const instHeader = document.createElement('div');
         instHeader.className = 'nav-group-header';
         instHeader.textContent = inst;
+        
+        // Apply Branding
         instHeader.style.backgroundColor = brand.hex;
         instHeader.style.color = getContrastColor(brand.hex);
+        instHeader.style.borderColor = brand.bgSub;
+        
         list.appendChild(instHeader);
 
         const degreeOrder = ['TeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
@@ -825,102 +852,129 @@ function renderCourseList(searchQuery = '') {
             if (indexB === -1) return -1;
             return indexA - indexB;
         }).forEach(degree => {
-            const btn = document.createElement('button');
-            btn.className = 'nav-degree-btn';
-            btn.innerHTML = `
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                ${displayMapping[degree] || degree}
-            `;
-            btn.onclick = () => selectDegree(inst, degree, btn);
-            list.appendChild(btn);
+            // Degree Accordion
+            const degreeDetails = document.createElement('details');
+            degreeDetails.className = 'nav-degree-group';
+            
+            const summary = document.createElement('summary');
+            summary.textContent = displayMapping[degree] || degree;
+            degreeDetails.appendChild(summary);
+
+            const ul = document.createElement('ul');
+            // Sort courses alphabetically A-Z
+            const sortedCourses = [...grouped[inst][degree]].sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+            
+            sortedCourses.forEach(course => {
+                const li = document.createElement('li');
+                const gscCount = course.gscKeywords.length;
+                const adsCount = course.adsKeywords.length;
+                let badges = '';
+                if (gscCount > 0) badges += `<span class="badge gsc-count">${gscCount}</span>`;
+                if (adsCount > 0) badges += `<span class="badge ads-count">${adsCount}</span>`;
+
+                li.innerHTML = `
+                    <span class="course-name">${course.name}</span>
+                    <div class="course-badges">${badges}</div>
+                `;
+                li.dataset.id = course.id;
+                if (course.id === activeCourseId) li.classList.add('active');
+                
+                li.addEventListener('click', () => {
+                    document.querySelectorAll('#course-list li').forEach(el => el.classList.remove('active'));
+                    li.classList.add('active');
+                    loadCourse(course.id);
+                });
+                ul.appendChild(li);
+            });
+            degreeDetails.appendChild(ul);
+            // Auto-open if searching
+            if (q) degreeDetails.open = true;
+            list.appendChild(degreeDetails);
         });
     });
+
+    // Add Reset Buttons at the bottom
+    const resetContainer = document.createElement('div');
+    resetContainer.className = 'reset-grid';
+    resetContainer.innerHTML = `
+        <button onclick="resetApp('gsc')" class="btn-reset gsc-only">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Clear GSC Only
+        </button>
+        <button onclick="resetApp('ads')" class="btn-reset ads-only">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            Clear Ads Only
+        </button>
+        <button onclick="resetApp('all')" class="btn-reset danger">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+            Clear ALL Data
+        </button>
+    `;
+    list.appendChild(resetContainer);
 }
 
-window.selectDegree = function(inst, degree, btn) {
-    document.querySelectorAll('.nav-degree-btn').forEach(b => b.classList.remove('active'));
-    if (btn) btn.classList.add('active');
+// Make resetApp global
+window.resetApp = function(mode) {
+    let msg = "Are you sure? This will clear all data.";
+    if (mode === 'gsc') msg = "Clear all GSC (Search Console) keywords?";
+    if (mode === 'ads') msg = "Clear all Google Ads keywords?";
 
-    const brand = BRANDING[inst] || { hex: "#444444", logo: "" };
-    const userName = localStorage.getItem('hub_user_name') || 'Agent';
-    
-    // Switch to Landing Mode
-    const landingView = document.getElementById('landing-view');
-    const dashboardView = document.getElementById('dashboard-view');
-    
-    if (landingView) landingView.style.display = 'flex';
-    if (dashboardView) dashboardView.style.display = 'none';
-    
-    // Update Greeting
-    const greetingEl = document.getElementById('greeting-text');
-    if (greetingEl) greetingEl.textContent = `Olá, ${userName}!`;
-    
-    // Update Hero Logo
-    const logoEl = document.getElementById('landing-logo');
-    if (logoEl) {
-        if (brand.logo) {
-            logoEl.src = brand.logo;
-            logoEl.style.display = 'block';
+    if (confirm(msg)) {
+        if (mode === 'all') {
+            localStorage.removeItem('antigravity_data_v2');
+            localStorage.removeItem('antigravity_courses'); 
+            location.reload();
         } else {
-            logoEl.style.display = 'none';
+            // Selective clear
+            courses.forEach(c => {
+                if (mode === 'gsc') c.gscKeywords = [];
+                if (mode === 'ads') c.adsKeywords = [];
+            });
+            saveData();
+            renderCourseList();
+            loadCourse(activeCourseId);
+            alert(`${mode.toUpperCase()} data cleared successfully.`);
         }
     }
-
-    // Populate Dropdown
-    const dropdown = document.getElementById('course-dropdown');
-    if (dropdown) {
-        dropdown.innerHTML = '<option value="">Select Course...</option>';
-        
-        const filtered = courses.filter(c => c.institution === inst && (c.degree_type === degree || (degree === 'Formações' && (!c.degree_type || c.degree_type === 'Unknown' || c.degree_type === 'Formação'))));
-        
-        filtered.sort((a, b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
-            const opt = document.createElement('option');
-            opt.value = c.id;
-            opt.textContent = c.name;
-            dropdown.appendChild(opt);
-        });
-
-        document.getElementById('header-selector-container').style.display = 'flex';
-        document.getElementById('active-course-title').textContent = inst;
-        document.getElementById('active-course-desc').textContent = degree;
-        dropdown.style.borderColor = brand.hex;
-    }
-}
-
-window.loadCourseFromDropdown = function(courseId) {
-    if (!courseId) return;
-    const course = courses.find(c => c.id == courseId);
-    if (course) {
-        document.getElementById('landing-view').style.display = 'none';
-        document.getElementById('dashboard-view').style.display = 'block';
-        loadCourse(course.id);
-    }
-}
+};
 
 function loadCourse(id) {
     activeCourseId = id;
-    const course = courses.find(c => c.id == id);
+    const course = courses.find(c => c.id === id);
+    if (!course) return;
+
+    // Switch Views
+    const landingView = document.getElementById("landing-view");
+    const dashboardView = document.getElementById("dashboard-view");
+    if (landingView) landingView.style.display = "none";
+    if (dashboardView) dashboardView.style.display = "block";
+    activeCourseId = id;
+    const course = courses.find(c => c.id === id);
     if (!course) return;
     
     let instName = course.institution || "";
+    if (instName.includes('Lus') && instName.includes('fona')) {
+        instName = instName.includes('Porto') ? 'Lusófona Porto' : 'Lusófona Lisboa';
+    }
     const brand = BRANDING[instName] || { hex: "#444444", bgSub: "#222222", logo: "" };
     
+    // Apply Branding
     document.documentElement.style.setProperty('--accent-primary', brand.hex);
     document.documentElement.style.setProperty('--accent-secondary', brand.bgSub);
     
+    // Set RGB for gradients
     const rgb = hexToRgb(brand.hex);
     if (rgb) {
         document.documentElement.style.setProperty('--accent-primary-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
     }
 
     const logoContainer = document.querySelector('.logo-container');
-    if (logoContainer) {
-        logoContainer.style.backgroundColor = brand.bgSub;
-        if (rgb) logoContainer.style.borderColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.2)`;
-    }
+    logoContainer.style.backgroundColor = brand.bgSub;
+    logoContainer.style.borderColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.2)`;
 
     document.getElementById('brand-logo').src = brand.logo;
     document.getElementById('brand-name').textContent = course.institution;
+    
     document.getElementById('active-course-title').textContent = course.name;
     const displayDegree = (course.degree && course.degree !== 'Unknown') ? course.degree : (course.degree_type || 'Formações');
     document.getElementById('active-course-desc').textContent = `${displayDegree} | ${course.institution}`;
