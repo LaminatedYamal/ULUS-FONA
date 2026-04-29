@@ -24,9 +24,7 @@ async function init() {
         filterKeywords(e.target.value);
     });
 
-    document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
-    document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
-    document.getElementById('rankings-upload').addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
+    // File upload listeners are handled via onchange in index.html to prevent double-triggering
     
     loadData(); // Also apply any local browser data
     initTheme();
