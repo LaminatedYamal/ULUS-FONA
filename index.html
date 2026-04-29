@@ -66,6 +66,9 @@
                         <button class="btn-reset" onclick="clearToken()" title="Reset Connection" style="width: 44px; margin-bottom: 0;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1z"/><path d="M20.5 4.5l-2.4 2.4a2 2 0 0 1-2.8 0L7 2 2 7l7.1 7.1a2 2 0 0 1 0 2.8l2.4 2.4"/><path d="M14 7l5 5"/></svg>
                         </button>
+                        <button class="btn-reset" id="game-toggle" onclick="toggleGame()" title="Roulette Hub" style="width: 44px; margin-bottom: 0; background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); color: gold;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M7.75 7.75l8.5 8.5M7.75 16.25l8.5-8.5"/></svg>
+                        </button>
                     </div>
                     <p id="sync-status" class="sync-tip" style="display:none; color: var(--success);"></p>
                 </div>
@@ -186,7 +189,63 @@
                             <tbody id="rankings-body"></tbody>
                         </table>
                     </div>
-                </div>
+                <!-- Roulette Game View (Hidden by default) -->
+                <section id="roulette-view" class="game-view" style="display: none;">
+                    <div class="game-layout">
+                        <div class="game-left">
+                            <div class="wheel-outer">
+                                <div id="wheel" class="wheel">
+                                    <!-- Numbers will be injected by JS -->
+                                </div>
+                                <div id="ball" class="ball"></div>
+                                <div class="wheel-center">
+                                    <div class="wheel-logo">
+                                        <img src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-right">
+                            <div class="game-header">
+                                <h2>Casino Royale <span class="accent-text">Antigravity</span></h2>
+                                <p>Place your bets for a chance to win the SEO Jackpot!</p>
+                            </div>
+                            
+                            <div class="betting-board">
+                                <div class="board-top">
+                                    <div class="bet-btn green" onclick="placeBet('color', 'green')">0 (GREEN)</div>
+                                </div>
+                                <div class="board-grid">
+                                    <div class="bet-btn red" onclick="placeBet('color', 'red')">RED</div>
+                                    <div class="bet-btn black" onclick="placeBet('color', 'black')">BLACK</div>
+                                    <div class="bet-btn" onclick="placeBet('type', 'even')">EVEN</div>
+                                    <div class="bet-btn" onclick="placeBet('type', 'odd')">ODD</div>
+                                </div>
+                                <div class="number-grid" id="number-bet-grid">
+                                    <!-- Numbers 1-36 injected here -->
+                                </div>
+                            </div>
+
+                            <div class="game-controls">
+                                <div class="wallet-info">
+                                    <span class="wallet-label">Balance</span>
+                                    <span id="wallet-balance" class="wallet-value">1,000 GPT</span>
+                                </div>
+                                <div class="current-bet">
+                                    <span class="wallet-label">Current Bet</span>
+                                    <span id="current-bet-display" class="wallet-value">None</span>
+                                </div>
+                                <button id="roll-btn" class="roll-btn" onclick="spinWheel()">
+                                    SPIN WHEEL
+                                </button>
+                            </div>
+
+                            <div id="game-result" class="game-result">
+                                <!-- Result message here -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
         </main>
     </div>
