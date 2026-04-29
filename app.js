@@ -2,7 +2,7 @@ const BRANDING = {
     "Lusófona Lisboa": { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
     "Lusófona Porto":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
     "Grupo Lusófona":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
-    "IPLUSO":          { hex: "#A20736", bgSub: "#780528", logo: "https://i.postimg.cc/0yqC0hW6/Logo-IPLUSO-Horizontal-Branco.png" },
+    "IPLUSO":          { hex: "#A20736", bgSub: "#780528", logo: "https://i.postimg.cc/mD3636G7/Logo-IPLUSO-Horizontal-Branco.png" },
     "ISLA Gaia":       { hex: "#BB969B", bgSub: "#9C797E", logo: "https://i.postimg.cc/kGyZtjz7/Versa-o-Horizontal-Branco-2048x853.png" },
     "ISMAT":           { hex: "#7AC7CD", bgSub: "#5CA2A8", logo: "https://i.postimg.cc/0jpvXd31/logo-ISMAT-02.png" }
 };
@@ -862,51 +862,19 @@ function renderCourseList(searchQuery = '') {
             if (indexB === -1) return -1;
             return indexA - indexB;
         }).forEach(degree => {
-            // Degree Accordion
-            const degreeDetails = document.createElement('details');
-            degreeDetails.className = 'nav-degree-group';
+            // Degree Category Button (Replaces Accordion)
+            const degreeBtn = document.createElement('div');
+            degreeBtn.className = 'nav-degree-btn';
+            degreeBtn.textContent = displayMapping[degree] || degree;
             
-            const summary = document.createElement('summary');
-            summary.textContent = displayMapping[degree] || degree;
-            
-            // NEW: Clicking summary opens the Landing Hub for this degree
-            summary.addEventListener('click', (e) => {
+            // Clicking category opens the Landing Hub for this degree
+            degreeBtn.addEventListener('click', () => {
+                document.querySelectorAll('.nav-degree-btn').forEach(b => b.classList.remove('active'));
+                degreeBtn.classList.add('active');
                 selectDegreeHub(inst, degree, grouped[inst][degree]);
             });
             
-            degreeDetails.appendChild(summary);
-
-            const ul = document.createElement('ul');
-            // Sort courses alphabetically A-Z
-            const sortedCourses = [...grouped[inst][degree]].sort((a, b) => a.name.localeCompare(b.name, 'pt'));
-            
-            sortedCourses.forEach(course => {
-                const li = document.createElement('li');
-                const gscCount = course.gscKeywords.length;
-                const adsCount = course.adsKeywords.length;
-                let badges = '';
-                if (gscCount > 0) badges += `<span class="badge gsc-count">${gscCount}</span>`;
-                if (adsCount > 0) badges += `<span class="badge ads-count">${adsCount}</span>`;
-
-                li.innerHTML = `
-                    <span class="course-name">${course.name}</span>
-                    <div class="course-badges">${badges}</div>
-                `;
-                li.dataset.id = course.id;
-                if (course.id === activeCourseId) li.classList.add('active');
-                
-                li.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Prevent summary click
-                    document.querySelectorAll('#course-list li').forEach(el => el.classList.remove('active'));
-                    li.classList.add('active');
-                    loadCourse(course.id);
-                });
-                ul.appendChild(li);
-            });
-            degreeDetails.appendChild(ul);
-            // Auto-open if searching
-            if (q) degreeDetails.open = true;
-            list.appendChild(degreeDetails);
+            list.appendChild(degreeBtn);
         });
     });
 
