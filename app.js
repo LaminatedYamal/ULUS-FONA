@@ -1054,9 +1054,11 @@ window.resetApp = function(mode) {
 window.selectDegreeHub = function(inst, degree, degreeCourses) {
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
+    const topHeader = document.querySelector('.top-bar');
     
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
+    if (topHeader) topHeader.style.display = "none";
     
     // Update Header Text
     document.getElementById('active-course-title').textContent = inst;
@@ -1102,8 +1104,11 @@ function loadCourse(id) {
     // Switch Views
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
+    const topHeader = document.querySelector('.top-bar');
+    
     if (landingView) landingView.style.display = "none";
     if (dashboardView) dashboardView.style.display = "block";
+    if (topHeader) topHeader.style.display = "flex";
     
     let instName = course.institution || "";
     if (instName.includes('Lus') && instName.includes('fona')) {
