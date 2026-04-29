@@ -13,11 +13,6 @@ let activeCourseId = 0;
 async function init() {
     checkAuth();
     
-    if (courses.length > 0) {
-        activeCourseId = courses[0].id;
-        loadCourse(activeCourseId);
-    }
-    
     document.getElementById('keyword-search').addEventListener('input', (e) => {
         filterKeywords(e.target.value);
     });
@@ -925,13 +920,6 @@ function loadCourse(id) {
     
     renderTables(course.gscKeywords, course.adsKeywords, course.rankingsKeywords);
     updateStats(course);
-
-    // Auto-open parent accordion
-    const activeLi = document.querySelector(`#course-list li[data-id="${id}"]`);
-    if (activeLi) {
-        const parentDetails = activeLi.closest('details');
-        if (parentDetails) parentDetails.open = true;
-    }
 }
 
 function hexToRgb(hex) {
