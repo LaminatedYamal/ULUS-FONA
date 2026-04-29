@@ -111,6 +111,8 @@ async function syncToGitHub() {
     const btn = document.getElementById('sync-btn');
     const status = document.getElementById('sync-status');
     
+    if (!confirm("🚀 Ready to push these changes to the Team Dashboard?\n\nThis will update the live site for everyone.")) return;
+
     btn.disabled = true;
     btn.innerHTML = "⏳ Syncing...";
     status.style.display = "block";
@@ -160,7 +162,7 @@ async function syncToGitHub() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                message: "Update keywords via Antigravity Dashboard",
+                message: `Sync: ${new Date().toLocaleString('pt-PT')} [v${Date.now()}]`,
                 content: content,
                 sha: sha,
                 branch: "main"
@@ -168,8 +170,8 @@ async function syncToGitHub() {
         });
 
         if (putRes.ok) {
-            status.textContent = "✅ Sync Successful! Dashboard will update for everyone in ~60s.";
-            setTimeout(() => { status.style.display = "none"; }, 5000);
+            status.textContent = `✅ Sync Successful at ${new Date().toLocaleTimeString('pt-PT')}! Dashboard will update for everyone in ~60s.`;
+            setTimeout(() => { status.style.display = "none"; }, 8000);
         } else {
             const err = await putRes.json();
             throw new Error(err.message || "Failed to push to GitHub.");
@@ -322,8 +324,12 @@ async function handleFileUpload(e, type) {
     }
 
     if (totalUpdated > 0) {
-        showSyncReminder(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses.\nSuccessfully merged data into ${totalUpdated} courses.`);
-        renderCourseList(); // Refresh sidebar badges
+        if (!localStorage.getItem('hide_sync_reminder')) {
+            showSyncReminder(`🚀 Smart Bulk Sync Complete!\n\nProcessed ${coursesInFiles} courses.\nSuccessfully merged data into ${totalUpdated} courses.`);
+        } else {
+            console.log("Local merge complete (Reminder hidden by user preference)");
+        }
+        renderCourseList(); 
         loadCourse(activeCourseId); // Refresh view
         saveData();
     } else {
@@ -345,11 +351,23 @@ function showSyncReminder(message) {
         <div class="modal-warning">
             <strong>IMPORTANT:</strong> These changes are currently ONLY in your browser. To save them for the whole team, you <u>MUST</u> click the <strong>Sync to Team</strong> button.
         </div>
-        <button class="modal-close-btn" onclick="this.parentElement.parentElement.remove()">Got it!</button>
+        <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 8px; color: var(--text-muted); font-size: 13px;">
+            <input type="checkbox" id="dont-show-sync">
+            <label for="dont-show-sync">Don't show this reminder again</label>
+        </div>
+        <button class="modal-close-btn" onclick="closeSyncModal()">Got it!</button>
     `;
     
     overlay.appendChild(modal);
     document.body.appendChild(overlay);
+}
+
+function closeSyncModal() {
+    const hide = document.getElementById('dont-show-sync').checked;
+    if (hide) {
+        localStorage.setItem('hide_sync_reminder', 'true');
+    }
+    document.querySelector('.modal-overlay').remove();
 }
 
 function stripAccents(str) {
