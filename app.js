@@ -75,9 +75,18 @@ async function fetchServerData() {
         if (!response.ok) throw new Error("Failed to load cloud data.");
         
         let data = await response.json();
+
+        // Handle sync metadata
+        const meta = data.find(d => d.type === 'metadata');
+        if (meta) {
+            const syncInfo = `Last synced by ${meta.last_sync_by} at ${meta.last_sync_at}`;
+            const infoEl = document.getElementById('last-sync-info');
+            if (infoEl) infoEl.innerText = syncInfo;
+            localStorage.setItem('hub_last_sync', syncInfo);
+        }
         
-        // Initialize the app state
-        courses = data.map((c, i) => ({
+        // Filter out metadata and map courses
+        courses = data.filter(d => d.type !== 'metadata').map((c, i) => ({
             id: i,
             ...c,
             gscKeywords: c.gscKeywords || [],
@@ -129,11 +138,14 @@ async function syncToGitHub() {
         }
 
         // 2. Prepare the new content
-        // We only sync the raw data to keep the file clean
+        const timestamp = new Date().toLocaleString('pt-PT');
+        const currentUser = localStorage.getItem('hub_user_name') || 'Team Member';
+        
         const exportData = courses.map(c => ({
             id: c.id,
             name: c.name,
             degree: c.degree,
+            degree_type: c.degree_type, // Persisting fixed degrees
             institution: c.institution,
             url: c.url,
             gscKeywords: c.gscKeywords || [],
@@ -141,9 +153,15 @@ async function syncToGitHub() {
             rankingsKeywords: c.rankingsKeywords || []
         }));
 
+        // Append Sync Metadata
+        exportData.push({
+            type: 'metadata',
+            last_sync_by: currentUser,
+            last_sync_at: timestamp
+        });
+
         const jsonStr = JSON.stringify(exportData, null, 2);
         const content = b64EncodeUnicode(jsonStr);
-        const currentUser = localStorage.getItem('hub_user_name') || 'Anonymous';
 
         // 3. Push to GitHub
         const putRes = await fetch(`https://api.github.com/repos/${repo}/contents/${path}`, {
@@ -153,7 +171,7 @@ async function syncToGitHub() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                message: `Sync: ${new Date().toLocaleString('pt-PT')} [${currentUser}]`,
+                message: `Sync by ${currentUser} at ${timestamp}`,
                 content: content,
                 sha: sha,
                 branch: "main"
