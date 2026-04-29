@@ -70,13 +70,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchServerData() {
     try {
-        // Remove cache-buster if on local filesystem to avoid CORS/access errors
         const url = window.location.protocol === 'file:' ? 'courses.json' : 'courses.json?v=' + Date.now();
         const response = await fetch(url);
         if (!response.ok) throw new Error("Failed to load cloud data.");
-        const data = await response.json();
         
-        // Initialize the app state completely from the loaded courses.json
+        let data = await response.json();
+        
+        // DECRYPTION LAYER
+        const key = localStorage.getItem('hub_access_key');
+        if (key && typeof data === 'string') {
+            try {
+                const bytes = CryptoJS.AES.decrypt(data, key);
+                const decryptedText = bytes.toString(CryptoJS.enc.Utf8);
+                if (!decryptedText) throw new Error("Decryption failed (Wrong Key)");
+                data = JSON.parse(decryptedText);
+                console.log("Vault Unlocked: Data decrypted successfully.");
+            } catch (e) {
+                console.warn("Could not decrypt data. Access may be restricted or key is invalid.", e);
+                return; // Stop loading if decryption fails on encrypted data
+            }
+        } else if (typeof data === 'string') {
+             console.warn("Data is encrypted but no key is stored. Dashboard locked.");
+             return;
+        }
+
+        // Initialize the app state
         courses = data.map((c, i) => ({
             id: i,
             ...c,
@@ -141,7 +159,13 @@ async function syncToGitHub() {
             rankingsKeywords: c.rankingsKeywords || []
         }));
 
-        const content = b64EncodeUnicode(JSON.stringify(exportData, null, 2));
+        const jsonStr = JSON.stringify(exportData, null, 2);
+        
+        // ENCRYPTION LAYER
+        const key = localStorage.getItem('hub_access_key');
+        const finalData = key ? CryptoJS.AES.encrypt(jsonStr, key).toString() : jsonStr;
+        
+        const content = b64EncodeUnicode(JSON.stringify(finalData));
         const currentUser = localStorage.getItem('hub_user_name') || 'Anonymous';
 
         // 3. Push to GitHub
@@ -152,7 +176,7 @@ async function syncToGitHub() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                message: `Sync: ${new Date().toLocaleString('pt-PT')} [${currentUser}]`,
+                message: `Vault Sync: ${new Date().toLocaleString('pt-PT')} [${currentUser}]`,
                 content: content,
                 sha: sha,
                 branch: "main"
@@ -361,7 +385,7 @@ function closeSyncModal() {
 }
 
 // TEAM AUTHENTICATION
-const TEAM_ACCESS_KEY = "Antigravity2024";
+const TEAM_ACCESS_KEY = "MKTULUSOFONA2026";
 
 function checkAuth() {
     const user = localStorage.getItem('hub_user_name');
@@ -392,6 +416,7 @@ async function handleLogin() {
 
     // Success
     localStorage.setItem('hub_user_name', name);
+    localStorage.setItem('hub_access_key', key);
     document.getElementById('login-overlay').style.opacity = '0';
     setTimeout(() => {
         document.getElementById('login-overlay').style.display = 'none';
@@ -402,6 +427,7 @@ async function handleLogin() {
 function logout() {
     if (confirm("Logout and lock dashboard?")) {
         localStorage.removeItem('hub_user_name');
+        localStorage.removeItem('hub_access_key');
         location.reload();
     }
 }
