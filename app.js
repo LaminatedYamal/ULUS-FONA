@@ -373,7 +373,7 @@ function checkAuth() {
     } else {
         fetchServerData().then(() => {
             renderCourseList();
-            if (courses.length > 0) loadCourse(activeCourseId);
+            // Start collapsed: Removed auto-load of course 0
         });
     }
 }
