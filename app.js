@@ -861,6 +861,12 @@ function renderCourseList(searchQuery = '') {
             
             const summary = document.createElement('summary');
             summary.textContent = displayMapping[degree] || degree;
+            
+            // NEW: Clicking summary opens the Landing Hub for this degree
+            summary.addEventListener('click', (e) => {
+                selectDegreeHub(inst, degree, grouped[inst][degree]);
+            });
+            
             degreeDetails.appendChild(summary);
 
             const ul = document.createElement('ul');
@@ -882,7 +888,8 @@ function renderCourseList(searchQuery = '') {
                 li.dataset.id = course.id;
                 if (course.id === activeCourseId) li.classList.add('active');
                 
-                li.addEventListener('click', () => {
+                li.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent summary click
                     document.querySelectorAll('#course-list li').forEach(el => el.classList.remove('active'));
                     li.classList.add('active');
                     loadCourse(course.id);
@@ -938,8 +945,43 @@ window.resetApp = function(mode) {
             loadCourse(activeCourseId);
             alert(`${mode.toUpperCase()} data cleared successfully.`);
         }
+window.selectDegreeHub = function(inst, degree, degreeCourses) {
+    const landingView = document.getElementById("landing-view");
+    const dashboardView = document.getElementById("dashboard-view");
+    
+    if (landingView) landingView.style.display = "flex";
+    if (dashboardView) dashboardView.style.display = "none";
+    
+    // Update Header Text
+    document.getElementById('active-course-title').textContent = inst;
+    document.getElementById('active-course-desc').textContent = degree;
+    
+    // Update Landing Logo
+    const brand = BRANDING[inst] || { logo: "" };
+    const logoEl = document.getElementById('landing-logo');
+    if (logoEl) {
+        logoEl.src = brand.logo;
+        logoEl.style.display = brand.logo ? "block" : "none";
     }
-};
+    
+    // Update Subtitle
+    const subtitle = document.getElementById('landing-subtitle');
+    if (subtitle) subtitle.textContent = `Browsing ${degree} courses at ${inst}`;
+    
+    // Populate Hub Dropdown
+    const hubDropdownContainer = document.getElementById('degree-selection-hub');
+    const dropdown = document.getElementById('course-dropdown-hub');
+    if (dropdown && hubDropdownContainer) {
+        dropdown.innerHTML = '<option value="">Choose a Course...</option>';
+        degreeCourses.sort((a, b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c.id;
+            opt.textContent = c.name;
+            dropdown.appendChild(opt);
+        });
+        hubDropdownContainer.style.display = "block";
+    }
+}
 
 function loadCourse(id) {
     activeCourseId = id;
