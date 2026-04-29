@@ -31,6 +31,9 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
+                <div class="search-bar" style="width: 100%; margin-bottom: 20px;">
+                    <input type="text" placeholder="Search keywords..." id="keyword-search" style="width: 100%;">
+                </div>
                 <div class="logo-container">
                     <img id="brand-logo" src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Brand Logo">
                 </div>
@@ -75,23 +78,15 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="top-bar">
+            <header class="top-bar" style="display: none;">
                 <div class="header-left">
                     <div style="display: flex; align-items: baseline; gap: 12px;">
                         <h1 id="active-course-title">Select a Course</h1>
-                        <div id="header-switcher-container" style="display: none;">
-                            <select id="header-course-switcher" class="header-select" onchange="loadCourse(parseInt(this.value))" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); border-radius: 6px; padding: 4px 8px; font-size: 12px; cursor: pointer; outline: none;">
-                                <option value="">Switch Course...</option>
-                            </select>
-                        </div>
                     </div>
                     <p id="active-course-desc">Global SEO & Ads Keyword Analysis</p>
                 </div>
                 
                 <div class="header-right">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search keywords..." id="keyword-search">
-                    </div>
                     <button class="theme-toggle" onclick="toggleLanguage()" title="Switch Language" style="margin-right: 8px;">
                         <span id="lang-toggle-text" class="lang-btn-text">EN</span>
                     </button>
@@ -119,7 +114,13 @@
                 </div>
             </div>
 
-            <div id="dashboard-view" style="display: none;">
+            <div id="dashboard-view" style="display: none; padding-top: 20px;">
+                <div id="header-switcher-container" style="display: none; margin-bottom: 28px; max-width: 350px;">
+                    <label style="display: block; font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Quick Selection</label>
+                    <select id="header-course-switcher" class="header-select sleek-switcher" onchange="loadCourse(parseInt(this.value))">
+                        <option value="">Choose another course...</option>
+                    </select>
+                </div>
                 <!-- Stats Row -->
                 <section class="stats-grid">
                     <div class="stat-card">
@@ -218,6 +219,6 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <script src="app.js?v=v20_premium_polish"></script>
+    <script src="app.js?v=v21_clean_navigation"></script>
 </body>
 </html>
