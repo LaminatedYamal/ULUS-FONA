@@ -4930,7 +4930,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/arquitetura",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "lusofona arquitetura",
+        "clicks": 5,
+        "impressions": 152
+      },
+      {
+        "term": "arquitetura lusofona",
+        "clicks": 2,
+        "impressions": 82
+      },
+      {
+        "term": "doutoramento arquitetura",
+        "clicks": 1,
+        "impressions": 103
+      },
+      {
+        "term": "universidade lusofona arquitetura",
+        "clicks": 1,
+        "impressions": 28
+      },
+      {
+        "term": "doutorado arquitetura",
+        "clicks": 1,
+        "impressions": 10
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -4948,7 +4974,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/urbanismo",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de urbanismo",
+        "clicks": 1,
+        "impressions": 7
+      },
+      {
+        "term": "doutoramento lusofona",
+        "clicks": 0,
+        "impressions": 25
+      },
+      {
+        "term": "doutoramento urbanismo",
+        "clicks": 0,
+        "impressions": 11
+      },
+      {
+        "term": "sim",
+        "clicks": 0,
+        "impressions": 9
+      },
+      {
+        "term": "urbanismo",
+        "clicks": 0,
+        "impressions": 9
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -4966,7 +5018,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/sociomuseologia",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "sociomuseologia",
+        "clicks": 6,
+        "impressions": 65
+      },
+      {
+        "term": "doutoramento museologia",
+        "clicks": 1,
+        "impressions": 11
+      },
+      {
+        "term": "na zona do porto",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "doutoramento lusofona",
+        "clicks": 0,
+        "impressions": 53
+      },
+      {
+        "term": "curso museologia",
+        "clicks": 0,
+        "impressions": 22
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -4996,7 +5074,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/arte-dos-media-e-comunicacao",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "doutorado em arte",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "doutoramento comunicação",
+        "clicks": 0,
+        "impressions": 11
+      },
+      {
+        "term": "doutoramento lusofona",
+        "clicks": 0,
+        "impressions": 9
+      },
+      {
+        "term": "arte e comunicação",
+        "clicks": 0,
+        "impressions": 7
+      },
+      {
+        "term": "doutoramento artes",
+        "clicks": 0,
+        "impressions": 7
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -5014,7 +5118,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/ciencias-da-comunicacao",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "doutoramento ciencias da comunicação",
+        "clicks": 1,
+        "impressions": 67
+      },
+      {
+        "term": "doutoramento em ciências da comunicação",
+        "clicks": 1,
+        "impressions": 2
+      },
+      {
+        "term": "ciencias da comunicação lusofona",
+        "clicks": 0,
+        "impressions": 87
+      },
+      {
+        "term": "lusofona ciencias da comunicação",
+        "clicks": 0,
+        "impressions": 62
+      },
+      {
+        "term": "doutoramentos em ciências",
+        "clicks": 0,
+        "impressions": 35
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -5056,7 +5186,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/direito",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "doutoramento em direito",
+        "clicks": 15,
+        "impressions": 129
+      },
+      {
+        "term": "doutoramento direito",
+        "clicks": 10,
+        "impressions": 117
+      },
+      {
+        "term": "direito e segurança",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "doutoramento lusofona",
+        "clicks": 0,
+        "impressions": 61
+      },
+      {
+        "term": "lusofona doutoramento",
+        "clicks": 0,
+        "impressions": 15
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -5086,7 +5242,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/educacao",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "doutoramento em educação",
+        "clicks": 28,
+        "impressions": 427
+      },
+      {
+        "term": "doutoramento educação",
+        "clicks": 18,
+        "impressions": 241
+      },
+      {
+        "term": "doutoramento online",
+        "clicks": 9,
+        "impressions": 147
+      },
+      {
+        "term": "doutoramento e-learning portugal",
+        "clicks": 9,
+        "impressions": 141
+      },
+      {
+        "term": "doutoramento educação online",
+        "clicks": 8,
+        "impressions": 79
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": [
       {
@@ -5146,7 +5328,33 @@
     "degree_type": "Doutoramento",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/psicologia-clinica-orientacao-cognitivo-comportamental",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mediadas",
+        "clicks": 0,
+        "impressions": 13
+      },
+      {
+        "term": "abordagem transdiagnóstica",
+        "clicks": 0,
+        "impressions": 4
+      },
+      {
+        "term": "psicoterapia+cognitivo+comportamental+lisboa",
+        "clicks": 0,
+        "impressions": 2
+      },
+      {
+        "term": "psicologia lusofona",
+        "clicks": 0,
+        "impressions": 2
+      },
+      {
+        "term": "julia tranet",
+        "clicks": 0,
+        "impressions": 1
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -9027,6 +9235,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "30/04/2026, 11:05:18"
+    "last_sync_at": "30/04/2026, 11:12:00"
   }
 ]
