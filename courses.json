@@ -627,7 +627,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/animacao-digital",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenc animação digital",
+        "clicks": 14,
+        "impressions": 95
+      },
+      {
+        "term": "curso animação digital",
+        "clicks": 9,
+        "impressions": 36
+      },
+      {
+        "term": "faculdade de animação",
+        "clicks": 4,
+        "impressions": 57
+      },
+      {
+        "term": "curso de animação",
+        "clicks": 3,
+        "impressions": 122
+      },
+      {
+        "term": "curso animação",
+        "clicks": 3,
+        "impressions": 91
+      }
+    ],
     "adsKeywords": [
       {
         "term": "licenciatura animação digital",
@@ -1513,7 +1539,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "lusofona direito",
+        "clicks": 211,
+        "impressions": 2071
+      },
+      {
+        "term": "direito lusofona",
+        "clicks": 139,
+        "impressions": 1248
+      },
+      {
+        "term": "licenciatura direito",
+        "clicks": 36,
+        "impressions": 601
+      },
+      {
+        "term": "universidade lusofona direito",
+        "clicks": 34,
+        "impressions": 295
+      },
+      {
+        "term": "licenciatura em direito",
+        "clicks": 27,
+        "impressions": 947
+      }
+    ],
     "adsKeywords": [
       {
         "term": "[curso direito]",
@@ -2353,7 +2405,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia do ambiente",
+        "clicks": 11,
+        "impressions": 1098
+      },
+      {
+        "term": "engenharia ambiental",
+        "clicks": 10,
+        "impressions": 797
+      },
+      {
+        "term": "licenciatura em engenharia do ambiente",
+        "clicks": 4,
+        "impressions": 57
+      },
+      {
+        "term": "engenharia aambiental online",
+        "clicks": 3,
+        "impressions": 29
+      },
+      {
+        "term": "biotecnologia ambiental",
+        "clicks": 2,
+        "impressions": 43
+      }
+    ],
     "adsKeywords": [
       {
         "term": "licenciatura engenharia ambiente",
@@ -2409,7 +2487,23 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia e gestão industrial",
+        "clicks": 38,
+        "impressions": 1446
+      },
+      {
+        "term": "gestão industrial",
+        "clicks": 8,
+        "impressions": 290
+      },
+      {
+        "term": "engenharia industrial",
+        "clicks": 0,
+        "impressions": 0
+      }
+    ],
     "adsKeywords": [
       {
         "term": "engenharia gestão industrial",
@@ -3030,7 +3124,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "bioquimica lusofona",
+        "clicks": 12,
+        "impressions": 77
+      },
+      {
+        "term": "bioquímica saídas profissionais",
+        "clicks": 2,
+        "impressions": 182
+      },
+      {
+        "term": "licenciatura bioquímica",
+        "clicks": 2,
+        "impressions": 182
+      },
+      {
+        "term": "curso de bioquimica",
+        "clicks": 2,
+        "impressions": 63
+      },
+      {
+        "term": "licenciatura em bioquímica",
+        "clicks": 3,
+        "impressions": 17
+      }
+    ],
     "adsKeywords": [
       {
         "term": "bioquimica",
@@ -9235,6 +9355,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "30/04/2026, 15:08:04"
+    "last_sync_at": "30/04/2026, 15:45:05"
   }
 ]
