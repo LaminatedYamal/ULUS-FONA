@@ -11,36 +11,37 @@ let courses = [];
 let activeCourseId = null;
 
 async function init() {
-    try {
-        initLanguage(); // Load language preference
-        loadData(); // Load cached data immediately for sidebar visibility
-        initTheme();
-        initGreeting();
-
-        // Default View: Show Landing Hero
-        const landingView = document.getElementById("landing-view");
-        const dashboardView = document.getElementById("dashboard-view");
-        if (landingView) landingView.style.display = "flex";
-        if (dashboardView) dashboardView.style.display = "none";
-
-        // Non-blocking Auth & Cloud Sync
-        checkAuth().then(() => {
-            console.log("Auth & Sync complete.");
-        }).catch(err => {
-            console.error("Auth/Sync error:", err);
-        });
-
-        document.getElementById('keyword-search-header')?.addEventListener('input', (e) => {
-            renderTablesFromHeader(e.target.value);
-        });
-
-        document.getElementById('gsc-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
-        document.getElementById('ads-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
-        document.getElementById('rankings-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
-        
-    } catch (e) {
-        console.error("Dashboard Critical Init Error:", e);
+    initLanguage(); // Load language preference
+    await checkAuth(); // Await data loading
+    
+    // Load cached sync info immediately for better UX
+    const cachedSync = localStorage.getItem('hub_last_sync');
+    if (cachedSync) {
+        const infoEl = document.getElementById('last-sync-info');
+        if (infoEl) infoEl.innerText = cachedSync;
     }
+
+    document.getElementById('keyword-search-header')?.addEventListener('input', (e) => {
+        renderTablesFromHeader(e.target.value);
+    });
+
+    document.getElementById('course-search-sidebar')?.addEventListener('input', (e) => {
+        renderCourseList(e.target.value);
+    });
+
+    document.getElementById('gsc-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
+    document.getElementById('ads-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+    document.getElementById('rankings-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
+    
+    loadData(); 
+    initTheme();
+    initGreeting();
+
+    // Default View: Show Landing Hero
+    const landingView = document.getElementById("landing-view");
+    const dashboardView = document.getElementById("dashboard-view");
+    if (landingView) landingView.style.display = "flex";
+    if (dashboardView) dashboardView.style.display = "none";
 }
 
 
