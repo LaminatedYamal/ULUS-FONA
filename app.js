@@ -1509,20 +1509,20 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             target: "Course Analysis",
             identity: { name: course.name, institution: course.institution },
             performance_data: {
-                top_gsc_with_trends: course.gscKeywords.slice(0, 100).map(k => ({ 
+                top_gsc_with_trends: course.gscKeywords.slice(0, 1000).map(k => ({ 
                     t: k.term, 
                     c: k.clicks, 
                     trend: k.clickDelta, // 3 MONTH TREND
                     imp_trend: k.impDelta,
                     i: k.impressions 
                 })),
-                top_ads: course.adsKeywords.slice(0, 50).map(k => ({ t: k.term, s: k.status })),
-                top_rankings: course.rankingsKeywords.slice(0, 50).map(k => ({ t: k.term, r: k.rank }))
+                top_ads: course.adsKeywords.slice(0, 1000).map(k => ({ t: k.term, s: k.status })),
+                top_rankings: course.rankingsKeywords.slice(0, 1000).map(k => ({ t: k.term, r: k.rank }))
             },
             synergies: course.gscKeywords.filter(k => 
                 course.adsKeywords.some(ak => ak.term === k.term) && 
                 course.rankingsKeywords.some(rk => rk.term === k.term)
-            ).map(k => k.term).slice(0, 20)
+            ).map(k => k.term).slice(0, 1000)
         };
     } else {
         // Global Stats with Trend Focus
@@ -1532,7 +1532,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                 courses: courses.length,
                 global_top_trends: courses.flatMap(c => c.gscKeywords)
                     .sort((a,b) => b.clickDelta - a.clickDelta)
-                    .slice(0, 30)
+                    .slice(0, 1000)
                     .map(k => ({ t: k.term, trend: k.clickDelta }))
             }
         };
@@ -1558,7 +1558,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     }
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
