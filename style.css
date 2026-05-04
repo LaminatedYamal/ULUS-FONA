@@ -1767,11 +1767,16 @@ body.light-mode .hero-text h2 {
     opacity: 0.5;
     border-radius: 50%;
     z-index: 0;
-    animation: rainbow-surge 10s linear infinite;
+    animation: rainbow-surge 10s linear infinite, float-drift 30s ease-in-out infinite;
     pointer-events: none;
-    top: -600px;
-    left: -600px;
-    will-change: transform;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
+    top: calc(50vh - 600px);
+    left: calc(50vw - 600px);
+}
+
+@keyframes float-drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    25%  { transform: translate(15vw, -10vh) scale(1.05); }
+    50%  { transform: translate(-10vw, 20vh) scale(0.95); }
+    75%  { transform: translate(20vw, 10vh) scale(1.08); }
+    100% { transform: translate(0, 0) scale(1); }
 }
