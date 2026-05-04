@@ -1358,13 +1358,24 @@ window.toggleGeminiSidebar = function() {
     const sidebar = document.getElementById('gemini-sidebar');
     sidebar.classList.toggle('open');
     
-    // Personalize Greeting
+    // Personalize & Translate Greeting
     const user = localStorage.getItem('hub_user_name') || 'Team Member';
     const greetEl = document.getElementById('gemini-greeting');
+    const introEl = document.getElementById('gemini-intro');
+    const inputEl = document.getElementById('gemini-user-input');
+    
+    const t = TRANSLATIONS[currentLang || 'en'];
     if (greetEl) {
-        const t = TRANSLATIONS[currentLang || 'en'];
         const hello = t["greeting"] || (currentLang === 'pt' ? 'Olá' : 'Hello');
         greetEl.textContent = `${hello}, ${user}! 👋`;
+    }
+    if (introEl) {
+        introEl.textContent = currentLang === 'pt' ? 
+            "Eu sou o seu Estrategista Gemini 3. Pergunte-me qualquer coisa sobre as suas keywords ou use as ações rápidas abaixo." :
+            "I am your Gemini 3 Strategist. Ask me anything about your institutional keywords or use the quick actions below.";
+    }
+    if (inputEl) {
+        inputEl.placeholder = currentLang === 'pt' ? "Pergunte ao Gemini..." : "Ask Gemini anything...";
     }
 
     // Load key if exists
