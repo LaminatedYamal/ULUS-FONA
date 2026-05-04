@@ -1415,7 +1415,7 @@ body.light-mode .back-to-top:hover {
 }
 
 .floating-blob {
-    position: fixed; /* Fixed to follow mouse over entire screen */
+    position: fixed;
     width: 600px;
     height: 600px;
     background: linear-gradient(
@@ -1424,10 +1424,10 @@ body.light-mode .back-to-top:hover {
         #4285f4, #34a853, #fbbc05, #ea4335
     );
     background-size: 400% 400%;
-    filter: blur(100px);
-    opacity: 0.75;
+    filter: blur(120px); /* Increased blur for better background feel */
+    opacity: 0.6; /* Reduced opacity slightly for better readability */
     border-radius: 50%;
-    z-index: 0;
+    z-index: -1; /* Move to the absolute background */
     animation: rainbow-surge 10s linear infinite;
     pointer-events: none;
     will-change: transform;
