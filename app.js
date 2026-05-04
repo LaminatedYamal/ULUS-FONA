@@ -1413,21 +1413,19 @@ window.askGemini = async function(action, customPrompt = "") {
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    // Build Context (Course Specific or Global)
-    let context = "Institutional SEO Strategist Mode. ";
+    // Flexible System Prompt
+    let context = "You are a highly capable AI assistant with access to institutional SEO data. ";
     if (course) {
-        context += `Analyzing specific course: ${course.name} (${course.institution}). `;
-        context += `GSC: ${course.gscKeywords.slice(0, 10).map(k => k.term).join(', ')}. `;
-        context += `Ads: ${course.adsKeywords.slice(0, 10).map(k => k.term).join(', ')}. `;
+        context += `[Course Data]: ${course.name} (${course.institution}). `;
+        context += `GSC: ${course.gscKeywords.slice(0, 15).map(k => k.term).join(', ')}. `;
+        context += `Ads: ${course.adsKeywords.slice(0, 15).map(k => k.term).join(', ')}. `;
     } else {
-        context += "Analyzing global institutional database. ";
+        context += "[Global Fleet Data]: ";
         context += `Total Courses: ${courses.length}. `;
-        const insts = [...new Set(courses.map(c => c.institution))];
-        context += `Institutions: ${insts.join(', ')}. `;
-        // Add a snippet of top keywords across all courses
-        const topGlobal = courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clicks - a.clicks).slice(0, 15).map(k => k.term);
-        context += `Global Top Terms: ${[...new Set(topGlobal)].join(', ')}. `;
+        const topGlobal = courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clicks - a.clicks).slice(0, 20).map(k => k.term);
+        context += `Top Global Terms: ${[...new Set(topGlobal)].join(', ')}. `;
     }
+    context += " Answer the user's query precisely, using the data if relevant, but do not restrict yourself to only SEO topics.";
 
     let prompt = customPrompt;
     if (action === 'analyze') prompt = course ? "Analyze this course performance." : "Analyze the overall institutional footprint and institution strengths.";
@@ -1439,7 +1437,13 @@ window.askGemini = async function(action, customPrompt = "") {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: context + "\n\nQuery: " + prompt }] }]
+                contents: [{ parts: [{ text: context + "\n\nUser Query: " + prompt }] }],
+                safetySettings: [
+                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+                ]
             })
         });
 
