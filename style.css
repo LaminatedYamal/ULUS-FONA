@@ -1410,6 +1410,35 @@ body.light-mode .back-to-top:hover {
     text-align: center;
     animation: heroFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     background: radial-gradient(circle at center, rgba(var(--accent-primary-rgb), 0.05) 0%, transparent 70%);
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-blob {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(
+        45deg,
+        #4285f4, #34a853, #fbbc05, #ea4335,
+        #4285f4, #34a853, #fbbc05, #ea4335
+    );
+    background-size: 400% 400%;
+    filter: blur(80px);
+    opacity: 0.75;
+    border-radius: 50%;
+    z-index: 0; /* Keep behind hero text but visible */
+    animation: rainbow-surge 10s linear infinite, float-around 25s ease-in-out infinite;
+    pointer-events: none;
+    top: -10%;
+    left: -10%;
+}
+
+@keyframes float-around {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40vw, 15vh) scale(1.1); }
+    66% { transform: translate(-5vw, 35vh) scale(0.9); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 .hero-logo-container {
