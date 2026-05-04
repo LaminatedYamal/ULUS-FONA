@@ -487,6 +487,8 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    position: relative;
+    z-index: 10;
 }
 
 h1 {
@@ -533,9 +535,15 @@ h1 {
 .stat-card {
     background: var(--panel-bg);
     border: 1px solid var(--panel-border);
-    padding: 28px;
-    border-radius: 20px;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
     backdrop-filter: blur(var(--glass-blur));
+    z-index: 10;
     transition: transform 0.3s;
 }
 
@@ -576,6 +584,8 @@ h1 {
     border-radius: 24px;
     overflow: hidden;
     backdrop-filter: blur(var(--glass-blur));
+    position: relative;
+    z-index: 10;
 }
 
 .panel-header {
