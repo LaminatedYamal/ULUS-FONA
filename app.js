@@ -1366,7 +1366,26 @@ window.saveGeminiKey = function(key) {
     localStorage.setItem('gemini_api_key', key);
 }
 
-window.askGemini = async function(action) {
+window.sendGeminiChat = function() {
+    const input = document.getElementById('gemini-user-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    // Add User Message
+    const chat = document.getElementById('gemini-chat');
+    const userDiv = document.createElement('div');
+    userDiv.className = 'ai-response';
+    userDiv.style.background = 'rgba(66, 133, 244, 0.1)';
+    userDiv.style.borderColor = 'rgba(66, 133, 244, 0.2)';
+    userDiv.innerHTML = `<strong>You:</strong> ${msg}`;
+    chat.appendChild(userDiv);
+    chat.scrollTop = chat.scrollHeight;
+
+    input.value = '';
+    askGemini('custom', msg);
+}
+
+window.askGemini = async function(action, customPrompt = "") {
     const apiKey = localStorage.getItem('gemini_api_key');
     if (!apiKey) {
         alert("Please enter your Gemini API Key first!");
@@ -1376,58 +1395,73 @@ window.askGemini = async function(action) {
     const chat = document.getElementById('gemini-chat');
     const course = courses.find(c => c.id === activeCourseId);
     
-    // Show Loading
     const loadingDiv = document.createElement('div');
     loadingDiv.className = 'ai-response';
-    loadingDiv.innerHTML = `<p>⏳ Gemini is thinking about <strong>${course ? course.name : 'your data'}</strong>...</p>`;
+    loadingDiv.innerHTML = `<p>⏳ Gemini 3 is processing <strong>${course ? course.name : 'data'}</strong>...</p>`;
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    // Prepare Context
-    let context = "You are a professional SEO and Google Ads strategist. Analyze the following course data:\n";
+    // Compressed Context
+    let context = "Institutional SEO Strategist Mode. ";
     if (course) {
-        context += `Course: ${course.name}\nInstitution: ${course.institution}\n`;
-        context += `Top GSC Keywords: ${course.gscKeywords.slice(0, 10).map(k => k.term).join(', ')}\n`;
-        context += `Top Ads Keywords: ${course.adsKeywords.slice(0, 10).map(k => k.term).join(', ')}\n`;
-        context += `Top Rankings: ${course.rankingsKeywords.slice(0, 10).map(k => `${k.term} (#${k.rank})`).join(', ')}\n`;
+        context += `Analyzing ${course.name} (${course.institution}). `;
+        context += `GSC: ${course.gscKeywords.slice(0, 8).map(k => k.term).join(', ')}. `;
+        context += `Ads: ${course.adsKeywords.slice(0, 8).map(k => k.term).join(', ')}. `;
+        context += `Rankings: ${course.rankingsKeywords.slice(0, 8).map(k => `${k.term}(#${k.rank})`).join(', ')}. `;
     }
 
-    let prompt = "";
-    if (action === 'analyze') prompt = "Provide a high-level performance summary. Compare GSC clicks vs Ads presence and identify the strongest synergies.";
-    if (action === 'gaps') prompt = "Identify 'Low-Hanging Fruit' and 'Organic Gaps'. Which keywords have high GSC clicks but are missing from the Ads strategy?";
-    if (action === 'strategy') prompt = "Suggest 3 content optimization strategies for this course based on the ranking keywords and their positions.";
+    let prompt = customPrompt;
+    if (action === 'analyze') prompt = "High-level performance summary. Clicks vs Ads presence.";
+    if (action === 'gaps') prompt = "Find high-traffic GSC keywords missing from Ads.";
+    if (action === 'strategy') prompt = "3 optimization strategies based on rankings.";
 
     try {
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: context + "\n\nTask: " + prompt }] }]
+                contents: [{ parts: [{ text: context + "\n\nQuery: " + prompt }] }]
             })
         });
 
         const data = await response.json();
-        
-        if (!response.ok) {
-            throw new Error(data.error ? data.error.message : "API Request Failed");
-        }
+        if (!response.ok) throw new Error(data.error ? data.error.message : "API Request Failed");
 
         const text = data.candidates[0].content.parts[0].text;
-        
-        // Remove loading
         loadingDiv.remove();
 
-        // Render AI Response
         const resDiv = document.createElement('div');
         resDiv.className = 'ai-response';
-        resDiv.innerHTML = `<h3>${action.charAt(0).toUpperCase() + action.slice(1)} Analysis</h3>` + formatAIResponse(text);
         chat.appendChild(resDiv);
+        
+        // Typing Effect
+        typeWriter(resDiv, formatAIResponse(text));
         chat.scrollTop = chat.scrollHeight;
 
     } catch (e) {
-        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px; background: rgba(255,0,0,0.1); padding: 10px; border-radius: 8px;">❌ <strong>Gemini Error:</strong> ${e.message}</p>`;
-        console.error(e);
+        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>Gemini Error:</strong> ${e.message}</p>`;
     }
+}
+
+function typeWriter(element, html, speed = 5) {
+    let i = 0;
+    element.innerHTML = "";
+    function type() {
+        if (i < html.length) {
+            // Handle tags
+            if (html.charAt(i) === '<') {
+                let end = html.indexOf('>', i);
+                element.innerHTML += html.substring(i, end + 1);
+                i = end + 1;
+            } else {
+                element.innerHTML += html.charAt(i);
+                i++;
+            }
+            document.getElementById('gemini-chat').scrollTop = document.getElementById('gemini-chat').scrollHeight;
+            setTimeout(type, speed);
+        }
+    }
+    type();
 }
 
 function formatAIResponse(text) {
