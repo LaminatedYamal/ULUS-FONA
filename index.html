@@ -226,7 +226,7 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="Gemini AI Strategist">
+    <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="Gemini 3 Strategist (Active Pulse)">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="url(#gemini-grad)" />
             <defs>
@@ -244,7 +244,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="#4285F4" />
             </svg>
-            <h2>Gemini Pulse</h2>
+            <h2>Gemini 3 Pulse</h2>
             <div class="gemini-close" onclick="toggleGeminiSidebar()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </div>
@@ -252,43 +252,35 @@
 
         <div class="gemini-chat-area" id="gemini-chat">
             <div class="ai-response">
-                <h3>Hello, Pedro! 👋</h3>
-                I am your Gemini AI strategist. I can analyze the current course data to find hidden opportunities and suggest optimizations.
-                <br><br>
-                <strong>Please ensure your API Key is set below to begin.</strong>
+                <h3>Olá, Pedro! 👋</h3>
+                I am your Gemini 3 Strategist. Ask me anything about your institutional keywords or use the quick actions below.
             </div>
         </div>
 
         <div class="gemini-actions">
             <div class="ai-card" onclick="askGemini('analyze')">
                 <span class="icon">📊</span>
-                <div>
-                    <strong>Analyze Performance</strong>
-                    <p style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Deep dive into current GSC & Ads synergy.</p>
-                </div>
+                <strong>Analysis</strong>
             </div>
             <div class="ai-card" onclick="askGemini('gaps')">
                 <span class="icon">🎯</span>
-                <div>
-                    <strong>Identify Gaps</strong>
-                    <p style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Find high-traffic keywords missing from Ads.</p>
-                </div>
+                <strong>Gaps</strong>
             </div>
             <div class="ai-card" onclick="askGemini('strategy')">
                 <span class="icon">💡</span>
-                <div>
-                    <strong>Content Strategy</strong>
-                    <p style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Suggest topics based on top-ranking terms.</p>
-                </div>
+                <strong>Strategy</strong>
             </div>
         </div>
 
         <div class="gemini-input-zone">
-            <input type="password" id="gemini-api-key" class="gemini-key-input" placeholder="Enter Gemini API Key (BYOK)" onchange="saveGeminiKey(this.value)" autocomplete="new-password">
-            <p style="font-size: 10px; opacity: 0.5; text-align: center;">Key is stored locally in your browser only.</p>
+            <div class="gemini-chat-input-container">
+                <input type="text" id="gemini-user-input" class="gemini-chat-input" placeholder="Ask Gemini anything..." onkeypress="if(event.key === 'Enter') sendGeminiChat()">
+                <button class="gemini-send-btn" onclick="sendGeminiChat()">🚀</button>
+            </div>
+            <input type="password" id="gemini-api-key" class="gemini-key-input" placeholder="Gemini API Key (BYOK)" onchange="saveGeminiKey(this.value)" autocomplete="new-password">
         </div>
     </aside>
 
-    <script src="app.js?v=v35_autofill_fix"></script>
+    <script src="app.js?v=v36_gemini_3_chat"></script>
 </body>
 </html>
