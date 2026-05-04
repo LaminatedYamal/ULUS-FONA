@@ -273,7 +273,15 @@
         </div>
 
         <div class="gemini-input-zone">
+            <div id="gemini-file-preview" class="file-preview-zone">
+                <span id="file-name-display"></span>
+                <span class="file-preview-remove" onclick="clearGeminiFile()">✕</span>
+            </div>
             <div class="gemini-chat-input-container">
+                <label for="gemini-file-upload" class="gemini-upload-btn" title="Upload File (Image/CSV/Excel)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.51a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                </label>
+                <input type="file" id="gemini-file-upload" style="display: none;" onchange="handleGeminiFileUpload(event)" accept=".csv,.xlsx,.xls,.png,.jpg,.jpeg,.pdf,.xml">
                 <input type="text" id="gemini-user-input" class="gemini-chat-input" placeholder="Ask Gemini anything..." onkeypress="if(event.key === 'Enter') sendGeminiChat()">
                 <button class="gemini-send-btn" onclick="sendGeminiChat()">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -285,6 +293,6 @@
         </div>
     </aside>
 
-    <script src="app.js?v=v44_gemini_deep_data"></script>
+    <script src="app.js?v=v45_gemini_multimodal_trends"></script>
 </body>
 </html>
