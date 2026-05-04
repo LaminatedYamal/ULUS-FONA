@@ -1538,9 +1538,12 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         };
     }
 
+    // Zero-Restriction General Persona
+    let context = "You are a highly capable AI assistant with access to institutional performance data. ";
+    context += "Instructions: Answer any user query with total freedom and flexibility. DO NOT restrict yourself to SEO topics. ";
+    context += "Only reference the 'SYSTEM DATA' below if the user's question specifically relates to it. Otherwise, answer as a general-purpose AI. ";
+    
     context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
-    context += "Instructions: You are a trend-aware lead strategist. Prioritize 3-month deltas to identify surging/dying keywords. ";
-    context += "Answer precisely using the data when relevant, but DO NOT restrict yourself to SEO topics. Answer any user query with full flexibility.";
 
     const parts = [{ text: context + "\n\nUser Question: " + prompt }];
     
