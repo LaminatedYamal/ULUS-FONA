@@ -1623,3 +1623,39 @@ function formatAIResponse(text) {
         .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
 }
 
+// --- Global Blob Smooth Tracking Loop ---
+const globalBlob = document.querySelector('.floating-blob');
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let blobX = mouseX;
+let blobY = mouseY;
+let blobTime = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animateBlob() {
+    if (!globalBlob) return;
+    
+    blobTime += 0.005;
+    
+    // Smooth lerp (lag factor 0.03 for slow follow)
+    blobX += (mouseX - blobX) * 0.03;
+    blobY += (mouseY - blobY) * 0.03;
+    
+    // Add organic breathing drift
+    const driftX = Math.sin(blobTime) * 150;
+    const driftY = Math.cos(blobTime * 0.8) * 150;
+    
+    // Translate directly via GPU
+    globalBlob.style.transform = `translate3d(${blobX + driftX}px, ${blobY + driftY}px, 0)`;
+    
+    requestAnimationFrame(animateBlob);
+}
+
+// Start loop
+if (globalBlob) {
+    animateBlob();
+}
