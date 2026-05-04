@@ -1646,8 +1646,29 @@ body.light-mode .hero-text h2 {
 
 .gemini-chat-input-container {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 12px;
+    align-items: center;
+}
+
+.gemini-upload-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.gemini-upload-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .gemini-chat-input {
@@ -1659,6 +1680,29 @@ body.light-mode .hero-text h2 {
     border-radius: 10px;
     font-size: 13px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.file-preview-zone {
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    background: rgba(66, 133, 244, 0.1);
+    border-radius: 8px;
+    border: 1px dashed rgba(66, 133, 244, 0.3);
+    font-size: 11px;
+    color: #91b9ff;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-preview-zone.active {
+    display: flex;
+}
+
+.file-preview-remove {
+    margin-left: auto;
+    cursor: pointer;
+    color: #ff4d4d;
 }
 
 .gemini-chat-input:focus {
