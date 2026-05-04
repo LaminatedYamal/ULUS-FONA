@@ -1398,7 +1398,7 @@ window.askGemini = async function(action) {
     if (action === 'strategy') prompt = "Suggest 3 content optimization strategies for this course based on the ranking keywords and their positions.";
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -1407,6 +1407,11 @@ window.askGemini = async function(action) {
         });
 
         const data = await response.json();
+        
+        if (!response.ok) {
+            throw new Error(data.error ? data.error.message : "API Request Failed");
+        }
+
         const text = data.candidates[0].content.parts[0].text;
         
         // Remove loading
@@ -1420,7 +1425,7 @@ window.askGemini = async function(action) {
         chat.scrollTop = chat.scrollHeight;
 
     } catch (e) {
-        loadingDiv.innerHTML = `<p style="color:var(--danger);">❌ Error calling Gemini. Please check your API key and connection.</p>`;
+        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px; background: rgba(255,0,0,0.1); padding: 10px; border-radius: 8px;">❌ <strong>Gemini Error:</strong> ${e.message}</p>`;
         console.error(e);
     }
 }
