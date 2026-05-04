@@ -1352,3 +1352,86 @@ function filterKeywords(query) {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+// --- GEMINI AI INTEGRATION ---
+window.toggleGeminiSidebar = function() {
+    const sidebar = document.getElementById('gemini-sidebar');
+    sidebar.classList.toggle('open');
+    
+    // Load key if exists
+    const key = localStorage.getItem('gemini_api_key');
+    if (key) document.getElementById('gemini-api-key').value = key;
+}
+
+window.saveGeminiKey = function(key) {
+    localStorage.setItem('gemini_api_key', key);
+}
+
+window.askGemini = async function(action) {
+    const apiKey = localStorage.getItem('gemini_api_key');
+    if (!apiKey) {
+        alert("Please enter your Gemini API Key first!");
+        return;
+    }
+
+    const chat = document.getElementById('gemini-chat');
+    const course = courses.find(c => c.id === activeCourseId);
+    
+    // Show Loading
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'ai-response';
+    loadingDiv.innerHTML = `<p>⏳ Gemini is thinking about <strong>${course ? course.name : 'your data'}</strong>...</p>`;
+    chat.appendChild(loadingDiv);
+    chat.scrollTop = chat.scrollHeight;
+
+    // Prepare Context
+    let context = "You are a professional SEO and Google Ads strategist. Analyze the following course data:\n";
+    if (course) {
+        context += `Course: ${course.name}\nInstitution: ${course.institution}\n`;
+        context += `Top GSC Keywords: ${course.gscKeywords.slice(0, 10).map(k => k.term).join(', ')}\n`;
+        context += `Top Ads Keywords: ${course.adsKeywords.slice(0, 10).map(k => k.term).join(', ')}\n`;
+        context += `Top Rankings: ${course.rankingsKeywords.slice(0, 10).map(k => `${k.term} (#${k.rank})`).join(', ')}\n`;
+    }
+
+    let prompt = "";
+    if (action === 'analyze') prompt = "Provide a high-level performance summary. Compare GSC clicks vs Ads presence and identify the strongest synergies.";
+    if (action === 'gaps') prompt = "Identify 'Low-Hanging Fruit' and 'Organic Gaps'. Which keywords have high GSC clicks but are missing from the Ads strategy?";
+    if (action === 'strategy') prompt = "Suggest 3 content optimization strategies for this course based on the ranking keywords and their positions.";
+
+    try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: context + "\n\nTask: " + prompt }] }]
+            })
+        });
+
+        const data = await response.json();
+        const text = data.candidates[0].content.parts[0].text;
+        
+        // Remove loading
+        loadingDiv.remove();
+
+        // Render AI Response
+        const resDiv = document.createElement('div');
+        resDiv.className = 'ai-response';
+        resDiv.innerHTML = `<h3>${action.charAt(0).toUpperCase() + action.slice(1)} Analysis</h3>` + formatAIResponse(text);
+        chat.appendChild(resDiv);
+        chat.scrollTop = chat.scrollHeight;
+
+    } catch (e) {
+        loadingDiv.innerHTML = `<p style="color:var(--danger);">❌ Error calling Gemini. Please check your API key and connection.</p>`;
+        console.error(e);
+    }
+}
+
+function formatAIResponse(text) {
+    // Simple markdown-to-html conversion
+    return text
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        .replace(/\n\n/g, '<br><br>')
+        .replace(/\n/g, '<br>')
+        .replace(/^- (.*)/gm, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+}
