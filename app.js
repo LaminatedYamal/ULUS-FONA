@@ -1080,6 +1080,7 @@ window.resetApp = function(mode) {
 };
 
 window.selectDegreeHub = function(inst, degree, degreeCourses) {
+    activeCourseId = null; // Enter Global AI Mode
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
     
@@ -1394,6 +1395,7 @@ window.sendGeminiChat = function() {
     askGemini('custom', msg);
 }
 
+
 window.askGemini = async function(action, customPrompt = "") {
     const apiKey = localStorage.getItem('gemini_api_key');
     if (!apiKey) {
@@ -1402,27 +1404,35 @@ window.askGemini = async function(action, customPrompt = "") {
     }
 
     const chat = document.getElementById('gemini-chat');
-    const course = courses.find(c => c.id === activeCourseId);
+    const course = activeCourseId !== null ? courses.find(c => c.id === activeCourseId) : null;
     
     const loadingDiv = document.createElement('div');
     loadingDiv.className = 'ai-response';
-    loadingDiv.innerHTML = `<p>⏳ Gemini 3 is processing <strong>${course ? course.name : 'data'}</strong>...</p>`;
+    const targetName = course ? course.name : 'the institutional fleet';
+    loadingDiv.innerHTML = `<p>⏳ Gemini 3 is analyzing <strong>${targetName}</strong>...</p>`;
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    // Compressed Context
+    // Build Context (Course Specific or Global)
     let context = "Institutional SEO Strategist Mode. ";
     if (course) {
-        context += `Analyzing ${course.name} (${course.institution}). `;
-        context += `GSC: ${course.gscKeywords.slice(0, 8).map(k => k.term).join(', ')}. `;
-        context += `Ads: ${course.adsKeywords.slice(0, 8).map(k => k.term).join(', ')}. `;
-        context += `Rankings: ${course.rankingsKeywords.slice(0, 8).map(k => `${k.term}(#${k.rank})`).join(', ')}. `;
+        context += `Analyzing specific course: ${course.name} (${course.institution}). `;
+        context += `GSC: ${course.gscKeywords.slice(0, 10).map(k => k.term).join(', ')}. `;
+        context += `Ads: ${course.adsKeywords.slice(0, 10).map(k => k.term).join(', ')}. `;
+    } else {
+        context += "Analyzing global institutional database. ";
+        context += `Total Courses: ${courses.length}. `;
+        const insts = [...new Set(courses.map(c => c.institution))];
+        context += `Institutions: ${insts.join(', ')}. `;
+        // Add a snippet of top keywords across all courses
+        const topGlobal = courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clicks - a.clicks).slice(0, 15).map(k => k.term);
+        context += `Global Top Terms: ${[...new Set(topGlobal)].join(', ')}. `;
     }
 
     let prompt = customPrompt;
-    if (action === 'analyze') prompt = "High-level performance summary. Clicks vs Ads presence.";
-    if (action === 'gaps') prompt = "Find high-traffic GSC keywords missing from Ads.";
-    if (action === 'strategy') prompt = "3 optimization strategies based on rankings.";
+    if (action === 'analyze') prompt = course ? "Analyze this course performance." : "Analyze the overall institutional footprint and institution strengths.";
+    if (action === 'gaps') prompt = course ? "Find GSC keywords missing from Ads." : "Across all courses, identify where we have the most significant organic gaps.";
+    if (action === 'strategy') prompt = course ? "3 strategies for this course." : "3 global strategies to improve institutional ranking.";
 
     try {
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
