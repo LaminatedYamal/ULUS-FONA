@@ -1461,3 +1461,189 @@ body.light-mode .hero-text h2 {
 #dashboard-view {
     display: none; /* Hidden until course is selected */
 }
+
+/* --- GEMINI PULSE AI --- */
+.gemini-pulse-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background: rgba(10, 12, 16, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gemini-pulse-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Rainbow Hovering Border */
+.gemini-pulse-btn::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(
+        45deg,
+        #4285f4, #34a853, #fbbc05, #ea4335,
+        #4285f4, #34a853, #fbbc05, #ea4335
+    );
+    background-size: 400% 400%;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s;
+    animation: rainbow-surge 4s linear infinite;
+}
+
+.gemini-pulse-btn:hover::after {
+    opacity: 1;
+}
+
+@keyframes rainbow-surge {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gemini-pulse-btn svg {
+    width: 32px;
+    height: 32px;
+    filter: drop-shadow(0 0 8px rgba(66, 133, 244, 0.5));
+}
+
+/* Gemini Sidebar */
+.gemini-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 420px;
+    height: 100vh;
+    background: rgba(15, 17, 23, 0.95);
+    backdrop-filter: blur(30px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2001;
+    transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.gemini-sidebar.open {
+    right: 0;
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.8);
+}
+
+.gemini-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.gemini-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #4285f4, #91b9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gemini-close {
+    margin-left: auto;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.gemini-close:hover {
+    opacity: 1;
+}
+
+.gemini-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.ai-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-card:hover {
+    background: rgba(66, 133, 244, 0.1);
+    border-color: rgba(66, 133, 244, 0.3);
+    transform: translateX(5px);
+}
+
+.ai-card .icon {
+    font-size: 20px;
+}
+
+.gemini-chat-area {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ai-response {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ai-response h3 {
+    color: #4285f4;
+    margin-bottom: 12px;
+}
+
+.ai-response ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.gemini-input-zone {
+    margin-top: auto;
+}
+
+.gemini-key-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.gemini-key-input:focus {
+    border-color: #4285f4;
+    outline: none;
+}
