@@ -9,7 +9,7 @@ from googleapiclient.discovery import build
 JSON_FILE_PATH = 'courses.json'
 GSC_SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
 SHEETS_SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-DAYS_TO_FETCH = 30
+DAYS_TO_FETCH = 365
 MAX_ROWS_PER_URL = 200
 GOOGLE_ADS_SHEET_ID = os.environ.get('GOOGLE_ADS_SHEET_ID', '1W6_6SRLDHSOVF0IR1RsRUxEkERn2ursuQAFyjcSNJUE')
 
