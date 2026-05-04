@@ -196,10 +196,11 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
     flex-shrink: 0;
     background: rgba(15, 17, 23, 0.9);
     border-right: 1px solid var(--panel-border);
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     padding: 24px;
     backdrop-filter: blur(var(--glass-blur));
