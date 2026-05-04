@@ -1357,6 +1357,15 @@ window.toggleGeminiSidebar = function() {
     const sidebar = document.getElementById('gemini-sidebar');
     sidebar.classList.toggle('open');
     
+    // Personalize Greeting
+    const user = localStorage.getItem('hub_user_name') || 'Team Member';
+    const greetEl = document.getElementById('gemini-greeting');
+    if (greetEl) {
+        const t = TRANSLATIONS[currentLang || 'en'];
+        const hello = t["greeting"] || (currentLang === 'pt' ? 'Olá' : 'Hello');
+        greetEl.textContent = `${hello}, ${user}! 👋`;
+    }
+
     // Load key if exists
     const key = localStorage.getItem('gemini_api_key');
     if (key) document.getElementById('gemini-api-key').value = key;
