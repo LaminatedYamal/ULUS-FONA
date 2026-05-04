@@ -353,8 +353,9 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 
 .sync-buttons {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 .upload-btn {
@@ -377,6 +378,11 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 .upload-btn.ads {
     background: rgba(var(--accent-primary-rgb), 0.05);
     border-color: rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.upload-btn.rankings {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .upload-btn:hover {
