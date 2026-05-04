@@ -1387,27 +1387,87 @@ window.saveGeminiKey = function(key) {
     localStorage.setItem('gemini_api_key', key);
 }
 
+let pendingGeminiFile = null;
+
+window.handleGeminiFileUpload = function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    const isImage = file.type.startsWith('image/');
+
+    reader.onload = function(e) {
+        pendingGeminiFile = {
+            name: file.name,
+            type: file.type,
+            data: e.target.result.split(',')[1], // base64 without prefix
+            isImage: isImage
+        };
+        
+        const preview = document.getElementById('gemini-file-preview');
+        const nameDisplay = document.getElementById('file-name-display');
+        preview.classList.add('active');
+        nameDisplay.textContent = `📎 ${file.name}`;
+    };
+
+    if (isImage) {
+        reader.readAsDataURL(file);
+    } else {
+        // Read as text for CSV/XML/etc
+        const textReader = new FileReader();
+        textReader.onload = (e) => {
+            pendingGeminiFile = {
+                name: file.name,
+                type: 'text/plain',
+                content: e.target.result,
+                isImage: false
+            };
+            const preview = document.getElementById('gemini-file-preview');
+            const nameDisplay = document.getElementById('file-name-display');
+            preview.classList.add('active');
+            nameDisplay.textContent = `📄 ${file.name}`;
+        };
+        textReader.readAsText(file);
+    }
+}
+
+window.clearGeminiFile = function() {
+    pendingGeminiFile = null;
+    document.getElementById('gemini-file-preview').classList.remove('active');
+    document.getElementById('gemini-file-upload').value = '';
+}
+
 window.sendGeminiChat = function() {
     const input = document.getElementById('gemini-user-input');
     const msg = input.value.trim();
-    if (!msg) return;
+    if (!msg && !pendingGeminiFile) return;
 
-    // Add User Message
     const chat = document.getElementById('gemini-chat');
     const userDiv = document.createElement('div');
     userDiv.className = 'ai-response';
     userDiv.style.background = 'rgba(66, 133, 244, 0.1)';
     userDiv.style.borderColor = 'rgba(66, 133, 244, 0.2)';
-    userDiv.innerHTML = `<strong>You:</strong> ${msg}`;
+    
+    let userHtml = `<strong>You:</strong> ${msg || '(Uploaded File)'}`;
+    if (pendingGeminiFile) {
+        userHtml += `<br><span style="font-size:10px; opacity:0.7;">📎 attached: ${pendingGeminiFile.name}</span>`;
+    }
+    userDiv.innerHTML = userHtml;
+    
     chat.appendChild(userDiv);
     chat.scrollTop = chat.scrollHeight;
 
+    const currentMsg = msg;
+    const currentFile = pendingGeminiFile;
+
     input.value = '';
-    askGemini('custom', msg);
+    clearGeminiFile();
+    
+    askGemini('custom', currentMsg, currentFile);
 }
 
 
-window.askGemini = async function(action, customPrompt = "") {
+window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
     const apiKey = localStorage.getItem('gemini_api_key');
     if (!apiKey) {
         alert("Please enter your Gemini API Key first!");
@@ -1432,13 +1492,14 @@ window.askGemini = async function(action, customPrompt = "") {
         dataPayload = {
             target: "Course Analysis",
             identity: { name: course.name, institution: course.institution },
-            metrics: {
-                gsc_total: course.gscKeywords.length,
-                ads_total: course.adsKeywords.length,
-                rankings_total: course.rankingsKeywords.length
-            },
             performance_data: {
-                top_gsc: course.gscKeywords.slice(0, 100).map(k => ({ t: k.term, c: k.clicks, i: k.impressions, ctr: k.ctr })),
+                top_gsc_with_trends: course.gscKeywords.slice(0, 100).map(k => ({ 
+                    t: k.term, 
+                    c: k.clicks, 
+                    trend: k.clickDelta, // 3 MONTH TREND
+                    imp_trend: k.impDelta,
+                    i: k.impressions 
+                })),
                 top_ads: course.adsKeywords.slice(0, 50).map(k => ({ t: k.term, s: k.status })),
                 top_rankings: course.rankingsKeywords.slice(0, 50).map(k => ({ t: k.term, r: k.rank }))
             },
@@ -1448,53 +1509,43 @@ window.askGemini = async function(action, customPrompt = "") {
             ).map(k => k.term).slice(0, 20)
         };
     } else {
-        const instMap = {};
-        const globalTop = [];
-        let totalSynergy = 0;
-
-        courses.forEach(c => {
-            if (!instMap[c.institution]) instMap[c.institution] = { count: 0, courses: [] };
-            instMap[c.institution].count++;
-            instMap[c.institution].courses.push(c.name);
-            
-            const syns = c.gscKeywords.filter(k => 
-                c.adsKeywords.some(ak => ak.term === k.term) && 
-                c.rankingsKeywords.some(rk => rk.term === k.term)
-            ).length;
-            totalSynergy += syns;
-        });
-
+        // Global Stats with Trend Focus
         dataPayload = {
             target: "Institutional Fleet Analysis",
             total_stats: {
                 courses: courses.length,
-                institutions: Object.keys(instMap).length,
-                global_synergy_matches: totalSynergy
-            },
-            institutional_hierarchy: instMap,
-            top_performing_terms: courses.flatMap(c => c.gscKeywords)
-                .sort((a,b) => b.clicks - a.clicks)
-                .slice(0, 100)
-                .map(k => ({ t: k.term, c: k.clicks }))
+                global_top_trends: courses.flatMap(c => c.gscKeywords)
+                    .sort((a,b) => b.clickDelta - a.clickDelta)
+                    .slice(0, 30)
+                    .map(k => ({ t: k.term, trend: k.clickDelta }))
+            }
         };
     }
 
     context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
-    context += "Instructions: You have full access to this data. Be precise. If asked 'who has X', check all courses. ";
-    context += "If asked for strategy, prioritize Triple Matches and High-Impression/Low-CTR gaps. ";
-    context += "Do not restrict yourself to SEO; handle any general query while prioritizing data awareness.";
+    context += "Instructions: You are a trend-aware analyst. Prioritize the 3-month trend deltas to identify surging or dying keywords. ";
 
-    let prompt = customPrompt;
-    if (action === 'analyze') prompt = course ? "Analyze this course performance." : "Analyze the overall institutional footprint and institution strengths.";
-    if (action === 'gaps') prompt = course ? "Find GSC keywords missing from Ads." : "Across all courses, identify where we have the most significant organic gaps.";
-    if (action === 'strategy') prompt = course ? "3 strategies for this course." : "3 global strategies to improve institutional ranking.";
+    const parts = [{ text: context + "\n\nUser Question: " + prompt }];
+    
+    if (attachedFile) {
+        if (attachedFile.isImage) {
+            parts.push({
+                inline_data: {
+                    mime_type: attachedFile.type,
+                    data: attachedFile.data
+                }
+            });
+        } else {
+            parts[0].text += `\n\n[Attached File Content: ${attachedFile.name}]\n${attachedFile.content}`;
+        }
+    }
 
     try {
         const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: context + "\n\nUser Question: " + prompt }] }],
+                contents: [{ parts: parts }],
                 safetySettings: [
                     { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
                     { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
