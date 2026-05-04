@@ -1087,10 +1087,6 @@ window.selectDegreeHub = function(inst, degree, degreeCourses) {
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
     
-    // Show blob on landing/selection pages
-    const blob = document.querySelector('.floating-blob');
-    if (blob) blob.style.display = 'block';
-    
     const headerLeft = document.getElementById('dashboard-header-left');
     if (headerLeft) headerLeft.style.visibility = "hidden";
     
@@ -1152,10 +1148,6 @@ function loadCourse(id) {
     
     if (landingView) landingView.style.display = "none";
     if (dashboardView) dashboardView.style.display = "block";
-    
-    // Hide blob on course pages
-    const blob = document.querySelector('.floating-blob');
-    if (blob) blob.style.display = 'none';
     
     const headerLeft = document.getElementById('dashboard-header-left');
     if (headerLeft) headerLeft.style.visibility = "visible";
