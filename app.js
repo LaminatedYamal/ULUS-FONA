@@ -13,8 +13,18 @@ let activeCourseId = null;
 window.onload = init;
 
 async function init() {
-    initLanguage(); // Load language preference
-    await checkAuth(); // Await data loading
+    initLanguage(); 
+    initTheme();
+    initGreeting();
+    
+    // Load local data immediately (Non-blocking)
+    loadData(); 
+
+    // Background Auth & Cloud Sync
+    checkAuth().then(() => {
+        // Refresh sidebar after sync
+        renderCourseList();
+    }).catch(e => console.warn("Cloud Sync Deferred:", e));
     
     // Load cached sync info immediately for better UX
     const cachedSync = localStorage.getItem('hub_last_sync');
@@ -35,10 +45,6 @@ async function init() {
     document.getElementById('ads-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
     document.getElementById('rankings-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
-    loadData(); 
-    initTheme();
-    initGreeting();
-
     // Default View: Show Landing Hero
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
