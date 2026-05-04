@@ -38,8 +38,6 @@ async function init() {
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
-    
-    initBlobTracking();
 }
 
 
@@ -1631,50 +1629,5 @@ function formatAIResponse(text) {
         .replace(/\n/g, '<br>')
         .replace(/^- (.*)/gm, '<li>$1</li>')
         .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-}
-
-function initBlobTracking() {
-    console.log("Initializing Blob Tracking...");
-    const blob = document.querySelector('.floating-blob');
-    if (!blob) {
-        console.error("Blob element not found!");
-        return;
-    }
-
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let blobX = mouseX;
-    let blobY = mouseY;
-    let isMouseActive = false;
-
-    // Track mouse globally
-    window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        isMouseActive = true;
-    });
-
-    window.addEventListener('mouseleave', () => {
-        isMouseActive = false;
-    });
-
-    function animate() {
-        if (!isMouseActive) {
-            // Subtle drift towards center if mouse is inactive
-            mouseX += (window.innerWidth / 2 - mouseX) * 0.01;
-            mouseY += (window.innerHeight / 2 - mouseY) * 0.01;
-        }
-
-        // Smooth follow (Lerp)
-        blobX += (mouseX - blobX) * 0.08; // Increased speed slightly
-        blobY += (mouseY - blobY) * 0.08;
-
-        // Apply transform
-        blob.style.transform = `translate3d(${blobX - 300}px, ${blobY - 300}px, 0)`;
-        
-        requestAnimationFrame(animate);
-    }
-    animate();
-    console.log("Blob Tracking Active.");
 }
 
