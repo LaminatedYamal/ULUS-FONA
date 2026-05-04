@@ -32,7 +32,7 @@
         <aside class="sidebar">
             <div class="logo">
                 <div class="search-bar" id="sidebar-search-container" style="width: 100%; margin-bottom: 20px;">
-                    <input type="text" placeholder="Search courses..." id="course-search-sidebar" oninput="renderCourseList(this.value)" style="width: 100%;">
+                    <input type="text" placeholder="Search courses..." id="course-search-sidebar" oninput="renderCourseList(this.value)" autocomplete="off" style="width: 100%;">
                 </div>
                 <div class="logo-container">
                     <img id="brand-logo" src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Brand Logo">
@@ -284,11 +284,11 @@
         </div>
 
         <div class="gemini-input-zone">
-            <input type="password" id="gemini-api-key" class="gemini-key-input" placeholder="Enter Gemini API Key (BYOK)" onchange="saveGeminiKey(this.value)">
+            <input type="password" id="gemini-api-key" class="gemini-key-input" placeholder="Enter Gemini API Key (BYOK)" onchange="saveGeminiKey(this.value)" autocomplete="new-password">
             <p style="font-size: 10px; opacity: 0.5; text-align: center;">Key is stored locally in your browser only.</p>
         </div>
     </aside>
 
-    <script src="app.js?v=v34_gemini_3_flash"></script>
+    <script src="app.js?v=v35_autofill_fix"></script>
 </body>
 </html>
