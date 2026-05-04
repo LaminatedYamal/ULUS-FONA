@@ -296,45 +296,6 @@
         </div>
     </aside>
 
-    <script src="app.js?v=v53_blob_selfboot"></script>
-    <script>
-    // Self-booting blob tracker — runs immediately, no dependency on init()
-    (function() {
-        const blob = document.querySelector('.floating-blob');
-        if (!blob) return;
-
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let blobX = mouseX;
-        let blobY = mouseY;
-        let isMouseInside = false;
-
-        window.addEventListener('mousemove', function(e) {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            isMouseInside = true;
-        });
-
-        document.addEventListener('mouseleave', function() {
-            isMouseInside = false;
-        });
-
-        function animate() {
-            if (!isMouseInside) {
-                mouseX += (window.innerWidth / 2 - mouseX) * 0.005;
-                mouseY += (window.innerHeight / 2 - mouseY) * 0.005;
-            }
-
-            blobX += (mouseX - blobX) * 0.03;
-            blobY += (mouseY - blobY) * 0.03;
-
-            blob.style.left = (blobX - 600) + 'px';
-            blob.style.top = (blobY - 600) + 'px';
-
-            requestAnimationFrame(animate);
-        }
-        animate();
-    })();
-    </script>
+    <script src="app.js?v=v54_css_blob"></script>
 </body>
 </html>
