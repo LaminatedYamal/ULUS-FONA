@@ -1416,6 +1416,8 @@ body.light-mode .back-to-top:hover {
     margin-bottom: 40px;
     filter: drop-shadow(0 0 30px rgba(var(--accent-primary-rgb), 0.2));
     transition: transform 0.5s;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-logo-container:hover {
@@ -1426,6 +1428,11 @@ body.light-mode .back-to-top:hover {
     max-width: 400px;
     height: auto;
     max-height: 180px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
 }
 
 .hero-text h2 {
