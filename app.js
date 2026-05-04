@@ -10,40 +10,41 @@ const BRANDING = {
 let courses = [];
 let activeCourseId = null;
 
+window.onload = init;
+
 async function init() {
-    initLanguage(); // Load language preference
-    await checkAuth(); // Await data loading
-    
-    // Load cached sync info immediately for better UX
-    const cachedSync = localStorage.getItem('hub_last_sync');
-    if (cachedSync) {
-        const infoEl = document.getElementById('last-sync-info');
-        if (infoEl) infoEl.innerText = cachedSync;
+    console.log("🚀 SEO Hub Initializing...");
+    try {
+        initLanguage(); 
+        initTheme();
+        initGreeting();
+        
+        // Render sidebar from local cache immediately as fallback
+        loadData(); 
+
+        // Non-blocking Auth & Cloud Sync
+        checkAuth().catch(err => console.warn("Cloud Sync Deferred:", err));
+
+        // Event Listeners with Safety
+        const headerSearch = document.getElementById('keyword-search-header');
+        if (headerSearch) headerSearch.oninput = (e) => renderTablesFromHeader(e.target.value);
+
+        const sidebarSearch = document.getElementById('course-search-sidebar');
+        if (sidebarSearch) sidebarSearch.oninput = (e) => renderCourseList(e.target.value);
+
+        document.getElementById('gsc-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
+        document.getElementById('ads-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+        document.getElementById('rankings-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
+        
+        const landingView = document.getElementById("landing-view");
+        const dashboardView = document.getElementById("dashboard-view");
+        if (landingView) landingView.style.display = "flex";
+        if (dashboardView) dashboardView.style.display = "none";
+        
+    } catch (e) {
+        console.error("Critical Dashboard Failure:", e);
     }
-
-    document.getElementById('keyword-search-header')?.addEventListener('input', (e) => {
-        renderTablesFromHeader(e.target.value);
-    });
-
-    document.getElementById('course-search-sidebar')?.addEventListener('input', (e) => {
-        renderCourseList(e.target.value);
-    });
-
-    document.getElementById('gsc-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
-    document.getElementById('ads-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
-    document.getElementById('rankings-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
-    
-    loadData(); 
-    initTheme();
-    initGreeting();
-
-    // Default View: Show Landing Hero
-    const landingView = document.getElementById("landing-view");
-    const dashboardView = document.getElementById("dashboard-view");
-    if (landingView) landingView.style.display = "flex";
-    if (dashboardView) dashboardView.style.display = "none";
 }
-
 
 function initGreeting(nameOverride) {
     const userName = nameOverride || localStorage.getItem('hub_user_name');
