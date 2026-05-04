@@ -226,6 +226,69 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <script src="app.js?v=v29_border_ray_synergy"></script>
+    <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="Gemini AI Strategist">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="url(#gemini-grad)" />
+            <defs>
+                <linearGradient id="gemini-grad" x1="3" y1="2" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#4285F4"/>
+                    <stop offset="1" stop-color="#91B9FF"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
+
+    <!-- Gemini Sidebar -->
+    <aside class="gemini-sidebar" id="gemini-sidebar">
+        <div class="gemini-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="#4285F4" />
+            </svg>
+            <h2>Gemini Pulse</h2>
+            <div class="gemini-close" onclick="toggleGeminiSidebar()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </div>
+        </div>
+
+        <div class="gemini-chat-area" id="gemini-chat">
+            <div class="ai-response">
+                <h3>Hello, Pedro! 👋</h3>
+                I am your Gemini AI strategist. I can analyze the current course data to find hidden opportunities and suggest optimizations.
+                <br><br>
+                <strong>Please ensure your API Key is set below to begin.</strong>
+            </div>
+        </div>
+
+        <div class="gemini-actions">
+            <div class="ai-card" onclick="askGemini('analyze')">
+                <span class="icon">📊</span>
+                <div>
+                    <strong>Analyze Performance</strong>
+                    <p style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Deep dive into current GSC & Ads synergy.</p>
+                </div>
+            </div>
+            <div class="ai-card" onclick="askGemini('gaps')">
+                <span class="icon">🎯</span>
+                <div>
+                    <strong>Identify Gaps</strong>
+                    <p style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Find high-traffic keywords missing from Ads.</p>
+                </div>
+            </div>
+            <div class="ai-card" onclick="askGemini('strategy')">
+                <span class="icon">💡</span>
+                <div>
+                    <strong>Content Strategy</strong>
+                    <p style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Suggest topics based on top-ranking terms.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="gemini-input-zone">
+            <input type="password" id="gemini-api-key" class="gemini-key-input" placeholder="Enter Gemini API Key (BYOK)" onchange="saveGeminiKey(this.value)">
+            <p style="font-size: 10px; opacity: 0.5; text-align: center;">Key is stored locally in your browser only.</p>
+        </div>
+    </aside>
+
+    <script src="app.js?v=v30_gemini_pulse"></script>
 </body>
 </html>
