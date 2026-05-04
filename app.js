@@ -1354,6 +1354,23 @@ function filterKeywords(query) {
 
 document.addEventListener('DOMContentLoaded', init);
 // --- GEMINI AI INTEGRATION ---
+let pendingGeminiFile = null;
+
+// Add Paste Support for Screenshots
+document.addEventListener('paste', function(e) {
+    const input = document.getElementById('gemini-user-input');
+    if (document.activeElement !== input) return;
+    
+    const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+    for (let index in items) {
+        const item = items[index];
+        if (item.kind === 'file' && item.type.startsWith('image/')) {
+            const blob = item.getAsFile();
+            processGeminiFile(blob);
+        }
+    }
+});
+
 window.toggleGeminiSidebar = function() {
     const sidebar = document.getElementById('gemini-sidebar');
     sidebar.classList.toggle('open');
@@ -1387,19 +1404,19 @@ window.saveGeminiKey = function(key) {
     localStorage.setItem('gemini_api_key', key);
 }
 
-let pendingGeminiFile = null;
-
 window.handleGeminiFileUpload = function(event) {
     const file = event.target.files[0];
-    if (!file) return;
+    if (file) processGeminiFile(file);
+}
 
+function processGeminiFile(file) {
     const reader = new FileReader();
     const isImage = file.type.startsWith('image/');
 
     reader.onload = function(e) {
         pendingGeminiFile = {
-            name: file.name,
-            type: file.type,
+            name: file.name || `pasted_image_${Date.now()}.png`,
+            type: file.type || 'image/png',
             data: e.target.result.split(',')[1], // base64 without prefix
             isImage: isImage
         };
@@ -1407,13 +1424,12 @@ window.handleGeminiFileUpload = function(event) {
         const preview = document.getElementById('gemini-file-preview');
         const nameDisplay = document.getElementById('file-name-display');
         preview.classList.add('active');
-        nameDisplay.textContent = `📎 ${file.name}`;
+        nameDisplay.textContent = isImage ? `📸 ${pendingGeminiFile.name}` : `📄 ${file.name}`;
     };
 
     if (isImage) {
         reader.readAsDataURL(file);
     } else {
-        // Read as text for CSV/XML/etc
         const textReader = new FileReader();
         textReader.onload = (e) => {
             pendingGeminiFile = {
