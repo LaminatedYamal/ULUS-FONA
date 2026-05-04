@@ -8,7 +8,7 @@ const BRANDING = {
 };
 
 let courses = [];
-let activeCourseId = 0;
+let activeCourseId = null;
 
 async function init() {
     initLanguage(); // Load language preference
