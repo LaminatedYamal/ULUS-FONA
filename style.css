@@ -204,7 +204,6 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     padding: 24px;
     backdrop-filter: blur(var(--glass-blur));
     z-index: 100;
-    position: relative;
 }
 
 .logo {
@@ -1428,12 +1427,19 @@ body.light-mode .back-to-top:hover {
     filter: blur(160px);
     opacity: 0.5;
     border-radius: 50%;
-    z-index: 1;
-    animation: rainbow-surge 10s linear infinite;
+    z-index: 0;
+    animation: rainbow-surge 10s linear infinite, float-drift 30s ease-in-out infinite;
     pointer-events: none;
-    will-change: left, top;
     top: calc(50vh - 600px);
     left: calc(50vw - 600px);
+}
+
+@keyframes float-drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    25%  { transform: translate(15vw, -10vh) scale(1.05); }
+    50%  { transform: translate(-10vw, 20vh) scale(0.95); }
+    75%  { transform: translate(20vw, 10vh) scale(1.08); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 .hero-logo-container {
