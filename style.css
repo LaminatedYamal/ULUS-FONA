@@ -204,6 +204,7 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     padding: 24px;
     backdrop-filter: blur(var(--glass-blur));
     z-index: 100;
+    position: relative;
 }
 
 .logo {
@@ -480,6 +481,8 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     padding: 40px;
     background: radial-gradient(circle at top right, rgba(var(--accent-primary-rgb), 0.08), transparent 45%),
                 radial-gradient(circle at bottom left, rgba(var(--accent-primary-rgb), 0.05), transparent 45%);
+    position: relative;
+    z-index: 2;
 }
 
 .top-bar {
@@ -1416,23 +1419,23 @@ body.light-mode .back-to-top:hover {
 
 .floating-blob {
     position: fixed;
-    width: 600px;
-    height: 600px;
+    width: 900px;
+    height: 900px;
     background: linear-gradient(
         45deg,
         #4285f4, #34a853, #fbbc05, #ea4335,
         #4285f4, #34a853, #fbbc05, #ea4335
     );
     background-size: 400% 400%;
-    filter: blur(120px);
+    filter: blur(140px);
     opacity: 0.55;
     border-radius: 50%;
     z-index: 1;
     animation: rainbow-surge 10s linear infinite;
     pointer-events: none;
     will-change: left, top;
-    top: calc(50vh - 300px);
-    left: calc(50vw - 300px);
+    top: calc(50vh - 450px);
+    left: calc(50vw - 450px);
 }
 
 .hero-logo-container {
