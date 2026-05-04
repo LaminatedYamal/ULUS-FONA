@@ -1424,19 +1424,46 @@ window.askGemini = async function(action, customPrompt = "") {
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    // Flexible System Prompt
-    let context = "You are a highly capable AI assistant with access to institutional SEO data. ";
+    // Build Rich Structured Context
+    let context = "You are a professional SEO analyst for a higher education group. ";
+    let dataPayload = {};
+
     if (course) {
-        context += `[Course Data]: ${course.name} (${course.institution}). `;
-        context += `GSC: ${course.gscKeywords.slice(0, 15).map(k => k.term).join(', ')}. `;
-        context += `Ads: ${course.adsKeywords.slice(0, 15).map(k => k.term).join(', ')}. `;
+        dataPayload = {
+            mode: "Course Specific",
+            name: course.name,
+            institution: course.institution,
+            metrics: {
+                total_gsc_keywords: course.gscKeywords.length,
+                total_ads_keywords: course.adsKeywords.length,
+                total_rankings: course.rankingsKeywords.length
+            },
+            top_gsc_performance: course.gscKeywords.slice(0, 30).map(k => ({ term: k.term, clicks: k.clicks, imp: k.impressions, ctr: k.ctr })),
+            ads_strategy: course.adsKeywords.slice(0, 25).map(k => ({ term: k.term, status: k.status })),
+            search_rankings: course.rankingsKeywords.slice(0, 20).map(k => ({ term: k.term, rank: k.rank }))
+        };
     } else {
-        context += "[Global Fleet Data]: ";
-        context += `Total Courses: ${courses.length}. `;
-        const topGlobal = courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clicks - a.clicks).slice(0, 20).map(k => k.term);
-        context += `Top Global Terms: ${[...new Set(topGlobal)].join(', ')}. `;
+        const instStats = courses.reduce((acc, c) => {
+            if (!acc[c.institution]) acc[c.institution] = { courses: 0, clicks: 0 };
+            acc[c.institution].courses++;
+            acc[c.institution].clicks += c.gscKeywords.reduce((sum, k) => sum + k.clicks, 0);
+            return acc;
+        }, {});
+
+        dataPayload = {
+            mode: "Global Institutional Fleet",
+            total_courses: courses.length,
+            institution_performance: instStats,
+            top_global_terms: courses.flatMap(c => c.gscKeywords)
+                .sort((a,b) => b.clicks - a.clicks)
+                .slice(0, 50)
+                .map(k => k.term)
+        };
     }
-    context += " Answer the user's query precisely, using the data if relevant, but do not restrict yourself to only SEO topics.";
+
+    context += "Current Data Context: " + JSON.stringify(dataPayload) + ". ";
+    context += "Use this data to answer accurately. If asked for strategy, be specific about institutions and terms. ";
+    context += "Do not restrict yourself to SEO; handle any general query while prioritizing data awareness.";
 
     let prompt = customPrompt;
     if (action === 'analyze') prompt = course ? "Analyze this course performance." : "Analyze the overall institutional footprint and institution strengths.";
@@ -1448,7 +1475,7 @@ window.askGemini = async function(action, customPrompt = "") {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                contents: [{ parts: [{ text: context + "\n\nUser Query: " + prompt }] }],
+                contents: [{ parts: [{ text: context + "\n\nUser Question: " + prompt }] }],
                 safetySettings: [
                     { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
                     { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
