@@ -38,6 +38,8 @@ async function init() {
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
+    
+    initBlobTracking();
 }
 
 
@@ -1622,3 +1624,44 @@ function formatAIResponse(text) {
         .replace(/^- (.*)/gm, '<li>$1</li>')
         .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
 }
+
+function initBlobTracking() {
+    const blob = document.querySelector('.floating-blob');
+    if (!blob) return;
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let blobX = mouseX;
+    let blobY = mouseY;
+    let isMouseActive = false;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        isMouseActive = true;
+    });
+
+    // Handle mouse leaving the window
+    document.addEventListener('mouseleave', () => {
+        isMouseActive = false;
+    });
+
+    function animate() {
+        if (!isMouseActive) {
+            // Subtle drift towards center if mouse is inactive
+            mouseX += (window.innerWidth / 2 - mouseX) * 0.01;
+            mouseY += (window.innerHeight / 2 - mouseY) * 0.01;
+        }
+
+        // Smooth follow (Lerp)
+        blobX += (mouseX - blobX) * 0.05;
+        blobY += (mouseY - blobY) * 0.05;
+
+        // Offset by half blob size (300px)
+        blob.style.transform = `translate(${blobX - 300}px, ${blobY - 300}px)`;
+        
+        requestAnimationFrame(animate);
+    }
+    animate();
+}
+
