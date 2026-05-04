@@ -325,11 +325,11 @@
                 mouseY += (window.innerHeight / 2 - mouseY) * 0.005;
             }
 
-            blobX += (mouseX - blobX) * 0.06;
-            blobY += (mouseY - blobY) * 0.06;
+            blobX += (mouseX - blobX) * 0.03;
+            blobY += (mouseY - blobY) * 0.03;
 
-            blob.style.left = (blobX - 300) + 'px';
-            blob.style.top = (blobY - 300) + 'px';
+            blob.style.left = (blobX - 450) + 'px';
+            blob.style.top = (blobY - 450) + 'px';
 
             requestAnimationFrame(animate);
         }
