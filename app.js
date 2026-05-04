@@ -10,21 +10,9 @@ const BRANDING = {
 let courses = [];
 let activeCourseId = null;
 
-window.onload = init;
-
 async function init() {
-    initLanguage(); 
-    initTheme();
-    initGreeting();
-    
-    // Load local data immediately (Non-blocking)
-    loadData(); 
-
-    // Background Auth & Cloud Sync
-    checkAuth().then(() => {
-        // Refresh sidebar after sync
-        renderCourseList();
-    }).catch(e => console.warn("Cloud Sync Deferred:", e));
+    initLanguage(); // Load language preference
+    await checkAuth(); // Await data loading
     
     // Load cached sync info immediately for better UX
     const cachedSync = localStorage.getItem('hub_last_sync');
@@ -33,24 +21,25 @@ async function init() {
         if (infoEl) infoEl.innerText = cachedSync;
     }
 
-    document.getElementById('keyword-search-header')?.addEventListener('input', (e) => {
-        renderTablesFromHeader(e.target.value);
+    document.getElementById('keyword-search').addEventListener('input', (e) => {
+        filterKeywords(e.target.value);
     });
 
-    document.getElementById('course-search-sidebar')?.addEventListener('input', (e) => {
-        renderCourseList(e.target.value);
-    });
-
-    document.getElementById('gsc-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
-    document.getElementById('ads-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
-    document.getElementById('rankings-upload')?.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
+    document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
+    document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+    document.getElementById('rankings-upload').addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
+    loadData(); 
+    initTheme();
+    initGreeting();
+
     // Default View: Show Landing Hero
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
 }
+
 
 function initGreeting(nameOverride) {
     const userName = nameOverride || localStorage.getItem('hub_user_name');
@@ -954,15 +943,6 @@ function normalizeKeyword(term) {
         .trim();
 }
 
-function hexToRgb(hex) {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}
-
 function getContrastColor(hex) {
     const rgb = hexToRgb(hex);
     if (!rgb) return '#ffffff';
@@ -1042,7 +1022,7 @@ function renderCourseList(searchQuery = '') {
         instHeader.style.borderColor = brand.bgSub;
         list.appendChild(instHeader);
 
-        const degreeOrder = ['CTeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
+        const degreeOrder = ['TeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
         Object.keys(grouped[inst]).sort((a, b) => {
             const indexA = degreeOrder.indexOf(a);
             const indexB = degreeOrder.indexOf(b);
@@ -1051,44 +1031,15 @@ function renderCourseList(searchQuery = '') {
             if (indexB === -1) return -1;
             return indexA - indexB;
         }).forEach(degree => {
-            const degreeSection = document.createElement('div');
-            degreeSection.className = 'degree-section';
-            
             const degreeBtn = document.createElement('div');
             degreeBtn.className = 'nav-degree-btn';
-            degreeBtn.innerHTML = `
-                <span>${displayMapping[degree] || degree}</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-            `;
-            
-            const courseList = document.createElement('ul');
-            courseList.className = 'nav-course-list';
-            
-            grouped[inst][degree].sort((a, b) => a.name.localeCompare(b.name)).forEach(course => {
-                const li = document.createElement('li');
-                li.className = course.id === activeCourseId ? 'active' : '';
-                li.textContent = course.name;
-                li.onclick = (e) => {
-                    e.stopPropagation();
-                    loadCourse(course.id);
-                    document.querySelectorAll('.nav-course-list li').forEach(el => el.classList.remove('active'));
-                    li.classList.add('active');
-                };
-                courseList.appendChild(li);
+            degreeBtn.textContent = displayMapping[degree] || degree;
+            degreeBtn.addEventListener('click', () => {
+                document.querySelectorAll('.nav-degree-btn').forEach(b => b.classList.remove('active'));
+                degreeBtn.classList.add('active');
+                selectDegreeHub(inst, degree, grouped[inst][degree]);
             });
-
-            degreeBtn.onclick = () => {
-                const isOpen = degreeSection.classList.toggle('open');
-                if (isOpen) {
-                    document.querySelectorAll('.degree-section').forEach(s => {
-                        if (s !== degreeSection) s.classList.remove('open');
-                    });
-                }
-            };
-
-            degreeSection.appendChild(degreeBtn);
-            degreeSection.appendChild(courseList);
-            list.appendChild(degreeSection);
+            list.appendChild(degreeBtn);
         });
     });
 
@@ -1587,14 +1538,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         };
     }
 
-    // Zero-Restriction General Persona
-    context = "You are a highly capable AI assistant with access to institutional performance data. ";
-    context += "Instructions: Answer any user query with total freedom and flexibility. DO NOT restrict yourself to SEO topics. ";
-    context += "Only reference the 'SYSTEM DATA' below if the user's question specifically relates to it. Otherwise, answer as a general-purpose AI. ";
-    
     context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
+    context += "Instructions: You are a trend-aware lead strategist. Prioritize 3-month deltas to identify surging/dying keywords. ";
+    context += "Answer precisely using the data when relevant, but DO NOT restrict yourself to SEO topics. Answer any user query with full flexibility.";
 
-    const parts = [{ text: context + "\n\nUser Question: " + (customPrompt || action) }];
+    const parts = [{ text: context + "\n\nUser Question: " + prompt }];
     
     if (attachedFile) {
         if (attachedFile.isImage) {
