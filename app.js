@@ -1626,8 +1626,12 @@ function formatAIResponse(text) {
 }
 
 function initBlobTracking() {
+    console.log("Initializing Blob Tracking...");
     const blob = document.querySelector('.floating-blob');
-    if (!blob) return;
+    if (!blob) {
+        console.error("Blob element not found!");
+        return;
+    }
 
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
@@ -1635,14 +1639,14 @@ function initBlobTracking() {
     let blobY = mouseY;
     let isMouseActive = false;
 
-    document.addEventListener('mousemove', (e) => {
+    // Track mouse globally
+    window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         isMouseActive = true;
     });
 
-    // Handle mouse leaving the window
-    document.addEventListener('mouseleave', () => {
+    window.addEventListener('mouseleave', () => {
         isMouseActive = false;
     });
 
@@ -1654,14 +1658,15 @@ function initBlobTracking() {
         }
 
         // Smooth follow (Lerp)
-        blobX += (mouseX - blobX) * 0.05;
-        blobY += (mouseY - blobY) * 0.05;
+        blobX += (mouseX - blobX) * 0.08; // Increased speed slightly
+        blobY += (mouseY - blobY) * 0.08;
 
-        // Offset by half blob size (300px)
-        blob.style.transform = `translate(${blobX - 300}px, ${blobY - 300}px)`;
+        // Apply transform
+        blob.style.transform = `translate3d(${blobX - 300}px, ${blobY - 300}px, 0)`;
         
         requestAnimationFrame(animate);
     }
     animate();
+    console.log("Blob Tracking Active.");
 }
 
