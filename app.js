@@ -1539,7 +1539,8 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     }
 
     context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
-    context += "Instructions: You are a trend-aware analyst. Prioritize the 3-month trend deltas to identify surging or dying keywords. ";
+    context += "Instructions: You are a trend-aware lead strategist. Prioritize 3-month deltas to identify surging/dying keywords. ";
+    context += "Answer precisely using the data when relevant, but DO NOT restrict yourself to SEO topics. Answer any user query with full flexibility.";
 
     const parts = [{ text: context + "\n\nUser Question: " + prompt }];
     
