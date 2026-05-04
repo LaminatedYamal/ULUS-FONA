@@ -1398,7 +1398,7 @@ window.askGemini = async function(action) {
     if (action === 'strategy') prompt = "Suggest 3 content optimization strategies for this course based on the ranking keywords and their positions.";
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
