@@ -1424,45 +1424,64 @@ window.askGemini = async function(action, customPrompt = "") {
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    // Build Rich Structured Context
-    let context = "You are a professional SEO analyst for a higher education group. ";
+    // Build Deep Structured Context
+    let context = "You are a lead institutional SEO strategist for the Lusófona Group. ";
     let dataPayload = {};
 
     if (course) {
         dataPayload = {
-            mode: "Course Specific",
-            name: course.name,
-            institution: course.institution,
+            target: "Course Analysis",
+            identity: { name: course.name, institution: course.institution },
             metrics: {
-                total_gsc_keywords: course.gscKeywords.length,
-                total_ads_keywords: course.adsKeywords.length,
-                total_rankings: course.rankingsKeywords.length
+                gsc_total: course.gscKeywords.length,
+                ads_total: course.adsKeywords.length,
+                rankings_total: course.rankingsKeywords.length
             },
-            top_gsc_performance: course.gscKeywords.slice(0, 30).map(k => ({ term: k.term, clicks: k.clicks, imp: k.impressions, ctr: k.ctr })),
-            ads_strategy: course.adsKeywords.slice(0, 25).map(k => ({ term: k.term, status: k.status })),
-            search_rankings: course.rankingsKeywords.slice(0, 20).map(k => ({ term: k.term, rank: k.rank }))
+            performance_data: {
+                top_gsc: course.gscKeywords.slice(0, 100).map(k => ({ t: k.term, c: k.clicks, i: k.impressions, ctr: k.ctr })),
+                top_ads: course.adsKeywords.slice(0, 50).map(k => ({ t: k.term, s: k.status })),
+                top_rankings: course.rankingsKeywords.slice(0, 50).map(k => ({ t: k.term, r: k.rank }))
+            },
+            synergies: course.gscKeywords.filter(k => 
+                course.adsKeywords.some(ak => ak.term === k.term) && 
+                course.rankingsKeywords.some(rk => rk.term === k.term)
+            ).map(k => k.term).slice(0, 20)
         };
     } else {
-        const instStats = courses.reduce((acc, c) => {
-            if (!acc[c.institution]) acc[c.institution] = { courses: 0, clicks: 0 };
-            acc[c.institution].courses++;
-            acc[c.institution].clicks += c.gscKeywords.reduce((sum, k) => sum + k.clicks, 0);
-            return acc;
-        }, {});
+        const instMap = {};
+        const globalTop = [];
+        let totalSynergy = 0;
+
+        courses.forEach(c => {
+            if (!instMap[c.institution]) instMap[c.institution] = { count: 0, courses: [] };
+            instMap[c.institution].count++;
+            instMap[c.institution].courses.push(c.name);
+            
+            const syns = c.gscKeywords.filter(k => 
+                c.adsKeywords.some(ak => ak.term === k.term) && 
+                c.rankingsKeywords.some(rk => rk.term === k.term)
+            ).length;
+            totalSynergy += syns;
+        });
 
         dataPayload = {
-            mode: "Global Institutional Fleet",
-            total_courses: courses.length,
-            institution_performance: instStats,
-            top_global_terms: courses.flatMap(c => c.gscKeywords)
+            target: "Institutional Fleet Analysis",
+            total_stats: {
+                courses: courses.length,
+                institutions: Object.keys(instMap).length,
+                global_synergy_matches: totalSynergy
+            },
+            institutional_hierarchy: instMap,
+            top_performing_terms: courses.flatMap(c => c.gscKeywords)
                 .sort((a,b) => b.clicks - a.clicks)
-                .slice(0, 50)
-                .map(k => k.term)
+                .slice(0, 100)
+                .map(k => ({ t: k.term, c: k.clicks }))
         };
     }
 
-    context += "Current Data Context: " + JSON.stringify(dataPayload) + ". ";
-    context += "Use this data to answer accurately. If asked for strategy, be specific about institutions and terms. ";
+    context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
+    context += "Instructions: You have full access to this data. Be precise. If asked 'who has X', check all courses. ";
+    context += "If asked for strategy, prioritize Triple Matches and High-Impression/Low-CTR gaps. ";
     context += "Do not restrict yourself to SEO; handle any general query while prioritizing data awareness.";
 
     let prompt = customPrompt;
