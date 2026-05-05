@@ -1518,8 +1518,8 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     } catch(e) {}
 
     let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database (provided below). ";
-    context += "Your job is to analyze the 'gscKeywords', 'adsKeywords', and 'live_campaign_monitor' data to find gaps and growth opportunities. ";
-    context += "Be direct, professional, and data-driven. Do not apologize or explain that you are an AI. Just provide the strategy. ";
+    context += "STRICT RULE: Only use numbers found in the SYSTEM DATA. If a data source (like GSC or Ads) is empty, do NOT make up numbers. Instead, inform the user that the specific data is missing and ask them to sync it. ";
+    context += "Be direct, professional, and data-driven. Do not apologize. ";
 
     let dataPayload = {};
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
