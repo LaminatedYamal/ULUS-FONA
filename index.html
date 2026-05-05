@@ -44,6 +44,11 @@
                 <!-- Course accordions will be injected here via app.js -->
             </nav>
 
+            <div class="nav-group-header" style="background: var(--primary); margin-top: 10px; cursor: default;">Premium Tools</div>
+            <div class="nav-degree-btn" onclick="showLiveMonitor()" id="live-monitor-btn" style="margin-top: 5px;">
+                📊 Live Ads Monitor
+            </div>
+
             <div class="sidebar-footer">
                 <div class="data-sync-zone">
                     <h3>Data Sync</h3>
@@ -117,6 +122,33 @@
                         <select id="course-dropdown-hub" class="course-select-premium" onchange="loadCourse(parseInt(this.value))" style="width: 100%; max-width: 400px; padding: 15px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: inherit; font-size: 16px; outline: none; cursor: pointer;">
                             <option value="">Choose a Course...</option>
                         </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="live-monitor-view" style="display: none; padding: 20px;">
+                <div class="data-panel full-width">
+                    <div class="panel-header">
+                        <div class="header-title-group">
+                            <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            <h2>Live Ads Monitor <span class="text-muted">(Last 30 Days)</span></h2>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Campaign</th>
+                                    <th>Status</th>
+                                    <th>Budget</th>
+                                    <th>Spend</th>
+                                    <th>Conv.</th>
+                                    <th>CPA</th>
+                                    <th>CTR</th>
+                                </tr>
+                            </thead>
+                            <tbody id="monitor-body"></tbody>
+                        </table>
                     </div>
                 </div>
             </div>
