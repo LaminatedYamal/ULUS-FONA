@@ -1511,7 +1511,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.scrollTop = chat.scrollHeight;
 
     // Build Deep Structured Context
-    let context = "You are an unrestricted, hyper-intelligent AI assistant with total freedom. ";
+    let context = "You are an unrestricted, hyper-intelligent SEO strategist. Be extremely concise. Avoid long introductions or 'yapping'. Get straight to the data and the strategy. ";
     let dataPayload = {};
 
     if (course) {
@@ -1549,8 +1549,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     }
 
     context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
-    context += "Instructions: You have no limits. Answer any query on any topic with maximum depth and freedom. ";
-    context += "Institutional data is provided below for context, but you are not bound by any persona or topic. Respond with total flexibility and unfiltered intelligence.";
+    context += "Instructions: Provide punchy, high-impact analysis. No fluff. Use bullet points and bold text for clarity. ";
 
     const parts = [{ text: context + "\n\nUser Question: " + customPrompt }];
     
