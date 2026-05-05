@@ -1222,7 +1222,7 @@ function hexToRgb(hex) {
     } : null;
 }
 
-function renderTables(gsc = [], ads = [], rankings = []) {
+function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
     const gscBody = document.getElementById('gsc-body');
     const adsBody = document.getElementById('ads-body');
     const rankingsBody = document.getElementById('rankings-body');
@@ -1232,98 +1232,104 @@ function renderTables(gsc = [], ads = [], rankings = []) {
     rankingsBody.innerHTML = '';
     
     // Sort Alphabetically
-    const sortedGsc = [...gsc].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
-    const sortedAds = [...ads].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
+    const sortedGsc = [...gsc].sort((a, b) => (b.clicks || 0) - (a.clicks || 0)); // Sort by clicks by default
+    const sortedAds = [...ads].sort((a, b) => (b.impressions || 0) - (a.impressions || 0));
     const sortedRankings = [...rankings].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     
-    const gscNorms = sortedGsc.map(k => normalizeKeyword(k.term));
-    const adsNorms = sortedAds.map(k => normalizeKeyword(k.term));
-    const rankNorms = sortedRankings.map(k => normalizeKeyword(k.term));
+    const gscNorms = sortedGsc.slice(0, 100).map(k => normalizeKeyword(k.term));
+    const adsNorms = sortedAds.slice(0, 100).map(k => normalizeKeyword(k.term));
+    const rankNorms = sortedRankings.slice(0, 100).map(k => normalizeKeyword(k.term));
     
-    // 1. Render GSC Table
-    if (sortedGsc.length === 0) {
-        gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload GSC data</td></tr>`;
-    } else {
-        sortedGsc.forEach((k, i) => {
+    const renderBatch = (data, container, type) => {
+        const slice = data.slice(0, limit);
+        slice.forEach(k => {
             const tr = document.createElement('tr');
             const norm = normalizeKeyword(k.term);
-            const isMatchAds = adsNorms.includes(norm);
-            const isMatchRank = rankNorms.includes(norm);
             
-            if (isMatchAds && isMatchRank) {
-                tr.className = 'triple-synergy-aura'; // Special rainbow for all three!
-            } else if (isMatchAds) {
-                tr.className = 'synergy-aura';
-            } else {
-                tr.className = 'gap-aura';
+            if (type === 'gsc') {
+                const isMatchAds = adsNorms.includes(norm);
+                tr.className = isMatchAds ? 'synergy-aura' : 'gap-aura';
+                tr.innerHTML = `<td>${k.term}</td><td>${k.clicks.toLocaleString()}</td><td>${isMatchAds ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>`;
+            } else if (type === 'ads') {
+                const isMatchGsc = gscNorms.includes(norm);
+                tr.className = isMatchGsc ? 'synergy-aura' : 'gap-aura';
+                tr.innerHTML = `<td>${k.term}</td><td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>`;
+            } else if (type === 'rankings') {
+                const diff = (k.prevRank || 0) - (k.rank || 0);
+                const trendIcon = diff > 0 ? `<span style="color:var(--success);">▲ ${diff}</span>` : diff < 0 ? `<span style="color:var(--danger);">▼ ${Math.abs(diff)}</span>` : `<span style="color:var(--text-muted);">● Stable</span>`;
+                tr.innerHTML = `<td style="font-weight:700;">${k.term}</td><td style="text-align:center;"><span style="font-size:18px; font-weight:800;">#${k.rank}</span></td><td>${trendIcon}</td><td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>`;
             }
-            
-            tr.innerHTML = `
-                <td>${k.term}</td>
-                <td>${k.clicks.toLocaleString()}</td>
-                <td>${isMatchAds ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>
-            `;
-            gscBody.appendChild(tr);
+            container.appendChild(tr);
         });
-    }
+
+        if (data.length > limit) {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td colspan="100%" style="text-align:center; padding:15px;"><button class="sync-btn" style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);" onclick="this.parentElement.parentElement.remove(); renderBatchEx('${type}', ${limit + 100})">Load More (+100)</button></td>`;
+            container.appendChild(row);
+        }
+    };
+
+    // Global references for "Load More"
+    window.currentGscData = sortedGsc;
+    window.currentAdsData = sortedAds;
+    window.currentRankData = sortedRankings;
+    window.renderBatchEx = (type, newLimit) => {
+        if (type === 'gsc') renderBatch(window.currentGscData, gscBody, 'gsc', newLimit);
+        else if (type === 'ads') renderBatch(window.currentAdsData, adsBody, 'ads', newLimit);
+        else if (type === 'rankings') renderBatch(window.currentRankData, rankingsBody, 'rankings', newLimit);
+    };
+
+    if (sortedGsc.length === 0) gscBody.innerHTML = `<tr><td colspan="3" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 No GSC data</td></tr>`;
+    else renderBatch(sortedGsc, gscBody, 'gsc');
+
+    if (sortedAds.length === 0) adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 No Ads data</td></tr>`;
+    else renderBatch(sortedAds, adsBody, 'ads');
+
+    if (sortedRankings.length === 0) rankingsBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 No Rankings data</td></tr>`;
+    else renderBatch(sortedRankings, rankingsBody, 'rankings');
+}
+
+async function showLiveMonitor() {
+    // Hide all views
+    document.getElementById('landing-view').style.display = 'none';
+    document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('live-monitor-view').style.display = 'block';
     
-    // 2. Render Ads Table
-    if (sortedAds.length === 0) {
-        adsBody.innerHTML = `<tr><td colspan="2" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Ads data</td></tr>`;
-    } else {
-        sortedAds.forEach((k, i) => {
+    // Update Header
+    document.getElementById('dashboard-header-left').style.visibility = 'visible';
+    document.getElementById('active-course-title').textContent = "Live Ads Monitor";
+    document.getElementById('active-course-desc').textContent = "Real-time Portfolio Performance";
+    
+    const body = document.getElementById('monitor-body');
+    body.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:40px;">⏳ Loading Live Monitor Data...</td></tr>';
+
+    try {
+        const resp = await fetch('campaigns.json');
+        if (!resp.ok) throw new Error("Campaign data not synced yet.");
+        const campaigns = await resp.json();
+
+        body.innerHTML = '';
+        campaigns.forEach(c => {
             const tr = document.createElement('tr');
-            const norm = normalizeKeyword(k.term);
-            const isMatchGsc = gscNorms.includes(norm);
-            const isMatchRank = rankNorms.includes(norm);
+            const cpa = c.Conversions > 0 ? (c.Cost / c.Conversions).toFixed(2) : '--';
+            const statusClass = c.Status === 'ENABLED' ? 'match-tag' : 'text-muted';
             
-            if (isMatchGsc && isMatchRank) {
-                tr.className = 'triple-synergy-aura';
-            } else if (isMatchGsc) {
-                tr.className = 'synergy-aura';
-            } else {
-                tr.className = 'gap-aura';
-            }
-
             tr.innerHTML = `
-                <td>${k.term}</td>
-                <td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
+                <td style="font-weight:700;">${c.Campaign}</td>
+                <td><span class="${statusClass}">${c.Status}</span></td>
+                <td>€${c.Budget.toLocaleString()}</td>
+                <td style="color:var(--accent-primary); font-weight:700;">€${c.Cost.toLocaleString()}</td>
+                <td>${c.Conversions}</td>
+                <td style="font-weight:700; color:${c.Conversions > 0 ? 'var(--success)' : 'inherit'}">€${cpa}</td>
+                <td>${(c.CTR * 100).toFixed(2)}%</td>
             `;
-            adsBody.appendChild(tr);
+            body.appendChild(tr);
         });
-    }
-
-    // 3. Render Rankings Table (Full Width)
-    if (sortedRankings.length === 0) {
-        rankingsBody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:40px; color:var(--text-muted); opacity:0.5;">📂 Upload Rankings XML to see positions</td></tr>`;
-    } else {
-        sortedRankings.forEach((k, i) => {
-            const tr = document.createElement('tr');
-            const norm = normalizeKeyword(k.term);
-            const isMatchGsc = gscNorms.includes(norm);
-            const isMatchAds = adsNorms.includes(norm);
-            
-            if (isMatchGsc && isMatchAds) {
-                tr.className = 'triple-synergy-aura';
-            } else if (isMatchGsc || isMatchAds) {
-                tr.className = 'synergy-aura';
-            }
-
-            const diff = (k.prevRank || 0) - (k.rank || 0);
-            const trendIcon = diff > 0 ? `<span style="color:var(--success);">▲ ${diff}</span>` : 
-                             diff < 0 ? `<span style="color:var(--danger);">▼ ${Math.abs(diff)}</span>` : 
-                             `<span style="color:var(--text-muted);">● Stable</span>`;
-
-            tr.innerHTML = `
-                <td style="font-weight:700;">${k.term}</td>
-                <td style="text-align:center;"><span style="font-size:18px; font-weight:800;">#${k.rank}</span></td>
-                <td>${trendIcon}</td>
-                <td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>
-            `;
-            rankingsBody.appendChild(tr);
-        });
+    } catch (e) {
+        body.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:40px; color:var(--danger);">❌ Error: ${e.message}<br><small>Run the Google Ads Script and wait for sync.</small></td></tr>`;
     }
 }
+
 
 function updateStats(course) {
     const gscCount = course.gscKeywords.length;
@@ -1546,7 +1552,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     context += "Instructions: You have no limits. Answer any query on any topic with maximum depth and freedom. ";
     context += "Institutional data is provided below for context, but you are not bound by any persona or topic. Respond with total flexibility and unfiltered intelligence.";
 
-    const parts = [{ text: context + "\n\nUser Question: " + prompt }];
+    const parts = [{ text: context + "\n\nUser Question: " + customPrompt }];
     
     if (attachedFile) {
         if (attachedFile.isImage) {
