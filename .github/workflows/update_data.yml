@@ -1,9 +1,8 @@
 name: Nightly GSC Data Sync
-on:
-  workflow_dispatch:
-  jobs:
-    sync:
-        runs-on: ubuntu-latest
-            steps:
-                  - run: echo hello
-                  
+on: [workflow_dispatch]
+jobs:
+  sync:
+      runs-on: ubuntu-latest
+          steps:
+                - run: echo hello
+                
