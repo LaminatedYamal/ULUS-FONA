@@ -74,6 +74,25 @@ def fetch_ads_data(creds_dict, sheet_id):
         print(f"Error fetching Ads data from Sheets: {str(e)}")
         return None
 
+def fetch_campaign_data(creds_dict, sheet_id):
+    """Fetches Campaign performance data from the 'Campaigns' tab."""
+    if not sheet_id:
+        return None
+    try:
+        credentials = service_account.Credentials.from_service_account_info(
+            creds_dict, scopes=SHEETS_SCOPES
+        )
+        gc = gspread.authorize(credentials)
+        # Try to open the 'Campaigns' worksheet
+        sheet = gc.open_by_key(sheet_id).worksheet('Campaigns')
+        records = sheet.get_all_records()
+        print(f"Successfully loaded {len(records)} campaigns from Sheets.")
+        return records
+    except Exception as e:
+        # Don't crash if the tab doesn't exist yet
+        print(f"Note: Could not fetch 'Campaigns' tab (might not be created yet): {str(e)}")
+        return None
+
 def main():
     print("Starting automated data fetch pipeline...")
     
@@ -94,6 +113,12 @@ def main():
 
     # Fetch global ads data from Sheet
     ads_records = fetch_ads_data(creds_dict, GOOGLE_ADS_SHEET_ID)
+    campaign_records = fetch_campaign_data(creds_dict, GOOGLE_ADS_SHEET_ID)
+
+    if campaign_records:
+        with open('campaigns.json', 'w', encoding='utf-8') as f:
+            json.dump(campaign_records, f, indent=2)
+            print("Exported campaigns.json for the Live Monitor.")
 
     courses_updated_gsc = 0
     courses_updated_ads = 0
@@ -110,7 +135,8 @@ def main():
             print(f"Querying GSC for: {url}")
             new_gsc_data = fetch_gsc_data(gsc_service, url)
             if new_gsc_data is not None:
-                item['gscKeywords'] = new_gsc_data
+                # Prune to top 100 to keep JSON size agile
+                item['gscKeywords'] = sorted(new_gsc_data, key=lambda x: x['clicks'], reverse=True)[:100]
                 courses_updated_gsc += 1
 
         # 2. Update Ads from Sheet
@@ -119,20 +145,58 @@ def main():
             keyword_map = {}
             
             for row in ads_records:
-                campaign = str(row.get('Campaign Name', '')).lower()
-                adgroup = str(row.get('Ad Group Name', '')).lower()
+                # Get common column names (case-insensitive)
+                campaign = str(row.get('Campaign', row.get('Campaign Name', row.get('campanha', '')))).lower()
+                adgroup = str(row.get('Ad Group', row.get('Ad Group Name', row.get('grupo de anúncios', '')))).lower()
+                term = str(row.get('Keyword', row.get('Palavra-chave', ''))).strip()
+                term_lower = term.lower()
                 
-                # Match logic: if the course name is inside the Campaign or Ad Group name
-                if course_name_lower in campaign or course_name_lower in adgroup:
-                    term = str(row.get('Keyword', '')).strip()
-                    imps = int(row.get('Impressions', 0))
-                    if term:
-                        keyword_map[term] = keyword_map.get(term, 0) + imps
+                # Metrics (try Impressions then Search Volume)
+                imps = row.get('Impressions', row.get('Impressões', 0))
+                volume = row.get('Avg. monthly searches', row.get('Média de pesquisas mensais', 0))
+                
+                # Normalize values (handle strings with commas/periods)
+                def normalize_val(v):
+                    if isinstance(v, str):
+                        v = v.replace('.', '').replace(',', '').strip()
+                        return int(v) if v.isdigit() else 0
+                    return int(v) if v else 0
+
+                val = normalize_val(imps)
+                is_performance = val > 0
+                
+                if val == 0:
+                    val = normalize_val(volume)
+
+                # Matching Strategy:
+                # 1. Final URL Match (from Apps Script)
+                # 2. Performance Match: Course name in Campaign/AdGroup
+                # 3. Research Match: Course name in Keyword itself
+                is_match = False
+                final_url = str(row.get('Final URL', '')).lower().strip()
+                
+                if final_url and url:
+                    u1 = url.lower().replace('https://', '').replace('http://', '').replace('www.', '').rstrip('/')
+                    u2 = final_url.replace('https://', '').replace('http://', '').replace('www.', '').rstrip('/')
+                    if u1 and u2 and (u1 in u2 or u2 in u1):
+                        is_match = True
+                
+                if not is_match:
+                    if course_name_lower in campaign or course_name_lower in adgroup:
+                        is_match = True
+                    elif course_name_lower in term_lower or term_lower in course_name_lower:
+                        is_match = True
+
+                if is_match and term:
+                    # Prefer performance data over volume if both exist in different rows
+                    # But for now, we just sum or take max
+                    keyword_map[term] = max(keyword_map.get(term, 0), val)
             
             if keyword_map:
                 course_ads = [{'term': k, 'impressions': v} for k, v in keyword_map.items()]
                 course_ads.sort(key=lambda x: x['impressions'], reverse=True)
-                item['adsKeywords'] = course_ads
+                # Prune to top 100
+                item['adsKeywords'] = course_ads[:100]
                 courses_updated_ads += 1
 
     # Update Metadata
