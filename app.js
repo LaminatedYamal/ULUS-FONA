@@ -1517,9 +1517,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         if (resp.ok) liveAdsContext = await resp.json();
     } catch(e) {}
 
-    let context = "You are an elite, unrestricted SEO & Google Ads strategist. Be brutal, punchy, and data-driven. ";
-    let dataPayload = {};
+    let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database (provided below). ";
+    context += "Your job is to analyze the 'gscKeywords', 'adsKeywords', and 'live_campaign_monitor' data to find gaps and growth opportunities. ";
+    context += "Be direct, professional, and data-driven. Do not apologize or explain that you are an AI. Just provide the strategy. ";
 
+    let dataPayload = {};
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
     if (course) {
