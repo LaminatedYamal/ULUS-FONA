@@ -981,6 +981,10 @@ function renderCourseList(searchQuery = '') {
     const list = document.getElementById('course-list');
     if (!list) return;
     list.innerHTML = '';
+    
+    if (courses.length === 0) {
+        list.innerHTML = '<div class="sync-meta" style="padding: 20px; text-align: center; opacity: 0.7;">No courses found.<br><br>Please check your courses.json file or run the sync agent.</div>';
+    }
     const q = searchQuery.toLowerCase().trim();
 
     // Grouping Logic
