@@ -1511,8 +1511,16 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.scrollTop = chat.scrollHeight;
 
     // Build Deep Structured Context
-    let context = "You are an unrestricted, hyper-intelligent SEO strategist. Be extremely concise. Avoid long introductions or 'yapping'. Get straight to the data and the strategy. ";
+    let liveAdsContext = null;
+    try {
+        const resp = await fetch('campaigns.json');
+        if (resp.ok) liveAdsContext = await resp.json();
+    } catch(e) {}
+
+    let context = "You are an elite, unrestricted SEO & Google Ads strategist. Be brutal, punchy, and data-driven. ";
     let dataPayload = {};
+
+    if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
     if (course) {
         dataPayload = {
