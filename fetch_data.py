@@ -30,7 +30,7 @@ def load_ads_data(sheet_id, creds_dict):
         return None
 
 def load_campaign_data(sheet_id, creds_dict):
-    """Loads campaign stats from the 'Campaigns' tab."""
+    """Loads campaign stats from the 'Campaigns' tab using direct indexes."""
     if not sheet_id or not creds_dict:
         return None
     try:
@@ -39,41 +39,59 @@ def load_campaign_data(sheet_id, creds_dict):
         )
         gc = gspread.authorize(credentials)
         sheet = gc.open_by_key(sheet_id).worksheet('Campaigns')
-        records = sheet.get_all_records()
-        print(f"Successfully loaded {len(records)} campaigns from Sheets.")
+        all_vals = sheet.get_all_values()
+        if len(all_vals) < 2: return []
+        
+        records = []
+        for row in all_vals[1:]: # Skip headers
+            if len(row) < 9: continue
+            records.append({
+                'Campaign': row[0],
+                'Status': row[1],
+                'Budget': row[2],
+                'Cost': row[3],        # Fixed Mapping: Cost is at index 3
+                'Impressions': row[4], # Fixed Mapping: Impr is at index 4
+                'Clicks': row[5],      # Fixed Mapping: Clicks is at index 5
+                'Conversions': row[6],
+                'CTR': row[7],
+                'CostPerConv': row[8]
+            })
+        print(f"Successfully loaded {len(records)} campaigns from Sheets (Direct Mapping).")
         return records
     except Exception as e:
         print(f"Note: Could not fetch 'Campaigns' tab: {str(e)}")
         return None
 
 def clean_num(v):
-    """Strips currency, %, commas, and converts to int."""
-    if isinstance(v, str):
-        # Remove currency, %, spaces
-        v = v.replace('€', '').replace('$', '').replace('%', '').replace(' ', '').replace('\xa0', '')
-        # Handle European decimal: 1.234,56 -> 1234.56
-        if ',' in v and '.' in v:
-            if v.find('.') < v.find(','): # dot is thousands
-                v = v.replace('.', '').replace(',', '.')
-            else: # comma is thousands
-                v = v.replace(',', '').replace('.', '.')
-        elif ',' in v:
-            v = v.replace(',', '.')
+    """Robustly cleans strings with EU/US decimals and currency."""
+    if v is None or v == "": return 0
+    if isinstance(v, (int, float)): return v
+    
+    # Remove currency, %, spaces, thousands separators
+    s = str(v).replace('€', '').replace('$', '').replace('%', '').replace(' ', '').replace('\xa0', '')
+    
+    # Handle European decimal: 1.234,56 or 644,02
+    if ',' in s and '.' not in s:
+        s = s.replace(',', '.')
+    elif ',' in s and '.' in s:
+        if s.find('.') < s.find(','): # dot is thousands (1.234,56)
+            s = s.replace('.', '').replace(',', '.')
+        else: # comma is thousands (1,234.56)
+            s = s.replace(',', '')
+            
     try:
-        f_val = float(v)
-        # Safety: If number is huge (e.g. 644022187 for cost), it's likely a formatting error
-        # or micro-currency. We'll cap/normalize if it's clearly impossible.
-        return int(f_val)
+        return float(s)
     except:
         return 0
 
 def clean_ctr(v):
     """Ensures CTR is a sane percentage string."""
-    # If it's already a clean decimal (e.g. 0.05), handle it
     try:
-        val = float(str(v).replace('%', '').replace(',', '.'))
-        if val > 100: # 1709200.00% -> 17.09%
-            val = val / 10000
+        val = clean_num(v)
+        # If it's 0.17092 (decimal), it's 17.09%
+        # If it's 17.09 (whole), it's 17.09%
+        if val < 1.0 and val > 0:
+            val = val * 100
         return f"{val:.2f}%"
     except:
         return "0.00%"
