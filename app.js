@@ -112,7 +112,11 @@ const TRANSLATIONS = {
         "system-active": "System Active",
         "loading": "Loading sync status...",
         "search-courses": "Search courses...",
-        "search-keywords": "Search keywords..."
+        "search-keywords": "Search keywords...",
+        "welcome-subtext": "Select a degree category from the sidebar to begin",
+        "premium-tools": "Premium Tools",
+        "live-ads-monitor": "📊 Live Ads Monitor",
+        "data-sync": "Data Sync"
     },
     pt: {
         "greeting": "Olá",
@@ -151,7 +155,11 @@ const TRANSLATIONS = {
         "system-active": "Sistema Ativo",
         "loading": "A carregar status...",
         "search-courses": "Procurar cursos...",
-        "search-keywords": "Procurar keywords..."
+        "search-keywords": "Procurar keywords...",
+        "welcome-subtext": "Selecione uma categoria de curso na barra lateral para começar",
+        "premium-tools": "Ferramentas Premium",
+        "live-ads-monitor": "📊 Monitor de Ads em Direto",
+        "data-sync": "Sincronização de Dados"
     }
 };
 
@@ -192,10 +200,14 @@ function updateUILanguage() {
     const elements = {
         'active-course-title': t["select-course"],
         'active-course-desc': t["global-analysis"],
-        'sync-header': t["sync"],
+        'sync-header': t["data-sync"],
+        'data-sync-header': t["data-sync"],
         'sync-btn': t["sync-team"],
         'system-active-text': t["system-active"],
-        'last-sync-info': t["loading"]
+        'last-sync-info': t["loading"],
+        'landing-subtitle': t["welcome-subtext"],
+        'premium-tools-header': t["premium-tools"],
+        'live-monitor-btn': t["live-ads-monitor"]
     };
 
     // Apply to DOM
