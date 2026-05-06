@@ -1529,6 +1529,10 @@ function handleSquareClick(square) {
         
         if (move) {
             selectedSquare = null;
+            // Trigger AI Move if it's black's turn
+            if (!chess.game_over() && chess.turn() === 'b') {
+                setTimeout(makeAIMove, 600);
+            }
         } else {
             selectedSquare = square;
         }
@@ -1539,6 +1543,37 @@ function handleSquareClick(square) {
         }
     }
     renderBoard();
+}
+
+function makeAIMove() {
+    if (chess.game_over()) return;
+    
+    const moves = chess.moves();
+    const values = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 };
+    
+    let bestMove = null;
+    let maxVal = -Infinity;
+    
+    moves.forEach(m => {
+        const moveObj = chess.move(m);
+        let val = Math.random() * 0.5; // Randomness for personality
+        if (moveObj.captured) {
+            val += values[moveObj.captured] * 10;
+        }
+        // Basic positional bonus: favor center
+        if (m.includes('d4') || m.includes('e4') || m.includes('d5') || m.includes('e5')) val += 2;
+        
+        chess.undo();
+        if (val > maxVal) {
+            maxVal = val;
+            bestMove = m;
+        }
+    });
+    
+    if (bestMove) {
+        chess.move(bestMove);
+        renderBoard();
+    }
 }
 
 function updateChessStatus() {
