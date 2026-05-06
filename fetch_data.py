@@ -46,6 +46,19 @@ def load_campaign_data(sheet_id, creds_dict):
         print(f"Note: Could not fetch 'Campaigns' tab: {str(e)}")
         return None
 
+def clean_num(v):
+    """Strips %, commas, and converts to int."""
+    if isinstance(v, str):
+        v = v.replace('%', '').replace(',', '').replace(' ', '')
+        # Handle cases like 1.234,56 (European) vs 1,234.56 (US)
+        if '.' in v and ',' in v:
+            v = v.replace('.', '') # Assume . is thousands separator
+        v = v.replace(',', '.')
+    try:
+        return int(float(v))
+    except:
+        return 0
+
 def main():
     print("Starting automated data fetch pipeline (v59)...")
     
@@ -71,9 +84,23 @@ def main():
 
     # Save Campaigns File for Live Monitor
     if campaign_records:
+        # Clean campaign data before saving
+        cleaned_campaigns = []
+        for c in campaign_records:
+            cleaned_campaigns.append({
+                'Campaign': c.get('Campaign', 'Unknown'),
+                'Status': c.get('Status', 'UNKNOWN'),
+                'Budget': clean_num(c.get('Budget', 0)),
+                'Cost': clean_num(c.get('Cost', 0)),
+                'Impressions': clean_num(c.get('Impressions', 0)),
+                'Clicks': clean_num(c.get('Clicks', 0)),
+                'Conversions': clean_num(c.get('Conversions', 0)),
+                'CTR': c.get('CTR', '0%'),
+                'CostPerConv': clean_num(c.get('CostPerConv', 0))
+            })
         with open(CAMPAIGNS_FILE_PATH, 'w', encoding='utf-8') as f:
-            json.dump(campaign_records, f, indent=2, ensure_ascii=False)
-        print(f"Generated {CAMPAIGNS_FILE_PATH} with {len(campaign_records)} rows.")
+            json.dump(cleaned_campaigns, f, indent=2, ensure_ascii=False)
+        print(f"Generated {CAMPAIGNS_FILE_PATH} with {len(cleaned_campaigns)} rows.")
 
     # 2. Process Courses
     courses_updated_ads = 0
@@ -89,7 +116,7 @@ def main():
             url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
             
             term = str(row.get('Keyword', '')).strip()
-            imps = row.get('Impressions', 0)
+            imps = clean_num(row.get('Impressions', 0))
             
             if url_clean and term:
                 if url_clean not in ads_map:
