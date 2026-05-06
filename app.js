@@ -1327,9 +1327,9 @@ function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
     const sortedAds = [...ads].sort((a, b) => (b.impressions || 0) - (a.impressions || 0));
     const sortedRankings = [...rankings].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     
-    const gscNorms = sortedGsc.slice(0, 100).map(k => normalizeKeyword(k.term));
-    const adsNorms = sortedAds.slice(0, 100).map(k => normalizeKeyword(k.term));
-    const rankNorms = sortedRankings.slice(0, 100).map(k => normalizeKeyword(k.term));
+    const gscNorms = gsc.map(k => normalizeKeyword(k.term));
+    const adsNorms = ads.map(k => normalizeKeyword(k.term));
+    const rankNorms = rankings.map(k => normalizeKeyword(k.term));
     
     const renderBatch = (data, container, type) => {
         const slice = data.slice(0, limit);
