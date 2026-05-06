@@ -1997,14 +1997,16 @@ body.light-mode .hero-text h2 {
 /* === RESPONSIVENESS (Fluid Antigravity) === */
 .mobile-only-btn {
     display: none;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 8px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #00f2ff;
+    color: #00f2ff;
+    padding: 10px;
+    border-radius: 12px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    z-index: 3000;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
 }
 
 @media (max-width: 1024px) {
