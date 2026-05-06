@@ -30,7 +30,11 @@
 
     <div class="app-container">
         <!-- Sidebar -->
+        <div id="mobile-overlay" class="mobile-overlay" onclick="toggleSidebar()"></div>
         <aside class="sidebar">
+            <button id="mobile-close-btn" class="mobile-only-btn close-btn" onclick="toggleSidebar()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
             <div class="logo">
                 <div class="logo-container">
                     <img id="brand-logo" src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Brand Logo">
