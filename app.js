@@ -1434,15 +1434,15 @@ window.showLiveMonitor = async function() {
                 const statusClass = status.toLowerCase().includes('enabl') ? 'match-tag' : 'text-muted';
                 
                 tr.innerHTML = `
-                    <td style="font-weight:700;">${name}</td>
-                    <td><span class="${statusClass}">${status}</span></td>
-                    <td style="text-align:right;">€${budget.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
-                    <td style="text-align:right; color:var(--text-muted); opacity:0.8;">${imps.toLocaleString()}</td>
-                    <td style="text-align:right; color:var(--text-muted); opacity:0.8;">${clicks.toLocaleString()}</td>
-                    <td style="text-align:right; color:var(--accent-primary); font-weight:700;">€${cost.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
-                    <td style="text-align:right;">${conv}</td>
-                    <td style="text-align:right; font-weight:700; color:${conv > 0 ? 'var(--success)' : 'inherit'}">€${cpa}</td>
-                    <td style="text-align:right;">${ctr}</td>
+                    <td style="font-weight:800; color: #ffffff; font-size: 14px;">${name}</td>
+                    <td><span class="${statusClass}" style="font-weight:700; padding: 4px 10px; border-radius: 6px; border: 1px solid currentColor;">${status}</span></td>
+                    <td style="text-align:right; font-weight:700; color: #ffffff;">€${budget.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right; font-weight:700; color: #ffffff;">${imps.toLocaleString()}</td>
+                    <td style="text-align:right; font-weight:700; color: #ffffff;">${clicks.toLocaleString()}</td>
+                    <td style="text-align:right; color:var(--accent-primary); font-weight:800; font-size: 14px;">€${cost.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right; font-weight:800; color: #ffffff;">${conv}</td>
+                    <td style="text-align:right; font-weight:800; color:${conv > 0 ? 'var(--success)' : '#ffffff'}">€${cpa}</td>
+                    <td style="text-align:right; font-weight:700; color: #ffffff;">${ctr}</td>
                 `;
                 body.appendChild(tr);
             });
