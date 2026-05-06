@@ -7,204 +7,116 @@ from googleapiclient.discovery import build
 
 # Configuration
 JSON_FILE_PATH = 'courses.json'
-GSC_SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
+CAMPAIGNS_FILE_PATH = 'campaigns.json'
 SHEETS_SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-DAYS_TO_FETCH = 365
-MAX_ROWS_PER_URL = 200
-GOOGLE_ADS_SHEET_ID = os.environ.get('GOOGLE_ADS_SHEET_ID', '1W6_6SRLDHSOVF0IR1RsRUxEkERn2ursuQAFyjcSNJUE')
+GSC_SCOPES = ['https://www.googleapis.com/auth/webmasters.readonly']
 
-def get_creds_dict():
-    creds_json = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
-    if not creds_json:
-        raise ValueError("GCP_SERVICE_ACCOUNT_JSON environment variable is not set!")
-    return json.loads(creds_json)
-
-def get_gsc_service(creds_dict):
-    """Authenticates and returns the GSC service object."""
-    credentials = service_account.Credentials.from_service_account_info(
-        creds_dict, scopes=GSC_SCOPES
-    )
-    return build('searchconsole', 'v1', credentials=credentials)
-
-def fetch_gsc_data(service, site_url):
-    """Fetches keyword data for a specific site URL over the last 30 days."""
-    end_date = datetime.date.today()
-    start_date = end_date - datetime.timedelta(days=DAYS_TO_FETCH)
-    
-    request = {
-        'startDate': start_date.strftime('%Y-%m-%d'),
-        'endDate': end_date.strftime('%Y-%m-%d'),
-        'dimensions': ['query'],
-        'rowLimit': MAX_ROWS_PER_URL
-    }
-    
-    try:
-        response = service.searchanalytics().query(siteUrl=site_url, body=request).execute()
-        
-        keywords = []
-        if 'rows' in response:
-            for row in response['rows']:
-                term = row['keys'][0]
-                clicks = int(row.get('clicks', 0))
-                if clicks > 0:
-                    keywords.append({'term': term, 'clicks': clicks})
-        
-        keywords.sort(key=lambda x: x['clicks'], reverse=True)
-        return keywords
-    except Exception as e:
-        print(f"Error fetching GSC data for {site_url}: {str(e)}")
+def load_ads_data(sheet_id, creds_dict):
+    """Loads keywords from the FIRST tab of the Google Sheet."""
+    if not sheet_id or not creds_dict:
         return None
-
-def fetch_ads_data(creds_dict, sheet_id):
-    """Fetches Ads keyword data from the Google Sheet bridge."""
-    if not sheet_id:
-        print("No GOOGLE_ADS_SHEET_ID provided. Skipping Ads data fetch.")
-        return None
-        
     try:
         credentials = service_account.Credentials.from_service_account_info(
             creds_dict, scopes=SHEETS_SCOPES
         )
         gc = gspread.authorize(credentials)
-        sheet = gc.open_by_key(sheet_id).sheet1
+        # Tab 1: Keywords
+        sheet = gc.open_by_key(sheet_id).get_worksheet(0)
         records = sheet.get_all_records()
-        print(f"Successfully loaded {len(records)} active ad keywords from Sheets.")
+        print(f"Successfully loaded {len(records)} keywords from Sheets.")
         return records
     except Exception as e:
-        print(f"Error fetching Ads data from Sheets: {str(e)}")
+        print(f"Note: Could not fetch Keywords tab: {str(e)}")
         return None
 
-def fetch_campaign_data(creds_dict, sheet_id):
-    """Fetches Campaign performance data from the 'Campaigns' tab."""
-    if not sheet_id:
+def load_campaign_data(sheet_id, creds_dict):
+    """Loads campaign stats from the 'Campaigns' tab."""
+    if not sheet_id or not creds_dict:
         return None
     try:
         credentials = service_account.Credentials.from_service_account_info(
             creds_dict, scopes=SHEETS_SCOPES
         )
         gc = gspread.authorize(credentials)
-        # Try to open the 'Campaigns' worksheet
         sheet = gc.open_by_key(sheet_id).worksheet('Campaigns')
         records = sheet.get_all_records()
         print(f"Successfully loaded {len(records)} campaigns from Sheets.")
         return records
     except Exception as e:
-        # Don't crash if the tab doesn't exist yet
-        print(f"Note: Could not fetch 'Campaigns' tab (might not be created yet): {str(e)}")
+        print(f"Note: Could not fetch 'Campaigns' tab: {str(e)}")
         return None
 
 def main():
-    print("Starting automated data fetch pipeline...")
+    print("Starting automated data fetch pipeline (v59)...")
     
+    # Load Credentials
+    creds_json = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
+    if not creds_json:
+        print("Error: GCP_SERVICE_ACCOUNT_JSON environment variable not set.")
+        return
+    creds_dict = json.loads(creds_json)
+    
+    # 1. Load Everything
     try:
         with open(JSON_FILE_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: {JSON_FILE_PATH} not found.")
-        return
-        
-    try:
-        creds_dict = get_creds_dict()
-        gsc_service = get_gsc_service(creds_dict)
-        print("Successfully authenticated with Google Cloud.")
     except Exception as e:
-        print(f"Authentication failed: {str(e)}")
+        print(f"Error loading {JSON_FILE_PATH}: {e}")
         return
 
-    # Fetch global ads data from Sheet
-    ads_records = fetch_ads_data(creds_dict, GOOGLE_ADS_SHEET_ID)
-    campaign_records = fetch_campaign_data(creds_dict, GOOGLE_ADS_SHEET_ID)
+    # Load Ads Data
+    sheet_id = os.environ.get('GOOGLE_ADS_SHEET_ID')
+    ads_records = load_ads_data(sheet_id, creds_dict)
+    campaign_records = load_campaign_data(sheet_id, creds_dict)
 
+    # Save Campaigns File for Live Monitor
     if campaign_records:
-        with open('campaigns.json', 'w', encoding='utf-8') as f:
-            json.dump(campaign_records, f, indent=2)
-            print("Exported campaigns.json for the Live Monitor.")
+        with open(CAMPAIGNS_FILE_PATH, 'w', encoding='utf-8') as f:
+            json.dump(campaign_records, f, indent=2, ensure_ascii=False)
+        print(f"Generated {CAMPAIGNS_FILE_PATH} with {len(campaign_records)} rows.")
 
-    courses_updated_gsc = 0
+    # 2. Process Courses
     courses_updated_ads = 0
+    
+    # Pre-process Ads data into a map for speed
+    ads_map = {}
+    if ads_records:
+        for row in ads_records:
+            # Extract common column names
+            url = str(row.get('Final URL', '')).lower().split('?')[0].rstrip('/')
+            # Fuzzy Normalize: remove http, www, and institutional prefixes
+            url_clean = url.replace('https://', '').replace('http://', '').replace('www.', '')
+            url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
+            
+            term = str(row.get('Keyword', '')).strip()
+            imps = row.get('Impressions', 0)
+            
+            if url_clean and term:
+                if url_clean not in ads_map:
+                    ads_map[url_clean] = []
+                ads_map[url_clean].append({'term': term, 'impressions': imps})
 
     for item in data:
-        if item.get('type') == 'metadata':
-            continue
-            
-        course_name = item.get('name', '')
-        url = item.get('url')
+        if item.get('type') == 'metadata': continue
         
-        # 1. Update GSC
-        if url:
-            print(f"Querying GSC for: {url}")
-            new_gsc_data = fetch_gsc_data(gsc_service, url)
-            if new_gsc_data is not None:
-                # Prune to top 100 to keep JSON size agile
-                item['gscKeywords'] = sorted(new_gsc_data, key=lambda x: x['clicks'], reverse=True)[:100]
-                courses_updated_gsc += 1
+        course_url = item.get('url', '').lower().split('?')[0].rstrip('/')
+        url_clean = course_url.replace('https://', '').replace('http://', '').replace('www.', '')
+        url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
 
-        # 2. Update Ads from Sheet
-        if ads_records and course_name:
-            course_name_lower = course_name.lower()
-            keyword_map = {}
-            
-            for row in ads_records:
-                # Get common column names (case-insensitive)
-                campaign = str(row.get('Campaign', row.get('Campaign Name', row.get('campanha', '')))).lower()
-                adgroup = str(row.get('Ad Group', row.get('Ad Group Name', row.get('grupo de anúncios', '')))).lower()
-                term = str(row.get('Keyword', row.get('Palavra-chave', ''))).strip()
-                term_lower = term.lower()
-                
-                # Metrics (try Impressions then Search Volume)
-                imps = row.get('Impressions', row.get('Impressões', 0))
-                volume = row.get('Avg. monthly searches', row.get('Média de pesquisas mensais', 0))
-                
-                # Normalize values (handle strings with commas/periods)
-                def normalize_val(v):
-                    if isinstance(v, str):
-                        v = v.replace('.', '').replace(',', '').strip()
-                        return int(v) if v.isdigit() else 0
-                    return int(v) if v else 0
+        if url_clean in ads_map:
+            # Match!
+            keyword_list = ads_map[url_clean]
+            # Sort and Prune
+            keyword_list.sort(key=lambda x: x.get('impressions', 0), reverse=True)
+            item['adsKeywords'] = keyword_list[:100]
+            courses_updated_ads += 1
 
-                val = normalize_val(imps)
-                is_performance = val > 0
-                
-                if val == 0:
-                    val = normalize_val(volume)
-
-                # Matching Strategy:
-                # 1. Final URL Match (from Apps Script)
-                # 2. Performance Match: Course name in Campaign/AdGroup
-                # 3. Research Match: Course name in Keyword itself
-                is_match = False
-                final_url = str(row.get('Final URL', '')).lower().strip()
-                
-                if final_url and url:
-                    u1 = url.lower().replace('https://', '').replace('http://', '').replace('www.', '').rstrip('/')
-                    u2 = final_url.replace('https://', '').replace('http://', '').replace('www.', '').rstrip('/')
-                    if u1 and u2 and (u1 in u2 or u2 in u1):
-                        is_match = True
-                
-                if not is_match:
-                    if course_name_lower in campaign or course_name_lower in adgroup:
-                        is_match = True
-                    elif course_name_lower in term_lower or term_lower in course_name_lower:
-                        is_match = True
-
-                if is_match and term:
-                    # Prefer performance data over volume if both exist in different rows
-                    # But for now, we just sum or take max
-                    keyword_map[term] = max(keyword_map.get(term, 0), val)
-            
-            if keyword_map:
-                course_ads = [{'term': k, 'impressions': v} for k, v in keyword_map.items()]
-                course_ads.sort(key=lambda x: x['impressions'], reverse=True)
-                # Prune to top 100
-                item['adsKeywords'] = course_ads[:100]
-                courses_updated_ads += 1
-
-    # Update Metadata
+    # 3. Update Metadata
     timestamp = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
     metadata_updated = False
     for item in data:
         if item.get('type') == 'metadata':
-            item['last_sync_by'] = "Nightly Pipeline (GSC + Ads)"
+            item['last_sync_by'] = "Nightly Pipeline (Ads + Campaigns)"
             item['last_sync_at'] = timestamp
             metadata_updated = True
             break
@@ -212,14 +124,15 @@ def main():
     if not metadata_updated:
         data.append({
             "type": "metadata",
-            "last_sync_by": "Nightly Pipeline (GSC + Ads)",
+            "last_sync_by": "Nightly Pipeline (Ads + Campaigns)",
             "last_sync_at": timestamp
         })
 
+    # 4. Save Main DB
     with open(JSON_FILE_PATH, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         
-    print(f"Finished! Updated GSC for {courses_updated_gsc} courses, Ads for {courses_updated_ads} courses.")
+    print(f"Finished! Updated Ads for {courses_updated_ads} courses.")
 
 if __name__ == '__main__':
     main()
