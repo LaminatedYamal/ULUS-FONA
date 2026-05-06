@@ -1083,9 +1083,12 @@ function renderCourseList(searchQuery = '') {
         const instHeader = document.createElement('div');
         instHeader.className = 'nav-group-header';
         instHeader.textContent = inst.toUpperCase();
-        instHeader.style.backgroundColor = brand.hex;
+        
+        // Set CSS variables for glass effect
+        const rgb = hexToRgb(brand.hex);
+        instHeader.style.setProperty('--inst-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
         instHeader.style.color = getContrastColor(brand.hex);
-        instHeader.style.borderColor = brand.bgSub;
+        instHeader.style.borderColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
         
         // Container for degrees
         const degreeContainer = document.createElement('div');
@@ -1387,6 +1390,7 @@ async function showLiveMonitor() {
     // Hide all views
     document.getElementById('landing-view').style.display = 'none';
     document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('chess-view').style.display = 'none';
     document.getElementById('live-monitor-view').style.display = 'block';
     
     // Update Header
@@ -1395,35 +1399,148 @@ async function showLiveMonitor() {
     document.getElementById('active-course-desc').textContent = "Real-time Portfolio Performance";
     
     const body = document.getElementById('monitor-body');
-    body.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:40px;">⏳ Loading Live Monitor Data...</td></tr>';
+    if (body) {
+        body.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:40px;">⏳ Loading Live Monitor Data...</td></tr>';
+    }
 
     try {
         const resp = await fetch('campaigns.json');
         if (!resp.ok) throw new Error("Campaign data not synced yet.");
         const campaigns = await resp.json();
 
-        body.innerHTML = '';
-        campaigns.forEach(c => {
-            const tr = document.createElement('tr');
-            const cpa = c.Conversions > 0 ? (c.Cost / c.Conversions).toFixed(2) : '--';
-            const statusClass = c.Status === 'ENABLED' ? 'match-tag' : 'text-muted';
-            
-            tr.innerHTML = `
-                <td style="font-weight:700;">${c.Campaign}</td>
-                <td><span class="${statusClass}">${c.Status}</span></td>
-                <td>€${c.Budget.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
-                <td style="color:var(--text-muted); opacity:0.8;">${c.Impressions.toLocaleString()}</td>
-                <td style="color:var(--text-muted); opacity:0.8;">${c.Clicks.toLocaleString()}</td>
-                <td style="color:var(--accent-primary); font-weight:700;">€${c.Cost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
-                <td>${c.Conversions}</td>
-                <td style="font-weight:700; color:${c.Conversions > 0 ? 'var(--success)' : 'inherit'}">€${cpa}</td>
-                <td>${c.CTR}</td>
-            `;
-            body.appendChild(tr);
-        });
+        if (body) {
+            body.innerHTML = '';
+            campaigns.forEach(c => {
+                const tr = document.createElement('tr');
+                const cost = parseFloat(c.cost || 0);
+                const conv = parseFloat(c.conversions || 0);
+                const cpa = conv > 0 ? (cost / conv).toFixed(2) : '0.00';
+                
+                tr.innerHTML = `
+                    <td style="font-weight:600;">${c.name}</td>
+                    <td><span class="status-pill ${c.status.toLowerCase().includes('enabl') ? 'active' : 'paused'}">${c.status}</span></td>
+                    <td style="text-align:right; font-family: monospace; font-weight: 700;">€${cost.toLocaleString('pt-PT', {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right;">${parseInt(c.impressions).toLocaleString()}</td>
+                    <td style="text-align:right;">${parseInt(c.clicks).toLocaleString()}</td>
+                    <td style="text-align:right; font-weight:700;">${conv.toLocaleString()}</td>
+                    <td style="text-align:right; color:var(--accent-primary); font-weight:800;">€${cpa}</td>
+                `;
+                body.appendChild(tr);
+            });
+        }
     } catch (e) {
-        body.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:40px; color:var(--danger);">❌ Error: ${e.message}<br><small>Run the Google Ads Script and wait for sync.</small></td></tr>`;
+        if (body) body.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger); padding:40px;">⚠️ ${e.message}</td></tr>`;
     }
+}
+
+// CHESS LOGIC
+let chess = null;
+let selectedSquare = null;
+
+const PIECES = {
+    'p': '♟', 'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚',
+    'P': '♙', 'R': '♖', 'N': '♘', 'B': '♗', 'Q': '♕', 'K': '♔'
+};
+
+window.showChess = function() {
+    document.getElementById('landing-view').style.display = 'none';
+    document.getElementById('dashboard-view').style.display = 'none';
+    document.getElementById('live-monitor-view').style.display = 'none';
+    document.getElementById('chess-view').style.display = 'flex';
+    
+    document.getElementById('dashboard-header-left').style.visibility = 'visible';
+    document.getElementById('active-course-title').textContent = "Strategic Chess";
+    document.getElementById('active-course-desc').textContent = "Tactical Training Suite";
+    
+    if (!chess) {
+        chess = new Chess();
+        renderBoard();
+    }
+}
+
+function renderBoard() {
+    const boardEl = document.getElementById('chess-board');
+    if (!boardEl) return;
+    boardEl.innerHTML = '';
+    const board = chess.board();
+    
+    for (let r = 0; r < 8; r++) {
+        for (let c = 0; c < 8; c++) {
+            const square = document.createElement('div');
+            const squareName = String.fromCharCode(97 + c) + (8 - r);
+            square.className = `square ${(r + c) % 2 === 0 ? 'light' : 'dark'}`;
+            square.dataset.square = squareName;
+            
+            const piece = board[r][c];
+            if (piece) {
+                square.textContent = PIECES[piece.color === 'w' ? piece.type.toUpperCase() : piece.type];
+                square.classList.add(piece.color === 'w' ? 'white-piece' : 'black-piece');
+            }
+            
+            if (selectedSquare === squareName) square.classList.add('selected');
+            
+            square.onclick = () => handleSquareClick(squareName);
+            boardEl.appendChild(square);
+        }
+    }
+    
+    updateChessStatus();
+}
+
+function handleSquareClick(square) {
+    if (selectedSquare === square) {
+        selectedSquare = null;
+    } else if (selectedSquare) {
+        const move = chess.move({
+            from: selectedSquare,
+            to: square,
+            promotion: 'q'
+        });
+        
+        if (move) {
+            selectedSquare = null;
+        } else {
+            selectedSquare = square;
+        }
+    } else {
+        const piece = chess.get(square);
+        if (piece && piece.color === chess.turn()) {
+            selectedSquare = square;
+        }
+    }
+    renderBoard();
+}
+
+function updateChessStatus() {
+    const statusEl = document.getElementById('chess-status');
+    const indicator = document.getElementById('chess-turn-indicator');
+    
+    let status = '';
+    const moveColor = chess.turn() === 'w' ? 'White' : 'Black';
+    
+    if (chess.in_checkmate()) {
+        status = `Game over, ${moveColor} is in checkmate.`;
+    } else if (chess.in_draw()) {
+        status = 'Game over, drawn position';
+    } else {
+        status = `${moveColor} to move`;
+        if (chess.in_check()) status += ', in check!';
+    }
+    
+    if (statusEl) statusEl.textContent = status;
+    if (indicator) indicator.style.background = chess.turn() === 'w' ? '#fff' : '#333';
+}
+
+window.resetChess = function() {
+    chess = new Chess();
+    selectedSquare = null;
+    renderBoard();
+}
+
+window.undoChess = function() {
+    chess.undo();
+    selectedSquare = null;
+    renderBoard();
 }
 
 
