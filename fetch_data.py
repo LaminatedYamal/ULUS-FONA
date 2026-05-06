@@ -47,17 +47,29 @@ def load_campaign_data(sheet_id, creds_dict):
         return None
 
 def clean_num(v):
-    """Strips %, commas, and converts to int."""
+    """Strips currency, %, commas, and converts to int."""
     if isinstance(v, str):
-        v = v.replace('%', '').replace(',', '').replace(' ', '')
-        # Handle cases like 1.234,56 (European) vs 1,234.56 (US)
-        if '.' in v and ',' in v:
-            v = v.replace('.', '') # Assume . is thousands separator
-        v = v.replace(',', '.')
+        # Remove currency, %, spaces
+        v = v.replace('€', '').replace('$', '').replace('%', '').replace(' ', '').replace('\xa0', '')
+        # Handle European decimal: 1.234,56 -> 1234.56
+        if ',' in v and '.' in v:
+            if v.find('.') < v.find(','): # dot is thousands
+                v = v.replace('.', '').replace(',', '.')
+            else: # comma is thousands
+                v = v.replace(',', '').replace('.', '.')
+        elif ',' in v:
+            v = v.replace(',', '.')
     try:
         return int(float(v))
     except:
         return 0
+
+def clean_ctr(v):
+    """Ensures CTR is a sane percentage string."""
+    val = clean_num(v)
+    if val > 1000: # Clearly a formatting error (e.g. 50000% for 5%)
+        val = val / 10000
+    return f"{val:.2f}%"
 
 def main():
     print("Starting automated data fetch pipeline (v59)...")
@@ -95,7 +107,7 @@ def main():
                 'Impressions': clean_num(c.get('Impressions', 0)),
                 'Clicks': clean_num(c.get('Clicks', 0)),
                 'Conversions': clean_num(c.get('Conversions', 0)),
-                'CTR': c.get('CTR', '0%'),
+                'CTR': clean_ctr(c.get('CTR', '0%')),
                 'CostPerConv': clean_num(c.get('CostPerConv', 0))
             })
         with open(CAMPAIGNS_FILE_PATH, 'w', encoding='utf-8') as f:
