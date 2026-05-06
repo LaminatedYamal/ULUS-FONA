@@ -2446,15 +2446,15 @@
     "adsKeywords": [
       {
         "term": "curso direito",
-        "impressions": 8887200
+        "impressions": 8887200.0
       },
       {
         "term": "curso advocacia",
-        "impressions": 4405300
+        "impressions": 4405300.0
       },
       {
         "term": "licenciatura direito",
-        "impressions": 2903500
+        "impressions": 2903500.0
       },
       {
         "term": "faculdade direito",
@@ -2514,23 +2514,23 @@
       },
       {
         "term": "faculdade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "melhor faculdade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "curso direito penal",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "valor faculdade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "universidade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "quanto custa faculdade direito",
@@ -10689,15 +10689,15 @@
     "adsKeywords": [
       {
         "term": "curso direito",
-        "impressions": 8887200
+        "impressions": 8887200.0
       },
       {
         "term": "curso advocacia",
-        "impressions": 4405300
+        "impressions": 4405300.0
       },
       {
         "term": "licenciatura direito",
-        "impressions": 2903500
+        "impressions": 2903500.0
       },
       {
         "term": "faculdade direito",
@@ -10757,23 +10757,23 @@
       },
       {
         "term": "faculdade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "melhor faculdade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "curso direito penal",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "valor faculdade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "universidade direito",
-        "impressions": 0
+        "impressions": 0.0
       },
       {
         "term": "quanto custa faculdade direito",
@@ -15539,7 +15539,7 @@
   },
   {
     "type": "metadata",
-    "last_sync_by": "Miguel",
-    "last_sync_at": "06/05/2026, 10:13:16"
+    "last_sync_by": "Nightly Pipeline (Ads + Campaigns)",
+    "last_sync_at": "06/05/2026, 09:19:18"
   }
 ]
