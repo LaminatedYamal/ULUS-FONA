@@ -1423,20 +1423,26 @@ window.showLiveMonitor = async function() {
                 const tr = document.createElement('tr');
                 const name = c.name || c.Name || c.Campaign || "Unknown Campaign";
                 const status = (c.status || c.Status || "PAUSED").toString();
+                const budget = parseFloat(c.budget || c.Budget || 0);
                 const cost = parseFloat(c.cost || c.Cost || 0);
                 const conv = parseFloat(c.conversions || c.Conversions || 0);
                 const imps = parseInt(c.impressions || c.Impressions || 0);
                 const clicks = parseInt(c.clicks || c.Clicks || 0);
+                const ctr = c.ctr || c.CTR || "0.00%";
                 const cpa = conv > 0 ? (cost / conv).toFixed(2) : '0.00';
                 
+                const statusClass = status.toLowerCase().includes('enabl') ? 'match-tag' : 'text-muted';
+                
                 tr.innerHTML = `
-                    <td style="font-weight:600;">${name}</td>
-                    <td><span class="status-pill ${status.toLowerCase().includes('enabl') ? 'active' : 'paused'}">${status}</span></td>
-                    <td style="text-align:right; font-family: monospace; font-weight: 700;">€${cost.toLocaleString('pt-PT', {minimumFractionDigits: 2})}</td>
-                    <td style="text-align:right;">${imps.toLocaleString()}</td>
-                    <td style="text-align:right;">${clicks.toLocaleString()}</td>
-                    <td style="text-align:right; font-weight:700;">${conv.toLocaleString()}</td>
-                    <td style="text-align:right; color:var(--accent-primary); font-weight:800;">€${cpa}</td>
+                    <td style="font-weight:700;">${name}</td>
+                    <td><span class="${statusClass}">${status}</span></td>
+                    <td style="text-align:right;">€${budget.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right; color:var(--text-muted); opacity:0.8;">${imps.toLocaleString()}</td>
+                    <td style="text-align:right; color:var(--text-muted); opacity:0.8;">${clicks.toLocaleString()}</td>
+                    <td style="text-align:right; color:var(--accent-primary); font-weight:700;">€${cost.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right;">${conv}</td>
+                    <td style="text-align:right; font-weight:700; color:${conv > 0 ? 'var(--success)' : 'inherit'}">€${cpa}</td>
+                    <td style="text-align:right;">${ctr}</td>
                 `;
                 body.appendChild(tr);
             });
