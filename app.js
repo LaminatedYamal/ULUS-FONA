@@ -1336,25 +1336,23 @@ function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
         slice.forEach(k => {
             const tr = document.createElement('tr');
             const norm = normalizeKeyword(k.term);
+            const isTripleMatch = gscNorms.includes(norm) && adsNorms.includes(norm) && rankNorms.includes(norm);
+            const rainbowClass = isTripleMatch ? 'rainbow-winner-badge' : '';
             
             if (type === 'gsc') {
                 const isMatchAds = adsNorms.includes(norm);
                 tr.className = isMatchAds ? 'synergy-aura' : 'gap-aura';
-                tr.innerHTML = `<td>${k.term}</td><td>${k.clicks.toLocaleString()}</td><td>${isMatchAds ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>`;
+                tr.innerHTML = `<td><span class="${rainbowClass}">${k.term}</span></td><td>${k.clicks.toLocaleString()}</td><td>${isMatchAds ? '<span class="match-tag">✓ Active in Ads</span>' : '<span class="text-muted">Organic Only</span>'}</td>`;
             } else if (type === 'ads') {
                 const isMatchGsc = gscNorms.includes(norm);
                 tr.className = isMatchGsc ? 'synergy-aura' : 'gap-aura';
-                tr.innerHTML = `<td>${k.term}</td><td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>`;
+                tr.innerHTML = `<td><span class="${rainbowClass}">${k.term}</span></td><td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>`;
             } else if (type === 'rankings') {
                 const diff = (k.prevRank || 0) - (k.rank || 0);
                 const trendIcon = diff > 0 ? `<span style="color:var(--success);">▲ ${diff}</span>` : diff < 0 ? `<span style="color:var(--danger);">▼ ${Math.abs(diff)}</span>` : `<span style="color:var(--text-muted);">● Stable</span>`;
-                const isWinner = parseInt(k.rank) <= 3;
-                const rankClass = isWinner ? 'rainbow-winner-badge' : '';
                 tr.innerHTML = `
-                    <td style="font-weight:700;">${k.term}</td>
-                    <td style="text-align:center;">
-                        <span class="${rankClass}" style="font-size:18px; font-weight:800; display:inline-block; padding:2px 8px; border-radius:6px;">#${k.rank}</span>
-                    </td>
+                    <td style="font-weight:700;"><span class="${rainbowClass}">${k.term}</span></td>
+                    <td style="text-align:center;"><span style="font-size:18px; font-weight:800;">#${k.rank}</span></td>
                     <td>${trendIcon}</td>
                     <td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>
                 `;
