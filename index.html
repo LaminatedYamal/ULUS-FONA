@@ -44,9 +44,13 @@
                 <!-- Course accordions will be injected here via app.js -->
             </nav>
 
-            <div class="nav-group-header" id="premium-tools-header" style="background: var(--primary); margin-top: 10px; cursor: default;">Premium Tools</div>
-            <div class="nav-degree-btn" onclick="showLiveMonitor()" id="live-monitor-btn" style="margin-top: 5px;">
-                📊 Live Ads Monitor
+            <div class="nav-group-header" id="premium-tools-header" onclick="togglePremiumTools()" style="margin-top: 10px;">
+                Premium Tools
+            </div>
+            <div class="nav-degree-container" id="premium-tools-container">
+                <div class="nav-degree-btn" id="live-monitor-btn" onclick="showLiveMonitor()">
+                    📊 Live Ads Monitor
+                </div>
             </div>
 
             <div class="sidebar-footer">
