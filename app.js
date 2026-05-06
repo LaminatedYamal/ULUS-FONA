@@ -1339,6 +1339,8 @@ async function showLiveMonitor() {
                 <td style="font-weight:700;">${c.Campaign}</td>
                 <td><span class="${statusClass}">${c.Status}</span></td>
                 <td>€${c.Budget.toLocaleString()}</td>
+                <td style="color:var(--text-muted); opacity:0.8;">${c.Impressions.toLocaleString()}</td>
+                <td style="color:var(--text-muted); opacity:0.8;">${c.Clicks.toLocaleString()}</td>
                 <td style="color:var(--accent-primary); font-weight:700;">€${c.Cost.toLocaleString()}</td>
                 <td>${c.Conversions}</td>
                 <td style="font-weight:700; color:${c.Conversions > 0 ? 'var(--success)' : 'inherit'}">€${cpa}</td>
