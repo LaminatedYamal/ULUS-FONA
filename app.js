@@ -1387,17 +1387,25 @@ async function togglePremiumTools() {
     container.classList.toggle('expanded', isExpanded);
 }
 
-async function showLiveMonitor() {
-    // Hide all views
-    document.getElementById('landing-view').style.display = 'none';
-    document.getElementById('dashboard-view').style.display = 'none';
-    document.getElementById('chess-view').style.display = 'none';
-    document.getElementById('live-monitor-view').style.display = 'block';
+function hideAllViews() {
+    ['landing-view', 'dashboard-view', 'live-monitor-view', 'chess-view'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+    });
+}
+
+window.showLiveMonitor = async function() {
+    hideAllViews();
+    const view = document.getElementById('live-monitor-view');
+    if (view) view.style.display = 'block';
     
     // Update Header
-    document.getElementById('dashboard-header-left').style.visibility = 'visible';
-    document.getElementById('active-course-title').textContent = "Live Ads Monitor";
-    document.getElementById('active-course-desc').textContent = "Real-time Portfolio Performance";
+    const headerLeft = document.getElementById('dashboard-header-left');
+    if (headerLeft) headerLeft.style.visibility = 'visible';
+    const title = document.getElementById('active-course-title');
+    if (title) title.textContent = "Live Ads Monitor";
+    const desc = document.getElementById('active-course-desc');
+    if (desc) desc.textContent = "Real-time Portfolio Performance";
     
     const body = document.getElementById('monitor-body');
     if (body) {
@@ -1434,29 +1442,28 @@ async function showLiveMonitor() {
     }
 }
 
-// CHESS LOGIC
-let chess = null;
-let selectedSquare = null;
-
-const PIECES = {
-    'p': '♟', 'r': '♜', 'n': '♞', 'b': '♝', 'q': '♛', 'k': '♚',
-    'P': '♙', 'R': '♖', 'N': '♘', 'B': '♗', 'Q': '♕', 'K': '♔'
-};
-
 window.showChess = function() {
-    document.getElementById('landing-view').style.display = 'none';
-    document.getElementById('dashboard-view').style.display = 'none';
-    document.getElementById('live-monitor-view').style.display = 'none';
-    document.getElementById('chess-view').style.display = 'flex';
+    hideAllViews();
+    const view = document.getElementById('chess-view');
+    if (view) view.style.display = 'flex';
     
-    document.getElementById('dashboard-header-left').style.visibility = 'visible';
-    document.getElementById('active-course-title').textContent = "Strategic Chess";
-    document.getElementById('active-course-desc').textContent = "Tactical Training Suite";
+    const headerLeft = document.getElementById('dashboard-header-left');
+    if (headerLeft) headerLeft.style.visibility = 'visible';
+    const title = document.getElementById('active-course-title');
+    if (title) title.textContent = "Strategic Chess";
+    const desc = document.getElementById('active-course-desc');
+    if (desc) desc.textContent = "Tactical Training Suite";
     
+    if (typeof Chess === 'undefined') {
+        const boardEl = document.getElementById('chess-board');
+        if (boardEl) boardEl.innerHTML = '<div style="color:var(--text-muted); padding:20px; text-align:center;">⏳ Loading Chess Engine...<br><small>Please check your connection</small></div>';
+        return;
+    }
+
     if (!chess) {
         chess = new Chess();
-        renderBoard();
     }
+    renderBoard();
 }
 
 function renderBoard() {
