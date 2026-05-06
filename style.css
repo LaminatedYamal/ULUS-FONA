@@ -1993,3 +1993,88 @@ body.light-mode .hero-text h2 {
     border-radius: 6px;
     display: inline-block;
 }
+
+/* === RESPONSIVENESS (Fluid Antigravity) === */
+.mobile-only-btn {
+    display: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        width: 280px;
+        z-index: 2000;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #0f1115 !important;
+        box-shadow: 20px 0 50px rgba(0,0,0,0.5);
+    }
+
+    .sidebar.mobile-active {
+        transform: translateX(280px);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .mobile-only-btn {
+        display: flex;
+    }
+
+    .top-bar {
+        padding: 0 15px;
+    }
+
+    h1 { font-size: 20px !important; }
+    
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 15px -15px;
+        padding: 0 15px;
+        border-radius: 0;
+    }
+
+    table {
+        min-width: 800px; /* Keep data readable, allow swiping */
+    }
+
+    .chess-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #chess-board {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+    }
+
+    .chess-sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-right {
+        display: none; /* Hide non-essential desktop buttons on tiny screens */
+    }
+    
+    .logo-container {
+        width: 40px;
+        height: 40px;
+    }
+}
