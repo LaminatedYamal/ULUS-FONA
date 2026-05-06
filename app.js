@@ -1376,6 +1376,13 @@ function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
     else renderBatch(sortedRankings, rankingsBody, 'rankings');
 }
 
+async function togglePremiumTools() {
+    const header = document.getElementById('premium-tools-header');
+    const container = document.getElementById('premium-tools-container');
+    const isExpanded = header.classList.toggle('expanded');
+    container.classList.toggle('expanded', isExpanded);
+}
+
 async function showLiveMonitor() {
     // Hide all views
     document.getElementById('landing-view').style.display = 'none';
