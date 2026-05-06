@@ -1587,8 +1587,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     let dataPayload = {};
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
+    context += "The 'live_campaign_monitor' contains your real-time Google Ads performance. ";
+
     if (course) {
         dataPayload = {
+            ...dataPayload,
             target: "Course Analysis",
             identity: { name: course.name, institution: course.institution },
             performance_data: {
@@ -1610,6 +1613,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     } else {
         // Global Stats with Trend Focus
         dataPayload = {
+            ...dataPayload,
             target: "Institutional Fleet Analysis",
             total_stats: {
                 courses: courses.length,
