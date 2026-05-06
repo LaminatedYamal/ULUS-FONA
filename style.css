@@ -360,15 +360,15 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 }
 
 .nav-degree-btn:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateX(8px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .nav-degree-btn:active {
-    transform: scale(0.96) translateX(4px);
+    transform: scale(0.98) translateX(2px);
 }
 
 .nav-degree-btn.active {
