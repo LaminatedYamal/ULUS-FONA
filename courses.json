@@ -13111,7 +13111,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/acompanhamento-de-criancas-e-jovens-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "acompanhamento de crianças e jovens",
+        "clicks": 6,
+        "impressions": 69
+      },
+      {
+        "term": "ctesp acompanhamento de crianças e jovens",
+        "clicks": 5,
+        "impressions": 43
+      },
+      {
+        "term": "ctesp psicologia",
+        "clicks": 1,
+        "impressions": 46
+      },
+      {
+        "term": "ctesp educadora de infância",
+        "clicks": 1,
+        "impressions": 38
+      },
+      {
+        "term": "assistente social curso técnico",
+        "clicks": 1,
+        "impressions": 4
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13133,7 +13159,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/assessoria-em-administracao-e-gestao-publica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de assessoria",
+        "clicks": 3,
+        "impressions": 17
+      },
+      {
+        "term": "curso administração publica",
+        "clicks": 2,
+        "impressions": 77
+      },
+      {
+        "term": "curso de administração publica",
+        "clicks": 2,
+        "impressions": 66
+      },
+      {
+        "term": "administração pública curso",
+        "clicks": 2,
+        "impressions": 41
+      },
+      {
+        "term": "ctesp gestao",
+        "clicks": 2,
+        "impressions": 11
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13144,7 +13196,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/automacao-e-robotica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "automação e robótica",
+        "clicks": 8,
+        "impressions": 110
+      },
+      {
+        "term": "curso de automação",
+        "clicks": 4,
+        "impressions": 86
+      },
+      {
+        "term": "curso de robotica",
+        "clicks": 4,
+        "impressions": 65
+      },
+      {
+        "term": "curso automação",
+        "clicks": 3,
+        "impressions": 57
+      },
+      {
+        "term": "robotica e automação",
+        "clicks": 2,
+        "impressions": 63
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13155,7 +13233,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/bioanalises-e-controlo-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "técnico de análises laboratoriais curso profissional lisboa",
+        "clicks": 2,
+        "impressions": 63
+      },
+      {
+        "term": "técnico de análises laboratoriais curso profissional",
+        "clicks": 1,
+        "impressions": 38
+      },
+      {
+        "term": "bioanalises",
+        "clicks": 1,
+        "impressions": 14
+      },
+      {
+        "term": "bioanalises e controlo",
+        "clicks": 1,
+        "impressions": 12
+      },
+      {
+        "term": "biomedicina tecnico",
+        "clicks": 1,
+        "impressions": 4
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13166,7 +13270,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/ciberseguranca-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp cibersegurança",
+        "clicks": 29,
+        "impressions": 291
+      },
+      {
+        "term": "cibersegurança curso",
+        "clicks": 26,
+        "impressions": 956
+      },
+      {
+        "term": "curso de cibersegurança",
+        "clicks": 14,
+        "impressions": 449
+      },
+      {
+        "term": "curso cibersegurança",
+        "clicks": 10,
+        "impressions": 473
+      },
+      {
+        "term": "cet cibersegurança",
+        "clicks": 5,
+        "impressions": 66
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13177,7 +13307,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/contabilidade-e-gestao-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp contabilidade",
+        "clicks": 14,
+        "impressions": 120
+      },
+      {
+        "term": "curso técnico de contabilidade nível 5 online",
+        "clicks": 8,
+        "impressions": 74
+      },
+      {
+        "term": "curso técnico de contabilidade nível 5",
+        "clicks": 5,
+        "impressions": 107
+      },
+      {
+        "term": "curso tecnico contabilidade",
+        "clicks": 5,
+        "impressions": 83
+      },
+      {
+        "term": "gestão e contabilidade",
+        "clicks": 3,
+        "impressions": 48
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13199,7 +13355,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/desenvolvimento-para-a-web-e-dispositivos-moveis-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp online",
+        "clicks": 8,
+        "impressions": 123
+      },
+      {
+        "term": "cursos tecnicos superiores online",
+        "clicks": 2,
+        "impressions": 15
+      },
+      {
+        "term": "técnico de desenvolvimento de software",
+        "clicks": 1,
+        "impressions": 45
+      },
+      {
+        "term": "ipluso cursos",
+        "clicks": 1,
+        "impressions": 42
+      },
+      {
+        "term": "curso desenvolvimento web",
+        "clicks": 1,
+        "impressions": 20
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13221,7 +13403,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-comercial-e-vendas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestão comercial e vendas",
+        "clicks": 6,
+        "impressions": 134
+      },
+      {
+        "term": "gestão comercial",
+        "clicks": 3,
+        "impressions": 564
+      },
+      {
+        "term": "curso de gestão comercial",
+        "clicks": 3,
+        "impressions": 41
+      },
+      {
+        "term": "ctesp gestão comercial e vendas",
+        "clicks": 2,
+        "impressions": 68
+      },
+      {
+        "term": "ctesp gestao",
+        "clicks": 2,
+        "impressions": 35
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13243,7 +13451,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-marketing-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp marketing",
+        "clicks": 6,
+        "impressions": 110
+      },
+      {
+        "term": "gestão de marketing",
+        "clicks": 2,
+        "impressions": 292
+      },
+      {
+        "term": "curso superior de marketing",
+        "clicks": 2,
+        "impressions": 26
+      },
+      {
+        "term": "gestao de marketing",
+        "clicks": 1,
+        "impressions": 104
+      },
+      {
+        "term": "curso de gestão e marketing",
+        "clicks": 1,
+        "impressions": 103
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13254,7 +13488,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-negocios-e-comercio-eletronico-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso técnico superior profissional online",
+        "clicks": 2,
+        "impressions": 69
+      },
+      {
+        "term": "cursos técnicos superiores profissionais online",
+        "clicks": 1,
+        "impressions": 14
+      },
+      {
+        "term": "curso de gestão de negócios",
+        "clicks": 1,
+        "impressions": 10
+      },
+      {
+        "term": "gestão de negócios curso",
+        "clicks": 1,
+        "impressions": 7
+      },
+      {
+        "term": "gestão e negócios",
+        "clicks": 1,
+        "impressions": 5
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13265,7 +13525,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/gestao-de-sistemas-de-informacao-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestão de sistemas de informação",
+        "clicks": 1,
+        "impressions": 131
+      },
+      {
+        "term": "gestao de sistemas de informação",
+        "clicks": 1,
+        "impressions": 109
+      },
+      {
+        "term": "curso superior técnico profissional",
+        "clicks": 1,
+        "impressions": 3
+      },
+      {
+        "term": "curso tecnico sistema de informação",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "cursos superiores profissionais",
+        "clicks": 1,
+        "impressions": 1
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13276,7 +13562,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/instalacoes-eletricas-e-automacao-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso eletricista",
+        "clicks": 72,
+        "impressions": 977
+      },
+      {
+        "term": "curso de eletricista",
+        "clicks": 52,
+        "impressions": 1070
+      },
+      {
+        "term": "curso de eletricista em portugal",
+        "clicks": 16,
+        "impressions": 578
+      },
+      {
+        "term": "curso de eletricista em lisboa",
+        "clicks": 14,
+        "impressions": 296
+      },
+      {
+        "term": "ctesp eletricidade",
+        "clicks": 14,
+        "impressions": 90
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13287,7 +13599,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/laboratorio-forense-e-criminal-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "laboratório forense e criminal",
+        "clicks": 14,
+        "impressions": 105
+      },
+      {
+        "term": "como ser perito criminal em portugal",
+        "clicks": 10,
+        "impressions": 146
+      },
+      {
+        "term": "perito criminal",
+        "clicks": 8,
+        "impressions": 150
+      },
+      {
+        "term": "pericia criminal",
+        "clicks": 7,
+        "impressions": 176
+      },
+      {
+        "term": "perito criminal portugal",
+        "clicks": 7,
+        "impressions": 60
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13298,7 +13636,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/marketing-digital-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp marketing digital",
+        "clicks": 10,
+        "impressions": 210
+      },
+      {
+        "term": "cet marketing digital",
+        "clicks": 4,
+        "impressions": 39
+      },
+      {
+        "term": "marketing digital curso",
+        "clicks": 3,
+        "impressions": 311
+      },
+      {
+        "term": "marketing digital ctesp",
+        "clicks": 3,
+        "impressions": 18
+      },
+      {
+        "term": "marketing digital",
+        "clicks": 1,
+        "impressions": 238
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13320,7 +13684,33 @@
     "degree_type": "TeSP",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/ctesp/sistemas-de-telecomunicacoes-eletronica-e-comunicacoes-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "telecomunicações curso",
+        "clicks": 1,
+        "impressions": 20
+      },
+      {
+        "term": "cursos de telecomunicações",
+        "clicks": 1,
+        "impressions": 4
+      },
+      {
+        "term": "curso telecomunicações",
+        "clicks": 0,
+        "impressions": 46
+      },
+      {
+        "term": "curso de telecomunicações em portugal",
+        "clicks": 0,
+        "impressions": 38
+      },
+      {
+        "term": "ctesp comunicação",
+        "clicks": 0,
+        "impressions": 24
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -14967,7 +15357,7 @@
   },
   {
     "type": "metadata",
-    "last_sync_by": "Nightly Pipeline (Ads + Campaigns)",
-    "last_sync_at": "06/05/2026, 09:09:30"
+    "last_sync_by": "Miguel",
+    "last_sync_at": "06/05/2026, 10:12:55"
   }
 ]
