@@ -1078,13 +1078,26 @@ function renderCourseList(searchQuery = '') {
         return indexA - indexB;
     }).forEach(inst => {
         const brand = BRANDING[inst] || { hex: "#444444", bgSub: "#222222" };
+        
+        // Header
         const instHeader = document.createElement('div');
         instHeader.className = 'nav-group-header';
         instHeader.textContent = inst.toUpperCase();
         instHeader.style.backgroundColor = brand.hex;
         instHeader.style.color = getContrastColor(brand.hex);
         instHeader.style.borderColor = brand.bgSub;
+        
+        // Container for degrees
+        const degreeContainer = document.createElement('div');
+        degreeContainer.className = 'nav-degree-container';
+        
+        instHeader.addEventListener('click', () => {
+            const isExpanded = instHeader.classList.toggle('expanded');
+            degreeContainer.classList.toggle('expanded', isExpanded);
+        });
+
         list.appendChild(instHeader);
+        list.appendChild(degreeContainer);
 
         const degreeOrder = ['TeSP', 'Licenciatura', 'Mestrado Integrado', 'Mestrado', 'Doutoramento', 'Pós-Graduação', 'Formações'];
         Object.keys(grouped[inst]).sort((a, b) => {
@@ -1103,8 +1116,14 @@ function renderCourseList(searchQuery = '') {
                 degreeBtn.classList.add('active');
                 selectDegreeHub(inst, degree, grouped[inst][degree]);
             });
-            list.appendChild(degreeBtn);
+            degreeContainer.appendChild(degreeBtn);
         });
+
+        // Auto-expand if searching
+        if (q) {
+            instHeader.classList.add('expanded');
+            degreeContainer.classList.add('expanded');
+        }
     });
 
     // Add Reset Buttons
