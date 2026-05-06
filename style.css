@@ -477,7 +477,7 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
 .main-content {
     flex: 1;
     overflow-y: auto;
-    padding: 40px;
+    padding: 24px 40px;
     background: radial-gradient(circle at top right, rgba(var(--accent-primary-rgb), 0.08), transparent 45%),
                 radial-gradient(circle at bottom left, rgba(var(--accent-primary-rgb), 0.05), transparent 45%);
 }
