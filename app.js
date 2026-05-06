@@ -107,6 +107,15 @@ const TRANSLATIONS = {
         "rank": "Current Rank",
         "trend": "3-Month Trend",
         "url": "Ranking URL",
+        "degree-mapping": {
+            'TeSP': 'Vocational Training (TeSP)',
+            'Licenciatura': "Bachelor's Degrees",
+            'Mestrado Integrado': 'Integrated Masters',
+            'Mestrado': "Master's Degrees",
+            'Doutoramento': 'Doctorates',
+            'Pós-Graduação': 'Post-Graduate',
+            'Formações': 'Training / Other'
+        },
         "sync": "Data Sync",
         "sync-team": "🚀 Sync to Team",
         "system-active": "System Active",
@@ -1227,8 +1236,10 @@ function loadCourse(id) {
     document.getElementById('brand-name').textContent = course.institution;
     
     document.getElementById('active-course-title').textContent = course.name;
-    const displayDegree = (course.degree && course.degree !== 'Unknown') ? course.degree : (course.degree_type || 'Formações');
-    document.getElementById('active-course-desc').textContent = `${displayDegree} | ${course.institution}`;
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+    const degreeMap = t["degree-mapping"] || {};
+    const displayDegree = degreeMap[course.degree] || degreeMap[course.degree_type] || (currentLang === 'pt' ? 'Formações' : 'Training');
+    document.getElementById('active-course-desc').textContent = `${displayDegree.toUpperCase()} | ${course.institution.toUpperCase()}`;
     
     renderTables(course.gscKeywords, course.adsKeywords, course.rankingsKeywords);
     updateStats(course);
