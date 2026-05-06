@@ -1970,3 +1970,17 @@ body.light-mode .hero-text h2 {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+
+/* RAINBOW WINNER BADGE */
+.rainbow-winner-badge {
+    background: linear-gradient(
+        45deg,
+        #4285f4, #34a853, #fbbc05, #ea4335,
+        #4285f4, #34a853, #fbbc05, #ea4335
+    );
+    background-size: 400% 400%;
+    animation: rainbow-surge 3s linear infinite;
+    color: white !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
