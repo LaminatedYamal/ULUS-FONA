@@ -434,6 +434,13 @@ async function syncToTeam() {
 
         if (putRes.ok) {
             status.textContent = `✅ Sync Successful at ${new Date().toLocaleTimeString('pt-PT')}! Dashboard will update for everyone in ~60s.`;
+            
+            // Trigger Gemini Auto-Audit
+            const syncMsg = "I just synced the team data to the global dashboard. Analyze the updated fleet and the Live Ads Monitor to give me a 3-bullet point executive summary of our current status and any immediate gaps.";
+            if (typeof askGemini === 'function') {
+                askGemini('custom', syncMsg);
+            }
+            
             setTimeout(() => { status.style.display = "none"; }, 8000);
         } else {
             const err = await putRes.json();
