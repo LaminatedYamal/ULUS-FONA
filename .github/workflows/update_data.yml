@@ -1,3 +1,44 @@
-name: Nightly GSC Data Sync
-on: { schedule: [ { cron: "0 0 * * *" } ], workflow_dispatch: {} }
-jobs: { sync: { runs-on: ubuntu-latest, permissions: { contents: write }, steps: [ { uses: "actions/checkout@v3" }, { uses: "actions/setup-python@v4", with: { "python-version": "3.10" } }, { run: "pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib gspread" }, { run: "python fetch_data.py", env: { GCP_SERVICE_ACCOUNT_JSON: "${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}" } } ] } }
+name: Nightly Data Sync
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib gspread
+
+      - name: Run Fetch Script
+        run: python fetch_data.py
+        env:
+          GCP_SERVICE_ACCOUNT_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_ADS_SHEET_ID: ${{ secrets.GOOGLE_ADS_SHEET_ID }}
+
+      - name: Commit and Push Updates
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add both the main database and the new campaigns file
+          git add courses.json campaigns.json
+          
+          if git diff --cached --exit-code > /dev/null; then
+            echo "No changes detected. Skipping commit."
+          else
+            git commit -m "Automated Data Sync (Ads + Campaigns) [skip ci]"
+            git push
+            echo "Successfully updated dashboard data!"
+          fi
