@@ -12807,7 +12807,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/ciberseguranca-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp cibersegurança porto",
+        "clicks": 10,
+        "impressions": 79
+      },
+      {
+        "term": "ctesp cibersegurança",
+        "clicks": 3,
+        "impressions": 169
+      },
+      {
+        "term": "curso cibersegurança",
+        "clicks": 3,
+        "impressions": 155
+      },
+      {
+        "term": "cet cibersegurança",
+        "clicks": 3,
+        "impressions": 55
+      },
+      {
+        "term": "cibersegurança curso",
+        "clicks": 2,
+        "impressions": 266
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12818,7 +12844,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/comunicacao-digital-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "comunicação digital",
+        "clicks": 0,
+        "impressions": 249
+      },
+      {
+        "term": "ctesp comunicação",
+        "clicks": 0,
+        "impressions": 55
+      },
+      {
+        "term": "técnico de comunicação",
+        "clicks": 0,
+        "impressions": 13
+      },
+      {
+        "term": "isla ctesp",
+        "clicks": 0,
+        "impressions": 12
+      },
+      {
+        "term": "curso técnico comunicação",
+        "clicks": 0,
+        "impressions": 6
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12829,7 +12881,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/contabilidade-e-gestao-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "técnico especialista em contabilidade e gestão",
+        "clicks": 7,
+        "impressions": 112
+      },
+      {
+        "term": "ctesp contabilidade",
+        "clicks": 6,
+        "impressions": 79
+      },
+      {
+        "term": "formação contabilidade",
+        "clicks": 5,
+        "impressions": 118
+      },
+      {
+        "term": "curso tecnico contabilidade",
+        "clicks": 5,
+        "impressions": 67
+      },
+      {
+        "term": "curso técnico de contabilidade",
+        "clicks": 4,
+        "impressions": 82
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12851,7 +12929,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/desenvolvimento-de-aplicacoes-de-inteligencia-artificial-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp inteligência artificial",
+        "clicks": 1,
+        "impressions": 6
+      },
+      {
+        "term": "tecnico de inteligencia artificial",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "isla gaia cursos",
+        "clicks": 0,
+        "impressions": 36
+      },
+      {
+        "term": "curso inteligência artificial",
+        "clicks": 0,
+        "impressions": 22
+      },
+      {
+        "term": "curso de inteligência artificial",
+        "clicks": 0,
+        "impressions": 18
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12862,7 +12966,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/desenvolvimento-de-produtos-multimedia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "desenvolvimento de produtos multimédia",
+        "clicks": 5,
+        "impressions": 75
+      },
+      {
+        "term": "ctesp multimedia",
+        "clicks": 4,
+        "impressions": 58
+      },
+      {
+        "term": "técnico especialista em desenvolvimento de produtos multimédia",
+        "clicks": 1,
+        "impressions": 39
+      },
+      {
+        "term": "técnico/a especialista em desenvolvimento de produtos multimédia",
+        "clicks": 1,
+        "impressions": 15
+      },
+      {
+        "term": "\"desenvolvimento de produtos multimédia\" ctesp",
+        "clicks": 0,
+        "impressions": 17
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12884,7 +13014,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gastronomia-vinhos-e-turismo-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de gastronomia em portugal",
+        "clicks": 3,
+        "impressions": 117
+      },
+      {
+        "term": "curso gastronomia",
+        "clicks": 3,
+        "impressions": 67
+      },
+      {
+        "term": "curso de gastronomia porto",
+        "clicks": 1,
+        "impressions": 55
+      },
+      {
+        "term": "curso de gastronomia",
+        "clicks": 1,
+        "impressions": 50
+      },
+      {
+        "term": "faculdade de gastronomia em portugal",
+        "clicks": 1,
+        "impressions": 33
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12895,7 +13051,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-administrativa-de-recursos-humanos-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp recursos humanos",
+        "clicks": 9,
+        "impressions": 98
+      },
+      {
+        "term": "curso técnico de recursos humanos",
+        "clicks": 3,
+        "impressions": 51
+      },
+      {
+        "term": "curso técnico administrativo e de recursos humanos",
+        "clicks": 2,
+        "impressions": 20
+      },
+      {
+        "term": "técnico de recursos humanos",
+        "clicks": 1,
+        "impressions": 88
+      },
+      {
+        "term": "tecnico de recursos humanos",
+        "clicks": 1,
+        "impressions": 37
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12906,7 +13088,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-da-qualidade-ambiente-e-seguranca-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso técnico de qualidade",
+        "clicks": 3,
+        "impressions": 26
+      },
+      {
+        "term": "curso de gestão de qualidade",
+        "clicks": 1,
+        "impressions": 96
+      },
+      {
+        "term": "técnico de higiene e segurança do trabalho nível 5",
+        "clicks": 1,
+        "impressions": 54
+      },
+      {
+        "term": "técnico de qualidade",
+        "clicks": 1,
+        "impressions": 25
+      },
+      {
+        "term": "técnico de qualidade curso",
+        "clicks": 1,
+        "impressions": 16
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12917,7 +13125,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-atividades-desportivas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp desporto porto",
+        "clicks": 10,
+        "impressions": 99
+      },
+      {
+        "term": "ctesp desporto",
+        "clicks": 4,
+        "impressions": 181
+      },
+      {
+        "term": "ctesp porto desporto",
+        "clicks": 2,
+        "impressions": 34
+      },
+      {
+        "term": "isla gaia ctesp",
+        "clicks": 1,
+        "impressions": 39
+      },
+      {
+        "term": "de desporto",
+        "clicks": 1,
+        "impressions": 1
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12928,7 +13162,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-redes-sociais-e-estrategias-digitais-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de gestão de redes sociais",
+        "clicks": 1,
+        "impressions": 38
+      },
+      {
+        "term": "curso de gestão de redes sociais online",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "curso gestão de redes sociais",
+        "clicks": 0,
+        "impressions": 92
+      },
+      {
+        "term": "gestão de redes sociais curso",
+        "clicks": 0,
+        "impressions": 65
+      },
+      {
+        "term": "gestão redes sociais curso",
+        "clicks": 0,
+        "impressions": 36
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12939,7 +13199,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-turismo-hotelaria-e-restauracao-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso hotelaria",
+        "clicks": 1,
+        "impressions": 54
+      },
+      {
+        "term": "isla gaia cursos",
+        "clicks": 1,
+        "impressions": 29
+      },
+      {
+        "term": "cursos de hotelaria e turismo",
+        "clicks": 1,
+        "impressions": 11
+      },
+      {
+        "term": "curso rapido de turismo",
+        "clicks": 0,
+        "impressions": 198
+      },
+      {
+        "term": "hotelaria",
+        "clicks": 0,
+        "impressions": 93
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12950,7 +13236,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/gestao-de-vendas-e-marketing-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp marketing",
+        "clicks": 1,
+        "impressions": 20
+      },
+      {
+        "term": "cursos de vendas e marketing",
+        "clicks": 1,
+        "impressions": 4
+      },
+      {
+        "term": "curso marketing",
+        "clicks": 1,
+        "impressions": 3
+      },
+      {
+        "term": "curso vendas telefónicas",
+        "clicks": 0,
+        "impressions": 74
+      },
+      {
+        "term": "gestão de vendas e marketing",
+        "clicks": 0,
+        "impressions": 63
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12961,7 +13273,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/marketing-digital-e-comercio-eletronico-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "cet marketing digital",
+        "clicks": 2,
+        "impressions": 48
+      },
+      {
+        "term": "curso técnico marketing digital",
+        "clicks": 2,
+        "impressions": 6
+      },
+      {
+        "term": "curso marketing digital",
+        "clicks": 1,
+        "impressions": 166
+      },
+      {
+        "term": "técnico especialista em marketing digital",
+        "clicks": 1,
+        "impressions": 47
+      },
+      {
+        "term": "curso de marketing digital",
+        "clicks": 1,
+        "impressions": 29
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12972,7 +13310,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/redes-e-sistemas-informaticos-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp redes e sistemas informáticos",
+        "clicks": 3,
+        "impressions": 31
+      },
+      {
+        "term": "redes e sistemas informáticos",
+        "clicks": 1,
+        "impressions": 107
+      },
+      {
+        "term": "isla gaia cursos",
+        "clicks": 1,
+        "impressions": 70
+      },
+      {
+        "term": "curso de sistemas informáticos e redes",
+        "clicks": 1,
+        "impressions": 33
+      },
+      {
+        "term": "técnico de redes",
+        "clicks": 1,
+        "impressions": 9
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12983,7 +13347,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/som-e-imagem-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp fotografia",
+        "clicks": 11,
+        "impressions": 48
+      },
+      {
+        "term": "curso técnico de som",
+        "clicks": 3,
+        "impressions": 64
+      },
+      {
+        "term": "curso tecnico de som",
+        "clicks": 1,
+        "impressions": 68
+      },
+      {
+        "term": "som e imagem",
+        "clicks": 1,
+        "impressions": 41
+      },
+      {
+        "term": "curso de tecnico de som",
+        "clicks": 1,
+        "impressions": 6
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12994,7 +13384,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/turismo-e-informacao-turistica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ctesp turismo",
+        "clicks": 6,
+        "impressions": 91
+      },
+      {
+        "term": "curso consultor de viagens",
+        "clicks": 3,
+        "impressions": 32
+      },
+      {
+        "term": "curso de guia turístico",
+        "clicks": 3,
+        "impressions": 26
+      },
+      {
+        "term": "cet turismo",
+        "clicks": 2,
+        "impressions": 32
+      },
+      {
+        "term": "curso guia turismo",
+        "clicks": 1,
+        "impressions": 5
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13005,7 +13421,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/comunicacao-digital-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "comunicação digital",
+        "clicks": 5,
+        "impressions": 1089
+      },
+      {
+        "term": "isla gaia licenciaturas",
+        "clicks": 4,
+        "impressions": 70
+      },
+      {
+        "term": "comunicacao digital",
+        "clicks": 2,
+        "impressions": 41
+      },
+      {
+        "term": "curso comunicação digital",
+        "clicks": 2,
+        "impressions": 30
+      },
+      {
+        "term": "comunicação digital curso",
+        "clicks": 1,
+        "impressions": 20
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13016,7 +13458,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/engenharia-da-seguranca-do-trabalho-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia de segurança do trabalho",
+        "clicks": 20,
+        "impressions": 233
+      },
+      {
+        "term": "engenharia segurança do trabalho",
+        "clicks": 11,
+        "impressions": 85
+      },
+      {
+        "term": "licenciatura em engenharia de segurança do trabalho",
+        "clicks": 8,
+        "impressions": 41
+      },
+      {
+        "term": "engenharia de segurança",
+        "clicks": 3,
+        "impressions": 91
+      },
+      {
+        "term": "engenheiro de segurança do trabalho",
+        "clicks": 2,
+        "impressions": 53
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13027,7 +13495,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/engenharia-informatica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia informatica",
+        "clicks": 11,
+        "impressions": 1421
+      },
+      {
+        "term": "isla gaia licenciaturas",
+        "clicks": 4,
+        "impressions": 83
+      },
+      {
+        "term": "isla gaia",
+        "clicks": 3,
+        "impressions": 488
+      },
+      {
+        "term": "licenciatura engenharia informática",
+        "clicks": 3,
+        "impressions": 126
+      },
+      {
+        "term": "licenciatura em engenharia informática",
+        "clicks": 3,
+        "impressions": 114
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13049,7 +13543,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/gestao-de-recursos-humanos-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em recursos humanos",
+        "clicks": 12,
+        "impressions": 238
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "clicks": 12,
+        "impressions": 180
+      },
+      {
+        "term": "gestão de recursos humanos",
+        "clicks": 9,
+        "impressions": 1158
+      },
+      {
+        "term": "curso recursos humanos",
+        "clicks": 9,
+        "impressions": 223
+      },
+      {
+        "term": "isla gaia licenciaturas",
+        "clicks": 6,
+        "impressions": 56
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13093,7 +13613,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/multimedia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura multimédia porto",
+        "clicks": 4,
+        "impressions": 80
+      },
+      {
+        "term": "licenciatura multimedia",
+        "clicks": 3,
+        "impressions": 64
+      },
+      {
+        "term": "licenciatura em multimédia",
+        "clicks": 3,
+        "impressions": 45
+      },
+      {
+        "term": "multimedia",
+        "clicks": 1,
+        "impressions": 578
+      },
+      {
+        "term": "multimédia",
+        "clicks": 1,
+        "impressions": 408
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13876,6 +14422,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "06/05/2026, 09:58:39"
+    "last_sync_at": "06/05/2026, 09:59:00"
   }
 ]
