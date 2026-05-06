@@ -1342,7 +1342,7 @@ async function showLiveMonitor() {
                 <td style="color:var(--accent-primary); font-weight:700;">€${c.Cost.toLocaleString()}</td>
                 <td>${c.Conversions}</td>
                 <td style="font-weight:700; color:${c.Conversions > 0 ? 'var(--success)' : 'inherit'}">€${cpa}</td>
-                <td>${(c.CTR * 100).toFixed(2)}%</td>
+                <td>${c.CTR}</td>
             `;
             body.appendChild(tr);
         });
