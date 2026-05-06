@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
 </head>
 <body>
     <div id="login-overlay" class="login-overlay" style="display:none;">
@@ -50,6 +51,9 @@
             <div class="nav-degree-container" id="premium-tools-container">
                 <div class="nav-degree-btn" id="live-monitor-btn" onclick="showLiveMonitor()">
                     📊 Live Ads Monitor
+                </div>
+                <div class="nav-degree-btn" id="chess-btn" onclick="showChess()">
+                    ♟️ Strategic Chess
                 </div>
             </div>
 
@@ -132,30 +136,37 @@
             </div>
 
             <div id="live-monitor-view" style="display: none; padding: 20px;">
-                <div class="data-panel full-width">
-                    <div class="panel-header">
-                        <div class="header-title-group">
-                            <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                            <h2>Live Ads Monitor <span class="text-muted">(Last 30 Days)</span></h2>
-                        </div>
+            <!-- Live Monitor View -->
+            <div id="live-monitor-view" style="display: none; height: calc(100vh - 100px); overflow-y: auto; padding: 20px;">
+                <div class="monitor-grid">
+                    <table class="monitor-table">
+                        <thead>
+                            <tr>
+                                <th>Campaign Name</th>
+                                <th>Status</th>
+                                <th style="text-align:right;">Spend</th>
+                                <th style="text-align:right;">Impressions</th>
+                                <th style="text-align:right;">Clicks</th>
+                                <th style="text-align:right;">Conv.</th>
+                                <th style="text-align:right;">CPA</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monitor-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Strategic Chess View -->
+            <div id="chess-view" style="display: none; height: calc(100vh - 100px); padding: 40px; justify-content: center; align-items: center;">
+                <div class="chess-container">
+                    <div class="chess-info">
+                        <div id="chess-status">White to move</div>
+                        <div id="chess-turn-indicator" class="turn-dot"></div>
                     </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Campaign</th>
-                                    <th>Status</th>
-                                    <th>Budget</th>
-                                    <th>Impr.</th>
-                                    <th>Clicks</th>
-                                    <th>Spend</th>
-                                    <th>Conv.</th>
-                                    <th>CPA</th>
-                                    <th>CTR</th>
-                                </tr>
-                            </thead>
-                            <tbody id="monitor-body"></tbody>
-                        </table>
+                    <div id="chess-board" class="glass-board"></div>
+                    <div class="chess-controls">
+                        <button class="sync-btn" onclick="resetChess()">New Game</button>
+                        <button class="sync-btn" onclick="undoChess()">Undo</button>
                     </div>
                 </div>
             </div>
