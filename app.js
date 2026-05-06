@@ -1302,6 +1302,10 @@ function loadCourse(id) {
     
     renderTables(course.gscKeywords, course.adsKeywords, course.rankingsKeywords);
     updateStats(course);
+    
+    // Auto-close sidebar on mobile
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.classList.remove('mobile-active');
 }
 
 function hexToRgb(hex) {
@@ -1402,8 +1406,17 @@ function hideAllViews() {
     });
 }
 
+window.toggleSidebar = function() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.classList.toggle('mobile-active');
+};
+
 window.showLiveMonitor = async function() {
     hideAllViews();
+    // Auto-close sidebar on mobile after selection
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.classList.remove('mobile-active');
+    
     const view = document.getElementById('live-monitor-view');
     if (view) view.style.display = 'block';
     
@@ -1465,6 +1478,10 @@ window.showLiveMonitor = async function() {
 
 window.showChess = function() {
     hideAllViews();
+    // Auto-close sidebar on mobile
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) sidebar.classList.remove('mobile-active');
+    
     const view = document.getElementById('chess-view');
     if (view) view.style.display = 'flex';
     
