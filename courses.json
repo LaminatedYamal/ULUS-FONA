@@ -9921,7 +9921,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/artes-dramaticas-formacao-de-atores",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de ator",
+        "clicks": 2,
+        "impressions": 10
+      },
+      {
+        "term": "artes cênicas",
+        "clicks": 1,
+        "impressions": 97
+      },
+      {
+        "term": "artes dramaticas",
+        "clicks": 1,
+        "impressions": 29
+      },
+      {
+        "term": "aulas de teatro porto",
+        "clicks": 1,
+        "impressions": 27
+      },
+      {
+        "term": "formação de atores",
+        "clicks": 1,
+        "impressions": 24
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso teatro",
@@ -9953,7 +9979,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/design-de-comunicacao",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "design de comunicação porto",
+        "clicks": 4,
+        "impressions": 84
+      },
+      {
+        "term": "design comunicação",
+        "clicks": 1,
+        "impressions": 27
+      },
+      {
+        "term": "faculdades de design",
+        "clicks": 1,
+        "impressions": 10
+      },
+      {
+        "term": "disciplina estetica",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "cursos de tipografia",
+        "clicks": 1,
+        "impressions": 1
+      }
+    ],
     "adsKeywords": [
       {
         "term": "faculdade design",
@@ -10033,7 +10085,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "design de moda universidades portugal",
+        "clicks": 9,
+        "impressions": 247
+      },
+      {
+        "term": "faculdade de moda em portugal",
+        "clicks": 8,
+        "impressions": 235
+      },
+      {
+        "term": "faculdade de moda",
+        "clicks": 8,
+        "impressions": 194
+      },
+      {
+        "term": "design de moda porto",
+        "clicks": 8,
+        "impressions": 120
+      },
+      {
+        "term": "licenciatura design de moda",
+        "clicks": 6,
+        "impressions": 72
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso design moda",
@@ -10128,7 +10206,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/estudos-europeus-estudos-lusofonos-e-relacoes-internacionais",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "relações internacionais porto",
+        "clicks": 5,
+        "impressions": 308
+      },
+      {
+        "term": "relações internacionais",
+        "clicks": 3,
+        "impressions": 841
+      },
+      {
+        "term": "curso de relações internacionais",
+        "clicks": 3,
+        "impressions": 85
+      },
+      {
+        "term": "relacoes internacionais",
+        "clicks": 2,
+        "impressions": 210
+      },
+      {
+        "term": "relações internacionais curso",
+        "clicks": 2,
+        "impressions": 63
+      }
+    ],
     "adsKeywords": [
       {
         "term": "relações internacionais",
@@ -10155,7 +10259,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "comunicação audiovisual e multimédia",
+        "clicks": 14,
+        "impressions": 68
+      },
+      {
+        "term": "licenciatura audiovisual e multimédia",
+        "clicks": 8,
+        "impressions": 154
+      },
+      {
+        "term": "audiovisual e multimédia",
+        "clicks": 6,
+        "impressions": 454
+      },
+      {
+        "term": "licenciatura audiovisual",
+        "clicks": 6,
+        "impressions": 30
+      },
+      {
+        "term": "curso audiovisual e multimédia",
+        "clicks": 4,
+        "impressions": 109
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso multimedia",
@@ -10194,7 +10324,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/videojogos-e-aplicacoes-multimedia",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em jogos digitais e multimédia",
+        "clicks": 4,
+        "impressions": 48
+      },
+      {
+        "term": "lusofona videojogos",
+        "clicks": 1,
+        "impressions": 63
+      },
+      {
+        "term": "licenciatura multimédia porto",
+        "clicks": 1,
+        "impressions": 60
+      },
+      {
+        "term": "videojogos lusofona",
+        "clicks": 1,
+        "impressions": 56
+      },
+      {
+        "term": "licenciatura multimedia",
+        "clicks": 1,
+        "impressions": 45
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso games",
@@ -10345,7 +10501,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/comunicacao-aplicada",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "comunicação aplicada lusofona",
+        "clicks": 13,
+        "impressions": 149
+      },
+      {
+        "term": "comunicação aplicada",
+        "clicks": 8,
+        "impressions": 132
+      },
+      {
+        "term": "lusofona comunicação aplicada",
+        "clicks": 2,
+        "impressions": 41
+      },
+      {
+        "term": "gestão de eventos",
+        "clicks": 1,
+        "impressions": 354
+      },
+      {
+        "term": "gestão de eventos curso",
+        "clicks": 1,
+        "impressions": 299
+      }
+    ],
     "adsKeywords": [
       {
         "term": "faculdade publicidade portugal",
@@ -10477,7 +10659,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/direito",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "direito lusofona porto",
+        "clicks": 15,
+        "impressions": 31
+      },
+      {
+        "term": "lusófona direito porto",
+        "clicks": 14,
+        "impressions": 49
+      },
+      {
+        "term": "lusofona porto direito",
+        "clicks": 6,
+        "impressions": 20
+      },
+      {
+        "term": "lusofona direito",
+        "clicks": 5,
+        "impressions": 148
+      },
+      {
+        "term": "licenciatura em direito",
+        "clicks": 4,
+        "impressions": 389
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso direito",
@@ -10628,7 +10836,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/economia",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em economia",
+        "clicks": 4,
+        "impressions": 260
+      },
+      {
+        "term": "licenciatura economia",
+        "clicks": 2,
+        "impressions": 171
+      },
+      {
+        "term": "curso economia",
+        "clicks": 1,
+        "impressions": 164
+      },
+      {
+        "term": "economia licenciatura",
+        "clicks": 1,
+        "impressions": 76
+      },
+      {
+        "term": "licenciatura economia porto",
+        "clicks": 1,
+        "impressions": 26
+      }
+    ],
     "adsKeywords": [
       {
         "term": "faculdade economia",
@@ -10708,7 +10942,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/gestao",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestao lusofona",
+        "clicks": 42,
+        "impressions": 223
+      },
+      {
+        "term": "lusofona gestao",
+        "clicks": 36,
+        "impressions": 206
+      },
+      {
+        "term": "gestão comercial",
+        "clicks": 12,
+        "impressions": 893
+      },
+      {
+        "term": "gestao comercial",
+        "clicks": 8,
+        "impressions": 201
+      },
+      {
+        "term": "gestão e desenvolvimento de recursos humanos",
+        "clicks": 8,
+        "impressions": 53
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso gestão",
@@ -10756,7 +11016,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/gestao-e-desenvolvimento-de-recursos-humanos",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestão e desenvolvimento de recursos humanos",
+        "clicks": 8,
+        "impressions": 53
+      },
+      {
+        "term": "lusófona porto cursos",
+        "clicks": 7,
+        "impressions": 63
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "clicks": 4,
+        "impressions": 136
+      },
+      {
+        "term": "recursos humanos",
+        "clicks": 3,
+        "impressions": 2057
+      },
+      {
+        "term": "licenciatura em recursos humanos",
+        "clicks": 3,
+        "impressions": 153
+      }
+    ],
     "adsKeywords": [
       {
         "term": "faculdade recursos humanos",
@@ -10776,7 +11062,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/ciencias-da-educacao",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ciencias da educação",
+        "clicks": 3,
+        "impressions": 840
+      },
+      {
+        "term": "ciências da educação",
+        "clicks": 3,
+        "impressions": 183
+      },
+      {
+        "term": "ciencias da educacao",
+        "clicks": 1,
+        "impressions": 160
+      },
+      {
+        "term": "licenciatura em ciências da educação",
+        "clicks": 1,
+        "impressions": 129
+      },
+      {
+        "term": "ciência da educação",
+        "clicks": 1,
+        "impressions": 58
+      }
+    ],
     "adsKeywords": [
       {
         "term": "licenciatura educação",
@@ -10804,7 +11116,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/computacao-e-matematica-aplicada",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "matemática aplicada",
+        "clicks": 1,
+        "impressions": 117
+      },
+      {
+        "term": "matemática aplicada porto média",
+        "clicks": 1,
+        "impressions": 34
+      },
+      {
+        "term": "curso matemática aplicada",
+        "clicks": 1,
+        "impressions": 23
+      },
+      {
+        "term": "informatica e matematica",
+        "clicks": 1,
+        "impressions": 3
+      },
+      {
+        "term": "computação aplicada",
+        "clicks": 1,
+        "impressions": 3
+      }
+    ],
     "adsKeywords": [
       {
         "term": "licenciatura matemática",
@@ -10856,7 +11194,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia civil porto",
+        "clicks": 10,
+        "impressions": 192
+      },
+      {
+        "term": "engenharia civil pos laboral",
+        "clicks": 10,
+        "impressions": 170
+      },
+      {
+        "term": "licenciatura engenharia civil (pós-laboral)",
+        "clicks": 5,
+        "impressions": 46
+      },
+      {
+        "term": "curso engenharia civil",
+        "clicks": 4,
+        "impressions": 128
+      },
+      {
+        "term": "licenciatura engenharia civil",
+        "clicks": 3,
+        "impressions": 126
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso engenheiro civil",
@@ -10911,7 +11275,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-de-protecao-civil",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia de proteção civil",
+        "clicks": 36,
+        "impressions": 148
+      },
+      {
+        "term": "licenciatura proteção civil",
+        "clicks": 14,
+        "impressions": 236
+      },
+      {
+        "term": "engenharia proteção civil",
+        "clicks": 14,
+        "impressions": 92
+      },
+      {
+        "term": "licenciatura em proteção civil",
+        "clicks": 8,
+        "impressions": 317
+      },
+      {
+        "term": "curso proteção civil",
+        "clicks": 4,
+        "impressions": 181
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso proteção civil",
@@ -10939,7 +11329,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-do-ambiente",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em engenharia do ambiente",
+        "clicks": 1,
+        "impressions": 33
+      },
+      {
+        "term": "curso de engenharia ambiental",
+        "clicks": 1,
+        "impressions": 11
+      },
+      {
+        "term": "engenharia ambiental",
+        "clicks": 0,
+        "impressions": 184
+      },
+      {
+        "term": "engenharia do ambiente",
+        "clicks": 0,
+        "impressions": 173
+      },
+      {
+        "term": "engenheiro ambiental",
+        "clicks": 0,
+        "impressions": 26
+      }
+    ],
     "adsKeywords": [
       {
         "term": "curso ambiental",
@@ -11027,7 +11443,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-eletrotecnica-de-sistemas-de-energia",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia eletrotécnica porto",
+        "clicks": 7,
+        "impressions": 99
+      },
+      {
+        "term": "engenharia eletrotécnica",
+        "clicks": 3,
+        "impressions": 888
+      },
+      {
+        "term": "engenharia eletrica",
+        "clicks": 1,
+        "impressions": 130
+      },
+      {
+        "term": "engenharia eletricidade",
+        "clicks": 1,
+        "impressions": 60
+      },
+      {
+        "term": "engenharia eletrotécnica sistemas elétricos de energia",
+        "clicks": 1,
+        "impressions": 51
+      }
+    ],
     "adsKeywords": [
       {
         "term": "Engenharia Eletrotécnica",
@@ -11086,7 +11528,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/protecao-civil",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em proteção civil",
+        "clicks": 58,
+        "impressions": 354
+      },
+      {
+        "term": "licenciatura proteção civil",
+        "clicks": 39,
+        "impressions": 365
+      },
+      {
+        "term": "licenciatura proteção civil online",
+        "clicks": 22,
+        "impressions": 240
+      },
+      {
+        "term": "licenciatura proteção civil lisboa",
+        "clicks": 17,
+        "impressions": 62
+      },
+      {
+        "term": "curso proteção civil",
+        "clicks": 16,
+        "impressions": 481
+      }
+    ],
     "adsKeywords": [
       {
         "term": "faculdade engenharia civil",
@@ -11122,7 +11590,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-informatica",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia informatica lusofona",
+        "clicks": 17,
+        "impressions": 128
+      },
+      {
+        "term": "lusofona engenharia informatica",
+        "clicks": 16,
+        "impressions": 121
+      },
+      {
+        "term": "engenharia informatica porto",
+        "clicks": 11,
+        "impressions": 192
+      },
+      {
+        "term": "engenharia informatica pos laboral",
+        "clicks": 6,
+        "impressions": 168
+      },
+      {
+        "term": "engenharia informatica",
+        "clicks": 5,
+        "impressions": 1534
+      }
+    ],
     "adsKeywords": [
       {
         "term": "engenharia informática",
@@ -11230,7 +11724,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/psicologia",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "lusofona psicologia",
+        "clicks": 56,
+        "impressions": 613
+      },
+      {
+        "term": "psicologia lusofona",
+        "clicks": 31,
+        "impressions": 466
+      },
+      {
+        "term": "licenciatura psicologia pós-laboral porto",
+        "clicks": 8,
+        "impressions": 77
+      },
+      {
+        "term": "licenciatura psicologia online portugal",
+        "clicks": 7,
+        "impressions": 283
+      },
+      {
+        "term": "lusófona psicologia",
+        "clicks": 7,
+        "impressions": 143
+      }
+    ],
     "adsKeywords": [
       {
         "term": "psicologia lisboa",
@@ -11341,7 +11861,33 @@
     "degree_type": "Licenciatura",
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/licenciaturas/servico-social",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "assistente social",
+        "clicks": 6,
+        "impressions": 1203
+      },
+      {
+        "term": "licenciatura serviço social",
+        "clicks": 6,
+        "impressions": 105
+      },
+      {
+        "term": "serviço social licenciatura",
+        "clicks": 6,
+        "impressions": 78
+      },
+      {
+        "term": "licenciatura em serviço social",
+        "clicks": 3,
+        "impressions": 190
+      },
+      {
+        "term": "curso assistente social",
+        "clicks": 3,
+        "impressions": 126
+      }
+    ],
     "adsKeywords": [
       {
         "term": "faculdade serviço social",
@@ -14422,6 +14968,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "06/05/2026, 09:59:00"
+    "last_sync_at": "06/05/2026, 09:59:28"
   }
 ]
