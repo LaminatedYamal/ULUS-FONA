@@ -1348,7 +1348,16 @@ function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
             } else if (type === 'rankings') {
                 const diff = (k.prevRank || 0) - (k.rank || 0);
                 const trendIcon = diff > 0 ? `<span style="color:var(--success);">▲ ${diff}</span>` : diff < 0 ? `<span style="color:var(--danger);">▼ ${Math.abs(diff)}</span>` : `<span style="color:var(--text-muted);">● Stable</span>`;
-                tr.innerHTML = `<td style="font-weight:700;">${k.term}</td><td style="text-align:center;"><span style="font-size:18px; font-weight:800;">#${k.rank}</span></td><td>${trendIcon}</td><td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>`;
+                const isWinner = parseInt(k.rank) <= 3;
+                const rankClass = isWinner ? 'rainbow-winner-badge' : '';
+                tr.innerHTML = `
+                    <td style="font-weight:700;">${k.term}</td>
+                    <td style="text-align:center;">
+                        <span class="${rankClass}" style="font-size:18px; font-weight:800; display:inline-block; padding:2px 8px; border-radius:6px;">#${k.rank}</span>
+                    </td>
+                    <td>${trendIcon}</td>
+                    <td style="font-size:11px; opacity:0.6; max-width:200px; overflow:hidden; text-overflow:ellipsis;">${k.url}</td>
+                `;
             }
             container.appendChild(tr);
         });
