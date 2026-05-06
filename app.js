@@ -1084,11 +1084,12 @@ function renderCourseList(searchQuery = '') {
         instHeader.className = 'nav-group-header';
         instHeader.textContent = inst.toUpperCase();
         
-        // Set CSS variables for glass effect
+        // Restore Bold Brand Colors
+        instHeader.style.backgroundColor = brand.hex;
         const rgb = hexToRgb(brand.hex);
         instHeader.style.setProperty('--inst-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
         instHeader.style.color = getContrastColor(brand.hex);
-        instHeader.style.borderColor = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.3)`;
+        instHeader.style.borderColor = `rgba(255, 255, 255, 0.2)`;
         
         // Container for degrees
         const degreeContainer = document.createElement('div');
