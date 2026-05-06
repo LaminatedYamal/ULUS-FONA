@@ -44,14 +44,14 @@
                 <!-- Course accordions will be injected here via app.js -->
             </nav>
 
-            <div class="nav-group-header" style="background: var(--primary); margin-top: 10px; cursor: default;">Premium Tools</div>
+            <div class="nav-group-header" id="premium-tools-header" style="background: var(--primary); margin-top: 10px; cursor: default;">Premium Tools</div>
             <div class="nav-degree-btn" onclick="showLiveMonitor()" id="live-monitor-btn" style="margin-top: 5px;">
                 📊 Live Ads Monitor
             </div>
 
             <div class="sidebar-footer">
                 <div class="data-sync-zone">
-                    <h3>Data Sync</h3>
+                    <h3 id="data-sync-header">Data Sync</h3>
                     <span id="last-sync-info" class="sync-meta">Loading sync status...</span>
                     <div class="sync-buttons">
                         <button class="sync-btn" onclick="document.getElementById('gsc-upload').click()">
@@ -76,7 +76,7 @@
                     <p id="sync-status" class="sync-tip" style="display:none; color: var(--success);"></p>
                 </div>
                 <div class="status-indicator">
-                    <span class="pulse"></span> System Active
+                    <span class="pulse"></span> <span id="system-active-text">System Active</span>
                 </div>
             </div>
         </aside>
