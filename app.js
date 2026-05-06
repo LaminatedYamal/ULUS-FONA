@@ -1439,12 +1439,12 @@ window.showLiveMonitor = async function() {
                 tr.innerHTML = `
                     <td style="font-weight:800; color: #ffffff; font-size: 15px; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">${name}</td>
                     <td><span class="${statusClass}" style="font-weight:800; padding: 6px 12px; border-radius: 8px; background: ${status.toLowerCase().includes('enabl') ? 'rgba(52, 168, 83, 0.2)' : 'rgba(255, 255, 255, 0.05)'}; border: 1px solid currentColor; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${status}</span></td>
-                    <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">€${budget.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">€${budget.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                     <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">${imps.toLocaleString()}</td>
                     <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">${clicks.toLocaleString()}</td>
-                    <td style="text-align:right; color: #00f2ff; font-weight:900; font-size: 16px; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);">€${cost.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td style="text-align:right; color: #00f2ff; font-weight:900; font-size: 16px; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);">€${cost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                     <td style="text-align:right; font-weight:900; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">${conv}</td>
-                    <td style="text-align:right; font-weight:900; color:${conv > 0 ? '#00ff88' : '#ffffff'}; text-shadow: 0 0 10px ${conv > 0 ? 'rgba(0, 255, 136, 0.3)' : 'none'};">€${cpa}</td>
+                    <td style="text-align:right; font-weight:900; color:${conv > 0 ? '#00ff88' : '#ffffff'}; text-shadow: 0 0 10px ${conv > 0 ? 'rgba(0, 255, 136, 0.3)' : 'none'};">€${parseFloat(cpa).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
                     <td style="text-align:right; font-weight:700; color: #ffd700; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${ctr}</td>
                 `;
                 body.appendChild(tr);
