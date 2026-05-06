@@ -116,7 +116,8 @@ const TRANSLATIONS = {
         "welcome-subtext": "Select a degree category from the sidebar to begin",
         "premium-tools": "Premium Tools",
         "live-ads-monitor": "📊 Live Ads Monitor",
-        "data-sync": "Data Sync"
+        "data-sync": "Data Sync",
+        "brand-name": "Lusófona Group"
     },
     pt: {
         "greeting": "Olá",
@@ -159,7 +160,8 @@ const TRANSLATIONS = {
         "welcome-subtext": "Selecione uma categoria de curso na barra lateral para começar",
         "premium-tools": "Ferramentas Premium",
         "live-ads-monitor": "📊 Monitor de Ads em Direto",
-        "data-sync": "Sincronização de Dados"
+        "data-sync": "Sincronização de Dados",
+        "brand-name": "Grupo Lusófona"
     }
 };
 
@@ -207,7 +209,8 @@ function updateUILanguage() {
         'last-sync-info': t["loading"],
         'landing-subtitle': t["welcome-subtext"],
         'premium-tools-header': t["premium-tools"],
-        'live-monitor-btn': t["live-ads-monitor"]
+        'live-monitor-btn': t["live-ads-monitor"],
+        'brand-name': t["brand-name"]
     };
 
     // Apply to DOM
