@@ -2026,6 +2026,41 @@ body.light-mode .hero-text h2 {
         transform: translateX(280px);
     }
 
+    .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        z-index: 1500;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .sidebar.mobile-active + .mobile-overlay,
+    .sidebar.mobile-active ~ .mobile-overlay {
+        display: block;
+        opacity: 1;
+    }
+    
+    /* Correct selector for the overlay when sidebar is active */
+    #mobile-overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border-color: #ea4335 !important; /* Red for close */
+        color: #ea4335 !important;
+        box-shadow: 0 0 10px rgba(234, 67, 53, 0.2);
+    }
+
     .main-content {
         margin-left: 0;
         width: 100%;
