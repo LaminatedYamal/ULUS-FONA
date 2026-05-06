@@ -1693,7 +1693,8 @@ body.light-mode .hero-text h2 {
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: white;
-    padding: 12px 16px;
+    height: 40px;
+    padding: 0 16px;
     border-radius: 10px;
     font-size: 13px;
     font-family: 'Montserrat', sans-serif;
@@ -1731,10 +1732,14 @@ body.light-mode .hero-text h2 {
     background: #4285f4;
     color: white;
     border: none;
+    height: 40px;
     padding: 0 15px;
     border-radius: 10px;
     cursor: pointer;
     transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gemini-send-btn:hover {
