@@ -1305,7 +1305,9 @@ function loadCourse(id) {
     
     // Auto-close sidebar on mobile
     const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('mobile-overlay');
     if (sidebar) sidebar.classList.remove('mobile-active');
+    if (overlay) overlay.classList.remove('active');
 }
 
 function hexToRgb(hex) {
@@ -1408,14 +1410,20 @@ function hideAllViews() {
 
 window.toggleSidebar = function() {
     const sidebar = document.querySelector('.sidebar');
-    if (sidebar) sidebar.classList.toggle('mobile-active');
+    const overlay = document.getElementById('mobile-overlay');
+    if (sidebar) {
+        const isActive = sidebar.classList.toggle('mobile-active');
+        if (overlay) overlay.classList.toggle('active', isActive);
+    }
 };
 
 window.showLiveMonitor = async function() {
     hideAllViews();
     // Auto-close sidebar on mobile after selection
     const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('mobile-overlay');
     if (sidebar) sidebar.classList.remove('mobile-active');
+    if (overlay) overlay.classList.remove('active');
     
     const view = document.getElementById('live-monitor-view');
     if (view) view.style.display = 'block';
@@ -1480,7 +1488,9 @@ window.showChess = function() {
     hideAllViews();
     // Auto-close sidebar on mobile
     const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('mobile-overlay');
     if (sidebar) sidebar.classList.remove('mobile-active');
+    if (overlay) overlay.classList.remove('active');
     
     const view = document.getElementById('chess-view');
     if (view) view.style.display = 'flex';
