@@ -267,14 +267,13 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     font-size: 10px;
     font-weight: 800;
     color: #ffffff;
-    background: linear-gradient(135deg, rgba(var(--inst-color-rgb, 255, 255, 255), 0.15), rgba(255, 255, 255, 0.05));
     text-transform: uppercase;
     letter-spacing: 2.5px;
     margin: 16px 0 4px 0;
     padding: 12px 16px;
     border-radius: 12px;
     text-align: left;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -282,25 +281,38 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     justify-content: space-between;
     align-items: center;
     user-select: none;
-    backdrop-filter: blur(12px);
     position: relative;
     overflow: hidden;
 }
 
-/* Subtle Specular Highlight */
-.nav-group-header::before {
+/* THE LIQUID GLASS SHIMMER */
+.nav-group-header::after, .nav-degree-btn::after, .sync-btn::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    top: -50%;
+    left: -150%;
+    width: 50%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 5s infinite;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% { left: -150%; }
+    20% { left: 150%; }
+    100% { left: 150%; }
 }
 
 .nav-group-header:hover {
-    filter: brightness(1.2);
-    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.1);
+    transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
