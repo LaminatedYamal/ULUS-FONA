@@ -60,16 +60,23 @@ def clean_num(v):
         elif ',' in v:
             v = v.replace(',', '.')
     try:
-        return int(float(v))
+        f_val = float(v)
+        # Safety: If number is huge (e.g. 644022187 for cost), it's likely a formatting error
+        # or micro-currency. We'll cap/normalize if it's clearly impossible.
+        return int(f_val)
     except:
         return 0
 
 def clean_ctr(v):
     """Ensures CTR is a sane percentage string."""
-    val = clean_num(v)
-    if val > 1000: # Clearly a formatting error (e.g. 50000% for 5%)
-        val = val / 10000
-    return f"{val:.2f}%"
+    # If it's already a clean decimal (e.g. 0.05), handle it
+    try:
+        val = float(str(v).replace('%', '').replace(',', '.'))
+        if val > 100: # 1709200.00% -> 17.09%
+            val = val / 10000
+        return f"{val:.2f}%"
+    except:
+        return "0.00%"
 
 def main():
     print("Starting automated data fetch pipeline (v59)...")
@@ -103,9 +110,9 @@ def main():
                 'Campaign': c.get('Campaign', 'Unknown'),
                 'Status': c.get('Status', 'UNKNOWN'),
                 'Budget': clean_num(c.get('Budget', 0)),
-                'Cost': clean_num(c.get('Cost', 0)),
                 'Impressions': clean_num(c.get('Impressions', 0)),
                 'Clicks': clean_num(c.get('Clicks', 0)),
+                'Cost': clean_num(c.get('Cost', 0)),
                 'Conversions': clean_num(c.get('Conversions', 0)),
                 'CTR': clean_ctr(c.get('CTR', '0%')),
                 'CostPerConv': clean_num(c.get('CostPerConv', 0))
