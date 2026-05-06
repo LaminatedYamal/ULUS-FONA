@@ -126,7 +126,14 @@ const TRANSLATIONS = {
         "premium-tools": "Premium Tools",
         "live-ads-monitor": "📊 Live Ads Monitor",
         "data-sync": "Data Sync",
-        "brand-name": "Lusófona Group"
+        "brand-name": "Lusófona Group",
+        "tip-gsc": "Upload Search Console CSV to update organic keywords.",
+        "tip-sync": "Push your local changes to the global team database.",
+        "tip-reset": "Reset connection and clear local cache.",
+        "tip-monitor": "View real-time performance of all active campaigns.",
+        "tip-lang": "Switch between English and Portuguese.",
+        "tip-theme": "Switch between Dark and Light mode.",
+        "tip-account": "View user details or log out."
     },
     pt: {
         "greeting": "Olá",
@@ -170,7 +177,14 @@ const TRANSLATIONS = {
         "premium-tools": "Ferramentas Premium",
         "live-ads-monitor": "📊 Monitor de Ads em Direto",
         "data-sync": "Sincronização de Dados",
-        "brand-name": "Grupo Lusófona"
+        "brand-name": "Grupo Lusófona",
+        "tip-gsc": "Carregar CSV do Search Console para atualizar keywords orgânicas.",
+        "tip-sync": "Sincronizar as suas alterações locais com a base de dados da equipa.",
+        "tip-reset": "Reiniciar ligação e limpar cache local.",
+        "tip-monitor": "Ver desempenho em tempo real de todas as campanhas ativas.",
+        "tip-lang": "Alternar entre Inglês e Português.",
+        "tip-theme": "Alternar entre modo Claro e Escuro.",
+        "tip-account": "Ver detalhes do utilizador ou terminar sessão."
     }
 };
 
@@ -232,6 +246,21 @@ function updateUILanguage() {
                 el.textContent = val;
             }
         }
+    }
+    
+    // Update Tooltips
+    const tooltips = {
+        'gsc-upload-btn': t["tip-gsc"],
+        'sync-btn': t["tip-sync"],
+        'live-monitor-btn': t["tip-monitor"],
+        'lang-toggle-btn': t["tip-lang"],
+        'theme-toggle-btn': t["tip-theme"],
+        'account-btn': t["tip-account"]
+    };
+
+    for (const [id, val] of Object.entries(tooltips)) {
+        const el = document.getElementById(id);
+        if (el) el.title = val;
     }
     
     // Update Greeting (Special case)
