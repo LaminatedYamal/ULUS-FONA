@@ -13104,7 +13104,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/engenharia-de-tecnologias-e-sistemas-web-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado tecnologia",
+        "clicks": 0,
+        "impressions": 17
+      },
+      {
+        "term": "mestrado em ti",
+        "clicks": 0,
+        "impressions": 14
+      },
+      {
+        "term": "tecnologias web",
+        "clicks": 0,
+        "impressions": 14
+      },
+      {
+        "term": "engenharia e tecnologia",
+        "clicks": 0,
+        "impressions": 14
+      },
+      {
+        "term": "mestrado sistemas de informação",
+        "clicks": 0,
+        "impressions": 13
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13115,7 +13141,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/engenharia-informatica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em engenharia informática",
+        "clicks": 0,
+        "impressions": 16
+      },
+      {
+        "term": "isla mestrados",
+        "clicks": 0,
+        "impressions": 9
+      },
+      {
+        "term": "mestrado engenharia informatica",
+        "clicks": 0,
+        "impressions": 7
+      },
+      {
+        "term": "mestrado em informatica",
+        "clicks": 0,
+        "impressions": 7
+      },
+      {
+        "term": "mestrado informatica",
+        "clicks": 0,
+        "impressions": 5
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13126,7 +13178,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/financas-e-fiscalidade-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em fiscalidade",
+        "clicks": 10,
+        "impressions": 169
+      },
+      {
+        "term": "mestrado em finanças e fiscalidade",
+        "clicks": 7,
+        "impressions": 70
+      },
+      {
+        "term": "mestrado fiscalidade",
+        "clicks": 3,
+        "impressions": 110
+      },
+      {
+        "term": "mestrado fiscalidade online",
+        "clicks": 2,
+        "impressions": 23
+      },
+      {
+        "term": "mestrado em finanças",
+        "clicks": 1,
+        "impressions": 179
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13137,7 +13215,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/gestao-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "isla gaia",
+        "clicks": 1,
+        "impressions": 205
+      },
+      {
+        "term": "mestrado em gestao",
+        "clicks": 1,
+        "impressions": 15
+      },
+      {
+        "term": "isla mestrados",
+        "clicks": 0,
+        "impressions": 54
+      },
+      {
+        "term": "mestrado em gestão",
+        "clicks": 0,
+        "impressions": 25
+      },
+      {
+        "term": "mestrado gestao",
+        "clicks": 0,
+        "impressions": 21
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13148,7 +13252,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/gestao-da-seguranca-e-saude-do-trabalho-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em segurança do trabalho",
+        "clicks": 5,
+        "impressions": 112
+      },
+      {
+        "term": "mestrado segurança do trabalho",
+        "clicks": 4,
+        "impressions": 39
+      },
+      {
+        "term": "mestrado em segurança e higiene no trabalho",
+        "clicks": 4,
+        "impressions": 34
+      },
+      {
+        "term": "mestrado em higiene e segurança no trabalho online",
+        "clicks": 2,
+        "impressions": 31
+      },
+      {
+        "term": "mestrado higiene e segurança no trabalho",
+        "clicks": 2,
+        "impressions": 15
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13159,7 +13289,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/gestao-de-projetos-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em gestão de projetos",
+        "clicks": 8,
+        "impressions": 82
+      },
+      {
+        "term": "mestrado gestão de projetos",
+        "clicks": 2,
+        "impressions": 41
+      },
+      {
+        "term": "gestão de projetos mestrado",
+        "clicks": 1,
+        "impressions": 26
+      },
+      {
+        "term": "master direção de projetos",
+        "clicks": 0,
+        "impressions": 50
+      },
+      {
+        "term": "mestrado em gestao de projetos",
+        "clicks": 0,
+        "impressions": 27
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13170,7 +13326,33 @@
     "degree_type": "Mestrado",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/mestrados/gestao-de-recursos-humanos-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em recursos humanos",
+        "clicks": 17,
+        "impressions": 248
+      },
+      {
+        "term": "mestrado em gestão de recursos humanos",
+        "clicks": 10,
+        "impressions": 227
+      },
+      {
+        "term": "mestrado recursos humanos",
+        "clicks": 10,
+        "impressions": 221
+      },
+      {
+        "term": "mestrado recursos humanos porto",
+        "clicks": 3,
+        "impressions": 57
+      },
+      {
+        "term": "mestrados em recursos humanos",
+        "clicks": 3,
+        "impressions": 20
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13693,7 +13875,7 @@
   },
   {
     "type": "metadata",
-    "last_sync_by": "Nightly Pipeline (Ads + Campaigns)",
-    "last_sync_at": "06/05/2026, 08:41:50"
+    "last_sync_by": "Miguel",
+    "last_sync_at": "06/05/2026, 09:58:39"
   }
 ]
