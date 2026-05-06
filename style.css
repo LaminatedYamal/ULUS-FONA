@@ -285,8 +285,8 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     overflow: hidden;
 }
 
-/* THE LIQUID GLASS SHIMMER */
-.nav-group-header::after, .nav-degree-btn::after, .sync-btn::after {
+/* THE LIQUID GLASS SHIMMER - ONLY ON INSTITUTIONS */
+.nav-group-header::after {
     content: '';
     position: absolute;
     top: -50%;
@@ -296,7 +296,7 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(
         to right,
         rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.25) 50%,
         rgba(255, 255, 255, 0) 100%
     );
     transform: rotate(30deg);
