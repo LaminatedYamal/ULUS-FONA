@@ -153,15 +153,19 @@ def main():
             url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
             
             term = str(row.get('Keyword', '')).strip()
+            # Absolute Zero Deduplication: strict alphanumeric lowercase
+            term_clean = "".join(c for c in term.lower() if c.isalnum() or c.isspace())
+            term_clean = " ".join(term_clean.split())
+            
             imps = clean_num(row.get('Impressions', 0))
             
-            if url_clean and term:
+            if url_clean and term_clean:
                 if url_clean not in ads_map:
                     ads_map[url_clean] = {}
                 
-                # Keep only unique terms per URL, highest impressions wins
-                if term not in ads_map[url_clean] or imps > ads_map[url_clean][term]:
-                    ads_map[url_clean][term] = imps
+                # Keep only unique terms per URL (Overwrite mode: highest impressions wins)
+                if term_clean not in ads_map[url_clean] or imps > ads_map[url_clean][term_clean]:
+                    ads_map[url_clean][term_clean] = imps
 
     for item in data:
         if item.get('type') == 'metadata': continue
