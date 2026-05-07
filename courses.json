@@ -12770,7 +12770,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/arte-multimedia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "arte multimédia",
+        "clicks": 1,
+        "impressions": 90
+      },
+      {
+        "term": "arte multimedia",
+        "clicks": 0,
+        "impressions": 64
+      },
+      {
+        "term": "arte e multimedia",
+        "clicks": 0,
+        "impressions": 30
+      },
+      {
+        "term": "artes multimedia",
+        "clicks": 0,
+        "impressions": 10
+      },
+      {
+        "term": "licenciatura multimedia",
+        "clicks": 0,
+        "impressions": 10
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12781,7 +12807,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/automacao-e-sistemas-informaticos-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "automação",
+        "clicks": 1,
+        "impressions": 461
+      },
+      {
+        "term": "tecnologias digitais e automação",
+        "clicks": 1,
+        "impressions": 9
+      },
+      {
+        "term": "faculdade de automação",
+        "clicks": 1,
+        "impressions": 2
+      },
+      {
+        "term": "automação e sistemas",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "automaçao",
+        "clicks": 0,
+        "impressions": 62
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12792,7 +12844,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/ciencias-biomedicas-laboratoriais-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ciencias biomedicas laboratoriais",
+        "clicks": 15,
+        "impressions": 1386
+      },
+      {
+        "term": "ciências biomédicas laboratoriais",
+        "clicks": 5,
+        "impressions": 495
+      },
+      {
+        "term": "ciencias biomedicas",
+        "clicks": 5,
+        "impressions": 398
+      },
+      {
+        "term": "licenciatura em ciências biomédicas laboratoriais",
+        "clicks": 4,
+        "impressions": 81
+      },
+      {
+        "term": "ciências biomédicas",
+        "clicks": 2,
+        "impressions": 494
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12803,7 +12881,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/contabilidade-e-financas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em contabilidade e finanças",
+        "clicks": 2,
+        "impressions": 46
+      },
+      {
+        "term": "licenciatura em contabilidade online",
+        "clicks": 2,
+        "impressions": 27
+      },
+      {
+        "term": "licenciatura contabilidade online",
+        "clicks": 1,
+        "impressions": 51
+      },
+      {
+        "term": "financas.pt",
+        "clicks": 0,
+        "impressions": 373
+      },
+      {
+        "term": "licenciatura em contabilidade",
+        "clicks": 0,
+        "impressions": 200
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12814,7 +12918,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/educacao-basica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em educação básica",
+        "clicks": 39,
+        "impressions": 690
+      },
+      {
+        "term": "licenciatura educadora de infância online",
+        "clicks": 23,
+        "impressions": 250
+      },
+      {
+        "term": "licenciatura educação básica e-learning",
+        "clicks": 19,
+        "impressions": 299
+      },
+      {
+        "term": "licenciatura em educação básica online",
+        "clicks": 18,
+        "impressions": 168
+      },
+      {
+        "term": "licenciatura educação básica online",
+        "clicks": 15,
+        "impressions": 71
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12825,7 +12955,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/enfermagem-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ipluso enfermagem",
+        "clicks": 74,
+        "impressions": 143
+      },
+      {
+        "term": "erisa enfermagem",
+        "clicks": 26,
+        "impressions": 162
+      },
+      {
+        "term": "licenciatura enfermagem",
+        "clicks": 13,
+        "impressions": 297
+      },
+      {
+        "term": "lusofona enfermagem",
+        "clicks": 12,
+        "impressions": 28
+      },
+      {
+        "term": "erisa",
+        "clicks": 10,
+        "impressions": 401
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12836,7 +12992,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/enfermagem-veterinaria-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "enfermagem veterinária",
+        "clicks": 76,
+        "impressions": 1204
+      },
+      {
+        "term": "enfermagem veterinaria",
+        "clicks": 34,
+        "impressions": 354
+      },
+      {
+        "term": "enfermagem veterinária lisboa",
+        "clicks": 29,
+        "impressions": 108
+      },
+      {
+        "term": "licenciatura enfermagem veterinaria",
+        "clicks": 14,
+        "impressions": 92
+      },
+      {
+        "term": "curso enfermagem veterinaria",
+        "clicks": 12,
+        "impressions": 135
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12847,7 +13029,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/engenharia-informatica-e-aplicacoes-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "engenharia informatica",
+        "clicks": 0,
+        "impressions": 84
+      },
+      {
+        "term": "licenciatura informatica",
+        "clicks": 0,
+        "impressions": 27
+      },
+      {
+        "term": "licenciatura engenharia informática",
+        "clicks": 0,
+        "impressions": 26
+      },
+      {
+        "term": "licenciatura em engenharia informática",
+        "clicks": 0,
+        "impressions": 24
+      },
+      {
+        "term": "licenciatura informática",
+        "clicks": 0,
+        "impressions": 21
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12858,7 +13066,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/farmacia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em farmácia",
+        "clicks": 14,
+        "impressions": 258
+      },
+      {
+        "term": "licenciatura em farmácia online",
+        "clicks": 13,
+        "impressions": 98
+      },
+      {
+        "term": "licenciatura em farmácia pós laboral",
+        "clicks": 12,
+        "impressions": 63
+      },
+      {
+        "term": "licenciatura em farmacia",
+        "clicks": 8,
+        "impressions": 146
+      },
+      {
+        "term": "licenciatura farmacia",
+        "clicks": 7,
+        "impressions": 192
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12869,7 +13103,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/gestao-comercial-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestao comercial",
+        "clicks": 2,
+        "impressions": 117
+      },
+      {
+        "term": "licenciatura em gestão comercial",
+        "clicks": 2,
+        "impressions": 25
+      },
+      {
+        "term": "gestão comercial",
+        "clicks": 1,
+        "impressions": 517
+      },
+      {
+        "term": "curso de gestão comercial",
+        "clicks": 1,
+        "impressions": 33
+      },
+      {
+        "term": "licenciatura gestão",
+        "clicks": 1,
+        "impressions": 23
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12880,7 +13140,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/gestao-de-empresas-do-turismo-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestão de empresas",
+        "clicks": 1,
+        "impressions": 27
+      },
+      {
+        "term": "gestão de turismo",
+        "clicks": 1,
+        "impressions": 24
+      },
+      {
+        "term": "licenciatura turismo online",
+        "clicks": 1,
+        "impressions": 4
+      },
+      {
+        "term": "empresas turisticas",
+        "clicks": 1,
+        "impressions": 3
+      },
+      {
+        "term": "formação em empresas na área do turismo",
+        "clicks": 0,
+        "impressions": 295
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12891,7 +13177,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/gestao-empresarial-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestão empresarial",
+        "clicks": 5,
+        "impressions": 360
+      },
+      {
+        "term": "gestao empresarial",
+        "clicks": 2,
+        "impressions": 41
+      },
+      {
+        "term": "licenciatura em gestão empresarial",
+        "clicks": 2,
+        "impressions": 25
+      },
+      {
+        "term": "licenciatura gestão de empresas online",
+        "clicks": 1,
+        "impressions": 12
+      },
+      {
+        "term": "licenciatura gestão online",
+        "clicks": 1,
+        "impressions": 7
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12902,7 +13214,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/ilustracao-e-desenho-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de ilustração",
+        "clicks": 5,
+        "impressions": 127
+      },
+      {
+        "term": "licenciatura em desenho",
+        "clicks": 5,
+        "impressions": 38
+      },
+      {
+        "term": "curso ilustração",
+        "clicks": 4,
+        "impressions": 80
+      },
+      {
+        "term": "ilustração e desenho",
+        "clicks": 3,
+        "impressions": 8
+      },
+      {
+        "term": "curso ilustracao",
+        "clicks": 2,
+        "impressions": 10
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12913,7 +13251,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/imagem-medica-e-radioterapia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "imagem médica e radioterapia",
+        "clicks": 11,
+        "impressions": 1012
+      },
+      {
+        "term": "licenciatura em imagem médica e radioterapia",
+        "clicks": 7,
+        "impressions": 162
+      },
+      {
+        "term": "curso de radiologia",
+        "clicks": 6,
+        "impressions": 108
+      },
+      {
+        "term": "técnico de radiologia curso",
+        "clicks": 6,
+        "impressions": 95
+      },
+      {
+        "term": "imagem medica e radioterapia",
+        "clicks": 3,
+        "impressions": 123
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12924,7 +13288,33 @@
     "degree_type": "Licenciatura",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/licenciaturas/osteopatia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso de osteopatia",
+        "clicks": 23,
+        "impressions": 386
+      },
+      {
+        "term": "curso osteopatia",
+        "clicks": 20,
+        "impressions": 421
+      },
+      {
+        "term": "osteopatia curso",
+        "clicks": 18,
+        "impressions": 320
+      },
+      {
+        "term": "licenciatura osteopatia",
+        "clicks": 11,
+        "impressions": 208
+      },
+      {
+        "term": "osteopatia licenciatura",
+        "clicks": 6,
+        "impressions": 105
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12935,7 +13325,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/artes-visuais-e-media-digitais-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado ensino artes visuais online",
+        "clicks": 3,
+        "impressions": 69
+      },
+      {
+        "term": "mestrado em artes visuais",
+        "clicks": 2,
+        "impressions": 66
+      },
+      {
+        "term": "mestrado artes visuais",
+        "clicks": 1,
+        "impressions": 66
+      },
+      {
+        "term": "mestrado em ensino de artes visuais",
+        "clicks": 1,
+        "impressions": 11
+      },
+      {
+        "term": "mestrado em ensino das artes visuais",
+        "clicks": 1,
+        "impressions": 2
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12946,7 +13362,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/desenho-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado desenho",
+        "clicks": 6,
+        "impressions": 68
+      },
+      {
+        "term": "mestrado em desenho",
+        "clicks": 6,
+        "impressions": 43
+      },
+      {
+        "term": "mestrado em ilustração",
+        "clicks": 1,
+        "impressions": 16
+      },
+      {
+        "term": "mestrado ilustração",
+        "clicks": 0,
+        "impressions": 19
+      },
+      {
+        "term": "master arquitetura e desenho",
+        "clicks": 0,
+        "impressions": 9
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12957,7 +13399,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/educacao-pre-escolar-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em educação pré-escolar online",
+        "clicks": 0,
+        "impressions": 5
+      },
+      {
+        "term": "educadora de infancia curso",
+        "clicks": 0,
+        "impressions": 4
+      },
+      {
+        "term": "mestrado em educação pré escolar",
+        "clicks": 0,
+        "impressions": 3
+      },
+      {
+        "term": "curso educadora de infância",
+        "clicks": 0,
+        "impressions": 2
+      },
+      {
+        "term": "curso educadora de infância pós-laboral",
+        "clicks": 0,
+        "impressions": 2
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12968,7 +13436,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/educacao-pre-escolar-e-ensino-do-1o-ciclo-do-ensino-basico-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em ensino pós-laboral",
+        "clicks": 7,
+        "impressions": 223
+      },
+      {
+        "term": "mestrado em educação básica",
+        "clicks": 4,
+        "impressions": 96
+      },
+      {
+        "term": "mestrado educação",
+        "clicks": 4,
+        "impressions": 61
+      },
+      {
+        "term": "mestrado pre escolar e 1 ciclo",
+        "clicks": 3,
+        "impressions": 72
+      },
+      {
+        "term": "mestrado educação basica",
+        "clicks": 3,
+        "impressions": 68
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12979,7 +13473,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/enfermagem-veterinaria-clinica-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado enfermagem veterinária",
+        "clicks": 0,
+        "impressions": 31
+      },
+      {
+        "term": "ipluso enfermagem",
+        "clicks": 0,
+        "impressions": 12
+      },
+      {
+        "term": "mestrado veterinaria",
+        "clicks": 0,
+        "impressions": 5
+      },
+      {
+        "term": "mestrado em veterinária",
+        "clicks": 0,
+        "impressions": 4
+      },
+      {
+        "term": "enfermagem veterinaria",
+        "clicks": 0,
+        "impressions": 4
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -12990,7 +13510,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/ensino-do-1o-ciclo-do-ensino-basico-e-de-matematica-e-ciencias-naturais-no-2o-ciclo-do-ensino-basico-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em ensino",
+        "clicks": 7,
+        "impressions": 224
+      },
+      {
+        "term": "mestrado em ensino do 1. oe 2.o ciclo do ensino básico online",
+        "clicks": 3,
+        "impressions": 26
+      },
+      {
+        "term": "mestrado em ensino de ciências",
+        "clicks": 3,
+        "impressions": 8
+      },
+      {
+        "term": "mestrado em ensino de ciências e matemática",
+        "clicks": 2,
+        "impressions": 11
+      },
+      {
+        "term": "mestrado em ensino do 1. oe 2.o ciclo do ensino básico",
+        "clicks": 1,
+        "impressions": 64
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13001,7 +13547,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/gestao-empresarial-e-negocios-digitais-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em gestão online",
+        "clicks": 0,
+        "impressions": 43
+      },
+      {
+        "term": "mestrado em negócios",
+        "clicks": 0,
+        "impressions": 38
+      },
+      {
+        "term": "mestrado gestão de negócios",
+        "clicks": 0,
+        "impressions": 34
+      },
+      {
+        "term": "mestrado em gestao empresarial",
+        "clicks": 0,
+        "impressions": 29
+      },
+      {
+        "term": "mestrado em gestão empresarial",
+        "clicks": 0,
+        "impressions": 23
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13012,7 +13584,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/ilustracao-experimental-e-narrativas-graficas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado ilustração",
+        "clicks": 13,
+        "impressions": 76
+      },
+      {
+        "term": "mestrado em ilustração",
+        "clicks": 6,
+        "impressions": 54
+      },
+      {
+        "term": "filipe zaino",
+        "clicks": 1,
+        "impressions": 1
+      },
+      {
+        "term": "mestrado desenho",
+        "clicks": 0,
+        "impressions": 12
+      },
+      {
+        "term": "mestrado ilustrações",
+        "clicks": 0,
+        "impressions": 4
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -13023,7 +13621,33 @@
     "degree_type": "Mestrado",
     "institution": "IPLUSO",
     "url": "https://www.ipluso.pt/pt/mestrados/saude-digital-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado saude digital",
+        "clicks": 10,
+        "impressions": 63
+      },
+      {
+        "term": "mestrado em saude digital",
+        "clicks": 4,
+        "impressions": 16
+      },
+      {
+        "term": "mestrado saude online",
+        "clicks": 4,
+        "impressions": 11
+      },
+      {
+        "term": "mestrado em competências digitais na saúde",
+        "clicks": 3,
+        "impressions": 125
+      },
+      {
+        "term": "mestrado em saúde digital",
+        "clicks": 1,
+        "impressions": 4
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15488,6 +16112,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "07/05/2026, 11:53:58"
+    "last_sync_at": "07/05/2026, 11:54:08"
   }
 ]
