@@ -15819,7 +15819,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/ciencia-de-dados-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso ciencia de dados",
+        "clicks": 1,
+        "impressions": 93
+      },
+      {
+        "term": "licenciatura em ciência de dados",
+        "clicks": 1,
+        "impressions": 92
+      },
+      {
+        "term": "ciencia de dados",
+        "clicks": 0,
+        "impressions": 373
+      },
+      {
+        "term": "ciência de dados",
+        "clicks": 0,
+        "impressions": 127
+      },
+      {
+        "term": "licenciatura em ciencia de dados",
+        "clicks": 0,
+        "impressions": 78
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15830,7 +15856,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/ciencias-do-desporto-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ismat cursos",
+        "clicks": 11,
+        "impressions": 179
+      },
+      {
+        "term": "ismat portimão cursos",
+        "clicks": 8,
+        "impressions": 64
+      },
+      {
+        "term": "ismat portimão",
+        "clicks": 7,
+        "impressions": 175
+      },
+      {
+        "term": "ciencias do desporto",
+        "clicks": 1,
+        "impressions": 384
+      },
+      {
+        "term": "ciências do desporto",
+        "clicks": 1,
+        "impressions": 213
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15863,7 +15915,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/design-e-producao-de-moda-e-textil-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em moda",
+        "clicks": 3,
+        "impressions": 37
+      },
+      {
+        "term": "design de moda",
+        "clicks": 2,
+        "impressions": 112
+      },
+      {
+        "term": "licenciatura design",
+        "clicks": 1,
+        "impressions": 72
+      },
+      {
+        "term": "design de moda licenciatura",
+        "clicks": 1,
+        "impressions": 34
+      },
+      {
+        "term": "produção de moda",
+        "clicks": 1,
+        "impressions": 14
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15874,7 +15952,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/direito-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ismat direito",
+        "clicks": 93,
+        "impressions": 121
+      },
+      {
+        "term": "ismat cursos",
+        "clicks": 14,
+        "impressions": 223
+      },
+      {
+        "term": "ismat",
+        "clicks": 9,
+        "impressions": 1306
+      },
+      {
+        "term": "ismat portimão",
+        "clicks": 9,
+        "impressions": 652
+      },
+      {
+        "term": "instituto superior manuel teixeira gomes",
+        "clicks": 6,
+        "impressions": 687
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15896,7 +16000,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/gestao-de-empresas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ismat",
+        "clicks": 2,
+        "impressions": 176
+      },
+      {
+        "term": "licenciatura em gestão de empresas",
+        "clicks": 1,
+        "impressions": 84
+      },
+      {
+        "term": "gestao empresas",
+        "clicks": 1,
+        "impressions": 12
+      },
+      {
+        "term": "gestão de empresas",
+        "clicks": 0,
+        "impressions": 170
+      },
+      {
+        "term": "licenciatura gestão de empresas",
+        "clicks": 0,
+        "impressions": 61
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15918,7 +16048,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/gestao-do-turismo-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura turismo",
+        "clicks": 1,
+        "impressions": 93
+      },
+      {
+        "term": "ismat portimão",
+        "clicks": 1,
+        "impressions": 61
+      },
+      {
+        "term": "ismat cursos",
+        "clicks": 1,
+        "impressions": 46
+      },
+      {
+        "term": "gestão do turismo",
+        "clicks": 1,
+        "impressions": 12
+      },
+      {
+        "term": "ismat",
+        "clicks": 0,
+        "impressions": 157
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15929,7 +16085,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/psicologia-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ismat psicologia",
+        "clicks": 37,
+        "impressions": 53
+      },
+      {
+        "term": "ismat cursos",
+        "clicks": 10,
+        "impressions": 214
+      },
+      {
+        "term": "ismat portimão",
+        "clicks": 8,
+        "impressions": 111
+      },
+      {
+        "term": "ismat portimão cursos",
+        "clicks": 6,
+        "impressions": 59
+      },
+      {
+        "term": "licenciatura em psicologia",
+        "clicks": 5,
+        "impressions": 331
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15940,7 +16122,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/tecnologias-criativas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "tecnologias criativas",
+        "clicks": 3,
+        "impressions": 25
+      },
+      {
+        "term": "tecnologia criativa",
+        "clicks": 1,
+        "impressions": 25
+      },
+      {
+        "term": "tecnologias",
+        "clicks": 0,
+        "impressions": 78
+      },
+      {
+        "term": "ismat cursos",
+        "clicks": 0,
+        "impressions": 4
+      },
+      {
+        "term": "tecnologia creativa",
+        "clicks": 0,
+        "impressions": 3
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16112,6 +16320,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "07/05/2026, 11:54:08"
+    "last_sync_at": "07/05/2026, 14:57:50"
   }
 ]
