@@ -3,12 +3,17 @@
     --panel-bg: rgba(255, 255, 255, 0.03);
     --panel-border: rgba(255, 255, 255, 0.08);
     --accent-primary: #00f2ff;
+    --accent-primary-rgb: 0, 242, 255;
     --accent-secondary: #ff00c8;
+    --accent-secondary-rgb: 255, 0, 200;
     --text-main: #ffffff;
     --text-muted: #b0b0b0;
     --success: #00ff88;
+    --success-rgb: 0, 255, 136;
     --warning: #ffcc00;
+    --warning-rgb: 255, 204, 0;
     --danger: #ff4d4d;
+    --danger-rgb: 255, 77, 77;
     --sidebar-width: 280px;
     --glass-blur: 16px;
     --card-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -1310,12 +1315,13 @@ body.light-mode .back-to-top:hover {
     color: #ffffff;
 }
 
-/* Triple Match Synergy (Lightning Bolt Yellow) */
+/* Triple Match Synergy (ULTIMATE YELLOW GLOW) */
 .triple-synergy-aura, .rainbow-row {
-    background: rgba(255, 255, 0, 0.05) !important;
+    background: rgba(255, 204, 0, 0.15) !important;
     position: relative;
     border: 2px solid #ffcc00 !important;
-    animation: synergy-pulse 3s infinite ease-in-out;
+    animation: synergy-pulse-yellow 3s infinite ease-in-out;
+    box-shadow: 0 0 30px rgba(255, 204, 0, 0.3) !important;
 }
 
 .triple-synergy-aura::after, .rainbow-row::after {
@@ -1328,13 +1334,12 @@ body.light-mode .back-to-top:hover {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.9),
         transparent
     );
-    animation: border-lightning-strike 2s infinite ease-in-out;
+    animation: border-lightning-strike 1.5s infinite ease-in-out;
     pointer-events: none;
     z-index: 5;
-    /* Only visible on the border area */
     clip-path: polygon(
         0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 
         2px 2px, 2px calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 2px, 2px 2px
@@ -1343,36 +1348,37 @@ body.light-mode .back-to-top:hover {
 
 @keyframes border-lightning-strike {
     0% { left: -100%; opacity: 0; }
-    20% { opacity: 1; }
-    50% { left: 100%; opacity: 0; }
+    10% { opacity: 1; }
+    40% { left: 100%; opacity: 0; }
     100% { left: 100%; opacity: 0; }
 }
 
 .triple-synergy-aura td:first-child, .rainbow-row td:first-child {
     color: #ffffff !important;
     font-weight: 900 !important;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00 !important;
-    font-size: 17px !important;
+    text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00, 0 0 45px rgba(255, 204, 0, 0.8) !important;
+    font-size: 18px !important;
+    letter-spacing: 0.5px;
 }
 
 .triple-synergy-aura td:first-child::after, .rainbow-row td:first-child::after {
     content: "⚡";
     margin-left: 10px;
-    font-size: 14px;
-    filter: drop-shadow(0 0 8px #ffcc00);
-    animation: lightningPulse 1.5s infinite alternate;
+    font-size: 16px;
+    filter: drop-shadow(0 0 10px #ffcc00);
+    animation: lightningPulse 1s infinite alternate;
     display: inline-block;
 }
 
 @keyframes lightningPulse {
-    0% { opacity: 0.5; transform: scale(0.9); }
-    100% { opacity: 1; transform: scale(1.2); }
+    0% { opacity: 0.6; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1.3); }
 }
 
-@keyframes synergy-pulse {
-    0% { box-shadow: inset 0 0 15px rgba(255, 204, 0, 0.1); }
-    50% { box-shadow: inset 0 0 40px rgba(255, 204, 0, 0.3); }
-    100% { box-shadow: inset 0 0 15px rgba(255, 204, 0, 0.1); }
+@keyframes synergy-pulse-yellow {
+    0% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.2), inset 0 0 10px rgba(255, 204, 0, 0.1); }
+    50% { box-shadow: 0 0 50px rgba(255, 204, 0, 0.5), inset 0 0 30px rgba(255, 204, 0, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(255, 204, 0, 0.2), inset 0 0 10px rgba(255, 204, 0, 0.1); }
 }
 
 /* Sync Reminder Modal */
@@ -2024,8 +2030,8 @@ body.light-mode .hero-text h2 {
     100% { background-position: 0% 50%; }
 }
 
-/* RAINBOW WINNER BADGE & ROW */
-.rainbow-winner-badge, .rainbow-row {
+/* RAINBOW WINNER BADGE */
+.rainbow-winner-badge {
     background: linear-gradient(
         45deg,
         rgba(66, 133, 244, 0.4), rgba(52, 168, 83, 0.4), rgba(251, 188, 5, 0.4), rgba(234, 67, 53, 0.4),
@@ -2034,14 +2040,6 @@ body.light-mode .hero-text h2 {
     background-size: 400% 400%;
     animation: rainbow-surge 6s linear infinite;
     color: white !important;
-}
-
-.rainbow-row td {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-}
-
-.rainbow-winner-badge {
     padding: 2px 8px;
     border-radius: 6px;
     display: inline-block;
