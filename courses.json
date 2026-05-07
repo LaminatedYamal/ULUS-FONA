@@ -14693,7 +14693,33 @@
     "degree_type": "TeSP",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/desenvolvimento-para-a-web-e-dispositivos-moveis-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "curso técnico online",
+        "clicks": 0,
+        "impressions": 49
+      },
+      {
+        "term": "desenvolvimento conteúdos electrónicos",
+        "clicks": 0,
+        "impressions": 38
+      },
+      {
+        "term": "isla gaia cursos",
+        "clicks": 0,
+        "impressions": 30
+      },
+      {
+        "term": "desenvolvimento web & mobile",
+        "clicks": 0,
+        "impressions": 24
+      },
+      {
+        "term": "desenvolvimento web curso",
+        "clicks": 0,
+        "impressions": 12
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15222,7 +15248,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/gestao-de-empresas-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "gestão de empresas",
+        "clicks": 4,
+        "impressions": 320
+      },
+      {
+        "term": "curso de gestao de empresa",
+        "clicks": 3,
+        "impressions": 126
+      },
+      {
+        "term": "gestão de empresas licenciatura",
+        "clicks": 3,
+        "impressions": 52
+      },
+      {
+        "term": "licenciatura gestao pos laboral",
+        "clicks": 3,
+        "impressions": 19
+      },
+      {
+        "term": "licenciatura gestão de empresas",
+        "clicks": 2,
+        "impressions": 112
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15270,7 +15322,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/gestao-do-turismo-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "isla gaia licenciaturas",
+        "clicks": 8,
+        "impressions": 61
+      },
+      {
+        "term": "isla turismo",
+        "clicks": 3,
+        "impressions": 6
+      },
+      {
+        "term": "gestão de turismo",
+        "clicks": 2,
+        "impressions": 53
+      },
+      {
+        "term": "curso turismo",
+        "clicks": 1,
+        "impressions": 108
+      },
+      {
+        "term": "gestao de turismo",
+        "clicks": 1,
+        "impressions": 26
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -15292,7 +15370,33 @@
     "degree_type": "Licenciatura",
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/inteligencia-artificial-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "licenciatura em inteligência artificial",
+        "clicks": 6,
+        "impressions": 100
+      },
+      {
+        "term": "licenciatura inteligência artificial",
+        "clicks": 2,
+        "impressions": 85
+      },
+      {
+        "term": "licenciatura inteligencia artificial",
+        "clicks": 2,
+        "impressions": 66
+      },
+      {
+        "term": "isla gaia licenciaturas",
+        "clicks": 2,
+        "impressions": 35
+      },
+      {
+        "term": "licenciatura inteligência artificial portugal",
+        "clicks": 2,
+        "impressions": 28
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16181,7 +16285,33 @@
     "degree_type": "Mestrado",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/biodesign-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "biodesign",
+        "clicks": 2,
+        "impressions": 155
+      },
+      {
+        "term": "biodesing",
+        "clicks": 0,
+        "impressions": 6
+      },
+      {
+        "term": "bio design",
+        "clicks": 0,
+        "impressions": 3
+      },
+      {
+        "term": "na faculdade",
+        "clicks": 0,
+        "impressions": 1
+      },
+      {
+        "term": "biodesig",
+        "clicks": 0,
+        "impressions": 1
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16192,7 +16322,33 @@
     "degree_type": "Mestrado",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/design-para-a-economia-circular-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado design",
+        "clicks": 0,
+        "impressions": 18
+      },
+      {
+        "term": "mestrado economia circular",
+        "clicks": 0,
+        "impressions": 8
+      },
+      {
+        "term": "mestrado design portugal",
+        "clicks": 0,
+        "impressions": 7
+      },
+      {
+        "term": "design para",
+        "clicks": 0,
+        "impressions": 2
+      },
+      {
+        "term": "mestrado em design",
+        "clicks": 0,
+        "impressions": 2
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16214,7 +16370,33 @@
     "degree_type": "Mestrado",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/ensino-de-artes-visuais-no-3o-ciclo-do-ensino-basico-e-no-ensino-secundario-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em ensino de artes visuais",
+        "clicks": 62,
+        "impressions": 533
+      },
+      {
+        "term": "mestrado ensino artes visuais",
+        "clicks": 46,
+        "impressions": 408
+      },
+      {
+        "term": "mestrado ensino artes visuais online",
+        "clicks": 26,
+        "impressions": 177
+      },
+      {
+        "term": "mestrado ensino artes visuais pós-laboral",
+        "clicks": 18,
+        "impressions": 144
+      },
+      {
+        "term": "mestrado em ensino artes visuais",
+        "clicks": 17,
+        "impressions": 152
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16225,7 +16407,33 @@
     "degree_type": "Mestrado",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/gestao-de-recursos-humanos-e-intervencao-organizacional-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "mestrado em recursos humanos",
+        "clicks": 2,
+        "impressions": 169
+      },
+      {
+        "term": "mestrado em gestão de recursos humanos",
+        "clicks": 1,
+        "impressions": 86
+      },
+      {
+        "term": "mestrado recursos humanos",
+        "clicks": 1,
+        "impressions": 70
+      },
+      {
+        "term": "mestrado em gestão de recursos humanos portugal",
+        "clicks": 1,
+        "impressions": 12
+      },
+      {
+        "term": "mestrados recursos humanos",
+        "clicks": 1,
+        "impressions": 7
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16236,7 +16444,33 @@
     "degree_type": "Mestrado",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/gestao-e-inovacao-em-turismo-e-hospitalidade-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ismat mestrados",
+        "clicks": 2,
+        "impressions": 10
+      },
+      {
+        "term": "gestão de hospitalidade",
+        "clicks": 0,
+        "impressions": 36
+      },
+      {
+        "term": "mestrado em turismo",
+        "clicks": 0,
+        "impressions": 29
+      },
+      {
+        "term": "mestrado turismo",
+        "clicks": 0,
+        "impressions": 24
+      },
+      {
+        "term": "mestrado turismo lisboa",
+        "clicks": 0,
+        "impressions": 22
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16247,7 +16481,33 @@
     "degree_type": "Mestrado",
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/psicologia-do-trabalho-e-da-saude-ocupacional-pt",
-    "gscKeywords": [],
+    "gscKeywords": [
+      {
+        "term": "ismat mestrados",
+        "clicks": 4,
+        "impressions": 36
+      },
+      {
+        "term": "psicologia da saúde ocupacional",
+        "clicks": 1,
+        "impressions": 31
+      },
+      {
+        "term": "mestrados em portugal",
+        "clicks": 1,
+        "impressions": 3
+      },
+      {
+        "term": "psicologia do trabalho curso",
+        "clicks": 1,
+        "impressions": 2
+      },
+      {
+        "term": "psicologia do trabalho",
+        "clicks": 0,
+        "impressions": 75
+      }
+    ],
     "adsKeywords": [],
     "rankingsKeywords": []
   },
@@ -16320,6 +16580,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Miguel",
-    "last_sync_at": "07/05/2026, 14:57:50"
+    "last_sync_at": "07/05/2026, 15:20:52"
   }
 ]
