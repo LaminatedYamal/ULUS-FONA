@@ -1328,10 +1328,20 @@ function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
     adsBody.innerHTML = '';
     rankingsBody.innerHTML = '';
     
-    // Sort Alphabetically
-    const sortedGsc = [...gsc].sort((a, b) => (b.clicks || 0) - (a.clicks || 0)); // Sort by clicks by default
-    const sortedAds = [...ads].sort((a, b) => (b.impressions || 0) - (a.impressions || 0));
-    const sortedRankings = [...rankings].sort((a, b) => a.term.localeCompare(b.term, 'pt'));
+    // Deduplicate and Sort
+    const getUnique = (arr) => {
+        const seen = new Set();
+        return arr.filter(item => {
+            const norm = normalizeKeyword(item.term);
+            if (seen.has(norm)) return false;
+            seen.add(norm);
+            return true;
+        });
+    };
+
+    const sortedGsc = getUnique([...gsc]).sort((a, b) => (b.clicks || 0) - (a.clicks || 0));
+    const sortedAds = getUnique([...ads]).sort((a, b) => (b.impressions || 0) - (a.impressions || 0));
+    const sortedRankings = getUnique([...rankings]).sort((a, b) => a.term.localeCompare(b.term, 'pt'));
     
     const gscNorms = gsc.map(k => normalizeKeyword(k.term));
     const adsNorms = ads.map(k => normalizeKeyword(k.term));
