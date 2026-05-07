@@ -157,8 +157,11 @@ def main():
             
             if url_clean and term:
                 if url_clean not in ads_map:
-                    ads_map[url_clean] = []
-                ads_map[url_clean].append({'term': term, 'impressions': imps})
+                    ads_map[url_clean] = {}
+                
+                # Keep only unique terms per URL, highest impressions wins
+                if term not in ads_map[url_clean] or imps > ads_map[url_clean][term]:
+                    ads_map[url_clean][term] = imps
 
     for item in data:
         if item.get('type') == 'metadata': continue
@@ -168,8 +171,8 @@ def main():
         url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
 
         if url_clean in ads_map:
-            # Match!
-            keyword_list = ads_map[url_clean]
+            # Convert map back to list for JSON
+            keyword_list = [{'term': t, 'impressions': i} for t, i in ads_map[url_clean].items()]
             # Sort and Prune
             keyword_list.sort(key=lambda x: x.get('impressions', 0), reverse=True)
             item['adsKeywords'] = keyword_list[:100]
