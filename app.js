@@ -46,6 +46,7 @@ async function init() {
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
+    refreshModelVisibility();
 }
 
 
@@ -1717,7 +1718,9 @@ let liveAdsContext = null;
 const modelConfigs = {
     'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
     'gpt4o':    { name: 'GPT-5.5',       color: '#10A37F', rgb: '16, 163, 127', grad: ['#10A37F', '#19C37D'] },
-    'claude':   { name: 'Claude Opus',   color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] }
+    'claude':   { name: 'Claude Opus',   color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] },
+    'llama':    { name: 'Llama 3.1',     color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#4285F4'] },
+    'deepseek': { name: 'DeepSeek V3',   color: '#0057FF', rgb: '0, 87, 255', grad: ['#0057FF', '#00C2FF'] }
 };
 
 let activePersona = 'marketeer';
@@ -1926,7 +1929,28 @@ window.saveWalletKeys = function() {
     
     hideKeysWallet();
     console.log("[Antigravity] All API Keys & Proxy Updated in Wallet.");
+    refreshModelVisibility();
 }
+
+function refreshModelVisibility() {
+    Object.keys(modelConfigs).forEach(m => {
+        // Gemini is usually the baseline, show it if no others are configured
+        // Or better: show if key exists OR it is gemini (baseline)
+        const key = localStorage.getItem(`api_key_${m}`);
+        const orbClass = m === 'gpt4o' ? '.gpt-orb' : `.${m}-orb`;
+        const orb = document.querySelector(orbClass);
+        if (orb) {
+            // Keep gemini always visible as fallback if you want, 
+            // but let's follow the rule: show only if key exists (except maybe gemini)
+            if (m === 'gemini') {
+                orb.style.display = 'flex';
+            } else {
+                orb.style.display = key ? 'flex' : 'none';
+            }
+        }
+    });
+}
+
 
 window.switchAIModel = function(model) {
     console.log(`[Antigravity] switchAIModel triggered for: ${model}`);
