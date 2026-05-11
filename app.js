@@ -2057,7 +2057,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    document.title = 'SEO Keyword Hub | Antigravity v93 (Stable)';
+    document.title = 'SEO Keyword Hub | Antigravity v95 (Stable)';
     
     let context = `You are the Antigravity Master Strategist, currently operating as a ${PERSONA_CONFIGS[activePersona].name}. `;
     context += `PERSONA INSTRUCTIONS: ${PERSONA_CONFIGS[activePersona].instructions} `;
@@ -2066,10 +2066,12 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     context += "Use natural, fluid language. If asked about a person, check if they are leadership/faculty at ULP. ";
     context += "If you cannot find specific data, hypothesize based on market trends but stay grounded in the database provided. ";
     context += "NEVER say 'As an AI...'. Be direct, bold, and helpful. ";
+    context += "LANGUAGE RULE: You MUST always respond in the same language the user uses. Se falarem em Português, responde em Português. If they speak English, respond in English. This is mandatory. ";
+
 
 
     let dataPayload = {
-        meta: { version: "v91", agent: "Antigravity Master Strategist" }
+        meta: { version: "v95", agent: "Antigravity Master Strategist" }
     };
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
@@ -2085,15 +2087,26 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         };
     } else {
         const allKeywords = courses.flatMap(c => (c.gscKeywords || []).map(k => ({ ...k, course: c.name })));
+        
+        // Filter and sort for actual movers to avoid identical lists
+        const gainers = allKeywords.filter(k => (k.clickDelta || 0) > 0).sort((a,b) => (b.clickDelta || 0) - (a.clickDelta || 0)).slice(0, 30);
+        const losers = allKeywords.filter(k => (k.clickDelta || 0) < 0).sort((a,b) => (a.clickDelta || 0) - (b.clickDelta || 0)).slice(0, 30);
+        
+        // Fallback if no delta data is present
+        const trendData = (gainers.length > 0 || losers.length > 0) ? {
+            biggest_gainers: gainers.map(k => ({ term: k.term, delta: k.clickDelta, course: k.course })),
+            biggest_losers: losers.map(k => ({ term: k.term, delta: k.clickDelta, course: k.course }))
+        } : {
+            note: "No click-delta (trend) data found in the current sync. Showing top keywords by absolute volume instead.",
+            top_keywords: allKeywords.sort((a,b) => (b.clicks || 0) - (a.clicks || 0)).slice(0, 30).map(k => ({ term: k.term, clicks: k.clicks, course: k.course }))
+        };
+
         dataPayload = {
             ...dataPayload,
             target: "Fleet Commander View",
             total_courses: courses.length,
             representative_sample: courses.slice(0, 10).map(c => ({ name: c.name, inst: c.institution, coordinator: c.coordinator })),
-            organic_movers: {
-                biggest_gainers: [...allKeywords].sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 30).map(k => ({ term: k.term, delta: k.clickDelta, course: k.course })),
-                biggest_losers: [...allKeywords].sort((a,b) => a.clickDelta - b.clickDelta).slice(0, 30).map(k => ({ term: k.term, delta: k.clickDelta, course: k.course }))
-            }
+            organic_movers: trendData
         };
     }
 
