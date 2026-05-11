@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SEO Keyword Hub | Antigravity v73 (Stable)</title>
+    <title>SEO Keyword Hub | Antigravity v75 (Stable)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -421,10 +421,20 @@
                     <label>OpenAI GPT Key</label>
                     <input type="password" id="wallet-key-gpt4o" placeholder="Enter GPT API Key...">
                 </div>
-                <div class="key-input-group" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                <div class="key-input-group" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div>
+                        <label style="color: var(--accent-primary);">Agent ID</label>
+                        <input type="text" id="wallet-agent-id" placeholder="cmor...">
+                    </div>
+                    <div>
+                        <label style="color: var(--accent-primary);">Channel ID</label>
+                        <input type="text" id="wallet-channel-id" placeholder="cmp...">
+                    </div>
+                </div>
+                <div class="key-input-group" style="margin-top: 10px;">
                     <label style="color: var(--accent-primary);">Custom API Proxy (Optional)</label>
                     <input type="text" id="wallet-proxy-url" placeholder="https://your-proxy.workers.dev/...">
-                    <small style="font-size: 9px; color: var(--text-muted); margin-top: 4px;">Use this to bypass CORS for Claude/GPT (e.g. Apps Script or Cloudflare Worker).</small>
+                    <small style="font-size: 9px; color: var(--text-muted); margin-top: 4px;">Use this ONLY if you have a custom CORS bypass.</small>
                 </div>
             </div>
 
@@ -435,6 +445,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=v73_ai_brain_restored"></script>
+    <script src="app.js?v=v75_ai_brain_restored"></script>
 </body>
 </html>
