@@ -1852,12 +1852,10 @@ window.showKeysWallet = function() {
             const input = document.getElementById(`wallet-key-${m}`);
             if (input) input.value = localStorage.getItem(`api_key_${m}`) || '';
         });
+        // Load proxy
+        const proxyInput = document.getElementById('wallet-proxy-url');
+        if (proxyInput) proxyInput.value = localStorage.getItem('antigravity_api_proxy') || '';
     }
-}
-
-window.hideKeysWallet = function() {
-    const modal = document.getElementById('wallet-modal');
-    if (modal) modal.style.display = 'none';
 }
 
 window.saveWalletKeys = function() {
@@ -1866,6 +1864,10 @@ window.saveWalletKeys = function() {
         if (input) localStorage.setItem(`api_key_${m}`, input.value);
     });
     
+    // Save proxy
+    const proxyInput = document.getElementById('wallet-proxy-url');
+    if (proxyInput) localStorage.setItem('antigravity_api_proxy', proxyInput.value);
+    
     // Update active input in sidebar if it exists
     const activeKeyInput = document.getElementById('active-api-key');
     if (activeKeyInput) {
@@ -1873,7 +1875,7 @@ window.saveWalletKeys = function() {
     }
     
     hideKeysWallet();
-    console.log("[Antigravity] All API Keys Updated in Wallet.");
+    console.log("[Antigravity] All API Keys & Proxy Updated in Wallet.");
 }
 
 window.switchAIModel = function(model) {
@@ -2035,8 +2037,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         let text = "";
         if (isIAedu) {
             const modelMap = { 'gpt4o': 'gpt-5-5', 'claude': 'claude-opus-4-7' };
-            console.log(`[Antigravity] Calling IAedu Proxy for ${activeAIModel}...`);
-            const response = await fetch(`https://api.iaedu.pt/v1/chat/completions`, {
+            const customProxy = localStorage.getItem('antigravity_api_proxy');
+            const targetUrl = customProxy || `https://api.iaedu.pt/v1/chat/completions`;
+            
+            console.log(`[Antigravity] Calling Proxy (${targetUrl}) for ${activeAIModel}...`);
+            const response = await fetch(targetUrl, {
                 method: 'POST',
                 mode: 'cors',
                 headers: { 
