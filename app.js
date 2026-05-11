@@ -1985,9 +1985,10 @@ function formatAIResponse(text) {
 let activeAIModel = 'gemini';
 const modelConfigs = {
     'gemini': { name: 'Gemini 3 Pulse', color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
-    'gpt4o': { name: 'GPT-4o Reactor', color: '#10B981', rgb: '16, 185, 129', grad: ['#10B981', '#34D399'] },
-    'claude': { name: 'Claude 3.5 Sonnet', color: '#8B5CF6', rgb: '139, 92, 246', grad: ['#8B5CF6', '#A78BFA'] },
-    'llama': { name: 'Llama 3.1 Titan', color: '#F59E0B', rgb: '245, 158, 11', grad: ['#F59E0B', '#FBBF24'] }
+    'deepseek': { name: 'DeepSeek V3.2', color: '#2D5AF2', rgb: '45, 90, 242', grad: ['#2D5AF2', '#6B8CFF'] },
+    'gpt4o': { name: 'OpenAI GPT-5.5', color: '#ffffff', rgb: '255, 255, 255', grad: ['#ffffff', '#cccccc'] },
+    'claude': { name: 'Claude Opus 4.7', color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#FFA07A'] },
+    'llama': { name: 'Llama 4 Maverick', color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#57A3FF'] }
 };
 
 function switchAIModel(model) {
@@ -1997,11 +1998,22 @@ function switchAIModel(model) {
 
     // Update Tower Items Active State
     document.querySelectorAll('.tower-item').forEach(item => item.classList.remove('active'));
-    document.querySelector(`.${model === 'gpt4o' ? 'gpt' : (model === 'claude' ? 'claude' : (model === 'llama' ? 'llama' : 'gemini'))}-orb`).classList.add('active');
+    const selector = `.${model === 'gpt4o' ? 'gpt' : model}-orb`;
+    const activeItem = document.querySelector(selector);
+    if (activeItem) activeItem.classList.add('active');
 
-    // Update Main Button Appearance
+    // Update Main Button Appearance & Logo
     const btn = document.getElementById('gemini-btn');
     btn.title = `${config.name} (Active Pulse)`;
+    
+    // Swap Logo on Main Button
+    if (activeItem) {
+        const logoSvg = activeItem.querySelector('svg').cloneNode(true);
+        logoSvg.style.width = "22px";
+        logoSvg.style.height = "22px";
+        btn.innerHTML = '';
+        btn.appendChild(logoSvg);
+    }
     
     // Update CSS Variables for Aura
     document.documentElement.style.setProperty('--active-orb-rgb', config.rgb);
@@ -2010,9 +2022,11 @@ function switchAIModel(model) {
     document.documentElement.style.setProperty('--orb-color-3', config.grad[0]);
     document.documentElement.style.setProperty('--orb-color-4', config.grad[1]);
 
-    // Update SVG Gradient
-    document.getElementById('grad-stop-1').setAttribute('stop-color', config.grad[0]);
-    document.getElementById('grad-stop-2').setAttribute('stop-color', config.grad[1]);
+    // Update SVG Gradient (Legacy support if still used)
+    const grad1 = document.getElementById('grad-stop-1');
+    const grad2 = document.getElementById('grad-stop-2');
+    if (grad1) grad1.setAttribute('stop-color', config.grad[0]);
+    if (grad2) grad2.setAttribute('stop-color', config.grad[1]);
 
     // Update Sidebar Header
     const header = document.querySelector('.gemini-header h2');
@@ -2024,7 +2038,7 @@ function switchAIModel(model) {
 
     // Update Placeholder
     const input = document.getElementById('gemini-user-input');
-    if (input) input.placeholder = `Ask ${model.charAt(0).toUpperCase() + model.slice(1)} anything...`;
+    if (input) input.placeholder = `Ask ${config.name} anything...`;
 
     // Visual feedback toast
     console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
