@@ -1700,6 +1700,15 @@ function filterKeywords(query) {
 document.addEventListener('DOMContentLoaded', init);
 // --- GEMINI AI INTEGRATION ---
 let pendingGeminiFile = null;
+let activeAIModel = 'gemini'; // Default
+
+const modelConfigs = {
+    'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
+    'deepseek': { name: 'DeepSeek V3.2', color: '#00D1FF', rgb: '0, 209, 255',  grad: ['#00D1FF', '#0075FF'] },
+    'gpt4o':    { name: 'GPT-5.5',       color: '#10A37F', rgb: '16, 163, 127', grad: ['#10A37F', '#19C37D'] },
+    'claude':   { name: 'Claude Opus',   color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] },
+    'llama':    { name: 'Llama 4',       color: '#9C27B0', rgb: '156, 39, 176', grad: ['#9C27B0', '#E040FB'] }
+};
 
 // Add Paste Support for Screenshots
 document.addEventListener('paste', function(e) {
