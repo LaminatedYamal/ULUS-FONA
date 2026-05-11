@@ -1615,14 +1615,32 @@ body.light-mode .hero-text h2 {
 /* --- GEMINI PULSE AI & SATELLITE CLUSTER --- */
 .ai-satellite-container {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    bottom: -70px;
+    right: -70px;
+    width: 260px; /* Large enough to cover the 75px orbit + orb size */
+    height: 260px;
     z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    /* border: 1px solid rgba(255,255,255,0.1); /* Debug: see the shield */
+}
+
+/* Ensure the container only captures hover near the button first, 
+   then expands the 'active' zone once orbs are out. */
+.ai-satellite-container::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    transition: all 0.3s;
+}
+
+.ai-satellite-container:hover::before {
+    width: 100%;
+    height: 100%;
 }
 
 .gemini-pulse-btn {
