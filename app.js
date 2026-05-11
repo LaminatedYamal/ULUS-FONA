@@ -2239,8 +2239,44 @@ function typeWriter(element, text, speed = 10) {
 
 function formatAIResponse(text) {
     if (!text) return "";
-    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-               .replace(/\*(.*?)\*/g, '<em>$1</em>')
-               .replace(/\n/g, '<br>');
+    
+    let html = text;
+
+    // 1. Headers (Handle before line breaks)
+    html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+    html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+
+    // 2. Bold/Italic
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+    // 3. Tables (Strategic Parsing)
+    const tableRegex = /\|(.+)\|.*\n\|(?:\s*[:\-]+\s*\|?)+\n((?:\|.+\|.*\n?)*)/g;
+    html = html.replace(tableRegex, (match, header, body) => {
+        const headerCols = header.split('|').map(c => c.trim()).filter(c => c);
+        const rows = body.trim().split('\n').map(row => {
+            const cols = row.split('|').map(c => c.trim()).filter(c => c);
+            if (cols.length === 0) return '';
+            return `<tr>${cols.map(c => `<td>${c}</td>`).join('')}</tr>`;
+        });
+        
+        return `<table><thead><tr>${headerCols.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`;
+    });
+
+    // 4. Horizontal Rules
+    html = html.replace(/^---$/gim, '<hr style="opacity: 0.1; margin: 20px 0;">');
+
+    // 5. Lists
+    html = html.replace(/^\s*[-*]\s+(.*$)/gim, '<li>$1</li>');
+    
+    // 6. Blockquotes
+    html = html.replace(/^\>\s+(.*$)/gim, '<blockquote>$1</blockquote>');
+
+    // 7. Line breaks
+    html = html.replace(/\n/g, '<br>');
+
+    return html;
 }
+
 
