@@ -1834,7 +1834,12 @@ window.saveActiveModelKey = function(val) {
 }
 
 window.switchAIModel = function(model) {
+    console.log(`[Antigravity] switchAIModel triggered for: ${model}`);
     if (activeAIModel === model) {
+        const sidebar = document.getElementById('gemini-sidebar');
+        if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
+        return;
+    }
         // If already active, just ensure sidebar is open
         const sidebar = document.getElementById('gemini-sidebar');
         if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
