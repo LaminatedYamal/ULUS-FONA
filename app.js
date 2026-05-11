@@ -1858,6 +1858,11 @@ window.showKeysWallet = function() {
     }
 }
 
+window.hideKeysWallet = function() {
+    const modal = document.getElementById('wallet-modal');
+    if (modal) modal.style.display = 'none';
+}
+
 window.saveWalletKeys = function() {
     Object.keys(modelConfigs).forEach(m => {
         const input = document.getElementById(`wallet-key-${m}`);
