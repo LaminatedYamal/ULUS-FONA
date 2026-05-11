@@ -284,16 +284,31 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="Gemini 3 Strategist (Active Pulse)">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="url(#gemini-grad)" />
-            <defs>
-                <linearGradient id="gemini-grad" x1="3" y1="2" x2="21" y2="20" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#4285F4"/>
-                    <stop offset="1" stop-color="#91B9FF"/>
-                </linearGradient>
-            </defs>
-        </svg>
+    <div class="ai-satellite-container" id="ai-satellite">
+        <div class="satellite-orb gpt-orb" onclick="switchAIModel('gpt4o')" title="GPT-4o (Green Pulse)">
+            <span>G</span>
+        </div>
+        <div class="satellite-orb claude-orb" onclick="switchAIModel('claude')" title="Claude 3.5 Sonnet (Purple Pulse)">
+            <span>C</span>
+        </div>
+        <div class="satellite-orb llama-orb" onclick="switchAIModel('llama')" title="Llama 3.1 (Orange Pulse)">
+            <span>L</span>
+        </div>
+        <div class="satellite-orb gemini-orb active" onclick="switchAIModel('gemini')" title="Gemini 3 (Blue Pulse)">
+            <span>G</span>
+        </div>
+        
+        <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="Gemini 3 Strategist (Active Pulse)">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="active-model-svg">
+                <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="url(#gemini-grad)" />
+                <defs>
+                    <linearGradient id="gemini-grad" x1="3" y1="2" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                        <stop id="grad-stop-1" stop-color="#4285F4"/>
+                        <stop id="grad-stop-2" offset="1" stop-color="#91B9FF"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
     </div>
 
     <!-- Gemini Sidebar -->
