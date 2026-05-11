@@ -1847,10 +1847,16 @@ window.showKeysWallet = function() {
     const modal = document.getElementById('wallet-modal');
     if (modal) {
         modal.style.display = 'flex';
-        // Load current keys
+        // Load current keys & ids
         Object.keys(modelConfigs).forEach(m => {
-            const input = document.getElementById(`wallet-key-${m}`);
-            if (input) input.value = localStorage.getItem(`api_key_${m}`) || '';
+            const keyInput = document.getElementById(`wallet-key-${m}`);
+            if (keyInput) keyInput.value = localStorage.getItem(`api_key_${m}`) || '';
+            
+            const agentInput = document.getElementById(`wallet-agent-${m}`);
+            if (agentInput) agentInput.value = localStorage.getItem(`agent_id_${m}`) || '';
+            
+            const channelInput = document.getElementById(`wallet-channel-${m}`);
+            if (channelInput) channelInput.value = localStorage.getItem(`channel_id_${m}`) || '';
         });
         // Load proxy
         const proxyInput = document.getElementById('wallet-proxy-url');
@@ -1865,8 +1871,14 @@ window.hideKeysWallet = function() {
 
 window.saveWalletKeys = function() {
     Object.keys(modelConfigs).forEach(m => {
-        const input = document.getElementById(`wallet-key-${m}`);
-        if (input) localStorage.setItem(`api_key_${m}`, input.value);
+        const keyInput = document.getElementById(`wallet-key-${m}`);
+        if (keyInput) localStorage.setItem(`api_key_${m}`, keyInput.value);
+        
+        const agentInput = document.getElementById(`wallet-agent-${m}`);
+        if (agentInput) localStorage.setItem(`agent_id_${m}`, agentInput.value);
+        
+        const channelInput = document.getElementById(`wallet-channel-${m}`);
+        if (channelInput) localStorage.setItem(`channel_id_${m}`, channelInput.value);
     });
     
     // Save proxy
@@ -2041,8 +2053,13 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     try {
         let text = "";
         if (isIAedu) {
-            const agentId = localStorage.getItem('antigravity_agent_id') || 'cmor5objoex9gfp01vm7p95jh';
-            const channelId = localStorage.getItem('antigravity_channel_id') || 'cmp19u43ta5pelx01jckgsqvl';
+            const specificAgent = localStorage.getItem(`agent_id_${activeAIModel}`);
+            const specificChannel = localStorage.getItem(`channel_id_${activeAIModel}`);
+            
+            // Fallback to the institutional default if specific ones aren't set
+            const agentId = specificAgent || 'cmor5objoex9gfp01vm7p95jh';
+            const channelId = specificChannel || 'cmp19u43ta5pelx01jckgsqvl';
+            
             const customProxy = localStorage.getItem('antigravity_api_proxy');
             const baseUrl = `https://api.iaedu.pt/agent-chat//api/v1/agent/${agentId}/stream`;
             const targetUrl = customProxy ? `${customProxy}${baseUrl}` : `https://api.codetabs.com/v1/proxy?quest=${baseUrl}`;
