@@ -623,7 +623,7 @@ function showSyncReminder(message) {
     const modal = document.createElement('div');
     modal.className = 'sync-modal';
     modal.innerHTML = `
-        <script src="app.js?v=v90_ai_brain_restored"></script>
+        <script src="app.js?v=v91_ai_brain_restored"></script>
         <h2>Data Uploaded Locally</h2>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <div class="modal-warning">
@@ -2023,33 +2023,34 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    document.title = 'SEO Keyword Hub | Antigravity v89 (Stable)';
-    let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database. ";
-    context += "STRICT RULE: Only use numbers found in the SYSTEM DATA. Do not hallucinate metrics. ";
-    context += "Be direct, professional, and data-driven. ";
+    document.title = 'SEO Keyword Hub | Antigravity v91 (Stable)';
+    let context = "You are the Antigravity Master Strategist. You have God-mode access to the Institutional Fleet database. ";
+    context += "STRICT RULE: You are the bridge between data and reality. If a name is mentioned, check if it aligns with the institutional leadership or faculty (Universidade Lusófona / ULP). ";
+    context += "If you cannot find a person in the local SEO database, acknowledge that they aren't in the *keyword* logs but offer to analyze their impact on the institutional brand or run a targeted web search if available. ";
+    context += "Be direct, professional, and do not make excuses about the data payload. ";
 
-    let dataPayload = {};
+    let dataPayload = {
+        meta: { version: "v91", agent: "Antigravity Master Strategist" }
+    };
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
     if (course) {
         dataPayload = {
             ...dataPayload,
-            target: "Course Analysis",
-            identity: { name: course.name, institution: course.institution },
-            performance_data: {
-                top_gsc: course.gscKeywords.slice(0, 50).map(k => ({ t: k.term, c: k.clicks, trend: k.clickDelta })),
-                top_ads: course.adsKeywords.slice(0, 50).map(k => ({ t: k.term, s: k.status })),
-                top_rankings: course.rankingsKeywords.slice(0, 50).map(k => ({ t: k.term, r: k.rank }))
+            target: "Course Deep Dive",
+            course_identity: { name: course.name, institution: course.institution, coordinator: course.coordinator || "Unknown" },
+            metrics: {
+                search_performance: course.gscKeywords.slice(0, 100),
+                ranking_landscape: course.rankingsKeywords.slice(0, 100)
             }
         };
     } else {
         dataPayload = {
             ...dataPayload,
-            target: "Institutional Fleet Analysis",
-            total_stats: {
-                courses: courses.length,
-                top_trends: courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 50).map(k => ({ t: k.term, trend: k.clickDelta }))
-            }
+            target: "Fleet Commander View",
+            total_courses: courses.length,
+            representative_sample: courses.slice(0, 15).map(c => ({ name: c.name, inst: c.institution, coordinator: c.coordinator })),
+            market_trends: courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 100).map(k => k.term)
         };
     }
 
@@ -2140,7 +2141,13 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         const resDiv = document.createElement('div');
         resDiv.className = 'ai-response';
         chat.appendChild(resDiv);
-        typeWriter(resDiv, formatAIResponse(text));
+        
+        const formatted = formatAIResponse(text);
+        if (formatted.includes('<') && formatted.includes('>')) {
+            resDiv.innerHTML = formatted;
+        } else {
+            typeWriter(resDiv, formatted);
+        }
         chat.scrollTop = chat.scrollHeight;
 
     } catch (e) {
