@@ -284,18 +284,24 @@
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <div class="ai-satellite-container" id="ai-satellite">
-        <div class="satellite-orb gpt-orb" onclick="switchAIModel('gpt4o')" title="GPT-4o (Green Pulse)">
-            <span>G</span>
-        </div>
-        <div class="satellite-orb claude-orb" onclick="switchAIModel('claude')" title="Claude 3.5 Sonnet (Purple Pulse)">
-            <span>C</span>
-        </div>
-        <div class="satellite-orb llama-orb" onclick="switchAIModel('llama')" title="Llama 3.1 (Orange Pulse)">
-            <span>L</span>
-        </div>
-        <div class="satellite-orb gemini-orb active" onclick="switchAIModel('gemini')" title="Gemini 3 (Blue Pulse)">
-            <span>G</span>
+    <div class="ai-tower-container" id="ai-tower">
+        <div class="tower-options">
+            <div class="tower-item llama-orb" onclick="switchAIModel('llama')" title="Llama 3.1 Titan">
+                <span class="model-brand">META</span>
+                <span class="model-name">Llama 3.1</span>
+            </div>
+            <div class="tower-item claude-orb" onclick="switchAIModel('claude')" title="Claude 3.5 Sonnet">
+                <span class="model-brand">ANTHROPIC</span>
+                <span class="model-name">Claude 3.5</span>
+            </div>
+            <div class="tower-item gpt-orb" onclick="switchAIModel('gpt4o')" title="GPT-4o Reactor">
+                <span class="model-brand">OPENAI</span>
+                <span class="model-name">GPT-4o</span>
+            </div>
+            <div class="tower-item gemini-orb active" onclick="switchAIModel('gemini')" title="Gemini 3 Pulse">
+                <span class="model-brand">GOOGLE</span>
+                <span class="model-name">Gemini 3</span>
+            </div>
         </div>
         
         <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="Gemini 3 Strategist (Active Pulse)">
