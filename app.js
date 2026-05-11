@@ -2077,18 +2077,29 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             });
 
             const rawText = await response.text();
-            if (!response.ok) throw new Error(`Agent API Failed: ${response.status}`);
+            console.log("[Antigravity] Raw AI Response:", rawText);
+            
+            if (!response.ok) throw new Error(`Agent API Failed: ${response.status}\n${rawText}`);
             
             try {
-                const chunks = rawText.split('\n').filter(line => line.trim().startsWith('data:'));
-                if (chunks.length > 0) {
-                    const lastChunk = chunks[chunks.length - 1].replace('data:', '').trim();
-                    const parsed = JSON.parse(lastChunk);
-                    text = parsed.message || parsed.text || parsed.content || rawText;
-                } else {
-                    const match = rawText.match(/"message"\s*:\s*"(.*?)"/);
-                    text = match ? match[1].replace(/\\n/g, '\n') : rawText;
+                // Advanced Stream Parsing
+                const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+                let bestMessage = "";
+                
+                for (const line of lines) {
+                    if (line.startsWith('data:')) {
+                        try {
+                            const jsonData = JSON.parse(line.substring(5).trim());
+                            if (jsonData.message) bestMessage = jsonData.message;
+                            else if (jsonData.text) bestMessage = jsonData.text;
+                            else if (jsonData.content) bestMessage = jsonData.content;
+                        } catch(e) {}
+                    }
                 }
+                
+                text = bestMessage || rawText;
+                // Clean up any remaining JSON or "data:" artifacts
+                text = text.replace(/^data:\s*/, '').trim();
             } catch (e) {
                 text = rawText;
             }
