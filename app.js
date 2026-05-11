@@ -1897,14 +1897,6 @@ window.switchAIModel = function(model) {
     // AUTO-OPEN SIDEBAR ON SELECTION
     const sidebar = document.getElementById('gemini-sidebar');
     if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
-}me} anything...`;
-
-    // Visual feedback toast
-    console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
-
-    // AUTO-OPEN SIDEBAR ON SELECTION
-    const sidebar = document.getElementById('gemini-sidebar');
-    if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
 }
 
 window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
