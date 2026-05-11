@@ -2021,14 +2021,29 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     try {
         let text = "";
         if (isIAedu) {
-            const modelMap = { 'deepseek': 'deepseek-v3-2', 'gpt4o': 'gpt-5-5', 'claude': 'claude-opus-4-7', 'llama': 'llama-4-maverick' };
+            const modelMap = { 'gpt4o': 'gpt-5-5', 'claude': 'claude-opus-4-7' };
+            console.log(`[Antigravity] Calling IAedu Proxy for ${activeAIModel}...`);
             const response = await fetch(`https://api.iaedu.pt/v1/chat/completions`, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
-                body: JSON.stringify({ model: modelMap[activeAIModel] || 'gpt-5-5', messages: [{ role: "system", content: systemPrompt }, { role: "user", content: customPrompt }] })
+                mode: 'cors',
+                headers: { 
+                    'Content-Type': 'application/json', 
+                    'Authorization': `Bearer ${apiKey.trim()}` 
+                },
+                body: JSON.stringify({ 
+                    model: modelMap[activeAIModel] || 'gpt-5-5', 
+                    messages: [
+                        { role: "system", content: systemPrompt }, 
+                        { role: "user", content: customPrompt || "Analyze my data." }
+                    ],
+                    temperature: 0.7
+                })
             });
             const data = await response.json();
-            if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            if (!response.ok) {
+                console.error("[Antigravity] IAedu Error Data:", data);
+                throw new Error(data.error ? data.error.message : `API Failed (${response.status})`);
+            }
             text = data.choices[0].message.content;
         } else {
             const parts = [{ text: systemPrompt + "\n\nUser Question: " + customPrompt }];
@@ -2050,7 +2065,12 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         chat.scrollTop = chat.scrollHeight;
 
     } catch (e) {
-        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>${config.name} Error:</strong> ${e.message}</p>`;
+        console.error(`[Antigravity] ${config.name} Fetch Error:`, e);
+        let errorMsg = e.message;
+        if (errorMsg === "Failed to fetch") {
+            errorMsg = "Network Error / CORS Blocked. Please check your internet connection or if the API proxy is down.";
+        }
+        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>${config.name} Error:</strong> ${errorMsg}</p>`;
     }
 }
 
