@@ -2045,10 +2045,10 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                 method: 'POST',
                 mode: 'cors',
                 headers: { 
-                    'Content-Type': 'application/json', 
-                    'Authorization': `Bearer ${apiKey.trim()}` 
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
+                    api_key: apiKey.trim(), // Pass key in body for proxy accessibility
                     model: modelMap[activeAIModel] || 'gpt-5-5', 
                     messages: [
                         { role: "system", content: systemPrompt }, 
