@@ -1459,7 +1459,7 @@ window.showLiveMonitor = async function() {
     }
 
     try {
-        const resp = await fetch('campaigns.json');
+        const resp = await fetch('campaigns.json', { cache: 'no-cache' });
         if (!resp.ok) throw new Error("Campaign data not synced yet.");
         const campaigns = await resp.json();
 
@@ -2015,7 +2015,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     // Build Deep Structured Context
     let liveAdsContext = null;
     try {
-        const resp = await fetch('campaigns.json');
+        const resp = await fetch('campaigns.json', { cache: 'no-cache' });
         if (resp.ok) liveAdsContext = await resp.json();
     } catch(e) {}
 
@@ -2056,14 +2056,17 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             const agentId = localStorage.getItem(`agent_id_${activeAIModel}`) || 'cmor5objoex9gfp01vm7p95jh';
             const channelId = localStorage.getItem(`channel_id_${activeAIModel}`) || 'cmp19u43ta5pelx01jckgsqvl';
             const customProxy = localStorage.getItem('antigravity_api_proxy');
-            const targetUrl = customProxy || `http://127.0.0.1:5000/proxy`;
             
-            console.log(`[Antigravity] Calling Local Bridge Proxy...`);
+            if (!customProxy) {
+                throw new Error("Proxy Required. Please set up your Cloudflare Worker in the Wallet.");
+            }
+
+            console.log(`[Antigravity] Calling AI via Proxy...`);
             
-            const response = await fetch(targetUrl, {
+            const response = await fetch(customProxy, {
                 method: 'POST',
                 mode: 'cors',
-                headers: { 'Content-Type': 'text/plain' }, // Use text/plain to avoid preflight
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
                     agent_id: agentId,
                     api_key: apiKey.trim(),
