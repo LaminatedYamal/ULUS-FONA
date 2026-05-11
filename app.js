@@ -1835,12 +1835,9 @@ window.saveActiveModelKey = function(val) {
 
 window.switchAIModel = function(model) {
     console.log(`[Antigravity] switchAIModel triggered for: ${model}`);
+    
+    // Check if we need to switch or just open sidebar
     if (activeAIModel === model) {
-        const sidebar = document.getElementById('gemini-sidebar');
-        if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
-        return;
-    }
-        // If already active, just ensure sidebar is open
         const sidebar = document.getElementById('gemini-sidebar');
         if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
         return;
@@ -1893,6 +1890,14 @@ window.switchAIModel = function(model) {
     // Update Placeholder
     const input = document.getElementById('gemini-user-input');
     if (input) input.placeholder = `Ask ${config.name} anything...`;
+
+    // Visual feedback toast
+    console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
+
+    // AUTO-OPEN SIDEBAR ON SELECTION
+    const sidebar = document.getElementById('gemini-sidebar');
+    if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
+}me} anything...`;
 
     // Visual feedback toast
     console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
