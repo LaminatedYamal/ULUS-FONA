@@ -1836,6 +1836,39 @@ window.saveActiveModelKey = function(val) {
     console.log(`[Antigravity] API Key for ${activeAIModel} Saved.`);
 }
 
+window.showKeysWallet = function() {
+    const modal = document.getElementById('wallet-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        // Load current keys
+        Object.keys(modelConfigs).forEach(m => {
+            const input = document.getElementById(`wallet-key-${m}`);
+            if (input) input.value = localStorage.getItem(`api_key_${m}`) || '';
+        });
+    }
+}
+
+window.hideKeysWallet = function() {
+    const modal = document.getElementById('wallet-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+window.saveWalletKeys = function() {
+    Object.keys(modelConfigs).forEach(m => {
+        const input = document.getElementById(`wallet-key-${m}`);
+        if (input) localStorage.setItem(`api_key_${m}`, input.value);
+    });
+    
+    // Update active input in sidebar if it exists
+    const activeKeyInput = document.getElementById('active-api-key');
+    if (activeKeyInput) {
+        activeKeyInput.value = localStorage.getItem(`api_key_${activeAIModel}`) || '';
+    }
+    
+    hideKeysWallet();
+    console.log("[Antigravity] All API Keys Updated in Wallet.");
+}
+
 window.switchAIModel = function(model) {
     console.log(`[Antigravity] switchAIModel triggered for: ${model}`);
     
@@ -1866,6 +1899,18 @@ window.switchAIModel = function(model) {
         logoSvg.style.height = "22px";
         btn.innerHTML = '';
         btn.appendChild(logoSvg);
+
+        // ALSO SWAP SIDEBAR ICON
+        const sidebarIcon = document.getElementById('sidebar-model-icon');
+        if (sidebarIcon) {
+            sidebarIcon.innerHTML = '';
+            const sidebarLogoSvg = activeItem.querySelector('svg').cloneNode(true);
+            sidebarLogoSvg.setAttribute('width', '24');
+            sidebarLogoSvg.setAttribute('height', '24');
+            // Apply model color to paths
+            sidebarLogoSvg.querySelectorAll('path').forEach(p => p.setAttribute('fill', config.color));
+            sidebarIcon.appendChild(sidebarLogoSvg);
+        }
     }
     
     // Update API Key Input for specific model
