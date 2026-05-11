@@ -1493,6 +1493,24 @@ body.light-mode .back-to-top:hover {
     font-size: 15px;
 }
 
+.gemini-key-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 11px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.gemini-key-input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gemini-blue);
+}
+
 .login-form input {
     width: 100%;
     background: rgba(255, 255, 255, 0.05);
