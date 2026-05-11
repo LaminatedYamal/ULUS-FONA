@@ -2131,6 +2131,85 @@ body.light-mode .hero-text h2 {
     text-align: center;
 }
 
+/* --- AI PERSONA SELECTOR --- */
+.persona-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 15px 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.persona-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    filter: grayscale(0.8) opacity(0.6);
+}
+
+.persona-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    filter: grayscale(0.4) opacity(0.8);
+    transform: translateY(-2px);
+}
+
+.persona-card.active {
+    background: rgba(var(--active-orb-rgb, 66, 133, 244), 0.15);
+    border-color: rgba(var(--active-orb-rgb, 66, 133, 244), 0.3);
+    filter: none;
+    opacity: 1;
+    box-shadow: 0 4px 15px rgba(var(--active-orb-rgb, 66, 133, 244), 0.2);
+}
+
+.persona-card .icon {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.persona-card span:last-child {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+}
+
+.persona-card.active span:last-child {
+    color: white;
+}
+
+/* --- REFINED AI CHAT AREA --- */
+.ai-thinking {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-style: italic;
+}
+
+.thinking-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    margin-right: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+.thinking-dot:nth-child(2) { animation-delay: 0.2s; }
+.thinking-dot:nth-child(3) { animation-delay: 0.4s; }
+
+
 /* === FLOATING RAINBOW BLOB (Homepage Only) === */
 .floating-blob {
     position: fixed;
