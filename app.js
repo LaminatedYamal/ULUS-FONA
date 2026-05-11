@@ -623,7 +623,7 @@ function showSyncReminder(message) {
     const modal = document.createElement('div');
     modal.className = 'sync-modal';
     modal.innerHTML = `
-        <script src="app.js?v=v89_ai_brain_restored"></script>
+        <script src="app.js?v=v90_ai_brain_restored"></script>
         <h2>Data Uploaded Locally</h2>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <div class="modal-warning">
@@ -2154,6 +2154,12 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
 }
 
 function typeWriter(element, text, speed = 10) {
+    // Fix: If text contains HTML, render immediately to avoid showing tags as code
+    if (text.includes('<') && text.includes('>')) {
+        element.innerHTML = text;
+        return;
+    }
+    
     let i = 0;
     element.innerHTML = '';
     function type() {
