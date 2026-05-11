@@ -2057,7 +2057,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    document.title = 'SEO Keyword Hub | Antigravity v95 (Stable)';
+    document.title = 'SEO Keyword Hub | Antigravity v97 (Stable)';
     
     let context = `You are the Antigravity Master Strategist, currently operating as a ${PERSONA_CONFIGS[activePersona].name}. `;
     context += `PERSONA INSTRUCTIONS: ${PERSONA_CONFIGS[activePersona].instructions} `;
@@ -2073,7 +2073,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
 
 
     let dataPayload = {
-        meta: { version: "v95", agent: "Antigravity Master Strategist" }
+        meta: { version: "v97", agent: "Antigravity Master Strategist" }
     };
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
