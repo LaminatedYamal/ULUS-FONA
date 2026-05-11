@@ -2055,15 +2055,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         if (isIAedu) {
             const agentId = localStorage.getItem(`agent_id_${activeAIModel}`) || 'cmor5objoex9gfp01vm7p95jh';
             const channelId = localStorage.getItem(`channel_id_${activeAIModel}`) || 'cmp19u43ta5pelx01jckgsqvl';
-            const customProxy = localStorage.getItem('antigravity_api_proxy');
+            const targetUrl = customProxy || `http://127.0.0.1:5000/proxy`;
             
-            if (!customProxy) {
-                throw new Error("Custom Proxy Required for Claude/GPT. Please set up your Apps Script proxy in the Wallet.");
-            }
-
-            console.log(`[Antigravity] Calling Agent API via Custom Proxy...`);
+            console.log(`[Antigravity] Calling Local Bridge Proxy...`);
             
-            const response = await fetch(customProxy, {
+            const response = await fetch(targetUrl, {
                 method: 'POST',
                 mode: 'cors',
                 headers: { 'Content-Type': 'text/plain' }, // Use text/plain to avoid preflight
