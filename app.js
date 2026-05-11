@@ -2050,7 +2050,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                 method: 'POST',
                 mode: 'cors',
                 headers: { 
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'text/plain'
                 },
                 body: JSON.stringify({ 
                     api_key: apiKey.trim(), // Pass key in body for proxy accessibility
