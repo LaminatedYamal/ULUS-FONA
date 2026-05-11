@@ -1707,7 +1707,7 @@ const modelConfigs = {
     'deepseek': { name: 'DeepSeek V3.2', color: '#00D1FF', rgb: '0, 209, 255',  grad: ['#00D1FF', '#0075FF'] },
     'gpt4o':    { name: 'GPT-5.5',       color: '#10A37F', rgb: '16, 163, 127', grad: ['#10A37F', '#19C37D'] },
     'claude':   { name: 'Claude Opus',   color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] },
-    'llama':    { name: 'Llama 4',       color: '#9C27B0', rgb: '156, 39, 176', grad: ['#9C27B0', '#E040FB'] }
+    'llama':    { name: 'Llama 4',       color: '#0668E1', rgb: '6, 104, 225',  grad: ['#0668E1', '#4095FF'] }
 };
 
 // Add Paste Support for Screenshots
@@ -1740,14 +1740,8 @@ window.toggleGeminiSidebar = function() {
         const hello = t["greeting"] || (currentLang === 'pt' ? 'Olá' : 'Hello');
         greetEl.textContent = `${hello}, ${user}! 👋`;
     }
-    if (introEl) {
-        introEl.textContent = currentLang === 'pt' ? 
-            "Eu sou o seu Estrategista Gemini 3. Pergunte-me qualquer coisa sobre as suas keywords ou use as ações rápidas abaixo." :
-            "I am your Gemini 3 Strategist. Ask me anything about your institutional keywords or use the quick actions below.";
-    }
-    if (inputEl) {
-        inputEl.placeholder = currentLang === 'pt' ? "Pergunte ao Gemini..." : "Ask Gemini anything...";
-    }
+    
+    updateAISidebarText();
 
     // Load key if exists
     const key = localStorage.getItem('gemini_api_key');
@@ -1896,9 +1890,8 @@ window.switchAIModel = function(model) {
         header.style.webkitBackgroundClip = 'text';
     }
 
-    // Update Placeholder
-    const input = document.getElementById('gemini-user-input');
-    if (input) input.placeholder = `Ask ${config.name} anything...`;
+    // Update Placeholder & Intro Text
+    updateAISidebarText();
 
     // Visual feedback toast
     console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
@@ -1906,6 +1899,22 @@ window.switchAIModel = function(model) {
     // AUTO-OPEN SIDEBAR ON SELECTION
     const sidebar = document.getElementById('gemini-sidebar');
     if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
+}
+
+function updateAISidebarText() {
+    const config = modelConfigs[activeAIModel];
+    const introEl = document.getElementById('gemini-intro');
+    const inputEl = document.getElementById('gemini-user-input');
+    const sendBtn = document.querySelector('.gemini-send-btn svg path');
+    
+    if (introEl) {
+        introEl.textContent = currentLang === 'pt' ? 
+            `Eu sou o seu Estrategista ${config.name}. Pergunte-me qualquer coisa sobre as suas keywords ou use as ações rápidas abaixo.` :
+            `I am your ${config.name} Strategist. Ask me anything about your institutional keywords or use the quick actions below.`;
+    }
+    if (inputEl) {
+        inputEl.placeholder = currentLang === 'pt' ? `Pergunte ao ${config.name}...` : `Ask ${config.name} anything...`;
+    }
 }
 
 window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
