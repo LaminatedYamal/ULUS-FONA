@@ -1934,22 +1934,23 @@ window.saveWalletKeys = function() {
 
 function refreshModelVisibility() {
     Object.keys(modelConfigs).forEach(m => {
-        // Gemini is usually the baseline, show it if no others are configured
-        // Or better: show if key exists OR it is gemini (baseline)
         const key = localStorage.getItem(`api_key_${m}`);
+        const agent = localStorage.getItem(`agent_id_${m}`);
+        const channel = localStorage.getItem(`channel_id_${m}`);
+        
         const orbClass = m === 'gpt4o' ? '.gpt-orb' : `.${m}-orb`;
         const orb = document.querySelector(orbClass);
         if (orb) {
-            // Keep gemini always visible as fallback if you want, 
-            // but let's follow the rule: show only if key exists (except maybe gemini)
             if (m === 'gemini') {
                 orb.style.display = 'flex';
             } else {
-                orb.style.display = key ? 'flex' : 'none';
+                // Show if ANY field has content for testing flexibility
+                orb.style.display = (key || agent || channel) ? 'flex' : 'none';
             }
         }
     });
 }
+
 
 
 window.switchAIModel = function(model) {
