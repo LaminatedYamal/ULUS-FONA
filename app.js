@@ -1889,6 +1889,10 @@ window.switchAIModel = function(model) {
     activeAIModel = model;
     const config = modelConfigs[model];
 
+    // Clear Chat for new model context
+    const chat = document.getElementById('gemini-chat');
+    if (chat) chat.innerHTML = '';
+
     // Update Tower Items Active State
     document.querySelectorAll('.tower-item').forEach(item => item.classList.remove('active'));
     const selector = `.${model === 'gpt4o' ? 'gpt' : model}-orb`;
