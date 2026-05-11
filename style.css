@@ -2307,6 +2307,16 @@ body.light-mode .hero-text h2 {
     transform: translateY(0) scale(1);
 }
 
+.wallet-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: transparent;
+}
+
 .wallet-option {
     display: flex;
     align-items: center;
