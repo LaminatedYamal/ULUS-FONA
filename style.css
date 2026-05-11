@@ -1680,20 +1680,31 @@ body.light-mode .hero-text h2 {
 
 .tower-item:hover {
     transform: translateX(-12px) scale(1.02);
-    border-color: rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--brand-color, rgba(255, 255, 255, 0.4));
+    background: var(--brand-bg, rgba(255, 255, 255, 0.08));
+    box-shadow: 0 0 20px var(--brand-color-transparent);
 }
 
-.tower-item:hover .model-logo,
+.tower-item.active {
+    background: var(--brand-bg, rgba(255, 255, 255, 0.15));
+    border-color: var(--brand-color);
+    border-right-width: 4px;
+    box-shadow: 0 0 30px var(--brand-color-transparent);
+}
+
+/* Tower Branding Variables */
+.gpt-orb { --brand-color: #10B981; --brand-bg: rgba(16, 185, 129, 0.1); --brand-color-transparent: rgba(16, 185, 129, 0.3); }
+.claude-orb { --brand-color: #8B5CF6; --brand-bg: rgba(139, 92, 246, 0.1); --brand-color-transparent: rgba(139, 92, 246, 0.3); }
+.llama-orb { --brand-color: #F59E0B; --brand-bg: rgba(245, 158, 11, 0.1); --brand-color-transparent: rgba(245, 158, 11, 0.3); }
+.gemini-orb { --brand-color: #4285F4; --brand-bg: rgba(66, 133, 244, 0.1); --brand-color-transparent: rgba(66, 133, 244, 0.3); }
+
 .tower-item.active .model-logo {
-    filter: drop-shadow(0 0 12px currentColor);
-    animation: model-logo-pulse 2s infinite ease-in-out;
+    animation: model-logo-float 3s infinite ease-in-out;
 }
 
-@keyframes model-logo-pulse {
-    0% { transform: scale(1); filter: drop-shadow(0 0 5px currentColor); }
-    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px currentColor); }
-    100% { transform: scale(1); filter: drop-shadow(0 0 5px currentColor); }
+@keyframes model-logo-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
 }
 
 .model-brand {
@@ -1708,17 +1719,6 @@ body.light-mode .hero-text h2 {
     font-size: 14px;
     font-weight: 700;
     color: white;
-}
-
-/* Tower Branding Colors */
-.gpt-orb:hover { border-right: 4px solid #10B981; }
-.claude-orb:hover { border-right: 4px solid #8B5CF6; }
-.llama-orb:hover { border-right: 4px solid #F59E0B; }
-.gemini-orb:hover { border-right: 4px solid #4285F4; }
-
-.tower-item.active {
-    background: rgba(255, 255, 255, 0.1);
-    border-right: 4px solid white;
 }
 
 /* Main Pulse Button */
