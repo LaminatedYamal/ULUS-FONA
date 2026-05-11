@@ -623,7 +623,7 @@ function showSyncReminder(message) {
     const modal = document.createElement('div');
     modal.className = 'sync-modal';
     modal.innerHTML = `
-        <script src="app.js?v=v87_ai_brain_restored"></script>
+        <script src="app.js?v=v88_ai_brain_restored"></script>
         <h2>Data Uploaded Locally</h2>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <div class="modal-warning">
@@ -2023,7 +2023,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    document.title = 'SEO Keyword Hub | Antigravity v85 (Stable)';
+    document.title = 'SEO Keyword Hub | Antigravity v88 (Stable)';
     let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database. ";
     context += "STRICT RULE: Only use numbers found in the SYSTEM DATA. Do not hallucinate metrics. ";
     context += "Be direct, professional, and data-driven. ";
@@ -2082,27 +2082,34 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             if (!response.ok) throw new Error(`Agent API Failed: ${response.status}\n${rawText}`);
             
             try {
-                // Ultra-Robust JSON Extractor (Regex based)
-                // This finds all {...} blocks regardless of line breaks or HTML tags
-                const jsonRegex = /\{[\s\S]*?\}/g;
-                let match;
+                // Deep-Brace Balancer Parser
+                // Manually extracts JSON objects even if they have nested braces
                 let fullResponse = "";
                 let foundComplete = false;
                 
-                while ((match = jsonRegex.exec(rawText)) !== null) {
-                    try {
-                        const parsed = JSON.parse(match[0]);
-                        
-                        // Priority 1: The final complete message object
-                        if (parsed.type === "message" && parsed.content && typeof parsed.content === 'object' && parsed.content.content) {
-                            text = parsed.content.content;
-                            foundComplete = true;
+                for (let i = 0; i < rawText.length; i++) {
+                    if (rawText[i] === '{') {
+                        let braceCount = 1;
+                        let j = i + 1;
+                        while (j < rawText.length && braceCount > 0) {
+                            if (rawText[j] === '{') braceCount++;
+                            else if (rawText[j] === '}') braceCount--;
+                            j++;
                         }
-                        // Priority 2: Direct content if found in start/token blocks
-                        else if (!foundComplete && parsed.type === "token" && typeof parsed.content === 'string') {
-                            fullResponse += parsed.content;
+                        if (braceCount === 0) {
+                            const objStr = rawText.substring(i, j);
+                            try {
+                                const parsed = JSON.parse(objStr);
+                                if (parsed.type === "message" && parsed.content && typeof parsed.content === 'object' && parsed.content.content) {
+                                    text = parsed.content.content;
+                                    foundComplete = true;
+                                } else if (!foundComplete && parsed.type === "token" && typeof parsed.content === 'string') {
+                                    fullResponse += parsed.content;
+                                }
+                            } catch(e) {}
+                            i = j - 1; 
                         }
-                    } catch(e) {}
+                    }
                 }
                 
                 if (!foundComplete) text = fullResponse || rawText;
