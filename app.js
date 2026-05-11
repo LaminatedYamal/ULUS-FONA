@@ -2067,6 +2067,8 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     context += "If you cannot find specific data, hypothesize based on market trends but stay grounded in the database provided. ";
     context += "NEVER say 'As an AI...'. Be direct, bold, and helpful. ";
     context += "LANGUAGE RULE: You MUST always respond in the same language the user uses. Se falarem em Português, responde em Português. If they speak English, respond in English. This is mandatory. ";
+    context += "NO META-LABELS: Do not label your sections like 'Observation:', 'Insight:', or 'Closing the loop:'. Weave these naturally into your response. Do not tell the user what you are about to do; just do it. ";
+
 
 
 
