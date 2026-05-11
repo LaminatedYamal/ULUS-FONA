@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SEO Keyword Hub | Antigravity v92 (Stable)</title>
+    <title>SEO Keyword Hub | Antigravity v93 (Stable)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -359,18 +359,35 @@
             </div>
         </div>
 
-        <div class="gemini-actions">
-            <div class="ai-card" onclick="askGemini('analyze')">
-                <span class="icon">📊</span>
-                <strong>Analysis</strong>
+        <!-- AI Persona Selector -->
+        <div class="persona-selector">
+            <div class="persona-card" id="persona-seo" onclick="switchPersona('seo')" title="SEO Strategist">
+                <span class="icon">🔍</span>
+                <span>SEO</span>
             </div>
-            <div class="ai-card" onclick="askGemini('gaps')">
+            <div class="persona-card active" id="persona-marketeer" onclick="switchPersona('marketeer')" title="General Marketeer">
+                <span class="icon">👔</span>
+                <span>Market</span>
+            </div>
+            <div class="persona-card" id="persona-ads" onclick="switchPersona('ads')" title="Ads Specialist">
                 <span class="icon">🎯</span>
-                <strong>Gaps</strong>
+                <span>Ads</span>
+            </div>
+        </div>
+
+
+        <div class="gemini-actions">
+            <div class="ai-card" onclick="askGemini('seo')">
+                <span class="icon">🔍</span>
+                <strong>SEO</strong>
+            </div>
+            <div class="ai-card" onclick="askGemini('ads')">
+                <span class="icon">🎯</span>
+                <strong>ADS</strong>
             </div>
             <div class="ai-card" onclick="askGemini('strategy')">
                 <span class="icon">💡</span>
-                <strong>Strategy</strong>
+                <strong>STRATEGY</strong>
             </div>
         </div>
 
@@ -454,6 +471,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=v92_ai_brain_restored"></script>
+    <script src="app.js?v=v93_ai_brain_restored"></script>
 </body>
 </html>
