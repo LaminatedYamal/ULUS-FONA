@@ -1828,177 +1828,10 @@ window.sendGeminiChat = function() {
 }
 
 
-window.saveIAeduKey = function(val) {
-    localStorage.setItem('iaedu_api_key', val);
-    console.log("[Antigravity] IAedu Token Saved.");
+window.saveActiveModelKey = function(val) {
+    localStorage.setItem(`api_key_${activeAIModel}`, val);
+    console.log(`[Antigravity] API Key for ${activeAIModel} Saved.`);
 }
-
-window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
-    const isIAedu = activeAIModel !== 'gemini';
-    const apiKey = isIAedu ? localStorage.getItem('iaedu_api_key') : localStorage.getItem('gemini_api_key');
-    
-    if (!apiKey) {
-        alert(`Please enter your ${isIAedu ? 'IAedu API Token' : 'Gemini API Key'} first!`);
-        return;
-    }
-
-    const chat = document.getElementById('gemini-chat');
-    const course = activeCourseId !== null ? courses.find(c => c.id === activeCourseId) : null;
-    
-    const loadingDiv = document.createElement('div');
-    loadingDiv.className = 'ai-response';
-    const config = modelConfigs[activeAIModel];
-    const targetName = course ? course.name : 'the institutional fleet';
-    loadingDiv.innerHTML = `<p>⏳ <strong>${config.name}</strong> is analyzing <strong>${targetName}</strong>...</p>`;
-    chat.appendChild(loadingDiv);
-    chat.scrollTop = chat.scrollHeight;
-
-    // Build Deep Structured Context
-    let liveAdsContext = null;
-    try {
-        const resp = await fetch('campaigns.json');
-        if (resp.ok) liveAdsContext = await resp.json();
-    } catch(e) {}
-
-    let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database (provided below). ";
-    context += "STRICT RULE: Only use numbers found in the SYSTEM DATA. If a data source (like GSC or Ads) is empty, do NOT make up numbers. Instead, inform the user that the specific data is missing and ask them to sync it. ";
-    context += "Be direct, professional, and data-driven. Do not apologize. ";
-
-    let dataPayload = {};
-    if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
-
-    context += "The 'live_campaign_monitor' contains real-time Google Ads performance. ";
-
-    if (course) {
-        dataPayload = {
-            ...dataPayload,
-            target: "Course Analysis",
-            identity: { name: course.name, institution: course.institution },
-            performance_data: {
-                top_gsc_with_trends: course.gscKeywords.slice(0, 100).map(k => ({ t: k.term, c: k.clicks, trend: k.clickDelta, i: k.impressions })),
-                top_ads: course.adsKeywords.slice(0, 100).map(k => ({ t: k.term, s: k.status })),
-                top_rankings: course.rankingsKeywords.slice(0, 100).map(k => ({ t: k.term, r: k.rank }))
-            }
-        };
-    } else {
-        dataPayload = {
-            ...dataPayload,
-            target: "Institutional Fleet Analysis",
-            total_stats: {
-                courses: courses.length,
-                global_top_trends: courses.flatMap(c => c.gscKeywords)
-                    .sort((a,b) => b.clickDelta - a.clickDelta)
-                    .slice(0, 200)
-                    .map(k => ({ t: k.term, trend: k.clickDelta }))
-            }
-        };
-    }
-
-    const systemPrompt = context + "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". Instructions: Provide punchy, high-impact analysis. No fluff. Use bullet points and bold text for clarity.";
-    
-    try {
-        let text = "";
-        
-        if (isIAedu) {
-            // IAedu API (OpenAI Compatible)
-            const modelMap = {
-                'deepseek': 'deepseek-v3-2',
-                'gpt4o': 'gpt-5-5',
-                'claude': 'claude-opus-4-7',
-                'llama': 'llama-4-maverick'
-            };
-
-            const response = await fetch(`https://api.iaedu.pt/v1/chat/completions`, {
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    model: modelMap[activeAIModel] || 'gpt-5-5',
-                    messages: [
-                        { role: "system", content: systemPrompt },
-                        { role: "user", content: customPrompt }
-                    ],
-                    temperature: 0.7
-                })
-            });
-
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.error ? data.error.message : "IAedu API Failed");
-            text = data.choices[0].message.content;
-
-        } else {
-            // Native Gemini API
-            const parts = [{ text: systemPrompt + "\n\nUser Question: " + customPrompt }];
-            if (attachedFile && attachedFile.isImage) {
-                parts.push({ inline_data: { mime_type: attachedFile.type, data: attachedFile.data } });
-            }
-
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts: parts }] })
-            });
-
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.error ? data.error.message : "Gemini API Failed");
-            text = data.candidates[0].content.parts[0].text;
-        }
-
-        loadingDiv.remove();
-        const resDiv = document.createElement('div');
-        resDiv.className = 'ai-response';
-        chat.appendChild(resDiv);
-        typeWriter(resDiv, formatAIResponse(text));
-        chat.scrollTop = chat.scrollHeight;
-
-    } catch (e) {
-        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>${config.name} Error:</strong> ${e.message}</p>`;
-    }
-}
-
-function typeWriter(element, html, speed = 5) {
-    let i = 0;
-    element.innerHTML = "";
-    function type() {
-        if (i < html.length) {
-            // Handle tags
-            if (html.charAt(i) === '<') {
-                let end = html.indexOf('>', i);
-                element.innerHTML += html.substring(i, end + 1);
-                i = end + 1;
-            } else {
-                element.innerHTML += html.charAt(i);
-                i++;
-            }
-            document.getElementById('gemini-chat').scrollTop = document.getElementById('gemini-chat').scrollHeight;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-function formatAIResponse(text) {
-    // Simple markdown-to-html conversion
-    return text
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/\n\n/g, '<br><br>')
-        .replace(/\n/g, '<br>')
-        .replace(/^- (.*)/gm, '<li>$1</li>')
-        .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
-}
-
-// AI MODEL SATELLITE LOGIC
-let activeAIModel = 'gemini';
-const modelConfigs = {
-    'gemini': { name: 'Gemini 3 Pulse', color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
-    'deepseek': { name: 'DeepSeek V3.2', color: '#2D5AF2', rgb: '45, 90, 242', grad: ['#2D5AF2', '#6B8CFF'] },
-    'gpt4o': { name: 'OpenAI GPT-5.5', color: '#ffffff', rgb: '255, 255, 255', grad: ['#ffffff', '#cccccc'] },
-    'claude': { name: 'Claude Opus 4.7', color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#FFA07A'] },
-    'llama': { name: 'Llama 4 Maverick', color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#57A3FF'] }
-};
 
 function switchAIModel(model) {
     if (activeAIModel === model) return;
@@ -2024,18 +1857,19 @@ function switchAIModel(model) {
         btn.appendChild(logoSvg);
     }
     
+    // Update API Key Input for specific model
+    const keyInput = document.getElementById('active-api-key');
+    if (keyInput) {
+        keyInput.placeholder = `${config.name} API Key`;
+        keyInput.value = localStorage.getItem(`api_key_${model}`) || '';
+    }
+
     // Update CSS Variables for Aura
     document.documentElement.style.setProperty('--active-orb-rgb', config.rgb);
     document.documentElement.style.setProperty('--orb-color-1', config.grad[0]);
     document.documentElement.style.setProperty('--orb-color-2', config.grad[1]);
     document.documentElement.style.setProperty('--orb-color-3', config.grad[0]);
     document.documentElement.style.setProperty('--orb-color-4', config.grad[1]);
-
-    // Update SVG Gradient (Legacy support if still used)
-    const grad1 = document.getElementById('grad-stop-1');
-    const grad2 = document.getElementById('grad-stop-2');
-    if (grad1) grad1.setAttribute('stop-color', config.grad[0]);
-    if (grad2) grad2.setAttribute('stop-color', config.grad[1]);
 
     // Update Sidebar Header
     const header = document.querySelector('.gemini-header h2');
@@ -2051,5 +1885,99 @@ function switchAIModel(model) {
 
     // Visual feedback toast
     console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
+}
+
+window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
+    const isIAedu = activeAIModel !== 'gemini';
+    const apiKey = localStorage.getItem(`api_key_${activeAIModel}`);
+    
+    if (!apiKey) {
+        alert(`Please enter your ${activeAIModel.toUpperCase()} API Key first!`);
+        return;
+    }
+
+    const chat = document.getElementById('gemini-chat');
+    const course = activeCourseId !== null ? courses.find(c => c.id === activeCourseId) : null;
+    
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'ai-response';
+    const config = modelConfigs[activeAIModel];
+    const targetName = course ? course.name : 'the institutional fleet';
+    loadingDiv.innerHTML = `<p>⏳ <strong>${config.name}</strong> is analyzing <strong>${targetName}</strong>...</p>`;
+    chat.appendChild(loadingDiv);
+    chat.scrollTop = chat.scrollHeight;
+
+    // Build Deep Structured Context
+    let liveAdsContext = null;
+    try {
+        const resp = await fetch('campaigns.json');
+        if (resp.ok) liveAdsContext = await resp.json();
+    } catch(e) {}
+
+    let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database. ";
+    context += "STRICT RULE: Only use numbers found in the SYSTEM DATA. Do not hallucinate metrics. ";
+    context += "Be direct, professional, and data-driven. ";
+
+    let dataPayload = {};
+    if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
+
+    if (course) {
+        dataPayload = {
+            ...dataPayload,
+            target: "Course Analysis",
+            identity: { name: course.name, institution: course.institution },
+            performance_data: {
+                top_gsc: course.gscKeywords.slice(0, 50).map(k => ({ t: k.term, c: k.clicks, trend: k.clickDelta })),
+                top_ads: course.adsKeywords.slice(0, 50).map(k => ({ t: k.term, s: k.status })),
+                top_rankings: course.rankingsKeywords.slice(0, 50).map(k => ({ t: k.term, r: k.rank }))
+            }
+        };
+    } else {
+        dataPayload = {
+            ...dataPayload,
+            target: "Institutional Fleet Analysis",
+            total_stats: {
+                courses: courses.length,
+                top_trends: courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 100).map(k => ({ t: k.term, trend: k.clickDelta }))
+            }
+        };
+    }
+
+    const systemPrompt = context + "SYSTEM DATA: " + JSON.stringify(dataPayload);
+    
+    try {
+        let text = "";
+        if (isIAedu) {
+            const modelMap = { 'deepseek': 'deepseek-v3-2', 'gpt4o': 'gpt-5-5', 'claude': 'claude-opus-4-7', 'llama': 'llama-4-maverick' };
+            const response = await fetch(`https://api.iaedu.pt/v1/chat/completions`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+                body: JSON.stringify({ model: modelMap[activeAIModel] || 'gpt-5-5', messages: [{ role: "system", content: systemPrompt }, { role: "user", content: customPrompt }] })
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            text = data.choices[0].message.content;
+        } else {
+            const parts = [{ text: systemPrompt + "\n\nUser Question: " + customPrompt }];
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ contents: [{ parts: parts }] })
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            text = data.candidates[0].content.parts[0].text;
+        }
+
+        loadingDiv.remove();
+        const resDiv = document.createElement('div');
+        resDiv.className = 'ai-response';
+        chat.appendChild(resDiv);
+        typeWriter(resDiv, formatAIResponse(text));
+        chat.scrollTop = chat.scrollHeight;
+
+    } catch (e) {
+        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>${config.name} Error:</strong> ${e.message}</p>`;
+    }
 }
 
