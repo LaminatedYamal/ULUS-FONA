@@ -1828,10 +1828,17 @@ window.sendGeminiChat = function() {
 }
 
 
+window.saveIAeduKey = function(val) {
+    localStorage.setItem('iaedu_api_key', val);
+    console.log("[Antigravity] IAedu Token Saved.");
+}
+
 window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
-    const apiKey = localStorage.getItem('gemini_api_key');
+    const isIAedu = activeAIModel !== 'gemini';
+    const apiKey = isIAedu ? localStorage.getItem('iaedu_api_key') : localStorage.getItem('gemini_api_key');
+    
     if (!apiKey) {
-        alert("Please enter your Gemini API Key first!");
+        alert(`Please enter your ${isIAedu ? 'IAedu API Token' : 'Gemini API Key'} first!`);
         return;
     }
 
@@ -1840,8 +1847,9 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     
     const loadingDiv = document.createElement('div');
     loadingDiv.className = 'ai-response';
+    const config = modelConfigs[activeAIModel];
     const targetName = course ? course.name : 'the institutional fleet';
-    loadingDiv.innerHTML = `<p>⏳ Gemini 3 is analyzing <strong>${targetName}</strong>...</p>`;
+    loadingDiv.innerHTML = `<p>⏳ <strong>${config.name}</strong> is analyzing <strong>${targetName}</strong>...</p>`;
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
@@ -1859,7 +1867,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     let dataPayload = {};
     if (liveAdsContext) dataPayload.live_campaign_monitor = liveAdsContext;
 
-    context += "The 'live_campaign_monitor' contains your real-time Google Ads performance. ";
+    context += "The 'live_campaign_monitor' contains real-time Google Ads performance. ";
 
     if (course) {
         dataPayload = {
@@ -1867,23 +1875,12 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             target: "Course Analysis",
             identity: { name: course.name, institution: course.institution },
             performance_data: {
-                top_gsc_with_trends: course.gscKeywords.slice(0, 1000).map(k => ({ 
-                    t: k.term, 
-                    c: k.clicks, 
-                    trend: k.clickDelta, // 3 MONTH TREND
-                    imp_trend: k.impDelta,
-                    i: k.impressions 
-                })),
-                top_ads: course.adsKeywords.slice(0, 1000).map(k => ({ t: k.term, s: k.status })),
-                top_rankings: course.rankingsKeywords.slice(0, 1000).map(k => ({ t: k.term, r: k.rank }))
-            },
-            synergies: course.gscKeywords.filter(k => 
-                course.adsKeywords.some(ak => ak.term === k.term) && 
-                course.rankingsKeywords.some(rk => rk.term === k.term)
-            ).map(k => k.term).slice(0, 1000)
+                top_gsc_with_trends: course.gscKeywords.slice(0, 100).map(k => ({ t: k.term, c: k.clicks, trend: k.clickDelta, i: k.impressions })),
+                top_ads: course.adsKeywords.slice(0, 100).map(k => ({ t: k.term, s: k.status })),
+                top_rankings: course.rankingsKeywords.slice(0, 100).map(k => ({ t: k.term, r: k.rank }))
+            }
         };
     } else {
-        // Global Stats with Trend Focus
         dataPayload = {
             ...dataPayload,
             target: "Institutional Fleet Analysis",
@@ -1891,61 +1888,73 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                 courses: courses.length,
                 global_top_trends: courses.flatMap(c => c.gscKeywords)
                     .sort((a,b) => b.clickDelta - a.clickDelta)
-                    .slice(0, 1000)
+                    .slice(0, 200)
                     .map(k => ({ t: k.term, trend: k.clickDelta }))
             }
         };
     }
 
-    context += "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". ";
-    context += "Instructions: Provide punchy, high-impact analysis. No fluff. Use bullet points and bold text for clarity. ";
-
-    const parts = [{ text: context + "\n\nUser Question: " + customPrompt }];
+    const systemPrompt = context + "SYSTEM DATA: " + JSON.stringify(dataPayload) + ". Instructions: Provide punchy, high-impact analysis. No fluff. Use bullet points and bold text for clarity.";
     
-    if (attachedFile) {
-        if (attachedFile.isImage) {
-            parts.push({
-                inline_data: {
-                    mime_type: attachedFile.type,
-                    data: attachedFile.data
-                }
-            });
-        } else {
-            parts[0].text += `\n\n[Attached File Content: ${attachedFile.name}]\n${attachedFile.content}`;
-        }
-    }
-
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: parts }],
-                safetySettings: [
-                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
-                ]
-            })
-        });
+        let text = "";
+        
+        if (isIAedu) {
+            // IAedu API (OpenAI Compatible)
+            const modelMap = {
+                'deepseek': 'deepseek-v3-2',
+                'gpt4o': 'gpt-5-5',
+                'claude': 'claude-opus-4-7',
+                'llama': 'llama-4-maverick'
+            };
 
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.error ? data.error.message : "API Request Failed");
+            const response = await fetch(`https://api.iaedu.pt/v1/chat/completions`, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: modelMap[activeAIModel] || 'gpt-5-5',
+                    messages: [
+                        { role: "system", content: systemPrompt },
+                        { role: "user", content: customPrompt }
+                    ],
+                    temperature: 0.7
+                })
+            });
 
-        const text = data.candidates[0].content.parts[0].text;
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error ? data.error.message : "IAedu API Failed");
+            text = data.choices[0].message.content;
+
+        } else {
+            // Native Gemini API
+            const parts = [{ text: systemPrompt + "\n\nUser Question: " + customPrompt }];
+            if (attachedFile && attachedFile.isImage) {
+                parts.push({ inline_data: { mime_type: attachedFile.type, data: attachedFile.data } });
+            }
+
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ contents: [{ parts: parts }] })
+            });
+
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error ? data.error.message : "Gemini API Failed");
+            text = data.candidates[0].content.parts[0].text;
+        }
+
         loadingDiv.remove();
-
         const resDiv = document.createElement('div');
         resDiv.className = 'ai-response';
         chat.appendChild(resDiv);
-        
-        // Typing Effect
         typeWriter(resDiv, formatAIResponse(text));
         chat.scrollTop = chat.scrollHeight;
 
     } catch (e) {
-        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>Gemini Error:</strong> ${e.message}</p>`;
+        loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>${config.name} Error:</strong> ${e.message}</p>`;
     }
 }
 
