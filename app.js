@@ -1833,8 +1833,14 @@ window.saveActiveModelKey = function(val) {
     console.log(`[Antigravity] API Key for ${activeAIModel} Saved.`);
 }
 
-function switchAIModel(model) {
-    if (activeAIModel === model) return;
+window.switchAIModel = function(model) {
+    if (activeAIModel === model) {
+        // If already active, just ensure sidebar is open
+        const sidebar = document.getElementById('gemini-sidebar');
+        if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
+        return;
+    }
+    
     activeAIModel = model;
     const config = modelConfigs[model];
 
@@ -1885,6 +1891,10 @@ function switchAIModel(model) {
 
     // Visual feedback toast
     console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
+
+    // AUTO-OPEN SIDEBAR ON SELECTION
+    const sidebar = document.getElementById('gemini-sidebar');
+    if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
 }
 
 window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
