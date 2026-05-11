@@ -1644,36 +1644,35 @@ body.light-mode .hero-text h2 {
 .tower-options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding-bottom: 30px;
-    margin-bottom: -10px;
+    gap: 15px;
+    margin-bottom: 25px;
     opacity: 0;
+    pointer-events: none;
     transform: translateY(20px) scale(0.95);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    align-items: flex-end; /* Reverting to stable alignment */
+    align-items: flex-end;
     z-index: 9999;
 }
 
 .ai-tower-container:hover .tower-options {
     opacity: 1;
-    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0) scale(1);
 }
 
 .tower-item {
-    background: rgba(15, 17, 23, 0.95);
+    background: rgba(15, 17, 23, 0.9);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 12px 18px;
     border-radius: 16px;
     display: flex;
     align-items: center;
     gap: 15px;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 200px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    pointer-events: auto !important; /* Force clickability */
+    transition: all 0.3s ease;
+    min-width: 180px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
 .model-logo-container {
