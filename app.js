@@ -2041,33 +2041,43 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     try {
         let text = "";
         if (isIAedu) {
-            const modelMap = { 'gpt4o': 'gpt-5-5', 'claude': 'claude-opus-4-7' };
+            const agentId = localStorage.getItem('antigravity_agent_id') || 'cmor5objoex9gfp01vm7p95jh';
+            const channelId = localStorage.getItem('antigravity_channel_id') || 'cmp19u43ta5pelx01jckgsqvl';
             const customProxy = localStorage.getItem('antigravity_api_proxy');
-            const targetUrl = customProxy || `https://api.codetabs.com/v1/proxy?quest=https://api.iaedu.pt/v1/chat/completions`;
+            const baseUrl = `https://api.iaedu.pt/agent-chat//api/v1/agent/${agentId}/stream`;
+            const targetUrl = customProxy ? `${customProxy}${baseUrl}` : `https://api.codetabs.com/v1/proxy?quest=${baseUrl}`;
             
-            console.log(`[Antigravity] Calling Proxy (${targetUrl}) for ${activeAIModel}...`);
+            console.log(`[Antigravity] Calling Agent API (${agentId}) via Proxy...`);
+            
+            const formData = new FormData();
+            formData.append("channel_id", channelId);
+            formData.append("thread_id", "antigravity_" + (activeCourseId || "global"));
+            formData.append("user_info", JSON.stringify({ name: localStorage.getItem('hub_user_name') || 'User' }));
+            formData.append("message", systemPrompt + "\n\nUser Question: " + customPrompt);
+
             const response = await fetch(targetUrl, {
                 method: 'POST',
                 mode: 'cors',
-                headers: { 
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ 
-                    api_key: apiKey.trim(), // Pass key in body for proxy accessibility
-                    model: modelMap[activeAIModel] || 'gpt-5-5', 
-                    messages: [
-                        { role: "system", content: systemPrompt }, 
-                        { role: "user", content: customPrompt || "Analyze my data." }
-                    ],
-                    temperature: 0.7
-                })
+                headers: { 'x-api-key': apiKey.trim() },
+                body: formData
             });
-            const data = await response.json();
-            if (!response.ok) {
-                console.error("[Antigravity] IAedu Error Data:", data);
-                throw new Error(data.error ? data.error.message : `API Failed (${response.status})`);
+
+            const rawText = await response.text();
+            if (!response.ok) throw new Error(`Agent API Failed: ${response.status}`);
+            
+            try {
+                const chunks = rawText.split('\n').filter(line => line.trim().startsWith('data:'));
+                if (chunks.length > 0) {
+                    const lastChunk = chunks[chunks.length - 1].replace('data:', '').trim();
+                    const parsed = JSON.parse(lastChunk);
+                    text = parsed.message || parsed.text || parsed.content || rawText;
+                } else {
+                    const match = rawText.match(/"message"\s*:\s*"(.*?)"/);
+                    text = match ? match[1].replace(/\\n/g, '\n') : rawText;
+                }
+            } catch (e) {
+                text = rawText;
             }
-            text = data.choices[0].message.content;
         } else {
             const parts = [{ text: systemPrompt + "\n\nUser Question: " + customPrompt }];
             const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
