@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SEO Keyword Hub | Antigravity v67 (Stable)</title>
+    <title>SEO Keyword Hub | Antigravity v68 (Stable)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -421,6 +421,11 @@
                     <label>OpenAI GPT Key</label>
                     <input type="password" id="wallet-key-gpt4o" placeholder="Enter GPT API Key...">
                 </div>
+                <div class="key-input-group" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
+                    <label style="color: var(--accent-primary);">Custom API Proxy (Optional)</label>
+                    <input type="text" id="wallet-proxy-url" placeholder="https://your-proxy.workers.dev/...">
+                    <small style="font-size: 9px; color: var(--text-muted); margin-top: 4px;">Use this to bypass CORS for Claude/GPT (e.g. Apps Script or Cloudflare Worker).</small>
+                </div>
             </div>
 
             <div class="wallet-footer">
@@ -430,6 +435,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=v67_ai_brain_restored"></script>
+    <script src="app.js?v=v68_ai_brain_restored"></script>
 </body>
 </html>
