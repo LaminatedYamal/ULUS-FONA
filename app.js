@@ -21,13 +21,21 @@ async function init() {
         if (infoEl) infoEl.innerText = cachedSync;
     }
 
-    document.getElementById('keyword-search').addEventListener('input', (e) => {
-        filterKeywords(e.target.value);
-    });
+    const searchInput = document.getElementById('keyword-search-header');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            renderTablesFromHeader(e.target.value);
+        });
+    }
 
-    document.getElementById('gsc-upload').addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
-    document.getElementById('ads-upload').addEventListener('change', (e) => handleFileUpload(e, 'ads'));
-    document.getElementById('rankings-upload').addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
+    const gscUpload = document.getElementById('gsc-upload');
+    if (gscUpload) gscUpload.addEventListener('change', (e) => handleFileUpload(e, 'gsc'));
+    
+    const adsUpload = document.getElementById('ads-upload');
+    if (adsUpload) adsUpload.addEventListener('change', (e) => handleFileUpload(e, 'ads'));
+    
+    const rankingsUpload = document.getElementById('rankings-upload');
+    if (rankingsUpload) rankingsUpload.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
     loadData(); 
     initTheme();
@@ -1742,8 +1750,9 @@ window.toggleGeminiSidebar = function() {
     updateAISidebarText();
 
     // Load key if exists
-    const key = localStorage.getItem('gemini_api_key');
-    if (key) document.getElementById('gemini-api-key').value = key;
+    const key = localStorage.getItem(`api_key_${activeAIModel}`);
+    const keyInput = document.getElementById('active-api-key');
+    if (keyInput) keyInput.value = key || '';
 }
 
 window.saveGeminiKey = function(key) {
