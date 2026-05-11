@@ -1720,6 +1720,35 @@ const modelConfigs = {
     'claude':   { name: 'Claude Opus',   color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] }
 };
 
+let activePersona = 'marketeer';
+const PERSONA_CONFIGS = {
+    'seo': {
+        name: 'SEO Strategist',
+        instructions: "You are the Antigravity Technical SEO Strategist. Focus on organic rankings, technical metadata, and GSC deltas. Be analytical and professional. Identify drops and suggest technical fixes."
+    },
+    'ads': {
+        name: 'Ads Specialist',
+        instructions: "You are the Antigravity Performance Ads Specialist. Focus on ROI, CPC, and paid/organic synergy. Be results-oriented and urgent. Suggest budget moves to capture synergy gaps."
+    },
+    'marketeer': {
+        name: 'General Marketeer',
+        instructions: "You are the Antigravity Master Marketeer. Focus on branding, holistic strategy, and messaging. Be conversational, visionary, and creative. Help the user tell a story with the data."
+    }
+};
+
+window.switchPersona = function(p) {
+    activePersona = p;
+    document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('active'));
+    document.getElementById(`persona-${p}`).classList.add('active');
+    
+    const introEl = document.getElementById('gemini-intro');
+    if (introEl) {
+        const config = PERSONA_CONFIGS[p];
+        introEl.textContent = `I am now operating as your ${config.name}. How can I assist your ${p.toUpperCase()} strategy today?`;
+    }
+    console.log(`[Antigravity] Persona switched to: ${PERSONA_CONFIGS[p].name}`);
+};
+
 // Add Paste Support for Screenshots
 document.addEventListener('paste', function(e) {
     const input = document.getElementById('gemini-user-input');
@@ -2028,11 +2057,16 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    document.title = 'SEO Keyword Hub | Antigravity v91 (Stable)';
-    let context = "You are the Antigravity Master Strategist. You have God-mode access to the Institutional Fleet database. ";
-    context += "STRICT RULE: You are the bridge between data and reality. If a name is mentioned, check if it aligns with the institutional leadership or faculty (Universidade Lusófona / ULP). ";
-    context += "If you cannot find a person in the local SEO database, acknowledge that they aren't in the *keyword* logs but offer to analyze their impact on the institutional brand or run a targeted web search if available. ";
-    context += "Be direct, professional, and do not make excuses about the data payload. ";
+    document.title = 'SEO Keyword Hub | Antigravity v93 (Stable)';
+    
+    let context = `You are the Antigravity Master Strategist, currently operating as a ${PERSONA_CONFIGS[activePersona].name}. `;
+    context += `PERSONA INSTRUCTIONS: ${PERSONA_CONFIGS[activePersona].instructions} `;
+    context += "GENERAL RULES: Do NOT be stiff or scripted. Act like a real strategic partner. ";
+    context += "Analyze the data deeply; don't just repeat it. Look for trends, outliers, and opportunities. ";
+    context += "Use natural, fluid language. If asked about a person, check if they are leadership/faculty at ULP. ";
+    context += "If you cannot find specific data, hypothesize based on market trends but stay grounded in the database provided. ";
+    context += "NEVER say 'As an AI...'. Be direct, bold, and helpful. ";
+
 
     let dataPayload = {
         meta: { version: "v91", agent: "Antigravity Master Strategist" }
