@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SEO Keyword Hub | Antigravity v76 (Stable)</title>
+    <title>SEO Keyword Hub | Antigravity v78 (Stable)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -414,19 +414,31 @@
                     <input type="password" id="wallet-key-gemini" placeholder="Enter Gemini API Key...">
                 </div>
                 <div class="key-input-group">
-                    <label>Anthropic Claude Key (or Master Key)</label>
-                    <input type="password" id="wallet-key-claude" placeholder="sk-usr-...">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
-                        <input type="text" id="wallet-agent-claude" placeholder="Claude Agent ID" style="font-size: 10px; padding: 8px;">
-                        <input type="text" id="wallet-channel-claude" placeholder="Claude Channel ID" style="font-size: 10px; padding: 8px;">
+                    <label>Anthropic Claude Settings</label>
+                    <input type="password" id="wallet-key-claude" placeholder="sk-usr-..." style="margin-bottom: 8px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div>
+                            <small style="color:var(--text-muted); font-size:9px;">Agent ID</small>
+                            <input type="text" id="wallet-agent-claude" placeholder="cmor..." style="font-size: 10px; padding: 8px;">
+                        </div>
+                        <div>
+                            <small style="color:var(--text-muted); font-size:9px;">Channel ID</small>
+                            <input type="text" id="wallet-channel-claude" placeholder="cmp..." style="font-size: 10px; padding: 8px;">
+                        </div>
                     </div>
                 </div>
                 <div class="key-input-group">
-                    <label>OpenAI GPT Key (or Master Key)</label>
-                    <input type="password" id="wallet-key-gpt4o" placeholder="sk-usr-...">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px;">
-                        <input type="text" id="wallet-agent-gpt4o" placeholder="GPT Agent ID" style="font-size: 10px; padding: 8px;">
-                        <input type="text" id="wallet-channel-gpt4o" placeholder="GPT Channel ID" style="font-size: 10px; padding: 8px;">
+                    <label>OpenAI GPT Settings</label>
+                    <input type="password" id="wallet-key-gpt4o" placeholder="sk-usr-..." style="margin-bottom: 8px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div>
+                            <small style="color:var(--text-muted); font-size:9px;">Agent ID</small>
+                            <input type="text" id="wallet-agent-gpt4o" placeholder="cmor..." style="font-size: 10px; padding: 8px;">
+                        </div>
+                        <div>
+                            <small style="color:var(--text-muted); font-size:9px;">Channel ID</small>
+                            <input type="text" id="wallet-channel-gpt4o" placeholder="cmp..." style="font-size: 10px; padding: 8px;">
+                        </div>
                     </div>
                 </div>
                 <div class="key-input-group" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px;">
@@ -442,6 +454,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=v76_ai_brain_restored"></script>
+    <script src="app.js?v=v78_ai_brain_restored"></script>
 </body>
 </html>
