@@ -1995,8 +1995,8 @@ function switchAIModel(model) {
     activeAIModel = model;
     const config = modelConfigs[model];
 
-    // Update Orbs Active State
-    document.querySelectorAll('.satellite-orb').forEach(orb => orb.classList.remove('active'));
+    // Update Tower Items Active State
+    document.querySelectorAll('.tower-item').forEach(item => item.classList.remove('active'));
     document.querySelector(`.${model === 'gpt4o' ? 'gpt' : (model === 'claude' ? 'claude' : (model === 'llama' ? 'llama' : 'gemini'))}-orb`).classList.add('active');
 
     // Update Main Button Appearance
