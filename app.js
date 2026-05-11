@@ -623,7 +623,7 @@ function showSyncReminder(message) {
     const modal = document.createElement('div');
     modal.className = 'sync-modal';
     modal.innerHTML = `
-        <div class="modal-icon">🚀</div>
+        <script src="app.js?v=v85_ai_brain_restored"></script>
         <h2>Data Uploaded Locally</h2>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <div class="modal-warning">
@@ -1460,8 +1460,11 @@ window.showLiveMonitor = async function() {
 
     try {
         const resp = await fetch('campaigns.json', { cache: 'no-cache' });
-        if (!resp.ok) throw new Error("Campaign data not synced yet.");
-        const campaigns = await resp.json();
+        if (resp.ok) liveAdsContext = await resp.json();
+    } catch(e) {}
+
+    try {
+        const campaigns = liveAdsContext || [];
 
         if (body) {
             body.innerHTML = '';
@@ -1709,6 +1712,7 @@ document.addEventListener('DOMContentLoaded', init);
 // --- GEMINI AI INTEGRATION ---
 let pendingGeminiFile = null;
 let activeAIModel = 'gemini'; // Default
+let liveAdsContext = null;
 
 const modelConfigs = {
     'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
@@ -2008,17 +2012,18 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     loadingDiv.className = 'ai-response';
     const config = modelConfigs[activeAIModel];
     const targetName = course ? course.name : 'the institutional fleet';
-    loadingDiv.innerHTML = `<p>⏳ <strong>${config.name}</strong> is analyzing <strong>${targetName}</strong>...</p>`;
+    loadingDiv.innerHTML = `
+        <div class="ai-thinking">
+            <div class="thinking-dot"></div>
+            <div class="thinking-dot"></div>
+            <div class="thinking-dot"></div>
+            <span style="margin-left: 10px;">${config.name} is thinking...</span>
+        </div>
+    `;
     chat.appendChild(loadingDiv);
     chat.scrollTop = chat.scrollHeight;
 
-    // Build Deep Structured Context
-    let liveAdsContext = null;
-    try {
-        const resp = await fetch('campaigns.json', { cache: 'no-cache' });
-        if (resp.ok) liveAdsContext = await resp.json();
-    } catch(e) {}
-
+    document.title = 'SEO Keyword Hub | Antigravity v85 (Stable)';
     let context = "You are the Antigravity SEO Strategist. You have direct access to the Institutional Fleet database. ";
     context += "STRICT RULE: Only use numbers found in the SYSTEM DATA. Do not hallucinate metrics. ";
     context += "Be direct, professional, and data-driven. ";
@@ -2028,23 +2033,18 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
 
     if (course) {
         dataPayload = {
-            ...dataPayload,
             target: "Course Analysis",
-            identity: { name: course.name, institution: course.institution },
-            performance_data: {
-                top_gsc: course.gscKeywords.slice(0, 50).map(k => ({ t: k.term, c: k.clicks, trend: k.clickDelta })),
-                top_ads: course.adsKeywords.slice(0, 50).map(k => ({ t: k.term, s: k.status })),
-                top_rankings: course.rankingsKeywords.slice(0, 50).map(k => ({ t: k.term, r: k.rank }))
+            name: course.name,
+            metrics: {
+                clicks: course.gscKeywords.slice(0, 15).map(k => k.term),
+                rankings: course.rankingsKeywords.slice(0, 15).map(k => `${k.term}:${k.rank}`)
             }
         };
     } else {
         dataPayload = {
-            ...dataPayload,
-            target: "Institutional Fleet Analysis",
-            total_stats: {
-                courses: courses.length,
-                top_trends: courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 100).map(k => ({ t: k.term, trend: k.clickDelta }))
-            }
+            target: "Global Fleet",
+            stats: { total_courses: courses.length },
+            trends: courses.slice(0, 5).map(c => c.name)
         };
     }
 
