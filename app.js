@@ -2043,14 +2043,14 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         if (isIAedu) {
             const modelMap = { 'gpt4o': 'gpt-5-5', 'claude': 'claude-opus-4-7' };
             const customProxy = localStorage.getItem('antigravity_api_proxy');
-            const targetUrl = customProxy || `https://corsproxy.io/?https://api.iaedu.pt/v1/chat/completions`;
+            const targetUrl = customProxy || `https://api.codetabs.com/v1/proxy?quest=https://api.iaedu.pt/v1/chat/completions`;
             
             console.log(`[Antigravity] Calling Proxy (${targetUrl}) for ${activeAIModel}...`);
             const response = await fetch(targetUrl, {
                 method: 'POST',
                 mode: 'cors',
                 headers: { 
-                    'Content-Type': 'text/plain'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
                     api_key: apiKey.trim(), // Pass key in body for proxy accessibility
