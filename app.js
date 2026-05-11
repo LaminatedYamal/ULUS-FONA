@@ -623,7 +623,7 @@ function showSyncReminder(message) {
     const modal = document.createElement('div');
     modal.className = 'sync-modal';
     modal.innerHTML = `
-        <script src="app.js?v=v85_ai_brain_restored"></script>
+        <script src="app.js?v=v86_ai_brain_restored"></script>
         <h2>Data Uploaded Locally</h2>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <div class="modal-warning">
@@ -2082,24 +2082,39 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             if (!response.ok) throw new Error(`Agent API Failed: ${response.status}\n${rawText}`);
             
             try {
-                // Advanced Stream Parsing
-                const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-                let bestMessage = "";
+                // Specialized Parser for IAedu/Cloudflare JSON Stream
+                const lines = rawText.split(/[\n|<br>]+/).map(l => l.trim()).filter(l => l.length > 0);
+                let fullResponse = "";
+                let foundComplete = false;
                 
                 for (const line of lines) {
-                    if (line.startsWith('data:')) {
-                        try {
-                            const jsonData = JSON.parse(line.substring(5).trim());
-                            if (jsonData.message) bestMessage = jsonData.message;
-                            else if (jsonData.text) bestMessage = jsonData.text;
-                            else if (jsonData.content) bestMessage = jsonData.content;
-                        } catch(e) {}
-                    }
+                    try {
+                        const cleanLine = line.replace(/^data:\s*/, '').trim();
+                        const parsed = JSON.parse(cleanLine);
+                        
+                        // Priority 1: The final complete message object
+                        if (parsed.type === "message" && parsed.content && typeof parsed.content === 'object' && parsed.content.content) {
+                            text = parsed.content.content;
+                            foundComplete = true;
+                            break;
+                        }
+                        // Priority 2: The start/message type with direct content string
+                        if (parsed.type === "message" && typeof parsed.content === 'string') {
+                            text = parsed.content;
+                            foundComplete = true;
+                            break;
+                        }
+                        // Fallback: Accumulate tokens
+                        if (parsed.type === "token" && parsed.content) {
+                            fullResponse += parsed.content;
+                        }
+                    } catch(e) {}
                 }
                 
-                text = bestMessage || rawText;
-                // Clean up any remaining JSON or "data:" artifacts
-                text = text.replace(/^data:\s*/, '').trim();
+                if (!foundComplete) text = fullResponse || rawText;
+                
+                // Final cleanup of any raw HTML artifacts from the stream
+                text = text.replace(/<br\s*\/?>/gi, '\n').trim();
             } catch (e) {
                 text = rawText;
             }
