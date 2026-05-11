@@ -623,7 +623,7 @@ function showSyncReminder(message) {
     const modal = document.createElement('div');
     modal.className = 'sync-modal';
     modal.innerHTML = `
-        <script src="app.js?v=v91_ai_brain_restored"></script>
+        <script src="app.js?v=v92_ai_brain_restored"></script>
         <h2>Data Uploaded Locally</h2>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <div class="modal-warning">
@@ -2040,17 +2040,21 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             target: "Course Deep Dive",
             course_identity: { name: course.name, institution: course.institution, coordinator: course.coordinator || "Unknown" },
             metrics: {
-                search_performance: course.gscKeywords.slice(0, 100),
-                ranking_landscape: course.rankingsKeywords.slice(0, 100)
+                search_performance: course.gscKeywords.slice(0, 100).map(k => ({ t: k.term, c: k.clicks, d: k.clickDelta })),
+                ranking_landscape: course.rankingsKeywords.slice(0, 100).map(k => ({ t: k.term, r: k.rank }))
             }
         };
     } else {
+        const allKeywords = courses.flatMap(c => (c.gscKeywords || []).map(k => ({ ...k, course: c.name })));
         dataPayload = {
             ...dataPayload,
             target: "Fleet Commander View",
             total_courses: courses.length,
             representative_sample: courses.slice(0, 15).map(c => ({ name: c.name, inst: c.institution, coordinator: c.coordinator })),
-            market_trends: courses.flatMap(c => c.gscKeywords).sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 100).map(k => k.term)
+            market_performance: {
+                top_gainers: [...allKeywords].sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 40).map(k => ({ t: k.term, d: k.clickDelta, c: k.course })),
+                top_losers: [...allKeywords].sort((a,b) => a.clickDelta - b.clickDelta).slice(0, 40).map(k => ({ t: k.term, d: k.clickDelta, c: k.course }))
+            }
         };
     }
 
