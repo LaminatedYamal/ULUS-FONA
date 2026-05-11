@@ -1997,6 +1997,11 @@ function updateAISidebarText() {
 }
 
 window.askGemini = async function(action, customPrompt = "", attachedFile = null) {
+    let promptText = customPrompt;
+    if (action === 'seo') promptText = "Identify the biggest organic drops and gains in the fleet. Be specific about course names and click deltas.";
+    if (action === 'ads') promptText = "Identify high-volume keywords currently missing from Ads but present in GSC or Rankings. Suggest budget shifts.";
+    if (action === 'strategy') promptText = "Provide 3 high-impact strategic recommendations for the institutional fleet based on current performance and trends.";
+
     const isIAedu = activeAIModel !== 'gemini';
     const apiKey = localStorage.getItem(`api_key_${activeAIModel}`);
     
@@ -2039,9 +2044,9 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             ...dataPayload,
             target: "Course Deep Dive",
             course_identity: { name: course.name, institution: course.institution, coordinator: course.coordinator || "Unknown" },
-            metrics: {
-                search_performance: course.gscKeywords.slice(0, 100).map(k => ({ t: k.term, c: k.clicks, d: k.clickDelta })),
-                ranking_landscape: course.rankingsKeywords.slice(0, 100).map(k => ({ t: k.term, r: k.rank }))
+            performance_metrics: {
+                search_console: course.gscKeywords.slice(0, 100).map(k => ({ term: k.term, clicks: k.clicks, click_delta: k.clickDelta })),
+                rank_tracker: course.rankingsKeywords.slice(0, 100).map(k => ({ term: k.term, current_rank: k.rank, rank_delta: k.rankDelta || 0 }))
             }
         };
     } else {
@@ -2050,10 +2055,10 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             ...dataPayload,
             target: "Fleet Commander View",
             total_courses: courses.length,
-            representative_sample: courses.slice(0, 15).map(c => ({ name: c.name, inst: c.institution, coordinator: c.coordinator })),
-            market_performance: {
-                top_gainers: [...allKeywords].sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 40).map(k => ({ t: k.term, d: k.clickDelta, c: k.course })),
-                top_losers: [...allKeywords].sort((a,b) => a.clickDelta - b.clickDelta).slice(0, 40).map(k => ({ t: k.term, d: k.clickDelta, c: k.course }))
+            representative_sample: courses.slice(0, 10).map(c => ({ name: c.name, inst: c.institution, coordinator: c.coordinator })),
+            organic_movers: {
+                biggest_gainers: [...allKeywords].sort((a,b) => b.clickDelta - a.clickDelta).slice(0, 30).map(k => ({ term: k.term, delta: k.clickDelta, course: k.course })),
+                biggest_losers: [...allKeywords].sort((a,b) => a.clickDelta - b.clickDelta).slice(0, 30).map(k => ({ term: k.term, delta: k.clickDelta, course: k.course }))
             }
         };
     }
@@ -2081,7 +2086,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                     agent_id: agentId,
                     api_key: apiKey.trim(),
                     channel_id: channelId,
-                    thread_id: "antigravity_" + (activeCourseId || "global"),
+                    thread_id: "antigravity_" + activeAIModel + "_" + (activeCourseId || "global"),
                     message: systemPrompt + "\n\nUser Question: " + customPrompt
                 })
             });
