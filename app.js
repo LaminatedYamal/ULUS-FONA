@@ -2132,3 +2132,23 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     }
 }
 
+function typeWriter(element, text, speed = 10) {
+    let i = 0;
+    element.innerHTML = '';
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+function formatAIResponse(text) {
+    if (!text) return "";
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+               .replace(/\*(.*?)\*/g, '<em>$1</em>')
+               .replace(/\n/g, '<br>');
+}
+
