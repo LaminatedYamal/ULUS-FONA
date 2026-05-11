@@ -1694,10 +1694,14 @@ body.light-mode .hero-text h2 {
 }
 
 /* Tower Branding Variables */
-.gpt-orb { --brand-color: #10B981; --brand-bg: rgba(16, 185, 129, 0.1); --brand-color-transparent: rgba(16, 185, 129, 0.3); }
-.claude-orb { --brand-color: #8B5CF6; --brand-bg: rgba(139, 92, 246, 0.1); --brand-color-transparent: rgba(139, 92, 246, 0.3); }
-.llama-orb { --brand-color: #F59E0B; --brand-bg: rgba(245, 158, 11, 0.1); --brand-color-transparent: rgba(245, 158, 11, 0.3); }
+.deepseek-orb { --brand-color: #2D5AF2; --brand-bg: rgba(45, 90, 242, 0.1); --brand-color-transparent: rgba(45, 90, 242, 0.3); }
+.llama-orb { --brand-color: #0668E1; --brand-bg: rgba(6, 104, 225, 0.1); --brand-color-transparent: rgba(6, 104, 225, 0.3); }
+.gpt-orb { --brand-color: #ffffff; --brand-bg: rgba(255, 255, 255, 0.1); --brand-color-transparent: rgba(255, 255, 255, 0.2); }
+.claude-orb { --brand-color: #D97757; --brand-bg: rgba(217, 119, 87, 0.1); --brand-color-transparent: rgba(217, 119, 87, 0.3); }
 .gemini-orb { --brand-color: #4285F4; --brand-bg: rgba(66, 133, 244, 0.1); --brand-color-transparent: rgba(66, 133, 244, 0.3); }
+
+.gpt-orb.active { border-color: white; }
+.gpt-orb:hover { border-color: white; }
 
 .tower-item.active .model-logo {
     animation: model-logo-float 3s infinite ease-in-out;
