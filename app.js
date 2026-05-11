@@ -2055,6 +2055,7 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         if (isIAedu) {
             const agentId = localStorage.getItem(`agent_id_${activeAIModel}`) || 'cmor5objoex9gfp01vm7p95jh';
             const channelId = localStorage.getItem(`channel_id_${activeAIModel}`) || 'cmp19u43ta5pelx01jckgsqvl';
+            const customProxy = localStorage.getItem('antigravity_api_proxy');
             const targetUrl = customProxy || `http://127.0.0.1:5000/proxy`;
             
             console.log(`[Antigravity] Calling Local Bridge Proxy...`);
