@@ -2053,30 +2053,27 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     try {
         let text = "";
         if (isIAedu) {
-            const specificAgent = localStorage.getItem(`agent_id_${activeAIModel}`);
-            const specificChannel = localStorage.getItem(`channel_id_${activeAIModel}`);
-            
-            // Fallback to the institutional default if specific ones aren't set
-            const agentId = specificAgent || 'cmor5objoex9gfp01vm7p95jh';
-            const channelId = specificChannel || 'cmp19u43ta5pelx01jckgsqvl';
-            
+            const agentId = localStorage.getItem(`agent_id_${activeAIModel}`) || 'cmor5objoex9gfp01vm7p95jh';
+            const channelId = localStorage.getItem(`channel_id_${activeAIModel}`) || 'cmp19u43ta5pelx01jckgsqvl';
             const customProxy = localStorage.getItem('antigravity_api_proxy');
-            const baseUrl = `https://api.iaedu.pt/agent-chat//api/v1/agent/${agentId}/stream`;
-            const targetUrl = customProxy ? `${customProxy}${baseUrl}` : `https://api.codetabs.com/v1/proxy?quest=${baseUrl}`;
             
-            console.log(`[Antigravity] Calling Agent API (${agentId}) via Proxy...`);
-            
-            const formData = new FormData();
-            formData.append("channel_id", channelId);
-            formData.append("thread_id", "antigravity_" + (activeCourseId || "global"));
-            formData.append("user_info", JSON.stringify({ name: localStorage.getItem('hub_user_name') || 'User' }));
-            formData.append("message", systemPrompt + "\n\nUser Question: " + customPrompt);
+            if (!customProxy) {
+                throw new Error("Custom Proxy Required for Claude/GPT. Please set up your Apps Script proxy in the Wallet.");
+            }
 
-            const response = await fetch(targetUrl, {
+            console.log(`[Antigravity] Calling Agent API via Custom Proxy...`);
+            
+            const response = await fetch(customProxy, {
                 method: 'POST',
                 mode: 'cors',
-                headers: { 'x-api-key': apiKey.trim() },
-                body: formData
+                headers: { 'Content-Type': 'text/plain' }, // Use text/plain to avoid preflight
+                body: JSON.stringify({ 
+                    agent_id: agentId,
+                    api_key: apiKey.trim(),
+                    channel_id: channelId,
+                    thread_id: "antigravity_" + (activeCourseId || "global"),
+                    message: systemPrompt + "\n\nUser Question: " + customPrompt
+                })
             });
 
             const rawText = await response.text();
