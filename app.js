@@ -58,11 +58,8 @@ async function init() {
 function applyCustomBg() {
     const bg = localStorage.getItem('hub_custom_bg');
     if (bg) {
-        const dashboard = document.getElementById('dashboard-view');
-        if (dashboard) {
-            dashboard.style.backgroundImage = `url(${bg})`;
-            dashboard.style.backgroundSize = 'cover';
-        }
+        document.body.style.backgroundImage = `url(${bg})`;
+        document.body.style.backgroundSize = 'cover';
     }
 }
 
@@ -715,6 +712,21 @@ window.selectTone = function(el) {
     });
     el.classList.add('selected');
     el.style.border = '2px solid white';
+    
+    // Preview club mode immediately
+    const blob = document.querySelector('.ambient-blob');
+    if (blob) {
+        blob.className = 'ambient-blob'; // Reset
+        const club = el.getAttribute('data-club');
+        if (club) {
+            blob.classList.add('club-mode', club);
+            localStorage.setItem('hub_club_mode', club);
+        } else {
+            localStorage.removeItem('hub_club_mode');
+        }
+        const tone = el.getAttribute('data-tone');
+        document.documentElement.style.setProperty('--blob-gradient', tone);
+    }
 }
 
 async function handleLogin() {
