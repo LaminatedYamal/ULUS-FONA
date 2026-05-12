@@ -59,8 +59,70 @@
     </div>
 
     <script>
-        let currentFilter = 'all';
-        let rawData = [];
+        const TRANSLATIONS = {
+            'en': {
+                'title': 'LIVE ROUTING SWITCHBOARD',
+                'sync': 'SYNC NOW',
+                'home': '← HOME',
+                'all-inst': 'ALL INSTITUTIONS',
+                'all': 'ALL',
+                'down': 'DOWN',
+                'active': 'ACTIVE',
+                'status': 'STATUS',
+                'course': 'COURSE IDENTIFIER',
+                'inst': 'INSTITUTION',
+                'endpoint': 'ENDPOINT',
+                'days': 'DAYS DOWN',
+                'loading': 'ESTABLISHING CONNECTION...',
+                'search': 'Search course or institution...',
+                'nominal': 'SYSTEM NOMINAL',
+                'minor': 'MINOR ANOMALIES DETECTED',
+                'critical': 'CRITICAL SECTOR FAILURES'
+            },
+            'pt': {
+                'title': 'PAINEL DE ROTEAMENTO LIVE',
+                'sync': 'SINC. AGORA',
+                'home': '← INÍCIO',
+                'all-inst': 'TODAS AS INSTITUIÇÕES',
+                'all': 'TODOS',
+                'down': 'DOWN',
+                'active': 'ATIVOS',
+                'status': 'STATUS',
+                'course': 'IDENTIFICADOR DO CURSO',
+                'inst': 'INSTITUIÇÃO',
+                'endpoint': 'ENDPOINT',
+                'days': 'DIAS DOWN',
+                'loading': 'ESTABELECENDO CONEXÃO...',
+                'search': 'Procurar curso ou instituição...',
+                'nominal': 'SISTEMA NOMINAL',
+                'minor': 'PEQUENAS ANOMALIAS DETETADAS',
+                'critical': 'FALHAS CRÍTICAS DE SETOR'
+            }
+        };
+
+        let currentLang = localStorage.getItem('currentLang') || 'en';
+
+        function updateUILanguage() {
+            const t = TRANSLATIONS[currentLang];
+            document.querySelector('h1').textContent = t.title;
+            document.querySelector('.logo-box[style*="border"]').textContent = t.home;
+            document.querySelector('.status-indicator button').textContent = t.sync;
+            document.getElementById('inst-filter').options[0].textContent = t['all-inst'];
+            document.getElementById('btn-all').textContent = t.all;
+            document.getElementById('btn-down').textContent = t.down;
+            document.getElementById('btn-active').textContent = t.active;
+            document.getElementById('board-search').placeholder = t.search;
+            
+            const headers = document.querySelectorAll('.grid-header > div');
+            headers[0].textContent = t.status;
+            headers[1].textContent = t.course;
+            headers[2].textContent = t.inst;
+            headers[3].textContent = t.endpoint;
+            headers[4].textContent = t.days;
+            
+            const loading = document.querySelector('.loading-state');
+            if (loading) loading.textContent = t.loading;
+        }
 
         // Aggressive Cache Busting Loader
         (function() {
@@ -73,6 +135,9 @@
         })();
 
         function checkTelemetry() {
+            currentLang = localStorage.getItem('currentLang') || 'en';
+            updateUILanguage();
+            
             const savedTone = localStorage.getItem('hub_blob_tone');
             if (savedTone) document.documentElement.style.setProperty('--blob-gradient', savedTone);
             
@@ -155,6 +220,7 @@
             const criticalAlert = document.getElementById('critical-alert');
             const globalStatus = document.getElementById('global-status');
             const globalLed = document.getElementById('global-led');
+            const t = TRANSLATIONS[currentLang];
             
             container.innerHTML = '';
             criticalList.innerHTML = '';
@@ -187,16 +253,19 @@
 
             criticalAlert.style.display = hasCritical ? 'block' : 'none';
             if (hasCritical) {
-                globalStatus.textContent = 'CRITICAL SECTOR FAILURES';
+                globalStatus.textContent = t.critical;
                 globalLed.className = 'led-dot red pulse-fast';
             } else if (totalErrors > 0) {
-                globalStatus.textContent = 'MINOR ANOMALIES DETECTED';
+                globalStatus.textContent = t.minor;
                 globalLed.className = 'led-dot yellow pulse';
             } else {
-                globalStatus.textContent = 'SYSTEM NOMINAL';
+                globalStatus.textContent = t.nominal;
                 globalLed.className = 'led-dot green pulse';
             }
         }
+
+        let currentFilter = 'all';
+        let rawData = [];
 
 
         checkTelemetry();
