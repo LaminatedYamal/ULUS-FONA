@@ -50,6 +50,7 @@ async function init() {
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
+    refreshModelVisibility();
 }
 
 
@@ -1950,6 +1951,26 @@ window.saveWalletKeys = function() {
     
     hideKeysWallet();
     console.log("[Antigravity] All API Keys & Proxy Updated in Wallet.");
+    refreshModelVisibility();
+}
+
+function refreshModelVisibility() {
+    Object.keys(modelConfigs).forEach(m => {
+        const key = localStorage.getItem(`api_key_${m}`);
+        const agent = localStorage.getItem(`agent_id_${m}`);
+        const channel = localStorage.getItem(`channel_id_${m}`);
+        
+        const orbClass = m === 'gpt4o' ? '.gpt-orb' : `.${m}-orb`;
+        const orb = document.querySelector(orbClass);
+        if (orb) {
+            if (m === 'gemini') {
+                orb.style.display = 'flex';
+            } else {
+                // Show if ANY field has content for testing flexibility
+                orb.style.display = (key || agent || channel) ? 'flex' : 'none';
+            }
+        }
+    });
 }
 
 
