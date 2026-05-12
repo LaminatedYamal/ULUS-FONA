@@ -204,10 +204,11 @@ h1 {
     border-color: rgba(255, 77, 77, 0.15);
 }
 
-.col-led { width: 100px; display: flex; align-items: center; justify-content: center; }
-.col-course { flex: 2; font-weight: 700; font-size: 15px; }
-.col-url { flex: 3; font-family: 'Share Tech Mono', monospace; font-size: 12px; }
-.col-url a { color: var(--accent-primary); text-decoration: none; opacity: 0.8; transition: all 0.2s; }
+.col-led { width: 80px; display: flex; align-items: center; justify-content: center; }
+.col-course { width: 300px; font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.col-inst { width: 180px; }
+.col-url { flex: 1; font-family: 'Share Tech Mono', monospace; font-size: 12px; min-width: 0; }
+.col-url a { color: var(--accent-primary); text-decoration: none; opacity: 0.8; transition: all 0.2s; display: block; overflow: hidden; text-overflow: ellipsis; }
 .col-url a:hover { opacity: 1; text-shadow: 0 0 10px var(--accent-primary); }
 .col-days { width: 120px; text-align: center; font-weight: 800; font-size: 16px; }
 
@@ -216,9 +217,9 @@ h1 {
     padding: 4px 10px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 20px;
-    margin-left: 12px;
     color: var(--accent-primary);
     font-weight: 600;
+    display: inline-block;
 }
 
 .led-diode {
