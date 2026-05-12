@@ -24,10 +24,10 @@
                 <div class="blob-selector" style="margin-bottom: 15px; text-align: left;">
                     <label style="font-size: 11px; font-weight: bold; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block;">Select Aura Tone</label>
                     <div class="tone-options" style="display: flex; gap: 10px; justify-content: space-between;">
-                        <div class="tone-option selected" data-tone="linear-gradient(135deg, #0057FF, #00C2FF)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #0057FF, #00C2FF); cursor: pointer; border: 2px solid white;" onclick="selectTone(this)"></div>
-                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF0055, #FFAA00)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FF0055, #FFAA00); cursor: pointer; border: 2px solid transparent;" onclick="selectTone(this)"></div>
-                        <div class="tone-option" data-tone="linear-gradient(135deg, #FFD700, #FF8C00)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FFD700, #FF8C00); cursor: pointer; border: 2px solid transparent;" onclick="selectTone(this)"></div>
-                        <div class="tone-option" data-tone="linear-gradient(135deg, #8A2BE2, #FF00FF)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #8A2BE2, #FF00FF); cursor: pointer; border: 2px solid transparent;" onclick="selectTone(this)"></div>
+                        <div class="tone-option selected" data-tone="linear-gradient(135deg, #0057FF, #00C2FF)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #0057FF, #00C2FF); cursor: pointer; border: 2px solid white;" title="Antigravity Blue"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF00C8, #7000FF)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FF00C8, #7000FF); cursor: pointer; border: 2px solid transparent;" title="Neon Purple"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF9500, #FF0057)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FF9500, #FF0057); cursor: pointer; border: 2px solid transparent;" title="Sunset Orange"></div>
+                        <div class="tone-option" data-tone="linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335); cursor: pointer; border: 2px solid transparent;" title="Rainbow Aura"></div>
                     </div>
                 </div>
                 <button onclick="handleLogin()" id="login-btn">Unlock Dashboard</button>
@@ -325,7 +325,7 @@
             </div>
             <div class="tower-item llama-orb" onclick="switchAIModel('llama')" title="Meta Llama 3.1" style="display: none;">
                 <div class="model-logo-container">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z" fill="currentColor"/><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7z" fill="currentColor"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-4.5-9h3.5v3.5H11V11h3.5v3.5h1.5V11H19v-1.5h-2.5V6H15v3.5h-3.5V6H10v3.5H7.5V11z" fill="currentColor"/></svg>
                 </div>
                 <div class="model-info">
                     <span class="model-brand">META</span>
@@ -334,7 +334,7 @@
             </div>
             <div class="tower-item deepseek-orb" onclick="switchAIModel('deepseek')" title="DeepSeek V3" style="display: none;">
                 <div class="model-logo-container">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 18.5L5 16V8l7-4 7 4v8l-7 4.5zM12 7l-5 3v4l5 3 5-3v-4l-5-3z" fill="currentColor"/></svg>
                 </div>
                 <div class="model-info">
                     <span class="model-brand">DEEPSEEK</span>
