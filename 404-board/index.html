@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Switch Board | Antigravity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="switchboard-container">
+        <div class="header">
+            <div class="logo-box">SYS/404</div>
+            <h1>LIVE ROUTING SWITCHBOARD</h1>
+            <div class="status-indicator">
+                <div class="led-dot green pulse" id="global-led"></div>
+                <span id="global-status">SYSTEM NOMINAL</span>
+            </div>
+        </div>
+
+        <div id="critical-alert" class="alert-panel" style="display: none;">
+            ⚠️ CRITICAL: We should remove these URLs. (5+ Days Down)
+            <div id="critical-list"></div>
+        </div>
+
+        <div class="grid-header">
+            <div class="col-led">STATUS</div>
+            <div class="col-course">COURSE IDENTIFIER</div>
+            <div class="col-url">ENDPOINT</div>
+            <div class="col-days">DAYS DOWN</div>
+        </div>
+
+        <div id="switch-board-rows" class="rows-container">
+            <!-- Rows injected via JS -->
+            <div class="loading-state">ESTABLISHING CONNECTION...</div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchStatus() {
+            try {
+                // Try relative path first (works if repo structure is deployed to pages)
+                const res = await fetch('../antigravity-url-agent/results.json?t=' + Date.now());
+                if (!res.ok) throw new Error('Data not found');
+                const data = await res.json();
+                renderBoard(data);
+            } catch (err) {
+                console.error("Error fetching results:", err);
+                document.getElementById('switch-board-rows').innerHTML = '<div class="error-state">CONNECTION FAILED: NO TELEMETRY</div>';
+            }
+        }
+
+        function renderBoard(data) {
+            const container = document.getElementById('switch-board-rows');
+            const criticalList = document.getElementById('critical-list');
+            const criticalAlert = document.getElementById('critical-alert');
+            const globalStatus = document.getElementById('global-status');
+            const globalLed = document.getElementById('global-led');
+            
+            container.innerHTML = '';
+            criticalList.innerHTML = '';
+            
+            let hasCritical = false;
+            let totalErrors = 0;
+
+            // Sort so errors appear first
+            data.sort((a, b) => {
+                if (a.Status !== "OK" && b.Status === "OK") return -1;
+                if (a.Status === "OK" && b.Status !== "OK") return 1;
+                return 0;
+            });
+
+            data.forEach(item => {
+                const isError = item.Status !== 'OK';
+                const daysDown = item.ConsecutiveDaysDown || 0;
+                
+                if (isError) totalErrors++;
+
+                if (isError && daysDown >= 5) {
+                    hasCritical = true;
+                    criticalList.innerHTML += `<div>${item.Course} [${item.StatusCode}] - ${item.Url}</div>`;
+                }
+
+                const row = document.createElement('div');
+                row.className = `row ${isError ? 'row-error' : 'row-ok'}`;
+                
+                row.innerHTML = `
+                    <div class="col-led">
+                        <div class="led-diode ${isError ? 'red pulse-fast' : 'green glow'}"></div>
+                    </div>
+                    <div class="col-course">${item.Course} <span class="inst-tag">${item.Institution}</span></div>
+                    <div class="col-url"><a href="${item.Url}" target="_blank">${item.Url}</a></div>
+                    <div class="col-days">${isError ? daysDown : '-'}</div>
+                `;
+                container.appendChild(row);
+            });
+
+            if (hasCritical) {
+                criticalAlert.style.display = 'block';
+                globalStatus.textContent = 'CRITICAL SECTOR FAILURES';
+                globalLed.className = 'led-dot red pulse-fast';
+            } else if (totalErrors > 0) {
+                globalStatus.textContent = 'MINOR ANOMALIES DETECTED';
+                globalLed.className = 'led-dot yellow pulse';
+            } else {
+                globalStatus.textContent = 'SYSTEM NOMINAL';
+                globalLed.className = 'led-dot green pulse';
+            }
+        }
+
+        fetchStatus();
+        setInterval(fetchStatus, 60000); // Poll every minute
+    </script>
+</body>
+</html>
