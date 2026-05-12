@@ -105,6 +105,18 @@
                                      (currentFilter === 'active' && item.Status === 'OK');
                 return matchesSearch && matchesFilter;
             });
+
+            // Sort: Errors first, then by ConsecutiveDaysDown descending
+            filtered.sort((a, b) => {
+                const aErr = a.Status !== 'OK';
+                const bErr = b.Status !== 'OK';
+                if (aErr && !bErr) return -1;
+                if (!aErr && bErr) return 1;
+                // If both are errors, sort by days down
+                if (aErr && bErr) return (b.ConsecutiveDaysDown || 0) - (a.ConsecutiveDaysDown || 0);
+                return 0;
+            });
+
             renderBoard(filtered);
         }
 
