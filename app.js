@@ -181,7 +181,12 @@ const TRANSLATIONS = {
         "tip-monitor": "View real-time performance of all active campaigns.",
         "tip-lang": "Switch between English and Portuguese.",
         "tip-theme": "Switch between Dark and Light mode.",
-        "tip-account": "View user details or log out."
+        "tip-account": "View user details or log out.",
+        "model-desc-claude":   "Full focus on safety and linguistic nuance. The most human and detailed model from Anthropic.",
+        "model-desc-gemini":   "The evolution of Google's multimodal AI. Deep ecosystem integration and ultra-fast reasoning.",
+        "model-desc-gpt":      "The pinnacle of artificial intelligence. Full multimodality and ultra-complex reasoning for global challenges.",
+        "model-desc-llama":    "The new open-source generation from Meta. Extreme speed and unprecedented local intelligence.",
+        "model-desc-deepseek": "The advanced Chinese AI model, now faster and more precise for logic and coding tasks."
     },
     pt: {
         "greeting": "Olá",
@@ -232,7 +237,12 @@ const TRANSLATIONS = {
         "tip-monitor": "Ver desempenho em tempo real de todas as campanhas ativas.",
         "tip-lang": "Alternar entre Inglês e Português.",
         "tip-theme": "Alternar entre modo Claro e Escuro.",
-        "tip-account": "Ver detalhes do utilizador ou terminar sessão."
+        "tip-account": "Ver detalhes do utilizador ou terminar sessão.",
+        "model-desc-claude":   "Foco total em segurança e nuances linguísticas. O modelo mais humano e detalhista da Anthropic.",
+        "model-desc-gemini":   "A evolução da IA multimodal do Google. Integração profunda com o ecossistema e raciocínio ultra-rápido.",
+        "model-desc-gpt":      "O pináculo da inteligência artificial. Multimodalidade total e raciocínio ultra-complexo para desafios globais.",
+        "model-desc-llama":    "A nova geração open-source da Meta. Velocidade extrema e inteligência local sem precedentes.",
+        "model-desc-deepseek": "O modelo chinês de IA avançada agora mais rápido e preciso para tarefas de lógica e código."
     }
 };
 
@@ -344,6 +354,22 @@ function updateUILanguage() {
 
     const langBtn = document.getElementById('lang-toggle-text');
     if (langBtn) langBtn.textContent = currentLang.toUpperCase();
+
+    // Update AI Tower model descriptions
+    const modelDescMap = {
+        'claude-orb':   t['model-desc-claude'],
+        'gemini-orb':   t['model-desc-gemini'],
+        'gpt-orb':      t['model-desc-gpt'],
+        'llama-orb':    t['model-desc-llama'],
+        'deepseek-orb': t['model-desc-deepseek']
+    };
+    document.querySelectorAll('.tower-item').forEach(item => {
+        const orbClass = Object.keys(modelDescMap).find(cls => item.classList.contains(cls));
+        if (orbClass) {
+            const descEl = item.querySelector('.model-desc');
+            if (descEl) descEl.textContent = modelDescMap[orbClass];
+        }
+    });
 }
 
 function scrollToTop() {
