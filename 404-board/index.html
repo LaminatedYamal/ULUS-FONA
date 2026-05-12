@@ -32,6 +32,17 @@
             <div id="critical-list"></div>
         </div>
 
+        <div class="filter-bar" style="display: flex; gap: 15px; margin-bottom: 20px; align-items: center; background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+            <div class="search-box" style="flex: 1; position: relative;">
+                <input type="text" id="board-search" placeholder="Search course or institution..." oninput="applyFilters()" style="width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 8px; color: white; font-family: 'Montserrat', sans-serif; outline: none;">
+            </div>
+            <div class="filter-buttons" style="display: flex; gap: 10px;">
+                <button onclick="setFilter('all')" class="filter-btn active" id="btn-all">ALL</button>
+                <button onclick="setFilter('down')" class="filter-btn" id="btn-down">DOWN</button>
+                <button onclick="setFilter('active')" class="filter-btn" id="btn-active">ACTIVE</button>
+            </div>
+        </div>
+
         <div class="grid-header">
             <div class="col-led">STATUS</div>
             <div class="col-course">COURSE IDENTIFIER</div>
@@ -46,23 +57,23 @@
     </div>
 
     <script>
+        let currentFilter = 'all';
+        let rawData = [];
+
         // Aggressive Cache Busting Loader
         (function() {
             const script = document.createElement('script');
             script.src = 'telemetry.js?v=' + Date.now();
             script.onload = () => {
-                console.log("Telemetry loaded successfully.");
                 checkTelemetry();
             };
             document.head.appendChild(script);
         })();
 
         function checkTelemetry() {
-            // Apply Synced Aura/Wallpaper
             const savedTone = localStorage.getItem('hub_blob_tone');
-            if (savedTone) {
-                document.documentElement.style.setProperty('--blob-gradient', savedTone);
-            }
+            if (savedTone) document.documentElement.style.setProperty('--blob-gradient', savedTone);
+            
             const savedBg = localStorage.getItem('hub_custom_bg');
             if (savedBg) {
                 document.body.style.backgroundImage = `url(${savedBg})`;
@@ -70,21 +81,31 @@
                 document.body.style.backgroundAttachment = 'fixed';
             }
 
-            const container = document.getElementById('switch-board-rows');
             if (window.telemetryData) {
-                renderBoard(window.telemetryData);
+                rawData = window.telemetryData;
+                applyFilters();
             } else {
-                container.innerHTML = `
-                    <div class="error-state">
-                        SYNCHRONIZING...<br>
-                        <small style="font-size: 10px; color: #666;">Contacting telemetry node...</small>
-                    </div>`;
                 setTimeout(checkTelemetry, 1000);
             }
         }
-        
-        function fetchStatus() {
-            location.reload(); // Hard reload to get new telemetry.js
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + filter).classList.add('active');
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const search = document.getElementById('board-search').value.toLowerCase();
+            const filtered = rawData.filter(item => {
+                const matchesSearch = item.Course.toLowerCase().includes(search) || item.Institution.toLowerCase().includes(search);
+                const matchesFilter = (currentFilter === 'all') || 
+                                     (currentFilter === 'down' && item.Status !== 'OK') ||
+                                     (currentFilter === 'active' && item.Status === 'OK');
+                return matchesSearch && matchesFilter;
+            });
+            renderBoard(filtered);
         }
 
         function renderBoard(data) {
@@ -96,35 +117,25 @@
             
             container.innerHTML = '';
             criticalList.innerHTML = '';
-            
             let hasCritical = false;
             let totalErrors = 0;
-
-            // Sort so errors appear first
-            data.sort((a, b) => {
-                if (a.Status !== "OK" && b.Status === "OK") return -1;
-                if (a.Status === "OK" && b.Status !== "OK") return 1;
-                return 0;
-            });
 
             data.forEach(item => {
                 const isError = item.Status !== 'OK';
                 const daysDown = item.ConsecutiveDaysDown || 0;
-                
                 if (isError) totalErrors++;
 
                 if (isError && daysDown >= 5) {
                     hasCritical = true;
-                    criticalList.innerHTML += `<div>${item.Course} [${item.StatusCode}] - ${item.Url}</div>`;
+                    const div = document.createElement('div');
+                    div.textContent = `${item.Course} [${item.StatusCode}] - ${item.Url}`;
+                    criticalList.appendChild(div);
                 }
 
                 const row = document.createElement('div');
                 row.className = `row ${isError ? 'row-error' : 'row-ok'}`;
-                
                 row.innerHTML = `
-                    <div class="col-led">
-                        <div class="led-diode ${isError ? 'red pulse-fast' : 'green glow'}"></div>
-                    </div>
+                    <div class="col-led"><div class="led-diode ${isError ? 'red pulse-fast' : 'green glow'}"></div></div>
                     <div class="col-course">${item.Course} <span class="inst-tag">${item.Institution}</span></div>
                     <div class="col-url"><a href="${item.Url}" target="_blank">${item.Url}</a></div>
                     <div class="col-days">${isError ? daysDown : '-'}</div>
@@ -132,8 +143,8 @@
                 container.appendChild(row);
             });
 
+            criticalAlert.style.display = hasCritical ? 'block' : 'none';
             if (hasCritical) {
-                criticalAlert.style.display = 'block';
                 globalStatus.textContent = 'CRITICAL SECTOR FAILURES';
                 globalLed.className = 'led-dot red pulse-fast';
             } else if (totalErrors > 0) {
@@ -144,6 +155,7 @@
                 globalLed.className = 'led-dot green pulse';
             }
         }
+
 
         checkTelemetry();
         setInterval(() => location.reload(), 300000); // Hard refresh every 5 mins to catch new file
