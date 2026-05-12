@@ -189,17 +189,17 @@
             <div id="live-monitor-view" style="display: none; height: calc(100vh - 100px); overflow-y: auto; padding: 20px;">
                 <div class="monitor-grid">
                     <table class="monitor-table">
-                        <thead style="position: sticky; top: 0; z-index: 10; background: rgba(10, 12, 16, 0.95); backdrop-filter: blur(10px);">
+                        <thead>
                             <tr>
-                                <th id="th-campaign" onclick="sortAds('Campaign')" style="cursor:pointer; transition: all 0.2s; white-space: nowrap;">Campaign ↕</th>
-                                <th id="th-status" onclick="sortAds('Status')" style="cursor:pointer; transition: all 0.2s;">Status ↕</th>
-                                <th id="th-budget" onclick="sortAds('Budget')" style="text-align:right; cursor:pointer; transition: all 0.2s;">Budget ↕</th>
-                                <th id="th-impr" onclick="sortAds('Impressions')" style="text-align:right; cursor:pointer; transition: all 0.2s;">Impr. ↕</th>
-                                <th id="th-clicks" onclick="sortAds('Clicks')" style="text-align:right; cursor:pointer; transition: all 0.2s;">Clicks ↕</th>
-                                <th id="th-cost" onclick="sortAds('Cost')" style="text-align:right; cursor:pointer; transition: all 0.2s;">Cost ↕</th>
-                                <th id="th-conv" onclick="sortAds('Conversions')" style="text-align:right; cursor:pointer; transition: all 0.2s;">Conv. ↕</th>
-                                <th id="th-cpa" onclick="sortAds('CostPerConv')" style="text-align:right; cursor:pointer; transition: all 0.2s;">CPA ↕</th>
-                                <th id="th-ctr" onclick="sortAds('CTR')" style="text-align:right; cursor:pointer; transition: all 0.2s;">CTR ↕</th>
+                                <th id="th-campaign" onclick="sortAds('Campaign')" style="cursor:pointer; white-space: nowrap;">Campaign ↕</th>
+                                <th id="th-status" onclick="sortAds('Status')" style="cursor:pointer;">Status ↕</th>
+                                <th id="th-budget" onclick="sortAds('Budget')" style="text-align:right; cursor:pointer;">Budget ↕</th>
+                                <th id="th-impr" onclick="sortAds('Impressions')" style="text-align:right; cursor:pointer;">Impr. ↕</th>
+                                <th id="th-clicks" onclick="sortAds('Clicks')" style="text-align:right; cursor:pointer;">Clicks ↕</th>
+                                <th id="th-cost" onclick="sortAds('Cost')" style="text-align:right; cursor:pointer;">Cost ↕</th>
+                                <th id="th-conv" onclick="sortAds('Conversions')" style="text-align:right; cursor:pointer;">Conv. ↕</th>
+                                <th id="th-cpa" onclick="sortAds('CostPerConv')" style="text-align:right; cursor:pointer;">CPA ↕</th>
+                                <th id="th-ctr" onclick="sortAds('CTR')" style="text-align:right; cursor:pointer;">CTR ↕</th>
                             </tr>
                         </thead>
                         <tbody id="monitor-body"></tbody>
