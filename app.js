@@ -45,6 +45,34 @@ async function init() {
         document.documentElement.style.setProperty('--blob-gradient', savedTone);
     }
 
+    applyCustomBg();
+}
+
+function applyCustomBg() {
+    const bg = localStorage.getItem('hub_custom_bg');
+    if (bg) {
+        const dashboard = document.getElementById('dashboard-view');
+        if (dashboard) {
+            dashboard.style.backgroundImage = `url(${bg})`;
+            dashboard.style.backgroundSize = 'cover';
+        }
+    }
+}
+
+window.handleBgUpload = function(input) {
+    const file = input.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64 = e.target.result;
+            localStorage.setItem('hub_custom_bg', base64);
+            document.getElementById('upload-status').style.display = 'block';
+            applyCustomBg();
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
     // Default View: Show Landing Hero
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
