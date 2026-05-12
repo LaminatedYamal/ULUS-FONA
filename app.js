@@ -1269,6 +1269,40 @@ window.resetApp = function(mode) {
     }
 };
 
+window.returnToLanding = function() {
+    activeCourseId = null;
+    const landingView = document.getElementById("landing-view");
+    const dashboardView = document.getElementById("dashboard-view");
+    const liveMonitorView = document.getElementById("live-monitor-view");
+    
+    if (landingView) landingView.style.display = "flex";
+    if (dashboardView) dashboardView.style.display = "none";
+    if (liveMonitorView) liveMonitorView.style.display = "none";
+    
+    const headerLeft = document.getElementById('dashboard-header-left');
+    if (headerLeft) headerLeft.style.visibility = "hidden";
+    
+    const sidebarSearch = document.getElementById('sidebar-search-container');
+    const headerSearch = document.getElementById('header-search-container');
+    if (sidebarSearch) sidebarSearch.style.display = "block";
+    if (headerSearch) headerSearch.style.display = "none";
+    
+    document.querySelectorAll('.nav-degree-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.nav-course-item').forEach(c => c.classList.remove('active'));
+    
+    const logoEl = document.getElementById('landing-logo');
+    if (logoEl) logoEl.style.display = "none";
+    
+    const subtitle = document.getElementById('landing-subtitle');
+    if (subtitle) subtitle.textContent = "Global SEO & Ads Keyword Analysis";
+    
+    const hubDropdownContainer = document.getElementById('degree-selection-hub');
+    if (hubDropdownContainer) hubDropdownContainer.style.display = "none";
+    
+    const gl = document.getElementById('global-stats');
+    if (gl) gl.style.display = "flex";
+};
+
 window.selectDegreeHub = function(inst, degree, degreeCourses) {
     activeCourseId = null; // Enter Global AI Mode
     const landingView = document.getElementById("landing-view");
