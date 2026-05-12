@@ -112,7 +112,9 @@
             if (syncBtn) syncBtn.textContent = t.sync;
             
             const instFilter = document.getElementById('inst-filter');
-            if (instFilter && instFilter.options[0]) instFilter.options[0].textContent = t['all-inst'];
+            if (instFilter && instFilter.options[0]) {
+                instFilter.options[0].textContent = t['all-inst'];
+            }
             
             const btnAll = document.getElementById('btn-all');
             const btnDown = document.getElementById('btn-down');
