@@ -100,25 +100,38 @@
             }
         };
 
-        let currentLang = localStorage.getItem('currentLang') || 'en';
+        let currentLang = localStorage.getItem('hub_lang') || 'en';
 
         function updateUILanguage() {
             const t = TRANSLATIONS[currentLang];
+            if (!t) return;
             document.querySelector('h1').textContent = t.title;
-            document.querySelector('.logo-box[style*="border"]').textContent = t.home;
-            document.querySelector('.status-indicator button').textContent = t.sync;
-            document.getElementById('inst-filter').options[0].textContent = t['all-inst'];
-            document.getElementById('btn-all').textContent = t.all;
-            document.getElementById('btn-down').textContent = t.down;
-            document.getElementById('btn-active').textContent = t.active;
-            document.getElementById('board-search').placeholder = t.search;
+            const homeBtn = document.querySelector('.logo-box[style*="border"]');
+            if (homeBtn) homeBtn.textContent = t.home;
+            const syncBtn = document.querySelector('.status-indicator button');
+            if (syncBtn) syncBtn.textContent = t.sync;
+            
+            const instFilter = document.getElementById('inst-filter');
+            if (instFilter && instFilter.options[0]) instFilter.options[0].textContent = t['all-inst'];
+            
+            const btnAll = document.getElementById('btn-all');
+            const btnDown = document.getElementById('btn-down');
+            const btnActive = document.getElementById('btn-active');
+            if (btnAll) btnAll.textContent = t.all;
+            if (btnDown) btnDown.textContent = t.down;
+            if (btnActive) btnActive.textContent = t.active;
+            
+            const search = document.getElementById('board-search');
+            if (search) search.placeholder = t.search;
             
             const headers = document.querySelectorAll('.grid-header > div');
-            headers[0].textContent = t.status;
-            headers[1].textContent = t.course;
-            headers[2].textContent = t.inst;
-            headers[3].textContent = t.endpoint;
-            headers[4].textContent = t.days;
+            if (headers.length >= 5) {
+                headers[0].textContent = t.status;
+                headers[1].textContent = t.course;
+                headers[2].textContent = t.inst;
+                headers[3].textContent = t.endpoint;
+                headers[4].textContent = t.days;
+            }
             
             const loading = document.querySelector('.loading-state');
             if (loading) loading.textContent = t.loading;
@@ -135,7 +148,7 @@
         })();
 
         function checkTelemetry() {
-            currentLang = localStorage.getItem('currentLang') || 'en';
+            currentLang = localStorage.getItem('hub_lang') || 'en';
             updateUILanguage();
             
             const savedTone = localStorage.getItem('hub_blob_tone');
