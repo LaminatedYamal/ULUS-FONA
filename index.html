@@ -190,15 +190,15 @@
                     <table class="monitor-table">
                         <thead>
                             <tr>
-                                <th>Campaign</th>
-                                <th>Status</th>
-                                <th style="text-align:right;">Budget</th>
-                                <th style="text-align:right;">Impr.</th>
-                                <th style="text-align:right;">Clicks</th>
-                                <th style="text-align:right;">Cost</th>
-                                <th style="text-align:right;">Conv.</th>
-                                <th style="text-align:right;">CPA</th>
-                                <th style="text-align:right;">CTR</th>
+                                <th id="th-campaign">Campaign</th>
+                                <th id="th-status">Status</th>
+                                <th id="th-budget" style="text-align:right;">Budget</th>
+                                <th id="th-impr" style="text-align:right;">Impr.</th>
+                                <th id="th-clicks" style="text-align:right;">Clicks</th>
+                                <th id="th-cost" style="text-align:right;">Cost</th>
+                                <th id="th-conv" style="text-align:right;">Conv.</th>
+                                <th id="th-cpa" style="text-align:right;">CPA</th>
+                                <th id="th-ctr" style="text-align:right;">CTR</th>
                             </tr>
                         </thead>
                         <tbody id="monitor-body"></tbody>
@@ -402,15 +402,15 @@
         <div class="persona-selector">
             <div class="persona-card" id="persona-seo" onclick="switchPersona('seo')" title="SEO Strategist">
                 <span class="icon">🔍</span>
-                <span>SEO</span>
+                <span id="persona-seo-label">SEO</span>
             </div>
             <div class="persona-card active" id="persona-marketeer" onclick="switchPersona('marketeer')" title="General Marketeer">
                 <span class="icon">👔</span>
-                <span>Market</span>
+                <span id="persona-market-label">Market</span>
             </div>
             <div class="persona-card" id="persona-ads" onclick="switchPersona('ads')" title="Ads Specialist">
                 <span class="icon">🎯</span>
-                <span>Ads</span>
+                <span id="persona-ads-label">Ads</span>
             </div>
         </div>
 
