@@ -186,7 +186,13 @@ const TRANSLATIONS = {
         "model-desc-gemini":   "The evolution of Google's multimodal AI. Deep ecosystem integration and ultra-fast reasoning.",
         "model-desc-gpt":      "The pinnacle of artificial intelligence. Full multimodality and ultra-complex reasoning for global challenges.",
         "model-desc-llama":    "The new open-source generation from Meta. Extreme speed and unprecedented local intelligence.",
-        "model-desc-deepseek": "The advanced Chinese AI model, now faster and more precise for logic and coding tasks."
+        "model-desc-deepseek": "The advanced Chinese AI model, now faster and more precise for logic and coding tasks.",
+        "col-budget": "Budget",
+        "col-cost": "Cost",
+        "col-conversions": "Conv.",
+        "col-cpc": "Cost/Conv.",
+        "loading-monitor": "⏳ Loading Live Monitor...",
+        "campaign": "Campaign"
     },
     pt: {
         "greeting": "Olá",
@@ -242,7 +248,13 @@ const TRANSLATIONS = {
         "model-desc-gemini":   "A evolução da IA multimodal do Google. Integração profunda com o ecossistema e raciocínio ultra-rápido.",
         "model-desc-gpt":      "O pináculo da inteligência artificial. Multimodalidade total e raciocínio ultra-complexo para desafios globais.",
         "model-desc-llama":    "A nova geração open-source da Meta. Velocidade extrema e inteligência local sem precedentes.",
-        "model-desc-deepseek": "O modelo chinês de IA avançada agora mais rápido e preciso para tarefas de lógica e código."
+        "model-desc-deepseek": "O modelo chinês de IA avançada agora mais rápido e preciso para tarefas de lógica e código.",
+        "col-budget": "Orçamento",
+        "col-cost": "Custo",
+        "col-conversions": "Conv.",
+        "col-cpc": "Custo/Conv.",
+        "loading-monitor": "⏳ A carregar monitor em direto...",
+        "campaign": "Campanha"
     }
 };
 
@@ -291,7 +303,19 @@ function updateUILanguage() {
         'landing-subtitle': t["welcome-subtext"],
         'premium-tools-header': t["premium-tools"],
         'live-monitor-btn': t["live-ads-monitor"],
-        'brand-name': t["brand-name"]
+        'brand-name': t["brand-name"],
+        'persona-seo-label': 'SEO',
+        'persona-market-label': currentLang === 'en' ? 'Market' : 'Marketing',
+        'persona-ads-label': 'Ads',
+        'th-campaign': t["campaign"],
+        'th-status': t["status"] || (currentLang === 'en' ? 'Status' : 'Estado'),
+        'th-budget': t["col-budget"],
+        'th-cost': t["col-cost"],
+        'th-conv': t["col-conversions"],
+        'th-cpa': t["col-cpc"],
+        'th-clicks': t["clicks"],
+        'th-impr': t["impressions"] || (currentLang === 'en' ? 'Impr.' : 'Impr.'),
+        'th-ctr': 'CTR'
     };
 
     // Apply to DOM
@@ -369,6 +393,21 @@ function updateUILanguage() {
             const descEl = item.querySelector('.model-desc');
             if (descEl) descEl.textContent = modelDescMap[orbClass];
         }
+    });
+
+    // Update Live Monitor if open
+    const monitorTitle = document.querySelector('#live-monitor-view h1');
+    if (monitorTitle) monitorTitle.textContent = t["live-monitor-title"];
+    
+    document.querySelectorAll('#live-monitor-view th').forEach(th => {
+        const txt = th.textContent.trim();
+        if (txt === 'Campaign' || txt === 'Campanha') th.textContent = t["campaign"] || (currentLang === 'en' ? 'Campaign' : 'Campanha');
+        if (txt === 'Budget' || txt === 'Orçamento') th.textContent = t["col-budget"];
+        if (txt === 'Cost' || txt === 'Custo') th.textContent = t["col-cost"];
+        if (txt === 'Impressions' || txt === 'Impressões') th.textContent = t["impressions"];
+        if (txt === 'Clicks' || txt === 'Cliques') th.textContent = t["clicks"];
+        if (txt === 'Conversions' || txt === 'Conv.') th.textContent = t["col-conversions"];
+        if (txt === 'Cost/Conv' || txt === 'Custo/Conv.') th.textContent = t["col-cpc"];
     });
 }
 
@@ -1575,17 +1614,19 @@ window.showLiveMonitor = async function() {
     const view = document.getElementById('live-monitor-view');
     if (view) view.style.display = 'block';
     
+    const t = TRANSLATIONS[currentLang];
+    
     // Update Header
     const headerLeft = document.getElementById('dashboard-header-left');
     if (headerLeft) headerLeft.style.visibility = 'visible';
     const title = document.getElementById('active-course-title');
-    if (title) title.textContent = "Live Ads Monitor";
+    if (title) title.textContent = t["live-ads-monitor"] || "Live Ads Monitor";
     const desc = document.getElementById('active-course-desc');
-    if (desc) desc.textContent = "Real-time Portfolio Performance";
+    if (desc) desc.textContent = currentLang === 'en' ? "Real-time Portfolio Performance" : "Desempenho do Portfólio em Tempo Real";
     
     const body = document.getElementById('monitor-body');
     if (body) {
-        body.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:40px;">⏳ Loading Live Monitor Data...</td></tr>';
+        body.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:40px;">${t["loading-monitor"]}</td></tr>`;
     }
 
     try {
