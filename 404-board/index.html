@@ -47,6 +47,7 @@
         <div class="grid-header">
             <div class="col-led">STATUS</div>
             <div class="col-course">COURSE IDENTIFIER</div>
+            <div class="col-inst">INSTITUTION</div>
             <div class="col-url">ENDPOINT</div>
             <div class="col-days">DAYS DOWN</div>
         </div>
@@ -176,7 +177,8 @@
                 row.className = `row ${isError ? 'row-error' : 'row-ok'}`;
                 row.innerHTML = `
                     <div class="col-led"><div class="led-diode ${isError ? 'red pulse-fast' : 'green glow'}"></div></div>
-                    <div class="col-course">${item.Course} <span class="inst-tag">${item.Institution}</span></div>
+                    <div class="col-course">${item.Course}</div>
+                    <div class="col-inst"><span class="inst-tag">${item.Institution}</span></div>
                     <div class="col-url"><a href="${item.Url}" target="_blank">${item.Url}</a></div>
                     <div class="col-days">${isError ? daysDown : '-'}</div>
                 `;
