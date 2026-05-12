@@ -47,6 +47,17 @@ async function init() {
 
     applyCustomBg();
 
+    // Enable Horizontal Mouse Wheel Scroll for the Aura Wheel
+    const auraWheel = document.querySelector('.tone-options-wheel');
+    if (auraWheel) {
+        auraWheel.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+                e.preventDefault();
+                auraWheel.scrollLeft += e.deltaY;
+            }
+        });
+    }
+
     // Default View: Show Landing Hero
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
