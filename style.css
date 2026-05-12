@@ -37,6 +37,13 @@ body.light-mode .sidebar {
     border-right: 1px solid #e2e8f0;
 }
 
+body {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
 .ambient-blob {
     position: fixed;
     top: 50%;
@@ -47,19 +54,50 @@ body.light-mode .sidebar {
     background: var(--blob-gradient, linear-gradient(135deg, #0057FF, #00C2FF));
     filter: blur(120px);
     border-radius: 50%;
-    opacity: 0.12;
-    z-index: -1;
-    animation: blob-pulse 15s infinite alternate, blob-rotate 30s linear infinite;
+    z-index: -2;
+    opacity: 0.5;
     pointer-events: none;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes blob-pulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    100% { transform: translate(-50%, -50%) scale(1.3); }
+.ambient-blob::after {
+    content: '';
+    width: 150px;
+    height: 150px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
 }
-@keyframes blob-rotate {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
+
+.ambient-blob.club-mode {
+    opacity: 0.8;
+    filter: blur(80px);
+    animation: club-pulse 4s infinite alternate;
+}
+
+.ambient-blob.club-mode::after {
+    opacity: 1;
+    animation: club-logo-drift 10s infinite ease-in-out;
+}
+
+.ambient-blob.benfica::after { background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a2/SL_Benfica_logo.svg'); }
+.ambient-blob.sporting::after { background-image: url('https://upload.wikimedia.org/wikipedia/en/3/3e/Sporting_CP.svg'); }
+.ambient-blob.porto::after { background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f1/FC_Porto.svg'); }
+
+@keyframes club-pulse {
+    from { transform: translate(-50%, -50%) scale(1); filter: blur(80px); }
+    to { transform: translate(-50%, -50%) scale(1.2); filter: blur(60px); }
+}
+
+@keyframes club-logo-drift {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
 }
 
 body.light-mode .ambient-blob {
