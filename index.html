@@ -21,14 +21,23 @@
             <div class="login-form">
                 <input type="text" id="login-name" placeholder="Your Name (e.g. Pedro)">
                 <input type="password" id="login-key" placeholder="Team Access Key">
-                <div class="blob-selector" style="margin-bottom: 15px; text-align: left;">
-                    <label style="font-size: 11px; font-weight: bold; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block;">Select Aura Tone</label>
-                    <div class="tone-options" style="display: flex; gap: 10px; justify-content: space-between;">
-                        <div class="tone-option selected" data-tone="linear-gradient(135deg, #0057FF, #00C2FF)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #0057FF, #00C2FF); cursor: pointer; border: 2px solid white;" title="Antigravity Blue"></div>
-                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF00C8, #7000FF)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FF00C8, #7000FF); cursor: pointer; border: 2px solid transparent;" title="Neon Purple"></div>
-                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF9500, #FF0057)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FF9500, #FF0057); cursor: pointer; border: 2px solid transparent;" title="Sunset Orange"></div>
-                        <div class="tone-option" data-tone="linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335)" onclick="selectTone(this)" style="width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335); cursor: pointer; border: 2px solid transparent;" title="Rainbow Aura"></div>
+                    <div class="tone-options" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+                        <div class="tone-option selected" data-tone="linear-gradient(135deg, #0057FF, #00C2FF)" onclick="selectTone(this)" style="width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(135deg, #0057FF, #00C2FF); cursor: pointer; border: 2px solid white;" title="Deep Blue"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF00C8, #7000FF)" onclick="selectTone(this)" style="width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(135deg, #FF00C8, #7000FF); cursor: pointer; border: 2px solid transparent;" title="Cyber Purple"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #00FF87, #60EFFF)" onclick="selectTone(this)" style="width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(135deg, #00FF87, #60EFFF); cursor: pointer; border: 2px solid transparent;" title="Emerald Sea"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FFD700, #FF8C00)" onclick="selectTone(this)" style="width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(135deg, #FFD700, #FF8C00); cursor: pointer; border: 2px solid transparent;" title="Golden Hour"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF0000, #FF5F6D)" onclick="selectTone(this)" style="width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(135deg, #FF0000, #FF5F6D); cursor: pointer; border: 2px solid transparent;" title="Crimson Core"></div>
+                        <div class="tone-option" data-tone="linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335)" onclick="selectTone(this)" style="width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335); cursor: pointer; border: 2px solid transparent;" title="Rainbow Aura"></div>
                     </div>
+                </div>
+
+                <div class="wallpaper-upload" style="margin-bottom: 20px;">
+                    <label style="font-size: 11px; font-weight: bold; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block;">Custom Wallpaper</label>
+                    <input type="file" id="bg-upload" accept="image/*" style="display: none;" onchange="handleBgUpload(this)">
+                    <button type="button" onclick="document.getElementById('bg-upload').click()" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); border-radius: 12px; color: white; font-size: 12px; cursor: pointer; transition: all 0.2s;">
+                        🖼️ Upload Custom Background
+                    </button>
+                    <div id="upload-status" style="font-size: 10px; color: var(--accent-primary); margin-top: 5px; display: none;">Wallpaper ready!</div>
                 </div>
                 <button onclick="handleLogin()" id="login-btn">Unlock Dashboard</button>
                 <p id="login-error" class="login-error"></p>
