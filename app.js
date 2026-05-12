@@ -713,19 +713,16 @@ window.selectTone = function(el) {
     el.classList.add('selected');
     el.style.border = '2px solid white';
     
-    // Preview club mode immediately
+    // Clear custom background when a preset tone is picked
+    localStorage.removeItem('hub_custom_bg');
+    document.body.style.backgroundImage = 'none';
+    
     const blob = document.querySelector('.ambient-blob');
     if (blob) {
-        blob.className = 'ambient-blob'; // Reset
-        const club = el.getAttribute('data-club');
-        if (club) {
-            blob.classList.add('club-mode', club);
-            localStorage.setItem('hub_club_mode', club);
-        } else {
-            localStorage.removeItem('hub_club_mode');
-        }
+        blob.className = 'ambient-blob'; // Reset club modes if any
         const tone = el.getAttribute('data-tone');
         document.documentElement.style.setProperty('--blob-gradient', tone);
+        localStorage.setItem('hub_blob_tone', tone);
     }
 }
 
