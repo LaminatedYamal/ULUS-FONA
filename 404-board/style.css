@@ -1,9 +1,14 @@
 :root {
     --bg-dark: #0a0a0c;
+    --bg-panel: #121214;
     --text-primary: #ffffff;
     --text-muted: #888;
+    --border-color: rgba(255,255,255,0.1);
     --accent-primary: #00ff87;
     --accent-red: #ff4d4d;
+    --led-green: #00ff87;
+    --led-red: #ff4d4d;
+    --led-yellow: #ffcc00;
     --blob-gradient: linear-gradient(135deg, #0057FF, #00C2FF);
 }
 
