@@ -97,7 +97,7 @@ def clean_ctr(v):
         return "0.00%"
 
 def main():
-    print("Starting automated data fetch pipeline (v59)...")
+    print("Starting automated data fetch pipeline (v100 — Multi-Institution)...")
     
     # Load Credentials
     creds_json = os.environ.get('GCP_SERVICE_ACCOUNT_JSON')
@@ -106,7 +106,15 @@ def main():
         return
     creds_dict = json.loads(creds_json)
     
-    # 1. Load Everything
+    # All institution sheet IDs (add new ones here)
+    INSTITUTION_SHEETS = {
+        'Lusofona':  os.environ.get('GOOGLE_ADS_SHEET_ID'),
+        'IPLUSO':    os.environ.get('GOOGLE_ADS_SHEET_ID_IPLUSO'),
+        'ISMAT':     os.environ.get('GOOGLE_ADS_SHEET_ID_ISMAT'),
+        'ISLA_Gaia': os.environ.get('GOOGLE_ADS_SHEET_ID_ISLA_GAIA'),
+    }
+
+    # 1. Load main courses.json
     try:
         with open(JSON_FILE_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
@@ -114,12 +122,28 @@ def main():
         print(f"Error loading {JSON_FILE_PATH}: {e}")
         return
 
-    # Load Ads Data
-    sheet_id = os.environ.get('GOOGLE_ADS_SHEET_ID')
-    ads_records = load_ads_data(sheet_id, creds_dict)
-    campaign_records = load_campaign_data(sheet_id, creds_dict)
+    # 2. Load & merge Ads data from ALL institution sheets
+    all_ads_records = []
+    all_campaign_records = []
 
-    # Save Campaigns File for Live Monitor
+    for institution, sheet_id in INSTITUTION_SHEETS.items():
+        if not sheet_id:
+            print(f"[{institution}] No sheet ID configured — skipping.")
+            continue
+        print(f"[{institution}] Fetching from sheet: {sheet_id}")
+        ads = load_ads_data(sheet_id, creds_dict)
+        campaigns = load_campaign_data(sheet_id, creds_dict)
+        if ads:
+            all_ads_records.extend(ads)
+            print(f"[{institution}] Loaded {len(ads)} keyword rows.")
+        if campaigns:
+            all_campaign_records.extend(campaigns)
+            print(f"[{institution}] Loaded {len(campaigns)} campaign rows.")
+
+    ads_records = all_ads_records
+    campaign_records = all_campaign_records
+
+    # 3. Save Campaigns File for Live Monitor
     if campaign_records:
         # Clean campaign data before saving
         cleaned_campaigns = []
