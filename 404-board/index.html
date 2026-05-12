@@ -37,6 +37,14 @@
                 <input type="text" id="board-search" placeholder="Search course or institution..." oninput="applyFilters()" style="width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 8px; color: white; font-family: 'Montserrat', sans-serif; outline: none;">
             </div>
             <div class="filter-buttons" style="display: flex; gap: 10px;">
+                <select id="inst-filter" onchange="applyFilters()" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 11px; outline: none; cursor: pointer;">
+                    <option value="all">ALL INSTITUTIONS</option>
+                    <option value="ULUSOFONA">ULUSOFONA</option>
+                    <option value="ISMAT">ISMAT</option>
+                    <option value="IPLUSO">IPLUSO</option>
+                    <option value="ISLAGAIA">ISLAGAIA</option>
+                    <option value="ISLASANTAREM">ISLASANTAREM</option>
+                </select>
                 <button onclick="setFilter('all')" class="filter-btn active" id="btn-all">ALL</button>
                 <button onclick="setFilter('down')" class="filter-btn" id="btn-down">DOWN</button>
                 <button onclick="setFilter('active')" class="filter-btn" id="btn-active">ACTIVE</button>
@@ -98,12 +106,16 @@
 
         function applyFilters() {
             const search = document.getElementById('board-search').value.toLowerCase();
+            const instFilter = document.getElementById('inst-filter').value;
+            
             const filtered = rawData.filter(item => {
                 const matchesSearch = item.Course.toLowerCase().includes(search) || item.Institution.toLowerCase().includes(search);
-                const matchesFilter = (currentFilter === 'all') || 
+                const matchesStatus = (currentFilter === 'all') || 
                                      (currentFilter === 'down' && item.Status !== 'OK') ||
                                      (currentFilter === 'active' && item.Status === 'OK');
-                return matchesSearch && matchesFilter;
+                const matchesInst = (instFilter === 'all') || (item.Institution === instFilter);
+                
+                return matchesSearch && matchesStatus && matchesInst;
             });
 
             // Sort: Errors first, then by ConsecutiveDaysDown descending
