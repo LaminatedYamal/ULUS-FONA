@@ -10998,7 +10998,24 @@
         "impressions": 62
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso automação",
+        "impressions": 2354
+      },
+      {
+        "term": "licenciatura sistemas",
+        "impressions": 346
+      },
+      {
+        "term": "licenciatura automação",
+        "impressions": 177
+      },
+      {
+        "term": "licenciatura robótica",
+        "impressions": 115
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -11294,7 +11311,12 @@
         "impressions": 23
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "gestão comercial",
+        "impressions": 5560
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -11516,7 +11538,16 @@
         "impressions": 2
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado artes",
+        "impressions": 4280
+      },
+      {
+        "term": "mestrado desenho",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -11553,7 +11584,16 @@
         "impressions": 9
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado ilustração",
+        "impressions": 735
+      },
+      {
+        "term": "mestrado desenho",
+        "impressions": 304
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -11664,7 +11704,16 @@
         "impressions": 4
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado enfermagem veterinária",
+        "impressions": 508
+      },
+      {
+        "term": "mestrado desenho",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -11812,7 +11861,16 @@
         "impressions": 4
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado saude digital",
+        "impressions": 142
+      },
+      {
+        "term": "mestrado desenho",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -12773,7 +12831,20 @@
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/controlo-da-qualidade-e-analises-laboratoriais-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso análises laboratoriais",
+        "impressions": 2392
+      },
+      {
+        "term": "ctesp análises laboratoriais",
+        "impressions": 316
+      },
+      {
+        "term": "ctesp gestao",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -12810,7 +12881,28 @@
         "impressions": 18
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso tecnico inteligencia artificial",
+        "impressions": 413
+      },
+      {
+        "term": "ctesp inteligencia artificial",
+        "impressions": 49
+      },
+      {
+        "term": "curso profissional programação",
+        "impressions": 0
+      },
+      {
+        "term": "curso profissional site",
+        "impressions": 0
+      },
+      {
+        "term": "ctesp programação",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -12921,7 +13013,20 @@
         "impressions": 33
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso técnico enólogo",
+        "impressions": 0
+      },
+      {
+        "term": "curso técnico gastronomia vinho",
+        "impressions": 0
+      },
+      {
+        "term": "ctesp gastronomia vinho",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -13069,7 +13174,36 @@
         "impressions": 36
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso redes sociais",
+        "impressions": 1384
+      },
+      {
+        "term": "curso marketing digital",
+        "impressions": 0
+      },
+      {
+        "term": "curso profissional comércio",
+        "impressions": 0
+      },
+      {
+        "term": "ctesp marketing",
+        "impressions": 0
+      },
+      {
+        "term": "ctesp comércio",
+        "impressions": 0
+      },
+      {
+        "term": "curso profissional commerce",
+        "impressions": 0
+      },
+      {
+        "term": "ctesp redes sociais",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -13143,7 +13277,16 @@
         "impressions": 63
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "ctesp vendas",
+        "impressions": 205
+      },
+      {
+        "term": "ctesp marketing",
+        "impressions": 143
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -13254,7 +13397,24 @@
         "impressions": 6
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso técnico som",
+        "impressions": 440
+      },
+      {
+        "term": "ctesp som",
+        "impressions": 82
+      },
+      {
+        "term": "ctesp imagem",
+        "impressions": 12
+      },
+      {
+        "term": "curso profissional comunicação",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -13328,7 +13488,16 @@
         "impressions": 20
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "licenciatura comunicação",
+        "impressions": 4681
+      },
+      {
+        "term": "licenciatura digital",
+        "impressions": 821
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -13598,7 +13767,20 @@
         "impressions": 408
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso multimedia",
+        "impressions": 7438
+      },
+      {
+        "term": "faculdade multimedia",
+        "impressions": 5929
+      },
+      {
+        "term": "licenciatura multimedia",
+        "impressions": 3557
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -13746,7 +13928,16 @@
         "impressions": 21
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado fiscalidade",
+        "impressions": 899
+      },
+      {
+        "term": "mestrado finanças",
+        "impressions": 0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -14744,6 +14935,6 @@
   {
     "type": "metadata",
     "last_sync_by": "Nightly Pipeline (Ads + Campaigns)",
-    "last_sync_at": "12/05/2026, 13:47:52"
+    "last_sync_at": "12/05/2026, 14:00:25"
   }
 ]
