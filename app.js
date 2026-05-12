@@ -1886,11 +1886,11 @@ let activeAIModel = 'gemini'; // Default
 let liveAdsContext = null;
 
 const modelConfigs = {
-    'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
-    'gpt4o':    { name: 'GPT-5.5',       color: '#10A37F', rgb: '16, 163, 127', grad: ['#10A37F', '#19C37D'] },
-    'claude':   { name: 'Claude Opus 4.7', color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] },
-    'llama':    { name: 'Llama 4 Maverick', color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#4285F4'] },
-    'deepseek': { name: 'DeepSeek V3.2',   color: '#0057FF', rgb: '0, 87, 255', grad: ['#0057FF', '#00C2FF'] }
+    'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'], greeting: "I am your Gemini Strategist. The evolution of Google's multimodal AI is at your service.", greetingPt: "Eu sou o seu Estrategista Gemini. A evolução da IA multimodal do Google está ao seu serviço." },
+    'gpt4o':    { name: 'GPT-5.5',       color: '#10A37F', rgb: '16, 163, 127', grad: ['#10A37F', '#19C37D'], greeting: "I am your GPT-5.5 Mastermind. The pinnacle of artificial intelligence is ready for your complex challenges.", greetingPt: "Eu sou o seu mestre GPT-5.5. O pináculo da inteligência artificial está pronto para os seus desafios complexos." },
+    'claude':   { name: 'Claude Opus 4.7', color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'], greeting: "I am your Claude Strategist. Full focus on safety and linguistic nuance is now active.", greetingPt: "Eu sou o seu Estrategista Claude. Foco total em segurança e nuances linguísticas ativado." },
+    'llama':    { name: 'Llama 4 Maverick', color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#4285F4'], greeting: "I am your Llama 4 Maverick. Extreme speed and unprecedented local intelligence at your command.", greetingPt: "Eu sou o seu Llama 4 Maverick. Velocidade extrema e inteligência local sem precedentes sob o seu comando." },
+    'deepseek': { name: 'DeepSeek V3.2',   color: '#0057FF', rgb: '0, 87, 255', grad: ['#0057FF', '#00C2FF'], greeting: "I am your DeepSeek Intelligence. Ready to solve logic and coding tasks with surgical precision.", greetingPt: "Eu sou a sua Inteligência DeepSeek. Pronto para resolver tarefas de lógica e código com precisão cirúrgica." }
 };
 
 let activePersona = 'marketeer';
@@ -1917,7 +1917,12 @@ window.switchPersona = function(p) {
     const introEl = document.getElementById('gemini-intro');
     if (introEl) {
         const config = PERSONA_CONFIGS[p];
-        introEl.textContent = `I am now operating as your ${config.name}. How can I assist your ${p.toUpperCase()} strategy today?`;
+        const userName = localStorage.getItem('hub_user_name');
+        const nameStr = userName ? `, ${userName}` : ``;
+        
+        introEl.textContent = currentLang === 'pt' ? 
+            `Operação ${config.name} ativada${nameStr}. Como posso ajudar na sua estratégia hoje?` :
+            `Operating as your ${config.name}${nameStr}. How can I assist your strategy today?`;
     }
     console.log(`[Antigravity] Persona switched to: ${PERSONA_CONFIGS[p].name}`);
 };
@@ -2213,9 +2218,16 @@ function updateAISidebarText() {
     const nameStr = userName ? `, ${userName}` : ``;
 
     if (introEl) {
-        introEl.textContent = currentLang === 'pt' ? 
-            `Olá${nameStr}! Eu sou o seu Estrategista ${config.name}. Pergunte-me qualquer coisa sobre as suas keywords ou use as ações rápidas abaixo.` :
-            `Hello${nameStr}! I am your ${config.name} Strategist. Ask me anything about your institutional keywords or use the quick actions below.`;
+        let greeting = currentLang === 'pt' ? 
+            `Olá${nameStr}! Eu sou o seu Estrategista ${config.name}. Pergunte-me qualquer coisa sobre as suas keywords.` :
+            `Hello${nameStr}! I am your ${config.name} Strategist. Ask me anything about your institutional keywords.`;
+        
+        // Restore custom greeting if defined in config
+        if (config.greeting) {
+            greeting = currentLang === 'pt' ? (config.greetingPt || config.greeting) : config.greeting;
+        }
+        
+        introEl.textContent = greeting;
     }
     if (inputEl) {
         inputEl.placeholder = currentLang === 'pt' ? `Pergunte ao ${config.name}...` : `Ask ${config.name} anything...`;
