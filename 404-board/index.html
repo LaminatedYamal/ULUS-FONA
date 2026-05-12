@@ -43,35 +43,25 @@
     </div>
 
     <script>
-        async function fetchStatus() {
+    <script src="telemetry.js"></script>
+    <script>
+        function checkTelemetry() {
             const container = document.getElementById('switch-board-rows');
-            container.innerHTML = '<div class="loading-state">SYNCHRONIZING TELEMETRY...</div>';
-            
-            const sources = [
-                'results.json?t=' + Date.now(),
-                '../results.json?t=' + Date.now(),
-                'https://raw.githubusercontent.com/LaminatedYamal/ULUS-FONA/main/404-board/results.json'
-            ];
-
-            for (let url of sources) {
-                try {
-                    console.log("Attempting fetch from:", url);
-                    const res = await fetch(url);
-                    if (res.ok) {
-                        const data = await res.json();
-                        renderBoard(data);
-                        return; // Success!
-                    }
-                } catch (err) {
-                    console.warn("Source failed:", url, err);
-                }
+            if (window.telemetryData) {
+                renderBoard(window.telemetryData);
+            } else {
+                container.innerHTML = `
+                    <div class="error-state">
+                        CONNECTION FAILED: NO TELEMETRY<br>
+                        <small style="font-size: 10px; color: #666;">Waiting for telemetry.js node...</small>
+                    </div>`;
+                // Retry in 1 second
+                setTimeout(checkTelemetry, 1000);
             }
-            
-            document.getElementById('switch-board-rows').innerHTML = `
-                <div class="error-state">
-                    CONNECTION FAILED: NO TELEMETRY<br>
-                    <small style="font-size: 10px; color: #666;">Tried local and cloud nodes.</small>
-                </div>`;
+        }
+        
+        function fetchStatus() {
+            location.reload(); // Hard reload to get new telemetry.js
         }
 
         function renderBoard(data) {
@@ -132,8 +122,8 @@
             }
         }
 
-        fetchStatus();
-        setInterval(fetchStatus, 60000); // Poll every minute
+        checkTelemetry();
+        setInterval(() => location.reload(), 300000); // Hard refresh every 5 mins to catch new file
     </script>
 </body>
 </html>
