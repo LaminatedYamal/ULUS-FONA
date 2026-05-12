@@ -21,11 +21,14 @@ jobs:
       - name: Install Dependencies
         run: pip install google-api-python-client google-auth-httplib2 google-auth-oauthlib gspread
 
-      - name: Run Fetch Script
-        run: python fetch_data.py
+      - name: Run GSC Fetch Script
         env:
           GCP_SERVICE_ACCOUNT_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}
-          GOOGLE_ADS_SHEET_ID: ${{ secrets.GOOGLE_ADS_SHEET_ID }}
+          GOOGLE_ADS_SHEET_ID:          ${{ secrets.GOOGLE_ADS_SHEET_ID }}
+          GOOGLE_ADS_SHEET_ID_IPLUSO:   ${{ secrets.GOOGLE_ADS_SHEET_ID_IPLUSO }}
+          GOOGLE_ADS_SHEET_ID_ISMAT:    ${{ secrets.GOOGLE_ADS_SHEET_ID_ISMAT }}
+          GOOGLE_ADS_SHEET_ID_ISLA_GAIA: ${{ secrets.GOOGLE_ADS_SHEET_ID_ISLA_GAIA }}
+        run: python fetch_data.py
 
       - name: Commit and Push Updates
         run: |
