@@ -1917,6 +1917,15 @@ body.light-mode .hero-text h2 {
     color: white;
 }
 
+.model-desc {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 2px;
+    line-height: 1.2;
+    max-width: 200px;
+    display: block;
+}
+
 /* Main Pulse Button */
 .gemini-pulse-btn {
     width: 55px;
