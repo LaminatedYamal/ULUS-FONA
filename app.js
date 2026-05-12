@@ -40,13 +40,16 @@ async function init() {
     loadData(); 
     initTheme();
     initGreeting();
+    const savedTone = localStorage.getItem('hub_blob_tone');
+    if (savedTone) {
+        document.documentElement.style.setProperty('--blob-gradient', savedTone);
+    }
 
     // Default View: Show Landing Hero
     const landingView = document.getElementById("landing-view");
     const dashboardView = document.getElementById("dashboard-view");
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
-    refreshModelVisibility();
 }
 
 
@@ -677,6 +680,15 @@ window.handleLogout = function() {
     }
 }
 
+window.selectTone = function(el) {
+    document.querySelectorAll('.tone-option').forEach(opt => {
+        opt.classList.remove('selected');
+        opt.style.border = '2px solid transparent';
+    });
+    el.classList.add('selected');
+    el.style.border = '2px solid white';
+}
+
 async function handleLogin() {
     const name = document.getElementById('login-name').value.trim();
     const key = document.getElementById('login-key').value.trim();
@@ -698,6 +710,15 @@ async function handleLogin() {
     // Success
     localStorage.setItem('hub_user_name', name);
     localStorage.setItem('hub_is_authed', 'true');
+    
+    // Set Blob Tone
+    const selectedToneOption = document.querySelector('.tone-option.selected');
+    if (selectedToneOption) {
+        const tone = selectedToneOption.getAttribute('data-tone');
+        localStorage.setItem('hub_blob_tone', tone);
+        document.documentElement.style.setProperty('--blob-gradient', tone);
+    }
+
     initGreeting(name); // Update greeting text right now with the actual name
     
     document.getElementById('login-overlay').style.opacity = '0';
@@ -1929,28 +1950,7 @@ window.saveWalletKeys = function() {
     
     hideKeysWallet();
     console.log("[Antigravity] All API Keys & Proxy Updated in Wallet.");
-    refreshModelVisibility();
 }
-
-function refreshModelVisibility() {
-    Object.keys(modelConfigs).forEach(m => {
-        const key = localStorage.getItem(`api_key_${m}`);
-        const agent = localStorage.getItem(`agent_id_${m}`);
-        const channel = localStorage.getItem(`channel_id_${m}`);
-        
-        const orbClass = m === 'gpt4o' ? '.gpt-orb' : `.${m}-orb`;
-        const orb = document.querySelector(orbClass);
-        if (orb) {
-            if (m === 'gemini') {
-                orb.style.display = 'flex';
-            } else {
-                // Show if ANY field has content for testing flexibility
-                orb.style.display = (key || agent || channel) ? 'flex' : 'none';
-            }
-        }
-    });
-}
-
 
 
 window.switchAIModel = function(model) {
@@ -2040,10 +2040,13 @@ function updateAISidebarText() {
     const inputEl = document.getElementById('gemini-user-input');
     const sendBtn = document.querySelector('.gemini-send-btn svg path');
     
+    const userName = localStorage.getItem('hub_user_name');
+    const nameStr = userName ? `, ${userName}` : ``;
+
     if (introEl) {
         introEl.textContent = currentLang === 'pt' ? 
-            `Eu sou o seu Estrategista ${config.name}. Pergunte-me qualquer coisa sobre as suas keywords ou use as ações rápidas abaixo.` :
-            `I am your ${config.name} Strategist. Ask me anything about your institutional keywords or use the quick actions below.`;
+            `Olá${nameStr}! Eu sou o seu Estrategista ${config.name}. Pergunte-me qualquer coisa sobre as suas keywords ou use as ações rápidas abaixo.` :
+            `Hello${nameStr}! I am your ${config.name} Strategist. Ask me anything about your institutional keywords or use the quick actions below.`;
     }
     if (inputEl) {
         inputEl.placeholder = currentLang === 'pt' ? `Pergunte ao ${config.name}...` : `Ask ${config.name} anything...`;
