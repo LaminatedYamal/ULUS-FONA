@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import datetime
 import gspread
@@ -61,6 +62,15 @@ def load_campaign_data(sheet_id, creds_dict):
     except Exception as e:
         print(f"Note: Could not fetch 'Campaigns' tab: {str(e)}")
         return None
+
+def fuzzy_clean_url(url):
+    """Aggressively normalizes URLs so they match even if language flags or suffixes differ."""
+    u = str(url).lower().split('?')[0].rstrip('/')
+    u = u.replace('https://', '').replace('http://', '').replace('www.', '')
+    u = re.sub(r'/(pt|en)/', '/', u)
+    u = re.sub(r'-(pt|en)$', '', u)
+    u = re.sub(r'/(lisboa|porto|centro-universitario-lisboa|centro-universitario-porto)/', '/', u)
+    return u.strip('/')
 
 def clean_num(v):
     """Robustly cleans strings with EU/US decimals and currency."""
@@ -171,10 +181,8 @@ def main():
     if ads_records:
         for row in ads_records:
             # Extract common column names
-            url = str(row.get('Final URL', '')).lower().split('?')[0].rstrip('/')
-            # Fuzzy Normalize: remove http, www, and institutional prefixes
-            url_clean = url.replace('https://', '').replace('http://', '').replace('www.', '')
-            url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
+            url = str(row.get('Final URL', ''))
+            url_clean = fuzzy_clean_url(url)
             
             term = str(row.get('Keyword', '')).strip()
             # Absolute Zero Deduplication: strict alphanumeric lowercase
@@ -194,9 +202,7 @@ def main():
     for item in data:
         if item.get('type') == 'metadata': continue
         
-        course_url = item.get('url', '').lower().split('?')[0].rstrip('/')
-        url_clean = course_url.replace('https://', '').replace('http://', '').replace('www.', '')
-        url_clean = url_clean.replace('/lisboa/', '/').replace('/porto/', '/').replace('/centro-universitario-lisboa/', '/').replace('/centro-universitario-porto/', '/')
+        url_clean = fuzzy_clean_url(item.get('url', ''))
 
         if url_clean in ads_map:
             # Convert map back to list for JSON
