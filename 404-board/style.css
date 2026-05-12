@@ -206,7 +206,9 @@ h1 {
 
 .col-led { width: 100px; display: flex; align-items: center; justify-content: center; }
 .col-course { flex: 2; font-weight: 700; font-size: 15px; }
-.col-url { flex: 3; font-family: 'Share Tech Mono', monospace; font-size: 13px; opacity: 0.6; }
+.col-url { flex: 3; font-family: 'Share Tech Mono', monospace; font-size: 12px; }
+.col-url a { color: var(--accent-primary); text-decoration: none; opacity: 0.8; transition: all 0.2s; }
+.col-url a:hover { opacity: 1; text-shadow: 0 0 10px var(--accent-primary); }
 .col-days { width: 120px; text-align: center; font-weight: 800; font-size: 16px; }
 
 .inst-tag {
