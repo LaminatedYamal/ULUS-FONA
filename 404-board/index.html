@@ -41,9 +41,8 @@
     <script>
         async function fetchStatus() {
             try {
-                // Try relative path first (works if repo structure is deployed to pages)
-                const res = await fetch('../antigravity-url-agent/results.json?t=' + Date.now());
-                if (!res.ok) throw new Error('Data not found');
+                const res = await fetch('results.json?t=' + Date.now());
+                if (!res.ok) throw new Error('Data sync failure. Status: ' + res.status);
                 const data = await res.json();
                 renderBoard(data);
             } catch (err) {
