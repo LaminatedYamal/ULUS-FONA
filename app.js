@@ -1787,9 +1787,9 @@ let liveAdsContext = null;
 const modelConfigs = {
     'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'] },
     'gpt4o':    { name: 'GPT-5.5',       color: '#10A37F', rgb: '16, 163, 127', grad: ['#10A37F', '#19C37D'] },
-    'claude':   { name: 'Claude Opus',   color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] },
-    'llama':    { name: 'Llama 3.1',     color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#4285F4'] },
-    'deepseek': { name: 'DeepSeek V3',   color: '#0057FF', rgb: '0, 87, 255', grad: ['#0057FF', '#00C2FF'] }
+    'claude':   { name: 'Claude Opus 4.7', color: '#D97757', rgb: '217, 119, 87', grad: ['#D97757', '#F4A261'] },
+    'llama':    { name: 'Llama 4 Maverick', color: '#0668E1', rgb: '6, 104, 225', grad: ['#0668E1', '#4285F4'] },
+    'deepseek': { name: 'DeepSeek V3.2',   color: '#0057FF', rgb: '0, 87, 255', grad: ['#0057FF', '#00C2FF'] }
 };
 
 let activePersona = 'marketeer';
