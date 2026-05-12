@@ -46,6 +46,13 @@ async function init() {
     }
 
     applyCustomBg();
+
+    // Default View: Show Landing Hero
+    const landingView = document.getElementById("landing-view");
+    const dashboardView = document.getElementById("dashboard-view");
+    if (landingView) landingView.style.display = "flex";
+    if (dashboardView) dashboardView.style.display = "none";
+    refreshModelVisibility();
 }
 
 function applyCustomBg() {
@@ -71,14 +78,6 @@ window.handleBgUpload = function(input) {
         };
         reader.readAsDataURL(file);
     }
-}
-
-    // Default View: Show Landing Hero
-    const landingView = document.getElementById("landing-view");
-    const dashboardView = document.getElementById("dashboard-view");
-    if (landingView) landingView.style.display = "flex";
-    if (dashboardView) dashboardView.style.display = "none";
-    refreshModelVisibility();
 }
 
 
