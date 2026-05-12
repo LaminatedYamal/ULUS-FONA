@@ -198,7 +198,7 @@ const TRANSLATIONS = {
         "greeting": "Olá",
         "select-course": "Selecionar um Curso",
         "global-analysis": "Análise Global de Keywords SEO & Ads",
-        "search-placeholder": "Procurar keywords...",
+        "search-placeholder": "Selecionar keywords...",
         "browsing": "A ver cursos de",
         "at": "na",
         "choose-course": "Escolher um Curso...",
@@ -1634,45 +1634,73 @@ window.showLiveMonitor = async function() {
         if (resp.ok) liveAdsContext = await resp.json();
     } catch(e) {}
 
-    try {
-        const campaigns = liveAdsContext || [];
+    renderMonitorRows();
+}
 
-        if (body) {
-            body.innerHTML = '';
-            campaigns.forEach(c => {
-                const tr = document.createElement('tr');
-                const name = c.name || c.Name || c.Campaign || "Unknown Campaign";
-                const status = (c.status || c.Status || "PAUSED").toString();
-                const budget = parseFloat(c.budget || c.Budget || 0);
-                const cost = parseFloat(c.cost || c.Cost || 0);
-                const conv = parseFloat(c.conversions || c.Conversions || 0);
-                const imps = parseInt(c.impressions || c.Impressions || 0);
-                const clicks = parseInt(c.clicks || c.Clicks || 0);
-                const ctr = c.ctr || c.CTR || "0.00%";
-                const cpa = conv > 0 ? (cost / conv).toFixed(2) : '0.00';
-                
-                const statusClass = status.toLowerCase().includes('enabl') ? 'match-tag' : 'text-muted';
-                
-                tr.style.background = 'rgba(0, 0, 0, 0.4)';
-                tr.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
-                
-                tr.innerHTML = `
-                    <td style="font-weight:800; color: #ffffff; font-size: 15px; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">${name}</td>
-                    <td><span class="${statusClass}" style="font-weight:800; padding: 6px 12px; border-radius: 8px; background: ${status.toLowerCase().includes('enabl') ? 'rgba(52, 168, 83, 0.2)' : 'rgba(255, 255, 255, 0.05)'}; border: 1px solid currentColor; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${status}</span></td>
-                    <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">€${budget.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</td>
-                    <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">${imps.toLocaleString()}</td>
-                    <td style="text-align:right; font-weight:700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">${clicks.toLocaleString()}</td>
-                    <td style="text-align:right; color: #00f2ff; font-weight:900; font-size: 16px; text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);">€${cost.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</td>
-                    <td style="text-align:right; font-weight:900; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">${conv.toFixed(0)}</td>
-                    <td style="text-align:right; font-weight:900; color:${conv > 0 ? '#00ff88' : '#ffffff'}; text-shadow: 0 0 10px ${conv > 0 ? 'rgba(0, 255, 136, 0.3)' : 'none'};">€${parseFloat(cpa).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</td>
-                    <td style="text-align:right; font-weight:700; color: #ffd700; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">${ctr}</td>
-                `;
-                body.appendChild(tr);
-            });
-        }
-    } catch (e) {
-        if (body) body.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger); padding:40px;">⚠️ ${e.message}</td></tr>`;
+let currentAdsSort = { key: 'Campaign', asc: true };
+
+window.sortAds = function(key) {
+    if (currentAdsSort.key === key) {
+        currentAdsSort.asc = !currentAdsSort.asc;
+    } else {
+        currentAdsSort.key = key;
+        currentAdsSort.asc = true;
     }
+    renderMonitorRows();
+}
+
+function renderMonitorRows() {
+    const body = document.getElementById('monitor-body');
+    if (!body || !liveAdsContext) return;
+    
+    const campaigns = [...liveAdsContext];
+    const key = currentAdsSort.key;
+    const asc = currentAdsSort.asc;
+    
+    campaigns.sort((a, b) => {
+        let valA = a[key] || a[key.charAt(0).toLowerCase() + key.slice(1)] || a[key.toUpperCase()] || 0;
+        let valB = b[key] || b[key.charAt(0).toLowerCase() + key.slice(1)] || b[key.toUpperCase()] || 0;
+        
+        // Handle currencies and strings
+        if (typeof valA === 'string' && valA.includes('€')) valA = parseFloat(valA.replace('€','').replace(',',''));
+        if (typeof valB === 'string' && valB.includes('€')) valB = parseFloat(valB.replace('€','').replace(',',''));
+        
+        if (valA < valB) return asc ? -1 : 1;
+        if (valA > valB) return asc ? 1 : -1;
+        return 0;
+    });
+
+    body.innerHTML = '';
+    campaigns.forEach(c => {
+        const tr = document.createElement('tr');
+        const name = c.name || c.Name || c.Campaign || "Unknown";
+        const status = (c.status || c.Status || "PAUSED").toString();
+        const budget = parseFloat(c.budget || c.Budget || 0);
+        const cost = parseFloat(c.cost || c.Cost || 0);
+        const conv = parseFloat(c.conversions || c.Conversions || 0);
+        const imps = parseInt(c.impressions || c.Impressions || 0);
+        const clicks = parseInt(c.clicks || c.Clicks || 0);
+        const ctr = c.ctr || c.CTR || "0.00%";
+        const cpa = conv > 0 ? (cost / conv).toFixed(2) : '0.00';
+        
+        const statusClass = status.toLowerCase().includes('enabl') ? 'match-tag' : 'text-muted';
+        
+        tr.style.background = 'rgba(0, 0, 0, 0.4)';
+        tr.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
+        
+        tr.innerHTML = `
+            <td style="font-weight:800; color: #ffffff; font-size: 15px;">${name}</td>
+            <td><span class="${statusClass}" style="font-weight:800; padding: 6px 12px; border-radius: 8px; background: ${status.toLowerCase().includes('enabl') ? 'rgba(52, 168, 83, 0.2)' : 'rgba(255, 255, 255, 0.05)'}; border: 1px solid currentColor;">${status}</span></td>
+            <td style="text-align:right; font-weight:700; color: #ffffff;">€${budget.toFixed(2)}</td>
+            <td style="text-align:right; font-weight:700; color: #ffffff;">${imps.toLocaleString()}</td>
+            <td style="text-align:right; font-weight:700; color: #ffffff;">${clicks.toLocaleString()}</td>
+            <td style="text-align:right; color: #00f2ff; font-weight:900;">€${cost.toFixed(2)}</td>
+            <td style="text-align:right; font-weight:900; color: #ffffff;">${conv.toFixed(0)}</td>
+            <td style="text-align:right; font-weight:900; color:#00ff88;">€${parseFloat(cpa).toFixed(2)}</td>
+            <td style="text-align:right; font-weight:700; color: #ffd700;">${ctr}</td>
+        `;
+        body.appendChild(tr);
+    });
 }
 
 window.showChess = function() {
@@ -2297,9 +2325,6 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
     context += "LANGUAGE RULE: You MUST always respond in the same language the user uses. Se falarem em Português, responde em Português. If they speak English, respond in English. This is mandatory. ";
     context += "NO META-LABELS: Do not label your sections like 'Observation:', 'Insight:', or 'Closing the loop:'. Weave these naturally into your response. Do not tell the user what you are about to do; just do it. ";
 
-
-
-
     let dataPayload = {
         meta: { version: "v97", agent: "Antigravity Master Strategist" }
     };
@@ -2375,7 +2400,6 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             
             try {
                 // Deep-Brace Balancer Parser
-                // Manually extracts JSON objects even if they have nested braces
                 let fullResponse = "";
                 let foundComplete = false;
                 
@@ -2405,8 +2429,6 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                 }
                 
                 if (!foundComplete) text = fullResponse || rawText;
-                
-                // Final formatting cleanup
                 text = text.replace(/<br\s*\/?>/gi, '\n').trim();
             } catch (e) {
                 text = rawText;
@@ -2447,7 +2469,6 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
 }
 
 function typeWriter(element, text, speed = 10) {
-    // Fix: If text contains HTML, render immediately to avoid showing tags as code
     if (text.includes('<') && text.includes('>')) {
         element.innerHTML = text;
         return;
@@ -2467,19 +2488,12 @@ function typeWriter(element, text, speed = 10) {
 
 function formatAIResponse(text) {
     if (!text) return "";
-    
     let html = text;
-
-    // 1. Headers (Handle before line breaks)
     html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
     html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
     html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
-
-    // 2. Bold/Italic
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-    // 3. Tables (Strategic Parsing)
     const tableRegex = /\|(.+)\|.*\n\|(?:\s*[:\-]+\s*\|?)+\n((?:\|.+\|.*\n?)*)/g;
     html = html.replace(tableRegex, (match, header, body) => {
         const headerCols = header.split('|').map(c => c.trim()).filter(c => c);
@@ -2488,23 +2502,11 @@ function formatAIResponse(text) {
             if (cols.length === 0) return '';
             return `<tr>${cols.map(c => `<td>${c}</td>`).join('')}</tr>`;
         });
-        
         return `<table><thead><tr>${headerCols.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table>`;
     });
-
-    // 4. Horizontal Rules
     html = html.replace(/^---$/gim, '<hr style="opacity: 0.1; margin: 20px 0;">');
-
-    // 5. Lists
     html = html.replace(/^\s*[-*]\s+(.*$)/gim, '<li>$1</li>');
-    
-    // 6. Blockquotes
     html = html.replace(/^\>\s+(.*$)/gim, '<blockquote>$1</blockquote>');
-
-    // 7. Line breaks
     html = html.replace(/\n/g, '<br>');
-
     return html;
 }
-
-
