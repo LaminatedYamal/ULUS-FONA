@@ -2660,3 +2660,59 @@ body.light-mode .hero-text h2 {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(var(--accent-primary-rgb), 0.4);
 }
+
+/* --- LIVE ADS MONITOR STYLING --- */
+.monitor-grid {
+    background: rgba(15, 17, 23, 0.7);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    padding: 10px;
+    overflow: hidden;
+}
+
+.monitor-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 13px;
+}
+
+.monitor-table th {
+    padding: 15px 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-size: 10px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.monitor-table th:hover {
+    color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.monitor-table td {
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.monitor-table tr td:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px 0 0 12px;
+}
+
+.monitor-table tr td:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 12px 12px 0;
+}
+
+.monitor-table tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(var(--accent-primary-rgb), 0.2);
+}
+
