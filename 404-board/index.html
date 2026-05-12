@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Switch Board | Antigravity</title>
+    <title>SYS/404 | Live Routing Switchboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Ambient Animated Background Blob (Synced with Main) -->
+    <div class="ambient-blob"></div>
+
     <div class="switchboard-container">
         <div class="header">
             <a href="../index.html" style="text-decoration: none; margin-right: 20px;">
@@ -55,6 +58,18 @@
         })();
 
         function checkTelemetry() {
+            // Apply Synced Aura/Wallpaper
+            const savedTone = localStorage.getItem('hub_blob_tone');
+            if (savedTone) {
+                document.documentElement.style.setProperty('--blob-gradient', savedTone);
+            }
+            const savedBg = localStorage.getItem('hub_custom_bg');
+            if (savedBg) {
+                document.body.style.backgroundImage = `url(${savedBg})`;
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundAttachment = 'fixed';
+            }
+
             const container = document.getElementById('switch-board-rows');
             if (window.telemetryData) {
                 renderBoard(window.telemetryData);
