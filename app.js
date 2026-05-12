@@ -1958,6 +1958,18 @@ window.toggleGeminiSidebar = function() {
         greetEl.textContent = `${hello}, ${user}! 👋`;
     }
     
+    // Inject First Message into Chat if empty
+    const chat = document.getElementById('gemini-chat');
+    if (chat && chat.children.length === 0) {
+        const introMsg = document.createElement('div');
+        introMsg.className = 'ai-response';
+        const config = modelConfigs[activeAIModel];
+        const greeting = currentLang === 'pt' ? (config.greetingPt || config.greeting) : config.greeting;
+        
+        introMsg.innerHTML = `<strong>${config.name}:</strong> ${greeting}`;
+        chat.appendChild(introMsg);
+    }
+    
     updateAISidebarText();
 
     // Load key if exists
@@ -2140,9 +2152,16 @@ window.switchAIModel = function(model) {
     activeAIModel = model;
     const config = modelConfigs[model];
 
-    // Clear Chat for new model context
+    // Clear Chat for new model context and inject greeting
     const chat = document.getElementById('gemini-chat');
-    if (chat) chat.innerHTML = '';
+    if (chat) {
+        chat.innerHTML = '';
+        const introMsg = document.createElement('div');
+        introMsg.className = 'ai-response';
+        const greeting = currentLang === 'pt' ? (config.greetingPt || config.greeting) : config.greeting;
+        introMsg.innerHTML = `<strong>${config.name}:</strong> ${greeting}`;
+        chat.appendChild(introMsg);
+    }
 
     // Update Tower Items Active State
     document.querySelectorAll('.tower-item').forEach(item => item.classList.remove('active'));
