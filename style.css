@@ -1785,6 +1785,15 @@ body.light-mode .hero-text h2 {
     -webkit-text-fill-color: transparent;
 }
 
+.tone-options-wheel::-webkit-scrollbar {
+    display: none;
+}
+
+.tone-options-wheel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 #dashboard-view {
     background-size: cover;
     background-position: center;
