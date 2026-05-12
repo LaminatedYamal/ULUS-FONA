@@ -43,8 +43,17 @@
     </div>
 
     <script>
-    <script src="telemetry.js"></script>
-    <script>
+        // Aggressive Cache Busting Loader
+        (function() {
+            const script = document.createElement('script');
+            script.src = 'telemetry.js?v=' + Date.now();
+            script.onload = () => {
+                console.log("Telemetry loaded successfully.");
+                checkTelemetry();
+            };
+            document.head.appendChild(script);
+        })();
+
         function checkTelemetry() {
             const container = document.getElementById('switch-board-rows');
             if (window.telemetryData) {
@@ -52,10 +61,9 @@
             } else {
                 container.innerHTML = `
                     <div class="error-state">
-                        CONNECTION FAILED: NO TELEMETRY<br>
-                        <small style="font-size: 10px; color: #666;">Waiting for telemetry.js node...</small>
+                        SYNCHRONIZING...<br>
+                        <small style="font-size: 10px; color: #666;">Contacting telemetry node...</small>
                     </div>`;
-                // Retry in 1 second
                 setTimeout(checkTelemetry, 1000);
             }
         }
