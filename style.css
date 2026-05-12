@@ -41,9 +41,9 @@ body.light-mode .sidebar {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 60vw;
-    height: 60vw;
     transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
     background: var(--blob-gradient, linear-gradient(135deg, #0057FF, #00C2FF));
     filter: blur(120px);
     border-radius: 50%;
@@ -1780,6 +1780,10 @@ body.light-mode .hero-text h2 {
 }
 
 #dashboard-view {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: none; /* Hidden until course is selected */
 }
 
@@ -2332,22 +2336,22 @@ body.light-mode .hero-text h2 {
 /* === FLOATING RAINBOW BLOB (Homepage Only) === */
 .floating-blob {
     position: fixed;
-    width: 1200px;
-    height: 1200px;
+    width: 600px;
+    height: 600px;
     background: var(--blob-gradient, linear-gradient(
         45deg,
         #4285f4, #34a853, #fbbc05, #ea4335,
         #4285f4, #34a853, #fbbc05, #ea4335
     ));
     background-size: 400% 400%;
-    filter: blur(160px);
+    filter: blur(120px);
     opacity: 0.6;
     border-radius: 50%;
     z-index: -1;
     animation: rainbow-surge 10s linear infinite, float-drift 30s ease-in-out infinite;
     pointer-events: none;
-    top: calc(50vh - 600px);
-    left: calc(50vw - 600px);
+    top: calc(50vh - 300px);
+    left: calc(50vw - 300px);
 }
 
 @keyframes float-drift {
