@@ -1,27 +1,46 @@
 :root {
-    --bg-dark: #0a0e17;
-    --bg-panel: #111827;
-    --text-primary: #e5e7eb;
-    --text-muted: #6b7280;
-    --border-color: #1f2937;
-    
-    --led-green: #10b981;
-    --led-red: #ef4444;
-    --led-yellow: #f59e0b;
+    --bg-dark: #0a0a0c;
+    --text-primary: #ffffff;
+    --text-muted: #888;
+    --accent-primary: #00ff87;
+    --accent-red: #ff4d4d;
+    --blob-gradient: linear-gradient(135deg, #0057FF, #00C2FF);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-primary);
-    font-family: 'Share Tech Mono', monospace;
-    padding: 40px;
-    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.ambient-blob {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: var(--blob-gradient);
+    filter: blur(120px);
+    border-radius: 50%;
+    z-index: -2;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: blob-pulse 8s infinite alternate;
+}
+
+@keyframes blob-pulse {
+    from { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    to { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
 }
 
 .switchboard-container {
