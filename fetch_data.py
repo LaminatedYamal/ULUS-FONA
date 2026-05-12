@@ -67,8 +67,13 @@ def fuzzy_clean_url(url):
     """Aggressively normalizes URLs so they match even if language flags or suffixes differ."""
     u = str(url).lower().split('?')[0].rstrip('/')
     u = u.replace('https://', '').replace('http://', '').replace('www.', '')
-    u = re.sub(r'/(pt|en)/', '/', u)
-    u = re.sub(r'-(pt|en)$', '', u)
+    # Remove language folders
+    u = re.sub(r'/(pt|en|es)/', '/', u)
+    # Remove degree folders to reach the core slug
+    u = re.sub(r'/(ctesp|licenciaturas|mestrados|doutoramentos|pos-graduacoes|cursos-tecnicos)/', '/', u)
+    # Remove suffixes
+    u = re.sub(r'-(pt|en|es)$', '', u)
+    # Remove campus
     u = re.sub(r'/(lisboa|porto|centro-universitario-lisboa|centro-universitario-porto)/', '/', u)
     return u.strip('/')
 
