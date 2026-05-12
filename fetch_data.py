@@ -23,8 +23,29 @@ def load_ads_data(sheet_id, creds_dict):
         gc = gspread.authorize(credentials)
         # Tab 1: Keywords
         sheet = gc.open_by_key(sheet_id).get_worksheet(0)
-        records = sheet.get_all_records()
-        print(f"Successfully loaded {len(records)} keywords from Sheets.")
+        all_vals = sheet.get_all_values()
+        if len(all_vals) < 2: return []
+        
+        headers = [h.strip().lower() for h in all_vals[0]]
+        print(f"[{sheet_id}] Detected Headers: {headers}")
+        
+        # Find column indexes
+        idx_kw = next((i for i, h in enumerate(headers) if 'keyword' in h or 'palavra' in h or 'termo' in h), 0)
+        idx_url = next((i for i, h in enumerate(headers) if 'url' in h or 'link' in h or 'final' in h), 1)
+        idx_imps = next((i for i, h in enumerate(headers) if 'impress' in h or 'impr' in h), 4)
+        idx_clicks = next((i for i, h in enumerate(headers) if 'click' in h or 'clique' in h), 5)
+        
+        records = []
+        for row in all_vals[1:]:
+            if len(row) <= max(idx_kw, idx_url, idx_imps, idx_clicks): continue
+            records.append({
+                'Keyword': row[idx_kw],
+                'Final URL': row[idx_url],
+                'Impressions': row[idx_imps],
+                'Clicks': row[idx_clicks]
+            })
+            
+        print(f"Successfully loaded {len(records)} keywords from Sheets via Smart Mapping.")
         return records
     except Exception as e:
         print(f"Note: Could not fetch Keywords tab: {str(e)}")
