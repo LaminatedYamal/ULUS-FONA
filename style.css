@@ -58,11 +58,47 @@ body {
     opacity: 0.5;
     pointer-events: none;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes blob-pulse {
-    from { transform: translate(-50%, -50%) scale(1); }
-    to { transform: translate(-50%, -50%) scale(1.2); }
+.ambient-blob::after {
+    content: '';
+    width: 180px;
+    height: 180px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s;
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.4));
+    z-index: -1;
+}
+
+.ambient-blob.club-mode {
+    opacity: 0.8;
+    filter: blur(80px);
+    animation: club-surge 6s infinite ease-in-out;
+}
+
+.ambient-blob.club-mode::after {
+    opacity: 1;
+    animation: club-logo-float 12s infinite ease-in-out;
+}
+
+.ambient-blob.benfica::after { background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a2/SL_Benfica_logo.svg'); }
+.ambient-blob.sporting::after { background-image: url('https://upload.wikimedia.org/wikipedia/en/3/3e/Sporting_CP.svg'); }
+.ambient-blob.porto::after { background-image: url('https://upload.wikimedia.org/wikipedia/en/f/f1/FC_Porto.svg'); }
+
+@keyframes club-surge {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); filter: blur(80px); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.15); filter: blur(60px); opacity: 0.8; }
+}
+
+@keyframes club-logo-float {
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); filter: brightness(1); }
+    50% { transform: translateY(-20px) scale(1.05) rotate(5deg); filter: brightness(1.2) drop-shadow(0 0 40px rgba(255,255,255,0.6)); }
 }
 
 
