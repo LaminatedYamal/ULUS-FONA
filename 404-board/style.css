@@ -21,6 +21,31 @@ body {
     min-height: 100vh;
 }
 
+.filter-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-muted);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.filter-btn.active {
+    background: #00ff87;
+    color: #000;
+    border-color: #00ff87;
+    box-shadow: 0 0 15px rgba(0,255,135,0.3);
+}
+
 .ambient-blob {
     position: fixed;
     top: 50%;
