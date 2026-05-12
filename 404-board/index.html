@@ -44,15 +44,34 @@
 
     <script>
         async function fetchStatus() {
-            try {
-                const res = await fetch('results.json?t=' + Date.now());
-                if (!res.ok) throw new Error('Data sync failure. Status: ' + res.status);
-                const data = await res.json();
-                renderBoard(data);
-            } catch (err) {
-                console.error("Error fetching results:", err);
-                document.getElementById('switch-board-rows').innerHTML = '<div class="error-state">CONNECTION FAILED: NO TELEMETRY</div>';
+            const container = document.getElementById('switch-board-rows');
+            container.innerHTML = '<div class="loading-state">SYNCHRONIZING TELEMETRY...</div>';
+            
+            const sources = [
+                'results.json?t=' + Date.now(),
+                '../results.json?t=' + Date.now(),
+                'https://raw.githubusercontent.com/LaminatedYamal/ULUS-FONA/main/404-board/results.json'
+            ];
+
+            for (let url of sources) {
+                try {
+                    console.log("Attempting fetch from:", url);
+                    const res = await fetch(url);
+                    if (res.ok) {
+                        const data = await res.json();
+                        renderBoard(data);
+                        return; // Success!
+                    }
+                } catch (err) {
+                    console.warn("Source failed:", url, err);
+                }
             }
+            
+            document.getElementById('switch-board-rows').innerHTML = `
+                <div class="error-state">
+                    CONNECTION FAILED: NO TELEMETRY<br>
+                    <small style="font-size: 10px; color: #666;">Tried local and cloud nodes.</small>
+                </div>`;
         }
 
         function renderBoard(data) {
