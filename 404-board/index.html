@@ -85,7 +85,12 @@
             }
 
             if (window.telemetryData) {
-                rawData = window.telemetryData;
+                // Decode entities in rawData once
+                rawData = window.telemetryData.map(item => {
+                    const txt = document.createElement('textarea');
+                    txt.innerHTML = item.Institution || '';
+                    return { ...item, Institution: txt.value };
+                });
                 populateInstitutions(rawData);
                 applyFilters();
             } else {
@@ -96,15 +101,14 @@
         function populateInstitutions(data) {
             const select = document.getElementById('inst-filter');
             const currentValue = select.value;
-            const institutions = [...new Set(data.map(item => item.Institution))].sort();
+            const institutions = [...new Set(data.map(item => item.Institution))].filter(i => i).sort();
             
             select.innerHTML = '<option value="all">ALL INSTITUTIONS</option>';
             institutions.forEach(inst => {
-                if (!inst) return;
                 const opt = document.createElement('option');
                 opt.value = inst;
                 opt.textContent = inst;
-                opt.style.background = '#1a1a1c'; // Force dark background for visibility
+                opt.style.background = '#1a1a1c';
                 opt.style.color = 'white';
                 select.appendChild(opt);
             });
