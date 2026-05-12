@@ -2334,11 +2334,11 @@ body.light-mode .hero-text h2 {
     position: fixed;
     width: 1200px;
     height: 1200px;
-    background: linear-gradient(
+    background: var(--blob-gradient, linear-gradient(
         45deg,
         #4285f4, #34a853, #fbbc05, #ea4335,
         #4285f4, #34a853, #fbbc05, #ea4335
-    );
+    ));
     background-size: 400% 400%;
     filter: blur(160px);
     opacity: 0.6;
