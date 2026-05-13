@@ -2554,25 +2554,28 @@ window.executePrecisionExport = function() {
         csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
     });
 
-    // --- TABLE 3: SYNERGY MERGE (GSC + ADS) ---
-    csv += "\nTABLE 3: SYNERGY MERGE (ORGANIC vs ACTIVE SYNERGY)\n";
-    csv += "Institution,Degree,Course Name,URL,SYNERGY KEYWORDS (Active in Both),ORGANIC ONLY KEYWORDS\n";
+    // --- TABLE 3: UNIFIED STRATEGIC MASTER LIST (GSC + ADS) ---
+    csv += "\nTABLE 3: UNIFIED STRATEGIC MASTER LIST (FULL GSC + ADS CONSOLIDATION)\n";
+    csv += "Institution,Degree,Course Name,URL,Master Keyword List (GSC + Ads)\n";
     filtered.forEach(c => {
-        const gscTerms = (c.gscKeywords || []);
-        const adsTerms = (c.adsKeywords || []).map(k => k.term.toLowerCase().trim());
+        const gscTerms = (c.gscKeywords || []).map(k => k.term.trim());
+        const adsTerms = (c.adsKeywords || []).map(k => k.term.trim());
         
-        const synergy = [];
-        const organicOnly = [];
-        
-        gscTerms.forEach(k => {
-            if (adsTerms.includes(k.term.toLowerCase().trim())) {
-                synergy.push(k.term);
-            } else {
-                organicOnly.push(k.term);
-            }
+        // Use a Set to handle deduplication and case-insensitive unique matching
+        const masterSet = new Set();
+        gscTerms.forEach(t => masterSet.add(t));
+        adsTerms.forEach(t => {
+            // Check if term already exists in a case-insensitive way
+            const lowerT = t.toLowerCase();
+            let exists = false;
+            masterSet.forEach(existing => {
+                if (existing.toLowerCase() === lowerT) exists = true;
+            });
+            if (!exists) masterSet.add(t);
         });
         
-        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${synergy.join(', ')}","${organicOnly.join(', ')}"\n`;
+        const masterList = Array.from(masterSet).join(', ');
+        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${masterList}"\n`;
     });
 
     // Create Download with UTF-8 BOM for Excel
