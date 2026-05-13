@@ -41,6 +41,7 @@ async function init() {
     loadData(); 
     initTheme();
     initGreeting();
+    initPlayerDraggable();
     const savedTone = localStorage.getItem('hub_blob_tone');
     if (savedTone) {
         document.documentElement.style.setProperty('--blob-gradient', savedTone);
@@ -2722,9 +2723,49 @@ window.seekPlayer = function(event) {
     const container = document.getElementById('player-progress-container');
     const rect = container.getBoundingClientRect();
     const x = event.clientX - rect.left;
-    const percent = x / rect.width;
+    const percent = Math.max(0, Math.min(1, x / rect.width));
     const seekTo = ytPlayer.getDuration() * percent;
     ytPlayer.seekTo(seekTo, true);
+}
+
+// Draggable Progress Bar Logic
+let isDraggingProgress = false;
+
+window.initPlayerDraggable = function() {
+    const container = document.getElementById('player-progress-container');
+    if (!container) return;
+
+    container.addEventListener('mousedown', (e) => {
+        isDraggingProgress = true;
+        handleDrag(e);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (isDraggingProgress) {
+            handleDrag(e);
+        }
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (isDraggingProgress) {
+            isDraggingProgress = false;
+        }
+    });
+
+    function handleDrag(e) {
+        if (!ytPlayer || typeof ytPlayer.getDuration !== 'function') return;
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const percent = Math.max(0, Math.min(1, x / rect.width));
+        
+        // Update UI immediately for smoothness
+        const bar = document.getElementById('player-progress-bar');
+        if (bar) bar.style.width = (percent * 100) + '%';
+        
+        // Seek player
+        const seekTo = ytPlayer.getDuration() * percent;
+        ytPlayer.seekTo(seekTo, true);
+    }
 }
 
 function onPlayerStateChange(event) {
