@@ -9,6 +9,7 @@ const BRANDING = {
 
 let courses = [];
 let activeCourseId = null;
+let liveAdsContext = null;
 
 async function init() {
     initLanguage(); // Load language preference
@@ -1886,7 +1887,7 @@ document.addEventListener('DOMContentLoaded', init);
 // --- GEMINI AI INTEGRATION ---
 let pendingGeminiFile = null;
 let activeAIModel = 'gemini'; // Default
-let liveAdsContext = null;
+
 
 const modelConfigs = {
     'gemini':   { name: 'Gemini 3',     color: '#4285F4', rgb: '66, 133, 244', grad: ['#4285F4', '#91B9FF'], greeting: "I am your Gemini Strategist. The evolution of Google's multimodal AI is at your service.", greetingPt: "Eu sou o seu Estrategista Gemini. A evolução da IA multimodal do Google está ao seu serviço." },
