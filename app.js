@@ -2614,7 +2614,17 @@ window.searchMusic = async function() {
         if (success) break;
         try {
             console.log(`[Music Hub] Trying instance: ${instance}`);
-            const resp = await fetch(`${instance}/search?q=${encodeURIComponent(query)}`);
+            const queryUrl = `${instance}/search?q=${encodeURIComponent(query)}`;
+            
+            // Try direct first
+            let resp = await fetch(queryUrl);
+            
+            // If failed or blocked, try proxy
+            if (!resp.ok) {
+                console.log(`[Music Hub] Direct failed, trying proxy for ${instance}`);
+                resp = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(queryUrl)}`);
+            }
+
             if (!resp.ok) continue;
             
             const data = await resp.json();
