@@ -158,18 +158,28 @@
             if (loading) loading.textContent = t.loading;
         }
 
-        // Sequential Loader for Special and Main Data
+        // Sequential Loader with Fallbacks
         (function() {
+            function loadMain() {
+                const main = document.createElement('script');
+                main.src = 'results.js?v=' + Date.now();
+                main.onload = () => checkTelemetry();
+                main.onerror = () => {
+                    console.error("Failed to load results.js");
+                    document.querySelector('.loading-state').textContent = "ERROR: TELEMETRY OFFLINE";
+                };
+                document.head.appendChild(main);
+            }
+
             const special = document.createElement('script');
             special.src = 'results_special.js?v=' + Date.now();
             special.onload = () => {
-                window.specialData = window.telemetryData; // Capture special
-                const main = document.createElement('script');
-                main.src = 'results.js?v=' + Date.now();
-                main.onload = () => {
-                    checkTelemetry();
-                };
-                document.head.appendChild(main);
+                window.specialData = window.telemetryData;
+                loadMain();
+            };
+            special.onerror = () => {
+                console.warn("Special telemetry missing, skipping LEDs...");
+                loadMain();
             };
             document.head.appendChild(special);
         })();
