@@ -1432,14 +1432,9 @@ function loadCourse(id) {
     if (!course) return;
 
     // Switch Views
-    const landingView = document.getElementById("landing-view");
+    hideAllViews();
     const dashboardView = document.getElementById("dashboard-view");
-    
-    if (landingView) landingView.style.display = "none";
     if (dashboardView) dashboardView.style.display = "block";
-    if (document.getElementById('live-monitor-view')) {
-        document.getElementById('live-monitor-view').style.display = "none";
-    }
     
     const headerLeft = document.getElementById('dashboard-header-left');
     if (headerLeft) headerLeft.style.visibility = "visible";
@@ -2510,6 +2505,32 @@ function formatAIResponse(text) {
         return;
     }
 
+    const formatCurrency = (val) => {
+        if (val === undefined || val === null) return '---';
+        let s = val.toString().replace(',', '.').replace(/[^0-9.-]/g, '');
+        const num = parseFloat(s);
+        if (isNaN(num)) return '---';
+        return new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR' }).format(num);
+    };
+
+    const formatPercent = (val) => {
+        if (val === undefined || val === null) return '---';
+        let s = val.toString().replace(',', '.').replace(/[^0-9.-]/g, '');
+        const num = parseFloat(s);
+        if (isNaN(num)) return '---';
+        // If the number is already > 1, it might be 14.77 instead of 0.1477
+        if (num > 1) return num.toFixed(2) + '%';
+        return (num * 100).toFixed(2) + '%';
+    };
+
+    const formatNumber = (val) => {
+        if (val === undefined || val === null) return '---';
+        let s = val.toString().replace(',', '.').replace(/[^0-9.-]/g, '');
+        const num = parseFloat(s);
+        if (isNaN(num)) return '---';
+        return num.toLocaleString();
+    };
+
     body.innerHTML = '';
     liveAdsContext.forEach(row => {
         const tr = document.createElement('tr');
@@ -2519,13 +2540,13 @@ function formatAIResponse(text) {
         tr.innerHTML = `
             <td style="font-weight:600; color:white;">${row.Campaign || row.campaign || '---'}</td>
             <td><span style="color:${statusColor}; font-size:11px; font-weight:700;">● ${status.toUpperCase()}</span></td>
-            <td style="text-align:right;">${row.Budget || row.budget || '---'}</td>
-            <td style="text-align:right;">${(row.Impressions || row.impressions || 0).toLocaleString()}</td>
-            <td style="text-align:right;">${(row.Clicks || row.clicks || 0).toLocaleString()}</td>
-            <td style="text-align:right; font-weight:600;">${row.Cost || row.cost || '---'}</td>
-            <td style="text-align:right;">${row.Conversions || row.conversions || '0'}</td>
-            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${row['Cost/conv.'] || row.cpa || '---'}</td>
-            <td style="text-align:right; opacity:0.8;">${row.CTR || row.ctr || '---'}</td>
+            <td style="text-align:right;">${formatCurrency(row.Budget || row.budget)}</td>
+            <td style="text-align:right;">${formatNumber(row.Impressions || row.impressions)}</td>
+            <td style="text-align:right;">${formatNumber(row.Clicks || row.clicks)}</td>
+            <td style="text-align:right; font-weight:600; color: #00f2fe;">${formatCurrency(row.Cost || row.cost)}</td>
+            <td style="text-align:right;">${formatNumber(row.Conversions || row.conversions)}</td>
+            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${formatCurrency(row['Cost/conv.'] || row.cpa)}</td>
+            <td style="text-align:right; opacity:0.8;">${formatPercent(row.CTR || row.ctr)}</td>
         `;
         body.appendChild(tr);
     });
@@ -2584,7 +2605,7 @@ window.searchMusic = async function() {
             if (!resp.ok) continue;
             
             const data = await resp.json();
-            const items = data.items || [];
+            const items = Array.isArray(data) ? data : (data.items || []);
             
             if (items.length === 0) {
                 resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">No tracks found. Try another vibe.</div>';
@@ -2593,29 +2614,38 @@ window.searchMusic = async function() {
             }
 
             resultsContainer.innerHTML = '';
-            items.slice(0, 12).forEach(video => {
+            items.slice(0, 20).forEach(video => {
                 const card = document.createElement('div');
                 card.className = 'music-card';
-                // Handle different URL formats from different instances
-                const vidId = video.url.includes('v=') ? video.url.split('v=')[1] : video.url.split('/').pop();
+                
+                // Enhanced Video ID extraction
+                let vidId = '';
+                if (video.videoId) {
+                    vidId = video.videoId;
+                } else if (video.url) {
+                    vidId = video.url.includes('v=') ? video.url.split('v=')[1].split('&')[0] : video.url.split('/').pop();
+                }
+
+                if (!vidId) return;
                 
                 card.innerHTML = `
                     <div class="music-thumb-container">
-                        <img src="${video.thumbnail}" class="music-thumb" loading="lazy">
+                        <img src="${video.thumbnail || `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`}" class="music-thumb" loading="lazy">
                         <div class="play-overlay">
                             <div class="play-icon-circle">▶</div>
                         </div>
                     </div>
                     <div class="music-info">
-                        <h4>${video.title}</h4>
-                        <p>${video.uploaderName || 'Unknown Artist'}</p>
+                        <h4 title="${video.title}">${video.title}</h4>
+                        <p>${video.uploaderName || video.author || 'Unknown Artist'}</p>
                     </div>
                 `;
                 
-                card.onclick = () => playMusic(vidId, video.title, video.uploaderName, video.thumbnail);
+                card.onclick = () => playMusic(vidId, video.title, video.uploaderName || video.author, video.thumbnail);
                 resultsContainer.appendChild(card);
             });
             success = true;
+            break; // Exit instances loop
         } catch (e) {
             console.warn(`[Music Hub] Instance ${instance} failed:`, e);
         }
