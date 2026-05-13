@@ -774,6 +774,13 @@ async function checkAuth() {
         const display = document.getElementById('user-display-name');
         if (display) display.textContent = user;
         initGreeting(); // Update greeting immediately
+        
+        // Miguel's Precision Export Privilege
+        if (user && user.toLowerCase().includes('miguel')) {
+            const mig = document.getElementById('miguel-export-option');
+            if (mig) mig.style.display = 'flex';
+        }
+
         await fetchServerData();
         renderCourseList();
         return true;
@@ -2547,43 +2554,61 @@ window.searchMusic = async function() {
     const resultsContainer = document.getElementById('music-results');
     resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">🔍 Scanning the sound waves...</div>';
     
-    try {
-        // Using a public search proxy for YT (or just direct if allowed, usually needs API but we'll try a fallback)
-        // For this implementation, we use the YouTube Data API search logic via a worker or simple fetch
-        const resp = await fetch(`https://pipedapi.kavin.rocks/search?q=${encodeURIComponent(query)}&filter=videos`);
-        const data = await resp.json();
-        
-        resultsContainer.innerHTML = '';
-        const items = data.items || [];
-        
-        if (items.length === 0) {
-            resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">No tracks found. Try another vibe.</div>';
-            return;
-        }
+    const instances = [
+        'https://pipedapi.kavin.rocks',
+        'https://api-piped.mha.fi',
+        'https://piped-api.garudalinux.org',
+        'https://pipedapi.leptons.xyz'
+    ];
 
-        items.slice(0, 12).forEach(video => {
-            const card = document.createElement('div');
-            card.className = 'music-card';
-            const vidId = video.url.split('v=')[1];
+    let success = false;
+    for (const instance of instances) {
+        if (success) break;
+        try {
+            console.log(`[Music Hub] Trying instance: ${instance}`);
+            const resp = await fetch(`${instance}/search?q=${encodeURIComponent(query)}&filter=videos`);
+            if (!resp.ok) continue;
             
-            card.innerHTML = `
-                <div class="music-thumb-container">
-                    <img src="${video.thumbnail}" class="music-thumb">
-                    <div class="play-overlay">
-                        <div class="play-icon-circle">▶</div>
+            const data = await resp.json();
+            const items = data.items || [];
+            
+            if (items.length === 0) {
+                resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">No tracks found. Try another vibe.</div>';
+                success = true;
+                break;
+            }
+
+            resultsContainer.innerHTML = '';
+            items.slice(0, 12).forEach(video => {
+                const card = document.createElement('div');
+                card.className = 'music-card';
+                // Handle different URL formats from different instances
+                const vidId = video.url.includes('v=') ? video.url.split('v=')[1] : video.url.split('/').pop();
+                
+                card.innerHTML = `
+                    <div class="music-thumb-container">
+                        <img src="${video.thumbnail}" class="music-thumb" loading="lazy">
+                        <div class="play-overlay">
+                            <div class="play-icon-circle">▶</div>
+                        </div>
                     </div>
-                </div>
-                <div class="music-info">
-                    <h4>${video.title}</h4>
-                    <p>${video.uploaderName}</p>
-                </div>
-            `;
-            
-            card.onclick = () => playMusic(vidId, video.title, video.uploaderName, video.thumbnail);
-            resultsContainer.appendChild(card);
-        });
-    } catch (e) {
-        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">Error connecting to Music Hub.</div>';
+                    <div class="music-info">
+                        <h4>${video.title}</h4>
+                        <p>${video.uploaderName || 'Unknown Artist'}</p>
+                    </div>
+                `;
+                
+                card.onclick = () => playMusic(vidId, video.title, video.uploaderName, video.thumbnail);
+                resultsContainer.appendChild(card);
+            });
+            success = true;
+        } catch (e) {
+            console.warn(`[Music Hub] Instance ${instance} failed:`, e);
+        }
+    }
+
+    if (!success) {
+        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">All Music Hub instances are currently busy. Please try again in a moment.</div>';
     }
 }
 
@@ -2633,4 +2658,42 @@ window.toggleMusicPlayback = function() {
 window.closeMusicPlayer = function() {
     if (ytPlayer) ytPlayer.stopVideo();
     document.getElementById('global-player').style.display = 'none';
+}
+
+window.showExportModal = function() {
+    const csv = generatePrecisionCSV();
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", `antigravity_precision_export_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+function generatePrecisionCSV() {
+    let csv = "Course,Degree,Keyword,GSC Clicks,Ads Impressions,Synergy,Rank,URL\n";
+    courses.forEach(c => {
+        const allKeywords = new Set([
+            ...c.gscKeywords.map(k => k.term),
+            ...c.adsKeywords.map(k => k.term)
+        ]);
+        
+        allKeywords.forEach(term => {
+            const gscK = c.gscKeywords.find(k => k.term === term);
+            const adsK = c.adsKeywords.find(k => k.term === term);
+            const rankK = c.rankingsKeywords.find(k => k.term === term);
+            
+            const clicks = gscK ? gscK.clicks : 0;
+            const impressions = adsK ? adsK.impressions : 0;
+            const synergy = (gscK && adsK) ? "YES" : "NO";
+            const rank = rankK ? rankK.rank : "---";
+            const url = rankK ? rankK.url : "---";
+            
+            csv += `"${c.name}","${c.degree}","${term}",${clicks},${impressions},${synergy},${rank},"${url}"\n`;
+        });
+    });
+    return csv;
 }
