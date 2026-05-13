@@ -9,6 +9,7 @@ const BRANDING = {
 
 let courses = [];
 let activeCourseId = null;
+let liveAdsContext = [];
 
 async function init() {
     initLanguage(); // Load language preference
@@ -1581,7 +1582,7 @@ async function togglePremiumTools() {
 }
 
 function hideAllViews() {
-    ['landing-view', 'dashboard-view', 'live-monitor-view', 'chess-view'].forEach(id => {
+    ['landing-view', 'dashboard-view', 'live-monitor-view', 'chess-view', 'music-hub-view'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.display = 'none';
     });
@@ -1628,6 +1629,40 @@ window.showLiveMonitor = async function() {
     } catch(e) {}
 
     renderMonitorRows();
+}
+
+window.renderMonitorRows = function() {
+    const body = document.getElementById('monitor-body');
+    if (!body) return;
+    
+    if (!liveAdsContext || liveAdsContext.length === 0) {
+        body.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:60px; color:var(--text-muted); opacity:0.6;">No active campaign data found in campaigns.json</td></tr>`;
+        return;
+    }
+
+    body.innerHTML = '';
+    liveAdsContext.forEach(c => {
+        const tr = document.createElement('tr');
+        const statusClass = (c.Status || '').toUpperCase() === 'ENABLED' ? 'match-tag' : 'gap-tag';
+        
+        // Formatting helpers
+        const fmtNum = (v) => (v || 0).toLocaleString();
+        const fmtEuro = (v) => (v || 0).toLocaleString() + '€';
+        const fmtCpa = (v) => (v || 0).toFixed(2) + '€';
+
+        tr.innerHTML = `
+            <td style="font-weight:700; color:white;">${c.Campaign}</td>
+            <td><span class="${statusClass}" style="font-size:10px; padding:2px 6px;">${c.Status}</span></td>
+            <td style="text-align:right; font-weight:600;">${fmtEuro(c.Budget)}</td>
+            <td style="text-align:right; color:var(--text-muted);">${fmtNum(c.Impressions)}</td>
+            <td style="text-align:right; color:var(--accent-primary); font-weight:600;">${fmtNum(c.Clicks)}</td>
+            <td style="text-align:right;">${fmtEuro(c.Cost)}</td>
+            <td style="text-align:right; font-weight:700;">${fmtNum(c.Conversions)}</td>
+            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${fmtCpa(c.CostPerConv)}</td>
+            <td style="text-align:right; opacity:0.8;">${c.CTR || '0%'}</td>
+        `;
+        body.appendChild(tr);
+    });
 }
 
 let currentAdsSort = { key: 'Campaign', asc: true };
@@ -2561,4 +2596,114 @@ window.executePrecisionExport = function() {
     
     hideExportModal();
     console.log(`[Antigravity] Comma-Separated Precision Export Complete: ${fileName}`);
+}
+
+/**
+ * MUSIC HUB ENGINE
+ */
+window.showMusicHub = function() {
+    hideAllViews();
+    // Auto-close sidebar on mobile
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.getElementById('mobile-overlay');
+    if (sidebar) sidebar.classList.remove('mobile-active');
+    if (overlay) overlay.classList.remove('active');
+    
+    const view = document.getElementById('music-hub-view');
+    if (view) view.style.display = 'block';
+    
+    const headerLeft = document.getElementById('dashboard-header-left');
+    if (headerLeft) headerLeft.style.visibility = 'visible';
+    const title = document.getElementById('active-course-title');
+    if (title) title.textContent = "Music Hub";
+    const desc = document.getElementById('active-course-desc');
+    if (desc) desc.textContent = "Antigravity Audio Suite";
+}
+
+window.searchMusic = function() {
+    const input = document.getElementById('music-search-input');
+    const query = input.value.trim();
+    if (!query) return;
+
+    const resultsGrid = document.getElementById('music-results');
+    resultsGrid.innerHTML = `
+        <div style="grid-column: 1/-1; text-align:center; padding:100px; color:var(--text-muted);">
+            <div class="ai-thinking">
+                <div class="thinking-dot"></div>
+                <div class="thinking-dot"></div>
+                <div class="thinking-dot"></div>
+                <span style="margin-left: 10px;">Searching YouTube for "${query}"...</span>
+            </div>
+        </div>
+    `;
+
+    // Strategy: Since we can't easily fetch YouTube API without a key client-side,
+    // we provide a few high-quality "Direct Hits" for known common queries (like Iceman)
+    // and then offer a "Global YouTube Search" result.
+    
+    setTimeout(() => {
+        resultsGrid.innerHTML = '';
+        
+        // Mocked results for demo - in a real app you'd hit a proxy or API
+        const matches = [
+            { id: 'FzG4uDgje3M', title: 'Im Iceman - Official Song', channel: 'Iceman Music', thumb: 'https://img.youtube.com/vi/FzG4uDgje3M/mqdefault.jpg' },
+            { id: 'dQw4w9WgXcQ', title: 'Never Gonna Give You Up', channel: 'Rick Astley', thumb: 'https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg' },
+            { id: 'kJQP7kiw5Fk', title: 'Despacito', channel: 'Luis Fonsi', thumb: 'https://img.youtube.com/vi/kJQP7kiw5Fk/mqdefault.jpg' }
+        ];
+
+        // If it's a real search, we use the Embed list trick for the first result
+        const mainCard = document.createElement('div');
+        mainCard.className = 'music-card';
+        mainCard.onclick = () => playMusicSearch(query);
+        mainCard.innerHTML = `
+            <div style="width:100%; aspect-ratio:16/9; background: linear-gradient(45deg, #FF0000, #222); display:flex; align-items:center; justify-content:center;">
+                <svg viewBox="0 0 24 24" width="60" height="60" fill="white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l6.393 4-6.393 4z"/></svg>
+            </div>
+            <div class="music-card-info">
+                <div class="music-card-title">Open YouTube Search Results: "${query}"</div>
+                <div class="music-card-channel">Direct Search Link</div>
+            </div>
+        `;
+        resultsGrid.appendChild(mainCard);
+
+        matches.forEach(m => {
+            const card = document.createElement('div');
+            card.className = 'music-card';
+            card.onclick = () => playMusic(m.id);
+            card.innerHTML = `
+                <img src="${m.thumb}" class="music-card-thumb" alt="thumbnail">
+                <div class="music-card-info">
+                    <div class="music-card-title">${m.title}</div>
+                    <div class="music-card-channel">${m.channel}</div>
+                </div>
+            `;
+            resultsGrid.appendChild(card);
+        });
+    }, 1000);
+}
+
+window.playMusic = function(videoId) {
+    const area = document.getElementById('music-player-area');
+    const frame = document.getElementById('youtube-player-frame');
+    area.style.display = 'block';
+    frame.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    
+    document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.playMusicSearch = function(query) {
+    const area = document.getElementById('music-player-area');
+    const frame = document.getElementById('youtube-player-frame');
+    area.style.display = 'block';
+    // The "Magic List" search embed trick
+    frame.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(query)}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    
+    document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.closeMusicPlayer = function() {
+    const area = document.getElementById('music-player-area');
+    const frame = document.getElementById('youtube-player-frame');
+    area.style.display = 'none';
+    frame.innerHTML = '';
 }
