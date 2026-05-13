@@ -2641,7 +2641,14 @@ function playMusic(id, title, artist, thumb) {
             height: '0',
             width: '0',
             videoId: id,
-            playerVars: { 'autoplay': 1, 'controls': 0 },
+            playerVars: { 
+                'autoplay': 1, 
+                'controls': 0,
+                'rel': 0,
+                'modestbranding': 1,
+                'iv_load_policy': 3,
+                'disablekb': 1
+            },
             events: {
                 'onReady': (event) => event.target.playVideo(),
                 'onStateChange': onPlayerStateChange
