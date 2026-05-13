@@ -233,34 +233,51 @@
                     <!-- Results here -->
                 </div>
 
-                <!-- Global Player Container (Fixed at Bottom) -->
-                <div id="global-player" class="player-container" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:800px; background:rgba(15,15,15,0.95); backdrop-filter:blur(20px); border:1px solid var(--accent-primary); border-radius:20px; padding:20px; z-index:9999; box-shadow:0 20px 50px rgba(0,0,0,0.5);">
-                    <div style="display:flex; align-items:center; gap:20px;">
-                        <img id="player-thumb" src="" style="width:60px; height:60px; border-radius:10px; object-fit:cover; border: 1px solid rgba(255,255,255,0.1);">
-                        <div style="flex:1; min-width: 0; overflow: hidden;">
+                <!-- Global Player Container (Minimalist Expandable) -->
+                <div id="global-player" class="player-container minimalist-player" style="display:none; position:fixed; bottom:20px; left:20px; z-index:9999;">
+                    <div class="player-content-wrapper" style="display:flex; align-items:center; gap:20px; background:rgba(15,15,15,0.95); backdrop-filter:blur(20px); border:1px solid var(--accent-primary); border-radius:15px; padding:10px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); width: 60px; height: 60px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <img id="player-thumb" src="" style="min-width:40px; width:40px; height:40px; border-radius:8px; object-fit:cover; border: 1px solid rgba(255,255,255,0.1);">
+                        
+                        <div class="player-expanded-info" style="flex:1; min-width: 300px; opacity: 0; visibility: hidden; transition: 0.3s; pointer-events: none;">
                             <div style="width: 100%; overflow: hidden;">
-                                <h4 id="player-title" style="margin:0; font-size:16px; font-weight: 800; color: #fff; white-space: nowrap; transition: 0.3s; text-shadow: 0 0 10px rgba(255,255,255,0.3);">Song Title</h4>
+                                <h4 id="player-title" style="margin:0; font-size:16px; font-weight: 800; color: #fff; white-space: nowrap; text-shadow: 0 0 10px rgba(255,255,255,0.3);">Song Title</h4>
                             </div>
                             <p id="player-artist" style="margin:4px 0 0; font-size:11px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px;">Artist</p>
                             
-                            <!-- Progress Bar -->
                             <div style="margin-top: 15px; display: flex; align-items: center; gap: 12px;">
-                                <span id="player-current-time" style="font-size: 10px; color: rgba(255,255,255,0.6); font-family: 'JetBrains Mono', monospace;">0:00</span>
+                                <span id="player-current-time" style="font-size: 10px; color: rgba(255,255,255,0.6); font-family: monospace;">0:00</span>
                                 <div id="player-progress-container" style="flex: 1; height: 6px; background: rgba(255,255,255,0.05); border-radius: 10px; cursor: pointer; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);" onclick="seekPlayer(event)">
-                                    <div id="player-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-primary), #00f2fe); border-radius: 10px; transition: width 0.1s linear; position: relative;">
-                                        <div style="position: absolute; right: 0; top: 0; height: 100%; width: 10px; background: white; filter: blur(4px); opacity: 0.5;"></div>
-                                    </div>
+                                    <div id="player-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-primary), #00f2fe); border-radius: 10px; transition: width 0.1s linear;"></div>
                                 </div>
-                                <span id="player-duration" style="font-size: 10px; color: rgba(255,255,255,0.6); font-family: 'JetBrains Mono', monospace;">0:00</span>
+                                <span id="player-duration" style="font-size: 10px; color: rgba(255,255,255,0.6); font-family: monospace;">0:00</span>
                             </div>
                         </div>
-                        <div id="yt-player-target" style="display:none;"></div>
-                        <div class="player-controls" style="display:flex; gap:15px; align-items:center;">
-                            <button onclick="toggleMusicPlayback()" id="play-pause-btn" style="background:white; color:black; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; font-size:20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255,255,255,0.2);">⏸</button>
-                            <button onclick="closeMusicPlayer()" style="background:rgba(255,255,255,0.1); border:none; color:white; padding:10px; border-radius:10px; cursor:pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Close</button>
+
+                        <div class="player-expanded-controls" style="display:flex; gap:15px; align-items:center; opacity: 0; visibility: hidden; transition: 0.3s; pointer-events: none;">
+                            <div id="yt-player-target" style="display:none;"></div>
+                            <button onclick="toggleMusicPlayback()" id="play-pause-btn" style="background:white; color:black; border:none; width:40px; height:40px; border-radius:50%; cursor:pointer; font-size:18px; display: flex; align-items: center; justify-content: center;">⏸</button>
+                            <button onclick="closeMusicPlayer()" style="background:rgba(255,255,255,0.1); border:none; color:white; padding:8px 12px; border-radius:8px; cursor:pointer; font-size: 10px; font-weight: 700; text-transform: uppercase;">Close</button>
                         </div>
                     </div>
                 </div>
+
+                <style>
+                    #global-player:hover .player-content-wrapper {
+                        width: 550px;
+                        height: 90px;
+                        padding: 20px;
+                    }
+                    #global-player:hover .player-expanded-info,
+                    #global-player:hover .player-expanded-controls {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                    }
+                    #global-player:hover #player-thumb {
+                        width: 50px;
+                        height: 50px;
+                    }
+                </style>
             </div>
 
             <div id="dashboard-view" style="display: none; padding-top: 20px;">
