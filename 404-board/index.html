@@ -44,6 +44,25 @@
             </div>
         </div>
 
+        <div class="server-status-bar" style="display: flex; justify-content: space-around; gap: 20px; margin-bottom: 20px; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+            <div class="server-item">
+                <div id="led-lusofona" class="led-diode yellow pulse" style="margin: 0 auto 10px;"></div>
+                <div style="font-size: 10px; font-weight: 800; letter-spacing: 1px; color: rgba(255,255,255,0.5);">LUSÓFONA</div>
+            </div>
+            <div class="server-item">
+                <div id="led-ipluso" class="led-diode yellow pulse" style="margin: 0 auto 10px;"></div>
+                <div style="font-size: 10px; font-weight: 800; letter-spacing: 1px; color: rgba(255,255,255,0.5);">IPLUSO</div>
+            </div>
+            <div class="server-item">
+                <div id="led-ismat" class="led-diode yellow pulse" style="margin: 0 auto 10px;"></div>
+                <div style="font-size: 10px; font-weight: 800; letter-spacing: 1px; color: rgba(255,255,255,0.5);">ISMAT</div>
+            </div>
+            <div class="server-item">
+                <div id="led-islagaia" class="led-diode yellow pulse" style="margin: 0 auto 10px;"></div>
+                <div style="font-size: 10px; font-weight: 800; letter-spacing: 1px; color: rgba(255,255,255,0.5);">ISLA GAIA</div>
+            </div>
+        </div>
+
         <div class="grid-header">
             <div class="col-led">STATUS</div>
             <div class="col-course">COURSE IDENTIFIER</div>
@@ -139,14 +158,20 @@
             if (loading) loading.textContent = t.loading;
         }
 
-        // Aggressive Cache Busting Loader
+        // Sequential Loader for Special and Main Data
         (function() {
-            const script = document.createElement('script');
-            script.src = 'telemetry.js?v=' + Date.now();
-            script.onload = () => {
-                checkTelemetry();
+            const special = document.createElement('script');
+            special.src = 'results_special.js?v=' + Date.now();
+            special.onload = () => {
+                window.specialData = window.telemetryData; // Capture special
+                const main = document.createElement('script');
+                main.src = 'results.js?v=' + Date.now();
+                main.onload = () => {
+                    checkTelemetry();
+                };
+                document.head.appendChild(main);
             };
-            document.head.appendChild(script);
+            document.head.appendChild(special);
         })();
 
         function checkTelemetry() {
@@ -170,11 +195,36 @@
                     txt.innerHTML = item.Institution || '';
                     return { ...item, Institution: txt.value };
                 });
+
+                // Handle Special LEDs
+                if (window.specialData) {
+                    updateServerLeds(window.specialData);
+                }
+
                 populateInstitutions(rawData);
                 applyFilters();
             } else {
                 setTimeout(checkTelemetry, 1000);
             }
+        }
+
+        function updateServerLeds(data) {
+            const mapping = {
+                'led-lusofona': 'www.ensinolusofona.pt',
+                'led-ipluso': 'www.ipluso.pt',
+                'led-ismat': 'www.ismat.pt',
+                'led-islagaia': 'www.islagaia.pt'
+            };
+
+            Object.keys(mapping).forEach(id => {
+                const urlPart = mapping[id];
+                const record = data.find(item => item.Url.toLowerCase().includes(urlPart));
+                const led = document.getElementById(id);
+                if (led && record) {
+                    const isOk = record.Status === 'OK';
+                    led.className = `led-diode ${isOk ? 'green glow' : 'red pulse-fast'}`;
+                }
+            });
         }
 
         function populateInstitutions(data) {
