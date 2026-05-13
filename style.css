@@ -2702,3 +2702,28 @@ body.light-mode .hero-text h2 {
 }
 
 
+/* Select and Option Visibility Fix */
+select {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #0a0c10; /* Force dark background */
+    color: white;
+    padding: 10px;
+}
+
+body.light-mode select {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    border-color: #cbd5e1;
+}
+
+body.light-mode select option {
+    background-color: #ffffff;
+    color: #0f172a;
+}
