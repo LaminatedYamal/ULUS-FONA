@@ -1683,6 +1683,12 @@ window.sortAds = function(key) {
             valB = cleanSortNum(valB);
         }
         
+        // Handle numeric fields that might be stored as numbers or strings
+        if (key === 'CostPerConv' || key === 'Cost/conv.' || key === 'cpa') {
+            valA = cleanSortNum(valA);
+            valB = cleanSortNum(valB);
+        }
+        
         if (valA < valB) return currentAdsSort.asc ? -1 : 1;
         if (valA > valB) return currentAdsSort.asc ? 1 : -1;
         return 0;
