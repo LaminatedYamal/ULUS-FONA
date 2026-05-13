@@ -2475,7 +2475,6 @@ body.light-mode .hero-text h2 {
 }
 
 
-/* Select and Option Visibility Fix */
 select {
     background-color: rgba(255, 255, 255, 0.05);
     color: white;
@@ -2490,13 +2489,197 @@ select option {
     padding: 10px;
 }
 
-body.light-mode select {
-    background-color: #f1f5f9;
-    color: #0f172a;
-    border-color: #cbd5e1;
+/* === MUSIC HUB STYLES === */
+.music-hub-container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-body.light-mode select option {
-    background-color: #ffffff;
-    color: #0f172a;
+.music-search-wrap {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.music-search-wrap input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 12px 15px;
+    font-size: 16px;
+    outline: none;
+}
+
+.music-search-btn {
+    background: var(--accent-primary);
+    color: black;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-search-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(var(--accent-primary-rgb), 0.4);
+}
+
+.music-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.music-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.music-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+}
+
+.music-card-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    background: #000;
+}
+
+.music-card-info {
+    padding: 15px;
+}
+
+.music-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.music-card-channel {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.player-wrapper {
+    position: relative;
+    width: 100%;
+    background: #000;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.close-player-btn {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 32px;
+    height: 32px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    z-index: 10;
+}
+
+/* === ACCOUNT & WALLET DROPDOWN === */
+.account-wallet-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.account-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    color: white;
+    padding: 0 15px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.account-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-primary);
+}
+
+.wallet-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 240px;
+    background: #0f1117;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.account-wallet-container:hover .wallet-dropdown {
+    display: flex;
+}
+
+.wallet-option {
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #e0e0e0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.wallet-option:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.wallet-option svg {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}
+
+/* Music Hub Sidebar Glow */
+#music-hub-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 200, 0.2);
+    border-color: rgba(255, 0, 200, 0.4);
 }
