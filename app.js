@@ -9,7 +9,6 @@ const BRANDING = {
 
 let courses = [];
 let activeCourseId = null;
-let liveAdsContext = [];
 
 async function init() {
     initLanguage(); // Load language preference
@@ -39,6 +38,7 @@ async function init() {
     if (rankingsUpload) rankingsUpload.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
     loadData(); 
+    initTheme();
     initGreeting();
     const savedTone = localStorage.getItem('hub_blob_tone');
     if (savedTone) {
@@ -64,6 +64,12 @@ async function init() {
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
     refreshModelVisibility();
+
+    // Load YT API for Music Hub
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
 function applyCustomBg() {
@@ -103,6 +109,24 @@ function initGreeting(nameOverride) {
     }
 }
 
+function initTheme() {
+    const saved = localStorage.getItem('antigravity_theme');
+    if (saved === 'light') {
+        document.body.classList.add('light-mode');
+        updateThemeIcons(true);
+    }
+}
+
+function toggleTheme() {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('antigravity_theme', isLight ? 'light' : 'dark');
+    updateThemeIcons(isLight);
+}
+
+function updateThemeIcons(isLight) {
+    document.querySelector('.sun-icon').style.display = isLight ? 'none' : 'block';
+    document.querySelector('.moon-icon').style.display = isLight ? 'block' : 'none';
+}
 
 const TRANSLATIONS = {
     en: {
@@ -318,6 +342,7 @@ function updateUILanguage() {
         'sync-btn': t["tip-sync"],
         'live-monitor-btn': t["tip-monitor"],
         'lang-toggle-btn': t["tip-lang"],
+        'theme-toggle-btn': t["tip-theme"],
         'account-btn': t["tip-account"]
     };
 
@@ -747,13 +772,6 @@ async function checkAuth() {
     } else {
         const display = document.getElementById('user-display-name');
         if (display) display.textContent = user;
-        
-        // MIGUEL-ONLY: Reveal the Precision Export tool
-        if (user.trim().toLowerCase() === 'miguel') {
-            const exportOption = document.getElementById('miguel-export-option');
-            if (exportOption) exportOption.style.display = 'flex';
-        }
-
         initGreeting(); // Update greeting immediately
         await fetchServerData();
         renderCourseList();
@@ -821,12 +839,6 @@ async function handleLogin() {
     }
 
     initGreeting(name); // Update greeting text right now with the actual name
-    
-    // Check for Miguel Export Permission immediately on login
-    if (name.trim().toLowerCase() === 'miguel') {
-        const exportOption = document.getElementById('miguel-export-option');
-        if (exportOption) exportOption.style.display = 'flex';
-    }
     
     document.getElementById('login-overlay').style.opacity = '0';
     setTimeout(() => {
@@ -1629,40 +1641,6 @@ window.showLiveMonitor = async function() {
     } catch(e) {}
 
     renderMonitorRows();
-}
-
-window.renderMonitorRows = function() {
-    const body = document.getElementById('monitor-body');
-    if (!body) return;
-    
-    if (!liveAdsContext || liveAdsContext.length === 0) {
-        body.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:60px; color:var(--text-muted); opacity:0.6;">No active campaign data found in campaigns.json</td></tr>`;
-        return;
-    }
-
-    body.innerHTML = '';
-    liveAdsContext.forEach(c => {
-        const tr = document.createElement('tr');
-        const statusClass = (c.Status || '').toUpperCase() === 'ENABLED' ? 'match-tag' : 'gap-tag';
-        
-        // Formatting helpers
-        const fmtNum = (v) => (v || 0).toLocaleString();
-        const fmtEuro = (v) => (v || 0).toLocaleString() + '€';
-        const fmtCpa = (v) => (v || 0).toFixed(2) + '€';
-
-        tr.innerHTML = `
-            <td style="font-weight:700; color:white;">${c.Campaign}</td>
-            <td><span class="${statusClass}" style="font-size:10px; padding:2px 6px;">${c.Status}</span></td>
-            <td style="text-align:right; font-weight:600;">${fmtEuro(c.Budget)}</td>
-            <td style="text-align:right; color:var(--text-muted);">${fmtNum(c.Impressions)}</td>
-            <td style="text-align:right; color:var(--accent-primary); font-weight:600;">${fmtNum(c.Clicks)}</td>
-            <td style="text-align:right;">${fmtEuro(c.Cost)}</td>
-            <td style="text-align:right; font-weight:700;">${fmtNum(c.Conversions)}</td>
-            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${fmtCpa(c.CostPerConv)}</td>
-            <td style="text-align:right; opacity:0.8;">${c.CTR || '0%'}</td>
-        `;
-        body.appendChild(tr);
-    });
 }
 
 let currentAdsSort = { key: 'Campaign', asc: true };
@@ -2506,104 +2484,45 @@ function formatAIResponse(text) {
     html = html.replace(/^\>\s+(.*$)/gim, '<blockquote>$1</blockquote>');
     html = html.replace(/\n/g, '<br>');
     return html;
-}
-
-/**
- * PRECISION EXPORT ENGINE (Miguel Only)
- */
-window.showExportModal = function() {
-    const modal = document.getElementById('export-modal');
-    if (!modal) return;
+}function renderMonitorRows() {
+    const body = document.getElementById('monitor-body');
+    if (!body) return;
     
-    // Populate Dropdowns from current data
-    const instSelect = document.getElementById('export-inst');
-    const degreeSelect = document.getElementById('export-degree');
-    
-    const institutions = [...new Set(courses.map(c => c.institution))].sort();
-    const degrees = [...new Set(courses.map(c => c.degree_type || 'Formações'))].sort();
-    
-    instSelect.innerHTML = `<option value="all">All Institutions</option>` + 
-        institutions.map(i => `<option value="${i}">${i}</option>`).join('');
-    
-    degreeSelect.innerHTML = `<option value="all">All Degrees</option>` + 
-        degrees.map(d => `<option value="${d}">${d}</option>`).join('');
-    
-    modal.style.display = 'flex';
-}
-
-window.hideExportModal = function() {
-    const modal = document.getElementById('export-modal');
-    if (modal) modal.style.display = 'none';
-}
-
-window.executePrecisionExport = function() {
-    const targetInst = document.getElementById('export-inst').value;
-    const targetDegree = document.getElementById('export-degree').value;
-    
-    const filtered = courses.filter(c => {
-        const instMatch = targetInst === 'all' || c.institution === targetInst;
-        const degreeMatch = targetDegree === 'all' || (c.degree_type || 'Formações') === targetDegree;
-        return instMatch && degreeMatch;
-    });
-
-    if (filtered.length === 0) {
-        alert("No data found for the selected filters.");
+    if (!liveAdsContext || liveAdsContext.length === 0) {
+        body.innerHTML = `<tr><td colspan="9" style="text-align:center; padding:60px; color:var(--text-muted); opacity:0.6;">No active campaign data found in campaigns.json</td></tr>`;
         return;
     }
 
-    const timestamp = new Date().toISOString().slice(0,10);
-    
-    // --- TABLE 1: GSC INTEL (Grouped by Course) ---
-    let csv = "TABLE 1: SEARCH CONSOLE (ORGANIC)\n";
-    csv += "Institution,Degree,Course Name,URL,GSC Keywords (Comma Separated)\n";
-    filtered.forEach(c => {
-        const kwList = (c.gscKeywords || []).map(k => k.term).join(', ');
-        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
-    });
-
-    // --- TABLE 2: ADS INTEL (Grouped by Course) ---
-    csv += "\nTABLE 2: GOOGLE ADS (ACTIVE)\n";
-    csv += "Institution,Degree,Course Name,URL,Ads Keywords (Comma Separated)\n";
-    filtered.forEach(c => {
-        const kwList = (c.adsKeywords || []).map(k => k.term).join(', ');
-        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
-    });
-
-    // --- TABLE 3: UNIFIED STRATEGIC MASTER LIST (GSC + ADS) ---
-    csv += "\nTABLE 3: UNIFIED STRATEGIC MASTER LIST (FULL GSC + ADS CONSOLIDATION)\n";
-    csv += "Institution,Degree,Course Name,URL,Master Keyword List (GSC + Ads)\n";
-    filtered.forEach(c => {
-        const gscTerms = (c.gscKeywords || []).map(k => k.term.trim());
-        const adsTerms = (c.adsKeywords || []).map(k => k.term.trim());
+    body.innerHTML = '';
+    liveAdsContext.forEach(row => {
+        const tr = document.createElement('tr');
+        const status = row.Status || row.status || 'Unknown';
+        const statusColor = status.toLowerCase().includes('enabled') ? 'var(--success)' : 'var(--text-muted)';
         
-        // Stack lists directly as requested - no deduplication
-        const masterList = [...gscTerms, ...adsTerms].join(', ');
-        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${masterList}"\n`;
+        tr.innerHTML = `
+            <td style="font-weight:600; color:white;">${row.Campaign || row.campaign || '---'}</td>
+            <td><span style="color:${statusColor}; font-size:11px; font-weight:700;">● ${status.toUpperCase()}</span></td>
+            <td style="text-align:right;">${row.Budget || row.budget || '---'}</td>
+            <td style="text-align:right;">${(row.Impressions || row.impressions || 0).toLocaleString()}</td>
+            <td style="text-align:right;">${(row.Clicks || row.clicks || 0).toLocaleString()}</td>
+            <td style="text-align:right; font-weight:600;">${row.Cost || row.cost || '---'}</td>
+            <td style="text-align:right;">${row.Conversions || row.conversions || '0'}</td>
+            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${row['Cost/conv.'] || row.cpa || '---'}</td>
+            <td style="text-align:right; opacity:0.8;">${row.CTR || row.ctr || '---'}</td>
+        `;
+        body.appendChild(tr);
     });
-
-    // Create Download with UTF-8 BOM for Excel
-    const blob = new Blob(["\ufeff" + csv], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement("a");
-    const fileName = `Antigravity_Strategic_Export_${targetInst.replace(/\s+/g, '_')}_${timestamp}.csv`;
-    
-    const url = URL.createObjectURL(blob);
-    link.setAttribute("href", url);
-    link.setAttribute("download", fileName);
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    hideExportModal();
-    console.log(`[Antigravity] Comma-Separated Precision Export Complete: ${fileName}`);
 }
 
-/**
- * MUSIC HUB ENGINE
- */
+// MUSIC HUB LOGIC
+let ytPlayer = null;
+
+window.onYouTubeIframeAPIReady = function() {
+    console.log("[Antigravity] YT API Ready");
+}
+
 window.showMusicHub = function() {
     hideAllViews();
-    // Auto-close sidebar on mobile
     const sidebar = document.querySelector('.sidebar');
     const overlay = document.getElementById('mobile-overlay');
     if (sidebar) sidebar.classList.remove('mobile-active');
@@ -2617,93 +2536,100 @@ window.showMusicHub = function() {
     const title = document.getElementById('active-course-title');
     if (title) title.textContent = "Music Hub";
     const desc = document.getElementById('active-course-desc');
-    if (desc) desc.textContent = "Antigravity Audio Suite";
+    if (desc) desc.textContent = "High-Performance Work Beats";
 }
 
-window.searchMusic = function() {
-    const input = document.getElementById('music-search-input');
-    const query = input.value.trim();
+window.searchMusic = async function() {
+    const query = document.getElementById('music-search-input').value;
     if (!query) return;
-
-    const resultsGrid = document.getElementById('music-results');
-    resultsGrid.innerHTML = `
-        <div style="grid-column: 1/-1; text-align:center; padding:100px; color:var(--text-muted);">
-            <div class="ai-thinking">
-                <div class="thinking-dot"></div>
-                <div class="thinking-dot"></div>
-                <div class="thinking-dot"></div>
-                <span style="margin-left: 10px;">Searching YouTube for "${query}"...</span>
-            </div>
-        </div>
-    `;
-
-    // Strategy: Since we can't easily fetch YouTube API without a key client-side,
-    // we provide a few high-quality "Direct Hits" for known common queries (like Iceman)
-    // and then offer a "Global YouTube Search" result.
     
-    setTimeout(() => {
-        resultsGrid.innerHTML = '';
+    const resultsContainer = document.getElementById('music-results');
+    resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">🔍 Scanning the sound waves...</div>';
+    
+    try {
+        // Using a public search proxy for YT (or just direct if allowed, usually needs API but we'll try a fallback)
+        // For this implementation, we use the YouTube Data API search logic via a worker or simple fetch
+        const resp = await fetch(`https://pipedapi.kavin.rocks/search?q=${encodeURIComponent(query)}&filter=videos`);
+        const data = await resp.json();
         
-        // Mocked results for demo - in a real app you'd hit a proxy or API
-        const matches = [
-            { id: 'FzG4uDgje3M', title: 'Im Iceman - Official Song', channel: 'Iceman Music', thumb: 'https://img.youtube.com/vi/FzG4uDgje3M/mqdefault.jpg' },
-            { id: 'dQw4w9WgXcQ', title: 'Never Gonna Give You Up', channel: 'Rick Astley', thumb: 'https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg' },
-            { id: 'kJQP7kiw5Fk', title: 'Despacito', channel: 'Luis Fonsi', thumb: 'https://img.youtube.com/vi/kJQP7kiw5Fk/mqdefault.jpg' }
-        ];
+        resultsContainer.innerHTML = '';
+        const items = data.items || [];
+        
+        if (items.length === 0) {
+            resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">No tracks found. Try another vibe.</div>';
+            return;
+        }
 
-        // If it's a real search, we use the Embed list trick for the first result
-        const mainCard = document.createElement('div');
-        mainCard.className = 'music-card';
-        mainCard.onclick = () => playMusicSearch(query);
-        mainCard.innerHTML = `
-            <div style="width:100%; aspect-ratio:16/9; background: linear-gradient(45deg, #FF0000, #222); display:flex; align-items:center; justify-content:center;">
-                <svg viewBox="0 0 24 24" width="60" height="60" fill="white"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l6.393 4-6.393 4z"/></svg>
-            </div>
-            <div class="music-card-info">
-                <div class="music-card-title">Open YouTube Search Results: "${query}"</div>
-                <div class="music-card-channel">Direct Search Link</div>
-            </div>
-        `;
-        resultsGrid.appendChild(mainCard);
-
-        matches.forEach(m => {
+        items.slice(0, 12).forEach(video => {
             const card = document.createElement('div');
             card.className = 'music-card';
-            card.onclick = () => playMusic(m.id);
+            const vidId = video.url.split('v=')[1];
+            
             card.innerHTML = `
-                <img src="${m.thumb}" class="music-card-thumb" alt="thumbnail">
-                <div class="music-card-info">
-                    <div class="music-card-title">${m.title}</div>
-                    <div class="music-card-channel">${m.channel}</div>
+                <div class="music-thumb-container">
+                    <img src="${video.thumbnail}" class="music-thumb">
+                    <div class="play-overlay">
+                        <div class="play-icon-circle">▶</div>
+                    </div>
+                </div>
+                <div class="music-info">
+                    <h4>${video.title}</h4>
+                    <p>${video.uploaderName}</p>
                 </div>
             `;
-            resultsGrid.appendChild(card);
+            
+            card.onclick = () => playMusic(vidId, video.title, video.uploaderName, video.thumbnail);
+            resultsContainer.appendChild(card);
         });
-    }, 1000);
+    } catch (e) {
+        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">Error connecting to Music Hub.</div>';
+    }
 }
 
-window.playMusic = function(videoId) {
-    const area = document.getElementById('music-player-area');
-    const frame = document.getElementById('youtube-player-frame');
-    area.style.display = 'block';
-    frame.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+function playMusic(id, title, artist, thumb) {
+    const player = document.getElementById('global-player');
+    player.style.display = 'block';
     
-    document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('player-thumb').src = thumb;
+    document.getElementById('player-title').textContent = title;
+    document.getElementById('player-artist').textContent = artist;
+    
+    if (ytPlayer) {
+        ytPlayer.loadVideoById(id);
+    } else {
+        ytPlayer = new YT.Player('yt-player-target', {
+            height: '0',
+            width: '0',
+            videoId: id,
+            playerVars: { 'autoplay': 1, 'controls': 0 },
+            events: {
+                'onReady': (event) => event.target.playVideo(),
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
 }
 
-window.playMusicSearch = function(query) {
-    const area = document.getElementById('music-player-area');
-    const frame = document.getElementById('youtube-player-frame');
-    area.style.display = 'block';
-    // The "Magic List" search embed trick
-    frame.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(query)}&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-    
-    document.querySelector('.main-content').scrollTo({ top: 0, behavior: 'smooth' });
+function onPlayerStateChange(event) {
+    const btn = document.getElementById('play-pause-btn');
+    if (event.data === YT.PlayerState.PLAYING) {
+        btn.textContent = '⏸';
+    } else {
+        btn.textContent = '▶';
+    }
+}
+
+window.toggleMusicPlayback = function() {
+    if (!ytPlayer) return;
+    const state = ytPlayer.getPlayerState();
+    if (state === YT.PlayerState.PLAYING) {
+        ytPlayer.pauseVideo();
+    } else {
+        ytPlayer.playVideo();
+    }
 }
 
 window.closeMusicPlayer = function() {
-    const area = document.getElementById('music-player-area');
-    const frame = document.getElementById('youtube-player-frame');
-    area.style.display = 'none';
-    frame.innerHTML = '';
+    if (ytPlayer) ytPlayer.stopVideo();
+    document.getElementById('global-player').style.display = 'none';
 }
