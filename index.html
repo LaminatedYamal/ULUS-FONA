@@ -233,17 +233,26 @@
                 </div>
 
                 <!-- Global Player Container (Fixed at Bottom) -->
-                <div id="global-player" class="player-container" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:800px; background:rgba(15,15,15,0.95); backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.1); border-radius:20px; padding:20px; z-index:9999; box-shadow:0 20px 50px rgba(0,0,0,0.5);">
+                <div id="global-player" class="player-container" style="display:none; position:fixed; bottom:20px; left:50%; transform:translateX(-50%); width:90%; max-width:800px; background:rgba(15,15,15,0.95); backdrop-filter:blur(20px); border:1px solid var(--accent-primary); border-radius:20px; padding:20px; z-index:9999; box-shadow:0 20px 50px rgba(0,0,0,0.5);">
                     <div style="display:flex; align-items:center; gap:20px;">
-                        <img id="player-thumb" src="" style="width:60px; height:60px; border-radius:10px; object-fit:cover;">
-                        <div style="flex:1;">
-                            <h4 id="player-title" style="margin:0; font-size:16px;">Song Title</h4>
-                            <p id="player-artist" class="text-muted" style="margin:5px 0 0; font-size:13px;">Artist</p>
+                        <img id="player-thumb" src="" style="width:60px; height:60px; border-radius:10px; object-fit:cover; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="flex:1; min-width: 0;">
+                            <h4 id="player-title" style="margin:0; font-size:15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: white;">Song Title</h4>
+                            <p id="player-artist" class="text-muted" style="margin:5px 0 0; font-size:12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Artist</p>
+                            
+                            <!-- Progress Bar -->
+                            <div style="margin-top: 12px; display: flex; align-items: center; gap: 10px;">
+                                <span id="player-current-time" style="font-size: 10px; color: var(--text-muted); font-family: monospace;">0:00</span>
+                                <div id="player-progress-container" style="flex: 1; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; cursor: pointer; position: relative;" onclick="seekPlayer(event)">
+                                    <div id="player-progress-bar" style="width: 0%; height: 100%; background: var(--accent-primary); border-radius: 2px; transition: width 0.1s linear;"></div>
+                                </div>
+                                <span id="player-duration" style="font-size: 10px; color: var(--text-muted); font-family: monospace;">0:00</span>
+                            </div>
                         </div>
                         <div id="yt-player-target" style="display:none;"></div>
                         <div class="player-controls" style="display:flex; gap:15px; align-items:center;">
-                            <button onclick="toggleMusicPlayback()" id="play-pause-btn" style="background:white; color:black; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; font-size:20px;">⏸</button>
-                            <button onclick="closeMusicPlayer()" style="background:rgba(255,255,255,0.1); border:none; color:white; padding:10px; border-radius:10px; cursor:pointer;">Close</button>
+                            <button onclick="toggleMusicPlayback()" id="play-pause-btn" style="background:white; color:black; border:none; width:45px; height:45px; border-radius:50%; cursor:pointer; font-size:20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255,255,255,0.2);">⏸</button>
+                            <button onclick="closeMusicPlayer()" style="background:rgba(255,255,255,0.1); border:none; color:white; padding:10px; border-radius:10px; cursor:pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Close</button>
                         </div>
                     </div>
                 </div>
