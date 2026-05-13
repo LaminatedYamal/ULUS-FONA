@@ -224,7 +224,7 @@
         }
         
         function updateServerLeds(data) {
-            console.log("[404 Board] Updating LEDs with data:", data);
+            console.log("[404 Board] Attempting LED update with", data.length, "records");
             const mapping = {
                 'led-lusofona': 'ensinolusofona.pt',
                 'led-ipluso': 'ipluso.pt',
@@ -234,14 +234,19 @@
 
             Object.keys(mapping).forEach(id => {
                 const urlPart = mapping[id];
-                const record = data.find(item => item.Url.toLowerCase().includes(urlPart));
+                // More aggressive search
+                const record = data.find(item => (item.Url || '').toLowerCase().indexOf(urlPart) !== -1);
                 const led = document.getElementById(id);
-                if (led && record) {
-                    const isOk = record.Status === 'OK' || record.StatusCode === 200;
-                    console.log(`[404 Board] LED ${id} status: ${isOk ? 'OK' : 'DOWN'}`);
-                    led.className = `led-diode ${isOk ? 'green glow' : 'red pulse-fast'}`;
-                } else {
-                    console.warn(`[404 Board] No record found for ${id} (part: ${urlPart})`);
+                
+                if (led) {
+                    if (record) {
+                        const isOk = record.Status === 'OK' || record.StatusCode === 200 || record.StatusCode === "200";
+                        led.className = `led-diode ${isOk ? 'green glow' : 'red pulse-fast'}`;
+                        console.log(`[404 Board] ${id} matched ${record.Url} -> ${isOk ? 'GREEN' : 'RED'}`);
+                    } else {
+                        console.warn(`[404 Board] ${id} (part: ${urlPart}) NO MATCH FOUND`);
+                        // Keep yellow to indicate "Unknown/Connecting"
+                    }
                 }
             });
         }
