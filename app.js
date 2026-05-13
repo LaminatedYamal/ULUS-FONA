@@ -2616,13 +2616,19 @@ window.searchMusic = async function() {
             console.log(`[Music Hub] Trying instance: ${instance}`);
             const queryUrl = `${instance}/search?q=${encodeURIComponent(query)}`;
             
-            // Try direct first
+            // 1. Try Direct
             let resp = await fetch(queryUrl);
             
-            // If failed or blocked, try proxy
+            // 2. Fallback to AllOrigins
             if (!resp.ok) {
-                console.log(`[Music Hub] Direct failed, trying proxy for ${instance}`);
+                console.log(`[Music Hub] Direct failed, trying AllOrigins for ${instance}`);
                 resp = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(queryUrl)}`);
+            }
+
+            // 3. Fallback to CorsProxy.io
+            if (!resp.ok) {
+                console.log(`[Music Hub] AllOrigins failed, trying CorsProxy.io for ${instance}`);
+                resp = await fetch(`https://corsproxy.io/?${encodeURIComponent(queryUrl)}`);
             }
 
             if (!resp.ok) continue;
