@@ -2525,7 +2525,6 @@ window.executePrecisionExport = function() {
     const targetInst = document.getElementById('export-inst').value;
     const targetDegree = document.getElementById('export-degree').value;
     
-    // Filter courses based on selection
     const filtered = courses.filter(c => {
         const instMatch = targetInst === 'all' || c.institution === targetInst;
         const degreeMatch = targetDegree === 'all' || (c.degree_type || 'Formações') === targetDegree;
@@ -2537,40 +2536,50 @@ window.executePrecisionExport = function() {
         return;
     }
 
-    // Prepare CSV Structure
-    let csv = "TABLE 1: SEARCH CONSOLE (ORGANIC)\n";
-    csv += "Institution,Degree,Course,Keyword,Clicks,Impressions\n";
+    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
+    const timestamp = new Date().toISOString().slice(0,10);
+    
+    // --- TABLE 1: GSC ONLY (Grouped by Course) ---
+    let csv = "TABLE 1: SEARCH CONSOLE (ORGANIC - GROUPED BY COURSE)\n";
+    csv += "Institution,Degree,Course,URL,Organic Keywords List\n";
     filtered.forEach(c => {
-        (c.gscKeywords || []).forEach(k => {
-            csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${k.term}",${k.clicks || 0},${k.impressions || 0}\n`;
-        });
+        const kwList = (c.gscKeywords || []).map(k => k.term).join('; ');
+        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
     });
 
-    csv += "\nTABLE 2: GOOGLE ADS (ACTIVE)\n";
-    csv += "Institution,Degree,Course,Keyword,Metric\n";
+    // --- TABLE 2: ADS ONLY (Grouped by Course) ---
+    csv += "\nTABLE 2: GOOGLE ADS (ACTIVE - GROUPED BY COURSE)\n";
+    csv += "Institution,Degree,Course,URL,Ads Keywords List\n";
     filtered.forEach(c => {
-        (c.adsKeywords || []).forEach(k => {
-            csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${k.term}",${k.clicks || k.impressions || 0}\n`;
-        });
+        const kwList = (c.adsKeywords || []).map(k => k.term).join('; ');
+        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
     });
 
-    csv += "\nTABLE 3: SCHEMA SYNERGY MERGE (GSC + ADS)\n";
-    csv += "Institution,Degree,Course,Keyword,Organic_Clicks,Ads_Presence\n";
+    // --- TABLE 3: SCHEMA SYNERGY MERGE (GSC + ADS) ---
+    csv += "\nTABLE 3: SCHEMA SYNERGY MERGE (GROUPED BY COURSE)\n";
+    csv += "Institution,Degree,Course,URL,SYNERGY KEYWORDS (IN BOTH),ORGANIC ONLY KEYWORDS\n";
     filtered.forEach(c => {
         const gscTerms = (c.gscKeywords || []);
         const adsTerms = (c.adsKeywords || []).map(k => k.term.toLowerCase().trim());
         
+        const synergy = [];
+        const organicOnly = [];
+        
         gscTerms.forEach(k => {
-            const hasAds = adsTerms.includes(k.term.toLowerCase().trim());
-            csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${k.term}",${k.clicks || 0},"${hasAds ? 'YES' : 'NO'}"\n`;
+            if (adsTerms.includes(k.term.toLowerCase().trim())) {
+                synergy.push(k.term);
+            } else {
+                organicOnly.push(k.term);
+            }
         });
+        
+        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${synergy.join('; ')}","${organicOnly.join('; ')}"\n`;
     });
 
     // Create Download
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const blob = new Blob(["\ufeff" + csv], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
-    const timestamp = new Date().toISOString().slice(0,10);
-    const fileName = `Antigravity_Export_${targetInst.replace(/\s+/g, '_')}_${timestamp}.csv`;
+    const fileName = `Antigravity_Strategic_Export_${targetInst.replace(/\s+/g, '_')}_${timestamp}.csv`;
     
     const url = URL.createObjectURL(blob);
     link.setAttribute("href", url);
@@ -2581,5 +2590,5 @@ window.executePrecisionExport = function() {
     document.body.removeChild(link);
     
     hideExportModal();
-    console.log(`[Antigravity] Precision Export Complete: ${fileName}`);
+    console.log(`[Antigravity] Precision Left-to-Right Export Complete: ${fileName}`);
 }
