@@ -217,9 +217,15 @@
                     <p class="text-muted">High-performance soundtracks for your SEO deep-dives</p>
                 </div>
                 
-                <div class="music-search-container" style="display:flex; gap:10px; margin-bottom:40px;">
-                    <input type="text" id="music-search-input" placeholder="Search song or artist..." style="flex:1; padding:15px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; font-size:16px;">
-                    <button onclick="searchMusic()" class="sync-btn" style="width:auto; padding:0 30px;">Search</button>
+                <div class="music-search-container" style="display:flex; flex-direction: column; gap:15px; margin-bottom:40px; background: rgba(255,255,255,0.03); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="display:flex; gap:10px;">
+                        <input type="text" id="music-search-input" placeholder="Search song or artist..." style="flex:1; padding:15px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:white; font-size:16px;">
+                        <button onclick="searchMusic()" class="sync-btn" style="width:auto; padding:0 30px;">Search</button>
+                    </div>
+                    <div style="display:flex; gap:10px; align-items: center; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.05);">
+                        <input type="text" id="direct-yt-id" placeholder="Paste YouTube Link or ID here..." style="flex:1; padding:12px; border-radius:10px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05); color:#aaa; font-size:14px;">
+                        <button onclick="playDirectYT()" class="nav-degree-btn" style="width:auto; margin:0; padding:10px 20px; font-size:12px; border-color: rgba(255,255,255,0.2);">Play Direct</button>
+                    </div>
                 </div>
 
                 <div id="music-results" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:25px;">
@@ -581,6 +587,6 @@
         </div>
     </div>
 
-    <script src="app.js?v=v102_final_clean"></script>
+    <script src="app.js?v=v103_music_direct"></script>
 </body>
 </html>
