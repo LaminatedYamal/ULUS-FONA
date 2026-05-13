@@ -2536,28 +2536,27 @@ window.executePrecisionExport = function() {
         return;
     }
 
-    const t = TRANSLATIONS[currentLang] || TRANSLATIONS['en'];
     const timestamp = new Date().toISOString().slice(0,10);
     
-    // --- TABLE 1: GSC ONLY (Grouped by Course) ---
-    let csv = "TABLE 1: SEARCH CONSOLE (ORGANIC - GROUPED BY COURSE)\n";
-    csv += "Institution,Degree,Course,URL,Organic Keywords List\n";
+    // --- TABLE 1: GSC INTEL (Grouped by Course) ---
+    let csv = "TABLE 1: SEARCH CONSOLE (ORGANIC)\n";
+    csv += "Institution,Degree,Course Name,URL,GSC Keywords (Comma Separated)\n";
     filtered.forEach(c => {
-        const kwList = (c.gscKeywords || []).map(k => k.term).join('; ');
+        const kwList = (c.gscKeywords || []).map(k => k.term).join(', ');
         csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
     });
 
-    // --- TABLE 2: ADS ONLY (Grouped by Course) ---
-    csv += "\nTABLE 2: GOOGLE ADS (ACTIVE - GROUPED BY COURSE)\n";
-    csv += "Institution,Degree,Course,URL,Ads Keywords List\n";
+    // --- TABLE 2: ADS INTEL (Grouped by Course) ---
+    csv += "\nTABLE 2: GOOGLE ADS (ACTIVE)\n";
+    csv += "Institution,Degree,Course Name,URL,Ads Keywords (Comma Separated)\n";
     filtered.forEach(c => {
-        const kwList = (c.adsKeywords || []).map(k => k.term).join('; ');
+        const kwList = (c.adsKeywords || []).map(k => k.term).join(', ');
         csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${kwList}"\n`;
     });
 
-    // --- TABLE 3: SCHEMA SYNERGY MERGE (GSC + ADS) ---
-    csv += "\nTABLE 3: SCHEMA SYNERGY MERGE (GROUPED BY COURSE)\n";
-    csv += "Institution,Degree,Course,URL,SYNERGY KEYWORDS (IN BOTH),ORGANIC ONLY KEYWORDS\n";
+    // --- TABLE 3: SYNERGY MERGE (GSC + ADS) ---
+    csv += "\nTABLE 3: SYNERGY MERGE (ORGANIC vs ACTIVE SYNERGY)\n";
+    csv += "Institution,Degree,Course Name,URL,SYNERGY KEYWORDS (Active in Both),ORGANIC ONLY KEYWORDS\n";
     filtered.forEach(c => {
         const gscTerms = (c.gscKeywords || []);
         const adsTerms = (c.adsKeywords || []).map(k => k.term.toLowerCase().trim());
@@ -2573,10 +2572,10 @@ window.executePrecisionExport = function() {
             }
         });
         
-        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${synergy.join('; ')}","${organicOnly.join('; ')}"\n`;
+        csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${synergy.join(', ')}","${organicOnly.join(', ')}"\n`;
     });
 
-    // Create Download
+    // Create Download with UTF-8 BOM for Excel
     const blob = new Blob(["\ufeff" + csv], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
     const fileName = `Antigravity_Strategic_Export_${targetInst.replace(/\s+/g, '_')}_${timestamp}.csv`;
@@ -2590,5 +2589,5 @@ window.executePrecisionExport = function() {
     document.body.removeChild(link);
     
     hideExportModal();
-    console.log(`[Antigravity] Precision Left-to-Right Export Complete: ${fileName}`);
+    console.log(`[Antigravity] Comma-Separated Precision Export Complete: ${fileName}`);
 }
