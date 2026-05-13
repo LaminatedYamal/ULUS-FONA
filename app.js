@@ -2892,7 +2892,7 @@ function generatePrecisionCSV(filterInst = 'all', filterDegree = 'all') {
     return csv;
 }
 
-window.playDirectYT = function() {
+window.playDirectYT = async function() {
     let input = document.getElementById('direct-yt-id').value.trim();
     if (!input) return;
     
@@ -2903,5 +2903,15 @@ window.playDirectYT = function() {
         videoId = input.split('be/')[1].split('?')[0];
     }
     
-    playMusic(videoId, "Direct Stream", "YouTube", `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`);
+    // Attempt to fetch title from YouTube OEmbed
+    let title = "Direct Stream";
+    let artist = "YouTube";
+    try {
+        const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
+        const data = await resp.json();
+        if (data.title) title = data.title;
+        if (data.author_name) artist = data.author_name;
+    } catch(e) {}
+
+    playMusic(videoId, title, artist, `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`);
 }
