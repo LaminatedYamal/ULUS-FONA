@@ -170,17 +170,24 @@
 
         async function initBoard() {
             try {
-                // Try special data first
+                console.log("[404 Board] Starting data ingestion...");
+                
+                // 1. Load Special Data (Toplinks)
                 try {
                     await loadScript('results_special.js');
-                    window.specialData = window.telemetryData;
-                } catch(e) { console.warn("results_special.js load skipped"); }
+                    if (window.telemetryData) {
+                        window.specialData = [...window.telemetryData];
+                        console.log("[404 Board] Captured specialData:", window.specialData.length);
+                        window.telemetryData = null; // Clear to avoid confusion
+                    }
+                } catch(e) { console.error("[404 Board] results_special.js failed"); }
 
-                // Try results.js
+                // 2. Load Main Data (Courses)
                 try {
                     await loadScript('results.js');
+                    console.log("[404 Board] Loaded main telemetryData:", window.telemetryData?.length);
                 } catch(e) {
-                    console.warn("results.js failed, trying telemetry.js");
+                    console.warn("[404 Board] results.js failed, trying fallback");
                     await loadScript('telemetry.js');
                 }
                 
@@ -217,11 +224,12 @@
         }
         
         function updateServerLeds(data) {
+            console.log("[404 Board] Updating LEDs with data:", data);
             const mapping = {
-                'led-lusofona': 'www.ensinolusofona.pt',
-                'led-ipluso': 'www.ipluso.pt',
-                'led-ismat': 'www.ismat.pt',
-                'led-islagaia': 'www.islagaia.pt'
+                'led-lusofona': 'ensinolusofona.pt',
+                'led-ipluso': 'ipluso.pt',
+                'led-ismat': 'ismat.pt',
+                'led-islagaia': 'islagaia.pt'
             };
 
             Object.keys(mapping).forEach(id => {
@@ -229,8 +237,11 @@
                 const record = data.find(item => item.Url.toLowerCase().includes(urlPart));
                 const led = document.getElementById(id);
                 if (led && record) {
-                    const isOk = record.Status === 'OK';
+                    const isOk = record.Status === 'OK' || record.StatusCode === 200;
+                    console.log(`[404 Board] LED ${id} status: ${isOk ? 'OK' : 'DOWN'}`);
                     led.className = `led-diode ${isOk ? 'green glow' : 'red pulse-fast'}`;
+                } else {
+                    console.warn(`[404 Board] No record found for ${id} (part: ${urlPart})`);
                 }
             });
         }
