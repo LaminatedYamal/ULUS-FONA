@@ -2593,8 +2593,10 @@ window.searchMusic = async function() {
     
     const instances = [
         'https://pipedapi.kavin.rocks',
-        'https://api-piped.mha.fi',
-        'https://pipedapi.tokyo.io',
+        'https://api.piped.privacydev.net',
+        'https://pipedapi.mha.fi',
+        'https://piped-api.lunar.icu',
+        'https://pipedapi.synced.cloud',
         'https://piped-api.garudalinux.org',
         'https://pipedapi.rivo.pw',
         'https://pipedapi.adminforge.de',
@@ -2608,7 +2610,7 @@ window.searchMusic = async function() {
         if (success) break;
         try {
             console.log(`[Music Hub] Trying instance: ${instance}`);
-            const resp = await fetch(`${instance}/search?q=${encodeURIComponent(query)}&filter=videos`);
+            const resp = await fetch(`${instance}/search?q=${encodeURIComponent(query)}`);
             if (!resp.ok) continue;
             
             const data = await resp.json();
