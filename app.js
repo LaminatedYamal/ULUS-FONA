@@ -2769,3 +2769,17 @@ function generatePrecisionCSV(filterInst = 'all', filterDegree = 'all') {
     });
     return csv;
 }
+
+window.playDirectYT = function() {
+    let input = document.getElementById('direct-yt-id').value.trim();
+    if (!input) return;
+    
+    let videoId = input;
+    if (input.includes('v=')) {
+        videoId = input.split('v=')[1].split('&')[0];
+    } else if (input.includes('be/')) {
+        videoId = input.split('be/')[1].split('?')[0];
+    }
+    
+    playMusic(videoId, "Direct Stream", "YouTube", `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`);
+}
