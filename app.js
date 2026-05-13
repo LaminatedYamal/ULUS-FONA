@@ -1167,6 +1167,15 @@ function getContrastColor(hex) {
     return brightness > 125 ? '#000000' : '#ffffff';
 }
 
+function hexToRgb(hex) {
+    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
+}
+
 function detectDelimiter(line) {
     if (line.includes('\t')) return '\t';
     if (line.includes(';')) return ';';
@@ -2557,7 +2566,12 @@ window.searchMusic = async function() {
     const instances = [
         'https://pipedapi.kavin.rocks',
         'https://api-piped.mha.fi',
+        'https://pipedapi.tokyo.io',
         'https://piped-api.garudalinux.org',
+        'https://pipedapi.rivo.pw',
+        'https://pipedapi.adminforge.de',
+        'https://pipedapi.astartes.nl',
+        'https://pipedapi.dotify.no',
         'https://pipedapi.leptons.xyz'
     ];
 
@@ -2661,21 +2675,79 @@ window.closeMusicPlayer = function() {
 }
 
 window.showExportModal = function() {
-    const csv = generatePrecisionCSV();
+    const modal = document.getElementById('export-modal');
+    if (!modal) return;
+    
+    // Populate Institutions
+    const instSelect = document.getElementById('export-inst');
+    const institutions = [...new Set(courses.map(c => c.institution))].sort();
+    instSelect.innerHTML = '<option value="all">--- ALL INSTITUTIONS ---</option>';
+    institutions.forEach(inst => {
+        const opt = document.createElement('option');
+        opt.value = inst;
+        opt.textContent = inst;
+        instSelect.appendChild(opt);
+    });
+
+    // Populate Degrees (initial)
+    updateExportDegrees();
+    
+    instSelect.onchange = updateExportDegrees;
+
+    modal.style.display = 'flex';
+}
+
+function updateExportDegrees() {
+    const inst = document.getElementById('export-inst').value;
+    const degreeSelect = document.getElementById('export-degree');
+    
+    let filteredCourses = courses;
+    if (inst !== 'all') {
+        filteredCourses = courses.filter(c => c.institution === inst);
+    }
+    
+    const degrees = [...new Set(filteredCourses.map(c => c.degree_type || 'Formações'))].sort();
+    degreeSelect.innerHTML = '<option value="all">--- ALL DEGREES ---</option>';
+    degrees.forEach(deg => {
+        const opt = document.createElement('option');
+        opt.value = deg;
+        opt.textContent = deg;
+        degreeSelect.appendChild(opt);
+    });
+}
+
+window.hideExportModal = function() {
+    const modal = document.getElementById('export-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+window.executePrecisionExport = function() {
+    const inst = document.getElementById('export-inst').value;
+    const degree = document.getElementById('export-degree').value;
+    
+    const csv = generatePrecisionCSV(inst, degree);
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
     const url = URL.createObjectURL(blob);
+    
     link.setAttribute("href", url);
-    link.setAttribute("download", `antigravity_precision_export_${new Date().toISOString().split('T')[0]}.csv`);
+    link.setAttribute("download", `antigravity_precision_${inst}_${degree}_${new Date().toISOString().split('T')[0]}.csv`);
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    hideExportModal();
 }
 
-function generatePrecisionCSV() {
+function generatePrecisionCSV(filterInst = 'all', filterDegree = 'all') {
     let csv = "Course,Degree,Keyword,GSC Clicks,Ads Impressions,Synergy,Rank,URL\n";
-    courses.forEach(c => {
+    
+    let exportSet = courses;
+    if (filterInst !== 'all') exportSet = exportSet.filter(c => c.institution === filterInst);
+    if (filterDegree !== 'all') exportSet = exportSet.filter(c => (c.degree_type || 'Formações') === filterDegree);
+
+    exportSet.forEach(c => {
         const allKeywords = new Set([
             ...c.gscKeywords.map(k => k.term),
             ...c.adsKeywords.map(k => k.term)
