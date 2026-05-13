@@ -1646,61 +1646,30 @@ window.sortAds = function(key) {
         currentAdsSort.key = key;
         currentAdsSort.asc = true;
     }
-    renderMonitorRows();
-}
+    
+    // Improved sorting for numeric strings (CTR, CPA, etc)
+    const cleanSortNum = (v) => {
+        if (v === undefined || v === null) return 0;
+        let s = v.toString().replace(/[^0-9.-]/g, '');
+        return parseFloat(s) || 0;
+    };
 
-function renderMonitorRows() {
-    const body = document.getElementById('monitor-body');
-    if (!body || !liveAdsContext) return;
-    
-    const campaigns = [...liveAdsContext];
-    const key = currentAdsSort.key;
-    const asc = currentAdsSort.asc;
-    
-    campaigns.sort((a, b) => {
+    liveAdsContext.sort((a, b) => {
         let valA = a[key] || a[key.charAt(0).toLowerCase() + key.slice(1)] || a[key.toUpperCase()] || 0;
         let valB = b[key] || b[key.charAt(0).toLowerCase() + key.slice(1)] || b[key.toUpperCase()] || 0;
         
-        // Handle currencies and strings
-        if (typeof valA === 'string' && valA.includes('€')) valA = parseFloat(valA.replace('€','').replace(',',''));
-        if (typeof valB === 'string' && valB.includes('€')) valB = parseFloat(valB.replace('€','').replace(',',''));
+        // Handle special cases (CTR, CPX, etc)
+        if (typeof valA === 'string' && (valA.includes('%') || valA.includes('€'))) {
+            valA = cleanSortNum(valA);
+            valB = cleanSortNum(valB);
+        }
         
-        if (valA < valB) return asc ? -1 : 1;
-        if (valA > valB) return asc ? 1 : -1;
+        if (valA < valB) return currentAdsSort.asc ? -1 : 1;
+        if (valA > valB) return currentAdsSort.asc ? 1 : -1;
         return 0;
     });
 
-    body.innerHTML = '';
-    campaigns.forEach(c => {
-        const tr = document.createElement('tr');
-        const name = c.name || c.Name || c.Campaign || "Unknown";
-        const status = (c.status || c.Status || "PAUSED").toString();
-        const budget = parseFloat(c.budget || c.Budget || 0);
-        const cost = parseFloat(c.cost || c.Cost || 0);
-        const conv = parseFloat(c.conversions || c.Conversions || 0);
-        const imps = parseInt(c.impressions || c.Impressions || 0);
-        const clicks = parseInt(c.clicks || c.Clicks || 0);
-        const ctr = c.ctr || c.CTR || "0.00%";
-        const cpa = conv > 0 ? (cost / conv).toFixed(2) : '0.00';
-        
-        const statusClass = status.toLowerCase().includes('enabl') ? 'match-tag' : 'text-muted';
-        
-        tr.style.background = 'rgba(0, 0, 0, 0.4)';
-        tr.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
-        
-        tr.innerHTML = `
-            <td style="font-weight:800; color: #ffffff; font-size: 15px;">${name}</td>
-            <td><span class="${statusClass}" style="font-weight:800; padding: 6px 12px; border-radius: 8px; background: ${status.toLowerCase().includes('enabl') ? 'rgba(52, 168, 83, 0.2)' : 'rgba(255, 255, 255, 0.05)'}; border: 1px solid currentColor;">${status}</span></td>
-            <td style="text-align:right; font-weight:700; color: #ffffff;">€${budget.toFixed(2)}</td>
-            <td style="text-align:right; font-weight:700; color: #ffffff;">${imps.toLocaleString()}</td>
-            <td style="text-align:right; font-weight:700; color: #ffffff;">${clicks.toLocaleString()}</td>
-            <td style="text-align:right; color: #00f2ff; font-weight:900;">€${cost.toFixed(2)}</td>
-            <td style="text-align:right; font-weight:900; color: #ffffff;">${conv.toFixed(0)}</td>
-            <td style="text-align:right; font-weight:900; color:#00ff88;">€${parseFloat(cpa).toFixed(2)}</td>
-            <td style="text-align:right; font-weight:700; color: #ffd700;">${ctr}</td>
-        `;
-        body.appendChild(tr);
-    });
+    renderMonitorRows();
 }
 
 window.showChess = function() {
