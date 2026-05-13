@@ -158,66 +158,52 @@
             if (loading) loading.textContent = t.loading;
         }
 
-        // Sequential Loader with Fallbacks
-        (function() {
-            function loadMain() {
-                const main = document.createElement('script');
-                main.src = 'results.js?v=' + Date.now();
-                main.onload = () => checkTelemetry();
-                main.onerror = () => {
-                    console.error("Failed to load results.js");
-                    document.querySelector('.loading-state').textContent = "ERROR: TELEMETRY OFFLINE";
-                };
-                document.head.appendChild(main);
-            }
+        // Robust Fetch Loader
+        async function loadData() {
+            try {
+                const resultsResp = await fetch('results.json?v=' + Date.now());
+                if (resultsResp.ok) {
+                    window.telemetryData = await resultsResp.json();
+                }
 
-            const special = document.createElement('script');
-            special.src = 'results_special.js?v=' + Date.now();
-            special.onload = () => {
-                window.specialData = window.telemetryData;
-                loadMain();
-            };
-            special.onerror = () => {
-                console.warn("Special telemetry missing, skipping LEDs...");
-                loadMain();
-            };
-            document.head.appendChild(special);
-        })();
+                const specialResp = await fetch('results_special.json?v=' + Date.now());
+                if (specialResp.ok) {
+                    window.specialData = await specialResp.json();
+                }
+
+                checkTelemetry();
+            } catch (err) {
+                console.error("Data load failed:", err);
+                document.querySelector('.loading-state').textContent = "CONNECTION ERROR: RETRYING...";
+                setTimeout(loadData, 5000);
+            }
+        }
+
+        loadData();
 
         function checkTelemetry() {
             currentLang = localStorage.getItem('hub_lang') || 'en';
             updateUILanguage();
             
-            const savedTone = localStorage.getItem('hub_blob_tone');
-            if (savedTone) document.documentElement.style.setProperty('--blob-gradient', savedTone);
-            
-            const savedBg = localStorage.getItem('hub_custom_bg');
-            if (savedBg) {
-                document.body.style.backgroundImage = `url(${savedBg})`;
-                document.body.style.backgroundSize = 'cover';
-                document.body.style.backgroundAttachment = 'fixed';
-            }
-
             if (window.telemetryData) {
-                // Decode entities in rawData once
                 rawData = window.telemetryData.map(item => {
                     const txt = document.createElement('textarea');
                     txt.innerHTML = item.Institution || '';
                     return { ...item, Institution: txt.value };
                 });
 
-                // Handle Special LEDs
                 if (window.specialData) {
                     updateServerLeds(window.specialData);
                 }
 
                 populateInstitutions(rawData);
                 applyFilters();
-            } else {
-                setTimeout(checkTelemetry, 1000);
+                
+                const loading = document.querySelector('.loading-state');
+                if (loading) loading.style.display = 'none';
             }
         }
-
+        
         function updateServerLeds(data) {
             const mapping = {
                 'led-lusofona': 'www.ensinolusofona.pt',
