@@ -2546,7 +2546,7 @@ function formatAIResponse(text) {
             <td style="text-align:right;">${formatNumber(row.Clicks || row.clicks)}</td>
             <td style="text-align:right; font-weight:600; color: #00f2fe;">${formatCurrency(row.Cost || row.cost)}</td>
             <td style="text-align:right;">${formatNumber(row.Conversions || row.conversions)}</td>
-            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${formatCurrency(row['Cost/conv.'] || row.cpa)}</td>
+            <td style="text-align:right; color:var(--accent-primary); font-weight:700;">${formatCurrency(row.CostPerConv || row['Cost/conv.'] || row.cpa)}</td>
             <td style="text-align:right; opacity:0.8;">${formatPercent(row.CTR || row.ctr)}</td>
         `;
         body.appendChild(tr);
