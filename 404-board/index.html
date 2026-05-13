@@ -158,28 +158,40 @@
             if (loading) loading.textContent = t.loading;
         }
 
-        // Robust Fetch Loader
-        async function loadData() {
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = src + '?v=' + Date.now();
+                s.onload = resolve;
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+        }
+
+        async function initBoard() {
             try {
-                const resultsResp = await fetch('results.json?v=' + Date.now());
-                if (resultsResp.ok) {
-                    window.telemetryData = await resultsResp.json();
-                }
+                // Try special data first
+                try {
+                    await loadScript('results_special.js');
+                    window.specialData = window.telemetryData;
+                } catch(e) { console.warn("results_special.js load skipped"); }
 
-                const specialResp = await fetch('results_special.json?v=' + Date.now());
-                if (specialResp.ok) {
-                    window.specialData = await specialResp.json();
+                // Try results.js
+                try {
+                    await loadScript('results.js');
+                } catch(e) {
+                    console.warn("results.js failed, trying telemetry.js");
+                    await loadScript('telemetry.js');
                 }
-
+                
                 checkTelemetry();
             } catch (err) {
-                console.error("Data load failed:", err);
-                document.querySelector('.loading-state').textContent = "CONNECTION ERROR: RETRYING...";
-                setTimeout(loadData, 5000);
+                console.error("Critical: All telemetry sources failed.");
+                document.querySelector('.loading-state').textContent = "SYSTEM OFFLINE - CHECK REPO";
             }
         }
 
-        loadData();
+        initBoard();
 
         function checkTelemetry() {
             currentLang = localStorage.getItem('hub_lang') || 'en';
