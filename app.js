@@ -38,7 +38,6 @@ async function init() {
     if (rankingsUpload) rankingsUpload.addEventListener('change', (e) => handleFileUpload(e, 'rankings'));
     
     loadData(); 
-    initTheme();
     initGreeting();
     const savedTone = localStorage.getItem('hub_blob_tone');
     if (savedTone) {
@@ -103,24 +102,6 @@ function initGreeting(nameOverride) {
     }
 }
 
-function initTheme() {
-    const saved = localStorage.getItem('antigravity_theme');
-    if (saved === 'light') {
-        document.body.classList.add('light-mode');
-        updateThemeIcons(true);
-    }
-}
-
-function toggleTheme() {
-    const isLight = document.body.classList.toggle('light-mode');
-    localStorage.setItem('antigravity_theme', isLight ? 'light' : 'dark');
-    updateThemeIcons(isLight);
-}
-
-function updateThemeIcons(isLight) {
-    document.querySelector('.sun-icon').style.display = isLight ? 'none' : 'block';
-    document.querySelector('.moon-icon').style.display = isLight ? 'block' : 'none';
-}
 
 const TRANSLATIONS = {
     en: {
@@ -336,7 +317,6 @@ function updateUILanguage() {
         'sync-btn': t["tip-sync"],
         'live-monitor-btn': t["tip-monitor"],
         'lang-toggle-btn': t["tip-lang"],
-        'theme-toggle-btn': t["tip-theme"],
         'account-btn': t["tip-account"]
     };
 
