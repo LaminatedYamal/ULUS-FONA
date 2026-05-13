@@ -2602,7 +2602,11 @@ window.searchMusic = async function() {
         'https://pipedapi.adminforge.de',
         'https://pipedapi.astartes.nl',
         'https://pipedapi.dotify.no',
-        'https://pipedapi.leptons.xyz'
+        'https://pipedapi.leptons.xyz',
+        'https://pipedapi.ducks.party',
+        'https://pipedapi.us.kavin.rocks',
+        'https://pipedapi-libre.kavin.rocks',
+        'https://pipedapi.official.workers.dev'
     ];
 
     let success = false;
