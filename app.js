@@ -2561,20 +2561,8 @@ window.executePrecisionExport = function() {
         const gscTerms = (c.gscKeywords || []).map(k => k.term.trim());
         const adsTerms = (c.adsKeywords || []).map(k => k.term.trim());
         
-        // Use a Set to handle deduplication and case-insensitive unique matching
-        const masterSet = new Set();
-        gscTerms.forEach(t => masterSet.add(t));
-        adsTerms.forEach(t => {
-            // Check if term already exists in a case-insensitive way
-            const lowerT = t.toLowerCase();
-            let exists = false;
-            masterSet.forEach(existing => {
-                if (existing.toLowerCase() === lowerT) exists = true;
-            });
-            if (!exists) masterSet.add(t);
-        });
-        
-        const masterList = Array.from(masterSet).join(', ');
+        // Stack lists directly as requested - no deduplication
+        const masterList = [...gscTerms, ...adsTerms].join(', ');
         csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${c.url}","${masterList}"\n`;
     });
 
