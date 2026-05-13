@@ -766,6 +766,13 @@ async function checkAuth() {
     } else {
         const display = document.getElementById('user-display-name');
         if (display) display.textContent = user;
+        
+        // MIGUEL-ONLY: Reveal the Precision Export tool
+        if (user.trim().toLowerCase() === 'miguel') {
+            const exportOption = document.getElementById('miguel-export-option');
+            if (exportOption) exportOption.style.display = 'flex';
+        }
+
         initGreeting(); // Update greeting immediately
         await fetchServerData();
         renderCourseList();
@@ -833,6 +840,12 @@ async function handleLogin() {
     }
 
     initGreeting(name); // Update greeting text right now with the actual name
+    
+    // Check for Miguel Export Permission immediately on login
+    if (name.trim().toLowerCase() === 'miguel') {
+        const exportOption = document.getElementById('miguel-export-option');
+        if (exportOption) exportOption.style.display = 'flex';
+    }
     
     document.getElementById('login-overlay').style.opacity = '0';
     setTimeout(() => {
@@ -2478,4 +2491,95 @@ function formatAIResponse(text) {
     html = html.replace(/^\>\s+(.*$)/gim, '<blockquote>$1</blockquote>');
     html = html.replace(/\n/g, '<br>');
     return html;
+}
+
+/**
+ * PRECISION EXPORT ENGINE (Miguel Only)
+ */
+window.showExportModal = function() {
+    const modal = document.getElementById('export-modal');
+    if (!modal) return;
+    
+    // Populate Dropdowns from current data
+    const instSelect = document.getElementById('export-inst');
+    const degreeSelect = document.getElementById('export-degree');
+    
+    const institutions = [...new Set(courses.map(c => c.institution))].sort();
+    const degrees = [...new Set(courses.map(c => c.degree_type || 'Formações'))].sort();
+    
+    instSelect.innerHTML = `<option value="all">All Institutions</option>` + 
+        institutions.map(i => `<option value="${i}">${i}</option>`).join('');
+    
+    degreeSelect.innerHTML = `<option value="all">All Degrees</option>` + 
+        degrees.map(d => `<option value="${d}">${d}</option>`).join('');
+    
+    modal.style.display = 'flex';
+}
+
+window.hideExportModal = function() {
+    const modal = document.getElementById('export-modal');
+    if (modal) modal.style.display = 'none';
+}
+
+window.executePrecisionExport = function() {
+    const targetInst = document.getElementById('export-inst').value;
+    const targetDegree = document.getElementById('export-degree').value;
+    
+    // Filter courses based on selection
+    const filtered = courses.filter(c => {
+        const instMatch = targetInst === 'all' || c.institution === targetInst;
+        const degreeMatch = targetDegree === 'all' || (c.degree_type || 'Formações') === targetDegree;
+        return instMatch && degreeMatch;
+    });
+
+    if (filtered.length === 0) {
+        alert("No data found for the selected filters.");
+        return;
+    }
+
+    // Prepare CSV Structure
+    let csv = "TABLE 1: SEARCH CONSOLE (ORGANIC)\n";
+    csv += "Institution,Degree,Course,Keyword,Clicks,Impressions\n";
+    filtered.forEach(c => {
+        (c.gscKeywords || []).forEach(k => {
+            csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${k.term}",${k.clicks || 0},${k.impressions || 0}\n`;
+        });
+    });
+
+    csv += "\nTABLE 2: GOOGLE ADS (ACTIVE)\n";
+    csv += "Institution,Degree,Course,Keyword,Metric\n";
+    filtered.forEach(c => {
+        (c.adsKeywords || []).forEach(k => {
+            csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${k.term}",${k.clicks || k.impressions || 0}\n`;
+        });
+    });
+
+    csv += "\nTABLE 3: SCHEMA SYNERGY MERGE (GSC + ADS)\n";
+    csv += "Institution,Degree,Course,Keyword,Organic_Clicks,Ads_Presence\n";
+    filtered.forEach(c => {
+        const gscTerms = (c.gscKeywords || []);
+        const adsTerms = (c.adsKeywords || []).map(k => k.term.toLowerCase().trim());
+        
+        gscTerms.forEach(k => {
+            const hasAds = adsTerms.includes(k.term.toLowerCase().trim());
+            csv += `"${c.institution}","${c.degree_type || ''}","${c.name}","${k.term}",${k.clicks || 0},"${hasAds ? 'YES' : 'NO'}"\n`;
+        });
+    });
+
+    // Create Download
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement("a");
+    const timestamp = new Date().toISOString().slice(0,10);
+    const fileName = `Antigravity_Export_${targetInst.replace(/\s+/g, '_')}_${timestamp}.csv`;
+    
+    const url = URL.createObjectURL(blob);
+    link.setAttribute("href", url);
+    link.setAttribute("download", fileName);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    hideExportModal();
+    console.log(`[Antigravity] Precision Export Complete: ${fileName}`);
 }
