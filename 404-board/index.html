@@ -191,17 +191,28 @@
                 const finalData = window.telemetryData || [];
                 const specialData = window.specialData || [];
 
+                console.log(`[404 Board] Data Load Complete. Courses: ${finalData.length}, Toplinks: ${specialData.length}`);
+                
                 checkTelemetry(finalData);
                 updateServerLeds(specialData);
             } catch (err) {
-                console.error("Critical: All telemetry sources failed.");
-                document.querySelector('.loading-state').textContent = "SYSTEM OFFLINE - CHECK REPO";
+                console.error("Critical: Telemetry logic error.", err);
+                document.getElementById('results-body').innerHTML = '<tr><td colspan="5" style="text-align:center; padding:40px; color:#ff4757;">SYSTEM SYNC ERROR - REFRESH IN 60s</td></tr>';
             }
         }
 
         initBoard();
 
-        function checkTelemetry() {
+        function checkTelemetry(data) {
+            const container = document.getElementById('results-body');
+            if (!container) return;
+
+            if (!data || data.length === 0) {
+                container.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:40px; color:#ffa502;">NO COURSE DATA FOUND - RUNNING AGENT...</td></tr>';
+                return;
+            }
+            
+            container.innerHTML = ''; // Clear the "Establishing Connection"
             currentLang = localStorage.getItem('hub_lang') || 'en';
             updateUILanguage();
             
