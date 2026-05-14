@@ -172,26 +172,27 @@
             try {
                 console.log("[404 Board] Starting data ingestion...");
                 
-                // 1. Load Special Data (Toplinks)
+                // 1. Load Special Data (Toplinks) - This sets window.specialData
                 try {
                     await loadScript('results_special.js');
-                    if (window.telemetryData) {
-                        window.specialData = [...window.telemetryData];
+                    if (window.specialData) {
                         console.log("[404 Board] Captured specialData:", window.specialData.length);
-                        window.telemetryData = null; // Clear to avoid confusion
                     }
-                } catch(e) { console.error("[404 Board] results_special.js failed"); }
+                } catch(e) { console.warn("[404 Board] No special results found."); }
 
-                // 2. Load Main Data (Courses)
+                // 2. Load Main Data (Courses) - This sets window.telemetryData
                 try {
                     await loadScript('results.js');
-                    console.log("[404 Board] Loaded main telemetryData:", window.telemetryData?.length);
-                } catch(e) {
-                    console.warn("[404 Board] results.js failed, trying fallback");
-                    await loadScript('telemetry.js');
-                }
-                
-                checkTelemetry();
+                    if (window.telemetryData) {
+                        console.log("[404 Board] Captured telemetryData:", window.telemetryData.length);
+                    }
+                } catch(e) { console.warn("[404 Board] No main results found."); }
+
+                const finalData = window.telemetryData || [];
+                const specialData = window.specialData || [];
+
+                checkTelemetry(finalData);
+                updateServerLeds(specialData);
             } catch (err) {
                 console.error("Critical: All telemetry sources failed.");
                 document.querySelector('.loading-state').textContent = "SYSTEM OFFLINE - CHECK REPO";
