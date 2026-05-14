@@ -707,12 +707,12 @@
     "Campaign": "Africa_Geral_CUL_CUP",
     "Status": "ENABLED",
     "Budget": 77.0,
-    "Impressions": 7372.0,
-    "Clicks": 1260.0,
-    "Cost": 644.022187,
-    "Conversions": 16.5,
-    "CTR": "0,17092",
-    "CostPerConv": 39.0316477
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
   },
   {
     "Campaign": "IPLUSO_Search",
