@@ -2692,21 +2692,24 @@ window.searchMusic = async function() {
     }
 }
 
-function playMusic(id, title, artist, thumb) {
+function playMusic(id, title, artist, thumb, playlistId = null) {
     const player = document.getElementById('global-player');
     player.style.display = 'block';
     
-    document.getElementById('player-thumb').src = thumb;
+    if (thumb) document.getElementById('player-thumb').src = thumb;
     document.getElementById('player-title').textContent = title;
     document.getElementById('player-artist').textContent = artist;
     
     if (ytPlayer && typeof ytPlayer.loadVideoById === 'function') {
-        ytPlayer.loadVideoById(id);
+        if (playlistId) {
+            ytPlayer.loadPlaylist({list: playlistId, listType: 'playlist', index: 0});
+        } else {
+            ytPlayer.loadVideoById(id);
+        }
     } else {
-        ytPlayer = new YT.Player('yt-player-target', {
+        const playerConfig = {
             height: '0',
             width: '0',
-            videoId: id,
             playerVars: { 
                 'autoplay': 1, 
                 'controls': 0,
@@ -2722,7 +2725,16 @@ function playMusic(id, title, artist, thumb) {
                 },
                 'onStateChange': onPlayerStateChange
             }
-        });
+        };
+
+        if (playlistId) {
+            playerConfig.playerVars.listType = 'playlist';
+            playerConfig.playerVars.list = playlistId;
+        } else {
+            playerConfig.videoId = id;
+        }
+
+        ytPlayer = new YT.Player('yt-player-target', playerConfig);
     }
 }
 
@@ -2808,6 +2820,19 @@ function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING) {
         btn.textContent = '⏸';
         startProgressTracker();
+        
+        // Sync UI with current video if in a playlist
+        try {
+            const data = ytPlayer.getVideoData();
+            if (data && data.title) {
+                document.getElementById('player-title').textContent = data.title;
+                document.getElementById('player-artist').textContent = data.author || "YouTube";
+                const vidId = ytPlayer.getVideoHoldId ? ytPlayer.getVideoHoldId() : data.video_id;
+                if (vidId) {
+                    document.getElementById('player-thumb').src = `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`;
+                }
+            }
+        } catch(e) {}
     } else {
         btn.textContent = '▶';
         if (event.data === YT.PlayerState.ENDED) {
@@ -2931,22 +2956,35 @@ window.playDirectYT = async function() {
     let input = document.getElementById('direct-yt-id').value.trim();
     if (!input) return;
     
-    let videoId = input;
+    let videoId = '';
+    let playlistId = '';
+    
+    if (input.includes('list=')) {
+        playlistId = input.split('list=')[1].split('&')[0];
+    }
+    
     if (input.includes('v=')) {
         videoId = input.split('v=')[1].split('&')[0];
     } else if (input.includes('be/')) {
         videoId = input.split('be/')[1].split('?')[0];
+    } else if (!playlistId && input.length === 11) {
+        videoId = input;
     }
     
-    // Attempt to fetch title from YouTube OEmbed
-    let title = "Direct Stream";
+    let title = playlistId ? "Loading Playlist..." : "Direct Stream";
     let artist = "YouTube";
-    try {
-        const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
-        const data = await resp.json();
-        if (data.title) title = data.title;
-        if (data.author_name) artist = data.author_name;
-    } catch(e) {}
+    let thumb = null;
 
-    playMusic(videoId, title, artist, `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`);
+    if (playlistId) {
+        playMusic(videoId, "Playlist Active", "YouTube", null, playlistId);
+    } else if (videoId) {
+        try {
+            const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
+            const data = await resp.json();
+            if (data.title) title = data.title;
+            if (data.author_name) artist = data.author_name;
+            thumb = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+        } catch(e) {}
+        playMusic(videoId, title, artist, thumb);
+    }
 }
