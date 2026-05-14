@@ -1146,6 +1146,9 @@ function normalizeUrl(url) {
     // Remove language prefixes if they exist at the start of the path
     u = u.replace(/\/(pt|en|es)(\/|$)/, '/');
     
+    // Remove language suffixes from the slug (e.g., -pt, -en)
+    u = u.replace(/-(pt|en|es)$/, '');
+    
     // Remove trailing slash
     u = u.replace(/\/$/, '');
     
