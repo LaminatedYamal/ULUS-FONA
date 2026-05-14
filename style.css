@@ -563,20 +563,13 @@ h1 {
 }
 
 .data-panel {
-    background: rgba(15, 17, 18, 0.95);
+    background: rgba(15, 17, 23, 0.95);
     border: 1px solid var(--panel-border);
     border-radius: 24px;
     overflow: hidden;
     backdrop-filter: blur(var(--glass-blur));
     position: relative;
     z-index: 10;
-}
-
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.1) transparent;
 }
 
 .panel-header {
@@ -636,14 +629,6 @@ td {
 
 tr:hover {
     background: #0a0a0a !important;
-}
-
-/* Specific Ads Table Styling for the new columns */
-#ads-body td:nth-child(2),
-#ads-body td:nth-child(3),
-#ads-body td:nth-child(4) {
-    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
-    font-size: 13px;
 }
 
 .match-tag {
