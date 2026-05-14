@@ -16,7 +16,15 @@ def load_ads_data(sheet_id, creds_dict):
     try:
         credentials = service_account.Credentials.from_service_account_info(creds_dict, scopes=SHEETS_SCOPES)
         gc = gspread.authorize(credentials)
-        sheet = gc.open_by_key(sheet_id).get_worksheet(0)
+        sh = gc.open_by_key(sheet_id)
+        
+        # Try to find 'Ads Hub' specifically, fallback to first sheet
+        try:
+            sheet = sh.worksheet('Ads Hub')
+        except:
+            sheet = sh.get_worksheet(0)
+            
+        print(f"  Using sheet: {sheet.title}")
         return sheet.get_all_records()
     except Exception as e:
         print(f"Note: Could not fetch Keywords for {sheet_id}: {str(e)}")
@@ -101,11 +109,15 @@ def main():
 
     for inst, sid in INSTITUTION_SHEETS.items():
         if not sid: continue
-        print(f"Fetching {inst}...")
+        print(f"Fetching {inst} (ID: ...{sid[-6:]})...")
         ads = load_ads_data(sid, creds_dict)
         camps = load_campaign_data(sid, creds_dict)
-        if ads: all_ads_records.extend(ads)
-        if camps: all_campaign_records.extend(camps)
+        if ads: 
+            print(f"  Captured {len(ads)} keyword rows.")
+            all_ads_records.extend(ads)
+        if camps: 
+            print(f"  Captured {len(camps)} campaign rows.")
+            all_campaign_records.extend(camps)
 
     # 1. Process Campaigns
     if all_campaign_records:
@@ -128,20 +140,22 @@ def main():
     # 2. Process Keywords
     ads_map = {}
     for row in all_ads_records:
-        url = normalize_url(row.get('Final URL', row.get('URL', '')))
+        # Robust column detection
+        url_raw = row.get('Final URL', row.get('URL', row.get('Landing page', row.get('Final url', ''))))
+        url = normalize_url(url_raw)
         if not url: continue
         
-        term = str(row.get('Keyword', row.get('Search term', ''))).strip()
-        if not term: continue
+        term = str(row.get('Keyword', row.get('Search term', row.get('Keyword ', '')))).strip()
+        if not term or term.lower() == 'total': continue
         
         # Capture all possible metrics
-        imps = clean_num(row.get('Impressions', 0))
+        imps = clean_num(row.get('Impressions', row.get('Impr.', 0)))
         clicks = clean_num(row.get('Clicks', 0))
         
         # Keyword Planner specific fields
-        vol = clean_num(row.get('Avg. monthly searches', row.get('Search Volume', 0)))
-        low_bid = clean_num(row.get('Top of page bid (low range)', 0))
-        high_bid = clean_num(row.get('Top of page bid (high range)', 0))
+        vol = clean_num(row.get('Avg. monthly searches', row.get('Search Volume', row.get('Volume', 0))))
+        low_bid = clean_num(row.get('Top of page bid (low range)', row.get('Low bid', 0)))
+        high_bid = clean_num(row.get('Top of page bid (high range)', row.get('High bid', 0)))
         
         if url not in ads_map: ads_map[url] = {}
         
@@ -158,6 +172,7 @@ def main():
 
     # 3. Update Courses
     updated = 0
+    total_matched_keywords = 0
     for item in data:
         if item.get('type') == 'metadata': continue
         url = normalize_url(item.get('url', ''))
@@ -167,6 +182,9 @@ def main():
             keywords.sort(key=lambda x: (x['vol'], x['impressions']), reverse=True)
             item['adsKeywords'] = keywords[:100]
             updated += 1
+            total_matched_keywords += len(keywords)
+
+    print(f"Sync Result: Updated {updated} courses with {total_matched_keywords} keywords.")
 
     # 4. Save and Finish
     timestamp = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
