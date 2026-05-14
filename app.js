@@ -2594,97 +2594,83 @@ window.searchMusic = async function() {
     const resultsContainer = document.getElementById('music-results');
     resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">🔍 Scanning the sound waves...</div>';
     
+    // Expanded list of Piped and Invidious instances
     const instances = [
-        'https://pipedapi.kavin.rocks',
-        'https://api.piped.privacydev.net',
-        'https://pipedapi.mha.fi',
-        'https://piped-api.lunar.icu',
-        'https://pipedapi.synced.cloud',
-        'https://piped-api.garudalinux.org',
-        'https://pipedapi.rivo.pw',
-        'https://pipedapi.adminforge.de',
-        'https://pipedapi.astartes.nl',
-        'https://pipedapi.dotify.no',
-        'https://pipedapi.leptons.xyz',
-        'https://pipedapi.ducks.party',
-        'https://pipedapi.us.kavin.rocks',
-        'https://pipedapi-libre.kavin.rocks',
-        'https://pipedapi.official.workers.dev'
+        { url: 'https://pipedapi.kavin.rocks/search', type: 'piped' },
+        { url: 'https://api.piped.privacydev.net/search', type: 'piped' },
+        { url: 'https://pipedapi.mha.fi/search', type: 'piped' },
+        { url: 'https://pipedapi.rivo.pw/search', type: 'piped' },
+        { url: 'https://pipedapi.tokyo.privacydev.net/search', type: 'piped' },
+        { url: 'https://pipedapi.adminforge.de/search', type: 'piped' },
+        { url: 'https://inv.tux.rs/api/v1/search', type: 'invidious' },
+        { url: 'https://invidious.io.lol/api/v1/search', type: 'invidious' },
+        { url: 'https://vid.puffyan.us/api/v1/search', type: 'invidious' },
+        { url: 'https://yewtu.be/api/v1/search', type: 'invidious' }
     ];
 
     let success = false;
-    for (const instance of instances) {
+    for (const inst of instances) {
         if (success) break;
         try {
-            console.log(`[Music Hub] Trying instance: ${instance}`);
-            const queryUrl = `${instance}/search?q=${encodeURIComponent(query)}`;
+            console.log(`[Music Hub] Trying ${inst.type} instance: ${inst.url}`);
+            const queryUrl = `${inst.url}?q=${encodeURIComponent(query)}&filter=music_videos`;
             
-            // 1. Try Direct
             let resp = await fetch(queryUrl);
             
-            // 2. Fallback to AllOrigins
+            // Fallback to CORS Proxy if direct fails
             if (!resp.ok) {
-                console.log(`[Music Hub] Direct failed, trying AllOrigins for ${instance}`);
                 resp = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(queryUrl)}`);
-            }
-
-            // 3. Fallback to CorsProxy.io
-            if (!resp.ok) {
-                console.log(`[Music Hub] AllOrigins failed, trying CorsProxy.io for ${instance}`);
-                resp = await fetch(`https://corsproxy.io/?${encodeURIComponent(queryUrl)}`);
             }
 
             if (!resp.ok) continue;
             
             const data = await resp.json();
-            const items = Array.isArray(data) ? data : (data.items || []);
+            let items = [];
             
-            if (items.length === 0) {
-                resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">No tracks found. Try another vibe.</div>';
-                success = true;
-                break;
+            if (inst.type === 'piped') {
+                items = data.items || data;
+            } else {
+                items = data; // Invidious returns array directly
             }
+            
+            if (!Array.isArray(items) || items.length === 0) continue;
 
             resultsContainer.innerHTML = '';
-            items.slice(0, 20).forEach(video => {
+            items.slice(0, 24).forEach(video => {
+                const vidId = video.videoId || video.id;
+                if (!vidId) return;
+
                 const card = document.createElement('div');
                 card.className = 'music-card';
                 
-                // Enhanced Video ID extraction
-                let vidId = '';
-                if (video.videoId) {
-                    vidId = video.videoId;
-                } else if (video.url) {
-                    vidId = video.url.includes('v=') ? video.url.split('v=')[1].split('&')[0] : video.url.split('/').pop();
-                }
+                const title = video.title || 'Unknown Track';
+                const artist = video.uploaderName || video.author || 'Various Artists';
+                const thumb = video.thumbnail || (video.videoThumbnails ? video.videoThumbnails[0].url : `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`);
 
-                if (!vidId) return;
-                
                 card.innerHTML = `
                     <div class="music-thumb-container">
-                        <img src="${video.thumbnail || `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`}" class="music-thumb" loading="lazy">
+                        <img src="${thumb}" class="music-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${vidId}/mqdefault.jpg'">
                         <div class="play-overlay">
                             <div class="play-icon-circle">▶</div>
                         </div>
                     </div>
                     <div class="music-info">
-                        <h4 title="${video.title}">${video.title}</h4>
-                        <p>${video.uploaderName || video.author || 'Unknown Artist'}</p>
+                        <h4 title="${title}">${title}</h4>
+                        <p>${artist}</p>
                     </div>
                 `;
                 
-                card.onclick = () => playMusic(vidId, video.title, video.uploaderName || video.author, video.thumbnail);
+                card.onclick = () => playMusic(vidId, title, artist, thumb);
                 resultsContainer.appendChild(card);
             });
             success = true;
-            break; // Exit instances loop
         } catch (e) {
-            console.warn(`[Music Hub] Instance ${instance} failed:`, e);
+            console.warn(`[Music Hub] Instance failed:`, e);
         }
     }
 
     if (!success) {
-        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">All Music Hub instances are currently busy. Please try again in a moment.</div>';
+        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">The sound waves are currently blocked. Try a direct YouTube ID/Link below.</div>';
     }
 }
 
