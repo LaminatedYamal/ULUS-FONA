@@ -1143,6 +1143,9 @@ function normalizeUrl(url) {
     // Remove http/https and www
     u = u.replace(/^https?:\/\//, '').replace(/^www\./, '');
     
+    // Remove language prefixes if they exist at the start of the path
+    u = u.replace(/\/(pt|en|es)(\/|$)/, '/');
+    
     // Remove trailing slash
     u = u.replace(/\/$/, '');
     
@@ -1557,17 +1560,7 @@ function renderTables(gsc = [], ads = [], rankings = [], limit = 50) {
             } else if (type === 'ads') {
                 const isMatchGsc = gscNorms.includes(norm);
                 tr.className = isTripleMatch ? 'rainbow-row' : (isMatchGsc ? 'synergy-aura' : 'gap-aura');
-                const vol = k.vol ? k.vol.toLocaleString() : (k.impressions ? k.impressions.toLocaleString() : '0');
-                const low = k.low ? `€${k.low.toFixed(2)}` : '--';
-                const high = k.high ? `€${k.high.toFixed(2)}` : '--';
-                
-                tr.innerHTML = `
-                    <td>${k.term}</td>
-                    <td style="text-align:right; font-weight:600;">${vol}</td>
-                    <td style="text-align:right; opacity:0.7;">${low}</td>
-                    <td style="text-align:right; opacity:0.7;">${high}</td>
-                    <td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>
-                `;
+                tr.innerHTML = `<td>${k.term}</td><td>${isMatchGsc ? '<span class="match-tag">✓ Active in GSC</span>' : '<span class="gap-tag">⚠ Organic Gap</span>'}</td>`;
             } else if (type === 'rankings') {
                 const diff = (k.prevRank || 0) - (k.rank || 0);
                 const trendIcon = diff > 0 ? `<span style="color:var(--success);">▲ ${diff}</span>` : diff < 0 ? `<span style="color:var(--danger);">▼ ${Math.abs(diff)}</span>` : `<span style="color:var(--text-muted);">● Stable</span>`;
