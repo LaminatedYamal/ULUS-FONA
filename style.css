@@ -631,6 +631,14 @@ tr:hover {
     background: #0a0a0a !important;
 }
 
+/* Specific Ads Table Styling for the new columns */
+#ads-body td:nth-child(2),
+#ads-body td:nth-child(3),
+#ads-body td:nth-child(4) {
+    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+    font-size: 13px;
+}
+
 .match-tag {
     color: var(--success);
     font-weight: 700;
