@@ -52,10 +52,16 @@ def load_campaign_data(sheet_id, creds_dict):
         return None
 
 def normalize_url(url):
-    """The original stable URL normalization logic."""
+    """The original stable URL normalization logic, now enhanced for language-agnostic matching."""
     if not url: return ""
-    u = str(url).lower().split('?')[0].rstrip('/')
+    # Strip query parameters and hashes
+    u = str(url).lower().split('?')[0].split('#')[0].rstrip('/')
+    # Remove http/https and www
     u = u.replace('https://', '').replace('http://', '').replace('www.', '')
+    # Remove language prefixes if they exist at the start of the path
+    import re
+    u = re.sub(r'/(pt|en|es)(/|$)', '/', u)
+    u = u.rstrip('/')
     return u
 
 def clean_num(v):
