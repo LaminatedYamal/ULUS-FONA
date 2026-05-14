@@ -69,6 +69,8 @@ def normalize_url(url):
     # Remove language prefixes if they exist at the start of the path
     import re
     u = re.sub(r'/(pt|en|es)(/|$)', '/', u)
+    # Remove language suffixes from the slug (e.g., -pt, -en)
+    u = re.sub(r'-(pt|en|es)$', '', u)
     u = u.rstrip('/')
     return u
 
