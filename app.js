@@ -2594,30 +2594,26 @@ window.searchMusic = async function() {
     const resultsContainer = document.getElementById('music-results');
     resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px;">🔍 Scanning the sound waves...</div>';
     
-    // Expanded list of Piped and Invidious instances
     const instances = [
-        { url: 'https://pipedapi.kavin.rocks/search', type: 'piped' },
-        { url: 'https://api.piped.privacydev.net/search', type: 'piped' },
-        { url: 'https://pipedapi.mha.fi/search', type: 'piped' },
+        { url: 'https://pipedapi.ducks.party/search', type: 'piped' },
+        { url: 'https://pipedapi.drgns.space/search', type: 'piped' },
         { url: 'https://pipedapi.rivo.pw/search', type: 'piped' },
-        { url: 'https://pipedapi.tokyo.privacydev.net/search', type: 'piped' },
         { url: 'https://pipedapi.adminforge.de/search', type: 'piped' },
-        { url: 'https://inv.tux.rs/api/v1/search', type: 'invidious' },
-        { url: 'https://invidious.io.lol/api/v1/search', type: 'invidious' },
-        { url: 'https://vid.puffyan.us/api/v1/search', type: 'invidious' },
+        { url: 'https://inv.zzls.xyz/api/v1/search', type: 'invidious' },
+        { url: 'https://invidious.namazso.eu/api/v1/search', type: 'invidious' },
         { url: 'https://yewtu.be/api/v1/search', type: 'invidious' }
     ];
 
     let success = false;
+    
+    // 1. Try Piped/Invidious Instances
     for (const inst of instances) {
         if (success) break;
         try {
-            console.log(`[Music Hub] Trying ${inst.type} instance: ${inst.url}`);
-            const queryUrl = `${inst.url}?q=${encodeURIComponent(query)}&filter=music_videos`;
+            console.log(`[Music Hub] Trying ${inst.type}: ${inst.url}`);
+            const queryUrl = `${inst.url}?q=${encodeURIComponent(query)}`;
             
             let resp = await fetch(queryUrl);
-            
-            // Fallback to CORS Proxy if direct fails
             if (!resp.ok) {
                 resp = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(queryUrl)}`);
             }
@@ -2625,52 +2621,74 @@ window.searchMusic = async function() {
             if (!resp.ok) continue;
             
             const data = await resp.json();
-            let items = [];
+            const items = inst.type === 'piped' ? (data.items || data) : data;
             
-            if (inst.type === 'piped') {
-                items = data.items || data;
-            } else {
-                items = data; // Invidious returns array directly
+            if (Array.isArray(items) && items.length > 0) {
+                renderResults(items);
+                success = true;
             }
+        } catch (e) { console.warn("[Music Hub] Instance failed", e); }
+    }
+
+    // 2. Final Super Fallback: Scrape YouTube via AllOrigins
+    if (!success) {
+        try {
+            console.log("[Music Hub] All instances failed. Attempting Super Fallback...");
+            const ytUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}&sp=EgIQAQ%253D%253D`; // filter for videos
+            const resp = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(ytUrl)}`);
+            const data = await resp.json();
+            const html = data.contents;
             
-            if (!Array.isArray(items) || items.length === 0) continue;
+            // Regex to find video IDs and titles in ytInitialData
+            const videoRegex = /"videoRenderer":\{"videoId":"([^"]+)".*?"title":\{"runs":\[\{"text":"([^"]+)"\}\].*?"longBylineText":\{"runs":\[\{"text":"([^"]+)"/g;
+            let match;
+            const items = [];
+            
+            while ((match = videoRegex.exec(html)) !== null && items.length < 20) {
+                items.push({
+                    videoId: match[1],
+                    title: match[2],
+                    author: match[3],
+                    thumbnail: `https://img.youtube.com/vi/${match[1]}/mqdefault.jpg`
+                });
+            }
 
-            resultsContainer.innerHTML = '';
-            items.slice(0, 24).forEach(video => {
-                const vidId = video.videoId || video.id;
-                if (!vidId) return;
-
-                const card = document.createElement('div');
-                card.className = 'music-card';
-                
-                const title = video.title || 'Unknown Track';
-                const artist = video.uploaderName || video.author || 'Various Artists';
-                const thumb = video.thumbnail || (video.videoThumbnails ? video.videoThumbnails[0].url : `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`);
-
-                card.innerHTML = `
-                    <div class="music-thumb-container">
-                        <img src="${thumb}" class="music-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${vidId}/mqdefault.jpg'">
-                        <div class="play-overlay">
-                            <div class="play-icon-circle">▶</div>
-                        </div>
-                    </div>
-                    <div class="music-info">
-                        <h4 title="${title}">${title}</h4>
-                        <p>${artist}</p>
-                    </div>
-                `;
-                
-                card.onclick = () => playMusic(vidId, title, artist, thumb);
-                resultsContainer.appendChild(card);
-            });
-            success = true;
-        } catch (e) {
-            console.warn(`[Music Hub] Instance failed:`, e);
-        }
+            if (items.length > 0) {
+                renderResults(items);
+                success = true;
+            }
+        } catch (e) { console.error("[Music Hub] Super Fallback failed", e); }
     }
 
     if (!success) {
-        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">The sound waves are currently blocked. Try a direct YouTube ID/Link below.</div>';
+        resultsContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding:50px; color:var(--danger);">The sound waves are completely blocked. Please paste a direct YouTube link below.</div>';
+    }
+
+    function renderResults(items) {
+        resultsContainer.innerHTML = '';
+        items.slice(0, 24).forEach(video => {
+            const vidId = video.videoId || video.id;
+            if (!vidId) return;
+
+            const card = document.createElement('div');
+            card.className = 'music-card';
+            const title = video.title || 'Unknown Track';
+            const artist = video.uploaderName || video.author || 'Various Artists';
+            const thumb = video.thumbnail || (video.videoThumbnails ? video.videoThumbnails[0].url : `https://img.youtube.com/vi/${vidId}/mqdefault.jpg`);
+
+            card.innerHTML = `
+                <div class="music-thumb-container">
+                    <img src="${thumb}" class="music-thumb" loading="lazy" onerror="this.src='https://img.youtube.com/vi/${vidId}/mqdefault.jpg'">
+                    <div class="play-overlay"><div class="play-icon-circle">▶</div></div>
+                </div>
+                <div class="music-info">
+                    <h4 title="${title.replace(/"/g, '&quot;')}">${title}</h4>
+                    <p>${artist}</p>
+                </div>
+            `;
+            card.onclick = () => playMusic(vidId, title, artist, thumb);
+            resultsContainer.appendChild(card);
+        });
     }
 }
 
