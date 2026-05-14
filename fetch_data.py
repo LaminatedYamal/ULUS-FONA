@@ -122,17 +122,33 @@ def main():
     # 2. Process Keywords
     ads_map = {}
     for row in all_ads_records:
-        url = normalize_url(row.get('Final URL', ''))
+        url = normalize_url(row.get('Final URL', row.get('URL', '')))
         if not url: continue
         
-        term = str(row.get('Keyword', '')).strip()
+        term = str(row.get('Keyword', row.get('Search term', ''))).strip()
         if not term: continue
         
+        # Capture all possible metrics
         imps = clean_num(row.get('Impressions', 0))
+        clicks = clean_num(row.get('Clicks', 0))
+        
+        # Keyword Planner specific fields
+        vol = clean_num(row.get('Avg. monthly searches', row.get('Search Volume', 0)))
+        low_bid = clean_num(row.get('Top of page bid (low range)', 0))
+        high_bid = clean_num(row.get('Top of page bid (high range)', 0))
         
         if url not in ads_map: ads_map[url] = {}
-        if term not in ads_map[url] or imps > ads_map[url][term]:
-            ads_map[url][term] = imps
+        
+        # Deduplicate by term per URL, keeping the one with most impressions or volume
+        if term not in ads_map[url] or (imps + vol) > (ads_map[url][term]['impressions'] + ads_map[url][term]['vol']):
+            ads_map[url][term] = {
+                'term': term,
+                'impressions': imps,
+                'clicks': clicks,
+                'vol': vol,
+                'low': low_bid,
+                'high': high_bid
+            }
 
     # 3. Update Courses
     updated = 0
@@ -140,8 +156,9 @@ def main():
         if item.get('type') == 'metadata': continue
         url = normalize_url(item.get('url', ''))
         if url in ads_map:
-            keywords = [{'term': t, 'impressions': i} for t, i in ads_map[url].items()]
-            keywords.sort(key=lambda x: x['impressions'], reverse=True)
+            keywords = list(ads_map[url].values())
+            # Sort by volume then impressions
+            keywords.sort(key=lambda x: (x['vol'], x['impressions']), reverse=True)
             item['adsKeywords'] = keywords[:100]
             updated += 1
 
