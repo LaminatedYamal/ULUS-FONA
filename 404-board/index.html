@@ -197,18 +197,18 @@
                 updateServerLeds(specialData);
             } catch (err) {
                 console.error("Critical: Telemetry logic error.", err);
-                document.getElementById('results-body').innerHTML = '<tr><td colspan="5" style="text-align:center; padding:40px; color:#ff4757;">SYSTEM SYNC ERROR - REFRESH IN 60s</td></tr>';
+                document.getElementById('switch-board-rows').innerHTML = '<div style="text-align:center; padding:40px; color:#ff4757;">SYSTEM SYNC ERROR - REFRESH IN 60s</div>';
             }
         }
 
         initBoard();
 
         function checkTelemetry(data) {
-            const container = document.getElementById('results-body');
+            const container = document.getElementById('switch-board-rows');
             if (!container) return;
 
             if (!data || data.length === 0) {
-                container.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:40px; color:#ffa502;">NO COURSE DATA FOUND - RUNNING AGENT...</td></tr>';
+                container.innerHTML = '<div style="text-align:center; padding:40px; color:#ffa502;">NO COURSE DATA FOUND - RUNNING AGENT...</div>';
                 return;
             }
             
@@ -367,7 +367,7 @@
         let rawData = [];
 
 
-        checkTelemetry();
+        // initBoard() handles everything
         setInterval(() => location.reload(), 300000); // Hard refresh every 5 mins to catch new file
     </script>
 </body>
