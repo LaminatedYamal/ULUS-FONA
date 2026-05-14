@@ -19,7 +19,6 @@
             </div>
             <h1>LIVE ROUTING SWITCHBOARD</h1>
             <div class="status-indicator">
-                <button class="sync-btn" onclick="fetchStatus()">SYNC NOW</button>
                 <div id="global-led" class="led-dot green pulse"></div>
                 <div id="global-status">SYSTEM NOMINAL</div>
             </div>
@@ -81,7 +80,6 @@
         const TRANSLATIONS = {
             'en': {
                 'title': 'LIVE ROUTING SWITCHBOARD',
-                'sync': 'SYNC NOW',
                 'home': '← HOME',
                 'all-inst': 'ALL INSTITUTIONS',
                 'all': 'ALL',
@@ -100,7 +98,6 @@
             },
             'pt': {
                 'title': 'PAINEL DE ROTEAMENTO LIVE',
-                'sync': 'SINC. AGORA',
                 'home': '← INÍCIO',
                 'all-inst': 'TODAS AS INSTITUIÇÕES',
                 'all': 'TODOS',
@@ -127,8 +124,6 @@
             document.querySelector('h1').textContent = t.title;
             const homeBtn = document.querySelector('.btn-home');
             if (homeBtn) homeBtn.textContent = t.home;
-            const syncBtn = document.querySelector('.sync-btn');
-            if (syncBtn) syncBtn.textContent = t.sync;
             
             const instFilter = document.getElementById('inst-filter');
             if (instFilter && instFilter.options[0]) {
