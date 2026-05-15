@@ -12734,16 +12734,28 @@
     ],
     "adsKeywords": [
       {
-        "term": "curso radiologia",
-        "impressions": 0
+        "term": "+curso +radiologia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       },
       {
-        "term": "licenciatura radiologia",
-        "impressions": 0
+        "term": "+licenciatura +radiologia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       },
       {
-        "term": "curso imagem médica",
-        "impressions": 0
+        "term": "+curso +imagem +médica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -13605,15 +13617,27 @@
     "adsKeywords": [
       {
         "term": "desenvolvimento web curso",
-        "impressions": 4866
+        "impressions": 4866.0,
+        "clicks": 335.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       },
       {
         "term": "curso tecnico desenvolvimento web",
-        "impressions": 151
+        "impressions": 151.0,
+        "clicks": 29.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       },
       {
         "term": "curso dispositivos moveis",
-        "impressions": 98
+        "impressions": 98.0,
+        "clicks": 8.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -16404,7 +16428,7 @@
     "type": "metadata",
     "last_sync_by": "Nightly Pipeline (Ads + Campaigns)",
     "last_sync_at": "12/05/2026, 14:25:10",
-    "lastSync": "14/05/2026, 16:14:05",
-    "totalAdsCourses": 118
+    "lastSync": "15/05/2026, 01:57:12",
+    "totalAdsCourses": 120
   }
 ]
