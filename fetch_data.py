@@ -143,12 +143,17 @@ def main():
 
     # 2. Process Keywords
     ads_map = {}
+    diagnostic_sheet_count = 0
     for row in all_ads_records:
         # Robust column detection
         url_raw = row.get('Final URL', row.get('URL', row.get('Landing page', row.get('Final url', ''))))
         url = normalize_url(url_raw)
         if not url: continue
         
+        if ('islagaia' in str(url_raw).lower() or 'isla' in str(url_raw).lower()) and diagnostic_sheet_count < 10:
+            print(f"DIAG: Raw Sheet URL: {url_raw} -> Normalized: {url}")
+            diagnostic_sheet_count += 1
+            
         term = str(row.get('Keyword', row.get('Search term', row.get('Keyword ', '')))).strip()
         if not term or term.lower() == 'total': continue
         
@@ -177,9 +182,15 @@ def main():
     # 3. Update Courses
     updated = 0
     total_matched_keywords = 0
+    diagnostic_course_count = 0
     for item in data:
         if item.get('type') == 'metadata': continue
         url = normalize_url(item.get('url', ''))
+        
+        if item.get('institution') == 'ISLA Gaia' and diagnostic_course_count < 10:
+            print(f"DIAG: ISLA Gaia Course: {item.get('name')} | URL: {item.get('url')} -> Normalized: {url}")
+            diagnostic_course_count += 1
+            
         if url in ads_map:
             keywords = list(ads_map[url].values())
             # Sort by volume then impressions
