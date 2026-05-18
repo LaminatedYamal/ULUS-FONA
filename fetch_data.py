@@ -130,6 +130,11 @@ def main():
         camps = load_campaign_data(sid, creds_dict)
         if ads: 
             print(f"  Captured {len(ads)} keyword rows.")
+            # Print debug info for matching analysis
+            for row in ads:
+                url_raw = row.get('Final URL', row.get('URL', row.get('Landing page', row.get('Final url', ''))))
+                if any(x in str(url_raw).lower() for x in ['cibersegur', 'qualidade']):
+                    print(f"  [Debug Raw] Raw URL in sheet: {repr(url_raw)} | Keyword: {repr(row.get('Keyword', row.get('Search term', '')))}")
             all_ads_records.extend(ads)
         if camps: 
             print(f"  Captured {len(camps)} campaign rows.")
@@ -243,8 +248,12 @@ def main():
             item['adsKeywords'] = keywords[:100]
             updated += 1
             total_matched_keywords += len(keywords)
+            if any(x in url for x in ['cibersegur', 'qualidade']):
+                print(f"  [Debug Match] Course '{item.get('name')}' ({url}) matched to spreadsheet URL: '{matched_url}' with {len(keywords)} keywords.")
         else:
             item['adsKeywords'] = []
+            if any(x in url for x in ['cibersegur', 'qualidade']):
+                print(f"  [Debug Match Failed] Course '{item.get('name')}' ({url}) did not match any spreadsheet URL.")
 
     print(f"Sync Result: Updated {updated} courses with {total_matched_keywords} keywords.")
     
@@ -263,6 +272,8 @@ def main():
         if item.get('type') == 'metadata':
             item['lastSync'] = timestamp
             item['totalAdsCourses'] = updated
+            item['last_sync_by'] = 'Automated Pipeline Sync'
+            item['last_sync_at'] = timestamp
 
     with open(JSON_FILE_PATH, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
