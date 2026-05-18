@@ -153,6 +153,40 @@ def main():
         with open(CAMPAIGNS_FILE_PATH, 'w', encoding='utf-8') as f:
             json.dump(cleaned, f, indent=2, ensure_ascii=False)
 
+    # Helper to clean text and slugs for matching
+    def clean_slug(s):
+        if not s: return ""
+        import re
+        s = s.lower().strip()
+        accents = {
+            'á':'a', 'à':'a', 'â':'a', 'ã':'a', 'ä':'a',
+            'é':'e', 'è':'e', 'ê':'e', 'ë':'e',
+            'í':'i', 'ì':'i', 'î':'i', 'ï':'i',
+            'ó':'o', 'ò':'o', 'ô':'o', 'õ':'o', 'ö':'o',
+            'ú':'u', 'ù':'u', 'û':'u', 'ü':'u',
+            'ç':'c', 'ñ':'n'
+        }
+        for char, replacement in accents.items():
+            s = s.replace(char, replacement)
+        # Remove degree prefixes/suffixes and generic terms
+        s = re.sub(r'\b(ctesp|licenciatura|mestrado|pos-graduacao|curso)\b', '', s)
+        s = re.sub(r'[^a-z0-9\s-]', '', s)
+        s = s.replace('-', ' ')
+        return ' '.join(s.split())
+
+    # Pre-compile the course catalog list of slugs for auto-correction matching
+    course_catalog = []
+    for item in data:
+        if item.get('type') == 'metadata': continue
+        c_url = normalize_url(item.get('url', ''))
+        if c_url:
+            c_slug = clean_slug(c_url.split('/')[-1])
+            course_catalog.append({
+                'url': c_url,
+                'slug': c_slug,
+                'name_clean': clean_slug(item.get('name', ''))
+            })
+
     # 2. Process Keywords
     ads_map = {}
     for row in all_ads_records:
@@ -160,6 +194,24 @@ def main():
         url_raw = row.get('Final URL', row.get('URL', row.get('Landing page', row.get('Final url', ''))))
         url = normalize_url(url_raw)
         if not url: continue
+
+        # Heuristic Auto-Correction: If Ad Group name matches a specific course, correct the URL
+        ad_group = clean_slug(row.get('Ad Group', row.get('Ad group', '')))
+        campaign = clean_slug(row.get('Campaign', ''))
+        
+        best_match_course = None
+        for c in course_catalog:
+            # Match if the cleaned slug is a substring of the ad group or campaign name
+            if len(c['slug']) > 3 and (c['slug'] in ad_group or c['slug'] in campaign):
+                best_match_course = c
+                break
+                
+        if best_match_course and url != best_match_course['url']:
+            # Safe verification: Only redirect if the ad group name doesn't contain the current wrong URL's name
+            current_slug = clean_slug(url.split('/')[-1])
+            if current_slug not in ad_group:
+                print(f"  [Auto-Correction] Rerouted '{row.get('Keyword', '')}' (Ad Group: '{row.get('Ad Group')}') from '{url}' to correct URL '{best_match_course['url']}'")
+                url = best_match_course['url']
         
         term = str(row.get('Keyword', row.get('Search term', row.get('Keyword ', '')))).strip()
         if not term or term.lower() == 'total': continue
