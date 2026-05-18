@@ -130,6 +130,8 @@ def main():
         camps = load_campaign_data(sid, creds_dict)
         if ads: 
             print(f"  Captured {len(ads)} keyword rows.")
+            for row in ads:
+                row['__institution__'] = inst
             all_ads_records.extend(ads)
         if camps: 
             print(f"  Captured {len(camps)} campaign rows.")
@@ -174,6 +176,61 @@ def main():
         s = s.replace('-', ' ')
         return ' '.join(s.split())
 
+    def detect_row_degree_type(url, campaign, ad_group):
+        u = url.lower()
+        c = campaign.lower()
+        a = ad_group.lower()
+        
+        # Check URL path
+        if 'licenciatura' in u or 'licenciaturas' in u:
+            return 'Licenciatura'
+        if 'mestrado' in u or 'mestrados' in u:
+            return 'Mestrado'
+        if 'ctesp' in u or 'tesp' in u:
+            return 'TeSP'
+        if 'pos-gradua' in u or 'posgradua' in u or 'pg-' in u:
+            return 'Pós-Graduação'
+        if 'doutoramento' in u or 'doutorado' in u:
+            return 'Doutoramento'
+            
+        # Check campaign and ad group names
+        for text in (a, c):
+            if 'licenciatura' in text:
+                return 'Licenciatura'
+            if 'mestrado' in text:
+                return 'Mestrado'
+            if 'ctesp' in text or 'tesp' in text:
+                return 'TeSP'
+            if 'pos-gradua' in text or 'posgradua' in text or 'pg-' in text or 'pós' in text:
+                return 'Pós-Graduação'
+            if 'doutoramento' in text or 'doutorado' in text:
+                return 'Doutoramento'
+                
+        return None
+
+    def check_institution_match(course_inst, row_inst, url):
+        if row_inst == 'IPLUSO':
+            return course_inst == 'IPLUSO'
+        if row_inst == 'ISMAT':
+            return course_inst == 'ISMAT'
+        if row_inst == 'ISLA_Gaia':
+            return course_inst == 'ISLA Gaia'
+        if row_inst == 'Lusofona':
+            if course_inst not in ('Lusófona Lisboa', 'Lusófona Porto'):
+                return False
+            if course_inst == 'Lusófona Porto':
+                return 'porto' in url
+            if course_inst == 'Lusófona Lisboa':
+                return 'porto' not in url
+        return False
+
+    def check_degree_match(course_degree, row_degree):
+        if not row_degree:
+            return True
+        if row_degree == 'Mestrado':
+            return course_degree in ('Mestrado', 'Mestrado Integrado')
+        return course_degree == row_degree
+
     # Pre-compile the course catalog list of slugs for auto-correction matching
     course_catalog = []
     for item in data:
@@ -184,7 +241,9 @@ def main():
             course_catalog.append({
                 'url': c_url,
                 'slug': c_slug,
-                'name_clean': clean_slug(item.get('name', ''))
+                'name_clean': clean_slug(item.get('name', '')),
+                'institution': item.get('institution', ''),
+                'degree_type': item.get('degree_type', '')
             })
 
     # 2. Process Keywords
@@ -198,13 +257,19 @@ def main():
         # Heuristic Auto-Correction: If Ad Group name matches a specific course, correct the URL
         ad_group = clean_slug(row.get('Ad Group', row.get('Ad group', '')))
         campaign = clean_slug(row.get('Campaign', ''))
+        row_inst = row.get('__institution__')
+        
+        row_degree = detect_row_degree_type(url, row.get('Campaign', ''), row.get('Ad Group', ''))
         
         best_match_course = None
         for c in course_catalog:
             # Match if the cleaned slug is a substring of the ad group or campaign name
             if len(c['slug']) > 3 and (c['slug'] in ad_group or c['slug'] in campaign):
-                best_match_course = c
-                break
+                # Verify school and degree type parity
+                if check_institution_match(c['institution'], row_inst, url):
+                    if check_degree_match(c['degree_type'], row_degree):
+                        best_match_course = c
+                        break
                 
         if best_match_course and url != best_match_course['url']:
             # Safe verification: Only redirect if the ad group name doesn't contain the current wrong URL's name
@@ -280,6 +345,10 @@ def main():
                         if 'licenciatura' in course_path and 'licenciatura' not in pool_item['path']:
                             degree_match = False
                         if 'pos-gradua' in course_path and 'pos-gradua' not in pool_item['path']:
+                            degree_match = False
+                        if 'lisboa' in course_path and 'lisboa' not in pool_item['path']:
+                            degree_match = False
+                        if 'porto' in course_path and 'porto' not in pool_item['path']:
                             degree_match = False
                             
                         # Check if course slug is a substring of the spreadsheet URL path
