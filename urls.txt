@@ -1,4 +1,4 @@
-https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica
+﻿https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica
 https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais
 https://www.ulusofona.pt/lisboa/licenciaturas/design-de-comunicacao
 https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda
@@ -127,8 +127,8 @@ https://www.ulusofona.pt/lisboa/doutoramentos/direito
 https://www.ulusofona.pt/lisboa/doutoramentos/educacao
 https://www.ulusofona.pt/lisboa/doutoramentos/informatica
 https://www.ulusofona.pt/lisboa/doutoramentos/psicologia-clinica-orientacao-cognitivo-comportamental
-https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-operacao-aerea-com-aeronaves-nao-tripuladas
-https://www.ulusofona.pt/lisboa/pos-graduacoes/marca-pessoal-gestao-e-consultoria
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-operacao-aerea-com-aeronaves-nao-tripuladas
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/lisboa/pos-graduacoes/marca-pessoal-gestao-e-consultoria
 https://www.ulusofona.pt/lisboa/pos-graduacoes/intervencao-em-riscos-e-promocao-da-inclusao
 https://www.ulusofona.pt/lisboa/pos-graduacoes/patrimonio-cultural-imaterial
 https://www.ulusofona.pt/lisboa/pos-graduacoes/psicologia-politica
@@ -150,7 +150,7 @@ https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-de-empresas-e-organizacoes
 https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-desportiva
 https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-direcao-na-protecao-civil
 https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-integrada-das-organizacoes-e-auditoria
-https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-sustentavel-na-saude
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-sustentavel-na-saude
 https://www.ulusofona.pt/lisboa/pos-graduacoes/lideranca-inovacao-e-transformacao-digital
 https://www.ulusofona.pt/lisboa/pos-graduacoes/logistica
 https://www.ulusofona.pt/lisboa/pos-graduacoes/modelos-ageis-de-gestao-e-transformacao-organizacional
@@ -162,7 +162,7 @@ https://www.ulusofona.pt/lisboa/pos-graduacoes/enologia
 https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-integrada-e-governanca-da-agua
 https://www.ulusofona.pt/lisboa/pos-graduacoes/lean-and-operations-management
 https://www.ulusofona.pt/lisboa/pos-graduacoes/railway-systems-and-management
-https://www.ulusofona.pt/lisboa/pos-graduacoes/blockchain-e-inteligencia-artificial
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/lisboa/pos-graduacoes/blockchain-e-inteligencia-artificial
 https://www.ulusofona.pt/lisboa/pos-graduacoes/blockchain-criptoeconomia-e-inovacao-tecnologica
 https://www.ulusofona.pt/lisboa/pos-graduacoes/ciberseguranca-aplicada
 https://www.ulusofona.pt/lisboa/pos-graduacoes/ciberseguranca-para-gestores
@@ -299,15 +299,15 @@ https://www.ulusofona.pt/porto/mestrados/neuropsicologia-clinica
 https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude
 https://www.ulusofona.pt/porto/mestrados/psicologia-da-justica-vitimas-de-crime
 https://www.ulusofona.pt/porto/mestrados/gestao-e-inovacao-em-turismo-e-hospitalidade
-https://www.ulusofona.pt/porto/pos-graduacoes/marca-pessoal-gestao-e-consultoria
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/porto/pos-graduacoes/marca-pessoal-gestao-e-consultoria
 https://www.ulusofona.pt/porto/pos-graduacoes/relacoes-internacionais-e-diplomacia-politica-e-economica
-https://www.ulusofona.pt/porto/pos-graduacoes/concecoes-e-praticas-metodologicas-e-decisionais-no-futebol
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/porto/pos-graduacoes/concecoes-e-praticas-metodologicas-e-decisionais-no-futebol
 https://www.ulusofona.pt/porto/pos-graduacoes/registos-e-notariado
 https://www.ulusofona.pt/porto/pos-graduacoes/mediacao-de-conflitos-em-contexto-escolar
 https://www.ulusofona.pt/porto/pos-graduacoes/cartografia-de-risco-e-planeamento-de-protecao-civil
 https://www.ulusofona.pt/porto/pos-graduacoes/gestao-de-emergencias-com-materias-perigosas
 https://www.ulusofona.pt/porto/pos-graduacoes/gestao-integrada-de-emergencias-safety-security
-https://www.ulusofona.pt/porto/pos-graduacoes/informatica-e-sistemas-de-informacao
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.ulusofona.pt/porto/pos-graduacoes/informatica-e-sistemas-de-informacao
 https://www.ulusofona.pt/porto/pos-graduacoes/inovacao-e-lideranca-em-protecao-civil-autarquica
 https://www.ulusofona.pt/porto/pos-graduacoes/projeto-certificacao-e-peritagem-de-protecao-civil
 https://www.ulusofona.pt/porto/pos-graduacoes/sustentabilidade-ambiente-e-qualidade
@@ -418,9 +418,9 @@ https://www.islagaia.pt/pt/pos-graduacoes/psicologia-social-e-organizacional-pt
 https://www.islagaia.pt/pt/pos-graduacoes/redes-cisco-networking-pt
 https://www.islagaia.pt/pt/pos-graduacoes/sistemas-integrados-de-gestao-qualidade-ambiente-e-seguranca-pt
 https://www.islagaia.pt/pt/pos-graduacoes/transformacao-digital-e-inovacao-pt
-https://www.islagaia.pt/pt/formacao/global-innovation-challenge-pt
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.islagaia.pt/pt/formacao/global-innovation-challenge-pt
 https://www.islagaia.pt/pt/formacao/inteligencia-artificial-para-negocios-pt
-https://www.islagaia.pt/pt/formacao/the-2nd-businet-international-startup-competition-pt
+# [Auto-Removed: 7+ Days Down on 2026-05-18] https://www.islagaia.pt/pt/formacao/the-2nd-businet-international-startup-competition-pt
 https://www.ismat.pt/pt/licenciaturas/ciencia-de-dados-pt
 https://www.ismat.pt/pt/licenciaturas/ciencias-do-desporto-pt
 https://www.ismat.pt/pt/licenciaturas/computacao-e-matematica-aplicada-pt
