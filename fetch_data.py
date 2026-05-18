@@ -60,17 +60,31 @@ def load_campaign_data(sheet_id, creds_dict):
         return None
 
 def normalize_url(url):
-    """The original stable URL normalization logic, now enhanced for language-agnostic matching."""
+    """The original stable URL normalization logic, now enhanced for language-agnostic matching, unquoting, and accent-stripping."""
     if not url: return ""
+    import urllib.parse
+    import re
+    # Unquote percent-encoding
+    u = urllib.parse.unquote(str(url)).lower().strip()
     # Strip query parameters and hashes
-    u = str(url).lower().split('?')[0].split('#')[0].rstrip('/')
+    u = u.split('?')[0].split('#')[0].rstrip('/')
     # Remove http/https and www
     u = u.replace('https://', '').replace('http://', '').replace('www.', '')
     # Remove language prefixes if they exist at the start of the path
-    import re
     u = re.sub(r'/(pt|en|es)(/|$)', '/', u)
     # Remove language suffixes from the slug (e.g., -pt, -en)
     u = re.sub(r'-(pt|en|es)$', '', u)
+    # Normalize accented characters
+    accents = {
+        'á':'a', 'à':'a', 'â':'a', 'ã':'a', 'ä':'a',
+        'é':'e', 'è':'e', 'ê':'e', 'ë':'e',
+        'í':'i', 'ì':'i', 'î':'i', 'ï':'i',
+        'ó':'o', 'ò':'o', 'ô':'o', 'õ':'o', 'ö':'o',
+        'ú':'u', 'ù':'u', 'û':'u', 'ü':'u',
+        'ç':'c', 'ñ':'n'
+    }
+    for char, replacement in accents.items():
+        u = u.replace(char, replacement)
     u = u.rstrip('/')
     return u
 
@@ -188,6 +202,9 @@ def main():
             'path': path
         })
 
+    # Track matched ads URLs to identify and log skipped entries
+    matched_ads_urls = set()
+
     for item in data:
         if item.get('type') == 'metadata': continue
         url = normalize_url(item.get('url', ''))
@@ -197,8 +214,8 @@ def main():
             matched_url = url
         else:
             # Fallback fuzzy matching for domains with legacy URLs (ISLA Gaia, IPLUSO, ISMAT)
-            course_domain = url.split('/')[0]
-            course_path = '/'.join(url.split('/')[1:])
+            course_domain = url.split('/')[0] if '/' in url else url
+            course_path = '/'.join(url.split('/')[1:]) if '/' in url else ''
             course_slug = url.split('/')[-1] if '/' in url else url
             
             if course_slug and len(course_slug) > 3:
@@ -219,6 +236,7 @@ def main():
                             break
                             
         if matched_url:
+            matched_ads_urls.add(matched_url)
             keywords = list(ads_map[matched_url].values())
             # Sort by volume then impressions
             keywords.sort(key=lambda x: (x['vol'], x['impressions']), reverse=True)
@@ -229,6 +247,15 @@ def main():
             item['adsKeywords'] = []
 
     print(f"Sync Result: Updated {updated} courses with {total_matched_keywords} keywords.")
+    
+    # Log skipped spreadsheet URLs
+    skipped_urls = set(ads_map.keys()) - matched_ads_urls
+    if skipped_urls:
+        print(f"\n[Logging] Skipped {len(skipped_urls)} spreadsheet URLs (No matching course found):")
+        for su in sorted(skipped_urls):
+            print(f"  - {su}")
+    else:
+        print("\n[Logging] Excellent! 100% of spreadsheet URLs matched courses.")
 
     # 4. Save and Finish
     timestamp = datetime.datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
