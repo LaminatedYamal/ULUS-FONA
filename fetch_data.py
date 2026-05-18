@@ -116,6 +116,8 @@ def main():
         camps = load_campaign_data(sid, creds_dict)
         if ads: 
             print(f"  Captured {len(ads)} keyword rows.")
+            if len(ads) > 0:
+                print(f"  First row headers: {list(ads[0].keys())}")
             all_ads_records.extend(ads)
         if camps: 
             print(f"  Captured {len(camps)} campaign rows.")
