@@ -182,22 +182,58 @@ def main():
     # 3. Update Courses
     updated = 0
     total_matched_keywords = 0
-    diagnostic_course_count = 0
+    
+    # Pre-parse ads_map keys for fallback fuzzy matching
+    ads_fuzzy_pool = []
+    for ads_url in ads_map:
+        parts = ads_url.split('/')
+        domain = parts[0]
+        path = '/'.join(parts[1:])
+        ads_fuzzy_pool.append({
+            'url': ads_url,
+            'domain': domain,
+            'path': path
+        })
+
     for item in data:
         if item.get('type') == 'metadata': continue
         url = normalize_url(item.get('url', ''))
         
-        if item.get('institution') == 'ISLA Gaia' and diagnostic_course_count < 10:
-            print(f"DIAG: ISLA Gaia Course: {item.get('name')} | URL: {item.get('url')} -> Normalized: {url}")
-            diagnostic_course_count += 1
-            
+        matched_url = None
         if url in ads_map:
-            keywords = list(ads_map[url].values())
+            matched_url = url
+        else:
+            # Fallback fuzzy matching for domains with legacy URLs (ISLA Gaia, IPLUSO, ISMAT)
+            course_domain = url.split('/')[0]
+            course_path = '/'.join(url.split('/')[1:])
+            course_slug = url.split('/')[-1] if '/' in url else url
+            
+            if course_slug and len(course_slug) > 3:
+                for pool_item in ads_fuzzy_pool:
+                    if pool_item['domain'] == course_domain:
+                        # Verify degree type parity to avoid false matches across degrees
+                        degree_match = True
+                        if 'ctesp' in course_path and 'ctesp' not in pool_item['path']:
+                            degree_match = False
+                        if 'licenciatura' in course_path and 'licenciatura' not in pool_item['path']:
+                            degree_match = False
+                        if 'pos-gradua' in course_path and 'pos-gradua' not in pool_item['path']:
+                            degree_match = False
+                            
+                        # Check if course slug is a substring of the spreadsheet URL path
+                        if degree_match and course_slug in pool_item['path']:
+                            matched_url = pool_item['url']
+                            break
+                            
+        if matched_url:
+            keywords = list(ads_map[matched_url].values())
             # Sort by volume then impressions
             keywords.sort(key=lambda x: (x['vol'], x['impressions']), reverse=True)
             item['adsKeywords'] = keywords[:100]
             updated += 1
             total_matched_keywords += len(keywords)
+        else:
+            item['adsKeywords'] = []
 
     print(f"Sync Result: Updated {updated} courses with {total_matched_keywords} keywords.")
 
