@@ -107,16 +107,54 @@ def sync_rankings():
 
     # 4. Update
     match_count = 0
+    
+    # Pre-parse final_rankings keys for fallback fuzzy matching
+    rankings_fuzzy_pool = []
+    for rank_url in final_rankings:
+        parts = rank_url.split('/')
+        domain = parts[0]
+        path = '/'.join(parts[1:])
+        rankings_fuzzy_pool.append({
+            'url': rank_url,
+            'domain': domain,
+            'path': path
+        })
+
     for course in courses:
         if isinstance(course, dict) and course.get('type') == 'metadata':
             continue
             
         norm_c_url = normalize_url(course.get('url', ''))
+        matched_url = None
         if norm_c_url in final_rankings:
-            course['rankingsKeywords'] = final_rankings[norm_c_url]
+            matched_url = norm_c_url
+        else:
+            # Fallback fuzzy matching for domains with legacy URLs (ISLA Gaia, IPLUSO, ISMAT)
+            course_domain = norm_c_url.split('/')[0]
+            course_path = '/'.join(norm_c_url.split('/')[1:])
+            course_slug = norm_c_url.split('/')[-1] if '/' in norm_c_url else norm_c_url
+            
+            if course_slug and len(course_slug) > 3:
+                for pool_item in rankings_fuzzy_pool:
+                    if pool_item['domain'] == course_domain:
+                        # Verify degree type parity
+                        degree_match = True
+                        if 'ctesp' in course_path and 'ctesp' not in pool_item['path']:
+                            degree_match = False
+                        if 'licenciatura' in course_path and 'licenciatura' not in pool_item['path']:
+                            degree_match = False
+                        if 'pos-gradua' in course_path and 'pos-gradua' not in pool_item['path']:
+                            degree_match = False
+                            
+                        # Check if course slug is a substring of the XML ranking URL path
+                        if degree_match and course_slug in pool_item['path']:
+                            matched_url = pool_item['url']
+                            break
+                            
+        if matched_url:
+            course['rankingsKeywords'] = final_rankings[matched_url]
             match_count += 1
         else:
-            # Strictly clear if no exact match (blocks homepage bleeding)
             course['rankingsKeywords'] = []
 
     # 5. Update Sync Metadata
