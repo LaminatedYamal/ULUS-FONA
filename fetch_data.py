@@ -131,6 +131,11 @@ def main():
         if ads: 
             print(f"  Captured {len(ads)} keyword rows.")
             all_ads_records.extend(ads)
+            # Live Debug: search for Criminologia
+            for r in ads:
+                val = str(r).lower()
+                if 'crimin' in val:
+                    print(f"  [DEBUG MATCH in {inst}]: {r}")
         if camps: 
             print(f"  Captured {len(camps)} campaign rows.")
             all_campaign_records.extend(camps)
