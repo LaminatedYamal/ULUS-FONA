@@ -3,6 +3,7 @@ import json
 import datetime
 import gspread
 from google.oauth2 import service_account
+import re
 
 # Configuration
 JSON_FILE_PATH = 'courses.json'
@@ -245,6 +246,8 @@ def main():
                 'institution': item.get('institution', ''),
                 'degree_type': item.get('degree_type', '')
             })
+    # Sort course catalog by slug length descending so longer/more specific slugs match first
+    course_catalog.sort(key=lambda x: len(x['slug']), reverse=True)
 
     # 2. Process Keywords
     ads_map = {}
@@ -263,13 +266,15 @@ def main():
         
         best_match_course = None
         for c in course_catalog:
-            # Match if the cleaned slug is a substring of the ad group or campaign name
-            if len(c['slug']) > 3 and (c['slug'] in ad_group or c['slug'] in campaign):
-                # Verify school and degree type parity
-                if check_institution_match(c['institution'], row_inst, url):
-                    if check_degree_match(c['degree_type'], row_degree):
-                        best_match_course = c
-                        break
+            # Match using whole-word boundary regex to prevent prefix/suffix bleeding (e.g. 'seguranca' matching 'ciberseguranca')
+            if len(c['slug']) > 3:
+                pattern = r'\b' + re.escape(c['slug']) + r'\b'
+                if re.search(pattern, ad_group) or re.search(pattern, campaign):
+                    # Verify school and degree type parity
+                    if check_institution_match(c['institution'], row_inst, url):
+                        if check_degree_match(c['degree_type'], row_degree):
+                            best_match_course = c
+                            break
                 
         if best_match_course and url != best_match_course['url']:
             # Safe verification: Only redirect if the ad group name doesn't contain the current wrong URL's name
@@ -351,8 +356,8 @@ def main():
                         if 'porto' in course_path and 'porto' not in pool_item['path']:
                             degree_match = False
                             
-                        # Check if course slug is a substring of the spreadsheet URL path
-                        if degree_match and course_slug in pool_item['path']:
+                        # Verify exact end-segment match to prevent suffix bleeding (e.g. 'seguranca' matching 'ciberseguranca')
+                        if degree_match and course_slug == pool_item['path'].split('/')[-1]:
                             matched_url = pool_item['url']
                             break
                             
