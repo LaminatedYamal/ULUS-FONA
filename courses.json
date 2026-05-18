@@ -5017,56 +5017,7 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/design",
     "gscKeywords": [],
-    "adsKeywords": [
-      {
-        "term": "faculdade design",
-        "impressions": 56691.0,
-        "clicks": 7157.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso design",
-        "impressions": 15446.0,
-        "clicks": 1401.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura design",
-        "impressions": 11822.0,
-        "clicks": 1717.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade artes",
-        "impressions": 1197.0,
-        "clicks": 94.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso superior artes",
-        "impressions": 311.0,
-        "clicks": 27.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso comunicação visual",
-        "impressions": 11.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": [
       {
         "term": "mestrado design",
@@ -6146,40 +6097,7 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencias-da-educacao",
     "gscKeywords": [],
-    "adsKeywords": [
-      {
-        "term": "faculdade educacao",
-        "impressions": 38291.0,
-        "clicks": 4751.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura educação",
-        "impressions": 26534.0,
-        "clicks": 3080.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso educação",
-        "impressions": 5578.0,
-        "clicks": 924.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "psicologia educação",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": [
       {
         "term": "mestrado educação",
@@ -8135,56 +8053,7 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/lideranca-inovacao-e-transformacao-digital",
     "gscKeywords": [],
-    "adsKeywords": [
-      {
-        "term": "mba gestão",
-        "impressions": 164.0,
-        "clicks": 13.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "pós graduação gestão de projetos",
-        "impressions": 145.0,
-        "clicks": 15.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "pos graduacao em lideranca",
-        "impressions": 64.0,
-        "clicks": 11.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "pos graduacao em inovacao",
-        "impressions": 40.0,
-        "clicks": 6.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mba em gestão de projetos",
-        "impressions": 23.0,
-        "clicks": 4.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mba Transformação Digital",
-        "impressions": 4.0,
-        "clicks": 1.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -11975,41 +11844,9 @@
         "high": 0.0
       },
       {
-        "term": "enfermagem veterinária",
-        "impressions": 55037.0,
-        "clicks": 10762.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura enfermagem",
         "impressions": 11268.0,
         "clicks": 1501.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "enfermagem animal",
-        "impressions": 4397.0,
-        "clicks": 860.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+enfermagem +veterinária",
-        "impressions": 1599.0,
-        "clicks": 292.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+enfermagem +animal",
-        "impressions": 13.0,
-        "clicks": 3.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12067,7 +11904,40 @@
         "impressions": 135
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "enfermagem veterinária",
+        "impressions": 55037.0,
+        "clicks": 10762.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "enfermagem animal",
+        "impressions": 4397.0,
+        "clicks": 860.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+enfermagem +veterinária",
+        "impressions": 1599.0,
+        "clicks": 292.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+enfermagem +animal",
+        "impressions": 13.0,
+        "clicks": 3.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -12298,32 +12168,7 @@
         "impressions": 295
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "licenciatura turismo",
-        "impressions": 14977.0,
-        "clicks": 1310.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura gestão",
-        "impressions": 5413.0,
-        "clicks": 325.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "gestão empresas",
-        "impressions": 4394.0,
-        "clicks": 234.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -14492,32 +14337,7 @@
         "impressions": 82
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso contabilidade",
-        "impressions": 14979.0,
-        "clicks": 1686.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp contabilidade",
-        "impressions": 672.0,
-        "clicks": 128.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp gestao",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -14668,40 +14488,7 @@
         "impressions": 17
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso programação",
-        "impressions": 25442.0,
-        "clicks": 1644.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso multimedia",
-        "impressions": 22718.0,
-        "clicks": 2682.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp multimedia",
-        "impressions": 2198.0,
-        "clicks": 418.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp programação",
-        "impressions": 165.0,
-        "clicks": 12.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -14738,48 +14525,7 @@
         "impressions": 12
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso web",
-        "impressions": 6269.0,
-        "clicks": 424.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional programação",
-        "impressions": 6131.0,
-        "clicks": 482.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp programação",
-        "impressions": 1797.0,
-        "clicks": 275.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso apps",
-        "impressions": 423.0,
-        "clicks": 16.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional site",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -14878,32 +14624,7 @@
         "impressions": 37
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso recursos humanos",
-        "impressions": 22861.0,
-        "clicks": 2502.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico rh",
-        "impressions": 1570.0,
-        "clicks": 101.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico humanos",
-        "impressions": 33.0,
-        "clicks": 5.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -14940,80 +14661,7 @@
         "impressions": 16
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso técnico segurança",
-        "impressions": 17119.0,
-        "clicks": 1560.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional segurança",
-        "impressions": 8801.0,
-        "clicks": 921.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico qualidade",
-        "impressions": 5255.0,
-        "clicks": 598.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional qualidade",
-        "impressions": 468.0,
-        "clicks": 60.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP segurança",
-        "impressions": 427.0,
-        "clicks": 73.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +profissional +ambiente",
-        "impressions": 420.0,
-        "clicks": 46.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP qualidade",
-        "impressions": 244.0,
-        "clicks": 30.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -15744,32 +15392,7 @@
         "impressions": 53
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso trabalho",
-        "impressions": 9161.0,
-        "clicks": 858.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "engenharia segurança trabalho",
-        "impressions": 1571.0,
-        "clicks": 292.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura trabalho",
-        "impressions": 808.0,
-        "clicks": 129.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -16171,32 +15794,7 @@
         "impressions": 13
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "mestrado informática",
-        "impressions": 11204.0,
-        "clicks": 818.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado tecnologia",
-        "impressions": 5740.0,
-        "clicks": 349.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado sistemas informação",
-        "impressions": 482.0,
-        "clicks": 16.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -16442,40 +16040,7 @@
         "impressions": 15
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "curso segurança",
-        "impressions": 19734.0,
-        "clicks": 1474.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso seguranca trabalho",
-        "impressions": 11536.0,
-        "clicks": 1103.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado segurança",
-        "impressions": 4727.0,
-        "clicks": 625.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "engenharia segurança trabalho",
-        "impressions": 1897.0,
-        "clicks": 273.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -16839,48 +16404,7 @@
         "impressions": 78
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "ciência de dados",
-        "impressions": 31527.0,
-        "clicks": 2254.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso ciência de dados",
-        "impressions": 1979.0,
-        "clicks": 176.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ciência de dados curso",
-        "impressions": 521.0,
-        "clicks": 50.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso de cientista de dados",
-        "impressions": 182.0,
-        "clicks": 11.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura desporto",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -16983,25 +16507,9 @@
         "high": 0.0
       },
       {
-        "term": "faculdade design moda",
-        "impressions": 12590.0,
-        "clicks": 1305.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura design",
         "impressions": 6411.0,
         "clicks": 590.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura moda",
-        "impressions": 1327.0,
-        "clicks": 170.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17043,7 +16551,24 @@
         "impressions": 14
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "faculdade design moda",
+        "impressions": 12590.0,
+        "clicks": 1305.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura moda",
+        "impressions": 1327.0,
+        "clicks": 170.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17124,40 +16649,7 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/engenharia-informatica-pt",
     "gscKeywords": [],
-    "adsKeywords": [
-      {
-        "term": "engenharia informática",
-        "impressions": 83461.0,
-        "clicks": 7639.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso informática",
-        "impressions": 20691.0,
-        "clicks": 1491.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade informática",
-        "impressions": 10759.0,
-        "clicks": 992.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura informática",
-        "impressions": 6748.0,
-        "clicks": 428.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -17194,56 +16686,7 @@
         "impressions": 61
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "gestão empresas",
-        "impressions": 35120.0,
-        "clicks": 3350.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "gestão recursos humanos",
-        "impressions": 34510.0,
-        "clicks": 3486.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura recursos humanos",
-        "impressions": 9637.0,
-        "clicks": 1324.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso rh",
-        "impressions": 9559.0,
-        "clicks": 1094.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade recursos humanos",
-        "impressions": 2982.0,
-        "clicks": 434.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura empresas",
-        "impressions": 1015.0,
-        "clicks": 75.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -17586,32 +17029,7 @@
         "impressions": 2
       }
     ],
-    "adsKeywords": [
-      {
-        "term": "mestrado Design",
-        "impressions": 638.0,
-        "clicks": 38.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso economia circular",
-        "impressions": 372.0,
-        "clicks": 19.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado economia circular",
-        "impressions": 64.0,
-        "clicks": 12.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -17910,8 +17328,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "18/05/2026, 14:38:03",
-    "lastSync": "18/05/2026, 14:38:03",
-    "totalAdsCourses": 207
+    "last_sync_at": "18/05/2026, 14:42:03",
+    "lastSync": "18/05/2026, 14:42:03",
+    "totalAdsCourses": 193
   }
 ]
