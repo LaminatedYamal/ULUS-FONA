@@ -847,6 +847,105 @@
     "CostPerConv": 0.0
   },
   {
+    "Campaign": "ISMAT_Geral_Search",
+    "Status": "ENABLED",
+    "Budget": 6.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_Mestrados_Search",
+    "Status": "ENABLED",
+    "Budget": 8.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_PG's_Search",
+    "Status": "PAUSED",
+    "Budget": 6.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_Licenciaturas_Search",
+    "Status": "ENABLED",
+    "Budget": 44.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "Display Notoriedade",
+    "Status": "ENABLED",
+    "Budget": 5.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_Licenciaturas_Search_AGOSTO",
+    "Status": "PAUSED",
+    "Budget": 142.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_Maiores de 23",
+    "Status": "PAUSED",
+    "Budget": 4.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_Brasil_Geral",
+    "Status": "PAUSED",
+    "Budget": 16.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
+    "Campaign": "ISMAT_Acesso Técnico Profissional",
+    "Status": "PAUSED",
+    "Budget": 4.0,
+    "Impressions": 0.0,
+    "Clicks": 0.0,
+    "Cost": 0.0,
+    "Conversions": 0.0,
+    "CTR": "0",
+    "CostPerConv": 0.0
+  },
+  {
     "Campaign": "ISLA GAIA_CTeSP_Search",
     "Status": "ENABLED",
     "Budget": 50.0,
