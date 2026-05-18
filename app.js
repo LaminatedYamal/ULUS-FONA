@@ -66,6 +66,7 @@ async function init() {
     if (landingView) landingView.style.display = "flex";
     if (dashboardView) dashboardView.style.display = "none";
     refreshModelVisibility();
+    switchAIModel(activeAIModel, false);
 
     // Load YT API for Music Hub
     const tag = document.createElement('script');
@@ -2167,11 +2168,11 @@ function refreshModelVisibility() {
 }
 
 
-window.switchAIModel = function(model) {
+window.switchAIModel = function(model, autoOpen = true) {
     console.log(`[Antigravity] switchAIModel triggered for: ${model}`);
     
     // Check if we need to switch or just open sidebar
-    if (activeAIModel === model) {
+    if (activeAIModel === model && autoOpen) {
         const sidebar = document.getElementById('gemini-sidebar');
         if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
         return;
@@ -2220,6 +2221,28 @@ window.switchAIModel = function(model) {
             sidebarLogoSvg.querySelectorAll('path').forEach(p => p.setAttribute('fill', config.color));
             sidebarIcon.appendChild(sidebarLogoSvg);
         }
+
+        // ALSO SWAP SEND BUTTON ICON & DYNAMICALLY MATCH THE BACKGROUND COLOR
+        const sendBtn = document.querySelector('.gemini-send-btn');
+        if (sendBtn) {
+            sendBtn.style.background = config.color;
+            sendBtn.onmouseover = () => {
+                sendBtn.style.background = `rgba(${config.rgb}, 0.8)`;
+            };
+            sendBtn.onmouseout = () => {
+                sendBtn.style.background = config.color;
+            };
+
+            sendBtn.innerHTML = '';
+            const sendLogoSvg = activeItem.querySelector('svg').cloneNode(true);
+            sendLogoSvg.setAttribute('width', '18');
+            sendLogoSvg.setAttribute('height', '18');
+            sendLogoSvg.style.width = "18px";
+            sendLogoSvg.style.height = "18px";
+            // Ensure paths are filled with white for maximum premium contrast
+            sendLogoSvg.querySelectorAll('path').forEach(p => p.setAttribute('fill', 'white'));
+            sendBtn.appendChild(sendLogoSvg);
+        }
     }
     
     // Update API Key Input for specific model
@@ -2251,8 +2274,10 @@ window.switchAIModel = function(model) {
     console.log(`%c [Antigravity] Switched to ${config.name}`, `color: ${config.color}; font-weight: bold;`);
 
     // AUTO-OPEN SIDEBAR ON SELECTION
-    const sidebar = document.getElementById('gemini-sidebar');
-    if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
+    if (autoOpen) {
+        const sidebar = document.getElementById('gemini-sidebar');
+        if (!sidebar.classList.contains('open')) toggleGeminiSidebar();
+    }
 }
 
 function updateAISidebarText() {
