@@ -116,8 +116,6 @@ def main():
         camps = load_campaign_data(sid, creds_dict)
         if ads: 
             print(f"  Captured {len(ads)} keyword rows.")
-            if len(ads) > 0:
-                print(f"  First row headers: {list(ads[0].keys())}")
             all_ads_records.extend(ads)
         if camps: 
             print(f"  Captured {len(camps)} campaign rows.")
@@ -143,17 +141,12 @@ def main():
 
     # 2. Process Keywords
     ads_map = {}
-    diagnostic_sheet_count = 0
     for row in all_ads_records:
         # Robust column detection
         url_raw = row.get('Final URL', row.get('URL', row.get('Landing page', row.get('Final url', ''))))
         url = normalize_url(url_raw)
         if not url: continue
         
-        if ('islagaia' in str(url_raw).lower() or 'isla' in str(url_raw).lower()) and diagnostic_sheet_count < 10:
-            print(f"DIAG: Raw Sheet URL: {url_raw} -> Normalized: {url}")
-            diagnostic_sheet_count += 1
-            
         term = str(row.get('Keyword', row.get('Search term', row.get('Keyword ', '')))).strip()
         if not term or term.lower() == 'total': continue
         
