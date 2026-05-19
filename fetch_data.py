@@ -183,6 +183,29 @@ def main():
         s = s.replace('-', ' ')
         return ' '.join(s.split())
 
+    # Helper function to check if keyword is compatible with the matched course slug/name
+    def is_kw_compatible(kw_term, course_slug, course_name):
+        kw_words = set(clean_slug(kw_term).split())
+        course_words = set(clean_slug(course_slug).split() + clean_slug(course_name).split())
+        
+        stop_words = {'de', 'da', 'do', 'em', 'e', 'para', 'o', 'a', 'os', 'as', 'um', 'uma', 'superior', 'tecnico', 'profissional', 'curso', 'ctesp', 'licenciatura', 'mestrado', 'pos-graduacao'}
+        
+        kw_sig = {w for w in kw_words if w not in stop_words and len(w) > 2}
+        course_sig = {w for w in course_words if w not in stop_words and len(w) > 2}
+        
+        if not kw_sig:
+            return True
+            
+        for kw_w in kw_sig:
+            for c_w in course_sig:
+                if kw_w in c_w or c_w in kw_w:
+                    return True
+                if len(kw_w) >= 4 and len(c_w) >= 4:
+                    prefix_len = min(5, len(kw_w), len(c_w))
+                    if kw_w[:prefix_len] == c_w[:prefix_len]:
+                        return True
+        return False
+
     # Pre-compile the course catalog list of slugs for auto-correction matching
     course_catalog = []
     for item in data:
@@ -229,9 +252,11 @@ def main():
                     inst_match = True
                 
                 if inst_match:
-                    if len(c['slug']) > best_match_len:
-                        best_match_course = c
-                        best_match_len = len(c['slug'])
+                    kw_term = row.get('Keyword', row.get('Search term', row.get('Keyword ', '')))
+                    if is_kw_compatible(kw_term, c['slug'], c['name_clean']):
+                        if len(c['slug']) > best_match_len:
+                            best_match_course = c
+                            best_match_len = len(c['slug'])
                 
         if best_match_course and url != best_match_course['url']:
             # Safe verification: Only redirect if the ad group name doesn't contain the current wrong URL's name
