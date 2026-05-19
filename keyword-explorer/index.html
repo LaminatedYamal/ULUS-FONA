@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYS/KEY | Keyword Explorer Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* local overrides to style the standalone keyword explorer beautifully */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #060814;
+            color: #f8fafc;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .explorer-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .main-workspace {
+            flex: 1;
+            padding: 40px;
+            margin-left: 280px;
+            transition: margin-left 0.4s ease;
+        }
+
+        @media (max-width: 1024px) {
+            .main-workspace {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+
+        /* Top header section */
+        .workspace-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .workspace-title-group h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #38bdf8, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .workspace-title-group p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Ambient glowing background */
+        .ambient-glow {
+            position: fixed;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 100%);
+            z-index: -1;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        /* Interactive table columns and styling */
+        .interactive-th {
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .interactive-th:hover {
+            color: #10b981 !important;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .sort-indicator {
+            font-size: 10px;
+            margin-left: 6px;
+            opacity: 0.7;
+        }
+
+        /* Clean Export Pill-Buttons */
+        .export-pill-panel {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .export-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .export-pill svg {
+            width: 14px;
+            height: 14px;
+            stroke-width: 2.5;
+        }
+
+        .export-pill.organic:hover {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.4);
+            color: #10b981;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+        }
+
+        .export-pill.ads:hover {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: #f59e0b;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+        }
+
+        .export-pill.gsc:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.4);
+            color: #38bdf8;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+        }
+
+        /* Table specific URL styling */
+        .table-url-link {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.2s;
+            border-bottom: 1px dashed rgba(56, 189, 248, 0.2);
+        }
+
+        .table-url-link:hover {
+            color: #0ea5e9;
+            border-bottom-color: #0ea5e9;
+        }
+
+        /* Synergy inline tags */
+        .synergy-badge {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: 5px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            border: 1px solid transparent;
+        }
+
+        .synergy-badge.gsc {
+            background: rgba(56, 189, 248, 0.08);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.15);
+        }
+
+        .synergy-badge.ads {
+            background: rgba(245, 158, 11, 0.08);
+            color: #f59e0b;
+            border-color: rgba(245, 158, 11, 0.15);
+        }
+
+        .synergy-badge.triple {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(16, 185, 129, 0.1));
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.3);
+            font-weight: 900;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.05);
+        }
+
+        /* Custom alignment for search filters */
+        .filter-panel {
+            background: rgba(10, 12, 16, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-input-wrapper {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .filter-select-wrapper {
+            width: 220px;
+        }
+
+        .sleek-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+            transition: all 0.3s;
+            box-sizing: border-box;
+        }
+
+        .sleek-input:focus {
+            border-color: #10b981;
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.1);
+        }
+
+        .sleek-select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
+
+        .sleek-select option {
+            background-color: #0c0e17;
+            color: white;
+        }
+
+        .sleek-select:focus {
+            border-color: #10b981;
+        }
+
+        /* KPI Card glowing effects */
+        .kpi-card-green {
+            border: 1px solid rgba(16, 185, 129, 0.1) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(16, 185, 129, 0.03) !important;
+        }
+
+        .kpi-card-blue {
+            border: 1px solid rgba(56, 189, 248, 0.1) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(56, 189, 248, 0.03) !important;
+        }
+
+        .kpi-card-yellow {
+            border: 1px solid rgba(245, 158, 11, 0.1) !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(245, 158, 11, 0.03) !important;
+        }
+
+        .active-row-synergy {
+            background: rgba(16, 185, 129, 0.01) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+
+    <div class="explorer-layout">
+        <!-- Dashboard Sidebar (Fully aligned with main) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="sidebar-logo">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                        <polyline points="2 17 12 22 22 17"/>
+                        <polyline points="2 12 12 17 22 12"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-main">SYS/KEY</span>
+                    <span class="brand-sub">ANTIGRAVITY</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="../index.html" style="text-decoration: none; color: inherit;">
+                    <div class="nav-degree-btn">
+                        🏠 Home / Courses
+                    </div>
+                </a>
+
+                <div class="nav-group-header" style="margin-top: 20px;">
+                    Active System
+                </div>
+                <a href="#" style="text-decoration: none;">
+                    <div class="nav-degree-btn active">
+                        🔍 Keyword Explorer
+                    </div>
+                </a>
+                <a href="../404-board/" style="text-decoration: none;">
+                    <div class="nav-degree-btn" style="color: #ef4444; border-color: rgba(239,68,68,0.2); background: rgba(239,68,68,0.05);">
+                        ⚠️ 404 Live Board
+                    </div>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace -->
+        <main class="main-workspace">
+            <header class="workspace-header">
+                <div class="workspace-title-group">
+                    <h1>KEYWORD EXPLORER BOARD</h1>
+                    <p>Dynamic monitoring of organic target search queries, ranking positions, and channel synergy</p>
+                </div>
+
+                <!-- Three Small Channel-Specific Export Pill Buttons -->
+                <div class="export-pill-panel">
+                    <button class="export-pill organic" onclick="exportOrganicCSV()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Export Organic
+                    </button>
+                    <button class="export-pill ads" onclick="exportAdsCSV()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Export Ads
+                    </button>
+                    <button class="export-pill gsc" onclick="exportGscCSV()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                        Export GSC
+                    </button>
+                </div>
+            </header>
+
+            <!-- KPI Dashboard Summary cards -->
+            <section class="stats-grid" style="margin-bottom: 30px;">
+                <div class="stat-card kpi-card-blue">
+                    <span class="stat-label">Tracked Keywords</span>
+                    <span class="stat-value" id="kpi-total-tracked">--</span>
+                </div>
+                <div class="stat-card kpi-card-green">
+                    <span class="stat-label">Top 3 Rankings</span>
+                    <span class="stat-value" id="kpi-top3">--</span>
+                </div>
+                <div class="stat-card kpi-card-yellow">
+                    <span class="stat-label">Active Climbers</span>
+                    <span class="stat-value" id="kpi-climbers">--</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Active Sliders</span>
+                    <span class="stat-value" id="kpi-sliders">--</span>
+                </div>
+            </section>
+
+            <!-- Filters Panel -->
+            <section class="filter-panel">
+                <div class="filter-input-wrapper">
+                    <input type="text" id="keyword-search" class="sleek-input" placeholder="Search keyword, course name, or institution..." oninput="handleFilterChange()">
+                </div>
+                <div class="filter-select-wrapper">
+                    <select id="institution-select" class="sleek-select" onchange="handleFilterChange()">
+                        <option value="all">ALL INSTITUTIONS</option>
+                    </select>
+                </div>
+                <div class="filter-select-wrapper">
+                    <select id="bracket-select" class="sleek-select" onchange="handleFilterChange()">
+                        <option value="all">ALL RANKS</option>
+                        <option value="top3">Rank 1 - 3</option>
+                        <option value="top10">Rank 4 - 10</option>
+                        <option value="page2">Rank 11+ (Page 2+)</option>
+                        <option value="improved">Improved (▲)</option>
+                        <option value="dropped">Dropped (▼)</option>
+                        <option value="stable">Stable (●)</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Master Data Panel -->
+            <div class="data-panel full-width">
+                <div class="panel-header">
+                    <div class="header-title-group">
+                        <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                        <h2>Organic Rankings Keyword Explorer</h2>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="interactive-th" onclick="handleSort('term')">Keyword <span id="sort-term" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('course')">Course <span id="sort-course" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('institution')">Institution <span id="sort-institution" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('rank')" style="text-align: center;">Current Rank <span id="sort-rank" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('trend')">3-Month Trend <span id="sort-trend" class="sort-indicator">↕</span></th>
+                                <th>Cross-Channel Synergy</th>
+                                <th>Ranking URL</th>
+                            </tr>
+                        </thead>
+                        <tbody id="master-explorer-body">
+                            <tr>
+                                <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                                    🔍 Connecting to data hub...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        let allKeywords = [];
+        let filteredKeywords = [];
+        let coursesRaw = [];
+        
+        let currentLimit = 100;
+        let sortBy = 'rank'; // Default sort is rank
+        let sortAsc = true;  // Rank ascending (smaller number is better)
+
+        // On document load
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const res = await fetch('../courses.json');
+                if (!res.ok) throw new Error("Could not fetch courses database");
+                coursesRaw = await res.json();
+                
+                flattenRankingsKeywords();
+                populateInstitutions();
+                applyFiltersAndSorting();
+            } catch (err) {
+                console.error(err);
+                document.getElementById('master-explorer-body').innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: #ef4444; font-weight: 700;">
+                            ⚠️ Failed to load database: ${err.message}
+                        </td>
+                    </tr>
+                `;
+            }
+        });
+
+        // Helper to normalize keyword term for indexing matches
+        function normalizeKeyword(str) {
+            if (!str) return '';
+            return str.toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .trim()
+                .replace(/\s+/g, ' ');
+        }
+
+        // Flattens tracked organic search keywords from courses
+        function flattenRankingsKeywords() {
+            const list = [];
+            coursesRaw.forEach(c => {
+                const rankingsList = c.rankingsKeywords || [];
+                const gscNorms = (c.gscKeywords || []).map(k => normalizeKeyword(k.term));
+                const adsNorms = (c.adsKeywords || []).map(k => normalizeKeyword(k.term));
+                
+                rankingsList.forEach(k => {
+                    const norm = normalizeKeyword(k.term);
+                    const isInGsc = gscNorms.includes(norm);
+                    const isInAds = adsNorms.includes(norm);
+                    const isTriple = isInGsc && isInAds;
+
+                    // Calculate rank diff
+                    const diff = (k.prevRank || 0) - (k.rank || 0);
+                    
+                    list.push({
+                        term: k.term,
+                        course: c.name,
+                        institution: c.institution,
+                        rank: parseInt(k.rank) || 999,
+                        prevRank: parseInt(k.prevRank) || 0,
+                        diff: diff,
+                        url: k.url || '',
+                        isInGsc: isInGsc,
+                        isInAds: isInAds,
+                        isTriple: isTriple
+                    });
+                });
+            });
+            allKeywords = list;
+            filteredKeywords = [...allKeywords];
+            updateKPICards();
+        }
+
+        // Populates the Institution select list dynamically
+        function populateInstitutions() {
+            const select = document.getElementById('institution-select');
+            const institutions = [...new Set(allKeywords.map(k => k.institution))].sort();
+            institutions.forEach(inst => {
+                const opt = document.createElement('option');
+                opt.value = inst;
+                opt.textContent = inst.toUpperCase();
+                select.appendChild(opt);
+            });
+        }
+
+        // Updates KPI cards at the top
+        function updateKPICards() {
+            document.getElementById('kpi-total-tracked').textContent = allKeywords.length;
+            
+            const top3 = allKeywords.filter(k => k.rank >= 1 && k.rank <= 3).length;
+            document.getElementById('kpi-top3').textContent = top3;
+
+            const climbers = allKeywords.filter(k => k.diff > 0).length;
+            document.getElementById('kpi-climbers').textContent = climbers;
+
+            const sliders = allKeywords.filter(k => k.diff < 0).length;
+            document.getElementById('kpi-sliders').textContent = sliders;
+        }
+
+        // Handle searches, institution select and rank bracket changes
+        function handleFilterChange() {
+            currentLimit = 100; // Reset batch pagination
+            applyFiltersAndSorting();
+        }
+
+        function applyFiltersAndSorting() {
+            const query = document.getElementById('keyword-search').value.toLowerCase().trim();
+            const inst = document.getElementById('institution-select').value;
+            const bracket = document.getElementById('bracket-select').value;
+
+            // 1. Filtering
+            filteredKeywords = allKeywords.filter(k => {
+                // Match search query
+                const matchesQuery = !query || 
+                    k.term.toLowerCase().includes(query) || 
+                    k.course.toLowerCase().includes(query) || 
+                    k.institution.toLowerCase().includes(query);
+                
+                // Match institution
+                const matchesInst = (inst === 'all' || k.institution === inst);
+
+                // Match rank bracket selection
+                let matchesBracket = true;
+                if (bracket === 'top3') {
+                    matchesBracket = (k.rank >= 1 && k.rank <= 3);
+                } else if (bracket === 'top10') {
+                    matchesBracket = (k.rank >= 4 && k.rank <= 10);
+                } else if (bracket === 'page2') {
+                    matchesBracket = (k.rank >= 11);
+                } else if (bracket === 'improved') {
+                    matchesBracket = (k.diff > 0);
+                } else if (bracket === 'dropped') {
+                    matchesBracket = (k.diff < 0);
+                } else if (bracket === 'stable') {
+                    matchesBracket = (k.diff === 0);
+                }
+
+                return matchesQuery && matchesInst && matchesBracket;
+            });
+
+            // 2. Sorting
+            filteredKeywords.sort((a, b) => {
+                let valA = a[sortBy];
+                let valB = b[sortBy];
+
+                // Handle string comparisons
+                if (typeof valA === 'string') {
+                    return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+                }
+                
+                // Handle numeric comparisons
+                return sortAsc ? (valA - valB) : (valB - valA);
+            });
+
+            // Update header UI sort indicators
+            const indicators = ['term', 'course', 'institution', 'rank', 'trend'];
+            indicators.forEach(ind => {
+                const el = document.getElementById(`sort-${ind}`);
+                if (ind === sortBy) {
+                    el.textContent = sortAsc ? '▲' : '▼';
+                } else {
+                    el.textContent = '↕';
+                }
+            });
+
+            renderExplorerTable();
+        }
+
+        // Toggles Sorting
+        function handleSort(field) {
+            if (field === 'trend') {
+                // Sorting by trend means sorting by the rank diff value
+                field = 'diff';
+            }
+            if (sortBy === field) {
+                sortAsc = !sortAsc;
+            } else {
+                sortBy = field;
+                // If sorting by rank or diff, ascending/descending defaults
+                sortAsc = (field === 'rank' || field === 'diff') ? true : true;
+            }
+            applyFiltersAndSorting();
+        }
+
+        // Renders the flattened keyword rows with pagination support
+        function renderExplorerTable() {
+            const body = document.getElementById('master-explorer-body');
+            body.innerHTML = '';
+
+            if (filteredKeywords.length === 0) {
+                body.innerHTML = `
+                    <tr>
+                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted); opacity: 0.5;">
+                            📂 No keywords matching your filters
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            const visibleSlice = filteredKeywords.slice(0, currentLimit);
+
+            visibleSlice.forEach(k => {
+                const tr = document.createElement('tr');
+                if (k.isTriple) {
+                    tr.className = 'rainbow-row active-row-synergy';
+                }
+
+                // 3-Month Trend display icon/string
+                let trendIcon = '';
+                if (k.diff > 0) {
+                    trendIcon = `<span style="color:var(--success); font-weight:700;">▲ ${k.diff}</span>`;
+                } else if (k.diff < 0) {
+                    trendIcon = `<span style="color:var(--danger); font-weight:700;">▼ ${Math.abs(k.diff)}</span>`;
+                } else {
+                    trendIcon = `<span style="color:var(--text-muted);">● Stable</span>`;
+                }
+
+                // Cross-channel badges
+                let synergyHtml = '';
+                if (k.isTriple) {
+                    synergyHtml = `<span class="synergy-badge triple">🌈 Triple Synergy</span>`;
+                } else {
+                    if (k.isInGsc) synergyHtml += `<span class="synergy-badge gsc">✓ GSC Active</span>`;
+                    if (k.isInAds) synergyHtml += `<span class="synergy-badge ads">✓ Ads Active</span>`;
+                    if (!k.isInGsc && !k.isInAds) synergyHtml += `<span class="text-muted" style="font-size:11px;">Rankings Only</span>`;
+                }
+
+                // URL format
+                let urlDisplay = '---';
+                if (k.url) {
+                    try {
+                        const parsed = new URL(k.url);
+                        urlDisplay = `<a href="${k.url}" target="_blank" class="table-url-link" title="${k.url}">${parsed.hostname}${parsed.pathname.slice(0, 15)}...</a>`;
+                    } catch (e) {
+                        urlDisplay = `<a href="${k.url}" target="_blank" class="table-url-link">${k.url.slice(0, 20)}...</a>`;
+                    }
+                }
+
+                tr.innerHTML = `
+                    <td style="font-weight: 700; color: white;">${k.term}</td>
+                    <td>${k.course}</td>
+                    <td style="font-size: 11px; opacity: 0.8; font-weight: 600;">${k.institution}</td>
+                    <td style="text-align: center;"><span style="font-size:18px; font-weight:800; color: var(--accent-primary);">#${k.rank === 999 ? '---' : k.rank}</span></td>
+                    <td>${trendIcon}</td>
+                    <td>${synergyHtml}</td>
+                    <td>${urlDisplay}</td>
+                `;
+                body.appendChild(tr);
+            });
+
+            // Append load more row if total exceeds visible limit
+            if (filteredKeywords.length > currentLimit) {
+                const loadRow = document.createElement('tr');
+                loadRow.innerHTML = `
+                    <td colspan="7" style="text-align: center; padding: 20px;">
+                        <button class="sync-btn" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);" onclick="loadMoreBatch()">
+                            Load More (+100)
+                        </button>
+                    </td>
+                `;
+                body.appendChild(loadRow);
+            }
+        }
+
+        function loadMoreBatch() {
+            currentLimit += 100;
+            renderExplorerTable();
+        }
+
+        // CSV helper to sanitize columns
+        function sanitizeCSVField(val) {
+            if (val === undefined || val === null) return '""';
+            const str = String(val).replace(/"/g, '""');
+            return `"${str}"`;
+        }
+
+        // 1. Export Organic CSV
+        function exportOrganicCSV() {
+            let csv = "Keyword,Course,Institution,Current Rank,Previous Rank,Trend,Ranking URL,Synergy Status\n";
+            
+            allKeywords.forEach(k => {
+                const trendStr = k.diff > 0 ? `+${k.diff}` : k.diff < 0 ? `-${Math.abs(k.diff)}` : "Stable";
+                const synergy = k.isTriple ? "Triple Synergy" : (k.isInGsc && k.isInAds ? "Synergy GSC+Ads" : (k.isInGsc ? "GSC Active" : (k.isInAds ? "Ads Active" : "Rankings Only")));
+                
+                csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(k.course)},${sanitizeCSVField(k.institution)},${k.rank === 999 ? '""' : k.rank},${k.prevRank || 0},"${trendStr}",${sanitizeCSVField(k.url)},"${synergy}"\n`;
+            });
+
+            triggerCSVDownload(csv, "fleet_organic_rankings.csv");
+        }
+
+        // 2. Export Ads CSV
+        function exportAdsCSV() {
+            let csv = "Keyword,Course,Institution,Impressions,Clicks,Search Volume,Low Range Bid,High Range Bid\n";
+            
+            coursesRaw.forEach(c => {
+                const ads = c.adsKeywords || [];
+                ads.forEach(k => {
+                    csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(c.name)},${sanitizeCSVField(c.institution)},${k.impressions || 0},${k.clicks || 0},${k.volume || 0},${k.lowBid || 0},${k.highBid || 0}\n`;
+                });
+            });
+
+            triggerCSVDownload(csv, "fleet_google_ads.csv");
+        }
+
+        // 3. Export GSC CSV
+        function exportGscCSV() {
+            let csv = "Keyword,Course,Institution,Clicks,Impressions,Click Delta\n";
+            
+            coursesRaw.forEach(c => {
+                const gsc = c.gscKeywords || [];
+                gsc.forEach(k => {
+                    csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(c.name)},${sanitizeCSVField(c.institution)},${k.clicks || 0},${k.impressions || 0},${k.clickDelta || 0}\n`;
+                });
+            });
+
+            triggerCSVDownload(csv, "fleet_search_console.csv");
+        }
+
+        function triggerCSVDownload(csvContent, filename) {
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", filename);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
