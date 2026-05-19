@@ -388,14 +388,6 @@
         "high": 0.0
       },
       {
-        "term": "faculdade design moda",
-        "impressions": 12590.0,
-        "clicks": 1305.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura moda",
         "impressions": 3921.0,
         "clicks": 891.0,
@@ -2264,25 +2256,25 @@
         "high": 0.0
       },
       {
-        "term": "faculdade direito",
-        "impressions": 57750.0,
-        "clicks": 7368.0,
+        "term": "curso de advocacia",
+        "impressions": 6526.0,
+        "clicks": 369.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "escola direito",
-        "impressions": 31823.0,
-        "clicks": 4585.0,
+        "impressions": 129.0,
+        "clicks": 22.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "curso de advocacia",
-        "impressions": 6526.0,
-        "clicks": 369.0,
+        "term": "faculdade direito",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2506,30 +2498,6 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
-      },
-      {
-        "term": "mestrado Design",
-        "impressions": 638.0,
-        "clicks": 38.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso economia circular",
-        "impressions": 372.0,
-        "clicks": 19.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado economia circular",
-        "impressions": 64.0,
-        "clicks": 12.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -2557,41 +2525,81 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "curso gestao",
-        "impressions": 98249.0,
-        "clicks": 9168.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura gestao",
-        "impressions": 20947.0,
-        "clicks": 1734.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura turismo",
-        "impressions": 14977.0,
-        "clicks": 1310.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura gestão",
-        "impressions": 5413.0,
-        "clicks": 325.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "gestão empresas",
-        "impressions": 4394.0,
-        "clicks": 234.0,
+        "impressions": 72213.0,
+        "clicks": 9169.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso gestão lisboa",
+        "impressions": 1912.0,
+        "clicks": 174.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso gestão empresarial",
+        "impressions": 847.0,
+        "clicks": 151.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso administração empresas",
+        "impressions": 247.0,
+        "clicks": 43.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade gestão empresarial",
+        "impressions": 119.0,
+        "clicks": 33.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura gestão lisboa",
+        "impressions": 2.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso empresarial",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciaturas empresas",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura empresas",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura gestão empresas",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2672,49 +2680,9 @@
     ],
     "adsKeywords": [
       {
-        "term": "curso rh",
-        "impressions": 15088.0,
-        "clicks": 1920.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura recursos humanos",
         "impressions": 10279.0,
         "clicks": 1209.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado RH",
-        "impressions": 5911.0,
-        "clicks": 578.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade recursos humanos",
-        "impressions": 2798.0,
-        "clicks": 411.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso recursos humanos",
-        "impressions": 2232.0,
-        "clicks": 278.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado recursos humanos",
-        "impressions": 1332.0,
-        "clicks": 133.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3457,25 +3425,9 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "curso ciencia de dados",
-        "impressions": 18038.0,
-        "clicks": 807.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura ciência de dados",
         "impressions": 5491.0,
         "clicks": 494.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso data science",
-        "impressions": 2764.0,
-        "clicks": 351.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3498,38 +3450,6 @@
       },
       {
         "term": "Mestrado geográfico",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso informática",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso ciência de dados",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp informática",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso tecnico ciencia dados",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -3595,16 +3515,24 @@
     "adsKeywords": [
       {
         "term": "licenciatura matemática",
-        "impressions": 3648.0,
-        "clicks": 223.0,
+        "impressions": 5410.0,
+        "clicks": 327.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "matemática computação",
-        "impressions": 1728.0,
-        "clicks": 77.0,
+        "impressions": 1381.0,
+        "clicks": 109.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "Licenciatura Computação",
+        "impressions": 23.0,
+        "clicks": 2.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3656,8 +3584,8 @@
     "adsKeywords": [
       {
         "term": "engenharia informática",
-        "impressions": 135593.0,
-        "clicks": 16588.0,
+        "impressions": 126897.0,
+        "clicks": 19169.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3682,22 +3610,6 @@
         "term": "curso informática",
         "impressions": 17192.0,
         "clicks": 1904.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "informatica gestao",
-        "impressions": 8066.0,
-        "clicks": 530.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura informatica",
-        "impressions": 2972.0,
-        "clicks": 384.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4016,41 +3928,9 @@
         "high": 0.0
       },
       {
-        "term": "faculdade psicologia",
-        "impressions": 61559.0,
-        "clicks": 9727.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "curso psicologia",
-        "impressions": 50822.0,
-        "clicks": 7205.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "escola psicologia",
-        "impressions": 31169.0,
-        "clicks": 4372.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura psicologia",
-        "impressions": 27172.0,
-        "clicks": 3068.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado psicologia",
-        "impressions": 26705.0,
-        "clicks": 2206.0,
+        "impressions": 48443.0,
+        "clicks": 8617.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4067,6 +3947,22 @@
         "term": "doutoramento psicologia",
         "impressions": 8833.0,
         "clicks": 1059.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura psicologia",
+        "impressions": 8552.0,
+        "clicks": 1715.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado psicologia",
+        "impressions": 5492.0,
+        "clicks": 683.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4099,6 +3995,14 @@
         "term": "mestrado psicologia clinica portugal",
         "impressions": 29.0,
         "clicks": 9.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade psicologia",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4925,38 +4829,6 @@
         "high": 0.0
       },
       {
-        "term": "gestão turismo",
-        "impressions": 14735.0,
-        "clicks": 1862.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional turismo",
-        "impressions": 14528.0,
-        "clicks": 1665.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso gestao hoteleira",
-        "impressions": 12462.0,
-        "clicks": 1227.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura turismo",
-        "impressions": 7910.0,
-        "clicks": 858.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "faculdade turismo",
         "impressions": 6747.0,
         "clicks": 1185.0,
@@ -4965,25 +4837,9 @@
         "high": 0.0
       },
       {
-        "term": "curso gestão turismo",
-        "impressions": 3983.0,
+        "term": "licenciatura turismo",
+        "impressions": 2318.0,
         "clicks": 425.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado turismo",
-        "impressions": 2634.0,
-        "clicks": 141.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp turismo",
-        "impressions": 1695.0,
-        "clicks": 266.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4997,40 +4853,16 @@
         "high": 0.0
       },
       {
-        "term": "curso técnico turismo",
-        "impressions": 921.0,
-        "clicks": 94.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura gestão turismo",
-        "impressions": 66.0,
-        "clicks": 15.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado hospitalidade",
-        "impressions": 38.0,
-        "clicks": 5.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional hotelaria",
-        "impressions": 27.0,
-        "clicks": 4.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura turismo porto",
         "impressions": 1.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "gestão turismo",
+        "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5107,30 +4939,6 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
-      },
-      {
-        "term": "+master +turismo",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+gestão +turismo",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico restauração",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -5202,25 +5010,17 @@
     ],
     "adsKeywords": [
       {
-        "term": "curso arquitetura",
-        "impressions": 40347.0,
-        "clicks": 5330.0,
+        "term": "doutoramento arquitetura",
+        "impressions": 1823.0,
+        "clicks": 160.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "faculdade arquitetura",
-        "impressions": 19435.0,
-        "clicks": 2249.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura arquitetura",
-        "impressions": 7366.0,
-        "clicks": 958.0,
+        "term": "phd arquitetura",
+        "impressions": 205.0,
+        "clicks": 7.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5485,17 +5285,17 @@
     ],
     "adsKeywords": [
       {
-        "term": "mestrado urbanismo",
-        "impressions": 1250.0,
-        "clicks": 140.0,
+        "term": "doutoramento urbanismo",
+        "impressions": 529.0,
+        "clicks": 61.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado reabilitação urbana",
-        "impressions": 36.0,
-        "clicks": 4.0,
+        "term": "phd urbanismo",
+        "impressions": 61.0,
+        "clicks": 5.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5525,30 +5325,6 @@
     "url": "https://www.ulusofona.pt/lisboa/mestrados/design",
     "gscKeywords": [],
     "adsKeywords": [
-      {
-        "term": "curso design",
-        "impressions": 21929.0,
-        "clicks": 1685.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade design",
-        "impressions": 18853.0,
-        "clicks": 1651.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura design",
-        "impressions": 6411.0,
-        "clicks": 590.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
       {
         "term": "faculdade design lisboa",
         "impressions": 2226.0,
@@ -5636,14 +5412,6 @@
         "term": "curso design moda",
         "impressions": 27650.0,
         "clicks": 3718.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade design moda",
-        "impressions": 12590.0,
-        "clicks": 1305.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6632,25 +6400,25 @@
         "high": 0.0
       },
       {
-        "term": "faculdade direito",
-        "impressions": 57750.0,
-        "clicks": 7368.0,
+        "term": "curso de advocacia",
+        "impressions": 6526.0,
+        "clicks": 369.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "escola direito",
-        "impressions": 31823.0,
-        "clicks": 4585.0,
+        "impressions": 129.0,
+        "clicks": 22.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "curso de advocacia",
-        "impressions": 6526.0,
-        "clicks": 369.0,
+        "term": "faculdade direito",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6908,30 +6676,6 @@
         "term": "licenciatura economia",
         "impressions": 6839.0,
         "clicks": 709.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado Design",
-        "impressions": 638.0,
-        "clicks": 38.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso economia circular",
-        "impressions": 372.0,
-        "clicks": 19.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado economia circular",
-        "impressions": 64.0,
-        "clicks": 12.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7577,39 +7321,31 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "mestrado data science",
-        "impressions": 13090.0,
-        "clicks": 1417.0,
+        "term": "licenciatura ciência de dados",
+        "impressions": 5491.0,
+        "clicks": 494.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "curso ciência dados",
-        "impressions": 8440.0,
-        "clicks": 602.0,
+        "term": "ciência de dados ISCTE",
+        "impressions": 2077.0,
+        "clicks": 150.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado ciência dados",
-        "impressions": 2044.0,
-        "clicks": 220.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado data science portugal",
-        "impressions": 804.0,
+        "term": "licenciatura data science",
+        "impressions": 656.0,
         "clicks": 66.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado ciência dados portugal",
+        "term": "Mestrado geográfico",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -8479,7 +8215,16 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/enfermagem-veterinaria-clinica",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "Mestrado Enfermagem Veterinária",
+        "impressions": 256.0,
+        "clicks": 47.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -8988,38 +8733,6 @@
     ],
     "adsKeywords": [
       {
-        "term": "mestrado educação",
-        "impressions": 112909.0,
-        "clicks": 10633.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso educação básica",
-        "impressions": 42534.0,
-        "clicks": 8864.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura educação básica",
-        "impressions": 23938.0,
-        "clicks": 4022.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura ensino basico",
-        "impressions": 13388.0,
-        "clicks": 2189.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "doutoramento educação",
         "impressions": 11020.0,
         "clicks": 1042.0,
@@ -9039,22 +8752,6 @@
         "term": "escola educação lisboa",
         "impressions": 4999.0,
         "clicks": 240.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+licenciatura +educação +básica",
-        "impressions": 220.0,
-        "clicks": 55.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +educação +básica",
-        "impressions": 198.0,
-        "clicks": 56.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9106,38 +8803,6 @@
     "url": "https://www.ulusofona.pt/lisboa/doutoramentos/informatica",
     "gscKeywords": [],
     "adsKeywords": [
-      {
-        "term": "engenharia informática",
-        "impressions": 83461.0,
-        "clicks": 7639.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso informática",
-        "impressions": 20691.0,
-        "clicks": 1491.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade informática",
-        "impressions": 10759.0,
-        "clicks": 992.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura informática",
-        "impressions": 6748.0,
-        "clicks": 428.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
       {
         "term": "doutoramento informática",
         "impressions": 1799.0,
@@ -9469,25 +9134,9 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "curso profissional marketing",
-        "impressions": 39233.0,
-        "clicks": 4066.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "marketing Digital",
         "impressions": 6847.0,
         "clicks": 734.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp marketing",
-        "impressions": 6578.0,
-        "clicks": 987.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9512,46 +9161,6 @@
         "term": "formação marketing digital",
         "impressions": 405.0,
         "clicks": 30.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctsp marketing",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional comércio",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp comércio",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional commerce",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp commerce",
-        "impressions": 0.0,
-        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -10074,40 +9683,7 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/comunicacao-digital",
     "gscKeywords": [],
-    "adsKeywords": [
-      {
-        "term": "curso comunicação",
-        "impressions": 33033.0,
-        "clicks": 2365.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional comunicação",
-        "impressions": 1422.0,
-        "clicks": 79.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp comunicação",
-        "impressions": 725.0,
-        "clicks": 132.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp digital",
-        "impressions": 243.0,
-        "clicks": 31.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      }
-    ],
+    "adsKeywords": [],
     "rankingsKeywords": []
   },
   {
@@ -11226,14 +10802,6 @@
         "high": 0.0
       },
       {
-        "term": "faculdade design moda",
-        "impressions": 12590.0,
-        "clicks": 1305.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura moda",
         "impressions": 3921.0,
         "clicks": 891.0,
@@ -11930,417 +11498,9 @@
         "high": 0.0
       },
       {
-        "term": "curso profissional hotelaria",
-        "impressions": 37343.0,
-        "clicks": 3463.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "gestão empresas",
-        "impressions": 35120.0,
-        "clicks": 3350.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "gestão recursos humanos",
-        "impressions": 34510.0,
-        "clicks": 3486.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "gestão empresarial",
-        "impressions": 33791.0,
-        "clicks": 2789.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado gestão",
-        "impressions": 31696.0,
-        "clicks": 2694.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura gestão",
-        "impressions": 30773.0,
-        "clicks": 1987.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso recursos humanos",
-        "impressions": 22861.0,
-        "clicks": 2502.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional gestão",
-        "impressions": 22766.0,
-        "clicks": 2255.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico segurança",
-        "impressions": 17119.0,
-        "clicks": 1560.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso contabilidade",
-        "impressions": 14979.0,
-        "clicks": 1686.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico gestão",
-        "impressions": 14904.0,
-        "clicks": 1611.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado recursos humanos",
-        "impressions": 14078.0,
-        "clicks": 1827.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura recursos humanos",
-        "impressions": 9637.0,
-        "clicks": 1324.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso rh",
-        "impressions": 9559.0,
-        "clicks": 1094.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico administração",
-        "impressions": 9511.0,
-        "clicks": 1129.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso vendas",
-        "impressions": 9290.0,
-        "clicks": 805.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso gestão marketing",
-        "impressions": 8954.0,
-        "clicks": 661.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional segurança",
-        "impressions": 8801.0,
-        "clicks": 921.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional contabilidade",
-        "impressions": 7825.0,
-        "clicks": 829.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico recursos humanos",
-        "impressions": 7332.0,
-        "clicks": 813.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp gestão",
-        "impressions": 6377.0,
-        "clicks": 928.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico qualidade",
-        "impressions": 5255.0,
-        "clicks": 598.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso gestão comercial",
-        "impressions": 5103.0,
-        "clicks": 572.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp desporto",
-        "impressions": 4419.0,
-        "clicks": 564.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico contabilidade",
-        "impressions": 3884.0,
-        "clicks": 511.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade recursos humanos",
-        "impressions": 2982.0,
-        "clicks": 434.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico hotelaria",
-        "impressions": 2973.0,
-        "clicks": 352.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "gestão marketing",
-        "impressions": 2888.0,
-        "clicks": 272.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp marketing",
-        "impressions": 2631.0,
-        "clicks": 399.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+licenciatura +gestão",
-        "impressions": 2461.0,
-        "clicks": 211.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso gestão qualidade",
-        "impressions": 2341.0,
-        "clicks": 258.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp saúde",
-        "impressions": 2084.0,
-        "clicks": 369.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp recursos humanos",
-        "impressions": 1808.0,
-        "clicks": 399.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico rh",
-        "impressions": 1570.0,
-        "clicks": 101.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+gestão +empresarial",
-        "impressions": 1372.0,
-        "clicks": 134.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional restauração",
-        "impressions": 1327.0,
-        "clicks": 183.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp contabilidade",
-        "impressions": 1222.0,
-        "clicks": 181.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso e-commerce",
-        "impressions": 1088.0,
-        "clicks": 65.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura empresas",
-        "impressions": 1015.0,
-        "clicks": 75.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso ambiente",
-        "impressions": 964.0,
-        "clicks": 64.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso gestão segurança",
-        "impressions": 573.0,
-        "clicks": 52.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional qualidade",
-        "impressions": 468.0,
-        "clicks": 60.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP segurança",
-        "impressions": 427.0,
-        "clicks": 73.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +profissional +ambiente",
-        "impressions": 420.0,
-        "clicks": 46.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP qualidade",
-        "impressions": 244.0,
-        "clicks": 30.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso tecnico gestão comercial",
-        "impressions": 192.0,
-        "clicks": 35.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso comercio eletronico",
-        "impressions": 165.0,
-        "clicks": 15.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico gestão pública",
-        "impressions": 141.0,
-        "clicks": 21.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico sistemas informação",
-        "impressions": 137.0,
-        "clicks": 11.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso tecnico restauração",
-        "impressions": 104.0,
-        "clicks": 10.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico humanos",
-        "impressions": 33.0,
-        "clicks": 5.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico cibersegurança",
-        "impressions": 26.0,
-        "clicks": 6.0,
+        "impressions": 6368.0,
+        "clicks": 496.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12363,86 +11523,6 @@
       },
       {
         "term": "mestrado tecnologias",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso tecnico gestão e negocios",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional saúde",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso gestao clinicas",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +gestão +pública",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +administração +pública",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+licenciatura +administração +pública",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp gestao",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp cibersegurança",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -14291,7 +13371,48 @@
         "impressions": 71
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso educação básica",
+        "impressions": 42534.0,
+        "clicks": 8864.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura educação básica",
+        "impressions": 23938.0,
+        "clicks": 4022.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura ensino basico",
+        "impressions": 13388.0,
+        "clicks": 2189.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+licenciatura +educação +básica",
+        "impressions": 220.0,
+        "clicks": 55.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+curso +educação +básica",
+        "impressions": 198.0,
+        "clicks": 56.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -14365,14 +13486,6 @@
         "term": "+enfermagem +veterinária",
         "impressions": 1599.0,
         "clicks": 292.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "Mestrado Enfermagem Veterinária",
-        "impressions": 256.0,
-        "clicks": 47.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14475,7 +13588,16 @@
         "impressions": 21
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "licenciatura informática",
+        "impressions": 16638.0,
+        "clicks": 1100.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -14616,9 +13738,33 @@
     ],
     "adsKeywords": [
       {
+        "term": "curso vendas",
+        "impressions": 9290.0,
+        "clicks": 805.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "gestão comercial",
         "impressions": 5560.0,
         "clicks": 535.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso gestão comercial",
+        "impressions": 5103.0,
+        "clicks": 572.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso tecnico gestão comercial",
+        "impressions": 192.0,
+        "clicks": 35.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14660,7 +13806,32 @@
         "impressions": 295
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "licenciatura turismo",
+        "impressions": 14977.0,
+        "clicks": 1310.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura gestão",
+        "impressions": 5413.0,
+        "clicks": 325.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "gestão empresas",
+        "impressions": 4394.0,
+        "clicks": 234.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -14697,7 +13868,40 @@
         "impressions": 7
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "gestão empresarial",
+        "impressions": 33791.0,
+        "clicks": 2789.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura gestão",
+        "impressions": 30773.0,
+        "clicks": 1987.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+licenciatura +gestão",
+        "impressions": 2461.0,
+        "clicks": 211.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+gestão +empresarial",
+        "impressions": 1372.0,
+        "clicks": 134.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -15052,7 +14256,16 @@
         "impressions": 2
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado educação",
+        "impressions": 112909.0,
+        "clicks": 10633.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -15487,7 +14700,24 @@
         "impressions": 11
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso técnico administração",
+        "impressions": 9511.0,
+        "clicks": 1129.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico gestão pública",
+        "impressions": 141.0,
+        "clicks": 21.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -15640,70 +14870,6 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
-      },
-      {
-        "term": "curso segurança informática",
-        "impressions": 2325.0,
-        "clicks": 151.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico cibersegurança",
-        "impressions": 1679.0,
-        "clicks": 128.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP qualidade",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional qualidade",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +profissional +ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP segurança",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -15742,7 +14908,56 @@
         "impressions": 48
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso profissional gestão",
+        "impressions": 22766.0,
+        "clicks": 2255.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico gestão",
+        "impressions": 14904.0,
+        "clicks": 1611.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional contabilidade",
+        "impressions": 7825.0,
+        "clicks": 829.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp gestão",
+        "impressions": 6377.0,
+        "clicks": 928.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico contabilidade",
+        "impressions": 3884.0,
+        "clicks": 511.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp contabilidade",
+        "impressions": 1222.0,
+        "clicks": 181.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -15911,7 +15126,32 @@
         "impressions": 16
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso técnico recursos humanos",
+        "impressions": 7332.0,
+        "clicks": 813.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp recursos humanos",
+        "impressions": 1808.0,
+        "clicks": 399.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico rh",
+        "impressions": 820.0,
+        "clicks": 112.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -15985,7 +15225,40 @@
         "impressions": 20
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso profissional hotelaria",
+        "impressions": 37343.0,
+        "clicks": 3463.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico hotelaria",
+        "impressions": 2973.0,
+        "clicks": 352.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional restauração",
+        "impressions": 1327.0,
+        "clicks": 183.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso tecnico restauração",
+        "impressions": 104.0,
+        "clicks": 10.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16022,7 +15295,32 @@
         "impressions": 103
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso gestão marketing",
+        "impressions": 8954.0,
+        "clicks": 661.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "gestão marketing",
+        "impressions": 2888.0,
+        "clicks": 272.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp marketing",
+        "impressions": 2631.0,
+        "clicks": 399.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16059,7 +15357,32 @@
         "impressions": 5
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso e-commerce",
+        "impressions": 1088.0,
+        "clicks": 65.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso comercio eletronico",
+        "impressions": 165.0,
+        "clicks": 15.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso tecnico gestão e negocios",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16096,7 +15419,16 @@
         "impressions": 1
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso técnico sistemas informação",
+        "impressions": 137.0,
+        "clicks": 11.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16243,15 +15575,23 @@
     ],
     "adsKeywords": [
       {
-        "term": "curso social",
-        "impressions": 0.0,
-        "clicks": 0.0,
+        "term": "curso profissional marketing",
+        "impressions": 39233.0,
+        "clicks": 4066.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "ctesp social",
+        "term": "ctesp marketing",
+        "impressions": 6578.0,
+        "clicks": 987.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctsp marketing",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -16455,7 +15795,80 @@
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/ctesp/ciberseguranca-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso segurança informática",
+        "impressions": 2325.0,
+        "clicks": 151.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico cibersegurança",
+        "impressions": 1679.0,
+        "clicks": 128.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp cibersegurança",
+        "impressions": 1363.0,
+        "clicks": 147.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP qualidade",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional qualidade",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+curso +profissional +ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP segurança",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16492,7 +15905,40 @@
         "impressions": 20
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso comunicação",
+        "impressions": 33033.0,
+        "clicks": 2365.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional comunicação",
+        "impressions": 1422.0,
+        "clicks": 79.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp comunicação",
+        "impressions": 725.0,
+        "clicks": 132.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp digital",
+        "impressions": 243.0,
+        "clicks": 31.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16931,7 +16377,80 @@
         "impressions": 1
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "ctesp desporto",
+        "impressions": 4419.0,
+        "clicks": 564.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico cibersegurança",
+        "impressions": 26.0,
+        "clicks": 6.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp cibersegurança",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP qualidade",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional qualidade",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+curso +profissional +ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP segurança",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17062,7 +16581,24 @@
         "impressions": 93
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso gestao hoteleira",
+        "impressions": 12462.0,
+        "clicks": 1227.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp turismo",
+        "impressions": 1695.0,
+        "clicks": 266.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17153,7 +16689,64 @@
         "impressions": 29
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso profissional marketing",
+        "impressions": 27963.0,
+        "clicks": 2248.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp marketing",
+        "impressions": 5631.0,
+        "clicks": 811.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso marketing digital",
+        "impressions": 2367.0,
+        "clicks": 123.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional comércio",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp comércio",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional commerce",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp commerce",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17346,7 +16939,48 @@
         "impressions": 5
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso turismo",
+        "impressions": 45528.0,
+        "clicks": 4917.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional turismo",
+        "impressions": 1708.0,
+        "clicks": 222.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico turismo",
+        "impressions": 921.0,
+        "clicks": 94.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional hotelaria",
+        "impressions": 27.0,
+        "clicks": 4.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico restauração",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17499,7 +17133,40 @@
         "impressions": 5
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "engenharia informática",
+        "impressions": 135593.0,
+        "clicks": 16588.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade informatica",
+        "impressions": 16940.0,
+        "clicks": 1956.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "informatica gestao",
+        "impressions": 8066.0,
+        "clicks": 530.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura informatica",
+        "impressions": 2972.0,
+        "clicks": 384.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17536,7 +17203,24 @@
         "impressions": 112
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso gestao",
+        "impressions": 98249.0,
+        "clicks": 9168.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura gestao",
+        "impressions": 20947.0,
+        "clicks": 1734.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17573,7 +17257,40 @@
         "impressions": 20
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso rh",
+        "impressions": 15088.0,
+        "clicks": 1920.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "impressions": 7920.0,
+        "clicks": 1281.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade recursos humanos",
+        "impressions": 2798.0,
+        "clicks": 411.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso recursos humanos",
+        "impressions": 2232.0,
+        "clicks": 278.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17610,7 +17327,32 @@
         "impressions": 26
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "licenciatura turismo",
+        "impressions": 7910.0,
+        "clicks": 858.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso gestão turismo",
+        "impressions": 3983.0,
+        "clicks": 425.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura gestão turismo",
+        "impressions": 66.0,
+        "clicks": 15.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17621,7 +17363,16 @@
     "institution": "ISLA Gaia",
     "url": "https://www.islagaia.pt/pt/licenciaturas/informatica-para-comercio-eletronico-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "licenciatura informática",
+        "impressions": 1526.0,
+        "clicks": 111.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17833,7 +17584,40 @@
         "impressions": 5
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "engenharia informática",
+        "impressions": 135593.0,
+        "clicks": 16588.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade informatica",
+        "impressions": 16940.0,
+        "clicks": 1956.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "informatica gestao",
+        "impressions": 8066.0,
+        "clicks": 530.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura informatica",
+        "impressions": 2972.0,
+        "clicks": 384.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17909,9 +17693,169 @@
     ],
     "adsKeywords": [
       {
+        "term": "mestrado gestão",
+        "impressions": 31696.0,
+        "clicks": 2694.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso gestão",
+        "impressions": 28854.0,
+        "clicks": 1910.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso recursos humanos",
+        "impressions": 22861.0,
+        "clicks": 2502.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico segurança",
+        "impressions": 17119.0,
+        "clicks": 1560.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso contabilidade",
+        "impressions": 14979.0,
+        "clicks": 1686.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado recursos humanos",
+        "impressions": 14078.0,
+        "clicks": 1827.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional segurança",
+        "impressions": 8801.0,
+        "clicks": 921.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico qualidade",
+        "impressions": 5255.0,
+        "clicks": 598.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico rh",
+        "impressions": 1570.0,
+        "clicks": 101.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso rh",
+        "impressions": 1056.0,
+        "clicks": 111.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "mestrado fiscalidade",
         "impressions": 899.0,
         "clicks": 83.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp contabilidade",
+        "impressions": 672.0,
+        "clicks": 128.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade recursos humanos",
+        "impressions": 482.0,
+        "clicks": 49.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional qualidade",
+        "impressions": 468.0,
+        "clicks": 60.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP segurança",
+        "impressions": 427.0,
+        "clicks": 73.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+curso +profissional +ambiente",
+        "impressions": 420.0,
+        "clicks": 46.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP qualidade",
+        "impressions": 244.0,
+        "clicks": 30.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico humanos",
+        "impressions": 33.0,
+        "clicks": 5.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp gestao",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -18068,7 +18012,40 @@
         "impressions": 20
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso rh",
+        "impressions": 15088.0,
+        "clicks": 1920.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "impressions": 7920.0,
+        "clicks": 1281.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade recursos humanos",
+        "impressions": 2798.0,
+        "clicks": 411.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso recursos humanos",
+        "impressions": 2232.0,
+        "clicks": 278.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18423,7 +18400,24 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/computacao-e-matematica-aplicada-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "licenciatura matemática",
+        "impressions": 3648.0,
+        "clicks": 223.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "matemática computação",
+        "impressions": 1728.0,
+        "clicks": 77.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18434,7 +18428,72 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/design-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso design",
+        "impressions": 21929.0,
+        "clicks": 1685.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade design",
+        "impressions": 18853.0,
+        "clicks": 1651.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade design moda",
+        "impressions": 12590.0,
+        "clicks": 1305.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura design",
+        "impressions": 6411.0,
+        "clicks": 590.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura moda",
+        "impressions": 1327.0,
+        "clicks": 170.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado Design",
+        "impressions": 638.0,
+        "clicks": 38.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso economia circular",
+        "impressions": 372.0,
+        "clicks": 19.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado economia circular",
+        "impressions": 64.0,
+        "clicks": 12.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18508,7 +18567,40 @@
         "impressions": 687
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "faculdade direito",
+        "impressions": 57750.0,
+        "clicks": 7368.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso direito",
+        "impressions": 41958.0,
+        "clicks": 5389.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "escola direito",
+        "impressions": 31823.0,
+        "clicks": 4585.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura direito",
+        "impressions": 22367.0,
+        "clicks": 2649.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18519,7 +18611,40 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/engenharia-informatica-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "engenharia informática",
+        "impressions": 83461.0,
+        "clicks": 7639.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso informática",
+        "impressions": 20691.0,
+        "clicks": 1491.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade informática",
+        "impressions": 10759.0,
+        "clicks": 992.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura informática",
+        "impressions": 6748.0,
+        "clicks": 428.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18556,7 +18681,56 @@
         "impressions": 61
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "gestão empresas",
+        "impressions": 35120.0,
+        "clicks": 3350.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "gestão recursos humanos",
+        "impressions": 34510.0,
+        "clicks": 3486.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura recursos humanos",
+        "impressions": 9637.0,
+        "clicks": 1324.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso rh",
+        "impressions": 9559.0,
+        "clicks": 1094.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade recursos humanos",
+        "impressions": 2982.0,
+        "clicks": 434.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura empresas",
+        "impressions": 1015.0,
+        "clicks": 75.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18567,7 +18741,24 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/gestao-de-recursos-humanos-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado RH",
+        "impressions": 5911.0,
+        "clicks": 578.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado recursos humanos",
+        "impressions": 1332.0,
+        "clicks": 133.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18604,7 +18795,32 @@
         "impressions": 157
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "gestão turismo",
+        "impressions": 14735.0,
+        "clicks": 1862.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+master +turismo",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+gestão +turismo",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18641,7 +18857,48 @@
         "impressions": 331
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "faculdade psicologia",
+        "impressions": 61559.0,
+        "clicks": 9727.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso psicologia",
+        "impressions": 50822.0,
+        "clicks": 7205.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "escola psicologia",
+        "impressions": 31169.0,
+        "clicks": 4372.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura psicologia",
+        "impressions": 27172.0,
+        "clicks": 3068.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado psicologia",
+        "impressions": 26705.0,
+        "clicks": 2206.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18722,7 +18979,32 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/licenciaturas/arquitetura-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso arquitetura",
+        "impressions": 40347.0,
+        "clicks": 5330.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade arquitetura",
+        "impressions": 19435.0,
+        "clicks": 2249.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura arquitetura",
+        "impressions": 7366.0,
+        "clicks": 958.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18733,7 +19015,32 @@
     "institution": "ISMAT",
     "url": "https://www.ismat.pt/pt/mestrados/arquitetura-pt",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso arquitetura",
+        "impressions": 40347.0,
+        "clicks": 5330.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade arquitetura",
+        "impressions": 19435.0,
+        "clicks": 2249.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura arquitetura",
+        "impressions": 7366.0,
+        "clicks": 958.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -18929,7 +19236,24 @@
         "impressions": 22
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado turismo",
+        "impressions": 2634.0,
+        "clicks": 141.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado hospitalidade",
+        "impressions": 38.0,
+        "clicks": 5.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -19063,8 +19387,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "18/05/2026, 15:07:59",
-    "lastSync": "18/05/2026, 15:07:59",
-    "totalAdsCourses": 200
+    "last_sync_at": "19/05/2026, 11:33:47",
+    "lastSync": "19/05/2026, 11:33:47",
+    "totalAdsCourses": 236
   }
 ]
