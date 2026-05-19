@@ -3505,6 +3505,14 @@
         "high": 0.0
       },
       {
+        "term": "curso tecnico ciencia dados",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -3522,14 +3530,6 @@
       },
       {
         "term": "ctesp informática",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso tecnico ciencia dados",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -5485,17 +5485,17 @@
     ],
     "adsKeywords": [
       {
-        "term": "mestrado urbanismo",
-        "impressions": 1250.0,
-        "clicks": 140.0,
+        "term": "doutoramento urbanismo",
+        "impressions": 529.0,
+        "clicks": 61.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado reabilitação urbana",
-        "impressions": 36.0,
-        "clicks": 4.0,
+        "term": "phd urbanismo",
+        "impressions": 61.0,
+        "clicks": 5.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7577,39 +7577,79 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "mestrado data science",
-        "impressions": 13090.0,
-        "clicks": 1417.0,
+        "term": "curso ciencia de dados",
+        "impressions": 18038.0,
+        "clicks": 807.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "curso ciência dados",
-        "impressions": 8440.0,
-        "clicks": 602.0,
+        "term": "licenciatura ciência de dados",
+        "impressions": 5491.0,
+        "clicks": 494.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado ciência dados",
-        "impressions": 2044.0,
-        "clicks": 220.0,
+        "term": "curso data science",
+        "impressions": 2764.0,
+        "clicks": 351.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado data science portugal",
-        "impressions": 804.0,
+        "term": "ciência de dados ISCTE",
+        "impressions": 2077.0,
+        "clicks": 150.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura data science",
+        "impressions": 656.0,
         "clicks": 66.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado ciência dados portugal",
+        "term": "Mestrado geográfico",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso tecnico ciencia dados",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso informática",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso ciência de dados",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp informática",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -19063,8 +19103,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "18/05/2026, 15:10:02",
-    "lastSync": "18/05/2026, 15:10:02",
+    "last_sync_at": "19/05/2026, 02:03:36",
+    "lastSync": "19/05/2026, 02:03:36",
     "totalAdsCourses": 200
   }
 ]
