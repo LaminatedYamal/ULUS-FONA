@@ -2184,7 +2184,8 @@ body.light-mode .hero-text h2 {
 }
 
 .ai-response ul, .ai-response ol {
-    margin: 10px 0 10px 20px;
+    margin: 10px 0;
+    padding-left: 1.2rem;
 }
 
 .ai-response li {
