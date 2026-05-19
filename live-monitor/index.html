@@ -288,6 +288,29 @@
             opacity: 1 !important;
             pointer-events: auto !important;
             margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* Style static headers to look like section labels, matching main dashboard design */
+        .nav-group-header.static {
+            cursor: default !important;
+            pointer-events: none !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 12px 0 6px 0 !important;
+            color: var(--text-muted) !important;
+            font-size: 10px !important;
+            font-weight: 800 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+            margin-top: 20px !important;
+        }
+
+        .nav-group-header.static::after {
+            display: none !important;
         }
     </style>
 </head>
@@ -304,11 +327,11 @@
                 <span class="logo-text" id="brand-name">Grupo Lusófona</span>
             </div>
 
-            <nav class="course-nav" style="flex: 1; padding: 10px 0;">
-                <div class="nav-group-header" style="margin-top: 10px; font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1.5px; padding: 0 16px 8px;">
+            <nav class="course-nav" style="flex: 1;">
+                <div class="nav-group-header static">
                     Navigation
                 </div>
-                <div class="nav-degree-container" style="display: flex; flex-direction: column; gap: 8px; padding: 0 16px;">
+                <div class="nav-degree-container">
                     <a href="../index.html" style="text-decoration: none;">
                         <div class="nav-degree-btn">
                             🏠 Main Dashboard
@@ -316,10 +339,10 @@
                     </a>
                 </div>
 
-                <div class="nav-group-header" style="margin-top: 25px; font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1.5px; padding: 0 16px 8px;">
+                <div class="nav-group-header static">
                     Premium Tools
                 </div>
-                <div class="nav-degree-container" style="display: flex; flex-direction: column; gap: 8px; padding: 0 16px;">
+                <div class="nav-degree-container">
                     <div class="nav-degree-btn" id="live-monitor-btn">
                         📊 Live Ads Monitor
                     </div>
