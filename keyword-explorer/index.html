@@ -15,6 +15,8 @@
             min-height: 100vh;
             margin: 0;
             overflow-x: hidden;
+            overflow-y: auto !important;
+            height: auto !important;
         }
 
         .explorer-layout {
@@ -25,13 +27,11 @@
         .main-workspace {
             flex: 1;
             padding: 40px;
-            margin-left: 280px;
             transition: margin-left 0.4s ease;
         }
 
         @media (max-width: 1024px) {
             .main-workspace {
-                margin-left: 0;
                 padding: 20px;
             }
         }
