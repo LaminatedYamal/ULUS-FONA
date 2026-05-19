@@ -1865,14 +1865,6 @@
         "high": 0.0
       },
       {
-        "term": "cursos multimedia portugal",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "faculdade jogos digitais portugal",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -2103,7 +2095,104 @@
         "impressions": 157
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "faculdade marketing",
+        "impressions": 41178.0,
+        "clicks": 5759.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura marketing",
+        "impressions": 21514.0,
+        "clicks": 2597.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso relações publicas",
+        "impressions": 10847.0,
+        "clicks": 1551.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso publicidade",
+        "impressions": 6511.0,
+        "clicks": 687.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso marketing",
+        "impressions": 5778.0,
+        "clicks": 739.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso marketing portugal",
+        "impressions": 650.0,
+        "clicks": 96.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "publicidade propaganda portugal",
+        "impressions": 291.0,
+        "clicks": 29.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade publicidade portugal",
+        "impressions": 150.0,
+        "clicks": 30.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade relações publicas",
+        "impressions": 132.0,
+        "clicks": 21.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura publicidade",
+        "impressions": 97.0,
+        "clicks": 14.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso marketing lisboa",
+        "impressions": 76.0,
+        "clicks": 13.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura marketing lisboa",
+        "impressions": 15.0,
+        "clicks": 5.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": [
       {
         "term": "curso publicidade",
@@ -3336,14 +3425,6 @@
         "high": 0.0
       },
       {
-        "term": "+graduação +rh",
-        "impressions": 1304.0,
-        "clicks": 141.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "+graduação +humanos",
         "impressions": 860.0,
         "clicks": 87.0,
@@ -4265,14 +4346,6 @@
         "high": 0.0
       },
       {
-        "term": "Mestrado geográfico",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "mestrado ciência dados portugal",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -4840,14 +4913,6 @@
         "high": 0.0
       },
       {
-        "term": "mestrado justiça",
-        "impressions": 44.0,
-        "clicks": 5.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura psicologia portugal",
         "impressions": 37.0,
         "clicks": 5.0,
@@ -4920,39 +4985,7 @@
         "high": 0.0
       },
       {
-        "term": "curso serviço social",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "licenciatura em psicologia",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura serviço social",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso em serviço social",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura em serviço social",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -8101,7 +8134,16 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencias-de-dados-aplicada-a-sistemas-de-informacao-geografica",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "Mestrado geográfico",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -8192,41 +8234,9 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "mestrado reabilitação",
-        "impressions": 2471.0,
-        "clicks": 129.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "mestrado terapia",
         "impressions": 159.0,
         "clicks": 15.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+neurocognitiva",
-        "impressions": 31.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado neurocognitivo",
-        "impressions": 7.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado reabilitação neurocognitivo",
-        "impressions": 3.0,
-        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -11964,6 +11974,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "cursos multimedia portugal",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -12040,97 +12058,9 @@
     ],
     "adsKeywords": [
       {
-        "term": "faculdade marketing",
-        "impressions": 41178.0,
-        "clicks": 5759.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura marketing",
-        "impressions": 21514.0,
-        "clicks": 2597.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso relações publicas",
-        "impressions": 10847.0,
-        "clicks": 1551.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso publicidade",
-        "impressions": 6511.0,
-        "clicks": 687.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso marketing",
-        "impressions": 5778.0,
-        "clicks": 739.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso marketing portugal",
-        "impressions": 650.0,
-        "clicks": 96.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "publicidade propaganda portugal",
-        "impressions": 291.0,
-        "clicks": 29.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "faculdade publicidade portugal",
-        "impressions": 150.0,
-        "clicks": 30.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade relações publicas",
-        "impressions": 132.0,
-        "clicks": 21.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura publicidade",
-        "impressions": 97.0,
-        "clicks": 14.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso marketing lisboa",
-        "impressions": 76.0,
-        "clicks": 13.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "licenciatura marketing lisboa",
-        "impressions": 15.0,
-        "clicks": 5.0,
+        "impressions": 21.0,
+        "clicks": 3.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12247,6 +12177,14 @@
         "high": 0.0
       },
       {
+        "term": "faculdade marketing",
+        "impressions": 20990.0,
+        "clicks": 2305.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "universidade direito",
         "impressions": 10981.0,
         "clicks": 1400.0,
@@ -12258,6 +12196,22 @@
         "term": "licenciatura direito",
         "impressions": 8100.0,
         "clicks": 1042.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura marketing",
+        "impressions": 7091.0,
+        "clicks": 710.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso relações publicas",
+        "impressions": 3871.0,
+        "clicks": 425.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12886,14 +12840,6 @@
         "high": 0.0
       },
       {
-        "term": "universidade porto engenharia",
-        "impressions": 471.0,
-        "clicks": 12.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "faculdade engenharia civil",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -13257,23 +13203,7 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
-        "term": "mestrado telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "mestrado cultura",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado tecnologias",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -13518,6 +13448,14 @@
         "term": "mestrado recursos humanos",
         "impressions": 1885.0,
         "clicks": 167.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+graduação +rh",
+        "impressions": 1304.0,
+        "clicks": 141.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -13766,7 +13704,16 @@
     "institution": "Lusófona Porto",
     "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-da-justica-vitimas-de-crime",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado justiça",
+        "impressions": 44.0,
+        "clicks": 5.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -16655,22 +16602,6 @@
         "high": 0.0
       },
       {
-        "term": "ctesp telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp eletrónica",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -16688,6 +16619,22 @@
       },
       {
         "term": "ctesp informática",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp telecomunicações",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp eletrónica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -16748,46 +16695,6 @@
         "term": "ctesp cibersegurança",
         "impressions": 1363.0,
         "clicks": 147.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP qualidade",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional qualidade",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +profissional +ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -16907,7 +16814,24 @@
         "impressions": 82
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso contabilidade",
+        "impressions": 14979.0,
+        "clicks": 1686.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp contabilidade",
+        "impressions": 672.0,
+        "clicks": 128.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17058,7 +16982,24 @@
         "impressions": 17
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso programação",
+        "impressions": 25442.0,
+        "clicks": 1644.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp programação",
+        "impressions": 165.0,
+        "clicks": 12.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17235,7 +17176,24 @@
         "impressions": 37
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso recursos humanos",
+        "impressions": 22861.0,
+        "clicks": 2502.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico humanos",
+        "impressions": 33.0,
+        "clicks": 5.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17272,7 +17230,96 @@
         "impressions": 16
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso técnico segurança",
+        "impressions": 17119.0,
+        "clicks": 1560.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional segurança",
+        "impressions": 8801.0,
+        "clicks": 921.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico qualidade",
+        "impressions": 5255.0,
+        "clicks": 598.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso profissional qualidade",
+        "impressions": 468.0,
+        "clicks": 60.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP segurança",
+        "impressions": 427.0,
+        "clicks": 73.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "+curso +profissional +ambiente",
+        "impressions": 420.0,
+        "clicks": 46.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP qualidade",
+        "impressions": 244.0,
+        "clicks": 30.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico cibersegurança",
+        "impressions": 26.0,
+        "clicks": 6.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso técnico ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "CTeSP ambiente",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp cibersegurança",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -17314,70 +17361,6 @@
         "term": "ctesp desporto",
         "impressions": 4419.0,
         "clicks": 564.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico cibersegurança",
-        "impressions": 26.0,
-        "clicks": 6.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp cibersegurança",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP qualidade",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional qualidade",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +profissional +ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP segurança",
-        "impressions": 0.0,
-        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17895,22 +17878,6 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
-      },
-      {
-        "term": "curso profissional hotelaria",
-        "impressions": 27.0,
-        "clicks": 4.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico restauração",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -18199,6 +18166,14 @@
         "high": 0.0
       },
       {
+        "term": "mestrado recursos humanos",
+        "impressions": 14078.0,
+        "clicks": 1827.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "licenciatura recursos humanos",
         "impressions": 7920.0,
         "clicks": 1281.0,
@@ -18354,14 +18329,6 @@
     ],
     "adsKeywords": [
       {
-        "term": "curso programação",
-        "impressions": 25442.0,
-        "clicks": 1644.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "curso multimedia",
         "impressions": 22718.0,
         "clicks": 2682.0,
@@ -18389,14 +18356,6 @@
         "term": "ctesp multimedia",
         "impressions": 2198.0,
         "clicks": 418.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp programação",
-        "impressions": 165.0,
-        "clicks": 12.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -18608,54 +18567,6 @@
         "high": 0.0
       },
       {
-        "term": "curso recursos humanos",
-        "impressions": 22861.0,
-        "clicks": 2502.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico segurança",
-        "impressions": 17119.0,
-        "clicks": 1560.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso contabilidade",
-        "impressions": 14979.0,
-        "clicks": 1686.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado recursos humanos",
-        "impressions": 14078.0,
-        "clicks": 1827.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional segurança",
-        "impressions": 8801.0,
-        "clicks": 921.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico qualidade",
-        "impressions": 5255.0,
-        "clicks": 598.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "curso técnico rh",
         "impressions": 1570.0,
         "clicks": 101.0,
@@ -18675,78 +18586,6 @@
         "term": "mestrado fiscalidade",
         "impressions": 899.0,
         "clicks": 83.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp contabilidade",
-        "impressions": 672.0,
-        "clicks": 128.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "faculdade recursos humanos",
-        "impressions": 482.0,
-        "clicks": 49.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso profissional qualidade",
-        "impressions": 468.0,
-        "clicks": 60.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP segurança",
-        "impressions": 427.0,
-        "clicks": 73.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "+curso +profissional +ambiente",
-        "impressions": 420.0,
-        "clicks": 46.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP qualidade",
-        "impressions": 244.0,
-        "clicks": 30.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico humanos",
-        "impressions": 33.0,
-        "clicks": 5.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso técnico ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "CTeSP ambiente",
-        "impressions": 0.0,
-        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19323,22 +19162,6 @@
         "term": "mestrado Design",
         "impressions": 638.0,
         "clicks": 38.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso economia circular",
-        "impressions": 372.0,
-        "clicks": 19.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "mestrado economia circular",
-        "impressions": 64.0,
-        "clicks": 12.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19931,7 +19754,24 @@
         "impressions": 2
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "curso economia circular",
+        "impressions": 372.0,
+        "clicks": 19.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado economia circular",
+        "impressions": 64.0,
+        "clicks": 12.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -20230,8 +20070,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "19/05/2026, 11:53:07",
-    "lastSync": "19/05/2026, 11:53:07",
-    "totalAdsCourses": 223
+    "last_sync_at": "19/05/2026, 12:03:28",
+    "lastSync": "19/05/2026, 12:03:28",
+    "totalAdsCourses": 231
   }
 ]
