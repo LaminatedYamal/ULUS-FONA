@@ -2385,7 +2385,16 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             ...dataPayload,
             target: "Fleet Commander View",
             total_courses: courses.length,
-            representative_sample: courses.slice(0, 10).map(c => ({ name: c.name, inst: c.institution, coordinator: c.coordinator })),
+            fleet_courses: courses.map(c => ({
+                name: c.name,
+                institution: c.institution,
+                coordinator: c.coordinator || "Unknown",
+                degree: c.degree,
+                degree_type: c.degree_type,
+                url: c.url,
+                top_gsc_keywords: (c.gscKeywords || []).slice(0, 15).map(k => ({ term: k.term, clicks: k.clicks, delta: k.clickDelta || 0 })),
+                top_rankings: (c.rankingsKeywords || []).slice(0, 15).map(k => ({ term: k.term, rank: k.rank, delta: k.rankDelta || 0 }))
+            })),
             organic_movers: trendData
         };
     }
