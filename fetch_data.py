@@ -130,6 +130,8 @@ def main():
         camps = load_campaign_data(sid, creds_dict)
         if ads: 
             print(f"  Captured {len(ads)} keyword rows.")
+            for r in ads:
+                r['source_inst'] = inst
             all_ads_records.extend(ads)
             # Live Debug: search for Criminologia
             for r in ads:
@@ -138,6 +140,8 @@ def main():
                     print(f"  [DEBUG MATCH in {inst}]: {r}")
         if camps: 
             print(f"  Captured {len(camps)} campaign rows.")
+            for r in camps:
+                r['source_inst'] = inst
             all_campaign_records.extend(camps)
 
     # 1. Process Campaigns
@@ -189,7 +193,8 @@ def main():
             course_catalog.append({
                 'url': c_url,
                 'slug': c_slug,
-                'name_clean': clean_slug(item.get('name', ''))
+                'name_clean': clean_slug(item.get('name', '')),
+                'institution': item.get('institution', '')
             })
 
     # 2. Process Keywords
@@ -208,8 +213,23 @@ def main():
         for c in course_catalog:
             # Match if the cleaned slug is a substring of the ad group or campaign name
             if len(c['slug']) > 3 and (c['slug'] in ad_group or c['slug'] in campaign):
-                best_match_course = c
-                break
+                # Verify institution parity to prevent incorrect cross-institution mapping
+                ad_inst = row.get('source_inst', '')
+                course_inst = c['institution']
+                
+                inst_match = False
+                if ad_inst == 'Lusofona' and ('Lusófona' in course_inst or 'Lusofona' in course_inst):
+                    inst_match = True
+                elif ad_inst == 'IPLUSO' and course_inst == 'IPLUSO':
+                    inst_match = True
+                elif ad_inst == 'ISLA_Gaia' and course_inst == 'ISLA Gaia':
+                    inst_match = True
+                elif ad_inst == 'ISMAT' and course_inst == 'ISMAT':
+                    inst_match = True
+                
+                if inst_match:
+                    best_match_course = c
+                    break
                 
         if best_match_course and url != best_match_course['url']:
             # Safe verification: Only redirect if the ad group name doesn't contain the current wrong URL's name
