@@ -2362,7 +2362,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             course_identity: { name: course.name, institution: course.institution, coordinator: course.coordinator || "Unknown" },
             performance_metrics: {
                 search_console: course.gscKeywords.slice(0, 100).map(k => ({ term: k.term, clicks: k.clicks, click_delta: k.clickDelta })),
-                rank_tracker: course.rankingsKeywords.slice(0, 100).map(k => ({ term: k.term, current_rank: k.rank, rank_delta: k.rankDelta || 0 }))
+                rank_tracker: course.rankingsKeywords.slice(0, 100).map(k => {
+                    const diff = (k.prevRank || 0) - (k.rank || 0);
+                    const trend = diff > 0 ? `▲ ${diff} (improved)` : diff < 0 ? `▼ ${Math.abs(diff)} (dropped)` : 'Stable';
+                    return { term: k.term, current_rank: k.rank, three_month_trend: trend };
+                })
             }
         };
     } else {
@@ -2393,7 +2397,11 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
                 degree_type: c.degree_type,
                 url: c.url,
                 top_gsc_keywords: (c.gscKeywords || []).slice(0, 15).map(k => ({ term: k.term, clicks: k.clicks, delta: k.clickDelta || 0 })),
-                top_rankings: (c.rankingsKeywords || []).slice(0, 15).map(k => ({ term: k.term, rank: k.rank, delta: k.rankDelta || 0 }))
+                top_rankings: (c.rankingsKeywords || []).slice(0, 15).map(k => {
+                    const diff = (k.prevRank || 0) - (k.rank || 0);
+                    const trend = diff > 0 ? `▲ ${diff} (improved)` : diff < 0 ? `▼ ${Math.abs(diff)} (dropped)` : 'Stable';
+                    return { term: k.term, rank: k.rank, three_month_trend: trend };
+                })
             })),
             organic_movers: trendData
         };
