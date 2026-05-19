@@ -105,54 +105,116 @@ def sync_rankings():
                 print("Recovering courses from backup or history...")
                 courses = []
 
-    # 4. Update
-    match_count = 0
+    # 4. Update (1-to-1 mapping to prevent rankings duplicate injections)
+    course_rankings_map = {} # course_url -> list of ranking dicts
     
-    # Pre-parse final_rankings keys for fallback fuzzy matching
-    rankings_fuzzy_pool = []
-    for rank_url in final_rankings:
-        parts = rank_url.split('/')
-        domain = parts[0]
-        path = '/'.join(parts[1:])
-        rankings_fuzzy_pool.append({
-            'url': rank_url,
-            'domain': domain,
-            'path': path
-        })
-
+    # Pre-compile the course catalog URLs and info
+    catalog_lookup = []
     for course in courses:
         if isinstance(course, dict) and course.get('type') == 'metadata':
             continue
+        c_url = normalize_url(course.get('url', ''))
+        if c_url:
+            c_path = '/'.join(c_url.split('/')[1:]) if '/' in c_url else ''
+            c_slug = c_url.split('/')[-1]
+            c_domain = c_url.split('/')[0]
             
-        norm_c_url = normalize_url(course.get('url', ''))
-        matched_url = None
-        if norm_c_url in final_rankings:
-            matched_url = norm_c_url
-        else:
-            # Fallback fuzzy matching for domains with legacy URLs (ISLA Gaia, IPLUSO, ISMAT)
-            course_domain = norm_c_url.split('/')[0]
-            course_path = '/'.join(norm_c_url.split('/')[1:])
-            course_slug = norm_c_url.split('/')[-1] if '/' in norm_c_url else norm_c_url
+            c_degree = None
+            if 'ctesp' in c_path:
+                c_degree = 'ctesp'
+            elif 'licenciatura' in c_path:
+                c_degree = 'licenciatura'
+            elif 'pos-gradua' in c_path:
+                c_degree = 'pos-gradua'
+                
+            catalog_lookup.append({
+                'url': c_url,
+                'domain': c_domain,
+                'path': c_path,
+                'slug': c_slug,
+                'degree': c_degree,
+                'item_ref': course
+            })
+
+    # Helper function to clean text for matching
+    def clean_text(s):
+        if not s: return ""
+        import re
+        s = s.lower().strip()
+        accents = {
+            'á':'a', 'à':'a', 'â':'a', 'ã':'a', 'ä':'a',
+            'é':'e', 'è':'e', 'ê':'e', 'ë':'e',
+            'í':'i', 'ì':'i', 'î':'i', 'ï':'i',
+            'ó':'o', 'ò':'o', 'ô':'o', 'õ':'o', 'ö':'o',
+            'ú':'u', 'ù':'u', 'û':'u', 'ü':'u',
+            'ç':'c', 'ñ':'n'
+        }
+        for char, replacement in accents.items():
+            s = s.replace(char, replacement)
+        s = re.sub(r'\b(ctesp|licenciatura|mestrado|pos-graduacao|curso)\b', '', s)
+        s = re.sub(r'[^a-z0-9\s-]', '', s)
+        s = s.replace('-', ' ')
+        return ' '.join(s.split())
+
+    for rank_url, rank_kws in final_rankings.items():
+        rank_domain = rank_url.split('/')[0] if '/' in rank_url else rank_url
+        rank_path = '/'.join(rank_url.split('/')[1:]) if '/' in rank_url else ''
+        
+        rank_degree = None
+        if 'ctesp' in rank_path:
+            rank_degree = 'ctesp'
+        elif 'licenciatura' in rank_path:
+            rank_degree = 'licenciatura'
+        elif 'pos-gradua' in rank_path:
+            rank_degree = 'pos-gradua'
             
-            if course_slug and len(course_slug) > 3:
-                for pool_item in rankings_fuzzy_pool:
-                    if pool_item['domain'] == course_domain:
-                        # Verify degree type parity
-                        degree_match = True
-                        if 'ctesp' in course_path and 'ctesp' not in pool_item['path']:
-                            degree_match = False
-                        if 'licenciatura' in course_path and 'licenciatura' not in pool_item['path']:
-                            degree_match = False
-                        if 'pos-gradua' in course_path and 'pos-gradua' not in pool_item['path']:
-                            degree_match = False
-                            
-                        # Check if course slug is a substring of the XML ranking URL path
-                        if degree_match and course_slug in pool_item['path']:
-                            matched_url = pool_item['url']
-                            break
-                            
-        if matched_url:
-            course['rankingsKeywords'] = final_rankings[matched_url]
+        best_course = None
+        best_score = -1
+        
+        for c in catalog_lookup:
+            if c['domain'] != rank_domain:
+                continue
+                
+            # Exact Match
+            if c['url'] == rank_url:
+                best_course = c
+                best_score = 9999
+                break
+                
+            # Fuzzy Match
+            if rank_degree and c['degree'] and rank_degree != c['degree']:
+                continue
+                
+            c_slug_clean = clean_text(c['slug'])
+            rank_path_clean = clean_text(rank_path)
+            
+            if c_slug_clean and len(c_slug_clean) > 3 and c_slug_clean in rank_path_clean:
+                score = len(c_slug_clean)
+                if score > best_score:
+                    best_course = c
+                    best_score = score
+                    
+        if best_course:
+            c_url = best_course['url']
+            if c_url not in course_rankings_map:
+                course_rankings_map[c_url] = []
+            course_rankings_map[c_url].extend(rank_kws)
+
+    # Assign rankings back to the courses in courses array
+    match_count = 0
+    for course in courses:
+        if isinstance(course, dict) and course.get('type') == 'metadata':
+            continue
+        url = normalize_url(course.get('url', ''))
+        if url in course_rankings_map:
+            # Deduplicate by term, keeping the one with best rank
+            course_kws = {}
+            for rkw in course_rankings_map[url]:
+                term = rkw['term'].strip().lower()
+                if term not in course_kws or rkw['rank'] < course_kws[term]['rank']:
+                    course_kws[term] = rkw
+                    
+            course['rankingsKeywords'] = list(course_kws.values())
             match_count += 1
         else:
             course['rankingsKeywords'] = []
