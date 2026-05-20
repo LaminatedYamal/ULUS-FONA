@@ -2429,28 +2429,52 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
             // Auto-fix missing protocol (common user error: saved without https://)
             if (customProxy && !customProxy.startsWith('http://') && !customProxy.startsWith('https://')) {
                 customProxy = 'https://' + customProxy;
-                localStorage.setItem('antigravity_api_proxy', customProxy); // auto-correct in storage too
+                localStorage.setItem('antigravity_api_proxy', customProxy);
                 console.warn(`[Antigravity] Auto-fixed proxy URL to: ${customProxy}`);
             }
 
-            console.log(`[Antigravity] Calling AI via Proxy: ${customProxy}`);
-            
-            const response = await fetch(customProxy, {
-                method: 'POST',
-                mode: 'cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    agent_id: agentId,
-                    api_key: apiKey.trim(),
-                    channel_id: channelId,
-                    thread_id: "antigravity_" + activeAIModel + "_" + (activeCourseId || "global"),
-                    message: systemPrompt + "\n\nUser Question: " + customPrompt
-                })
-            });
+            // Build thread ID using a per-model session epoch so each new session is unique
+            const threadEpochKey = `thread_epoch_${activeAIModel}`;
+            let threadEpoch = localStorage.getItem(threadEpochKey) || '1';
+            const buildThreadId = () => `antigravity_${activeAIModel}_${activeCourseId || 'global'}_${threadEpoch}`;
 
-            const rawText = await response.text();
+            const callProxy = async (threadId) => {
+                return fetch(customProxy, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        agent_id: agentId,
+                        api_key: apiKey.trim(),
+                        channel_id: channelId,
+                        thread_id: threadId,
+                        message: systemPrompt + "\n\nUser Question: " + customPrompt
+                    })
+                });
+            };
+
+            console.log(`[Antigravity] Calling AI via Proxy: ${customProxy} | thread: ${buildThreadId()}`);
+            let response = await callProxy(buildThreadId());
+            let rawText = await response.text();
             console.log("[Antigravity] Raw AI Response:", rawText);
-            
+
+            // 410 = IAedu archived this thread due to token limits — auto-rotate to a new thread
+            if (response.status === 410) {
+                threadEpoch = String(Date.now());
+                localStorage.setItem(threadEpochKey, threadEpoch);
+                console.warn(`[Antigravity] Thread archived (410). Starting fresh thread: ${buildThreadId()}`);
+                // Show a soft notice in chat
+                const noticeDiv = document.createElement('div');
+                noticeDiv.className = 'ai-response';
+                noticeDiv.style.cssText = 'background:rgba(217,119,87,0.08);border-color:rgba(217,119,87,0.2);font-size:11px;color:#94a3b8;';
+                noticeDiv.textContent = '🔄 Previous conversation reached its limit. Starting a fresh session...';
+                chat.appendChild(noticeDiv);
+                // Retry with new thread
+                response = await callProxy(buildThreadId());
+                rawText = await response.text();
+                console.log("[Antigravity] Retry AI Response:", rawText);
+            }
+
             if (!response.ok) throw new Error(`Agent API Failed: ${response.status}\n${rawText}`);
             
             try {
