@@ -493,10 +493,12 @@
                 errorTitle: "Audit Error",
                 connError: "Connection Error: Failed to reach the local CAPTCHA agent server. Please make sure python app.py is running on port 8080.",
                 systemOnline: "GEO Auditor Active",
-                tipBase: "Your page is strong! To hit 100, try adding: ",
-                tipStats: "more specific numerical data points or percentages (%). ",
-                tipQuotes: "direct quotes from experts or source authority figures in quotes. ",
-                tipCites: "external hyperlinks to reputable reference sources."
+                tipPoor: "Your page needs significant optimization! Try adding: ",
+                tipAverage: "Your page has a solid foundation, but can be improved. Try adding: ",
+                tipStrong: "Your page is strong! To hit 100, try adding: ",
+                tipStats: "more specific numerical data points or percentages (%)",
+                tipQuotes: "direct quotes from experts or source authority figures in quotes",
+                tipCites: "external hyperlinks to reputable reference sources"
             },
             PT: {
                 title: "Laboratório GEO Auditor",
@@ -512,10 +514,12 @@
                 errorTitle: "Erro na Auditoria",
                 connError: "Erro de Conexão: Não foi possível contactar o servidor local do CAPTCHA agent. Confirme que 'python app.py' está a correr na porta 8080.",
                 systemOnline: "GEO Auditor Ativo",
-                tipBase: "A sua página está robusta! Para atingir os 100 pontos, tente adicionar: ",
-                tipStats: "mais dados numéricos e percentagens (%) específicas. ",
-                tipQuotes: "citações diretas de especialistas entre aspas. ",
-                tipCites: "hiperligações externas para fontes de referência credíveis."
+                tipPoor: "A sua página necessita de uma otimização significativa! Tente adicionar: ",
+                tipAverage: "A sua página tem uma base sólida, mas pode ser melhorada. Tente adicionar: ",
+                tipStrong: "A sua página está robusta! Para atingir os 100 pontos, tente adicionar: ",
+                tipStats: "mais dados numéricos e percentagens (%) específicas",
+                tipQuotes: "citações diretas de especialistas entre aspas",
+                tipCites: "hiperligações externas para fontes de referência credíveis"
             }
         };
 
@@ -590,7 +594,15 @@
                     document.getElementById('cite-score').textContent = data.scores.citations;
 
                     // Build dynamic optimization tip
-                    let tip = t.tipBase;
+                    let tip = "";
+                    const totalScore = data.scores.total;
+                    if (totalScore < 40) {
+                        tip = t.tipPoor;
+                    } else if (totalScore < 70) {
+                        tip = t.tipAverage;
+                    } else {
+                        tip = t.tipStrong;
+                    }
                     let changesNeeded = [];
                     if (data.scores.statistics < 20) changesNeeded.push(t.tipStats);
                     if (data.scores.quotations < 20) changesNeeded.push(t.tipQuotes);
@@ -601,7 +613,7 @@
                             "Excelente! A página cumpre todos os requisitos ideais de otimização de IA (GEO)." : 
                             "Excellent! The page fulfills all ideal AI Engine Optimization (GEO) guidelines.";
                     } else {
-                        tip += changesNeeded.join(", ");
+                        tip += changesNeeded.join(", ") + ".";
                     }
                     
                     document.getElementById('tips-content').textContent = tip;
