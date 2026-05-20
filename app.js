@@ -183,13 +183,6 @@ const TRANSLATIONS = {
         "premium-tools": "Premium Tools",
         "live-ads-monitor": "📊 Live Ads Monitor",
         "captcha-btn-text": "🤖 GEO Auditor Lab",
-        "data-sync": "Data Sync",
-        "brand-name": "Lusófona Group",
-        "tip-gsc": "Upload Search Console CSV to update organic keywords.",
-        "tip-sync": "Push your local changes to the global team database.",
-        "tip-reset": "Reset connection and clear local cache.",
-        "tip-monitor": "View real-time performance of all active campaigns.",
-        "tip-captcha": "Analyze page optimization for AI Search Engines.",
         "tip-lang": "Switch between English and Portuguese.",
         "tip-theme": "Switch between Dark and Light mode.",
         "tip-account": "View user details or log out.",
@@ -247,13 +240,6 @@ const TRANSLATIONS = {
         "premium-tools": "Ferramentas Premium",
         "live-ads-monitor": "📊 Monitor de Ads em Direto",
         "captcha-btn-text": "🤖 Laboratório GEO Auditor",
-        "data-sync": "Sincronização de Dados",
-        "brand-name": "Grupo Lusófona",
-        "tip-gsc": "Carregar CSV do Search Console para atualizar keywords orgânicas.",
-        "tip-sync": "Sincronizar as suas alterações locais com a base de dados da equipa.",
-        "tip-reset": "Reiniciar ligação e limpar cache local.",
-        "tip-monitor": "Ver desempenho em tempo real de todas as campanhas ativas.",
-        "tip-captcha": "Analise a otimização da página para Motores de Busca de IA.",
         "tip-lang": "Alternar entre Inglês e Português.",
         "tip-theme": "Alternar entre modo Claro e Escuro.",
         "tip-account": "Ver detalhes do utilizador ou terminar sessão.",
@@ -317,39 +303,6 @@ function updateUILanguage() {
         'premium-tools-header': t["premium-tools"],
         'live-monitor-btn': t["live-ads-monitor"],
         'captcha-btn': t["captcha-btn-text"],
-        'brand-name': t["brand-name"],
-        'persona-seo-label': 'SEO',
-        'persona-market-label': currentLang === 'en' ? 'Market' : 'Marketing',
-        'persona-ads-label': 'Ads',
-        'th-campaign': t["campaign"],
-        'th-status': t["status"] || (currentLang === 'en' ? 'Status' : 'Estado'),
-        'th-budget': t["col-budget"],
-        'th-cost': t["col-cost"],
-        'th-conv': t["col-conversions"],
-        'th-cpa': t["col-cpc"],
-        'th-clicks': t["clicks"],
-        'th-impr': t["impressions"] || (currentLang === 'en' ? 'Impr.' : 'Impr.'),
-        'th-ctr': 'CTR'
-    };
-
-    // Apply to DOM
-    for (const [id, val] of Object.entries(elements)) {
-        const el = document.getElementById(id);
-        if (el) {
-            if (val === 'placeholder') {
-                el.placeholder = t["search-placeholder"];
-            } else {
-                el.textContent = val;
-            }
-        }
-    }
-    
-    // Update Tooltips
-    const tooltips = {
-        'gsc-upload-btn': t["tip-gsc"],
-        'sync-btn': t["tip-sync"],
-        'live-monitor-btn': t["tip-monitor"],
-        'captcha-btn': t["tip-captcha"],
         'lang-toggle-btn': t["tip-lang"],
         'theme-toggle-btn': t["tip-theme"],
         'account-btn': t["tip-account"]
