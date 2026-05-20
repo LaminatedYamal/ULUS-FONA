@@ -274,6 +274,137 @@
         .active-row-synergy {
             background: rgba(16, 185, 129, 0.01) !important;
         }
+
+        /* Custom Modal Styling */
+        .custom-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: #0b0d18;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 480px;
+            padding: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(16, 185, 129, 0.05);
+            z-index: 1001;
+            animation: modalSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalSlideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 15px;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #38bdf8, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .modal-close-btn:hover {
+            color: white;
+        }
+
+        .modal-body {
+            margin-bottom: 25px;
+        }
+
+        .modal-body p {
+            margin: 0 0 15px 0;
+            font-size: 14px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+        }
+
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+        }
+
+        .btn-confirm {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-confirm:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -332,15 +463,15 @@
 
                 <!-- Three Small Channel-Specific Export Pill Buttons -->
                 <div class="export-pill-panel">
-                    <button class="export-pill organic" onclick="exportOrganicCSV()">
+                    <button class="export-pill organic" onclick="openExportModal('organic')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                         Export Organic
                     </button>
-                    <button class="export-pill ads" onclick="exportAdsCSV()">
+                    <button class="export-pill ads" onclick="openExportModal('ads')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                         Export Ads
                     </button>
-                    <button class="export-pill gsc" onclick="exportGscCSV()">
+                    <button class="export-pill gsc" onclick="openExportModal('gsc')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                         Export GSC
                     </button>
@@ -371,6 +502,16 @@
             <section class="filter-panel">
                 <div class="filter-input-wrapper">
                     <input type="text" id="keyword-search" class="sleek-input" placeholder="Search keyword, course name, or institution..." oninput="handleFilterChange()">
+                </div>
+                <div class="filter-select-wrapper">
+                    <select id="channel-select" class="sleek-select" onchange="handleFilterChange()">
+                        <option value="all">ALL CHANNELS</option>
+                        <option value="organic">Organic Rankings Only</option>
+                        <option value="gsc">Google Search Console Only</option>
+                        <option value="ads">Google Ads Only</option>
+                        <option value="synergy">Any Synergy (2+ Channels)</option>
+                        <option value="triple">Triple Synergy Only</option>
+                    </select>
                 </div>
                 <div class="filter-select-wrapper">
                     <select id="institution-select" class="sleek-select" onchange="handleFilterChange()">
@@ -405,15 +546,17 @@
                                 <th class="interactive-th" onclick="handleSort('term')">Keyword <span id="sort-term" class="sort-indicator">↕</span></th>
                                 <th class="interactive-th" onclick="handleSort('course')">Course <span id="sort-course" class="sort-indicator">↕</span></th>
                                 <th class="interactive-th" onclick="handleSort('institution')">Institution <span id="sort-institution" class="sort-indicator">↕</span></th>
-                                <th class="interactive-th" onclick="handleSort('rank')" style="text-align: center;">Current Rank <span id="sort-rank" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('rank')" style="text-align: center;">Organic Rank <span id="sort-rank" class="sort-indicator">↕</span></th>
                                 <th class="interactive-th" onclick="handleSort('trend')">3-Month Trend <span id="sort-trend" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('gscClicks')" style="text-align: center;">GSC (Clicks/Imps) <span id="sort-gscClicks" class="sort-indicator">↕</span></th>
+                                <th class="interactive-th" onclick="handleSort('adsImpressions')" style="text-align: center;">Ads (Imps/Clicks) <span id="sort-adsImpressions" class="sort-indicator">↕</span></th>
                                 <th>Cross-Channel Synergy</th>
                                 <th>Ranking URL</th>
                             </tr>
                         </thead>
                         <tbody id="master-explorer-body">
                             <tr>
-                                <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                                <td colspan="9" style="text-align: center; padding: 40px; color: var(--text-muted);">
                                     🔍 Connecting to data hub...
                                 </td>
                             </tr>
@@ -424,6 +567,29 @@
         </main>
     </div>
 
+    <!-- Beautiful Premium Modal for Export Selection -->
+    <div id="export-modal" class="custom-modal" style="display: none;">
+        <div class="modal-backdrop" onclick="closeExportModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Institution for Export</h3>
+                <button class="modal-close-btn" onclick="closeExportModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Choose the institution you wish to download the keyword data for:</p>
+                <div class="modal-select-wrapper">
+                    <select id="modal-institution-select" class="sleek-select">
+                        <option value="all">ALL INSTITUTIONS</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closeExportModal()">Cancel</button>
+                <button class="btn-confirm" onclick="confirmExport()">Download CSV</button>
+            </div>
+        </div>
+    </div>
+
     <script>
         let allKeywords = [];
         let filteredKeywords = [];
@@ -432,6 +598,7 @@
         let currentLimit = 100;
         let sortBy = 'rank'; // Default sort is rank
         let sortAsc = true;  // Rank ascending (smaller number is better)
+        let activeExportType = null;
 
         // On document load
         document.addEventListener('DOMContentLoaded', async () => {
@@ -440,14 +607,14 @@
                 if (!res.ok) throw new Error("Could not fetch courses database");
                 coursesRaw = await res.json();
                 
-                flattenRankingsKeywords();
+                flattenAllKeywords();
                 populateInstitutions();
                 applyFiltersAndSorting();
             } catch (err) {
                 console.error(err);
                 document.getElementById('master-explorer-body').innerHTML = `
                     <tr>
-                        <td colspan="7" style="text-align: center; padding: 40px; color: #ef4444; font-weight: 700;">
+                        <td colspan="9" style="text-align: center; padding: 40px; color: #ef4444; font-weight: 700;">
                             ⚠️ Failed to load database: ${err.message}
                         </td>
                     </tr>
@@ -465,35 +632,115 @@
                 .replace(/\s+/g, ' ');
         }
 
-        // Flattens tracked organic search keywords from courses
-        function flattenRankingsKeywords() {
+        // Flattens and consolidates tracked keywords from rankings, GSC, and Ads
+        function flattenAllKeywords() {
             const list = [];
             coursesRaw.forEach(c => {
-                const rankingsList = c.rankingsKeywords || [];
-                const gscNorms = (c.gscKeywords || []).map(k => normalizeKeyword(k.term));
-                const adsNorms = (c.adsKeywords || []).map(k => normalizeKeyword(k.term));
+                const courseTerms = new Map();
                 
-                rankingsList.forEach(k => {
+                // 1. Organic rankings
+                (c.rankingsKeywords || []).forEach(k => {
                     const norm = normalizeKeyword(k.term);
-                    const isInGsc = gscNorms.includes(norm);
-                    const isInAds = adsNorms.includes(norm);
-                    const isTriple = isInGsc && isInAds;
+                    if (!courseTerms.has(norm)) {
+                        courseTerms.set(norm, {
+                            term: k.term,
+                            course: c.name,
+                            institution: c.institution,
+                            rank: parseInt(k.rank) || null,
+                            prevRank: parseInt(k.prevRank) || null,
+                            diff: (k.prevRank && k.rank) ? (parseInt(k.prevRank) - parseInt(k.rank)) : 0,
+                            url: k.url || '',
+                            isInOrganic: true,
+                            isInGsc: false,
+                            isInAds: false,
+                            gscClicks: 0,
+                            gscImpressions: 0,
+                            adsImpressions: 0,
+                            adsClicks: 0,
+                            adsVolume: 0,
+                            adsLowBid: 0,
+                            adsHighBid: 0
+                        });
+                    } else {
+                        const entry = courseTerms.get(norm);
+                        entry.isInOrganic = true;
+                        entry.rank = parseInt(k.rank) || entry.rank;
+                        entry.prevRank = parseInt(k.prevRank) || entry.prevRank;
+                        entry.diff = (entry.prevRank && entry.rank) ? (entry.prevRank - entry.rank) : 0;
+                        if (k.url) entry.url = k.url;
+                    }
+                });
 
-                    // Calculate rank diff
-                    const diff = (k.prevRank || 0) - (k.rank || 0);
-                    
-                    list.push({
-                        term: k.term,
-                        course: c.name,
-                        institution: c.institution,
-                        rank: parseInt(k.rank) || 999,
-                        prevRank: parseInt(k.prevRank) || 0,
-                        diff: diff,
-                        url: k.url || '',
-                        isInGsc: isInGsc,
-                        isInAds: isInAds,
-                        isTriple: isTriple
-                    });
+                // 2. GSC keywords
+                (c.gscKeywords || []).forEach(k => {
+                    const norm = normalizeKeyword(k.term);
+                    if (!courseTerms.has(norm)) {
+                        courseTerms.set(norm, {
+                            term: k.term,
+                            course: c.name,
+                            institution: c.institution,
+                            rank: null,
+                            prevRank: null,
+                            diff: 0,
+                            url: '',
+                            isInOrganic: false,
+                            isInGsc: true,
+                            isInAds: false,
+                            gscClicks: k.clicks || 0,
+                            gscImpressions: k.impressions || 0,
+                            adsImpressions: 0,
+                            adsClicks: 0,
+                            adsVolume: 0,
+                            adsLowBid: 0,
+                            adsHighBid: 0
+                        });
+                    } else {
+                        const entry = courseTerms.get(norm);
+                        entry.isInGsc = true;
+                        entry.gscClicks = k.clicks || 0;
+                        entry.gscImpressions = k.impressions || 0;
+                    }
+                });
+
+                // 3. Ads keywords
+                (c.adsKeywords || []).forEach(k => {
+                    const norm = normalizeKeyword(k.term);
+                    if (!courseTerms.has(norm)) {
+                        courseTerms.set(norm, {
+                            term: k.term,
+                            course: c.name,
+                            institution: c.institution,
+                            rank: null,
+                            prevRank: null,
+                            diff: 0,
+                            url: '',
+                            isInOrganic: false,
+                            isInGsc: false,
+                            isInAds: true,
+                            gscClicks: 0,
+                            gscImpressions: 0,
+                            adsImpressions: k.impressions || 0,
+                            adsClicks: k.clicks || 0,
+                            adsVolume: k.vol || k.volume || 0,
+                            adsLowBid: k.low || k.lowBid || 0,
+                            adsHighBid: k.high || k.highBid || 0
+                        });
+                    } else {
+                        const entry = courseTerms.get(norm);
+                        entry.isInAds = true;
+                        entry.adsImpressions = k.impressions || 0;
+                        entry.adsClicks = k.clicks || 0;
+                        entry.adsVolume = k.vol || k.volume || 0;
+                        entry.adsLowBid = k.low || k.lowBid || 0;
+                        entry.adsHighBid = k.high || k.highBid || 0;
+                    }
+                });
+
+                // Add to list
+                courseTerms.forEach(entry => {
+                    entry.isTriple = entry.isInOrganic && entry.isInGsc && entry.isInAds;
+                    entry.synergyCount = (entry.isInOrganic ? 1 : 0) + (entry.isInGsc ? 1 : 0) + (entry.isInAds ? 1 : 0);
+                    list.push(entry);
                 });
             });
             allKeywords = list;
@@ -517,17 +764,17 @@
         function updateKPICards() {
             document.getElementById('kpi-total-tracked').textContent = allKeywords.length;
             
-            const top3 = allKeywords.filter(k => k.rank >= 1 && k.rank <= 3).length;
+            const top3 = allKeywords.filter(k => k.isInOrganic && k.rank >= 1 && k.rank <= 3).length;
             document.getElementById('kpi-top3').textContent = top3;
 
-            const climbers = allKeywords.filter(k => k.diff > 0).length;
+            const climbers = allKeywords.filter(k => k.isInOrganic && k.diff > 0).length;
             document.getElementById('kpi-climbers').textContent = climbers;
 
-            const sliders = allKeywords.filter(k => k.diff < 0).length;
+            const sliders = allKeywords.filter(k => k.isInOrganic && k.diff < 0).length;
             document.getElementById('kpi-sliders').textContent = sliders;
         }
 
-        // Handle searches, institution select and rank bracket changes
+        // Handle searches, institution select, channel and rank bracket changes
         function handleFilterChange() {
             currentLimit = 100; // Reset batch pagination
             applyFiltersAndSorting();
@@ -537,6 +784,7 @@
             const query = document.getElementById('keyword-search').value.toLowerCase().trim();
             const inst = document.getElementById('institution-select').value;
             const bracket = document.getElementById('bracket-select').value;
+            const channel = document.getElementById('channel-select').value;
 
             // 1. Filtering
             filteredKeywords = allKeywords.filter(k => {
@@ -549,29 +797,51 @@
                 // Match institution
                 const matchesInst = (inst === 'all' || k.institution === inst);
 
-                // Match rank bracket selection
-                let matchesBracket = true;
-                if (bracket === 'top3') {
-                    matchesBracket = (k.rank >= 1 && k.rank <= 3);
-                } else if (bracket === 'top10') {
-                    matchesBracket = (k.rank >= 4 && k.rank <= 10);
-                } else if (bracket === 'page2') {
-                    matchesBracket = (k.rank >= 11);
-                } else if (bracket === 'improved') {
-                    matchesBracket = (k.diff > 0);
-                } else if (bracket === 'dropped') {
-                    matchesBracket = (k.diff < 0);
-                } else if (bracket === 'stable') {
-                    matchesBracket = (k.diff === 0);
+                // Match channel
+                let matchesChannel = true;
+                if (channel === 'organic') {
+                    matchesChannel = k.isInOrganic;
+                } else if (channel === 'gsc') {
+                    matchesChannel = k.isInGsc;
+                } else if (channel === 'ads') {
+                    matchesChannel = k.isInAds;
+                } else if (channel === 'synergy') {
+                    matchesChannel = (k.synergyCount >= 2);
+                } else if (channel === 'triple') {
+                    matchesChannel = k.isTriple;
                 }
 
-                return matchesQuery && matchesInst && matchesBracket;
+                // Match rank bracket selection (only makes sense if it is an organic ranking keyword)
+                let matchesBracket = true;
+                if (bracket !== 'all') {
+                    if (!k.isInOrganic) {
+                        matchesBracket = false;
+                    } else if (bracket === 'top3') {
+                        matchesBracket = (k.rank >= 1 && k.rank <= 3);
+                    } else if (bracket === 'top10') {
+                        matchesBracket = (k.rank >= 4 && k.rank <= 10);
+                    } else if (bracket === 'page2') {
+                        matchesBracket = (k.rank >= 11);
+                    } else if (bracket === 'improved') {
+                        matchesBracket = (k.diff > 0);
+                    } else if (bracket === 'dropped') {
+                        matchesBracket = (k.diff < 0);
+                    } else if (bracket === 'stable') {
+                        matchesBracket = (k.diff === 0);
+                    }
+                }
+
+                return matchesQuery && matchesInst && matchesBracket && matchesChannel;
             });
 
             // 2. Sorting
             filteredKeywords.sort((a, b) => {
                 let valA = a[sortBy];
                 let valB = b[sortBy];
+
+                // Put null values at the end
+                if (valA === null || valA === undefined) return 1;
+                if (valB === null || valB === undefined) return -1;
 
                 // Handle string comparisons
                 if (typeof valA === 'string') {
@@ -583,13 +853,15 @@
             });
 
             // Update header UI sort indicators
-            const indicators = ['term', 'course', 'institution', 'rank', 'trend'];
+            const indicators = ['term', 'course', 'institution', 'rank', 'trend', 'gscClicks', 'adsImpressions'];
             indicators.forEach(ind => {
                 const el = document.getElementById(`sort-${ind}`);
-                if (ind === sortBy) {
-                    el.textContent = sortAsc ? '▲' : '▼';
-                } else {
-                    el.textContent = '↕';
+                if (el) {
+                    if (ind === sortBy || (ind === 'trend' && sortBy === 'diff')) {
+                        el.textContent = sortAsc ? '▲' : '▼';
+                    } else {
+                        el.textContent = '↕';
+                    }
                 }
             });
 
@@ -599,15 +871,18 @@
         // Toggles Sorting
         function handleSort(field) {
             if (field === 'trend') {
-                // Sorting by trend means sorting by the rank diff value
                 field = 'diff';
             }
             if (sortBy === field) {
                 sortAsc = !sortAsc;
             } else {
                 sortBy = field;
-                // If sorting by rank or diff, ascending/descending defaults
-                sortAsc = (field === 'rank' || field === 'diff') ? true : true;
+                // Default descending for metrics, ascending for rank/text
+                if (field === 'gscClicks' || field === 'adsImpressions' || field === 'diff') {
+                    sortAsc = false;
+                } else {
+                    sortAsc = true;
+                }
             }
             applyFiltersAndSorting();
         }
@@ -620,7 +895,7 @@
             if (filteredKeywords.length === 0) {
                 body.innerHTML = `
                     <tr>
-                        <td colspan="7" style="text-align: center; padding: 40px; color: var(--text-muted); opacity: 0.5;">
+                        <td colspan="9" style="text-align: center; padding: 40px; color: var(--text-muted); opacity: 0.5;">
                             📂 No keywords matching your filters
                         </td>
                     </tr>
@@ -636,14 +911,34 @@
                     tr.className = 'rainbow-row active-row-synergy';
                 }
 
+                // Organic Rank display
+                let rankDisplay = '<span style="color:#64748b;">---</span>';
+                if (k.isInOrganic) {
+                    rankDisplay = `<span style="font-size:18px; font-weight:800; color: var(--accent-primary);">#${k.rank === 999 ? '---' : k.rank}</span>`;
+                }
+
                 // 3-Month Trend display icon/string
-                let trendIcon = '';
-                if (k.diff > 0) {
-                    trendIcon = `<span style="color:var(--success); font-weight:700;">▲ ${k.diff}</span>`;
-                } else if (k.diff < 0) {
-                    trendIcon = `<span style="color:var(--danger); font-weight:700;">▼ ${Math.abs(k.diff)}</span>`;
-                } else {
-                    trendIcon = `<span style="color:var(--text-muted);">● Stable</span>`;
+                let trendIcon = '<span style="color:#64748b;">---</span>';
+                if (k.isInOrganic) {
+                    if (k.diff > 0) {
+                        trendIcon = `<span style="color:var(--success); font-weight:700;">▲ ${k.diff}</span>`;
+                    } else if (k.diff < 0) {
+                        trendIcon = `<span style="color:var(--danger); font-weight:700;">▼ ${Math.abs(k.diff)}</span>`;
+                    } else {
+                        trendIcon = `<span style="color:var(--text-muted);">● Stable</span>`;
+                    }
+                }
+
+                // GSC clicks/impressions display
+                let gscDisplay = '<span style="color:#64748b;">---</span>';
+                if (k.isInGsc) {
+                    gscDisplay = `<div style="font-weight: 700; color: #38bdf8;">${k.gscClicks} <span style="font-weight: 400; font-size: 11px; color: #94a3b8;">/ ${k.gscImpressions}</span></div>`;
+                }
+
+                // Ads impressions/clicks display
+                let adsDisplay = '<span style="color:#64748b;">---</span>';
+                if (k.isInAds) {
+                    adsDisplay = `<div style="font-weight: 700; color: #f59e0b;">${k.adsImpressions.toLocaleString()} <span style="font-weight: 400; font-size: 11px; color: #94a3b8;">/ ${k.adsClicks}</span></div>`;
                 }
 
                 // Cross-channel badges
@@ -651,9 +946,9 @@
                 if (k.isTriple) {
                     synergyHtml = `<span class="synergy-badge triple">🌈 Triple Synergy</span>`;
                 } else {
+                    if (k.isInOrganic) synergyHtml += `<span class="synergy-badge" style="background:rgba(16,185,129,0.08); color:#10b981; border-color:rgba(16,185,129,0.15);">✓ Org Active</span>`;
                     if (k.isInGsc) synergyHtml += `<span class="synergy-badge gsc">✓ GSC Active</span>`;
                     if (k.isInAds) synergyHtml += `<span class="synergy-badge ads">✓ Ads Active</span>`;
-                    if (!k.isInGsc && !k.isInAds) synergyHtml += `<span class="text-muted" style="font-size:11px;">Rankings Only</span>`;
                 }
 
                 // URL format
@@ -671,8 +966,10 @@
                     <td style="font-weight: 700; color: white;">${k.term}</td>
                     <td>${k.course}</td>
                     <td style="font-size: 11px; opacity: 0.8; font-weight: 600;">${k.institution}</td>
-                    <td style="text-align: center;"><span style="font-size:18px; font-weight:800; color: var(--accent-primary);">#${k.rank === 999 ? '---' : k.rank}</span></td>
+                    <td style="text-align: center;">${rankDisplay}</td>
                     <td>${trendIcon}</td>
+                    <td style="text-align: center;">${gscDisplay}</td>
+                    <td style="text-align: center;">${adsDisplay}</td>
                     <td>${synergyHtml}</td>
                     <td>${urlDisplay}</td>
                 `;
@@ -683,7 +980,7 @@
             if (filteredKeywords.length > currentLimit) {
                 const loadRow = document.createElement('tr');
                 loadRow.innerHTML = `
-                    <td colspan="7" style="text-align: center; padding: 20px;">
+                    <td colspan="9" style="text-align: center; padding: 20px;">
                         <button class="sync-btn" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);" onclick="loadMoreBatch()">
                             Load More (+100)
                         </button>
@@ -705,46 +1002,93 @@
             return `"${str}"`;
         }
 
-        // 1. Export Organic CSV
-        function exportOrganicCSV() {
-            let csv = "Keyword,Course,Institution,Current Rank,Previous Rank,Trend,Ranking URL,Synergy Status\n";
+        // Modal triggers
+        function openExportModal(type) {
+            activeExportType = type;
+            const modal = document.getElementById('export-modal');
+            const select = document.getElementById('modal-institution-select');
+            
+            // Clear existing options except "all"
+            select.innerHTML = '<option value="all">ALL INSTITUTIONS</option>';
+            
+            // Get unique institutions
+            const institutions = [...new Set(allKeywords.map(k => k.institution))].sort();
+            institutions.forEach(inst => {
+                const opt = document.createElement('option');
+                opt.value = inst;
+                opt.textContent = inst.toUpperCase();
+                select.appendChild(opt);
+            });
+            
+            modal.style.display = 'flex';
+        }
+
+        function closeExportModal() {
+            document.getElementById('export-modal').style.display = 'none';
+        }
+
+        function confirmExport() {
+            const inst = document.getElementById('modal-institution-select').value;
+            closeExportModal();
+            
+            if (activeExportType === 'organic') {
+                runExportOrganic(inst);
+            } else if (activeExportType === 'ads') {
+                runExportAds(inst);
+            } else if (activeExportType === 'gsc') {
+                runExportGsc(inst);
+            }
+        }
+
+        // 1. Export Organic CSV (with institution filter)
+        function runExportOrganic(instFilter) {
+            let csv = "Keyword,Course,Institution,Organic Rank,Previous Rank,Trend,Ranking URL,Active in GSC,Active in Ads,Triple Synergy\n";
             
             allKeywords.forEach(k => {
+                if (instFilter !== 'all' && k.institution !== instFilter) return;
+                
                 const trendStr = k.diff > 0 ? `+${k.diff}` : k.diff < 0 ? `-${Math.abs(k.diff)}` : "Stable";
                 const synergy = k.isTriple ? "Triple Synergy" : (k.isInGsc && k.isInAds ? "Synergy GSC+Ads" : (k.isInGsc ? "GSC Active" : (k.isInAds ? "Ads Active" : "Rankings Only")));
                 
-                csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(k.course)},${sanitizeCSVField(k.institution)},${k.rank === 999 ? '""' : k.rank},${k.prevRank || 0},"${trendStr}",${sanitizeCSVField(k.url)},"${synergy}"\n`;
+                csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(k.course)},${sanitizeCSVField(k.institution)},${k.rank === null ? '""' : k.rank},${k.prevRank || 0},"${trendStr}",${sanitizeCSVField(k.url)},"${k.isInGsc ? 'Yes' : 'No'}","${k.isInAds ? 'Yes' : 'No'}","${k.isTriple ? 'Yes' : 'No'}"\n`;
             });
 
-            triggerCSVDownload(csv, "fleet_organic_rankings.csv");
+            const suffix = instFilter === 'all' ? 'all' : instFilter.toLowerCase().replace(/\s+/g, '_');
+            triggerCSVDownload(csv, `fleet_organic_rankings_${suffix}.csv`);
         }
 
-        // 2. Export Ads CSV
-        function exportAdsCSV() {
+        // 2. Export Ads CSV (with institution filter)
+        function runExportAds(instFilter) {
             let csv = "Keyword,Course,Institution,Impressions,Clicks,Search Volume,Low Range Bid,High Range Bid\n";
             
             coursesRaw.forEach(c => {
+                if (instFilter !== 'all' && c.institution !== instFilter) return;
+                
                 const ads = c.adsKeywords || [];
                 ads.forEach(k => {
-                    csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(c.name)},${sanitizeCSVField(c.institution)},${k.impressions || 0},${k.clicks || 0},${k.volume || 0},${k.lowBid || 0},${k.highBid || 0}\n`;
+                    csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(c.name)},${sanitizeCSVField(c.institution)},${k.impressions || 0},${k.clicks || 0},${k.vol || k.volume || 0},${k.low || k.lowBid || 0},${k.high || k.highBid || 0}\n`;
                 });
             });
 
-            triggerCSVDownload(csv, "fleet_google_ads.csv");
+            const suffix = instFilter === 'all' ? 'all' : instFilter.toLowerCase().replace(/\s+/g, '_');
+            triggerCSVDownload(csv, `fleet_google_ads_${suffix}.csv`);
         }
 
-        // 3. Export GSC CSV
-        function exportGscCSV() {
+        // 3. Export GSC CSV (with institution filter)
+        function runExportGsc(instFilter) {
             let csv = "Keyword,Course,Institution,Clicks,Impressions,Click Delta\n";
             
             coursesRaw.forEach(c => {
+                if (instFilter !== 'all' && c.institution !== instFilter) return;
+                
                 const gsc = c.gscKeywords || [];
                 gsc.forEach(k => {
                     csv += `${sanitizeCSVField(k.term)},${sanitizeCSVField(c.name)},${sanitizeCSVField(c.institution)},${k.clicks || 0},${k.impressions || 0},${k.clickDelta || 0}\n`;
                 });
             });
 
-            triggerCSVDownload(csv, "fleet_search_console.csv");
+            const suffix = instFilter === 'all' ? 'all' : instFilter.toLowerCase().replace(/\s+/g, '_');
+            triggerCSVDownload(csv, `fleet_search_console_${suffix}.csv`);
         }
 
         function triggerCSVDownload(csvContent, filename) {
