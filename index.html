@@ -2,58 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO Keyword Hub | Antigravity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SEO Keyword Hub | Antigravity v97 (Stable)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐇</text></svg>">
 </head>
 <body>
+    <div id="login-overlay" class="login-overlay" style="display:none;">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Logo">
+            </div>
+            <h2>Team Access</h2>
+            <p>Please enter your credentials to manage the SEO Hub.</p>
+            <div class="login-form">
+                <input type="text" id="login-name" placeholder="Your Name (e.g. Pedro)">
+                <input type="password" id="login-key" placeholder="Team Access Key">
+                <div class="blob-selector" style="margin-bottom: 20px; text-align: left;">
+                    <label style="font-size: 11px; font-weight: bold; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; display: block;">Aura Gradient Wheel</label>
+                    <div class="tone-options-wheel" style="display: flex; gap: 12px; overflow-x: auto; padding: 10px 5px; scrollbar-width: none; -ms-overflow-style: none;">
+                        <div class="tone-option selected" data-tone="linear-gradient(135deg, #0057FF, #00C2FF)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #0057FF, #00C2FF); cursor: pointer; border: 2px solid white; flex-shrink: 0;" title="Deep Blue"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF00C8, #7000FF)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #FF00C8, #7000FF); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Cyber Pink"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #00FF87, #60EFFF)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #00FF87, #60EFFF); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Emerald Sea"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FFD700, #FF8C00)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #FFD700, #FF8C00); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Golden Hour"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF0000, #FF5F6D)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #FF0000, #FF5F6D); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Crimson Core"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #12c2e9, #c471ed, #f64f59)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Tranquility"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #8E2DE2, #4A00E0)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #8E2DE2, #4A00E0); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Cosmic Purple"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #00F2FE, #4FACFE)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #00F2FE, #4FACFE); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Arctic Glow"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #F093FB, #F5576C)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #F093FB, #F5576C); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Soft Rose"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #5EE7DF, #B490CA)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #5EE7DF, #B490CA); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Dream Cloud"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #6A11CB, #2575FC)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #6A11CB, #2575FC); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Midnight Electric"></div>
+                        <div class="tone-option" data-tone="linear-gradient(135deg, #FF0080, #7928CA, #FF0080)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, #FF0080, #7928CA, #FF0080); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Antigravity Prime"></div>
+                        <div class="tone-option" data-tone="linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335)" onclick="selectTone(this)" style="min-width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335); cursor: pointer; border: 2px solid transparent; flex-shrink: 0;" title="Rainbow Aura"></div>
+                    </div>
+                </div>
+
+                <div class="wallpaper-upload" style="margin-bottom: 20px;">
+                    <label style="font-size: 11px; font-weight: bold; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block;">Custom Wallpaper</label>
+                    <input type="file" id="bg-upload" accept="image/*" style="display: none;" onchange="handleBgUpload(this)">
+                    <button type="button" onclick="document.getElementById('bg-upload').click()" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2); border-radius: 12px; color: white; font-size: 12px; cursor: pointer; transition: all 0.2s;">
+                        🖼️ Upload Custom Background
+                    </button>
+                    <div id="upload-status" style="font-size: 10px; color: var(--accent-primary); margin-top: 5px; display: none;">Wallpaper ready!</div>
+                </div>
+                <button onclick="handleLogin()" id="login-btn">Unlock Dashboard</button>
+                <p id="login-error" class="login-error"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ambient Animated Background Blob -->
+    <div class="ambient-blob"></div>
+
     <div class="app-container">
         <!-- Sidebar -->
+        <div id="mobile-overlay" class="mobile-overlay" onclick="toggleSidebar()"></div>
         <aside class="sidebar">
-            <div class="logo">
+            <button id="mobile-close-btn" class="mobile-only-btn close-btn" onclick="toggleSidebar()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="logo" onclick="returnToLanding()" style="cursor: pointer;" title="Return to Global Hub">
                 <div class="logo-container">
-                    <img id="brand-logo" src="" alt="Brand Logo">
+                    <img id="brand-logo" src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Brand Logo">
                 </div>
                 <span class="logo-text" id="brand-name">Grupo Lusófona</span>
+                <div class="search-bar" id="sidebar-search-container" style="width: 100%; margin-top: 20px;">
+                    <input type="text" placeholder="Search courses..." id="course-search-sidebar" oninput="renderCourseList(this.value)" autocomplete="off" style="width: 100%;">
+                </div>
             </div>
-            <nav class="course-nav">
-                <h3>COURSES</h3>
-                <nav class="course-nav" id="course-list">
-                <!-- Grouped courses will be injected here -->
+
+            <nav class="course-nav" id="course-list">
+                <!-- Course accordions will be injected here via app.js -->
             </nav>
+
+            <div class="nav-group-header" id="premium-tools-header" onclick="togglePremiumTools()" style="margin-top: 10px;">
+                Premium Tools
+            </div>
+            <div class="nav-degree-container" id="premium-tools-container">
+                <a href="live-monitor/index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="live-monitor-btn">
+                        📊 Live Ads Monitor
+                    </div>
+                </a>
+                <a href="404-board/" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="404-board-btn" style="color: #ef4444; border-color: rgba(239,68,68,0.2); background: rgba(239,68,68,0.05);">
+                        ⚠️ 404 Live Board
+                    </div>
+                </a>
+                <a href="keyword-explorer/index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="keyword-explorer-btn" style="color: #10b981; border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.05);">
+                        🔍 Keyword Explorer
+                    </div>
+                </a>
+                <a href="captcha/index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="captcha-btn" style="color: #00ff88; border-color: rgba(0,255,136,0.2); background: rgba(0,255,136,0.05);">
+                        🤖 GEO Auditor Lab
+                    </div>
+                </a>
+            </div>
 
             <div class="sidebar-footer">
                 <div class="data-sync-zone">
-                    <h3>Data Sync</h3>
+                    <h3 id="data-sync-header">Data Sync</h3>
+                    <span id="last-sync-info" class="sync-meta">Loading sync status...</span>
                     <div class="sync-buttons">
-                        <button class="upload-btn gsc" onclick="document.getElementById('gsc-upload').click()">
+                        <button class="sync-btn" id="gsc-upload-btn" onclick="document.getElementById('gsc-upload').click()">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
                             GSC Data
                         </button>
-                        <button class="upload-btn ads" onclick="document.getElementById('ads-upload').click()">
+                        <!-- Manual Ads upload hidden as it is now automated -->
+                        <button class="sync-btn" id="ads-upload-btn" style="display: none;" onclick="document.getElementById('ads-upload').click()">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
                             Ads Data
                         </button>
                     </div>
-                    <input type="file" id="gsc-upload" hidden accept=".xml,.csv">
-                    <input type="file" id="ads-upload" hidden accept=".xml,.csv">
+                    <input type="file" id="gsc-upload" hidden accept=".xml,.csv" onchange="handleFileUpload(event, 'gsc')">
+                    <input type="file" id="ads-upload" hidden accept=".xml,.csv" onchange="handleFileUpload(event, 'ads')">
                     <div class="sync-actions">
-                        <button class="sync-cloud-btn" id="sync-btn" onclick="syncToGitHub()">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        <button class="sync-btn full-width" id="sync-btn" onclick="syncToTeam()">
                             🚀 Sync to Team
                         </button>
-                        <button class="reset-token-btn" onclick="clearToken()" title="Reset Connection">
+                        <button class="btn-reset" onclick="clearToken()" title="Reset Connection" style="width: 44px; margin-bottom: 0;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-1z"/><path d="M20.5 4.5l-2.4 2.4a2 2 0 0 1-2.8 0L7 2 2 7l7.1 7.1a2 2 0 0 1 0 2.8l2.4 2.4"/><path d="M14 7l5 5"/></svg>
                         </button>
                     </div>
                     <p id="sync-status" class="sync-tip" style="display:none; color: var(--success);"></p>
-                    <p class="sync-tip">Sync your changes to the live dashboard</p>
                 </div>
                 <div class="status-indicator">
-                    <span class="pulse"></span> System Active
+                    <span class="pulse"></span> <span id="system-active-text">System Active</span>
                 </div>
             </div>
         </aside>
@@ -61,95 +141,423 @@
         <!-- Main Content -->
         <main class="main-content">
             <header class="top-bar">
-                <div class="header-left">
-                    <h1 id="active-course-title">Select a Course</h1>
+                <button id="mobile-menu-toggle" class="mobile-only-btn" onclick="toggleSidebar()" style="margin-right: 15px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <div class="header-left" id="dashboard-header-left" style="visibility: hidden;">
+                    <div style="display: flex; align-items: baseline; gap: 12px;">
+                        <h1 id="active-course-title">Select a Course</h1>
+                    </div>
                     <p id="active-course-desc">Global SEO & Ads Keyword Analysis</p>
                 </div>
+                
                 <div class="header-right">
-                    <div class="search-bar">
-                        <input type="text" placeholder="Search keywords..." id="keyword-search">
+                    <div class="search-bar" id="header-search-container" style="display: none;">
+                        <input type="text" placeholder="Search keywords..." id="keyword-search-header" oninput="renderTablesFromHeader(this.value)">
                     </div>
-                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Light/Dark Mode" style="margin-right: 0; margin-left: 12px;">
-                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <button class="theme-toggle" id="lang-toggle-btn" onclick="toggleLanguage()" title="Switch Language" style="margin-right: 8px;">
+                        <span id="lang-toggle-text" class="lang-btn-text">EN</span>
                     </button>
+                    <div class="account-wallet-container">
+                        <button class="account-btn" style="padding: 0 12px; height: 38px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span id="user-display-name" style="font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">User</span>
+                        </button>
+                        <div class="wallet-dropdown">
+                            <div class="wallet-option" onclick="showKeysWallet()">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                <span>API Keys Wallet</span>
+                            </div>
+                            <div id="miguel-export-option" class="wallet-option" onclick="showExportModal()" style="display: none; border-top: 1px solid rgba(255,255,255,0.05);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                                <span>Export Precision CSV</span>
+                            </div>
+                            <div class="wallet-option" onclick="handleLogout()" style="color: var(--danger);">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                                <span>Logout</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </header>
 
-            <section class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-label">Keyword Parity</span>
-                    <span class="stat-value" id="parity-score">--%</span>
-                    <div class="stat-chart"><div class="chart-bar" id="parity-bar"></div></div>
+            <!-- Landing / Selection View -->
+            <div id="landing-view" class="landing-hero">
+                <div class="hero-logo-container">
+                    <img id="landing-logo" src="" alt="Institution Logo" style="display: none;">
                 </div>
-                <div class="stat-card">
-                    <span class="stat-label">GSC Keywords</span>
-                    <span class="stat-value" id="gsc-count">0</span>
+                <div class="hero-text">
+                    <h2 id="greeting-text">Olá!</h2>
+                    <p id="landing-subtitle">Select a degree category from the sidebar to begin</p>
+                    
+                    <div id="degree-selection-hub" style="display: none; margin-top: 30px;">
+                        <select id="course-dropdown-hub" class="course-select-premium" onchange="loadCourse(parseInt(this.value))" style="width: 100%; max-width: 400px; padding: 15px; border-radius: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: inherit; font-size: 16px; outline: none; cursor: pointer;">
+                            <option value="">Choose a Course...</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-label">Ads Keywords</span>
-                    <span class="stat-value" id="ads-count">0</span>
-                </div>
-                <div class="stat-card accent">
-                    <span class="stat-label">Organic Gaps</span>
-                    <span class="stat-value" id="gap-count">0</span>
-                </div>
-            </section>
+            </div>
 
-            <section class="dashboard-grid">
-                <div class="data-panel">
-                    <div class="panel-header">
-                        <div class="header-title-group">
-                            <svg class="panel-logo" width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5Z"/><path fill="#FFF" d="M12 18L12 11L7 11L12 18Z"/><path fill="#FBBC05" d="M12 8L12 11L17 11L12 8Z"/></svg>
-                            <h2>Search Console Keywords</h2>
-                        </div>
-                        <div class="status-indicator">
-                            <span class="pulse"></span> Live Data
-                        </div>
-                    </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Keyword</th>
-                                    <th>Clicks (30d)</th>
-                                    <th>Ads Synergy</th>
-                                </tr>
-                            </thead>
-                            <tbody id="gsc-body"></tbody>
-                        </table>
-                    </div>
+            <!-- Live Monitor View -->
+            <div id="live-monitor-view" style="display: none; height: calc(100vh - 100px); overflow-y: auto; padding: 20px;">
+                <div class="monitor-grid">
+                    <table class="monitor-table">
+                        <thead>
+                            <tr>
+                                <th id="th-campaign" onclick="sortAds('Campaign')" style="cursor:pointer; white-space: nowrap;">Campaign ↕</th>
+                                <th id="th-status" onclick="sortAds('Status')" style="cursor:pointer;">Status ↕</th>
+                                <th id="th-budget" onclick="sortAds('Budget')" style="text-align:right; cursor:pointer;">Budget ↕</th>
+                                <th id="th-impr" onclick="sortAds('Impressions')" style="text-align:right; cursor:pointer;">Impr. ↕</th>
+                                <th id="th-clicks" onclick="sortAds('Clicks')" style="text-align:right; cursor:pointer;">Clicks ↕</th>
+                                <th id="th-cost" onclick="sortAds('Cost')" style="text-align:right; cursor:pointer;">Cost ↕</th>
+                                <th id="th-conv" onclick="sortAds('Conversions')" style="text-align:right; cursor:pointer;">Conv. ↕</th>
+                                <th id="th-cpa" onclick="sortAds('CostPerConv')" style="text-align:right; cursor:pointer;">CPA ↕</th>
+                                <th id="th-ctr" onclick="sortAds('CTR')" style="text-align:right; cursor:pointer;">CTR ↕</th>
+                            </tr>
+                        </thead>
+                        <tbody id="monitor-body"></tbody>
+                    </table>
                 </div>
+            </div>
 
-                <!-- Google Ads Panel -->
-                <div class="data-panel">
-                    <div class="panel-header">
-                        <div class="header-title-group">
-                            <svg class="panel-logo" width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M6 2L2 8l4 6h12l4-6-4-6H6z"/><path fill="#FBBC05" d="M2 8l4 6h12l4-6H2z"/><path fill="#34A853" d="M18 14l4-6-4-6h-12l-4 6 4 6h12z"/></svg>
-                            <h2>Ads Performance</h2>
+            <div id="dashboard-view" style="display: none; padding-top: 20px;">
+                <div id="header-switcher-container" style="display: none; margin-bottom: 28px; max-width: 350px;">
+                    <label style="display: block; font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Quick Selection</label>
+                    <select id="header-course-switcher" class="header-select sleek-switcher" onchange="loadCourse(parseInt(this.value))">
+                        <option value="">Choose another course...</option>
+                    </select>
+                </div>
+                <!-- Stats Row -->
+                <section class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Keyword Parity</span>
+                        <span class="stat-value" id="parity-score">--%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">GSC Keywords</span>
+                        <span class="stat-value" id="gsc-total">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Ads Keywords</span>
+                        <span class="stat-value" id="ads-total">--</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Organic Caps</span>
+                        <span class="stat-value" id="organic-total">--</span>
+                    </div>
+                </section>
+
+                <!-- Data Tables Grid -->
+                <div class="dashboard-grid">
+                    <!-- GSC Panel -->
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <div class="header-title-group">
+                                <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                <h2>Search Console <span class="text-muted">(Organic)</span></h2>
+                            </div>
                         </div>
-                        <div class="status-indicator">
-                            <span class="pulse"></span> Active Campaigns
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Clicks</th>
+                                        <th>Ads Gap</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="gsc-body"></tbody>
+                            </table>
                         </div>
                     </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Keyword</th>
-                                    <th>Organic Match</th>
-                                </tr>
-                            </thead>
-                            <tbody id="ads-body"></tbody>
-                        </table>
+
+                    <!-- Ads Panel -->
+                    <div class="data-panel">
+                        <div class="panel-header">
+                            <div class="header-title-group">
+                                <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                <h2>Google Ads <span class="text-muted">(Active)</span></h2>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Synergy</th>
+                                     </tr>
+                                </thead>
+                                <tbody id="ads-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Rankings Panel -->
+                    <div class="data-panel full-width">
+                        <div class="panel-header">
+                            <div class="header-title-group">
+                                <svg class="panel-logo" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                <h2>Organic Search Rankings</h2>
+                            </div>
+                            <div class="status-indicator">
+                                <span style="width: 8px; height: 8px; background: #a855f7; border-radius: 50%; display: inline-block;"></span>
+                                <span style="font-size: 11px; opacity: 0.7;">Tracked Keywords</span>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Keyword</th>
+                                        <th>Current Rank</th>
+                                        <th>3-Month Trend</th>
+                                        <th>Ranking URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rankings-body"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </main>
     </div>
     <button id="back-to-top" class="back-to-top" onclick="scrollToTop()" title="Scroll to Top">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
-    <script src="app.js?v=v2_legendary"></script>
+    
+    <!-- PRECISION EXPORT MODAL -->
+    <div id="export-modal" class="modal-overlay" style="display: none;">
+        <div class="sync-modal" style="width: 380px; background: rgba(10, 12, 16, 0.98); border: 1px solid var(--accent-primary); border-radius: 20px; overflow: hidden;">
+            <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="color: white; font-size: 14px; margin: 0; letter-spacing: 2px; font-weight: 800;">PRECISION EXPORT</h2>
+                <button onclick="hideExportModal()" style="background:none; border:none; color:white; cursor:pointer; font-size: 18px; opacity: 0.6;">✕</button>
+            </div>
+            <div style="padding: 25px;">
+                <div class="export-field" style="margin-bottom: 20px;">
+                    <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px; display: block; margin-bottom: 8px;">INSTITUTION</label>
+                    <select id="export-inst" style="width: 100%; padding: 12px; background: white; border: 1px solid #ccc; border-radius: 10px; color: black; font-size: 13px; font-weight: 700; outline: none; appearance: none; -webkit-appearance: none;"></select>
+                </div>
+                <div class="export-field" style="margin-bottom: 25px;">
+                    <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px; display: block; margin-bottom: 8px;">DEGREE CATEGORY</label>
+                    <select id="export-degree" style="width: 100%; padding: 12px; background: white; border: 1px solid #ccc; border-radius: 10px; color: black; font-size: 13px; font-weight: 700; outline: none; appearance: none; -webkit-appearance: none;"></select>
+                </div>
+                <button class="sync-btn full-width" onclick="executePrecisionExport()" style="margin: 0; width: 100%; padding: 15px;">GENERATE SCHEMA CSV</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ai-tower-container" id="ai-tower">
+        <div class="tower-options">
+            <div class="tower-item claude-orb" onclick="switchAIModel('claude')" title="Claude Opus 4.7">
+                <div class="model-logo-container">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z" fill="white"/></svg>
+                </div>
+                <div class="model-info">
+                    <span class="model-brand">ANTHROPIC</span>
+                    <span class="model-name">Claude Opus 4.7</span>
+                    <span class="model-desc">Foco total em segurança e nuances linguísticas. O modelo mais humano e detalhista da Anthropic.</span>
+                </div>
+            </div>
+            <div class="tower-item gemini-orb active" onclick="switchAIModel('gemini')" title="Gemini 3">
+                <div class="model-logo-container">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M12.001.002a.25.25 0 0 0-.215.122C9.576 4.102 5.897 7.781.124 9.992a.25.25 0 0 0 0 .466C5.897 12.668 9.576 16.347 11.786 20.327a.25.25 0 0 0 .43 0c2.21-3.98 5.889-7.659 11.661-9.869a.25.25 0 0 0 0-.466C18.104 7.782 14.425 4.103 12.215.124A.25.25 0 0 0 12.001.002Z" fill="white"/></svg>
+                </div>
+                <div class="model-info">
+                    <span class="model-brand">GOOGLE</span>
+                    <span class="model-name">Gemini 3</span>
+                    <span class="model-desc">A evolução da IA multimodal do Google. Integração profunda com o ecossistema e raciocínio ultra-rápido.</span>
+                </div>
+            </div>
+            <div class="tower-item gpt-orb" onclick="switchAIModel('gpt4o')" title="OpenAI GPT-5.5">
+                <div class="model-logo-container">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M9.205 8.658v-2.26c0-.19.072-.333.238-.428l4.543-2.616c.619-.357 1.356-.523 2.117-.523 2.854 0 4.662 2.212 4.662 4.566 0 .167 0 .357-.024.547l-4.71-2.759a.797.797 0 00-.856 0l-5.97 3.473zm10.609 8.8V12.06c0-.333-.143-.57-.429-.737l-5.97-3.473 1.95-1.118a.433.433 0 01.476 0l4.543 2.617c1.309.76 2.189 2.378 2.189 3.948 0 1.808-1.07 3.473-2.76 4.163zM7.802 12.703l-1.95-1.142c-.167-.095-.239-.238-.239-.428V5.899c0-2.545 1.95-4.472 4.591-4.472 1 0 1.927.333 2.712.928L8.23 5.067c-.285.166-.428.404-.428.737v6.898zM12 15.128l-2.795-1.57v-3.33L12 8.658l2.795 1.57v3.33L12 15.128zm1.796 7.23c-1 0-1.927-.332-2.712-.927l4.686-2.712c.285-.166.428-.404.428-.737v-6.898l1.974 1.142c.167.095.238.238.238.428v5.233c0 2.545-1.974 4.472-4.614 4.472zm-5.637-5.303l-4.544-2.617c-1.308-.761-2.188-2.378-2.188-3.948A4.482 4.482 0 014.21 6.327v5.423c0 .333.143.571.428.738l5.947 3.449-1.95 1.118a.432.432 0 01-.476 0zm-.262 3.9c-2.688 0-4.662-2.021-4.662-4.519 0-.19.024-.38.047-.57l4.686 2.71c.286.167.571.167.856 0l5.97-3.448v2.26c0 .19-.07.333-.237.428l-4.543 2.616c-.619.357-1.356.523-2.117.523zm5.899 2.83a5.947 5.947 0 005.827-4.756C22.287 18.339 24 15.84 24 13.296c0-1.665-.713-3.282-1.998-4.448.119-.5.19-.999.19-1.498 0-3.401-2.759-5.947-5.946-5.947-.642 0-1.26.095-1.88.31A5.962 5.962 0 0010.205 0a5.947 5.947 0 00-5.827 4.757C1.713 5.447 0 7.945 0 10.49c0 1.666.713 3.283 1.998 4.448-.119.5-.19 1-.19 1.499 0 3.401 2.759 5.946 5.946 5.946.642 0 1.26-.095 1.88-.309a5.96 5.96 0 004.162 1.713z" fill="white"/></svg>
+                </div>
+                <div class="model-info">
+                    <span class="model-brand">OPENAI</span>
+                    <span class="model-name">GPT-5.5</span>
+                    <span class="model-desc">O pináculo da inteligência artificial. Multimodalidade total e raciocínio ultra-complexo para desafios globais.</span>
+                </div>
+            </div>
+            <div class="tower-item llama-orb" onclick="switchAIModel('llama')" title="Meta Llama 4 Maverick" style="display: none;">
+                <div class="model-logo-container">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z" fill="white"/></svg>
+                </div>
+                <div class="model-info">
+                    <span class="model-brand">META</span>
+                    <span class="model-name">Llama 4 Maverick</span>
+                    <span class="model-desc">A nova geração open-source da Meta. Velocidade extrema e inteligência local sem precedentes.</span>
+                </div>
+            </div>
+            <div class="tower-item deepseek-orb" onclick="switchAIModel('deepseek')" title="DeepSeek V3.2" style="display: none;">
+                <div class="model-logo-container">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="model-logo"><path d="M23.748 4.651c-.254-.124-.364.113-.512.233-.051.04-.094.09-.137.137-.372.397-.806.657-1.373.626-.829-.046-1.537.214-2.163.848-.133-.782-.575-1.248-1.247-1.548-.352-.155-.708-.311-.955-.65-.172-.24-.219-.509-.305-.774-.055-.16-.11-.323-.293-.35-.2-.031-.278.136-.356.276-.313.572-.434 1.202-.422 1.84.027 1.436.633 2.58 1.838 3.393.137.094.172.187.129.323-.082.28-.18.553-.266.833-.055.179-.137.218-.328.14a5.5 5.5 0 0 1-1.737-1.179c-.857-.828-1.631-1.743-2.597-2.46a12 12 0 0 0-.689-.47c-.985-.957.13-1.743.387-1.836.27-.098.094-.433-.778-.428-.872.003-1.67.295-2.687.685a3 3 0 0 1-.465.136 9.6 9.6 0 0 0-2.883-.101c-1.885.21-3.39 1.1-4.497 2.622C.082 8.776-.231 10.854.152 13.02c.403 2.284 1.568 4.175 3.36 5.653 1.857 1.533 3.997 2.284 6.438 2.14 1.482-.085 3.132-.284 4.994-1.86.47.234.962.328 1.78.398.629.058 1.235-.031 1.705-.129.735-.155.684-.836.418-.961-2.155-1.004-1.682-.595-2.112-.926 1.095-1.295 2.768-3.598 3.284-6.733.05-.346.115-.834.108-1.114-.004-.171.035-.238.23-.257a4.2 4.2 0 0 0 1.545-.475c1.397-.763 1.96-2.016 2.093-3.517.02-.23-.004-.467-.247-.588M11.58 18.168c-2.088-1.642-3.101-2.183-3.52-2.16-.39.024-.32.472-.234.763.09.288.207.487.371.74.114.167.192.416-.113.603-.673.416-1.842-.14-1.897-.168-1.361-.801-2.5-1.86-3.301-3.306-.775-1.393-1.225-2.888-1.299-4.482-.02-.385.094-.522.477-.592a4.7 4.7 0 0 1 1.53-.038c2.131.311 3.946 1.264 5.467 2.774.868.86 1.525 1.887 2.202 2.89.72 1.066 1.494 2.082 2.48 2.915.348.291.626.513.892.677-.802.09-2.14.109-3.055-.615zm1.001-6.44a.306.306 0 0 1 .415-.287.3.3 0 0 1 .113.074.3.3 0 0 1 .086.214c0 .17-.136.307-.308.307a.303.303 0 0 1-.306-.307m3.11 1.596c-.2.081-.4.151-.591.16a1.25 1.25 0 0 1-.798-.254c-.274-.23-.47-.358-.551-.758a1.7 1.7 0 0 1 .015-.588c.07-.327-.007-.537-.238-.727-.188-.156-.426-.199-.689-.199a.6.6 0 0 1-.254-.078.253.253 0 0 1-.114-.358 1 1 0 0 1 .192-.21c.356-.202.767-.136 1.146.016.352.144.618.408 1.001.782.392.451.462.576.685.915.176.264.336.536.446.848.066.194-.02.353-.25.45" fill="white"/></svg>
+                </div>
+                <div class="model-info">
+                    <span class="model-brand">DEEPSEEK</span>
+                    <span class="model-name">DeepSeek V3.2</span>
+                    <span class="model-desc">O modelo chinês de IA avançada agora mais rápido e preciso para tarefas de lógica e código.</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="gemini-pulse-btn" id="gemini-btn" onclick="toggleGeminiSidebar()" title="AI Strategist (Active Pulse)">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="active-model-svg">
+                <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="url(#gemini-grad)" />
+                <defs>
+                    <linearGradient id="gemini-grad" x1="3" y1="2" x2="21" y2="20" gradientUnits="userSpaceOnUse">
+                        <stop id="grad-stop-1" stop-color="#4285F4"/>
+                        <stop id="grad-stop-2" offset="1" stop-color="#91B9FF"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Gemini Sidebar -->
+    <aside class="gemini-sidebar" id="gemini-sidebar">
+        <div class="gemini-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" id="sidebar-model-icon">
+                <path id="sidebar-model-icon-path" d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="#4285F4" />
+            </svg>
+            <h2>AI Strategist</h2>
+            <div class="gemini-close" onclick="toggleGeminiSidebar()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </div>
+        </div>
+
+        <div class="gemini-chat-area" id="gemini-chat">
+            <div class="ai-response">
+                <h3 id="gemini-greeting">Olá! 👋</h3>
+                <p id="gemini-intro">I am your AI Strategist. Ask me anything about your institutional keywords or use the quick actions below.</p>
+            </div>
+        </div>
+
+        <!-- AI Persona Selector -->
+        <div class="persona-selector">
+            <div class="persona-card" id="persona-seo" onclick="switchPersona('seo')" title="SEO Strategist">
+                <span class="icon">🔍</span>
+                <span id="persona-seo-label">SEO</span>
+            </div>
+            <div class="persona-card active" id="persona-marketeer" onclick="switchPersona('marketeer')" title="General Marketeer">
+                <span class="icon">👔</span>
+                <span id="persona-market-label">Market</span>
+            </div>
+            <div class="persona-card" id="persona-ads" onclick="switchPersona('ads')" title="Ads Specialist">
+                <span class="icon">🎯</span>
+                <span id="persona-ads-label">Ads</span>
+            </div>
+        </div>
+
+
+        <div class="gemini-input-zone">
+
+            <div id="gemini-file-preview" class="file-preview-zone">
+                <span id="file-name-display"></span>
+                <span class="file-preview-remove" onclick="clearGeminiFile()">✕</span>
+            </div>
+            <div class="gemini-chat-input-container">
+                <label for="gemini-file-upload" class="gemini-upload-btn" title="Upload File (Image/CSV/Excel)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.51a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                </label>
+                <input type="file" id="gemini-file-upload" style="display: none;" onchange="handleGeminiFileUpload(event)" accept=".csv,.xlsx,.xls,.png,.jpg,.jpeg,.pdf,.xml">
+                <input type="text" id="gemini-user-input" class="gemini-chat-input" placeholder="Ask AI Strategist anything..." onkeypress="if(event.key === 'Enter') sendGeminiChat()">
+                <button class="gemini-send-btn" onclick="sendGeminiChat()">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L14.8 8.2L21 11L14.8 13.8L12 20L9.2 13.8L3 11L9.2 8.2L12 2Z" fill="white" />
+                    </svg>
+                </button>
+            </div>
+            <div class="gemini-key-container">
+                <input type="password" id="active-api-key" class="gemini-key-input" placeholder="Gemini API Key (BYOK)" onchange="saveActiveModelKey(this.value)" autocomplete="new-password">
+                <small id="key-status" style="font-size: 9px; opacity: 0.5; margin-left: 5px;">Using key for active model</small>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Floating Rainbow Blob -->
+    <!-- API KEYS WALLET MODAL -->
+    <div id="wallet-modal" class="modal-overlay" style="display: none;">
+        <div class="sync-modal" style="width: 380px; height: 380px; background: rgba(10, 12, 16, 0.98); display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--accent-primary); box-shadow: 0 0 50px rgba(0, 242, 254, 0.2); border-radius: 20px;">
+            <div style="padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="color: white; font-size: 14px; margin: 0; letter-spacing: 2px; font-weight: 800;">API WALLET</h2>
+                <button onclick="hideKeysWallet()" style="background:none; border:none; color:white; cursor:pointer; font-size: 18px; opacity: 0.6;">✕</button>
+            </div>
+            <div id="wallet-scroll-zone" style="flex: 1; overflow-y: auto; padding: 20px; text-align: left; scrollbar-width: thin; scrollbar-color: var(--accent-primary) transparent;">
+                <div id="wallet-fields">
+                    <div class="key-input-group" style="margin-bottom: 25px;">
+                        <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px;">GEMINI 3</label>
+                        <input type="password" id="wallet-key-gemini" placeholder="Enter Gemini API Key..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-top: 5px;">
+                    </div>
+                    <div class="key-input-group" style="margin-bottom: 25px;">
+                        <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px;">CLAUDE OPUS 4.7</label>
+                        <input type="password" id="wallet-key-claude" placeholder="sk-usr-..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-top: 5px; margin-bottom: 8px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Agent ID</small>
+                                <input type="text" id="wallet-agent-claude" placeholder="cmor..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Channel ID</small>
+                                <input type="text" id="wallet-channel-claude" placeholder="cmp..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-input-group" style="margin-bottom: 25px;">
+                        <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px;">GPT-5.5 MASTER</label>
+                        <input type="password" id="wallet-key-gpt4o" placeholder="sk-usr-..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-top: 5px; margin-bottom: 8px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Agent ID</small>
+                                <input type="text" id="wallet-agent-gpt4o" placeholder="cmor..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Channel ID</small>
+                                <input type="text" id="wallet-channel-gpt4o" placeholder="cmp..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-input-group" style="margin-bottom: 25px;">
+                        <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px;">LLAMA 4 MAVERICK</label>
+                        <input type="password" id="wallet-key-llama" placeholder="sk-usr-..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-top: 5px; margin-bottom: 8px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Agent ID</small>
+                                <input type="text" id="wallet-agent-llama" placeholder="cmor..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Channel ID</small>
+                                <input type="text" id="wallet-channel-llama" placeholder="cmp..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-input-group" style="margin-bottom: 25px;">
+                        <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px;">DEEPSEEK V3.2</label>
+                        <input type="password" id="wallet-key-deepseek" placeholder="sk-usr-..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-top: 5px; margin-bottom: 8px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Agent ID</small>
+                                <input type="text" id="wallet-agent-deepseek" placeholder="cmor..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                            <div>
+                                <small style="color:var(--text-muted); font-size:9px;">Channel ID</small>
+                                <input type="text" id="wallet-channel-deepseek" placeholder="cmp..." style="width: 100%; padding: 8px; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; color: white; font-size: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-input-group">
+                        <label style="color: var(--accent-primary); font-size: 10px; font-weight: 900; letter-spacing: 1px;">CLOUDPROXY WORKER URL</label>
+                        <input type="text" id="wallet-proxy-url" placeholder="https://..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: white; margin-top: 5px;">
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 15px; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2);">
+                <button class="sync-btn full-width" onclick="saveWalletKeys()" style="margin: 0; width: 100%;">SAVE ALL SETTINGS</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=v115_realtime_sync"></script>
 </body>
 </html>
