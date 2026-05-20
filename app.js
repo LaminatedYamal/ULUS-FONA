@@ -2420,13 +2420,20 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         if (isIAedu) {
             const agentId = localStorage.getItem(`agent_id_${activeAIModel}`) || 'cmor5objoex9gfp01vm7p95jh';
             const channelId = localStorage.getItem(`channel_id_${activeAIModel}`) || 'cmp19u43ta5pelx01jckgsqvl';
-            const customProxy = localStorage.getItem('antigravity_api_proxy');
+            let customProxy = localStorage.getItem('antigravity_api_proxy');
             
             if (!customProxy) {
                 throw new Error("Proxy Required. Please set up your Cloudflare Worker in the Wallet.");
             }
 
-            console.log(`[Antigravity] Calling AI via Proxy...`);
+            // Auto-fix missing protocol (common user error: saved without https://)
+            if (customProxy && !customProxy.startsWith('http://') && !customProxy.startsWith('https://')) {
+                customProxy = 'https://' + customProxy;
+                localStorage.setItem('antigravity_api_proxy', customProxy); // auto-correct in storage too
+                console.warn(`[Antigravity] Auto-fixed proxy URL to: ${customProxy}`);
+            }
+
+            console.log(`[Antigravity] Calling AI via Proxy: ${customProxy}`);
             
             const response = await fetch(customProxy, {
                 method: 'POST',
@@ -2510,7 +2517,8 @@ window.askGemini = async function(action, customPrompt = "", attachedFile = null
         console.error(`[Antigravity] ${config.name} Fetch Error:`, e);
         let errorMsg = e.message;
         if (errorMsg === "Failed to fetch") {
-            errorMsg = "Network Error / CORS Blocked. Please check your internet connection or if the API proxy is down.";
+            const savedProxy = localStorage.getItem('antigravity_api_proxy') || '(none)';
+            errorMsg = `Network Error: Could not reach proxy at "${savedProxy}". Open the Wallet (💼) and make sure the Proxy URL starts with https:// and is correct.`;
         }
         loadingDiv.innerHTML = `<p style="color:var(--danger); font-size: 12px;">❌ <strong>${config.name} Error:</strong> ${errorMsg}</p>`;
     }
