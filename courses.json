@@ -16602,6 +16602,22 @@
         "high": 0.0
       },
       {
+        "term": "ctesp telecomunicações",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp eletrónica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -16619,22 +16635,6 @@
       },
       {
         "term": "ctesp informática",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp eletrónica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -20070,8 +20070,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "19/05/2026, 12:03:28",
-    "lastSync": "19/05/2026, 12:03:28",
+    "last_sync_at": "20/05/2026, 02:02:26",
+    "lastSync": "20/05/2026, 02:02:26",
     "totalAdsCourses": 231
   }
 ]
