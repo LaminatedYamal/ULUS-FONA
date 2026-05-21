@@ -549,7 +549,8 @@ function populateForms() {
     // 6. Snippets dynamic fields
     populateSnippetFields();
     
-    // 7. Keywords table populate
+    // 7. Active keywords + keyword pool tables
+    populateActiveKeywordsTable();
     populateKeywordsTable();
     
     // 8. Trigger real-time mockup preview update
@@ -867,22 +868,21 @@ window.deleteSnippetRow = function(btn) {
     updateAdPreview();
 };
 
-// Keywords Table Pool Operations
-function populateKeywordsTable() {
-    const tbody = document.getElementById('keywords-table-body');
+// Active Ad Keywords table
+function populateActiveKeywordsTable() {
+    const tbody = document.getElementById('active-keywords-table-body');
     tbody.innerHTML = '';
     
     const kws = activeCourseObj.keywords || [];
     
     if (kws.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; opacity:0.5; padding: 20px;">No keywords defined in pool. Add keywords above!</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; opacity:0.5; padding: 20px;">No active ad keywords yet. Add one above or promote from the Keyword Pool below.</td></tr>`;
         return;
     }
     
     kws.forEach((k, idx) => {
         const row = document.createElement('tr');
         
-        // Match Type Detection
         let matchType = 'Broad';
         let badgeClass = 'badge-broad';
         const txt = (k.text || '').trim();
@@ -895,58 +895,134 @@ function populateKeywordsTable() {
             badgeClass = 'badge-phrase';
         }
         
-        // Status Toggle Badge
         const status = k.status === 'ENABLED' ? 'ENABLED' : 'PAUSED';
         const statusClass = status === 'ENABLED' ? 'status-indicator-badge status-active-badge' : 'status-indicator-badge status-paused-badge';
+        const vol = k.volume ? `<span style="opacity:0.7;font-size:11px;">${escapeHtml(k.volume)}</span>` : '<span style="opacity:0.3;">--</span>';
+        const bids = (k.minBid || k.maxBid) ? `<span style="opacity:0.7;font-size:11px;">${escapeHtml(k.minBid||'')}–${escapeHtml(k.maxBid||'')} €</span>` : '<span style="opacity:0.3;">--</span>';
         
         row.innerHTML = `
             <td style="font-weight: 600;">${escapeHtml(txt)}</td>
             <td><span class="badge-type ${badgeClass}">${matchType}</span></td>
-            <td><span class="${statusClass}" onclick="toggleKeywordStatus(${idx})">${status}</span></td>
-            <td><button class="action-delete-btn" onclick="deleteKeyword(${idx})">🗑️ Remove</button></td>
+            <td>${vol}</td>
+            <td>${bids}</td>
+            <td><span class="${statusClass}" onclick="toggleActiveKeywordStatus(${idx})" style="cursor:pointer;">${status}</span></td>
+            <td><button class="action-delete-btn" onclick="deleteActiveKeyword(${idx})">🗑️ Remove</button></td>
         `;
         
         tbody.appendChild(row);
     });
 }
 
-window.toggleKeywordStatus = function(idx) {
+// Keyword Pool (research/consideration) table
+function populateKeywordsTable() {
+    const tbody = document.getElementById('keywords-table-body');
+    tbody.innerHTML = '';
+    
+    const kws = activeCourseObj.keywordPool || [];
+    
+    if (kws.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; opacity:0.5; padding: 20px;">No keywords in research pool for this campaign.</td></tr>`;
+        return;
+    }
+    
+    kws.forEach((k, idx) => {
+        const row = document.createElement('tr');
+        
+        let matchType = 'Broad';
+        let badgeClass = 'badge-broad';
+        const txt = (k.text || '').trim();
+        
+        if (txt.startsWith('[') && txt.endsWith(']')) {
+            matchType = 'Exact';
+            badgeClass = 'badge-exact';
+        } else if (txt.startsWith('"') && txt.endsWith('"')) {
+            matchType = 'Phrase';
+            badgeClass = 'badge-phrase';
+        }
+        
+        const vol = k.volume ? `<span style="opacity:0.7;font-size:11px;">${escapeHtml(k.volume)}</span>` : '<span style="opacity:0.3;">--</span>';
+        const comp = k.competition ? `<span style="opacity:0.7;font-size:11px;">${escapeHtml(k.competition)}</span>` : '<span style="opacity:0.3;">--</span>';
+        const bids = k.bids ? `<span style="opacity:0.7;font-size:11px;">${escapeHtml(k.bids)}</span>` : '<span style="opacity:0.3;">--</span>';
+        
+        row.innerHTML = `
+            <td style="font-weight: 600; opacity: 0.85;">${escapeHtml(txt)}</td>
+            <td><span class="badge-type ${badgeClass}">${matchType}</span></td>
+            <td>${vol}</td>
+            <td>${comp}</td>
+            <td>${bids}</td>
+            <td><button class="add-kw-btn" style="padding: 4px 10px; font-size: 11px;" onclick="promoteKeyword(${idx})">▶ Promote</button></td>
+        `;
+        
+        tbody.appendChild(row);
+    });
+}
+
+// Active keyword action handlers
+window.toggleActiveKeywordStatus = function(idx) {
     const kws = activeCourseObj.keywords || [];
     if (kws[idx]) {
         kws[idx].status = kws[idx].status === 'ENABLED' ? 'PAUSED' : 'ENABLED';
-        populateKeywordsTable();
+        populateActiveKeywordsTable();
         markAsDraft();
     }
 };
 
-window.deleteKeyword = function(idx) {
+window.deleteActiveKeyword = function(idx) {
     const kws = activeCourseObj.keywords || [];
     kws.splice(idx, 1);
-    populateKeywordsTable();
+    populateActiveKeywordsTable();
     markAsDraft();
 };
 
-window.addNewKeyword = function() {
-    const input = document.getElementById('new-kw-input');
+window.addActiveKeyword = function() {
+    const input = document.getElementById('new-active-kw-input');
     const val = input.value.trim();
     if (!val) return;
     
     if (!activeCourseObj.keywords) activeCourseObj.keywords = [];
     
-    // Prevent duplicate keyword texts
     const exists = activeCourseObj.keywords.some(k => k.text.toLowerCase() === val.toLowerCase());
     if (exists) {
-        alert("Keyword already exists in the pool.");
+        alert('This keyword is already in the active ad keywords list.');
         return;
     }
     
     activeCourseObj.keywords.push({
         text: val,
-        status: 'ENABLED'
+        status: 'ENABLED',
+        volume: '',
+        minBid: '',
+        maxBid: ''
     });
     
     input.value = '';
-    populateKeywordsTable();
+    populateActiveKeywordsTable();
+    markAsDraft();
+};
+
+// Promote a keyword from the research pool to the active ad keywords
+window.promoteKeyword = function(poolIdx) {
+    const pool = activeCourseObj.keywordPool || [];
+    const kw = pool[poolIdx];
+    if (!kw) return;
+    
+    if (!activeCourseObj.keywords) activeCourseObj.keywords = [];
+    
+    const exists = activeCourseObj.keywords.some(k => k.text.toLowerCase() === kw.text.toLowerCase());
+    if (exists) {
+        alert(`"${kw.text}" is already in the Active Ad Keywords list.`);
+        return;
+    }
+    
+    activeCourseObj.keywords.push({
+        text: kw.text,
+        status: 'ENABLED',
+        volume: kw.volume || '',
+        minBid: '',
+        maxBid: ''
+    });
+    
+    populateActiveKeywordsTable();
     markAsDraft();
 };
 
@@ -1419,6 +1495,7 @@ window.deployCampaign = async function() {
         header: snippetHeader,
         values: snippetValues
     };
+    // keywords and keywordPool are modified in-place via toggle/add/delete/promote, no extra serialization needed here
     
     // Set status
     const isChecked = document.getElementById('campaign-status-checkbox').checked;
