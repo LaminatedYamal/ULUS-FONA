@@ -265,19 +265,19 @@
                             </div>
                         </div>
 
-                        <!-- Keyword Pool Manager Section -->
+                        <!-- Active Ad Keywords Section (these go to Google Ads) -->
                         <div class="builder-section glassmorphic-panel">
-                            <div class="section-header cursor-pointer" onclick="toggleSectionCollapse('keywords-collapsible')">
-                                <h3 class="section-title">🔑 Keyword Pool Manager</h3>
-                                <span class="collapse-icon" id="keywords-collapsible-icon">▼</span>
+                            <div class="section-header cursor-pointer" onclick="toggleSectionCollapse('active-kws-collapsible')">
+                                <h3 class="section-title">🎯 Active Ad Keywords <span class="req-indicator">(sent to Google Ads)</span></h3>
+                                <span class="collapse-icon" id="active-kws-collapsible-icon">▼</span>
                             </div>
-                            <div id="keywords-collapsible" class="collapsible-content expanded">
+                            <div id="active-kws-collapsible" class="collapsible-content expanded">
                                 
                                 <div class="add-keyword-panel">
                                     <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                                        <input type="text" id="new-kw-input" class="sleek-input" placeholder="Enter keyword text (e.g. [exact match] or &quot;phrase match&quot;)">
+                                        <input type="text" id="new-active-kw-input" class="sleek-input" placeholder='e.g. mestrado design  or  "phrase match"  or  [exact match]'>
                                     </div>
-                                    <button class="add-kw-btn" onclick="addNewKeyword()">Add Keyword</button>
+                                    <button class="add-kw-btn" onclick="addActiveKeyword()">➕ Add to Ad</button>
                                 </div>
 
                                 <div class="kw-table-container">
@@ -286,12 +286,43 @@
                                             <tr>
                                                 <th>Keyword</th>
                                                 <th>Match Type</th>
+                                                <th>Volume</th>
+                                                <th>Bid Range</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
+                                        <tbody id="active-keywords-table-body">
+                                            <!-- Active ad keywords populated here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Pool (Research / Consideration Area) -->
+                        <div class="builder-section glassmorphic-panel">
+                            <div class="section-header cursor-pointer" onclick="toggleSectionCollapse('keywords-collapsible')">
+                                <h3 class="section-title">🔑 Keyword Pool <span class="req-indicator">(research &amp; consideration area)</span></h3>
+                                <span class="collapse-icon" id="keywords-collapsible-icon">▼</span>
+                            </div>
+                            <div id="keywords-collapsible" class="collapsible-content expanded">
+                                <p style="opacity:0.5; font-size:12px; margin: 0 0 12px 0;">Keywords here are for research only. Click <strong>▶ Promote</strong> to move a keyword into the Active Ad Keywords above.</p>
+
+                                <div class="kw-table-container">
+                                    <table class="kw-pool-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Keyword</th>
+                                                <th>Match Type</th>
+                                                <th>Volume</th>
+                                                <th>Competition</th>
+                                                <th>Bids</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
                                         <tbody id="keywords-table-body">
-                                            <!-- Dynamic keywords -->
+                                            <!-- Keyword pool populated here -->
                                         </tbody>
                                     </table>
                                 </div>
