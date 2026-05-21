@@ -163,7 +163,38 @@
             });
         }
 
+        // Sync auth and credentials via URL query parameters (important for file:/// and cross-origin sandboxing)
+        function syncUrlCredentials() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlUser = urlParams.get('user');
+            const urlToken = urlParams.get('token');
+            
+            if (urlUser) {
+                localStorage.setItem('hub_user_name', urlUser);
+                localStorage.setItem('hub_is_authed', 'true');
+            }
+            if (urlToken) {
+                localStorage.setItem('github_token', urlToken);
+            }
+            
+            const activeUser = localStorage.getItem('hub_user_name');
+            const activeToken = localStorage.getItem('github_token');
+            
+            if (activeUser) {
+                const queryParams = new URLSearchParams();
+                queryParams.set('user', activeUser);
+                if (activeToken) queryParams.set('token', activeToken);
+                const queryStr = queryParams.toString();
+                
+                const btnHome = document.querySelector('.btn-home');
+                if (btnHome) {
+                    btnHome.setAttribute('onclick', `location.href='../index.html?${queryStr}'`);
+                }
+            }
+        }
+
         async function initBoard() {
+            syncUrlCredentials();
             try {
                 console.log("[404 Board] Starting data ingestion...");
                 
