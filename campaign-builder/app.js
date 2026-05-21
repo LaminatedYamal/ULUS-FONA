@@ -83,8 +83,43 @@ let activeCourseName = null;
 let activeCourseObj = null;
 let previewDevice = 'mobile';
 
+// Sync auth and credentials via URL query parameters (important for file:/// and cross-origin sandboxing)
+function syncUrlCredentials() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlUser = urlParams.get('user');
+    const urlToken = urlParams.get('token');
+    
+    if (urlUser) {
+        localStorage.setItem('hub_user_name', urlUser);
+        localStorage.setItem('hub_is_authed', 'true');
+    }
+    if (urlToken) {
+        localStorage.setItem('github_token', urlToken);
+    }
+    
+    const activeUser = localStorage.getItem('hub_user_name');
+    const activeToken = localStorage.getItem('github_token');
+    
+    if (activeUser) {
+        const queryParams = new URLSearchParams();
+        queryParams.set('user', activeUser);
+        if (activeToken) queryParams.set('token', activeToken);
+        const queryStr = queryParams.toString();
+        
+        // Update all sidebar links
+        document.querySelectorAll('.nav-degree-container a, aside.sidebar a').forEach(el => {
+            let href = el.getAttribute('href');
+            if (href && href !== '#' && !href.startsWith('javascript:')) {
+                const baseUrl = href.split('?')[0];
+                el.setAttribute('href', `${baseUrl}?${queryStr}`);
+            }
+        });
+    }
+}
+
 // Initialize the application
 async function init() {
+    syncUrlCredentials();
     initLanguage();
     initTheme();
     await loadCourses();
@@ -209,7 +244,8 @@ async function loadAdsConfig() {
     } catch (e) {
         console.error("Failed to load ads_config.json locally:", e);
     }
-    document.getElementById('user-display-name').textContent = 'Offline User';
+    const user = localStorage.getItem('hub_user_name') || 'Offline User';
+    document.getElementById('user-display-name').textContent = user;
 }
 
 // Helper: Convert hex to rgb
