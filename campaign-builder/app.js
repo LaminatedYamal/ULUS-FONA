@@ -120,6 +120,16 @@ function syncUrlCredentials() {
 // Initialize the application
 async function init() {
     syncUrlCredentials();
+
+    // Auth guard: redirect to main dashboard login if not authenticated
+    const isAuthed = localStorage.getItem('hub_is_authed') === 'true';
+    const userName = localStorage.getItem('hub_user_name');
+    if (!isAuthed || !userName) {
+        // Preserve current destination so after login they can come back
+        window.location.href = '../index.html';
+        return;
+    }
+
     initLanguage();
     initTheme();
     await loadCourses();
@@ -224,7 +234,7 @@ async function loadAdsConfig() {
                 adsConfig = JSON.parse(utf8Content);
                 console.log("Successfully loaded ads_config.json from GitHub!");
                 
-                // Set username display if present in token metadata or just default
+                // Set username display from stored credentials
                 const user = localStorage.getItem('hub_user_name') || 'Ads Admin';
                 document.getElementById('user-display-name').textContent = user;
                 return;
@@ -244,7 +254,8 @@ async function loadAdsConfig() {
     } catch (e) {
         console.error("Failed to load ads_config.json locally:", e);
     }
-    const user = localStorage.getItem('hub_user_name') || 'Offline User';
+    // Always use the authenticated user's name (auth guard above ensures they're logged in)
+    const user = localStorage.getItem('hub_user_name') || 'Ads Admin';
     document.getElementById('user-display-name').textContent = user;
 }
 
