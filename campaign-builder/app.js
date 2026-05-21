@@ -259,6 +259,187 @@ async function loadAdsConfig() {
     document.getElementById('user-display-name').textContent = user;
 }
 
+function stripAccents(str) {
+    return (str || '').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function cleanKeywordForMatch(kwText) {
+    let text = (kwText || '').trim().toLowerCase();
+    if (text.startsWith('[') && text.endsWith(']')) {
+        text = text.substring(1, text.length - 1);
+    } else if (text.startsWith('"') && text.endsWith('"')) {
+        text = text.substring(1, text.length - 1);
+    }
+    return stripAccents(text.trim());
+}
+
+function checkKeywordMatch(inputText, activeKeywords) {
+    if (!inputText) return false;
+    const cleanInput = stripAccents(inputText.toLowerCase());
+    for (const kw of activeKeywords) {
+        const cleanKwText = cleanKeywordForMatch(kw.text);
+        if (cleanKwText && cleanInput.includes(cleanKwText)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function normalizeCourseCampaign(obj, courseRawObj) {
+    if (!obj) obj = {};
+    if (!obj.id) obj.id = (courseRawObj && courseRawObj.id) ? courseRawObj.id : Date.now();
+    if (!obj.institution) obj.institution = (courseRawObj && courseRawObj.institution) ? courseRawObj.institution : 'Grupo Lusófona';
+    if (!obj.degree) obj.degree = (courseRawObj && courseRawObj.degree_type) ? (courseRawObj.degree_type === 'Licenciatura' ? 'Licenciaturas' : courseRawObj.degree_type) : 'Licenciaturas';
+    if (!obj.degree_type) obj.degree_type = (courseRawObj && courseRawObj.degree_type) ? courseRawObj.degree_type : 'Licenciatura';
+    if (!obj.status) obj.status = 'PAUSED';
+    if (!Array.isArray(obj.headlines)) obj.headlines = [];
+    if (!Array.isArray(obj.descriptions)) obj.descriptions = [];
+    if (obj.finalUrl === undefined || obj.finalUrl === null) obj.finalUrl = '';
+    if (obj.path1 === undefined || obj.path1 === null) obj.path1 = '';
+    if (obj.path2 === undefined || obj.path2 === null) obj.path2 = '';
+    if (!Array.isArray(obj.sitelinks)) obj.sitelinks = [];
+    if (!obj.snippets || typeof obj.snippets !== 'object') {
+        obj.snippets = { header: 'Cursos', values: [] };
+    } else {
+        if (!obj.snippets.header) obj.snippets.header = 'Cursos';
+        if (!Array.isArray(obj.snippets.values)) obj.snippets.values = [];
+    }
+    if (!Array.isArray(obj.keywords)) obj.keywords = [];
+    if (!Array.isArray(obj.keywordPool)) obj.keywordPool = [];
+    if (!obj.livePulse || typeof obj.livePulse !== 'object') {
+        obj.livePulse = {
+            budget: '-- €',
+            clicks: 0,
+            impressions: 0,
+            cost: '-- €',
+            conversions: 0,
+            costPerConv: '-- €',
+            period: 'Últimos 30 Dias'
+        };
+    } else {
+        const lp = obj.livePulse;
+        if (lp.budget === undefined) lp.budget = '-- €';
+        if (lp.clicks === undefined) lp.clicks = 0;
+        if (lp.impressions === undefined) lp.impressions = 0;
+        if (lp.cost === undefined) lp.cost = '-- €';
+        if (lp.conversions === undefined) lp.conversions = 0;
+        if (lp.costPerConv === undefined) lp.costPerConv = '-- €';
+        if (lp.period === undefined) lp.period = 'Últimos 30 Dias';
+    }
+    if (obj.lastUpdated === undefined || obj.lastUpdated === null) obj.lastUpdated = '';
+    if (obj.lastSynced === undefined || obj.lastSynced === null) obj.lastSynced = '';
+    return obj;
+}
+
+window.runSmartValidation = function() {
+    if (!activeCourseObj) return;
+    const activeKeywords = (activeCourseObj.keywords || []).filter(k => k.status === 'ENABLED' && k.text);
+
+    function getDuplicates(selector) {
+        const fields = document.querySelectorAll(selector);
+        const seen = new Set();
+        const duplicates = new Set();
+        fields.forEach(f => {
+            const text = f.value.trim().toLowerCase();
+            if (text) {
+                if (seen.has(text)) {
+                    duplicates.add(text);
+                }
+                seen.add(text);
+            }
+        });
+        return duplicates;
+    }
+
+    const duplicateHeadlines = getDuplicates('.headline-field');
+    const duplicateDescriptions = getDuplicates('.description-field');
+
+    const specs = [
+        { selector: '.headline-field', limit: 30, duplicates: duplicateHeadlines, counterPrefix: 'headline-counter-', hasIndexBadge: true },
+        { selector: '.description-field', limit: 90, duplicates: duplicateDescriptions, counterPrefix: 'desc-counter-', hasIndexBadge: true },
+        { selector: '.sl-headline-input', limit: 25, counterClass: 'sl-headline-counter' },
+        { selector: '.sl-desc1-input', limit: 35, counterClass: 'sl-desc1-counter' },
+        { selector: '.sl-desc2-input', limit: 35, counterClass: 'sl-desc2-counter' },
+        { selector: '.snippet-val-input', limit: 25, counterClass: 'snippet-val-counter' },
+        { selector: '#path1-input', limit: 15, counterId: 'path1-counter' },
+        { selector: '#path2-input', limit: 15, counterId: 'path2-counter' }
+    ];
+
+    specs.forEach(spec => {
+        const fields = document.querySelectorAll(spec.selector);
+        fields.forEach((input, idx) => {
+            const val = input.value;
+            const rawLen = val.length;
+            const trimmed = val.trim();
+            const lowerTrimmed = trimmed.toLowerCase();
+            const isDuplicate = spec.duplicates && trimmed && spec.duplicates.has(lowerTrimmed);
+            const isExceeded = rawLen > spec.limit;
+            const isKwMatch = checkKeywordMatch(val, activeKeywords);
+            const isInvalid = isExceeded || isDuplicate;
+
+            input.classList.remove('invalid-limit', 'keyword-match');
+            if (isInvalid) {
+                input.classList.add('invalid-limit');
+            } else if (isKwMatch) {
+                input.classList.add('keyword-match');
+            }
+
+            let counterEl = null;
+            if (spec.counterId) {
+                counterEl = document.getElementById(spec.counterId);
+            } else if (spec.counterPrefix) {
+                counterEl = document.getElementById(`${spec.counterPrefix}${idx}`);
+            } else if (spec.counterClass) {
+                const parent = input.closest('.input-counter-wrapper');
+                if (parent) {
+                    counterEl = parent.querySelector(`.${spec.counterClass}`);
+                }
+            }
+
+            if (counterEl) {
+                counterEl.textContent = `${rawLen}/${spec.limit}`;
+                counterEl.classList.remove('limit-exceeded');
+                if (isExceeded) {
+                    counterEl.classList.add('limit-exceeded');
+                }
+            }
+
+            if (spec.hasIndexBadge) {
+                const rowItem = input.closest('.row-input-item');
+                if (rowItem) {
+                    const badge = rowItem.querySelector('.row-index-badge');
+                    if (badge) {
+                        if (trimmed) {
+                            badge.classList.add('active-filled');
+                        } else {
+                            badge.classList.remove('active-filled');
+                        }
+                    }
+                }
+            }
+
+            if (spec.duplicates) {
+                const wrapper = input.parentElement;
+                if (wrapper) {
+                    let dupMarker = wrapper.querySelector('.duplicate-marker');
+                    if (isDuplicate) {
+                        if (!dupMarker) {
+                            dupMarker = document.createElement('span');
+                            dupMarker.className = 'duplicate-marker';
+                            dupMarker.textContent = '⚠️ Duplicate';
+                            wrapper.appendChild(dupMarker);
+                        }
+                    } else {
+                        if (dupMarker) dupMarker.remove();
+                    }
+                }
+            }
+        });
+    });
+
+    updateTotalInputCounts();
+};
+
 // Helper: Convert hex to rgb
 function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -424,36 +605,8 @@ function renderCourseList(searchQuery = '') {
 function loadCourseCampaign(courseName, courseRawObj) {
     activeCourseName = courseName;
     
-    // Check if campaign exists in config, otherwise initialize a new one
-    if (!adsConfig[courseName]) {
-        adsConfig[courseName] = {
-            id: courseRawObj.id || Date.now(),
-            institution: courseRawObj.institution,
-            degree: courseRawObj.degree_type || 'Licenciaturas',
-            degree_type: courseRawObj.degree_type || 'Licenciatura',
-            status: 'PAUSED',
-            headlines: [],
-            descriptions: [],
-            finalUrl: '',
-            path1: '',
-            path2: '',
-            sitelinks: [],
-            snippets: { header: 'Cursos', values: [] },
-            keywords: [],
-            livePulse: {
-                budget: '-- €',
-                clicks: 0,
-                impressions: 0,
-                cost: '-- €',
-                conversions: 0,
-                costPerConv: '-- €',
-                period: 'Últimos 30 Dias'
-            },
-            lastUpdated: '',
-            lastSynced: ''
-        };
-    }
-    
+    // Normalize campaign properties on load (handles missing/empty fields)
+    adsConfig[courseName] = normalizeCourseCampaign(adsConfig[courseName], courseRawObj);
     activeCourseObj = adsConfig[courseName];
     
     // Apply branding color dynamics
@@ -553,7 +706,10 @@ function populateForms() {
     populateActiveKeywordsTable();
     populateKeywordsTable();
     
-    // 8. Trigger real-time mockup preview update
+    // 8. Run smart validation
+    runSmartValidation();
+    
+    // 9. Trigger real-time mockup preview update
     updateAdPreview();
 }
 
@@ -584,7 +740,7 @@ function generateHeadlineInputs() {
         input.type = 'text';
         input.className = 'sleek-input headline-field';
         input.dataset.index = i;
-        input.maxLength = 30;
+        input.maxLength = 100; // Allow typing past the 30 chars limit
         input.value = val;
         input.placeholder = `Add headline ${i+1}...`;
         
@@ -599,30 +755,10 @@ function generateHeadlineInputs() {
         row.appendChild(wrap);
         container.appendChild(row);
         
-        // Input Listener
+        // Input Listener using centralized validation
         input.addEventListener('input', () => {
-            const currentLen = input.value.length;
-            counter.textContent = `${currentLen}/30`;
-            
-            // Mark badge as active if text is entered
-            if (input.value.trim()) {
-                badge.classList.add('active-filled');
-            } else {
-                badge.classList.remove('active-filled');
-            }
-            
-            // Limit warning style
-            if (currentLen > 30) {
-                counter.classList.add('limit-exceeded');
-                input.classList.add('invalid-limit');
-            } else {
-                counter.classList.remove('limit-exceeded');
-                input.classList.remove('invalid-limit');
-            }
-            
-            checkDuplicateTexts('.headline-field');
+            runSmartValidation();
             updateAdPreview();
-            updateTotalInputCounts();
         });
     }
     
@@ -656,7 +792,7 @@ function generateDescriptionInputs() {
         input.type = 'text';
         input.className = 'sleek-input description-field';
         input.dataset.index = i;
-        input.maxLength = 90;
+        input.maxLength = 250; // Allow typing past the 90 chars limit
         input.value = val;
         input.placeholder = `Add description ${i+1}...`;
         
@@ -671,28 +807,10 @@ function generateDescriptionInputs() {
         row.appendChild(wrap);
         container.appendChild(row);
         
-        // Input Listener
+        // Input Listener using centralized validation
         input.addEventListener('input', () => {
-            const currentLen = input.value.length;
-            counter.textContent = `${currentLen}/90`;
-            
-            if (input.value.trim()) {
-                badge.classList.add('active-filled');
-            } else {
-                badge.classList.remove('active-filled');
-            }
-            
-            if (currentLen > 90) {
-                counter.classList.add('limit-exceeded');
-                input.classList.add('invalid-limit');
-            } else {
-                counter.classList.remove('limit-exceeded');
-                input.classList.remove('invalid-limit');
-            }
-            
-            checkDuplicateTexts('.description-field');
+            runSmartValidation();
             updateAdPreview();
-            updateTotalInputCounts();
         });
     }
     
@@ -718,7 +836,7 @@ function generateSitelinkInputs() {
             <div class="form-group">
                 <label>Link Text</label>
                 <div class="input-counter-wrapper">
-                    <input type="text" class="sleek-input sl-headline-input" dataset-index="${i}" maxlength="25" placeholder="Headline text (max 25)" value="${sl.headline || ''}">
+                    <input type="text" class="sleek-input sl-headline-input" dataset-index="${i}" maxlength="100" placeholder="Headline text (max 25)" value="${sl.headline || ''}">
                     <span class="char-counter sl-headline-counter">0/25</span>
                 </div>
             </div>
@@ -727,14 +845,14 @@ function generateSitelinkInputs() {
                 <div class="form-group">
                     <label>Description Line 1</label>
                     <div class="input-counter-wrapper">
-                        <input type="text" class="sleek-input sl-desc1-input" dataset-index="${i}" maxlength="35" placeholder="Description line 1 (max 35)" value="${sl.desc1 || ''}">
+                        <input type="text" class="sleek-input sl-desc1-input" dataset-index="${i}" maxlength="150" placeholder="Description line 1 (max 35)" value="${sl.desc1 || ''}">
                         <span class="char-counter sl-desc1-counter">0/35</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Description Line 2</label>
                     <div class="input-counter-wrapper">
-                        <input type="text" class="sleek-input sl-desc2-input" dataset-index="${i}" maxlength="35" placeholder="Description line 2 (max 35)" value="${sl.desc2 || ''}">
+                        <input type="text" class="sleek-input sl-desc2-input" dataset-index="${i}" maxlength="150" placeholder="Description line 2 (max 35)" value="${sl.desc2 || ''}">
                         <span class="char-counter sl-desc2-counter">0/35</span>
                     </div>
                 </div>
@@ -748,38 +866,14 @@ function generateSitelinkInputs() {
         
         container.appendChild(card);
         
-        // Listeners for characters and preview updates
         const hInp = card.querySelector('.sl-headline-input');
-        const hCnt = card.querySelector('.sl-headline-counter');
         const d1Inp = card.querySelector('.sl-desc1-input');
-        const d1Cnt = card.querySelector('.sl-desc1-counter');
         const d2Inp = card.querySelector('.sl-desc2-input');
-        const d2Cnt = card.querySelector('.sl-desc2-counter');
         const uInp = card.querySelector('.sl-url-input');
         
-        // Init counter displays
-        hCnt.textContent = `${hInp.value.length}/25`;
-        d1Cnt.textContent = `${d1Inp.value.length}/35`;
-        d2Cnt.textContent = `${d2Inp.value.length}/35`;
-        
-        const inputs = [
-            { inp: hInp, cnt: hCnt, max: 25 },
-            { inp: d1Inp, cnt: d1Cnt, max: 35 },
-            { inp: d2Inp, cnt: d2Cnt, max: 35 }
-        ];
-        
-        inputs.forEach(item => {
-            item.inp.addEventListener('input', () => {
-                const len = item.inp.value.length;
-                item.cnt.textContent = `${len}/${item.max}`;
-                
-                if (len > item.max) {
-                    item.cnt.classList.add('limit-exceeded');
-                    item.inp.classList.add('invalid-limit');
-                } else {
-                    item.cnt.classList.remove('limit-exceeded');
-                    item.inp.classList.remove('invalid-limit');
-                }
+        [hInp, d1Inp, d2Inp].forEach(inp => {
+            inp.addEventListener('input', () => {
+                runSmartValidation();
                 updateAdPreview();
             });
         });
@@ -822,8 +916,8 @@ function addSnippetValueRow(val) {
     
     row.innerHTML = `
         <div class="input-counter-wrapper" style="flex:1;">
-            <input type="text" class="sleek-input snippet-val-input" maxlength="25" placeholder="Value (e.g. Design)" value="${val}">
-            <span class="char-counter snippet-val-counter">${val.length}/25</span>
+            <input type="text" class="sleek-input snippet-val-input" maxlength="100" placeholder="Value (e.g. Design)" value="${val}">
+            <span class="char-counter snippet-val-counter">0/25</span>
         </div>
         <button class="snippet-delete-btn" onclick="deleteSnippetRow(this)">🗑️</button>
     `;
@@ -831,19 +925,9 @@ function addSnippetValueRow(val) {
     container.appendChild(row);
     
     const inp = row.querySelector('.snippet-val-input');
-    const cnt = row.querySelector('.snippet-val-counter');
     
     inp.addEventListener('input', () => {
-        const len = inp.value.length;
-        cnt.textContent = `${len}/25`;
-        
-        if (len > 25) {
-            cnt.classList.add('limit-exceeded');
-            inp.classList.add('invalid-limit');
-        } else {
-            cnt.classList.remove('limit-exceeded');
-            inp.classList.remove('invalid-limit');
-        }
+        runSmartValidation();
         updateAdPreview();
     });
 }
@@ -963,6 +1047,7 @@ window.toggleActiveKeywordStatus = function(idx) {
     if (kws[idx]) {
         kws[idx].status = kws[idx].status === 'ENABLED' ? 'PAUSED' : 'ENABLED';
         populateActiveKeywordsTable();
+        runSmartValidation();
         markAsDraft();
     }
 };
@@ -971,6 +1056,7 @@ window.deleteActiveKeyword = function(idx) {
     const kws = activeCourseObj.keywords || [];
     kws.splice(idx, 1);
     populateActiveKeywordsTable();
+    runSmartValidation();
     markAsDraft();
 };
 
@@ -997,6 +1083,7 @@ window.addActiveKeyword = function() {
     
     input.value = '';
     populateActiveKeywordsTable();
+    runSmartValidation();
     markAsDraft();
 };
 
@@ -1023,6 +1110,7 @@ window.promoteKeyword = function(poolIdx) {
     });
     
     populateActiveKeywordsTable();
+    runSmartValidation();
     markAsDraft();
 };
 
@@ -1241,22 +1329,12 @@ function initGlobalListeners() {
     const p2 = document.getElementById('path2-input');
     
     p1.addEventListener('input', () => {
-        document.getElementById('path1-counter').textContent = `${p1.value.length}/15`;
-        if (p1.value.length > 15) {
-            p1.classList.add('invalid-limit');
-        } else {
-            p1.classList.remove('invalid-limit');
-        }
+        runSmartValidation();
         updateAdPreview();
     });
     
     p2.addEventListener('input', () => {
-        document.getElementById('path2-counter').textContent = `${p2.value.length}/15`;
-        if (p2.value.length > 15) {
-            p2.classList.add('invalid-limit');
-        } else {
-            p2.classList.remove('invalid-limit');
-        }
+        runSmartValidation();
         updateAdPreview();
     });
     
@@ -1350,74 +1428,52 @@ window.deployCampaign = async function() {
         deployBtn.textContent = originalText;
         return;
     }
-    
-    // Display Paths Checks
-    const p1 = document.getElementById('path1-input').value.trim();
-    const p2 = document.getElementById('path2-input').value.trim();
-    if (p1.length > 15 || p2.length > 15) {
-        alert("Display Paths must not exceed 15 characters.");
+
+    // Force run validation on all inputs (this sets the invalid-limit class dynamically on raw lengths)
+    runSmartValidation();
+    if (document.querySelectorAll('.sleek-input.invalid-limit').length > 0) {
+        alert("Alguns campos excedem o limite de caracteres ou contêm valores duplicados (assinalados a vermelho). Por favor, corrija-os antes de publicar.");
         deployBtn.disabled = false;
         deployBtn.textContent = originalText;
         return;
     }
-    
-    // Headlines validation (Min 3 filled, Max 15)
+
+    // Headlines validation (Min 3 filled)
     const hlInps = document.querySelectorAll('.headline-field');
     const headlines = [];
-    let hlLimitErr = false;
-    
     hlInps.forEach(inp => {
         const val = inp.value.trim();
         if (val) {
             headlines.push(val);
-            if (val.length > 30) hlLimitErr = true;
         }
     });
-    
     if (headlines.length < 3) {
         alert("A minimum of 3 Headlines are required for Google Ads RSA.");
         deployBtn.disabled = false;
         deployBtn.textContent = originalText;
         return;
     }
-    if (hlLimitErr) {
-        alert("Some Headlines exceed the 30 characters limitation.");
-        deployBtn.disabled = false;
-        deployBtn.textContent = originalText;
-        return;
-    }
-    
-    // Descriptions validation (Min 2, Max 4)
+
+    // Descriptions validation (Min 2 filled)
     const descInps = document.querySelectorAll('.description-field');
     const descriptions = [];
-    let descLimitErr = false;
-    
     descInps.forEach(inp => {
         const val = inp.value.trim();
         if (val) {
             descriptions.push(val);
-            if (val.length > 90) descLimitErr = true;
         }
     });
-    
     if (descriptions.length < 2) {
         alert("A minimum of 2 Descriptions are required for Google Ads RSA.");
         deployBtn.disabled = false;
         deployBtn.textContent = originalText;
         return;
     }
-    if (descLimitErr) {
-        alert("Some Descriptions exceed the 90 characters limitation.");
-        deployBtn.disabled = false;
-        deployBtn.textContent = originalText;
-        return;
-    }
-    
-    // Sitelinks validation
+
+    // Sitelinks validation (Min requirements: Link Text and Final URL must both be present if any field is filled)
     const sitelinkBlocks = document.querySelectorAll('.sitelink-editor-card');
     const sitelinksList = [];
     let slErr = false;
-    
     sitelinkBlocks.forEach((block, idx) => {
         const h = block.querySelector('.sl-headline-input').value.trim();
         const d1 = block.querySelector('.sl-desc1-input').value.trim();
@@ -1425,14 +1481,8 @@ window.deployCampaign = async function() {
         const u = block.querySelector('.sl-url-input').value.trim();
         
         if (h || d1 || d2 || u) {
-            // If any field is filled, headline and URL are mandatory!
             if (!h || !u) {
                 alert(`Sitelink #${idx+1} requires both Link Text and Final URL.`);
-                slErr = true;
-                return;
-            }
-            if (h.length > 25 || d1.length > 35 || d2.length > 35) {
-                alert(`Sitelink #${idx+1} has fields exceeding their limitations.`);
                 slErr = true;
                 return;
             }
@@ -1446,37 +1496,22 @@ window.deployCampaign = async function() {
             sitelinksList.push({ headline: h, desc1: d1, desc2: d2, url: u });
         }
     });
-    
     if (slErr) {
         deployBtn.disabled = false;
         deployBtn.textContent = originalText;
         return;
     }
-    
-    // Snippets validation
+
+    // Snippets validation (Min 3 values required if any snippet value is present)
     const snippetHeader = document.getElementById('snippet-header').value;
     const snippetInps = document.querySelectorAll('.snippet-val-input');
     const snippetValues = [];
-    let snipErr = false;
-    
     snippetInps.forEach(inp => {
         const val = inp.value.trim();
         if (val) {
-            if (val.length > 25) {
-                alert("Structured Snippet values must not exceed 25 characters.");
-                snipErr = true;
-                return;
-            }
             snippetValues.push(val);
         }
     });
-    
-    if (snipErr) {
-        deployBtn.disabled = false;
-        deployBtn.textContent = originalText;
-        return;
-    }
-    
     if (snippetValues.length > 0 && snippetValues.length < 3) {
         alert("Structured Snippets require at least 3 values.");
         deployBtn.disabled = false;
