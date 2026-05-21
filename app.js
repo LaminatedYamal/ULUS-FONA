@@ -11,7 +11,41 @@ let courses = [];
 let activeCourseId = null;
 let liveAdsContext = null;
 
+// Sync auth and credentials via URL query parameters (important for file:/// and cross-origin sandboxing)
+function syncUrlCredentials() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlUser = urlParams.get('user');
+    const urlToken = urlParams.get('token');
+    
+    if (urlUser) {
+        localStorage.setItem('hub_user_name', urlUser);
+        localStorage.setItem('hub_is_authed', 'true');
+    }
+    if (urlToken) {
+        localStorage.setItem('github_token', urlToken);
+    }
+    
+    const activeUser = localStorage.getItem('hub_user_name');
+    const activeToken = localStorage.getItem('github_token');
+    
+    if (activeUser) {
+        const queryParams = new URLSearchParams();
+        queryParams.set('user', activeUser);
+        if (activeToken) queryParams.set('token', activeToken);
+        const queryStr = queryParams.toString();
+        
+        document.querySelectorAll('#premium-tools-container a, .nav-degree-container a').forEach(el => {
+            let href = el.getAttribute('href');
+            if (href && href !== '#' && !href.startsWith('javascript:')) {
+                const baseUrl = href.split('?')[0];
+                el.setAttribute('href', `${baseUrl}?${queryStr}`);
+            }
+        });
+    }
+}
+
 async function init() {
+    syncUrlCredentials();
     initLanguage(); // Load language preference
     await checkAuth(); // Await data loading
     
@@ -783,6 +817,8 @@ async function checkAuth() {
         if (display) display.textContent = user;
         initGreeting(); // Update greeting immediately
         
+        syncUrlCredentials(); // Ensure premium links are updated with credentials
+        
         // Miguel's Precision Export Privilege
         if (user && user.toLowerCase().includes('miguel')) {
             const mig = document.getElementById('miguel-export-option');
@@ -799,7 +835,7 @@ window.handleLogout = function() {
     if (confirm("Are you sure you want to logout?")) {
         localStorage.removeItem('hub_user_name');
         localStorage.removeItem('hub_is_authed');
-        location.reload();
+        window.location.href = window.location.pathname; // clear query params
     }
 }
 
