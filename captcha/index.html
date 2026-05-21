@@ -528,7 +528,45 @@
             }
         };
 
+        // Sync auth and credentials via URL query parameters (important for file:/// and cross-origin sandboxing)
+        function syncUrlCredentials() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlUser = urlParams.get('user');
+            const urlToken = urlParams.get('token');
+            
+            if (urlUser) {
+                localStorage.setItem('hub_user_name', urlUser);
+                localStorage.setItem('hub_is_authed', 'true');
+            }
+            if (urlToken) {
+                localStorage.setItem('github_token', urlToken);
+            }
+            
+            const activeUser = localStorage.getItem('hub_user_name');
+            const activeToken = localStorage.getItem('github_token');
+            
+            if (activeUser) {
+                const queryParams = new URLSearchParams();
+                queryParams.set('user', activeUser);
+                if (activeToken) queryParams.set('token', activeToken);
+                const queryStr = queryParams.toString();
+                
+                document.querySelectorAll('.nav-degree-container a, aside.sidebar a, .logo').forEach(el => {
+                    if (el.tagName === 'A') {
+                        let href = el.getAttribute('href');
+                        if (href && href !== '#' && !href.startsWith('javascript:')) {
+                            const baseUrl = href.split('?')[0];
+                            el.setAttribute('href', `${baseUrl}?${queryStr}`);
+                        }
+                    } else if (el.classList.contains('logo')) {
+                        el.setAttribute('onclick', `window.location.href='../index.html?${queryStr}'`);
+                    }
+                });
+            }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
+            syncUrlCredentials();
             applyLanguage();
         });
 
