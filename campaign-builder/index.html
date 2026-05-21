@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SYS/ADS | Campaign Builder Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+</head>
+<body>
+    <!-- Ambient Animated Background Blob -->
+    <div class="ambient-blob"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div id="mobile-overlay" class="mobile-overlay" onclick="toggleSidebar()"></div>
+        <aside class="sidebar">
+            <button id="mobile-close-btn" class="mobile-only-btn close-btn" onclick="toggleSidebar()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="logo" onclick="returnToGlobalLanding()" style="cursor: pointer;" title="Return to Dashboard">
+                <div class="logo-container">
+                    <img id="brand-logo" src="https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" alt="Brand Logo">
+                </div>
+                <span class="logo-text" id="brand-name">Grupo Lusófona</span>
+                <div class="search-bar" id="sidebar-search-container" style="width: 100%; margin-top: 20px;">
+                    <input type="text" placeholder="Search campaigns..." id="course-search-sidebar" oninput="renderCourseList(this.value)" autocomplete="off" style="width: 100%;">
+                </div>
+            </div>
+
+            <nav class="course-nav" id="course-list">
+                <!-- Course accordions will be injected here via app.js -->
+            </nav>
+
+            <div class="nav-group-header static">
+                Premium Tools
+            </div>
+            <div class="nav-degree-container">
+                <a href="../index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn">
+                        🏠 Main Dashboard
+                    </div>
+                </a>
+                <a href="../live-monitor/index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="live-monitor-btn">
+                        📊 Live Ads Monitor
+                    </div>
+                </a>
+                <a href="../404-board/" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="404-board-btn" style="color: #ef4444; border-color: rgba(239,68,68,0.2); background: rgba(239,68,68,0.05);">
+                        ⚠️ 404 Live Board
+                    </div>
+                </a>
+                <a href="../keyword-explorer/index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="keyword-explorer-btn" style="color: #10b981; border-color: rgba(16,185,129,0.2); background: rgba(16,185,129,0.05);">
+                        🔍 Keyword Explorer
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="nav-degree-btn active" id="campaign-builder-btn" style="color: #38bdf8; border-color: rgba(56,189,248,0.2); background: rgba(56,189,248,0.05);">
+                        🎯 Ads Campaign Builder
+                    </div>
+                </a>
+                <a href="../captcha/index.html" style="text-decoration: none;">
+                    <div class="nav-degree-btn" id="captcha-btn" style="color: #00ff88; border-color: rgba(0,255,136,0.2); background: rgba(0,255,136,0.05);">
+                        🤖 GEO Auditor Lab
+                    </div>
+                </a>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="status-indicator">
+                    <span class="pulse"></span> <span id="system-active-text">Ads Engine Online</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <button id="mobile-menu-toggle" class="mobile-only-btn" onclick="toggleSidebar()" style="margin-right: 15px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+                <div class="header-left" id="dashboard-header-left" style="visibility: hidden;">
+                    <div style="display: flex; align-items: baseline; gap: 12px;">
+                        <h1 id="active-course-title">Select a Campaign</h1>
+                    </div>
+                    <p id="active-course-desc">Google Ads RSA Campaign Builder</p>
+                </div>
+                
+                <div class="header-right">
+                    <button class="theme-toggle" id="lang-toggle-btn" onclick="toggleLanguage()" title="Switch Language" style="margin-right: 8px;">
+                        <span id="lang-toggle-text" class="lang-btn-text">EN</span>
+                    </button>
+                    <div class="account-wallet-container">
+                        <button class="account-btn" style="padding: 0 12px; height: 38px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 8px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span id="user-display-name" style="font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;">User</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Landing Selection View -->
+            <div id="landing-view" class="landing-hero">
+                <div class="hero-logo-container">
+                    <img id="landing-logo" src="" alt="Institution Logo" style="display: none;">
+                </div>
+                <div class="hero-text">
+                    <h2 id="greeting-text">Olá!</h2>
+                    <p id="landing-subtitle">Select a campaign from the sidebar to begin campaign editing and Google Ads sync</p>
+                </div>
+            </div>
+
+            <!-- Workspace View -->
+            <div id="workspace-view" style="display: none; padding: 20px 0;">
+                
+                <!-- TOP REMOTE CONTROL BAR -->
+                <div class="control-panel glassmorphic-panel">
+                    <div class="remote-left">
+                        <span class="panel-label">Campaign Switch</span>
+                        <div class="status-toggle-wrapper">
+                            <label class="switch">
+                                <input type="checkbox" id="campaign-status-checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span id="campaign-status-label" class="status-badge paused">PAUSED</span>
+                        </div>
+                    </div>
+                    <div class="remote-right">
+                        <button class="action-btn" id="deploy-btn" onclick="deployCampaign()">
+                            🚀 Save & Deploy Campaign
+                        </button>
+                    </div>
+                </div>
+
+                <!-- LIVE PULSE PERFORMANCE PANELS -->
+                <div class="live-pulse-container">
+                    <h3 class="section-title">📊 Live Pulse Performance (Last 30 Days)</h3>
+                    <div class="pulse-grid">
+                        <div class="pulse-card">
+                            <span class="pulse-label">Daily Budget</span>
+                            <span class="pulse-value" id="pulse-budget">-- €</span>
+                        </div>
+                        <div class="pulse-card">
+                            <span class="pulse-label">Clicks</span>
+                            <span class="pulse-value text-blue" id="pulse-clicks">--</span>
+                        </div>
+                        <div class="pulse-card">
+                            <span class="pulse-label">Impressions</span>
+                            <span class="pulse-value text-muted" id="pulse-impressions">--</span>
+                        </div>
+                        <div class="pulse-card">
+                            <span class="pulse-label">Cost</span>
+                            <span class="pulse-value text-red" id="pulse-cost">-- €</span>
+                        </div>
+                        <div class="pulse-card">
+                            <span class="pulse-label">Conversions</span>
+                            <span class="pulse-value text-green" id="pulse-conversions">--</span>
+                        </div>
+                        <div class="pulse-card">
+                            <span class="pulse-label">Cost per Conv. (CPA)</span>
+                            <span class="pulse-value" id="pulse-cpa">-- €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BUILDER WORKSPACE GRID -->
+                <div class="workspace-grid">
+                    
+                    <!-- Left Forms Column -->
+                    <div class="forms-column">
+                        
+                        <!-- RSA Copy Section -->
+                        <div class="builder-section glassmorphic-panel">
+                            <div class="section-header">
+                                <h3 class="section-title">✍️ Responsive Search Ad (RSA) Editor</h3>
+                                <span class="sync-status-indicator" id="copy-sync-badge">Draft</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="final-url-input">Final URL</label>
+                                <input type="url" id="final-url-input" class="sleek-input" placeholder="https://example.com/course" required>
+                            </div>
+
+                            <div class="path-group">
+                                <div class="form-group">
+                                    <label for="path1-input">Display Path 1</label>
+                                    <div class="input-counter-wrapper">
+                                        <input type="text" id="path1-input" class="sleek-input path-input" maxlength="15" placeholder="course">
+                                        <span class="char-counter" id="path1-counter">0/15</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="path2-input">Display Path 2</label>
+                                    <div class="input-counter-wrapper">
+                                        <input type="text" id="path2-input" class="sleek-input path-input" maxlength="15" placeholder="degree">
+                                        <span class="char-counter" id="path2-counter">0/15</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Headlines Section -->
+                            <div class="sub-section">
+                                <div class="sub-section-header">
+                                    <h4>Headlines <span class="req-indicator">(Min 3, Max 15)</span></h4>
+                                    <span class="section-total-count" id="headlines-total-count">0 / 15</span>
+                                </div>
+                                <div class="headlines-grid" id="headlines-inputs-container">
+                                    <!-- Dynamic headlines generated here -->
+                                </div>
+                            </div>
+
+                            <!-- Descriptions Section -->
+                            <div class="sub-section" style="margin-top: 25px;">
+                                <div class="sub-section-header">
+                                    <h4>Descriptions <span class="req-indicator">(Min 2, Max 4)</span></h4>
+                                    <span class="section-total-count" id="descriptions-total-count">0 / 4</span>
+                                </div>
+                                <div class="descriptions-grid" id="descriptions-inputs-container">
+                                    <!-- Dynamic descriptions generated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sitelinks Form Section -->
+                        <div class="builder-section glassmorphic-panel">
+                            <div class="section-header cursor-pointer" onclick="toggleSectionCollapse('sitelinks-collapsible')">
+                                <h3 class="section-title">🔗 Sitelinks Extensions (Max 8)</h3>
+                                <span class="collapse-icon" id="sitelinks-collapsible-icon">▼</span>
+                            </div>
+                            <div id="sitelinks-collapsible" class="collapsible-content expanded">
+                                <div class="sitelinks-grid" id="sitelinks-inputs-container">
+                                    <!-- Dynamic sitelinks generated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Snippets Form Section -->
+                        <div class="builder-section glassmorphic-panel">
+                            <div class="section-header cursor-pointer" onclick="toggleSectionCollapse('snippets-collapsible')">
+                                <h3 class="section-title">📝 Structured Snippet Extension</h3>
+                                <span class="collapse-icon" id="snippets-collapsible-icon">▼</span>
+                            </div>
+                            <div id="snippets-collapsible" class="collapsible-content expanded">
+                                <div class="form-group">
+                                    <label for="snippet-header">Snippet Header</label>
+                                    <select id="snippet-header" class="sleek-select">
+                                        <option value="Cursos">Cursos (Courses)</option>
+                                        <option value="Disciplinas">Disciplinas (Subjects)</option>
+                                        <option value="Programas de estudo">Programas de estudo (Programs of study)</option>
+                                        <option value="Modelos">Modelos (Models)</option>
+                                        <option value="Tipos">Tipos (Types)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Values <span class="req-indicator">(Min 3, Max 10 values, max 25 chars each)</span></label>
+                                    <div class="snippets-values-list" id="snippets-values-container">
+                                        <!-- Dynamic values list -->
+                                    </div>
+                                    <button class="add-btn-small" onclick="addSnippetValueField()">➕ Add Value</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Keyword Pool Manager Section -->
+                        <div class="builder-section glassmorphic-panel">
+                            <div class="section-header cursor-pointer" onclick="toggleSectionCollapse('keywords-collapsible')">
+                                <h3 class="section-title">🔑 Keyword Pool Manager</h3>
+                                <span class="collapse-icon" id="keywords-collapsible-icon">▼</span>
+                            </div>
+                            <div id="keywords-collapsible" class="collapsible-content expanded">
+                                
+                                <div class="add-keyword-panel">
+                                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                        <input type="text" id="new-kw-input" class="sleek-input" placeholder="Enter keyword text (e.g. [exact match] or &quot;phrase match&quot;)">
+                                    </div>
+                                    <button class="add-kw-btn" onclick="addNewKeyword()">Add Keyword</button>
+                                </div>
+
+                                <div class="kw-table-container">
+                                    <table class="kw-pool-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Keyword</th>
+                                                <th>Match Type</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="keywords-table-body">
+                                            <!-- Dynamic keywords -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Sticky Preview Column -->
+                    <div class="preview-column">
+                        <div class="sticky-preview-wrapper">
+                            <div class="preview-header">
+                                <h3>Google Search Ad Mockup</h3>
+                                <div class="device-toggle-buttons">
+                                    <button class="device-btn active" id="btn-device-mobile" onclick="setPreviewDevice('mobile')">📱 Mobile</button>
+                                    <button class="device-btn" id="btn-device-desktop" onclick="setPreviewDevice('desktop')">💻 Desktop</button>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Phone Frame -->
+                            <div class="device-frame mobile" id="ad-preview-frame">
+                                <div class="google-ad-mockup">
+                                    <div class="ad-top-row">
+                                        <span class="ad-tag">Ad</span>
+                                        <span class="ad-display-url" id="preview-url-display">www.ulusofona.pt/course/degree</span>
+                                    </div>
+                                    <h2 class="ad-headline" id="preview-headline-display">
+                                        Curso Exemplo | Licenciatura Premium | Inscreva-se Já
+                                    </h2>
+                                    <p class="ad-description" id="preview-description-display">
+                                        Esta é uma descrição de teste para o mockup do anúncio. Escreva descrições relevantes e atrativas para captar a atenção dos utilizadores.
+                                    </p>
+                                    
+                                    <!-- Snippets Mockup -->
+                                    <div class="ad-snippets" id="preview-snippets-display" style="display:none;">
+                                        <strong>Cursos:</strong> Exemplo 1, Exemplo 2, Exemplo 3
+                                    </div>
+                                    
+                                    <!-- Sitelinks Mockup -->
+                                    <div class="ad-sitelinks-grid" id="preview-sitelinks-display">
+                                        <!-- Dynamic sitelink chips -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <!-- CryptoJS dependency for auth verification -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
