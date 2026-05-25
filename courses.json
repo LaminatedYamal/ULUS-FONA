@@ -176,26 +176,20 @@
       },
       {
         "term": "licenciatura aeronautica",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica"
       },
       {
-        "term": "técnico operações aeroportuárias",
-        "rank": 17,
-        "prevRank": 5,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica"
-      },
-      {
         "term": "curso operações aeroportuárias",
-        "rank": 6,
-        "prevRank": 3,
+        "rank": 2,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica"
       },
       {
         "term": "engenharia aeronautica",
-        "rank": 18,
-        "prevRank": 15,
+        "rank": 19,
+        "prevRank": 18,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica"
       }
     ]
@@ -319,20 +313,26 @@
     "rankingsKeywords": [
       {
         "term": "licenciatura artes",
-        "rank": 5,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais"
-      },
-      {
-        "term": "curso superior artes",
-        "rank": 9,
+        "rank": 6,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais"
       },
       {
+        "term": "curso superior artes",
+        "rank": 8,
+        "prevRank": 9,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais"
+      },
+      {
         "term": "curso artes",
-        "rank": 10,
-        "prevRank": 18,
+        "rank": 11,
+        "prevRank": 11,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais"
+      },
+      {
+        "term": "acesso cursos artísticos",
+        "rank": 24,
+        "prevRank": 24,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/artes-visuais"
       }
     ]
@@ -423,21 +423,15 @@
     ],
     "rankingsKeywords": [
       {
-        "term": "curso design",
-        "rank": 30,
-        "prevRank": 16,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-de-comunicacao"
-      },
-      {
         "term": "curso comunicação visual",
-        "rank": 11,
-        "prevRank": 6,
+        "rank": 28,
+        "prevRank": 11,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-de-comunicacao"
       },
       {
         "term": "licenciatura design",
-        "rank": 9,
-        "prevRank": 5,
+        "rank": 8,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-de-comunicacao"
       }
     ]
@@ -564,32 +558,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "faculdade design",
-        "rank": 7,
-        "prevRank": 6,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda"
-      },
-      {
-        "term": "licenciatura moda",
-        "rank": 1,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda"
-      },
-      {
-        "term": "curso moda",
-        "rank": 15,
-        "prevRank": 14,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda"
-      },
-      {
-        "term": "curso de moda",
-        "rank": 6,
-        "prevRank": 5,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/design-e-producao-de-moda"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 4,
@@ -783,61 +752,55 @@
       {
         "term": "curso politica",
         "rank": 8,
-        "prevRank": 5,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "faculdade relações internacioanis",
-        "rank": 6,
+        "rank": 7,
         "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "relacoes internacionais universidades",
-        "rank": 4,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "licenciatura ciencia politica",
-        "rank": 4,
-        "prevRank": 6,
+        "rank": 5,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "ciencia politica relacoes internacionais",
         "rank": 4,
-        "prevRank": 3,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "faculdade relações internacionais",
-        "rank": 6,
+        "rank": 7,
         "prevRank": 6,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
-      },
-      {
-        "term": "curso relações internacionais",
-        "rank": 4,
-        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "ciencia politica faculdade",
-        "rank": 5,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "licenciatura relações internacionais",
-        "rank": 5,
-        "prevRank": 9,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       },
       {
         "term": "curso ciências politicas",
-        "rank": 5,
-        "prevRank": 6,
+        "rank": 8,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-politica-e-relacoes-internacionais"
       }
     ]
@@ -928,13 +891,13 @@
       {
         "term": "estudos europeus",
         "rank": 6,
-        "prevRank": 4,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-europeus-e-relacoes-internacionais"
       },
       {
         "term": "licenciatura estudos europeus",
         "rank": 5,
-        "prevRank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-europeus-e-relacoes-internacionais"
       }
     ]
@@ -1071,32 +1034,32 @@
     "rankingsKeywords": [
       {
         "term": "curso sociologia",
-        "rank": 7,
-        "prevRank": 5,
+        "rank": 8,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/sociologia"
       },
       {
         "term": "licenciatura sociologia",
         "rank": 5,
-        "prevRank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/sociologia"
       },
       {
         "term": "faculdade sociologia",
-        "rank": 8,
-        "prevRank": 6,
+        "rank": 10,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/sociologia"
       },
       {
         "term": "sociologia",
         "rank": 18,
-        "prevRank": 23,
+        "prevRank": 19,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/sociologia"
       },
       {
         "term": "sociologia licenciatura",
-        "rank": 5,
-        "prevRank": 4,
+        "rank": 7,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/sociologia"
       }
     ]
@@ -1236,19 +1199,19 @@
     "rankingsKeywords": [
       {
         "term": "curso animação",
-        "rank": 5,
-        "prevRank": 1,
+        "rank": 6,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/animacao-digital"
       },
       {
         "term": "escola animação",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 3,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/animacao-digital"
       },
       {
         "term": "faculdade animação",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/animacao-digital"
       },
@@ -1361,32 +1324,32 @@
     "rankingsKeywords": [
       {
         "term": "curso audio",
-        "rank": 9,
-        "prevRank": 5,
+        "rank": 13,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som"
       },
       {
         "term": "licenciatura som",
         "rank": 2,
-        "prevRank": 1,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som"
       },
       {
         "term": "curso sonorização",
-        "rank": 14,
-        "prevRank": 8,
+        "rank": 11,
+        "prevRank": 14,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som"
       },
       {
         "term": "tecnico som curso",
-        "rank": 12,
-        "prevRank": 6,
+        "rank": 21,
+        "prevRank": 12,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som"
       },
       {
         "term": "engenharia som",
-        "rank": 3,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som"
       },
       {
@@ -1397,9 +1360,15 @@
       },
       {
         "term": "curso som",
-        "rank": 4,
-        "prevRank": 3,
+        "rank": 2,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som"
+      },
+      {
+        "term": "design som",
+        "rank": 23,
+        "prevRank": 22,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-e-tecnologias-do-som/ULHT907-11776"
       }
     ]
   },
@@ -1587,43 +1556,43 @@
       {
         "term": "faculdade cinema",
         "rank": 4,
-        "prevRank": 2,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
       },
       {
         "term": "curso cinema",
-        "rank": 6,
-        "prevRank": 2,
+        "rank": 7,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
       },
       {
         "term": "universidade cinema",
-        "rank": 4,
-        "prevRank": 3,
+        "rank": 6,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
       },
       {
         "term": "licenciatura cinema",
         "rank": 3,
-        "prevRank": 2,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
-      },
-      {
-        "term": "cinema curso superior",
-        "rank": 4,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
       },
       {
+        "term": "cinema curso superior",
+        "rank": 3,
+        "prevRank": 4,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
+      },
+      {
         "term": "estudar cinema",
-        "rank": 6,
-        "prevRank": 2,
+        "rank": 8,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
       },
       {
         "term": "escola cinema",
         "rank": 10,
-        "prevRank": 11,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cinema-e-artes-dos-media"
       }
     ]
@@ -1765,20 +1734,20 @@
     "rankingsKeywords": [
       {
         "term": "curso fotografia",
-        "rank": 14,
+        "rank": 8,
         "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia"
       },
       {
         "term": "universidade fotografia",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 1,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia"
       },
       {
         "term": "licenciatura fotografia",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/fotografia"
       },
       {
@@ -1883,6 +1852,12 @@
     ],
     "rankingsKeywords": [
       {
+        "term": "curso games",
+        "rank": 23,
+        "prevRank": 23,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/videojogos"
+      },
+      {
         "term": "licenciatura videojogos",
         "rank": 1,
         "prevRank": 1,
@@ -1890,26 +1865,14 @@
       },
       {
         "term": "faculdade jogos",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 14,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/videojogos"
       },
       {
         "term": "licenciatura jogos digitais",
-        "rank": 3,
-        "prevRank": 1,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/videojogos"
-      },
-      {
-        "term": "curso videojogos",
-        "rank": 1,
-        "prevRank": 1,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/videojogos"
-      },
-      {
-        "term": "curso realidade virtual",
-        "rank": 26,
-        "prevRank": 26,
+        "rank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/videojogos"
       }
     ]
@@ -2050,13 +2013,13 @@
       {
         "term": "licenciatura comunicação",
         "rank": 7,
-        "prevRank": 3,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao"
       },
       {
         "term": "ciencias comunicação",
         "rank": 6,
-        "prevRank": 4,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-comunicacao"
       }
     ]
@@ -2196,31 +2159,31 @@
     "rankingsKeywords": [
       {
         "term": "curso publicidade",
-        "rank": 3,
-        "prevRank": 2,
+        "rank": 5,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
       },
       {
         "term": "faculdade marketing",
-        "rank": 11,
-        "prevRank": 10,
+        "rank": 12,
+        "prevRank": 27,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
+      },
+      {
+        "term": "curso marketing",
+        "rank": 27,
+        "prevRank": 28,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
       },
       {
         "term": "curso relações publicas",
-        "rank": 6,
-        "prevRank": 4,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
-      },
-      {
-        "term": "licenciatura marketing",
-        "rank": 7,
-        "prevRank": 6,
+        "rank": 8,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
       },
       {
         "term": "curso comunicação marketing",
-        "rank": 6,
+        "rank": 8,
         "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
       },
@@ -2233,13 +2196,7 @@
       {
         "term": "marketing comunicação",
         "rank": 7,
-        "prevRank": 6,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
-      },
-      {
-        "term": "graduação marketing",
-        "rank": 5,
-        "prevRank": 8,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-aplicada-marketing-publicidade-e-relacoes-publicas"
       }
     ]
@@ -2347,38 +2304,38 @@
     "rankingsKeywords": [
       {
         "term": "curso comunicação",
-        "rank": 13,
-        "prevRank": 14,
+        "rank": 12,
+        "prevRank": 11,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo"
       },
       {
         "term": "faculdade comunicação social",
         "rank": 9,
-        "prevRank": 14,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo"
       },
       {
         "term": "curso jornalismo",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 4,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo"
       },
       {
         "term": "faculdade jornalismo",
-        "rank": 3,
-        "prevRank": 2,
+        "rank": 1,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo"
       },
       {
         "term": "licenciatura jornalismo",
         "rank": 3,
-        "prevRank": 1,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo"
       },
       {
         "term": "jornalismo comunicação",
         "rank": 5,
-        "prevRank": 2,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/comunicacao-e-jornalismo"
       }
     ]
@@ -2484,14 +2441,14 @@
     "rankingsKeywords": [
       {
         "term": "universidade educação física",
-        "rank": 3,
-        "prevRank": 1,
+        "rank": 1,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
       },
       {
         "term": "curso desporto",
-        "rank": 9,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 11,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
       },
       {
@@ -2508,8 +2465,8 @@
       },
       {
         "term": "licenciatura desporto",
-        "rank": 7,
-        "prevRank": 1,
+        "rank": 6,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
       },
       {
@@ -2521,13 +2478,7 @@
       {
         "term": "curso educaçao fisica",
         "rank": 2,
-        "prevRank": 1,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
-      },
-      {
-        "term": "graduação desporto",
-        "rank": 3,
-        "prevRank": 3,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/educacao-fisica-e-desporto"
       }
     ]
@@ -2641,8 +2592,8 @@
       },
       {
         "term": "curso criminologia",
-        "rank": 4,
-        "prevRank": 1,
+        "rank": 3,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/criminologia"
       },
       {
@@ -2938,15 +2889,21 @@
       },
       {
         "term": "curso advocacia",
-        "rank": 9,
-        "prevRank": 5,
+        "rank": 7,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito"
       },
       {
         "term": "curso de advocacia",
-        "rank": 6,
-        "prevRank": 7,
+        "rank": 4,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/direito"
+      },
+      {
+        "term": "doutorado direito",
+        "rank": 6,
+        "prevRank": 6,
+        "url": "https://www.ulusofona.pt/porto/doutoramentos/direito"
       }
     ]
   },
@@ -3070,30 +3027,24 @@
       {
         "term": "licenciatura contabilidade",
         "rank": 4,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/contabilidade-fiscalidade-e-auditoria"
-      },
-      {
-        "term": "curso contabilidade",
-        "rank": 5,
         "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/contabilidade-fiscalidade-e-auditoria"
       },
       {
-        "term": "licenciatura auditoria",
-        "rank": 2,
-        "prevRank": 1,
+        "term": "curso contabilidade",
+        "rank": 8,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/contabilidade-fiscalidade-e-auditoria"
       },
       {
-        "term": "licenciatura fiscalidade",
-        "rank": 3,
+        "term": "licenciatura auditoria",
+        "rank": 1,
         "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/contabilidade-fiscalidade-e-auditoria"
       },
       {
-        "term": "graduação contabilidade",
-        "rank": 2,
+        "term": "licenciatura fiscalidade",
+        "rank": 4,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/contabilidade-fiscalidade-e-auditoria"
       }
@@ -3184,14 +3135,20 @@
     "rankingsKeywords": [
       {
         "term": "faculdade economia",
-        "rank": 29,
-        "prevRank": 8,
+        "rank": 21,
+        "prevRank": 29,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia"
+      },
+      {
+        "term": "curso economia",
+        "rank": 11,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia"
       },
       {
         "term": "licenciatura economia",
         "rank": 6,
-        "prevRank": 4,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/economia"
       }
     ]
@@ -3345,38 +3302,38 @@
     "rankingsKeywords": [
       {
         "term": "curso administração empresas",
-        "rank": 14,
-        "prevRank": 5,
+        "rank": 23,
+        "prevRank": 14,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       },
       {
         "term": "curso gestão empresarial",
         "rank": 8,
-        "prevRank": 2,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       },
       {
         "term": "gestão empresas",
-        "rank": 4,
-        "prevRank": 1,
+        "rank": 6,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       },
       {
         "term": "licenciatura gestão empresas",
-        "rank": 4,
-        "prevRank": 1,
+        "rank": 6,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       },
       {
         "term": "faculdade gestão empresas",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 5,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       },
       {
         "term": "licenciatura empresas",
-        "rank": 6,
-        "prevRank": 1,
+        "rank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-empresas"
       }
     ]
@@ -3460,32 +3417,32 @@
     "rankingsKeywords": [
       {
         "term": "licenciatura recursos humanos",
-        "rank": 4,
-        "prevRank": 7,
+        "rank": 8,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-recursos-humanos"
       },
       {
         "term": "curso rh",
-        "rank": 8,
-        "prevRank": 7,
+        "rank": 5,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-recursos-humanos"
       },
       {
         "term": "faculdade recursos humanos",
-        "rank": 3,
-        "prevRank": 2,
+        "rank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-recursos-humanos"
       },
       {
         "term": "curso recursos humanos",
-        "rank": 6,
-        "prevRank": 7,
+        "rank": 9,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-recursos-humanos"
       },
       {
         "term": "graduação rh",
-        "rank": 4,
-        "prevRank": 9,
+        "rank": 14,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-de-recursos-humanos"
       }
     ]
@@ -3529,19 +3486,19 @@
       {
         "term": "curso educação",
         "rank": 7,
-        "prevRank": 9,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-educacao-educacao-social"
       },
       {
         "term": "faculdade educação",
-        "rank": 27,
-        "prevRank": 19,
+        "rank": 30,
+        "prevRank": 30,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-educacao-educacao-social"
       },
       {
         "term": "licenciatura educação",
-        "rank": 7,
-        "prevRank": 10,
+        "rank": 5,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-educacao-educacao-social"
       }
     ]
@@ -3601,14 +3558,14 @@
     "rankingsKeywords": [
       {
         "term": "curso bioeconomia",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioeconomia-circular-e-tecnologia"
       },
       {
         "term": "bioeconomia circular",
         "rank": 2,
-        "prevRank": 4,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioeconomia-circular-e-tecnologia"
       }
     ]
@@ -3676,20 +3633,14 @@
     "rankingsKeywords": [
       {
         "term": "curso biomedicina",
-        "rank": 8,
-        "prevRank": 7,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biomedicina-computacional-e-inteligencia-artificial"
-      },
-      {
-        "term": "biomedicina faculdade",
-        "rank": 14,
-        "prevRank": 7,
+        "rank": 11,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biomedicina-computacional-e-inteligencia-artificial"
       },
       {
         "term": "licenciatura biomedicina",
         "rank": 5,
-        "prevRank": 8,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biomedicina-computacional-e-inteligencia-artificial"
       }
     ]
@@ -3758,13 +3709,13 @@
       {
         "term": "licenciatura biotecnologia",
         "rank": 5,
-        "prevRank": 1,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biotecnologia"
       },
       {
         "term": "curso biotecnologia",
         "rank": 5,
-        "prevRank": 3,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biotecnologia"
       }
     ]
@@ -3879,15 +3830,27 @@
     ],
     "rankingsKeywords": [
       {
+        "term": "curso biomedicina",
+        "rank": 29,
+        "prevRank": 11,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-biomedica"
+      },
+      {
         "term": "engenharia biomedica",
-        "rank": 10,
-        "prevRank": 6,
+        "rank": 8,
+        "prevRank": 10,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-biomedica"
+      },
+      {
+        "term": "biomedicina faculdade",
+        "rank": 18,
+        "prevRank": 14,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-biomedica"
       },
       {
         "term": "licenciatura biomedica",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 4,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-biomedica"
       }
     ]
@@ -3985,19 +3948,25 @@
     "rankingsKeywords": [
       {
         "term": "faculdade engenharia civil",
-        "rank": 6,
-        "prevRank": 4,
+        "rank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil"
       },
       {
         "term": "curso engenheiro civil",
-        "rank": 8,
+        "rank": 10,
+        "prevRank": 8,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil"
+      },
+      {
+        "term": "licenciatura civil",
+        "rank": 24,
         "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil"
       },
       {
         "term": "licenciatura engenharia civil",
-        "rank": 7,
+        "rank": 6,
         "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-civil"
       }
@@ -4103,21 +4072,15 @@
     ],
     "rankingsKeywords": [
       {
-        "term": "faculdade ambiental",
-        "rank": 7,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente"
-      },
-      {
         "term": "licenciatura ambiente",
-        "rank": 6,
-        "prevRank": 6,
+        "rank": 4,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente"
       },
       {
         "term": "engenharia ambiente",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 8,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-do-ambiente"
       }
     ]
@@ -4207,20 +4170,20 @@
     "rankingsKeywords": [
       {
         "term": "curso engenharia produção",
-        "rank": 5,
-        "prevRank": 2,
+        "rank": 20,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial"
       },
       {
         "term": "licenciatura industrial",
-        "rank": 6,
-        "prevRank": 4,
+        "rank": 4,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial"
       },
       {
         "term": "engenharia gestão industrial",
-        "rank": 5,
-        "prevRank": 4,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-e-gestao-industrial"
       }
     ]
@@ -4271,14 +4234,7 @@
     "url": "https://www.ulusofona.pt/lisboa/licenciaturas/tecnologias-e-gestao-do-ambiente",
     "gscKeywords": [],
     "adsKeywords": [],
-    "rankingsKeywords": [
-      {
-        "term": "curso ambiente",
-        "rank": 9,
-        "prevRank": 7,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/tecnologias-e-gestao-do-ambiente"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 34,
@@ -4357,19 +4313,19 @@
     "rankingsKeywords": [
       {
         "term": "curso ciência dados",
-        "rank": 10,
-        "prevRank": 5,
+        "rank": 8,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados"
       },
       {
         "term": "licenciatura data science",
-        "rank": 3,
+        "rank": 2,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados"
       },
       {
         "term": "licenciatura ciência de dados",
-        "rank": 5,
+        "rank": 3,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencia-de-dados"
       }
@@ -4571,32 +4527,32 @@
     "rankingsKeywords": [
       {
         "term": "faculdade informatica",
-        "rank": 9,
-        "prevRank": 6,
+        "rank": 11,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica"
       },
       {
         "term": "licenciatura informatica",
-        "rank": 10,
-        "prevRank": 5,
+        "rank": 11,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica"
       },
       {
         "term": "engenharia enformatica",
-        "rank": 7,
-        "prevRank": 11,
+        "rank": 12,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica"
       },
       {
         "term": "licenciatura informática",
-        "rank": 11,
+        "rank": 12,
         "prevRank": 11,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica"
       },
       {
         "term": "engenharia informática",
-        "rank": 7,
-        "prevRank": 11,
+        "rank": 13,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica"
       }
     ]
@@ -4672,8 +4628,8 @@
     "rankingsKeywords": [
       {
         "term": "curso telecomunicações",
-        "rank": 17,
-        "prevRank": 10,
+        "rank": 26,
+        "prevRank": 17,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica-redes-e-telecomunicacoes"
       },
       {
@@ -4683,14 +4639,8 @@
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica-redes-e-telecomunicacoes"
       },
       {
-        "term": "curso redes",
-        "rank": 29,
-        "prevRank": 11,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica-redes-e-telecomunicacoes"
-      },
-      {
         "term": "Licenciatura redes",
-        "rank": 2,
+        "rank": 3,
         "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/engenharia-informatica-redes-e-telecomunicacoes"
       }
@@ -4757,26 +4707,20 @@
     "rankingsKeywords": [
       {
         "term": "informática gestão",
-        "rank": 5,
-        "prevRank": 2,
+        "rank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/informatica-de-gestao"
       },
       {
         "term": "licenciatura informatica gestão",
-        "rank": 4,
-        "prevRank": 1,
-        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/informatica-de-gestao"
-      },
-      {
-        "term": "licenciatura informática gestão",
-        "rank": 4,
+        "rank": 2,
         "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/informatica-de-gestao"
       },
       {
-        "term": "graduação sistemas informação",
-        "rank": 18,
-        "prevRank": 10,
+        "term": "licenciatura informática gestão",
+        "rank": 2,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/informatica-de-gestao"
       }
     ]
@@ -5013,31 +4957,37 @@
       {
         "term": "faculdade psicologia",
         "rank": 7,
-        "prevRank": 6,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia"
       },
       {
         "term": "universidade psicologia",
-        "rank": 7,
+        "rank": 9,
         "prevRank": 7,
+        "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia"
+      },
+      {
+        "term": "curso psicologia",
+        "rank": 10,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia"
       },
       {
         "term": "licenciatura psicologia",
-        "rank": 6,
-        "prevRank": 4,
+        "rank": 9,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia"
       },
       {
         "term": "curso superior psicologia",
-        "rank": 8,
-        "prevRank": 7,
+        "rank": 10,
+        "prevRank": 24,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia"
       },
       {
         "term": "psicologia lisboa",
-        "rank": 8,
-        "prevRank": 7,
+        "rank": 6,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/psicologia"
       }
     ]
@@ -5169,38 +5119,38 @@
     "rankingsKeywords": [
       {
         "term": "faculdade biologia",
-        "rank": 8,
-        "prevRank": 3,
+        "rank": 5,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia"
       },
       {
         "term": "curso biologia",
-        "rank": 4,
-        "prevRank": 3,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia"
       },
       {
         "term": "universidade biologia",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia"
       },
       {
         "term": "licenciatura ciencias biologicas",
-        "rank": 4,
-        "prevRank": 2,
+        "rank": 6,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia"
       },
       {
         "term": "curso ciencias biologicas",
-        "rank": 7,
-        "prevRank": 2,
+        "rank": 11,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia"
       },
       {
         "term": "licenciatura biologia",
-        "rank": 7,
-        "prevRank": 2,
+        "rank": 6,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/biologia"
       }
     ]
@@ -5277,25 +5227,25 @@
       {
         "term": "licenciatura bioquimica",
         "rank": 7,
-        "prevRank": 3,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica"
       },
       {
         "term": "curso bioquimica",
         "rank": 7,
-        "prevRank": 4,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica"
       },
       {
         "term": "bioquimica",
-        "rank": 12,
-        "prevRank": 22,
+        "rank": 16,
+        "prevRank": 12,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica"
       },
       {
         "term": "bioquímica",
-        "rank": 17,
-        "prevRank": 20,
+        "rank": 15,
+        "prevRank": 17,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica"
       },
       {
@@ -5307,7 +5257,7 @@
       {
         "term": "curso bioquímica",
         "rank": 7,
-        "prevRank": 6,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/bioquimica"
       }
     ]
@@ -5439,44 +5389,44 @@
     "rankingsKeywords": [
       {
         "term": "curso nutrição",
-        "rank": 9,
-        "prevRank": 2,
+        "rank": 13,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       },
       {
         "term": "curso nutricionista",
-        "rank": 8,
-        "prevRank": 2,
+        "rank": 13,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       },
       {
         "term": "faculdade nutrição",
-        "rank": 6,
-        "prevRank": 3,
+        "rank": 8,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       },
       {
         "term": "faculdade nutricionista",
-        "rank": 5,
-        "prevRank": 2,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       },
       {
         "term": "licenciatura nutrição",
-        "rank": 8,
-        "prevRank": 2,
+        "rank": 7,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       },
       {
         "term": "ciências nutrição",
-        "rank": 6,
-        "prevRank": 3,
+        "rank": 7,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       },
       {
         "term": "curso de nutrição",
-        "rank": 10,
-        "prevRank": 6,
+        "rank": 12,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/ciencias-da-nutricao"
       }
     ]
@@ -5553,19 +5503,19 @@
       {
         "term": "curso bem estar",
         "rank": 5,
-        "prevRank": 2,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cuidados-de-beleza-e-bem-estar"
       },
       {
         "term": "estética e cosmetologia",
-        "rank": 4,
-        "prevRank": 3,
+        "rank": 2,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cuidados-de-beleza-e-bem-estar"
       },
       {
         "term": "curso bem-estar",
-        "rank": 7,
-        "prevRank": 7,
+        "rank": 5,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/cuidados-de-beleza-e-bem-estar"
       }
     ]
@@ -5633,14 +5583,14 @@
     "rankingsKeywords": [
       {
         "term": "licenciatura segurança",
-        "rank": 1,
-        "prevRank": 2,
+        "rank": 2,
+        "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-de-seguranca-interna"
       },
       {
         "term": "estudos segurança",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 1,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/estudos-de-seguranca-interna"
       }
     ]
@@ -5773,30 +5723,30 @@
       {
         "term": "curso assistente social",
         "rank": 6,
-        "prevRank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/servico-social"
       },
       {
         "term": "licenciatura servico social",
-        "rank": 4,
-        "prevRank": 2,
+        "rank": 3,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/servico-social"
       },
       {
         "term": "faculdade serviço social",
         "rank": 6,
-        "prevRank": 3,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/servico-social"
       },
       {
         "term": "faculdade assistente social",
-        "rank": 8,
-        "prevRank": 4,
+        "rank": 10,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/servico-social"
       },
       {
         "term": "licenciatura serviço social",
-        "rank": 5,
+        "rank": 7,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/servico-social"
       }
@@ -6002,31 +5952,31 @@
       {
         "term": "licenciatura turismo",
         "rank": 3,
-        "prevRank": 1,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/turismo"
       },
       {
         "term": "faculdade turismo",
         "rank": 4,
-        "prevRank": 2,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/turismo"
       },
       {
         "term": "curso turismo",
-        "rank": 3,
-        "prevRank": 6,
+        "rank": 4,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/turismo"
       },
       {
         "term": "graduação hotelaria",
-        "rank": 25,
-        "prevRank": 25,
+        "rank": 29,
+        "prevRank": 29,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/turismo"
       },
       {
         "term": "graduação turismo",
         "rank": 4,
-        "prevRank": 3,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/licenciaturas/turismo"
       }
     ]
@@ -6142,32 +6092,38 @@
     "rankingsKeywords": [
       {
         "term": "curso arquitetura",
-        "rank": 5,
+        "rank": 7,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       },
       {
         "term": "mestrado aqruitetura",
-        "rank": 7,
-        "prevRank": 3,
+        "rank": 9,
+        "prevRank": 8,
+        "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
+      },
+      {
+        "term": "faculdade arquitetura",
+        "rank": 19,
+        "prevRank": 19,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       },
       {
         "term": "licenciatura arquitetura",
-        "rank": 6,
-        "prevRank": 4,
+        "rank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       },
       {
         "term": "universidade arquitetura",
-        "rank": 3,
-        "prevRank": 7,
+        "rank": 5,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       },
       {
         "term": "mestrado arquitetura",
-        "rank": 7,
-        "prevRank": 3,
+        "rank": 9,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura"
       }
     ]
@@ -6249,25 +6205,25 @@
     "rankingsKeywords": [
       {
         "term": "mestrado farmácia",
-        "rank": 5,
-        "prevRank": 2,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas"
       },
       {
         "term": "curso ciencias farmaceuticas",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas"
       },
       {
         "term": "licenciatura ciencias farmaceuticas",
-        "rank": 9,
-        "prevRank": 8,
+        "rank": 7,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas"
       },
       {
         "term": "mestrado farmacia",
-        "rank": 5,
+        "rank": 6,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas"
       }
@@ -6351,12 +6307,12 @@
       {
         "term": "curso veterinaria",
         "rank": 4,
-        "prevRank": 2,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/medicina-veterinaria"
       },
       {
         "term": "medicina veterinaria",
-        "rank": 3,
+        "rank": 4,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados-integrados/medicina-veterinaria"
       }
@@ -6427,12 +6383,6 @@
         "term": "mestrado urbanismo",
         "rank": 3,
         "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/urbanismo"
-      },
-      {
-        "term": "mestrado reabilitação urbana",
-        "rank": 25,
-        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/urbanismo"
       }
     ]
@@ -6562,8 +6512,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado design",
-        "rank": 5,
-        "prevRank": 1,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/design"
       }
     ]
@@ -6712,7 +6662,7 @@
       {
         "term": "mestrado relações internacionais",
         "rank": 5,
-        "prevRank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/diplomacia-e-relacoes-internacionais"
       },
       {
@@ -6723,8 +6673,8 @@
       },
       {
         "term": "mestrado cooperação",
-        "rank": 17,
-        "prevRank": 17,
+        "rank": 26,
+        "prevRank": 25,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/diplomacia-e-relacoes-internacionais"
       },
       {
@@ -6784,14 +6734,8 @@
     "rankingsKeywords": [
       {
         "term": "faculdade museologia",
-        "rank": 9,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/sociomuseologia"
-      },
-      {
-        "term": "mestrado museologia",
-        "rank": 6,
-        "prevRank": 5,
+        "rank": 29,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/sociomuseologia"
       }
     ]
@@ -6841,7 +6785,7 @@
     "rankingsKeywords": [
       {
         "term": "mestrado animação",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/artes-da-animacao"
       },
@@ -6906,8 +6850,8 @@
     "rankingsKeywords": [
       {
         "term": "Mestrado jogos",
-        "rank": 4,
-        "prevRank": 1,
+        "rank": 5,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/design-de-jogos-e-media-jogaveis"
       }
     ]
@@ -6957,8 +6901,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado cinema",
-        "rank": 3,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/estudos-cinematograficos"
       }
     ]
@@ -6975,7 +6919,7 @@
     "rankingsKeywords": [
       {
         "term": "mestrado fotografia",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/fotografia"
       }
@@ -7039,7 +6983,7 @@
       {
         "term": "mestrado audiovisual",
         "rank": 5,
-        "prevRank": 3,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/patrimonio-cinematografico-e-audiovisual"
       },
       {
@@ -7079,7 +7023,13 @@
     "rankingsKeywords": [
       {
         "term": "mestrado som",
-        "rank": 2,
+        "rank": 1,
+        "prevRank": 2,
+        "url": "https://www.ulusofona.pt/lisboa/mestrados/producao-e-tecnologias-do-som"
+      },
+      {
+        "term": "tecnologias som",
+        "rank": 1,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/producao-e-tecnologias-do-som"
       }
@@ -7097,13 +7047,13 @@
     "rankingsKeywords": [
       {
         "term": "cinema documental",
-        "rank": 5,
-        "prevRank": 4,
+        "rank": 8,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/realizacao-para-cinema-documental"
       },
       {
         "term": "mestrado documental",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/realizacao-para-cinema-documental"
       }
@@ -7195,20 +7145,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "mestrado marketing",
-        "rank": 8,
-        "prevRank": 9,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/comunicacao-marketing-e-media-digitais"
-      },
-      {
-        "term": "mestrado publicidade",
-        "rank": 20,
-        "prevRank": 8,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/comunicacao-marketing-e-media-digitais"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 69,
@@ -7274,7 +7211,7 @@
     "rankingsKeywords": [
       {
         "term": "mestrado jornalismo",
-        "rank": 5,
+        "rank": 4,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/jornalismo-aplicado-inovacao-digital-e-tecnologias-emergentes"
       }
@@ -7292,14 +7229,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado educação física",
-        "rank": 3,
-        "prevRank": 1,
+        "rank": 1,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ensino-de-educacao-fisica-nos-ensinos-basico-e-secundario"
       },
       {
         "term": "mestrado educação fisica",
-        "rank": 3,
-        "prevRank": 1,
+        "rank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ensino-de-educacao-fisica-nos-ensinos-basico-e-secundario"
       }
     ]
@@ -7388,18 +7325,12 @@
       {
         "term": "mestrado alto rendimento",
         "rank": 3,
-        "prevRank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/treino-desportivo"
       },
       {
         "term": "mestrado treino",
-        "rank": 3,
-        "prevRank": 1,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/treino-desportivo"
-      },
-      {
-        "term": "+mestrado +treino +desportivo",
-        "rank": 3,
+        "rank": 2,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/treino-desportivo"
       }
@@ -7453,15 +7384,9 @@
     "adsKeywords": [],
     "rankingsKeywords": [
       {
-        "term": "mestrado direito constitucional",
-        "rank": 6,
-        "prevRank": 5,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/direito"
-      },
-      {
         "term": "mestrado direito",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 7,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/direito"
       }
     ]
@@ -7523,8 +7448,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado direito trabalho",
-        "rank": 3,
-        "prevRank": 2,
+        "rank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/direito-do-trabalho-e-da-seguranca-social"
       }
     ]
@@ -7561,20 +7486,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado direito administrativo",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 8,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/direito-publico-e-regulacao"
       },
       {
         "term": "mestrado direito público",
-        "rank": 2,
+        "rank": 1,
         "prevRank": 2,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/direito-publico-e-regulacao"
-      },
-      {
-        "term": "curso direito público",
-        "rank": 5,
-        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/direito-publico-e-regulacao"
       }
     ]
@@ -7633,19 +7552,19 @@
       {
         "term": "mestrado fiscalidade",
         "rank": 5,
-        "prevRank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/contabilidade-fiscalidade-e-financas"
       },
       {
         "term": "mestrado contabilidade",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/contabilidade-fiscalidade-e-financas"
       },
       {
         "term": "mestrado contabilidade fiscalidade",
-        "rank": 3,
-        "prevRank": 2,
+        "rank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/contabilidade-fiscalidade-e-financas"
       }
     ]
@@ -7662,8 +7581,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado economia",
-        "rank": 5,
-        "prevRank": 3,
+        "rank": 6,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/economia"
       }
     ]
@@ -7705,8 +7624,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado recursos humanos",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 9,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gestao-avancada-de-recursos-humanos"
       }
     ]
@@ -7723,20 +7642,20 @@
     "rankingsKeywords": [
       {
         "term": "mestrado gestão empresas",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gestao-de-empresas"
       },
       {
         "term": "mestrado empresas",
-        "rank": 4,
-        "prevRank": 3,
+        "rank": 7,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gestao-de-empresas"
       },
       {
         "term": "mestrado gestao empresas",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 3,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gestao-de-empresas"
       }
     ]
@@ -7798,26 +7717,26 @@
     "rankingsKeywords": [
       {
         "term": "mestrado neurocognitivo",
+        "rank": 13,
+        "prevRank": 6,
+        "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-cognitiva-e-educacao"
+      },
+      {
+        "term": "mestrado cognitivo",
+        "rank": 6,
+        "prevRank": 5,
+        "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-cognitiva-e-educacao"
+      },
+      {
+        "term": "mestrado aprendizagem",
         "rank": 6,
         "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-cognitiva-e-educacao"
       },
       {
-        "term": "mestrado cognitivo",
-        "rank": 5,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-cognitiva-e-educacao"
-      },
-      {
-        "term": "mestrado aprendizagem",
+        "term": "mestrado ciencia cognitiva",
         "rank": 5,
         "prevRank": 4,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-cognitiva-e-educacao"
-      },
-      {
-        "term": "mestrado ciencia cognitiva",
-        "rank": 4,
-        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-cognitiva-e-educacao"
       }
     ]
@@ -7891,13 +7810,7 @@
     "rankingsKeywords": [
       {
         "term": "mestrado educação",
-        "rank": 5,
-        "prevRank": 5,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencias-da-educacao"
-      },
-      {
-        "term": "mestrado aprendizagem",
-        "rank": 8,
+        "rank": 7,
         "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencias-da-educacao"
       }
@@ -7932,8 +7845,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado educação especial",
-        "rank": 6,
-        "prevRank": 2,
+        "rank": 8,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencias-da-educacao-educacao-especial-dominio-cognitivo-e-motor"
       }
     ]
@@ -7950,14 +7863,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado artes",
-        "rank": 10,
-        "prevRank": 9,
+        "rank": 6,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ensino-de-artes-visuais-no-3o-ciclo-do-ensino-basico-e-no-ensino-secundario"
       },
       {
         "term": "mestrado artes visuais",
-        "rank": 7,
-        "prevRank": 8,
+        "rank": 5,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ensino-de-artes-visuais-no-3o-ciclo-do-ensino-basico-e-no-ensino-secundario"
       }
     ]
@@ -7984,7 +7897,7 @@
       {
         "term": "mestrado ensino informatica",
         "rank": 2,
-        "prevRank": 2,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ensino-de-informatica"
       }
     ]
@@ -8037,13 +7950,13 @@
       {
         "term": "mestrado engenharia civil",
         "rank": 7,
-        "prevRank": 4,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-civil"
       },
       {
         "term": "mestrado construção civil",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 4,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-civil"
       },
       {
@@ -8066,14 +7979,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado engenharia ambiente",
-        "rank": 6,
-        "prevRank": 4,
+        "rank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-do-ambiente"
       },
       {
         "term": "Mestrado ambiente",
-        "rank": 10,
-        "prevRank": 5,
+        "rank": 11,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-do-ambiente"
       }
     ]
@@ -8090,14 +8003,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado gestão industrial",
-        "rank": 6,
-        "prevRank": 5,
+        "rank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-e-gestao-industrial"
       },
       {
         "term": "mestrado engenharia industrial",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 6,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-e-gestao-industrial"
       }
     ]
@@ -8114,14 +8027,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado ciência dados",
-        "rank": 4,
-        "prevRank": 5,
+        "rank": 1,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-de-dados"
       },
       {
         "term": "mestrado data science",
-        "rank": 5,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-de-dados"
       }
     ]
@@ -8183,32 +8096,32 @@
     "rankingsKeywords": [
       {
         "term": "mestrado infomatica",
-        "rank": 8,
-        "prevRank": 5,
+        "rank": 4,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-informatica-e-sistemas-de-informacao"
       },
       {
         "term": "mestrado sistemas informação",
         "rank": 7,
-        "prevRank": 4,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-informatica-e-sistemas-de-informacao"
-      },
-      {
-        "term": "mestrado engenharia informatica",
-        "rank": 8,
         "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-informatica-e-sistemas-de-informacao"
       },
       {
+        "term": "mestrado engenharia informatica",
+        "rank": 14,
+        "prevRank": 11,
+        "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-informatica-e-sistemas-de-informacao"
+      },
+      {
         "term": "mestrado informatica",
-        "rank": 8,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-informatica-e-sistemas-de-informacao"
       },
       {
         "term": "mestrado sistemas de informação",
-        "rank": 7,
-        "prevRank": 8,
+        "rank": 8,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/engenharia-informatica-e-sistemas-de-informacao"
       }
     ]
@@ -8266,14 +8179,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "mestrado ciberterapia",
-        "rank": 1,
-        "prevRank": 1,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/ciberespaco-comportamento-e-terapia-digital"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 100,
@@ -8335,12 +8241,12 @@
       {
         "term": "mestrado neuropsicologia",
         "rank": 5,
-        "prevRank": 1,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/neuropsicologia-aplicada"
       },
       {
         "term": "faculdade neuropsicologia",
-        "rank": 3,
+        "rank": 5,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/neuropsicologia-aplicada"
       }
@@ -8420,32 +8326,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "mestrado psicologia saude",
-        "rank": 6,
-        "prevRank": 6,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-clinica-e-da-saude"
-      },
-      {
-        "term": "mestrado psicologia",
-        "rank": 5,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-clinica-e-da-saude"
-      },
-      {
-        "term": "[mestrado psicologia da saude]",
-        "rank": 9,
-        "prevRank": 9,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-clinica-e-da-saude"
-      },
-      {
-        "term": "[mestrado em psicologia da saude]",
-        "rank": 9,
-        "prevRank": 9,
-        "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-clinica-e-da-saude"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 102,
@@ -8509,19 +8390,19 @@
       {
         "term": "psicologia forense",
         "rank": 7,
-        "prevRank": 1,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-forense"
       },
       {
         "term": "mestrado psicologia forense",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-forense"
       },
       {
         "term": "mestrado psicologia criminal",
-        "rank": 5,
-        "prevRank": 2,
+        "rank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-forense"
       }
     ]
@@ -8563,7 +8444,7 @@
     "rankingsKeywords": [
       {
         "term": "psicologia social das organizações",
-        "rank": 6,
+        "rank": 4,
         "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/psicologia-social-e-das-organizacoes"
       }
@@ -8606,14 +8487,14 @@
     "rankingsKeywords": [
       {
         "term": "curso sexologia",
-        "rank": 6,
+        "rank": 7,
         "prevRank": 6,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/transdisciplinar-de-sexologia"
       },
       {
         "term": "mestrado sexologia",
         "rank": 2,
-        "prevRank": 1,
+        "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/transdisciplinar-de-sexologia"
       }
     ]
@@ -8669,7 +8550,7 @@
       },
       {
         "term": "curso ciencia religião",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/ciencia-das-religioes"
       }
@@ -8797,13 +8678,13 @@
       {
         "term": "gerontologia social",
         "rank": 6,
-        "prevRank": 3,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gerontologia-social-qualidade-de-programas-e-servicos-gerontologicos"
       },
       {
         "term": "mestrado gerontologia",
         "rank": 4,
-        "prevRank": 2,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gerontologia-social-qualidade-de-programas-e-servicos-gerontologicos"
       }
     ]
@@ -8852,9 +8733,15 @@
     ],
     "rankingsKeywords": [
       {
+        "term": "mestrado intervenção social",
+        "rank": 25,
+        "prevRank": 25,
+        "url": "https://www.ulusofona.pt/lisboa/mestrados/servico-social-e-politica-social"
+      },
+      {
         "term": "mestrado serviço social",
-        "rank": 4,
-        "prevRank": 3,
+        "rank": 5,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/servico-social-e-politica-social"
       },
       {
@@ -8930,14 +8817,14 @@
     "rankingsKeywords": [
       {
         "term": "mestrado hospitalidade",
-        "rank": 1,
+        "rank": 2,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gestao-e-inovacao-em-turismo-e-hospitalidade"
       },
       {
         "term": "mestrado turismo",
-        "rank": 9,
-        "prevRank": 8,
+        "rank": 10,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/lisboa/mestrados/gestao-e-inovacao-em-turismo-e-hospitalidade"
       }
     ]
@@ -9085,8 +8972,8 @@
     "rankingsKeywords": [
       {
         "term": "doutoramento arquitetura",
-        "rank": 5,
-        "prevRank": 4,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/arquitetura"
       }
     ]
@@ -9146,7 +9033,7 @@
     "rankingsKeywords": [
       {
         "term": "doutoramento urbanismo",
-        "rank": 2,
+        "rank": 1,
         "prevRank": 2,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/urbanismo"
       }
@@ -9216,6 +9103,12 @@
         "rank": 1,
         "prevRank": 1,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/sociomuseologia"
+      },
+      {
+        "term": "curso museologia",
+        "rank": 19,
+        "prevRank": 14,
+        "url": "https://www.ulusofona.pt/lisboa/doutoramentos/sociomuseologia"
       }
     ]
   },
@@ -9282,8 +9175,8 @@
     "rankingsKeywords": [
       {
         "term": "doutoramento media",
-        "rank": 7,
-        "prevRank": 5,
+        "rank": 6,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/arte-dos-media-e-comunicacao"
       }
     ]
@@ -9344,7 +9237,7 @@
       {
         "term": "doutoramento comunicação",
         "rank": 5,
-        "prevRank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/ciencias-da-comunicacao"
       }
     ]
@@ -9386,8 +9279,8 @@
     "rankingsKeywords": [
       {
         "term": "doutoramento desporto",
-        "rank": 2,
-        "prevRank": 1,
+        "rank": 3,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/educacao-fisica-e-desporto"
       },
       {
@@ -9461,13 +9354,13 @@
     "rankingsKeywords": [
       {
         "term": "doutoramento em direito",
-        "rank": 3,
+        "rank": 2,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/direito"
       },
       {
         "term": "doutoramento direito",
-        "rank": 3,
+        "rank": 2,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/direito"
       },
@@ -9630,7 +9523,7 @@
     "rankingsKeywords": [
       {
         "term": "doutomento educação",
-        "rank": 8,
+        "rank": 7,
         "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/educacao"
       },
@@ -9643,7 +9536,7 @@
       {
         "term": "doutoramento educação",
         "rank": 7,
-        "prevRank": 8,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/educacao"
       }
     ]
@@ -9725,8 +9618,14 @@
     "rankingsKeywords": [
       {
         "term": "doutoramento informática",
-        "rank": 5,
-        "prevRank": 4,
+        "rank": 6,
+        "prevRank": 5,
+        "url": "https://www.ulusofona.pt/lisboa/doutoramentos/informatica"
+      },
+      {
+        "term": "phd informatica",
+        "rank": 14,
+        "prevRank": 10,
         "url": "https://www.ulusofona.pt/lisboa/doutoramentos/informatica"
       }
     ]
@@ -9775,7 +9674,20 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "doutoramento psicologia",
+        "rank": 7,
+        "prevRank": 6,
+        "url": "https://www.ulusofona.pt/porto/doutoramentos/psicologia-clinica-orientacao-cognitivo-comportamental"
+      },
+      {
+        "term": "&quot;doutoramento psicologia&quot;",
+        "rank": 3,
+        "prevRank": 4,
+        "url": "https://www.ulusofona.pt/porto/doutoramentos/psicologia-clinica-orientacao-cognitivo-comportamental"
+      }
+    ]
   },
   {
     "id": 129,
@@ -9811,7 +9723,7 @@
     "rankingsKeywords": [
       {
         "term": "mestrado riscos",
-        "rank": 15,
+        "rank": 30,
         "prevRank": 15,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/intervencao-em-riscos-e-promocao-da-inclusao"
       }
@@ -9931,7 +9843,7 @@
       {
         "term": "curso e-commerce online",
         "rank": 8,
-        "prevRank": 6,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/e-commerce-edicao-online"
       },
       {
@@ -10111,20 +10023,32 @@
     "rankingsKeywords": [
       {
         "term": "curso marketing digital",
-        "rank": 27,
-        "prevRank": 27,
+        "rank": 17,
+        "prevRank": 17,
+        "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital"
+      },
+      {
+        "term": "graduação marketing",
+        "rank": 4,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital"
       },
       {
         "term": "pós-graduação marketing digital",
-        "rank": 3,
-        "prevRank": 1,
+        "rank": 5,
+        "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital"
       },
       {
         "term": "marketing digital",
-        "rank": 21,
-        "prevRank": 21,
+        "rank": 16,
+        "prevRank": 16,
+        "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital"
+      },
+      {
+        "term": "formação marketing",
+        "rank": 30,
+        "prevRank": 28,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-digital"
       }
     ]
@@ -10182,20 +10106,20 @@
     "rankingsKeywords": [
       {
         "term": "pós-graduação marketing",
-        "rank": 4,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-e-estrategias-de-marca"
       },
       {
         "term": "pós graduação marketing",
-        "rank": 5,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-e-estrategias-de-marca"
       },
       {
         "term": "graduação branding",
-        "rank": 12,
-        "prevRank": 16,
+        "rank": 11,
+        "prevRank": 12,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/marketing-e-estrategias-de-marca"
       }
     ]
@@ -10257,6 +10181,12 @@
       {
         "term": "graduação fiscalidade",
         "rank": 4,
+        "prevRank": 4,
+        "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/contabilidade-e-fiscalidade"
+      },
+      {
+        "term": "graduação contabilidade",
+        "rank": 1,
         "prevRank": 3,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/contabilidade-e-fiscalidade"
       }
@@ -10324,7 +10254,14 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "graduação desporto",
+        "rank": 7,
+        "prevRank": 4,
+        "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-desportiva"
+      }
+    ]
   },
   {
     "id": 150,
@@ -10475,7 +10412,14 @@
     "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/praticas-avancadas-de-gestao-de-pessoas",
     "gscKeywords": [],
     "adsKeywords": [],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "graduação humanos",
+        "rank": 8,
+        "prevRank": 8,
+        "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/praticas-avancadas-de-gestao-de-pessoas"
+      }
+    ]
   },
   {
     "id": 157,
@@ -10489,20 +10433,20 @@
     "rankingsKeywords": [
       {
         "term": "curso higiene trabalho",
-        "rank": 15,
-        "prevRank": 16,
+        "rank": 17,
+        "prevRank": 15,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/seguranca-e-higiene-do-trabalho"
       },
       {
         "term": "graduação segurança trabalho",
-        "rank": 11,
-        "prevRank": 1,
+        "rank": 4,
+        "prevRank": 12,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/seguranca-e-higiene-do-trabalho"
       },
       {
         "term": "graduação saúde trabalho",
-        "rank": 11,
-        "prevRank": 12,
+        "rank": 14,
+        "prevRank": 11,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/seguranca-e-higiene-do-trabalho"
       }
     ]
@@ -10684,14 +10628,14 @@
     "rankingsKeywords": [
       {
         "term": "curso organização de eventos",
-        "rank": 12,
+        "rank": 15,
         "prevRank": 12,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-empreendedorismo-dos-eventos"
       },
       {
         "term": "gestão eventos",
-        "rank": 8,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/lisboa/pos-graduacoes/gestao-e-empreendedorismo-dos-eventos"
       }
     ]
@@ -11159,8 +11103,8 @@
     "rankingsKeywords": [
       {
         "term": "acupuntura veterinária",
-        "rank": 18,
-        "prevRank": 8,
+        "rank": 6,
+        "prevRank": 21,
         "url": "https://www.ulusofona.pt/lisboa/formacao/introducao-a-acupuntura-veterinaria-do-antigo-ao-moderno"
       }
     ]
@@ -11177,8 +11121,8 @@
     "rankingsKeywords": [
       {
         "term": "curso direito público",
-        "rank": 4,
-        "prevRank": 2,
+        "rank": 3,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/lisboa/formacao/introducao-ao-direito-publico"
       }
     ]
@@ -11368,7 +11312,14 @@
     "url": "https://www.ulusofona.pt/lisboa/formacao/programa-preparar",
     "gscKeywords": [],
     "adsKeywords": [],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "ano zero",
+        "rank": 22,
+        "prevRank": 28,
+        "url": "https://www.ulusofona.pt/candidaturas/programa-preparar"
+      }
+    ]
   },
   {
     "id": 234,
@@ -11737,27 +11688,57 @@
     "adsKeywords": [],
     "rankingsKeywords": [
       {
-        "term": "licenciatura design",
+        "term": "curso design",
+        "rank": 30,
+        "prevRank": 30,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
+      },
+      {
+        "term": "faculdade design",
         "rank": 6,
-        "prevRank": 4,
+        "prevRank": 7,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
+      },
+      {
+        "term": "licenciatura design",
+        "rank": 9,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
       },
       {
         "term": "curso design moda",
-        "rank": 7,
-        "prevRank": 4,
+        "rank": 5,
+        "prevRank": 10,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
+      },
+      {
+        "term": "licenciatura moda",
+        "rank": 1,
+        "prevRank": 1,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
       },
       {
         "term": "faculdade de moda",
-        "rank": 4,
+        "rank": 1,
         "prevRank": 4,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
       },
       {
+        "term": "curso moda",
+        "rank": 11,
+        "prevRank": 15,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
+      },
+      {
         "term": "design de moda",
-        "rank": 6,
-        "prevRank": 8,
+        "rank": 11,
+        "prevRank": 11,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
+      },
+      {
+        "term": "curso de moda",
+        "rank": 11,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/design-e-producao-de-moda"
       }
     ]
@@ -11817,8 +11798,14 @@
     "rankingsKeywords": [
       {
         "term": "licenciatura relacoes internacionais",
-        "rank": 5,
-        "prevRank": 7,
+        "rank": 8,
+        "prevRank": 5,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/estudos-europeus-estudos-lusofonos-e-relacoes-internacionais"
+      },
+      {
+        "term": "curso relações internacionais",
+        "rank": 6,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/estudos-europeus-estudos-lusofonos-e-relacoes-internacionais"
       }
     ]
@@ -11902,8 +11889,8 @@
     "rankingsKeywords": [
       {
         "term": "curso de audiovisual",
-        "rank": 13,
-        "prevRank": 21,
+        "rank": 16,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/comunicacao-audiovisual-e-multimedia"
       }
     ]
@@ -11984,7 +11971,14 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "curso videojogos",
+        "rank": 1,
+        "prevRank": 1,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/videojogos-e-aplicacoes-multimedia"
+      }
+    ]
   },
   {
     "id": 258,
@@ -12090,14 +12084,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "curso comunicação",
-        "rank": 11,
-        "prevRank": 12,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/comunicacao-aplicada"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 260,
@@ -12217,14 +12204,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "curso direito",
-        "rank": 4,
-        "prevRank": 6,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/direito"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 262,
@@ -12294,20 +12274,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "curso economia",
-        "rank": 9,
-        "prevRank": 6,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/economia"
-      },
-      {
-        "term": "licenciatura economia",
-        "rank": 22,
-        "prevRank": 3,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/economia"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 263,
@@ -12417,14 +12384,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "graduação humanos",
-        "rank": 8,
-        "prevRank": 11,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/gestao-e-desenvolvimento-de-recursos-humanos"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 266,
@@ -12525,8 +12485,8 @@
     "rankingsKeywords": [
       {
         "term": "licenciatura matemática",
-        "rank": 24,
-        "prevRank": 5,
+        "rank": 12,
+        "prevRank": 26,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/computacao-e-matematica-aplicada"
       }
     ]
@@ -12569,14 +12529,8 @@
     "rankingsKeywords": [
       {
         "term": "licenciatura civil",
-        "rank": 6,
-        "prevRank": 4,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil"
-      },
-      {
-        "term": "licenciatura engenharia civil",
         "rank": 7,
-        "prevRank": 4,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-civil"
       }
     ]
@@ -12711,7 +12665,20 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "faculdade ambiental",
+        "rank": 8,
+        "prevRank": 7,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-do-ambiente"
+      },
+      {
+        "term": "curso ambiente",
+        "rank": 13,
+        "prevRank": 10,
+        "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-do-ambiente"
+      }
+    ]
   },
   {
     "id": 271,
@@ -12784,7 +12751,7 @@
     "rankingsKeywords": [
       {
         "term": "curso eletrotecnica",
-        "rank": 9,
+        "rank": 11,
         "prevRank": 9,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-eletrotecnica-de-sistemas-de-energia"
       },
@@ -12796,20 +12763,20 @@
       },
       {
         "term": "licenciatura eletrotécnica",
-        "rank": 6,
-        "prevRank": 8,
+        "rank": 7,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-eletrotecnica-de-sistemas-de-energia"
       },
       {
         "term": "engenharia electrotécnica",
-        "rank": 21,
-        "prevRank": 17,
+        "rank": 15,
+        "prevRank": 15,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-eletrotecnica-de-sistemas-de-energia"
       },
       {
         "term": "engenharia eletrotécnica",
-        "rank": 13,
-        "prevRank": 16,
+        "rank": 14,
+        "prevRank": 13,
         "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-eletrotecnica-de-sistemas-de-energia"
       }
     ]
@@ -12910,14 +12877,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "licenciatura informatica",
-        "rank": 10,
-        "prevRank": 4,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/engenharia-informatica"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 274,
@@ -12979,20 +12939,7 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": [
-      {
-        "term": "curso psicologia",
-        "rank": 8,
-        "prevRank": 8,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/psicologia"
-      },
-      {
-        "term": "curso superior psicologia",
-        "rank": 24,
-        "prevRank": 8,
-        "url": "https://www.ulusofona.pt/porto/licenciaturas/psicologia"
-      }
-    ]
+    "rankingsKeywords": []
   },
   {
     "id": 275,
@@ -13164,20 +13111,26 @@
     "rankingsKeywords": [
       {
         "term": "mestrado comunicação",
-        "rank": 5,
-        "prevRank": 5,
+        "rank": 6,
+        "prevRank": 6,
+        "url": "https://www.ulusofona.pt/porto/mestrados/comunicacao-marketing-e-media-digitais"
+      },
+      {
+        "term": "mestrado marketing",
+        "rank": 12,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/porto/mestrados/comunicacao-marketing-e-media-digitais"
       },
       {
         "term": "mestrado publicidade",
-        "rank": 5,
-        "prevRank": 7,
+        "rank": 6,
+        "prevRank": 20,
         "url": "https://www.ulusofona.pt/porto/mestrados/comunicacao-marketing-e-media-digitais"
       },
       {
         "term": "mestrado ciencias comunicacao",
-        "rank": 16,
-        "prevRank": 15,
+        "rank": 15,
+        "prevRank": 16,
         "url": "https://www.ulusofona.pt/porto/mestrados/comunicacao-marketing-e-media-digitais"
       }
     ]
@@ -13274,19 +13227,19 @@
       {
         "term": "mestrado atividade fisica",
         "rank": 8,
-        "prevRank": 2,
+        "prevRank": 8,
         "url": "https://www.ulusofona.pt/porto/mestrados/exercicio-e-saude"
       },
       {
         "term": "mestrado exercicio",
-        "rank": 6,
-        "prevRank": 1,
+        "rank": 5,
+        "prevRank": 6,
         "url": "https://www.ulusofona.pt/porto/mestrados/exercicio-e-saude"
       },
       {
         "term": "mestrado exercício",
-        "rank": 4,
-        "prevRank": 6,
+        "rank": 5,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/porto/mestrados/exercicio-e-saude"
       }
     ]
@@ -13317,7 +13270,14 @@
         "high": 0.0
       }
     ],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "+mestrado +treino +desportivo",
+        "rank": 2,
+        "prevRank": 3,
+        "url": "https://www.ulusofona.pt/porto/mestrados/treino-desportivo-em-futebol"
+      }
+    ]
   },
   {
     "id": 285,
@@ -13348,8 +13308,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado direito penal",
-        "rank": 4,
-        "prevRank": 2,
+        "rank": 3,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/porto/mestrados/ciencias-juridico-criminais"
       }
     ]
@@ -13411,7 +13371,7 @@
     "rankingsKeywords": [
       {
         "term": "mestrado administração",
-        "rank": 27,
+        "rank": 20,
         "prevRank": 27,
         "url": "https://www.ulusofona.pt/porto/mestrados/gestao"
       }
@@ -13429,8 +13389,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado gestão social",
-        "rank": 3,
-        "prevRank": 5,
+        "rank": 5,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/porto/mestrados/gestao-de-organizacoes-da-economia-social"
       }
     ]
@@ -13464,8 +13424,8 @@
     "rankingsKeywords": [
       {
         "term": "mestrado rh",
-        "rank": 6,
-        "prevRank": 4,
+        "rank": 7,
+        "prevRank": 7,
         "url": "https://www.ulusofona.pt/porto/mestrados/gestao-de-recursos-humanos"
       }
     ]
@@ -13673,25 +13633,37 @@
       {
         "term": "mestrado psicologia clinica",
         "rank": 4,
-        "prevRank": 3,
+        "prevRank": 4,
+        "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude"
+      },
+      {
+        "term": "mestrado psicologia saude",
+        "rank": 8,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude"
       },
       {
         "term": "mestrado psicologia",
         "rank": 4,
-        "prevRank": 3,
+        "prevRank": 4,
         "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude"
       },
       {
         "term": "[mestrado psicologia clínica]",
         "rank": 5,
-        "prevRank": 3,
+        "prevRank": 6,
+        "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude"
+      },
+      {
+        "term": "[mestrado psicologia da saude]",
+        "rank": 9,
+        "prevRank": 9,
         "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude"
       },
       {
         "term": "[mestrado em psicologia clinica]",
-        "rank": 5,
-        "prevRank": 6,
+        "rank": 6,
+        "prevRank": 5,
         "url": "https://www.ulusofona.pt/porto/mestrados/psicologia-clinica-e-da-saude"
       }
     ]
@@ -13841,7 +13813,14 @@
     "url": "https://www.ulusofona.pt/porto/pos-graduacoes/informatica-e-sistemas-de-informacao",
     "gscKeywords": [],
     "adsKeywords": [],
-    "rankingsKeywords": []
+    "rankingsKeywords": [
+      {
+        "term": "graduação sistemas informação",
+        "rank": 5,
+        "prevRank": 18,
+        "url": "https://www.ulusofona.pt/porto/pos-graduacoes/informatica-e-sistemas-de-informacao"
+      }
+    ]
   },
   {
     "id": 310,
@@ -13877,8 +13856,8 @@
     "rankingsKeywords": [
       {
         "term": "curso ambiental",
-        "rank": 11,
-        "prevRank": 17,
+        "rank": 19,
+        "prevRank": 19,
         "url": "https://www.ulusofona.pt/porto/pos-graduacoes/sustentabilidade-ambiente-e-qualidade"
       },
       {
@@ -13889,8 +13868,8 @@
       },
       {
         "term": "curso sustentabilidade",
-        "rank": 11,
-        "prevRank": 16,
+        "rank": 24,
+        "prevRank": 11,
         "url": "https://www.ulusofona.pt/porto/pos-graduacoes/sustentabilidade-ambiente-e-qualidade"
       }
     ]
@@ -20069,8 +20048,8 @@
   },
   {
     "type": "metadata",
-    "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "25/05/2026, 02:08:17",
+    "last_sync_by": "Antigravity AI (Organic Sync)",
+    "last_sync_at": "25/05/2026, 10:29:39",
     "lastSync": "25/05/2026, 02:08:17",
     "totalAdsCourses": 231
   }
