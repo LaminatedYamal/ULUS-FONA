@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULUS-FONA | Footer Switcher & Logo Stripper</title>
+    <!-- Google Fonts Inter & Montserrat & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --accent-primary: #10b981; /* Emerald */
+            --accent-primary-glow: rgba(16, 185, 129, 0.2);
+            --accent-secondary: #3b82f6; /* Blue */
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --text-glow: #ffffff;
+            --font-ui: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 10% 20%, rgba(16, 185, 129, 0.1) 0px, transparent 50%),
+                radial-gradient(at 90% 80%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.004) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.004) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+            font-family: var(--font-ui);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            background: rgba(11, 15, 25, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        header .logo-glow {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-primary);
+            box-shadow: 0 0 12px var(--accent-primary);
+            animation: pulse 2s infinite;
+        }
+
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            background: linear-gradient(90deg, #ffffff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header .badge {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Container Layout */
+        main {
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 2rem;
+        }
+
+        /* Left Control Panel */
+        .panel-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Glassmorphic Card base */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Upload Zone */
+        .drop-zone {
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s, background-color 0.3s;
+            position: relative;
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .drop-zone.dragover {
+            border-color: var(--accent-primary);
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .drop-zone svg {
+            width: 48px;
+            height: 48px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .drop-zone:hover svg {
+            color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .drop-zone p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .drop-zone span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        /* Raw Textarea area */
+        .textarea-container {
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .html-textarea {
+            width: 100%;
+            height: 120px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-main);
+            resize: none;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .html-textarea:focus {
+            border-color: var(--accent-secondary);
+        }
+
+        /* Institution Selector Grid */
+        .institution-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .institution-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .institution-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .institution-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .institution-btn:hover::before {
+            opacity: 1;
+        }
+
+        .institution-btn.active {
+            border-color: var(--accent-primary);
+            background: rgba(16, 185, 129, 0.08);
+            box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+        }
+
+        .institution-btn .icon {
+            font-weight: 800;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            transition: all 0.3s;
+        }
+
+        .institution-btn.active .icon {
+            background: var(--accent-primary);
+            color: #0b0f19;
+            box-shadow: 0 0 8px var(--accent-primary);
+        }
+
+        .institution-btn .name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .institution-btn .desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            background: linear-gradient(135deg, var(--accent-primary), #059669);
+            color: #0b0f19;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px var(--accent-primary-glow);
+            position: relative;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(16, 185, 129, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        .action-btn:disabled {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--card-border);
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+            filter: none;
+        }
+
+        /* Assembly Line Diagnostics log output */
+        .diagnostics-log {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            max-height: 220px;
+            overflow-y: auto;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .log-entry {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .log-entry .timestamp {
+            color: rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .log-entry.info {
+            color: var(--text-muted);
+        }
+
+        .log-entry.success {
+            color: var(--accent-primary);
+        }
+
+        .log-entry.warning {
+            color: #f59e0b; /* Amber */
+        }
+
+        .log-entry.error {
+            color: #ef4444; /* Red */
+        }
+
+        /* Right Preview Area */
+        .panel-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            min-height: 500px;
+        }
+
+        .preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: var(--card-border);
+            color: var(--text-main);
+        }
+
+        .device-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .device-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-muted);
+            padding: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .device-btn.active, .device-btn:hover {
+            color: var(--text-main);
+            background: var(--card-border);
+        }
+
+        /* Preview Display Area */
+        .display-container {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 450px;
+        }
+
+        /* Sandbox Frame container */
+        .frame-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            transition: width 0.3s;
+        }
+
+        .frame-wrapper.desktop {
+            width: 100%;
+        }
+
+        .frame-wrapper.mobile {
+            width: 380px;
+            border-left: 1px solid var(--card-border);
+            border-right: 1px solid var(--card-border);
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+        }
+
+        /* Code Viewer container */
+        .code-wrapper {
+            width: 100%;
+            height: 100%;
+            display: none;
+            overflow: auto;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: #38bdf8; /* Light sky blue */
+            white-space: pre-wrap;
+            background: #090d16;
+            text-align: left;
+        }
+
+        /* Overlay Placeholder */
+        .empty-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-muted);
+            gap: 1rem;
+            padding: 3rem;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--card-bg);
+            z-index: 10;
+            backdrop-filter: blur(8px);
+        }
+
+        .empty-placeholder svg {
+            width: 64px;
+            height: 64px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Floating Glow decoration */
+        .floating-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 18px var(--accent-primary); }
+            100% { transform: scale(1); opacity: 0.8; }
+        }
+
+        /* Footer info */
+        footer.app-footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.2);
+            border-top: 1px solid var(--card-border);
+            margin-top: auto;
+        }
+
+        /* Scrollbar decoration */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-glow"></div>
+            <h1>ULUS-FONA | Footer Switcher</h1>
+        </div>
+        <div class="badge">V1.0.0 Stable</div>
+    </header>
+
+    <main>
+        <!-- Control Panel (Left) -->
+        <div class="panel-left">
+            
+            <!-- Upload Card -->
+            <div class="glass-card">
+                <div class="card-title">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                    1. Carregar Template
+                </div>
+                
+                <div class="drop-zone" id="drop-zone">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <p>Arraste o ficheiro .html aqui</p>
+                    <span>ou clique para selecionar do computador</span>
+                    <input type="file" id="file-input" class="file-input" accept=".html,.htm">
+                </div>
+
+                <div class="textarea-container">
+                    <textarea id="html-paste" class="html-textarea" placeholder="Ou cole o código HTML da newsletter diretamente aqui..."></textarea>
+                </div>
+            </div>
+
+            <!-- Institution Selector Card -->
+            <div class="glass-card">
+                <div class="card-title">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    2. Selecionar Rodapé
+                </div>
+
+                <div class="institution-grid">
+                    <div class="institution-btn active" data-institution="gaia">
+                        <div class="icon">G</div>
+                        <span class="name">ISLA Gaia</span>
+                        <span class="desc">Vila Nova de Gaia</span>
+                    </div>
+                    
+                    <div class="institution-btn" data-institution="santarem">
+                        <div class="icon">S</div>
+                        <span class="name">ISLA Santarém</span>
+                        <span class="desc">Santarém</span>
+                    </div>
+
+                    <div class="institution-btn" data-institution="ismat">
+                        <div class="icon">M</div>
+                        <span class="name">ISMAT</span>
+                        <span class="desc">Portimão</span>
+                    </div>
+
+                    <div class="institution-btn" data-institution="ipluso">
+                        <div class="icon">P</div>
+                        <span class="name">IPLUSO</span>
+                        <span class="desc">Lisboa</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Run Processing Card -->
+            <div class="glass-card">
+                <button id="process-btn" class="action-btn" disabled>
+                    <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    Processar e Converter
+                </button>
+            </div>
+
+            <!-- Diagnostics log area -->
+            <div class="glass-card">
+                <div class="card-title">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Assembly Line Diagnóstico
+                </div>
+                <div class="diagnostics-log" id="diagnostics-log">
+                    <div class="log-entry info">
+                        <span class="timestamp">[00:00:00]</span>
+                        <span>A aguardar carregamento de HTML...</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Output Preview Panel (Right) -->
+        <div class="panel-right glass-card">
+            
+            <div class="preview-header">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" id="tab-preview">Visualizar</button>
+                    <button class="tab-btn" id="tab-code">Código HTML</button>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <div class="device-toggle">
+                        <button class="device-btn active" id="device-desktop" title="Desktop View">
+                            <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        </button>
+                        <button class="device-btn" id="device-mobile" title="Mobile View">
+                            <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        </button>
+                    </div>
+
+                    <button id="download-btn" class="action-btn" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;" disabled>
+                        <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Descarregar HTML
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Display Frame container -->
+            <div class="display-container">
+                <div class="empty-placeholder" id="empty-placeholder">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    <h3>Nenhum ficheiro carregado</h3>
+                    <p style="font-size: 0.85rem; max-width: 320px;">Carregue um template de email na barra lateral e clique em "Processar" para ver o resultado aqui.</p>
+                </div>
+
+                <div class="frame-wrapper desktop" id="frame-wrapper">
+                    <iframe class="preview-iframe" id="preview-iframe" title="HTML Preview"></iframe>
+                </div>
+
+                <div class="code-wrapper" id="code-wrapper"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="app-footer">
+        ULUS-FONA Email Template Pipeline &copy; 2026. Made with ❤️ by Antigravity.
+    </footer>
+
+    <script>
+        // Footers configurations
+        const footers = {
+            gaia: {
+                title: 'ISLA Gaia',
+                address: 'Rua Diogo de Macedo, nº192 | 4400-107 Vila Nova de Gaia',
+                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Enviado por ISLA Gaia</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Rua Diogo de Macedo, nº192 | 4400-107 Vila Nova de Gaia</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a alt="clique aqui." href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="clique aqui."><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">clique aqui.</font></a></font><br></font></p>`
+            },
+            santarem: {
+                title: 'ISLA Santarém',
+                address: 'Largo Cândido dos Reis, 2000-241 Santarém | www.santarem.unisla.pt',
+                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Enviado por ISLA Santarém</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Largo Cândido dos Reis, 2000-241 Santarém | www.santarem.unisla.pt</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a alt="clique aqui." href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="clique aqui."><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">clique aqui.</font></a></font><br></font></p>`
+            },
+            ismat: {
+                title: 'ISMAT',
+                address: 'Rua Dr. Estêvão de Vasconcelos, nº 33, 8500-656 Portimão | www.ismat.pt',
+                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Enviado por ISMAT</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Rua Dr. Estêvão de Vasconcelos, nº 33, 8500-656 Portimão | www.ismat.pt</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a alt="clique aqui." href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="clique aqui."><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">clique aqui.</font></a></font><br></font></p>`
+            },
+            ipluso: {
+                title: 'IPLUSO',
+                address: 'Campo Grande 400, 1700-098, Lisboa - Portugal',
+                html: `<p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Enviado por <b>IPLUSO</b></font></span></p><p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Campo Grande 400, 1700-098, Lisboa - Portugal</font></span></p><p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><font style="color: #ffffff; font-size: 10pt; line-height: 11pt;" color="#ffffff"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a title="clique aqui." target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="http://$[LI:UNSUBSCRIBE]$" alt="clique aqui."><font style="color: #ffffff; line-height: 11pt;" color="#ffffff">clique aqui.</font></a></font><br></font></p>`
+            }
+        };
+
+        // App States
+        let uploadedFileName = 'template.html';
+        let rawHtmlContent = '';
+        let processedHtmlContent = '';
+        let currentInstitution = 'gaia';
+
+        // DOM Nodes
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const htmlPaste = document.getElementById('html-paste');
+        const processBtn = document.getElementById('process-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const diagnosticsLog = document.getElementById('diagnostics-log');
+        const emptyPlaceholder = document.getElementById('empty-placeholder');
+        const previewIframe = document.getElementById('preview-iframe');
+        const codeWrapper = document.getElementById('code-wrapper');
+        const frameWrapper = document.getElementById('frame-wrapper');
+        
+        // Tab elements
+        const tabPreview = document.getElementById('tab-preview');
+        const tabCode = document.getElementById('tab-code');
+        const deviceDesktop = document.getElementById('device-desktop');
+        const deviceMobile = document.getElementById('device-mobile');
+
+        // Setup drop zone click
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        // File Selection handling
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) handleFile(file);
+        });
+
+        // Drag & Drop handling
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file) handleFile(file);
+        });
+
+        // Paste area input handling
+        htmlPaste.addEventListener('input', () => {
+            if (htmlPaste.value.trim().length > 10) {
+                rawHtmlContent = htmlPaste.value;
+                uploadedFileName = 'pasted_template.html';
+                processBtn.disabled = false;
+                addLog('info', 'HTML colado detetado. Pronto a processar.');
+            } else {
+                processBtn.disabled = true;
+            }
+        });
+
+        function handleFile(file) {
+            uploadedFileName = file.name;
+            addLog('info', `Ficheiro detetado: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`);
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                rawHtmlContent = e.target.result;
+                htmlPaste.value = rawHtmlContent;
+                processBtn.disabled = false;
+                addLog('success', 'Ficheiro lido com sucesso.');
+            };
+            reader.readAsText(file);
+        }
+
+        // Institution selection UI
+        document.querySelectorAll('.institution-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.institution-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentInstitution = btn.dataset.institution;
+                addLog('info', `Rodapé selecionado: ${footers[currentInstitution].title}`);
+            });
+        });
+
+        // Process button handler
+        processBtn.addEventListener('click', () => {
+            if (!rawHtmlContent) return;
+            
+            addLog('info', 'A iniciar pipeline de conversão...');
+            
+            try {
+                const result = processHTML(rawHtmlContent, currentInstitution);
+                processedHtmlContent = result.html;
+                
+                // Show logs
+                result.logs.forEach(log => {
+                    addLog(log.status, log.message);
+                });
+                
+                // Display in iframe
+                const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+                doc.open();
+                doc.write(processedHtmlContent);
+                doc.close();
+
+                // Display in code wrapper
+                codeWrapper.textContent = processedHtmlContent;
+                
+                // Toggle view states
+                emptyPlaceholder.style.display = 'none';
+                downloadBtn.disabled = false;
+                
+                addLog('success', 'Pipeline de processamento concluído com sucesso!');
+            } catch (err) {
+                addLog('error', `Falha no processamento: ${err.message}`);
+                console.error(err);
+            }
+        });
+
+        // Download output file
+        downloadBtn.addEventListener('click', () => {
+            if (!processedHtmlContent) return;
+            
+            // Build file name
+            const dotIdx = uploadedFileName.lastIndexOf('.');
+            const nameWithoutExt = dotIdx !== -1 ? uploadedFileName.substring(0, dotIdx) : 'template';
+            const outputName = `${nameWithoutExt}_${currentInstitution}.html`;
+
+            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute('download', outputName);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            addLog('success', `Ficheiro descarregado: ${outputName}`);
+        });
+
+        // Tab selection UI
+        tabPreview.addEventListener('click', () => {
+            tabPreview.classList.add('active');
+            tabCode.classList.remove('active');
+            frameWrapper.style.display = 'flex';
+            codeWrapper.style.display = 'none';
+        });
+
+        tabCode.addEventListener('click', () => {
+            tabCode.classList.add('active');
+            tabPreview.classList.remove('active');
+            frameWrapper.style.display = 'none';
+            codeWrapper.style.display = 'block';
+        });
+
+        // Device toggle UI
+        deviceDesktop.addEventListener('click', () => {
+            deviceDesktop.classList.add('active');
+            deviceMobile.classList.remove('active');
+            frameWrapper.classList.remove('mobile');
+            frameWrapper.classList.add('desktop');
+        });
+
+        deviceMobile.addEventListener('click', () => {
+            deviceMobile.classList.add('active');
+            deviceDesktop.classList.remove('active');
+            frameWrapper.classList.remove('desktop');
+            frameWrapper.classList.add('mobile');
+        });
+
+        // Helper logger
+        function addLog(status, message) {
+            const time = new Date().toTimeString().split(' ')[0];
+            const logRow = document.createElement('div');
+            logRow.className = `log-entry ${status}`;
+            logRow.innerHTML = `<span class="timestamp">[${time}]</span><span>${escapeHtml(message)}</span>`;
+            diagnosticsLog.appendChild(logRow);
+            diagnosticsLog.scrollTop = diagnosticsLog.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // Logic processing engine
+        function processHTML(htmlText, institution) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+            const logs = [];
+            
+            logs.push({ status: 'info', message: 'A ler e analisar a estrutura DOM do documento...' });
+            
+            if (!doc.body || doc.body.innerHTML.trim() === '') {
+                throw new Error('O ficheiro inserido não contém um corpo HTML válido.');
+            }
+            logs.push({ status: 'success', message: 'Análise estrutural concluída.' });
+            
+            // 1. Remove Lusofona logo block row (elm_1753955813280)
+            const lusofonaLogo = doc.getElementById('elm_1753955813280');
+            if (lusofonaLogo) {
+                logs.push({ status: 'info', message: 'Bloco de Logotipo Lusófona detetado. A remover...' });
+                const tr = lusofonaLogo.closest('tr');
+                if (tr) {
+                    tr.remove();
+                    logs.push({ status: 'success', message: 'Linha correspondente ao Logotipo Lusófona removida do DOM.' });
+                } else {
+                    lusofonaLogo.remove();
+                    logs.push({ status: 'success', message: 'Elemento do Logotipo Lusófona removido.' });
+                }
+            } else {
+                logs.push({ status: 'info', message: 'Nenhum Logotipo Lusófona detetado na posição padrão. A ignorar.' });
+            }
+            
+            // 2. Locate footer block (elm_1753955915805)
+            const footerTd = doc.getElementById('elm_1753955915805');
+            let replaced = false;
+            const targetFooter = footers[institution];
+            
+            if (footerTd) {
+                logs.push({ status: 'info', message: 'Bloco do rodapé (elm_1753955915805) localizado.' });
+                
+                // Color formatting to solid black background
+                const outerDiv = footerTd.classList.contains('zpelement-wrapper') ? footerTd : footerTd.querySelector('.zpelement-wrapper');
+                const innerTable = footerTd.querySelector('table');
+                const innerTd = footerTd.querySelector('td.paddingcomp');
+                
+                if (outerDiv) outerDiv.style.backgroundColor = '#000000';
+                if (innerTable) {
+                    innerTable.style.backgroundColor = '#000000';
+                    innerTable.setAttribute('bgcolor', '#000000');
+                }
+                
+                // Style inner cells and replace paragraphs
+                const finalTd = innerTd || footerTd;
+                finalTd.style.backgroundColor = '#000000';
+                finalTd.setAttribute('bgcolor', '#000000');
+                finalTd.style.lineHeight = '11pt';
+                
+                const divWrapper = finalTd.querySelector('div');
+                if (divWrapper) {
+                    divWrapper.style.lineHeight = '11pt';
+                    divWrapper.innerHTML = `<span style="line-height: 11pt;">${targetFooter.html}</span>`;
+                } else {
+                    finalTd.innerHTML = `<div style="line-height: 11pt;"><span style="line-height: 11pt;">${targetFooter.html}</span></div>`;
+                }
+                replaced = true;
+                logs.push({ status: 'success', message: `Rodapé configurado para o tema preto e populado com os dados da instituição ${targetFooter.title}.` });
+            }
+            
+            if (!replaced) {
+                logs.push({ status: 'warning', message: 'ID do rodapé (elm_1753955915805) não encontrado. A usar o mecanismo de inserção automática no final da tabela principal.' });
+                
+                const mainTable = doc.querySelector('table');
+                if (mainTable) {
+                    const tbody = mainTable.querySelector('tbody') || mainTable;
+                    const newRow = doc.createElement('tr');
+                    newRow.innerHTML = `
+                        <td class="txtsize" id="elm_1753955915805" style="border:0px;padding:0px 0px;border-collapse:collapse;" valign="top">
+                            <div class="zpelement-wrapper" id="elm_1753955915805" style=";word-wrap:break-word;overflow:hidden;padding-right:0px;background-color:#000000;">
+                                <table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" class="zpAlignPos" style="font-size:12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:#000000;" width="100%">
+                                    <tbody><tr><td class="paddingcomp" bgcolor="#000000" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:11pt;border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:#000000;">
+                                        <div style="line-height: 11pt;"><span style="line-height: 11pt;">${targetFooter.html}</span></div>
+                                    </td></tr></tbody>
+                                </table>
+                            </div>
+                        </td>
+                    `;
+                    tbody.appendChild(newRow);
+                    logs.push({ status: 'success', message: 'Tabela de rodapé genérica inserida ao final da tabela.' });
+                } else {
+                    const fallbackDiv = doc.createElement('div');
+                    fallbackDiv.style.backgroundColor = '#000000';
+                    fallbackDiv.style.padding = '20px';
+                    fallbackDiv.innerHTML = targetFooter.html;
+                    doc.body.appendChild(fallbackDiv);
+                    logs.push({ status: 'success', message: 'Rodapé genérico adicionado ao final do body.' });
+                }
+            }
+            
+            // Re-serialize back to output HTML string
+            let doctypeString = '';
+            if (doc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(doc.doctype) + '\n';
+            }
+            const finalHtml = doctypeString + doc.documentElement.outerHTML;
+            
+            return {
+                html: finalHtml,
+                logs: logs
+            };
+        }
+    </script>
+</body>
+</html>
