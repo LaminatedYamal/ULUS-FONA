@@ -100,12 +100,12 @@
         /* Container Layout */
         main {
             flex: 1;
-            max-width: 1500px;
+            max-width: 1600px;
             width: 100%;
             margin: 2rem auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: 420px 1fr;
+            grid-template-columns: 440px 1fr;
             gap: 2rem;
         }
 
@@ -218,6 +218,11 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0.75rem;
+        }
+
+        /* Center-align last button when odd */
+        .institution-grid > *:last-child:nth-child(odd) {
+            grid-column: span 2;
         }
 
         .institution-btn {
@@ -707,6 +712,77 @@
             border-top: 1px solid var(--card-border);
             margin-top: auto;
         }
+
+        /* Color Picker & Advanced editing modal styles */
+        .color-picker-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .color-input-hex {
+            width: 100px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            padding: 0.35rem 0.5rem;
+            color: var(--text-main);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            outline: none;
+        }
+
+        .color-input-hex:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .color-picker-preview {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            cursor: pointer;
+            background: none;
+            padding: 0;
+        }
+
+        .color-picker-preview::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        .color-picker-preview::-webkit-color-swatch {
+            border: none;
+            border-radius: 5px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: var(--card-border);
+            margin: 0.75rem 0;
+        }
+
+        .toggle-raw-html-btn {
+            background: transparent;
+            border: 1px dashed var(--card-border);
+            color: var(--text-muted);
+            padding: 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .toggle-raw-html-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -774,6 +850,12 @@
                         <div class="icon">P</div>
                         <span class="name">IPLUSO</span>
                         <span class="desc">Lisboa</span>
+                    </div>
+
+                    <div class="institution-btn" data-institution="lusofona">
+                        <div class="icon">UL</div>
+                        <span class="name">U. Lusófona</span>
+                        <span class="desc">Lisboa / Porto</span>
                     </div>
                 </div>
             </div>
@@ -898,6 +980,11 @@
                 title: 'IPLUSO',
                 address: 'Campo Grande 400, 1700-098, Lisboa - Portugal',
                 html: `<p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Enviado por <b>IPLUSO</b></font></span></p><p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Campo Grande 400, 1700-098, Lisboa - Portugal</font></span></p><p style="line-height: 11pt; text-align: center; margin: 0; color: #ffffff;" align="center"><font style="color: #ffffff; font-size: 10pt; line-height: 11pt;" color="#ffffff"><font face="Montserrat, helvetica, arial, sans-serif">Se deseja não receber mais mensagens como esta, <a title="clique aqui." target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="http://$[LI:UNSUBSCRIBE]$" alt="clique aqui."><font style="color: #ffffff; line-height: 11pt;" color="#ffffff">clique aqui.</font></a></font><br></font></p>`
+            },
+            lusofona: {
+                title: 'Universidade Lusófona',
+                address: 'Lisboa & Porto',
+                html: `<p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><b style="">Enviado por Universidade Lusófona</b></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><span style="line-height: 13pt;">Campo Grande, 376<br>1749-024 Lisboa - Portugal</span></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><span style="line-height: 13pt;">Rua Augusto Rosa, nº 24<br>4000-098 Porto - Portugal</span><br></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif"><font style="font-size: 9pt; line-height: 13pt;" color="#ffffff">Se deseja não receber mais mensagens como esta, <a title="clique aqui" target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="http://$[LI:UNSUBSCRIBE]$" alt="clique aqui"><font style="color:#ffffff;" color="#ffffff">clique aqui</font></a>.</font><br></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="line-height: 13pt;"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff">Consulte a nossa <a title="política de privacidade" target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="https://www.ensinolusofona.pt/pt/politica-de-privacidade" alt="política de privacidade"><font style="color:#ffffff;" color="#ffffff">política de privacidade</font></a>.</font></font></p>`
             }
         };
 
@@ -998,6 +1085,13 @@
                 btn.classList.add('active');
                 currentInstitution = btn.dataset.institution;
                 addLog('info', `Rodapé selecionado: ${footers[currentInstitution].title}`);
+                
+                // If we already parsed and loaded a document, re-process on footer change!
+                if (parsedDoc) {
+                    addLog('info', `A atualizar rodapé para ${footers[currentInstitution].title}...`);
+                    runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                    updateFromDOM();
+                }
             });
         });
 
@@ -1022,7 +1116,11 @@
                 emptyPlaceholder.style.display = 'none';
                 downloadBtn.disabled = false;
                 
-                addLog('success', 'Pipeline de processamento concluído com sucesso! Pode reordenar e editar blocos.');
+                addLog('success', `Pipeline concluído! ${blocks.length} blocos detetados.`);
+                
+                // AUTOMATICALLY SWITCH TAB TO EDITOR TO SHOW USER EDIT BLOCKS
+                showTab('editor');
+                addLog('info', 'A redirecionar automaticamente para a vista "Editor de Blocos".');
             } catch (err) {
                 addLog('error', `Falha no processamento: ${err.message}`);
                 console.error(err);
@@ -1048,20 +1146,112 @@
                 .replace(/'/g, "&#039;");
         }
 
-        // Parse DOM rows into blocks
+        // Parse DOM rows into blocks robustly
         function syncBlocksFromDOM() {
             if (!parsedDoc) return;
             
-            // Find all template rows (TR elements that contain td.txtsize as direct cells)
-            const trs = Array.from(parsedDoc.querySelectorAll('tr')).filter(tr => {
-                return Array.from(tr.children).some(cell => cell.tagName === 'TD' && cell.classList.contains('txtsize'));
+            // Find top-level blocks.
+            // A top-level block is a .zpelement-wrapper or id="elm_..." that is not nested inside another block container
+            const allBlocks = [];
+            const processed = new Set();
+            
+            const selectors = parsedDoc.querySelectorAll('.zpelement-wrapper, [id^="elm_"]');
+            selectors.forEach(el => {
+                let parent = el.parentElement;
+                let isNested = false;
+                while (parent) {
+                    if (parent.classList.contains('zpelement-wrapper') || (parent.id && parent.id.startsWith('elm_') && parent !== el)) {
+                        isNested = true;
+                        break;
+                    }
+                    parent = parent.parentElement;
+                }
+                if (!isNested && !processed.has(el)) {
+                    allBlocks.push(el);
+                    processed.add(el);
+                }
             });
             
-            blocks = trs.map((tr) => {
-                const td = tr.querySelector('td.txtsize');
-                const id = td ? td.id : '';
-                const wrapper = tr.querySelector('.zpelement-wrapper');
+            // Fallback 1: If no Zoho-specific blocks are found, search for top-level table rows in the main table
+            if (allBlocks.length === 0) {
+                const tables = parsedDoc.querySelectorAll('table');
+                let mainTable = null;
+                tables.forEach(tbl => {
+                    let parent = tbl.parentElement;
+                    let isNestedTbl = false;
+                    while (parent) {
+                        if (parent.tagName === 'TABLE') {
+                            isNestedTbl = true;
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
+                    if (!isNestedTbl) {
+                        mainTable = tbl;
+                    }
+                });
                 
+                if (mainTable) {
+                    const trsList = mainTable.querySelectorAll('tr');
+                    trsList.forEach(tr => {
+                        let parent = tr.parentElement;
+                        let isNestedTr = false;
+                        while (parent && parent !== mainTable) {
+                            if (parent.tagName === 'TR') {
+                                isNestedTr = true;
+                                break;
+                            }
+                            parent = parent.parentElement;
+                        }
+                        if (!isNestedTr && !processed.has(tr)) {
+                            allBlocks.push(tr);
+                            processed.add(tr);
+                        }
+                    });
+                }
+            }
+            
+            // Fallback 2: Absolute fallback, treat direct children of body as blocks
+            if (allBlocks.length === 0 && parsedDoc.body) {
+                Array.from(parsedDoc.body.children).forEach(el => {
+                    const tag = el.tagName;
+                    if (tag !== 'SCRIPT' && tag !== 'STYLE' && tag !== 'NOSCRIPT' && !processed.has(el)) {
+                        allBlocks.push(el);
+                        processed.add(el);
+                    }
+                });
+            }
+            
+            // Map blocks to closest TR containing them to ensure safe table structural moves
+            const blockMappings = [];
+            const trProcessed = new Set();
+            
+            allBlocks.forEach(el => {
+                const tr = el.closest('tr');
+                if (tr) {
+                    if (!trProcessed.has(tr)) {
+                        blockMappings.push({ el: el, container: tr, isTr: true });
+                        trProcessed.add(tr);
+                    }
+                } else {
+                    blockMappings.push({ el: el, container: el, isTr: false });
+                }
+            });
+            
+            blocks = blockMappings.map((item) => {
+                const container = item.container;
+                const el = item.el;
+                
+                // Resolve the actual wrapper element for type checking if this is a container td
+                let targetEl = el;
+                if (!el.classList.contains('zpelement-wrapper')) {
+                    const wrapperChild = el.querySelector('.zpelement-wrapper');
+                    if (wrapperChild) {
+                        targetEl = wrapperChild;
+                    }
+                }
+                
+                const id = el.id || targetEl.id || '';
                 let type = 'text';
                 let typeLabel = 'Bloco Texto';
                 let detail = '';
@@ -1078,27 +1268,38 @@
                     type = 'logo';
                     typeLabel = 'Logo Lusófona';
                     detail = 'Universidade';
-                } else if (wrapper) {
-                    if (wrapper.classList.contains('divider')) {
+                } else {
+                    if (targetEl.classList.contains('divider')) {
                         type = 'divider';
                         typeLabel = 'Separador';
-                    } else if (wrapper.classList.contains('spacebar')) {
+                    } else if (targetEl.classList.contains('spacebar')) {
                         type = 'spacebar';
                         typeLabel = 'Espaço';
-                    } else if (wrapper.classList.contains('image')) {
+                    } else if (targetEl.classList.contains('image')) {
                         type = 'image';
                         typeLabel = 'Imagem';
-                        const img = wrapper.querySelector('img');
+                        const img = targetEl.querySelector('img');
                         detail = img ? img.src.substring(img.src.lastIndexOf('/') + 1) : '';
-                    } else if (wrapper.classList.contains('zpcol-layout')) {
+                    } else if (targetEl.classList.contains('zpcol-layout')) {
                         type = 'layout';
                         typeLabel = 'Grelha Colunas';
+                    } else {
+                        // Generic checks for non-Zoho templates
+                        const img = targetEl.querySelector('img');
+                        if (img && targetEl.textContent.trim().length < 50) {
+                            type = 'image';
+                            typeLabel = 'Imagem';
+                            detail = img.src.substring(img.src.lastIndexOf('/') + 1);
+                        } else if (targetEl.tagName === 'HR') {
+                            type = 'divider';
+                            typeLabel = 'Separador';
+                        }
                     }
                 }
                 
                 let textPreview = '';
                 if (type === 'text' || type === 'footer') {
-                    textPreview = tr.textContent.trim().replace(/\s+/g, ' ').substring(0, 80);
+                    textPreview = container.textContent.trim().replace(/\s+/g, ' ').substring(0, 80);
                 } else if (type === 'image') {
                     textPreview = detail || 'URL Imagem';
                 } else {
@@ -1106,12 +1307,12 @@
                 }
                 
                 return {
-                    element: tr,
+                    element: container,
                     type: type,
                     typeLabel: typeLabel,
                     id: id,
                     detail: detail,
-                    textPreview: textPreview
+                    textPreview: textPreview || 'Sem texto no bloco'
                 };
             });
         }
@@ -1144,7 +1345,7 @@
             blockListWrapper.innerHTML = '';
             
             if (blocks.length === 0) {
-                blockListWrapper.innerHTML = '<div style="text-align: center; color: var(--text-muted);">Nenhum bloco detetado.</div>';
+                blockListWrapper.innerHTML = '<div style="text-align: center; padding: 3rem; color: var(--text-muted);">Nenhum bloco detetado no documento.</div>';
                 return;
             }
             
@@ -1152,11 +1353,9 @@
                 const card = document.createElement('div');
                 card.className = `block-card ${block.type}`;
                 
-                // Drag handle or Up/Down controls
                 const upBtnDisabled = index === 0 ? 'disabled' : '';
                 const downBtnDisabled = index === blocks.length - 1 ? 'disabled' : '';
                 
-                // Build text editors condition
                 const hasEditableText = block.type === 'text' || block.type === 'footer';
                 const editBtnHtml = hasEditableText ? `
                     <button class="control-btn" onclick="openBlockTextEditor(${index})" title="Editar Texto">
@@ -1212,6 +1411,75 @@
             updateFromDOM();
         };
 
+        // Helpers for Color Parsing and Manipulation
+        function parseColorToHex(colorStr) {
+            if (!colorStr) return '#FFFFFF';
+            colorStr = colorStr.trim().toLowerCase();
+            if (colorStr.startsWith('#')) {
+                if (colorStr.length === 4) {
+                    return '#' + colorStr[1] + colorStr[1] + colorStr[2] + colorStr[2] + colorStr[3] + colorStr[3];
+                }
+                return colorStr.toUpperCase();
+            }
+            if (colorStr.startsWith('rgb')) {
+                const match = colorStr.match(/\d+/g);
+                if (match && match.length >= 3) {
+                    const r = parseInt(match[0]).toString(16).padStart(2, '0');
+                    const g = parseInt(match[1]).toString(16).padStart(2, '0');
+                    const b = parseInt(match[2]).toString(16).padStart(2, '0');
+                    return `#${r}${g}${b}`.toUpperCase();
+                }
+            }
+            const keywords = {
+                black: '#000000', white: '#FFFFFF', red: '#FF0000', green: '#00FF00',
+                blue: '#0000FF', yellow: '#FFFF00', gray: '#808080', grey: '#808080',
+                transparent: '#FFFFFF'
+            };
+            if (keywords[colorStr]) return keywords[colorStr];
+            return '#FFFFFF';
+        }
+
+        function getElementColor(el) {
+            let current = el;
+            while (current && current.tagName !== 'TR') {
+                if (current.style && current.style.color) {
+                    return parseColorToHex(current.style.color);
+                }
+                if (current.getAttribute && current.getAttribute('color')) {
+                    return parseColorToHex(current.getAttribute('color'));
+                }
+                current = current.parentElement;
+            }
+            return '#333333'; // Default content text color fallback
+        }
+
+        function getBlockBgColor(tr) {
+            if (tr.style && tr.style.backgroundColor) {
+                return parseColorToHex(tr.style.backgroundColor);
+            }
+            const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
+            for (let target of targets) {
+                if (target.style && target.style.backgroundColor) {
+                    return parseColorToHex(target.style.backgroundColor);
+                }
+                if (target.getAttribute && target.getAttribute('bgcolor')) {
+                    return parseColorToHex(target.getAttribute('bgcolor'));
+                }
+            }
+            return '#FFFFFF'; // Default container bg color
+        }
+
+        function setBlockBgColor(tr, hexColor) {
+            tr.style.backgroundColor = hexColor;
+            const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
+            targets.forEach(target => {
+                target.style.backgroundColor = hexColor;
+                if (target.tagName === 'TD' || target.tagName === 'TABLE') {
+                    target.setAttribute('bgcolor', hexColor);
+                }
+            });
+        }
+
         // Modal editor
         window.openBlockTextEditor = function(index) {
             activeEditBlockIndex = index;
@@ -1220,43 +1488,124 @@
             
             modalInputsList.innerHTML = '';
             
-            // Gather all text elements inside the row (p, span, font, a, td) that have text
+            // 1. Get and render block background color controls
+            const currentBg = getBlockBgColor(tr);
+            const bgField = document.createElement('div');
+            bgField.className = 'edit-field';
+            bgField.innerHTML = `
+                <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Cor de Fundo do Bloco</label>
+                <div class="color-picker-container">
+                    <input type="color" class="color-picker-preview" id="block-bg-picker" value="${currentBg}">
+                    <input type="text" class="color-input-hex" id="block-bg-hex" value="${currentBg}" maxlength="7">
+                    <span style="font-size: 0.75rem; color: var(--text-muted);">Altera a cor de fundo de todo o bloco</span>
+                </div>
+            `;
+            modalInputsList.appendChild(bgField);
+            
+            const bgPicker = bgField.querySelector('#block-bg-picker');
+            const bgHex = bgField.querySelector('#block-bg-hex');
+            bgPicker.addEventListener('input', (e) => {
+                bgHex.value = e.target.value.toUpperCase();
+            });
+            bgHex.addEventListener('input', (e) => {
+                if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                    bgPicker.value = e.target.value;
+                }
+            });
+            
+            // Separator
+            const divider = document.createElement('div');
+            divider.className = 'section-divider';
+            modalInputsList.appendChild(divider);
+            
+            // 2. Find and edit text elements
             const textContainers = Array.from(tr.querySelectorAll('p, span, font, a')).filter(el => {
                 return Array.from(el.childNodes).some(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
             });
             
             if (textContainers.length === 0) {
-                // Let them edit innerHTML directly if no subelements
                 const divField = document.createElement('div');
                 divField.className = 'edit-field';
                 divField.innerHTML = `
-                    <label>Conteúdo HTML do Bloco</label>
+                    <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.8rem;">Conteúdo HTML do Bloco</label>
                     <textarea id="edit-raw-html" style="height: 160px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
                 `;
                 modalInputsList.appendChild(divField);
             } else {
                 textContainers.forEach((el, idx) => {
-                    // Extract only text node content
                     const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
                     const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
+                    const currentColor = getElementColor(el);
                     
                     const field = document.createElement('div');
                     field.className = 'edit-field';
+                    field.style.border = '1px solid var(--card-border)';
+                    field.style.borderRadius = '10px';
+                    field.style.padding = '0.75rem';
+                    field.style.background = 'rgba(255,255,255,0.01)';
                     
-                    // Label helper
                     const tagName = el.tagName.toLowerCase();
                     const labelText = `Elemento &lt;${tagName}&gt; #${idx + 1}`;
                     
                     field.innerHTML = `
-                        <label>${labelText}</label>
-                        <textarea class="modal-text-input" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                        <label style="color: var(--accent-secondary); font-weight: 700; display: flex; justify-content: space-between;">
+                            <span>${labelText}</span>
+                        </label>
+                        <textarea class="modal-text-input" style="margin-top: 0.5rem; height: 60px;" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                        
+                        <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
+                            <div class="color-picker-container" style="margin-top: 0;">
+                                <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
+                                <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
+                            </div>
+                        </div>
                     `;
                     
-                    // Link elements to DOM nodes using attributes/expando properties
-                    field.querySelector('textarea')._targetElement = el;
-                    field.querySelector('textarea')._textNode = textNode;
+                    const txtArea = field.querySelector('textarea');
+                    txtArea._targetElement = el;
+                    txtArea._textNode = textNode;
+                    
+                    const picker = field.querySelector('.text-color-picker');
+                    const hex = field.querySelector('.text-color-hex');
+                    
+                    picker.addEventListener('input', (e) => {
+                        hex.value = e.target.value.toUpperCase();
+                    });
+                    hex.addEventListener('input', (e) => {
+                        if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                            picker.value = e.target.value;
+                        }
+                    });
                     
                     modalInputsList.appendChild(field);
+                });
+                
+                // Expander for Raw HTML at the bottom
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toggle-raw-html-btn';
+                toggleBtn.type = 'button';
+                toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                modalInputsList.appendChild(toggleBtn);
+                
+                const rawHtmlField = document.createElement('div');
+                rawHtmlField.className = 'edit-field';
+                rawHtmlField.style.display = 'none';
+                rawHtmlField.style.marginTop = '0.5rem';
+                rawHtmlField.innerHTML = `
+                    <label style="font-size: 0.75rem; color: var(--text-muted);">Código HTML de Fundo (Avançado)</label>
+                    <textarea id="edit-raw-html" style="height: 120px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(rawHtmlField);
+                
+                toggleBtn.addEventListener('click', () => {
+                    if (rawHtmlField.style.display === 'none') {
+                        rawHtmlField.style.display = 'flex';
+                        toggleBtn.textContent = 'Ocultar Editor de Código HTML de Fundo';
+                    } else {
+                        rawHtmlField.style.display = 'none';
+                        toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                    }
                 });
             }
             
@@ -1276,34 +1625,49 @@
         modalSaveBtn.addEventListener('click', () => {
             if (activeEditBlockIndex === -1) return;
             
-            const rawHtmlArea = document.getElementById('edit-raw-html');
+            const tr = blocks[activeEditBlockIndex].element;
             
-            if (rawHtmlArea) {
-                // Direct HTML rewrite
-                blocks[activeEditBlockIndex].element.innerHTML = rawHtmlArea.value;
+            // 1. Save Block background color
+            const bgHex = document.getElementById('block-bg-hex');
+            if (bgHex && bgHex.value) {
+                setBlockBgColor(tr, bgHex.value);
+            }
+            
+            // 2. Save text content and colors
+            const rawHtmlArea = document.getElementById('edit-raw-html');
+            const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
+            
+            if (isRawHtmlVisible) {
+                tr.innerHTML = rawHtmlArea.value;
             } else {
-                // Text elements rewrite
                 const inputs = modalInputsList.querySelectorAll('.modal-text-input');
                 inputs.forEach(input => {
                     const el = input._targetElement;
                     const node = input._textNode;
+                    
+                    // Update text node content
                     if (node) {
                         node.textContent = input.value;
                     } else if (el) {
                         el.textContent = input.value;
                     }
+                    
+                    // Update text element color
+                    const idx = input.dataset.index;
+                    const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
+                    if (el && hexInput && hexInput.value) {
+                        el.style.color = hexInput.value;
+                    }
                 });
             }
             
-            addLog('success', `Texto do bloco ${activeEditBlockIndex + 1} atualizado.`);
+            addLog('success', `Alterações de texto, cores e fundo no bloco ${activeEditBlockIndex + 1} guardadas.`);
             closeModal();
             updateFromDOM();
         });
 
         // Run Footer Substitution logic directly on DOM tree
         function runFooterReplacementOnDOM(doc, institution) {
-            logs = [];
-            
             // 1. Remove Lusofona logo block row (elm_1753955813280)
             const lusofonaLogo = doc.getElementById('elm_1753955813280');
             if (lusofonaLogo) {
@@ -1335,14 +1699,17 @@
                 const finalTd = innerTd || footerTd;
                 finalTd.style.backgroundColor = '#000000';
                 finalTd.setAttribute('bgcolor', '#000000');
-                finalTd.style.lineHeight = '11pt';
+                
+                // Force line height to 13pt for U. Lusófona, 11pt for others
+                const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
+                finalTd.style.lineHeight = heightVal;
                 
                 const divWrapper = finalTd.querySelector('div');
                 if (divWrapper) {
-                    divWrapper.style.lineHeight = '11pt';
-                    divWrapper.innerHTML = `<span style="line-height: 11pt;">${targetFooter.html}</span>`;
+                    divWrapper.style.lineHeight = heightVal;
+                    divWrapper.innerHTML = `<span style="line-height: ${heightVal};">${targetFooter.html}</span>`;
                 } else {
-                    finalTd.innerHTML = `<div style="line-height: 11pt;"><span style="line-height: 11pt;">${targetFooter.html}</span></div>`;
+                    finalTd.innerHTML = `<div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>`;
                 }
                 replaced = true;
                 addLog('success', `Substituição do rodapé (${targetFooter.title}) efetuada.`);
@@ -1354,12 +1721,13 @@
                 if (mainTable) {
                     const tbody = mainTable.querySelector('tbody') || mainTable;
                     const newRow = doc.createElement('tr');
+                    const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
                     newRow.innerHTML = `
                         <td class="txtsize" id="elm_1753955915805" style="border:0px;padding:0px 0px;border-collapse:collapse;" valign="top">
                             <div class="zpelement-wrapper" id="elm_1753955915805" style=";word-wrap:break-word;overflow:hidden;padding-right:0px;background-color:#000000;">
                                 <table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" class="zpAlignPos" style="font-size:12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:#000000;" width="100%">
-                                    <tbody><tr><td class="paddingcomp" bgcolor="#000000" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:11pt;border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:#000000;">
-                                        <div style="line-height: 11pt;"><span style="line-height: 11pt;">${targetFooter.html}</span></div>
+                                    <tbody><tr><td class="paddingcomp" bgcolor="#000000" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:${heightVal};border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:#000000;">
+                                        <div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>
                                     </td></tr></tbody>
                                 </table>
                             </div>
@@ -1370,54 +1738,31 @@
             }
         }
 
-        // Download output file
-        downloadBtn.addEventListener('click', () => {
-            if (!processedHtmlContent) return;
-            
-            const dotIdx = uploadedFileName.lastIndexOf('.');
-            const nameWithoutExt = dotIdx !== -1 ? uploadedFileName.substring(0, dotIdx) : 'template';
-            const outputName = `${nameWithoutExt}_${currentInstitution}.html`;
-
-            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.setAttribute('download', outputName);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            addLog('success', `Download do ficheiro concluído: ${outputName}`);
-        });
-
-        // Tab selection UI
-        tabPreview.addEventListener('click', () => {
-            tabPreview.classList.add('active');
+        // Tab selection wrapper
+        function showTab(tabId) {
+            tabPreview.classList.remove('active');
             tabEditor.classList.remove('active');
             tabCode.classList.remove('active');
             
-            frameWrapper.style.display = 'flex';
-            blockListWrapper.style.display = 'none';
-            codeWrapper.style.display = 'none';
-        });
-
-        tabEditor.addEventListener('click', () => {
-            tabEditor.classList.add('active');
-            tabPreview.classList.remove('active');
-            tabCode.classList.remove('active');
-            
-            frameWrapper.style.display = 'none';
-            blockListWrapper.style.display = 'flex';
-            codeWrapper.style.display = 'none';
-        });
-
-        tabCode.addEventListener('click', () => {
-            tabCode.classList.add('active');
-            tabPreview.classList.remove('active');
-            tabEditor.classList.remove('active');
-            
             frameWrapper.style.display = 'none';
             blockListWrapper.style.display = 'none';
-            codeWrapper.style.display = 'block';
-        });
+            codeWrapper.style.display = 'none';
+
+            if (tabId === 'preview') {
+                tabPreview.classList.add('active');
+                frameWrapper.style.display = 'flex';
+            } else if (tabId === 'editor') {
+                tabEditor.classList.add('active');
+                blockListWrapper.style.display = 'flex';
+            } else if (tabId === 'code') {
+                tabCode.classList.add('active');
+                codeWrapper.style.display = 'block';
+            }
+        }
+
+        tabPreview.addEventListener('click', () => showTab('preview'));
+        tabEditor.addEventListener('click', () => showTab('editor'));
+        tabCode.addEventListener('click', () => showTab('code'));
 
         // Device toggle UI
         deviceDesktop.addEventListener('click', () => {
