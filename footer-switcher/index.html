@@ -1573,10 +1573,22 @@
             divider.className = 'section-divider';
             modalInputsList.appendChild(divider);
             
-            // 2. Find and edit text elements
-            const textContainers = Array.from(tr.querySelectorAll('p, span, font, a')).filter(el => {
-                return Array.from(el.childNodes).some(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
-            });
+            // 2. Find and edit text elements recursively to support bold, italic, and nested structures
+            const textContainers = [];
+            function findTextContainers(node) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    const hasDirectText = Array.from(node.childNodes).some(
+                        child => child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== ''
+                    );
+                    const editableTags = ['p', 'span', 'font', 'a', 'b', 'strong', 'i', 'em', 'h1', 'h2', 'h3', 'h4', 'td', 'div'];
+                    const tagName = node.tagName.toLowerCase();
+                    if (hasDirectText && editableTags.includes(tagName)) {
+                        textContainers.push(node);
+                    }
+                    Array.from(node.children).forEach(findTextContainers);
+                }
+            }
+            findTextContainers(tr);
             
             if (textContainers.length === 0) {
                 const divField = document.createElement('div');
