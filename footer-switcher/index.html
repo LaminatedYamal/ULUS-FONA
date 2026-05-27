@@ -1238,9 +1238,12 @@
                 }
             });
             
-            blocks = blockMappings.map((item) => {
+            blocks = blockMappings.map((item, index) => {
                 const container = item.container;
                 const el = item.el;
+                
+                // Assign index attribute to parsed DOM element so we can locate it when clicked in the iframe
+                container.setAttribute('data-block-index', index);
                 
                 // Resolve the actual wrapper element for type checking if this is a container td
                 let targetEl = el;
@@ -1337,16 +1340,16 @@
             // Inject custom hover outlines and tooltips for inline click-to-edit interaction
             const iframeStyle = doc.createElement('style');
             iframeStyle.textContent = `
-                .zpelement-wrapper:hover, [id^="elm_"]:hover {
+                [data-block-index]:hover {
                     outline: 2px dashed #10b981 !important;
-                    outline-offset: 2px;
+                    outline-offset: -2px;
                     cursor: pointer !important;
                     position: relative;
                 }
-                .zpelement-wrapper:hover::after, [id^="elm_"]:hover::after {
+                [data-block-index]:hover::after {
                     content: "Clique para Editar";
                     position: absolute;
-                    top: -24px;
+                    top: 4px;
                     right: 4px;
                     background: #10b981;
                     color: #0b0f19;
@@ -1366,24 +1369,13 @@
             // Bind click event inside iframe to open editing modal
             doc.addEventListener('click', (e) => {
                 let target = e.target;
-                let blockEl = null;
+                const blockContainer = target.closest('[data-block-index]');
                 
-                // Traverse up to find closest block wrapper or element ID
-                while (target && target.tagName !== 'BODY') {
-                    if (target.classList.contains('zpelement-wrapper') || (target.id && target.id.startsWith('elm_'))) {
-                        blockEl = target;
-                        break;
-                    }
-                    target = target.parentElement;
-                }
-                
-                if (blockEl) {
-                    const tr = blockEl.closest('tr') || blockEl;
-                    const index = blocks.findIndex(b => b.element === tr || b.element === blockEl);
-                    if (index !== -1) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        // Open the visual modal editor
+                if (blockContainer) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const index = parseInt(blockContainer.getAttribute('data-block-index'));
+                    if (!isNaN(index) && index >= 0 && index < blocks.length) {
                         openBlockTextEditor(index);
                     }
                 }
