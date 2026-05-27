@@ -3855,6 +3855,88 @@
     "lastUpdated": "",
     "lastSynced": ""
   },
+  "Ensino De Artes Visuais No 3O Ciclo Do Ensino Basico E No Ensino Secundario": {
+    "id": 89,
+    "institution": "Lusófona Lisboa",
+    "degree": "Mestrados",
+    "degree_type": "Mestrado",
+    "status": "PAUSED",
+    "headlines": [
+      "Mestrado Ensino Artes Visuais",
+      "Bolsas Artes Mestrado Lusófona",
+      "Formação Professores Artes",
+      "Candidatura mestrado artes",
+      "Lusófona Mestrado Artes Lisboa",
+      "Universidade Lusófona Mestrado",
+      "Estudar Ensino Artes Mestrado",
+      "Centro Universitário Lisboa",
+      "Curso Didática ensino e artes",
+      "Pedagogia e artes visuais"
+    ],
+    "descriptions": [
+      "Conteúdos pedagógicos e novas tecnologias. Mestrado Ensino de artes.Universidade Lusófona",
+      "Mestrado Ensino das Artes Visuais da Universidade Lusófona de Lisboa. Fazer Candidatura",
+      "Didática e pedagogia com tecnologias. Mestrado Ensino Artes Universidade Lusófona Lisboa",
+      "Tecnologias ligadas ao ensino de artes visuais. Faça Mestrado Universidade Lusófona Lisboa"
+    ],
+    "finalUrl": "https://www.ulusofona.pt/lisboa/mestrados/ensino-de-artes-visuais-no-3o-ciclo-do-ensino-basico-e-no-ensino-secundario",
+    "path1": "",
+    "path2": "",
+    "sitelinks": [],
+    "snippets": {
+      "header": "Header",
+      "values": [
+        "Valor 1",
+        "Valor 2",
+        "Valor 3"
+      ]
+    },
+    "keywords": [
+      {
+        "text": "mestrado em ensino",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado educação",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado de ensino",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em educação lisboa",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em ensino de artes visuais",
+        "status": "ENABLED"
+      },
+      {
+        "text": "educação artisticaEncaixa",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado ensino artes visuais",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado educação artística",
+        "status": "ENABLED"
+      }
+    ],
+    "livePulse": {
+      "budget": "10.0 €",
+      "clicks": 0,
+      "impressions": 0,
+      "cost": "0 €",
+      "conversions": 0.0,
+      "costPerConv": "0 €",
+      "period": "Últimos 30 Dias"
+    },
+    "lastUpdated": "",
+    "lastSynced": ""
+  },
   "Ensino De Informatica": {
     "id": 292,
     "institution": "Lusófona Porto",
@@ -5464,6 +5546,88 @@
       },
       {
         "text": "mestrado em química medicinal",
+        "status": "ENABLED"
+      }
+    ],
+    "livePulse": {
+      "budget": "10.0 €",
+      "clicks": 0,
+      "impressions": 0,
+      "cost": "0 €",
+      "conversions": 0.0,
+      "costPerConv": "0 €",
+      "period": "Últimos 30 Dias"
+    },
+    "lastUpdated": "",
+    "lastSynced": ""
+  },
+  "Gerontologia Social Qualidade De Programas E Servicos Gerontologicos": {
+    "id": 110,
+    "institution": "Lusófona Lisboa",
+    "degree": "Mestrados",
+    "degree_type": "Mestrado",
+    "status": "PAUSED",
+    "headlines": [
+      "Mestrado Gerontologia Social",
+      "Curso Gerontologia Lusófona",
+      "Cuidados Gerontológicos Master",
+      "Universidade Lusófona Lisboa",
+      "Gerontologia bem estar social",
+      "Lisboa Mestrado Gerontologia",
+      "Centro Universitário Lisboa",
+      "Candidate-se mestrado Lusófona",
+      "Ingresso Mestrado gerontologia",
+      "Curso Mestrado Geriatria"
+    ],
+    "descriptions": [
+      "Cuidado social biológico e psicológico. Mestrado Gerontologia Universidade Lusófona Lisboa",
+      "Mestrado Gerontologia Social. Candidate-se bolsa de mérito Universidade Lusófona de Lisboa",
+      "Faça Gerontologia. Políticas projetos de intervenção.Mestrado Universidade Lusófona Lisboa",
+      "Universidade Lusófona Lisboa. Mestrado Gerontologia Social e bem estar. Candidate-se"
+    ],
+    "finalUrl": "https://www.ulusofona.pt/lisboa/mestrados/gerontologia-social-qualidade-de-programas-e-servicos-gerontologicos",
+    "path1": "",
+    "path2": "",
+    "sitelinks": [],
+    "snippets": {
+      "header": "Header",
+      "values": [
+        "Valor 1",
+        "Valor 2",
+        "Valor 3"
+      ]
+    },
+    "keywords": [
+      {
+        "text": "gerontologia social",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em servico social",
+        "status": "ENABLED"
+      },
+      {
+        "text": "gerontologia curso",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso de gerontologia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado gerontologia social",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado intervenção social",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso gerontologia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em gerontologia",
         "status": "ENABLED"
       }
     ],
