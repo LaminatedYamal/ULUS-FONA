@@ -1527,6 +1527,48 @@
             });
         }
 
+        function getBlockPadding(tr) {
+            let pt = 0;
+            let pb = 0;
+            const td = tr.querySelector('td.paddingcomp') || tr.querySelector('td');
+            const wrapper = tr.querySelector('.zpelement-wrapper') || tr;
+            const source = td || wrapper;
+            if (source && source.style) {
+                if (source.style.paddingTop) pt = parseInt(source.style.paddingTop) || 0;
+                if (source.style.paddingBottom) pb = parseInt(source.style.paddingBottom) || 0;
+            }
+            const componentDiv = tr.querySelector('[componentpaddingtop]');
+            if (componentDiv) {
+                if (pt === 0 && componentDiv.getAttribute('componentpaddingtop')) {
+                    pt = parseInt(componentDiv.getAttribute('componentpaddingtop')) || 0;
+                }
+                if (pb === 0 && componentDiv.getAttribute('componentpaddingbottom')) {
+                    pb = parseInt(componentDiv.getAttribute('componentpaddingbottom')) || 0;
+                }
+            }
+            return { top: pt, bottom: pb };
+        }
+
+        function setBlockPadding(tr, topVal, bottomVal) {
+            const tds = tr.querySelectorAll('td');
+            tds.forEach(td => {
+                td.style.paddingTop = topVal + 'px';
+                td.style.paddingBottom = bottomVal + 'px';
+            });
+            const wrappers = tr.querySelectorAll('.zpelement-wrapper');
+            wrappers.forEach(w => {
+                w.style.paddingTop = topVal + 'px';
+                w.style.paddingBottom = bottomVal + 'px';
+            });
+            const componentDivs = tr.querySelectorAll('[componentpaddingtop]');
+            componentDivs.forEach(div => {
+                div.setAttribute('componentpaddingtop', topVal + 'px');
+                div.setAttribute('componentpaddingbottom', bottomVal + 'px');
+                div.style.paddingTop = topVal + 'px';
+                div.style.paddingBottom = bottomVal + 'px';
+            });
+        }
+
         // Modal editor
         window.openBlockTextEditor = function(index) {
             activeEditBlockIndex = index;
@@ -1537,14 +1579,42 @@
             
             // 1. Get and render block background color controls
             const currentBg = getBlockBgColor(tr);
+            const currentPadding = getBlockPadding(tr);
+            
             const bgField = document.createElement('div');
             bgField.className = 'edit-field';
             bgField.innerHTML = `
-                <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Cor de Fundo do Bloco</label>
-                <div class="color-picker-container">
-                    <input type="color" class="color-picker-preview" id="block-bg-picker" value="${currentBg}">
-                    <input type="text" class="color-input-hex" id="block-bg-hex" value="${currentBg}" maxlength="7">
-                    <span style="font-size: 0.75rem; color: var(--text-muted);">Altera a cor de fundo de todo o bloco</span>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <div>
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Cor de Fundo do Bloco</label>
+                        <div class="color-picker-container" style="margin-top: 0.4rem;">
+                            <input type="color" class="color-picker-preview" id="block-bg-picker" value="${currentBg}">
+                            <input type="text" class="color-input-hex" id="block-bg-hex" value="${currentBg}" maxlength="7">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Altera a cor de fundo de todo o bloco</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 0.5rem;">
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Espaçamento do Bloco (Margin/Padding)</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Superior (Top):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-top-slider" min="0" max="100" value="${currentPadding.top}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-top" value="${currentPadding.top}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Inferior (Bottom):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-bottom-slider" min="0" max="100" value="${currentPadding.bottom}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-bottom" value="${currentPadding.bottom}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             `;
             modalInputsList.appendChild(bgField);
@@ -1559,6 +1629,17 @@
                     bgPicker.value = e.target.value;
                 }
             });
+
+            // Spacing Slider sync logic
+            const ptSlider = bgField.querySelector('#block-padding-top-slider');
+            const ptInput = bgField.querySelector('#block-padding-top');
+            ptSlider.addEventListener('input', (e) => { ptInput.value = e.target.value; });
+            ptInput.addEventListener('input', (e) => { ptSlider.value = e.target.value; });
+
+            const pbSlider = bgField.querySelector('#block-padding-bottom-slider');
+            const pbInput = bgField.querySelector('#block-padding-bottom');
+            pbSlider.addEventListener('input', (e) => { pbInput.value = e.target.value; });
+            pbInput.addEventListener('input', (e) => { pbSlider.value = e.target.value; });
             
             // Separator
             const divider = document.createElement('div');
@@ -1706,7 +1787,14 @@
                 setBlockBgColor(tr, bgHex.value);
             }
             
-            // 2. Save text content and colors
+            // 2. Save Block spacing (padding top / bottom)
+            const ptInput = document.getElementById('block-padding-top');
+            const pbInput = document.getElementById('block-padding-bottom');
+            if (ptInput && pbInput) {
+                setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
+            }
+            
+            // 3. Save text content and colors
             const rawHtmlArea = document.getElementById('edit-raw-html');
             const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
             
