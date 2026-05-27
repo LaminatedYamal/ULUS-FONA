@@ -1334,6 +1334,61 @@
             doc.write(processedHtmlContent);
             doc.close();
 
+            // Inject custom hover outlines and tooltips for inline click-to-edit interaction
+            const iframeStyle = doc.createElement('style');
+            iframeStyle.textContent = `
+                .zpelement-wrapper:hover, [id^="elm_"]:hover {
+                    outline: 2px dashed #10b981 !important;
+                    outline-offset: 2px;
+                    cursor: pointer !important;
+                    position: relative;
+                }
+                .zpelement-wrapper:hover::after, [id^="elm_"]:hover::after {
+                    content: "Clique para Editar";
+                    position: absolute;
+                    top: -24px;
+                    right: 4px;
+                    background: #10b981;
+                    color: #0b0f19;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+                    z-index: 999999;
+                    pointer-events: none;
+                    white-space: nowrap;
+                }
+            `;
+            doc.head.appendChild(iframeStyle);
+
+            // Bind click event inside iframe to open editing modal
+            doc.addEventListener('click', (e) => {
+                let target = e.target;
+                let blockEl = null;
+                
+                // Traverse up to find closest block wrapper or element ID
+                while (target && target.tagName !== 'BODY') {
+                    if (target.classList.contains('zpelement-wrapper') || (target.id && target.id.startsWith('elm_'))) {
+                        blockEl = target;
+                        break;
+                    }
+                    target = target.parentElement;
+                }
+                
+                if (blockEl) {
+                    const tr = blockEl.closest('tr') || blockEl;
+                    const index = blocks.findIndex(b => b.element === tr || b.element === blockEl);
+                    if (index !== -1) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Open the visual modal editor
+                        openBlockTextEditor(index);
+                    }
+                }
+            }, true); // Use capture phase to prevent link navigation
+
             codeWrapper.textContent = processedHtmlContent;
             
             // Render block editor list
