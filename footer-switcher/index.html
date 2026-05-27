@@ -100,12 +100,12 @@
         /* Container Layout */
         main {
             flex: 1;
-            max-width: 1600px;
+            max-width: 95%;
             width: 100%;
-            margin: 2rem auto;
-            padding: 0 2rem;
+            margin: 1.5rem auto;
+            padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 440px 1fr;
+            grid-template-columns: 480px 1fr;
             gap: 2rem;
         }
 
@@ -350,7 +350,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            min-height: 600px;
+            min-height: calc(100vh - 180px);
         }
 
         .preview-header {
@@ -577,26 +577,29 @@
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(10px);
+            width: 512px;
+            height: 100vh;
+            background: rgba(11, 15, 25, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid var(--card-border);
             z-index: 1000;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 10px 0 40px rgba(0, 0, 0, 0.5);
+            right: auto;
+            bottom: auto;
         }
 
         .edit-modal {
-            background: #111827;
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            width: 600px;
-            max-width: 90%;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            box-shadow: none;
         }
 
         .modal-header {
@@ -621,7 +624,7 @@
         }
 
         .edit-inputs-list {
-            max-height: 350px;
+            flex: 1;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
@@ -792,7 +795,13 @@
             <div class="logo-glow"></div>
             <h1>ULUS-FONA | Advanced Email Block Editor</h1>
         </div>
-        <div class="badge">V1.1.0 Interactive</div>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <button id="undo-btn" class="control-btn" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--card-border);" onclick="window.triggerUndo()" title="Desfazer a última alteração (Ctrl+Z)">
+                <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                <span>Desfazer (Ctrl+Z)</span>
+            </button>
+            <div class="badge">V1.1.0 Interactive</div>
+        </div>
     </header>
 
     <main>
@@ -998,6 +1007,10 @@
         let parsedDoc = null;
         let blocks = [];
         let activeEditBlockIndex = -1;
+        
+        // Undo history state and initial backup state
+        const undoStack = [];
+        let initialTemplateHtml = '';
 
         // DOM Nodes
         const dropZone = document.getElementById('drop-zone');
@@ -1320,8 +1333,41 @@
             });
         }
 
+        // Undo state management
+        function pushUndoState() {
+            if (!parsedDoc) return;
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            const stateHtml = doctypeString + parsedDoc.documentElement.outerHTML;
+            
+            // Avoid pushing duplicate states
+            if (undoStack.length === 0 || undoStack[undoStack.length - 1] !== stateHtml) {
+                undoStack.push(stateHtml);
+                if (undoStack.length > 50) {
+                    undoStack.shift();
+                }
+            }
+        }
+
+        window.triggerUndo = function() {
+            if (undoStack.length > 1) {
+                undoStack.pop(); // Remove the current active state
+                const previousState = undoStack[undoStack.length - 1];
+                
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(previousState, 'text/html');
+                
+                updateFromDOM(true); // Update DOM and skip pushing new history
+                addLog('success', 'Desfeita a última alteração (Ctrl+Z).');
+            } else {
+                addLog('warning', 'Sem mais alterações para desfazer.');
+            }
+        };
+
         // Update previews and code views after block array modification
-        function updateFromDOM() {
+        function updateFromDOM(skipHistory = false) {
             syncBlocksFromDOM();
             
             // Re-serialize doc to processedHtmlContent
@@ -1330,6 +1376,24 @@
                 doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
             }
             processedHtmlContent = doctypeString + parsedDoc.documentElement.outerHTML;
+
+            if (!skipHistory) {
+                pushUndoState();
+            }
+
+            // Update undo button visually
+            const undoBtn = document.getElementById('undo-btn');
+            if (undoBtn) {
+                if (undoStack.length > 1) {
+                    undoBtn.disabled = false;
+                    undoBtn.style.opacity = '1';
+                    undoBtn.style.cursor = 'pointer';
+                } else {
+                    undoBtn.disabled = true;
+                    undoBtn.style.opacity = '0.5';
+                    undoBtn.style.cursor = 'not-allowed';
+                }
+            }
 
             // Update previews
             const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
@@ -1766,14 +1830,366 @@
             modalOverlay.style.display = 'flex';
         };
 
+        function applyLiveEdits() {
+            if (activeEditBlockIndex === -1) return;
+            const tr = blocks[activeEditBlockIndex].element;
+            
+            // 1. Update background color
+            const bgHex = document.getElementById('block-bg-hex');
+            if (bgHex && bgHex.value) {
+                setBlockBgColor(tr, bgHex.value);
+            }
+            
+            // 2. Update padding
+            const ptInput = document.getElementById('block-padding-top');
+            const pbInput = document.getElementById('block-padding-bottom');
+            if (ptInput && pbInput) {
+                setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
+            }
+            
+            // 3. Update text content, colors, and hyperlinks
+            const rawHtmlArea = document.getElementById('edit-raw-html');
+            const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
+            
+            if (isRawHtmlVisible) {
+                tr.innerHTML = rawHtmlArea.value;
+            } else {
+                const inputs = modalInputsList.querySelectorAll('.modal-text-input');
+                inputs.forEach(input => {
+                    const el = input._targetElement;
+                    const node = input._textNode;
+                    const idx = input.dataset.index;
+                    
+                    // Update text node content
+                    if (node) {
+                        node.textContent = input.value;
+                    } else if (el) {
+                        el.textContent = input.value;
+                    }
+                    
+                    // Update text element color
+                    const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
+                    if (el && hexInput && hexInput.value) {
+                        el.style.color = hexInput.value;
+                    }
+                    
+                    // Update hyperlink URL if applicable
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    if (linkEl) {
+                        const hrefInput = modalInputsList.querySelector(`.modal-link-href-input[data-index="${idx}"]`);
+                        if (hrefInput) {
+                            linkEl.setAttribute('href', hrefInput.value);
+                        }
+                    }
+                });
+            }
+            
+            // Re-serialize doc to processedHtmlContent
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            processedHtmlContent = doctypeString + parsedDoc.documentElement.outerHTML;
+
+            // Render live inside the iframe preview (keeping scroll positions)
+            const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+            const scrollX = previewIframe.contentWindow.scrollX;
+            const scrollY = previewIframe.contentWindow.scrollY;
+            
+            doc.open();
+            doc.write(processedHtmlContent);
+            doc.close();
+
+            // Re-inject custom hover outlines and tooltips
+            const iframeStyle = doc.createElement('style');
+            iframeStyle.textContent = `
+                [data-block-index]:hover {
+                    outline: 2px dashed #10b981 !important;
+                    outline-offset: -2px;
+                    cursor: pointer !important;
+                    position: relative;
+                }
+                [data-block-index]:hover::after {
+                    content: "Clique para Editar";
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                    background: #10b981;
+                    color: #0b0f19;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 10px;
+                    font-weight: bold;
+                    padding: 2px 6px;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+                    z-index: 999999;
+                    pointer-events: none;
+                    white-space: nowrap;
+                }
+            `;
+            doc.head.appendChild(iframeStyle);
+
+            // Re-bind click event inside iframe to open editing modal
+            doc.addEventListener('click', (e) => {
+                let target = e.target;
+                const blockContainer = target.closest('[data-block-index]');
+                
+                if (blockContainer) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const index = parseInt(blockContainer.getAttribute('data-block-index'));
+                    if (!isNaN(index) && index >= 0 && index < blocks.length) {
+                        openBlockTextEditor(index);
+                    }
+                }
+            }, true);
+
+            previewIframe.contentWindow.scrollTo(scrollX, scrollY);
+            codeWrapper.textContent = processedHtmlContent;
+        }
+
+        // Modal editor
+        window.openBlockTextEditor = function(index) {
+            activeEditBlockIndex = index;
+            const block = blocks[index];
+            const tr = block.element;
+            
+            modalInputsList.innerHTML = '';
+            
+            // Backup initial HTML state before live editing so we can revert on Cancel
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
+            }
+            initialTemplateHtml = doctypeString + parsedDoc.documentElement.outerHTML;
+            
+            // 1. Get and render block background color controls
+            const currentBg = getBlockBgColor(tr);
+            const currentPadding = getBlockPadding(tr);
+            
+            const bgField = document.createElement('div');
+            bgField.className = 'edit-field';
+            bgField.innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1rem;">
+                    <div>
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Cor de Fundo do Bloco</label>
+                        <div class="color-picker-container" style="margin-top: 0.4rem;">
+                            <input type="color" class="color-picker-preview" id="block-bg-picker" value="${currentBg}">
+                            <input type="text" class="color-input-hex" id="block-bg-hex" value="${currentBg}" maxlength="7">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Altera a cor de fundo de todo o bloco</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 0.5rem;">
+                        <label style="color: var(--accent-primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Espaçamento do Bloco (Margin/Padding)</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem;">
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Superior (Top):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-top-slider" min="0" max="100" value="${currentPadding.top}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-top" value="${currentPadding.top}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label style="font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 0.25rem;">Inferior (Bottom):</label>
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="range" id="block-padding-bottom-slider" min="0" max="100" value="${currentPadding.bottom}" style="flex: 1; accent-color: var(--accent-primary);">
+                                    <input type="number" id="block-padding-bottom" value="${currentPadding.bottom}" min="0" max="200" style="width: 55px; background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.25rem 0.4rem; color: var(--text-main); font-size: 0.8rem; text-align: center;">
+                                    <span style="font-size: 0.7rem; color: var(--text-muted);">px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modalInputsList.appendChild(bgField);
+            
+            const bgPicker = bgField.querySelector('#block-bg-picker');
+            const bgHex = bgField.querySelector('#block-bg-hex');
+            bgPicker.addEventListener('input', (e) => {
+                bgHex.value = e.target.value.toUpperCase();
+                applyLiveEdits();
+            });
+            bgHex.addEventListener('input', (e) => {
+                if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                    bgPicker.value = e.target.value;
+                    applyLiveEdits();
+                }
+            });
+
+            // Spacing Slider sync & live update logic
+            const ptSlider = bgField.querySelector('#block-padding-top-slider');
+            const ptInput = bgField.querySelector('#block-padding-top');
+            ptSlider.addEventListener('input', (e) => { ptInput.value = e.target.value; applyLiveEdits(); });
+            ptInput.addEventListener('input', (e) => { ptSlider.value = e.target.value; applyLiveEdits(); });
+
+            const pbSlider = bgField.querySelector('#block-padding-bottom-slider');
+            const pbInput = bgField.querySelector('#block-padding-bottom');
+            pbSlider.addEventListener('input', (e) => { pbInput.value = e.target.value; applyLiveEdits(); });
+            pbInput.addEventListener('input', (e) => { pbSlider.value = e.target.value; applyLiveEdits(); });
+            
+            // Separator
+            const divider = document.createElement('div');
+            divider.className = 'section-divider';
+            modalInputsList.appendChild(divider);
+            
+            // 2. Find and edit text elements recursively to support bold, italic, and nested structures
+            const textContainers = [];
+            function findTextContainers(node) {
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    const hasDirectText = Array.from(node.childNodes).some(
+                        child => child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== ''
+                    );
+                    const editableTags = ['p', 'span', 'font', 'a', 'b', 'strong', 'i', 'em', 'h1', 'h2', 'h3', 'h4', 'td', 'div'];
+                    const tagName = node.tagName.toLowerCase();
+                    if (hasDirectText && editableTags.includes(tagName)) {
+                        textContainers.push(node);
+                    }
+                    Array.from(node.children).forEach(findTextContainers);
+                }
+            }
+            findTextContainers(tr);
+            
+            if (textContainers.length === 0) {
+                const divField = document.createElement('div');
+                divField.className = 'edit-field';
+                divField.innerHTML = `
+                    <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.8rem;">Conteúdo HTML do Bloco</label>
+                    <textarea id="edit-raw-html" style="height: 160px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(divField);
+                
+                divField.querySelector('textarea').addEventListener('input', applyLiveEdits);
+            } else {
+                textContainers.forEach((el, idx) => {
+                    const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
+                    const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
+                    const currentColor = getElementColor(el);
+                    
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    let linkHtml = '';
+                    if (linkEl) {
+                        linkHtml = `
+                            <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">URL do Link (Hyperlink):</label>
+                                <input type="text" class="modal-link-href-input" data-index="${idx}" value="${linkEl.getAttribute('href') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                            </div>
+                        `;
+                    }
+                    
+                    const field = document.createElement('div');
+                    field.className = 'edit-field';
+                    field.style.border = '1px solid var(--card-border)';
+                    field.style.borderRadius = '10px';
+                    field.style.padding = '0.75rem';
+                    field.style.background = 'rgba(255,255,255,0.01)';
+                    
+                    const tagName = el.tagName.toLowerCase();
+                    const labelText = `Elemento &lt;${tagName}&gt; #${idx + 1}`;
+                    
+                    field.innerHTML = `
+                        <label style="color: var(--accent-secondary); font-weight: 700; display: flex; justify-content: space-between;">
+                            <span>${labelText}</span>
+                        </label>
+                        <textarea class="modal-text-input" style="margin-top: 0.5rem; height: 60px;" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                        
+                        ${linkHtml}
+                        
+                        <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
+                            <div class="color-picker-container" style="margin-top: 0;">
+                                <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
+                                <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
+                            </div>
+                        </div>
+                    `;
+                    
+                    const txtArea = field.querySelector('textarea');
+                    txtArea._targetElement = el;
+                    txtArea._textNode = textNode;
+                    
+                    // Live Update on Text area input
+                    txtArea.addEventListener('input', applyLiveEdits);
+                    
+                    const picker = field.querySelector('.text-color-picker');
+                    const hex = field.querySelector('.text-color-hex');
+                    
+                    picker.addEventListener('input', (e) => {
+                        hex.value = e.target.value.toUpperCase();
+                        applyLiveEdits();
+                    });
+                    hex.addEventListener('input', (e) => {
+                        if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
+                            picker.value = e.target.value;
+                            applyLiveEdits();
+                        }
+                    });
+                    
+                    if (linkEl) {
+                        const hrefInput = field.querySelector('.modal-link-href-input');
+                        hrefInput.addEventListener('input', applyLiveEdits);
+                    }
+                    
+                    modalInputsList.appendChild(field);
+                });
+                
+                // Expander for Raw HTML at the bottom
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'toggle-raw-html-btn';
+                toggleBtn.type = 'button';
+                toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                modalInputsList.appendChild(toggleBtn);
+                
+                const rawHtmlField = document.createElement('div');
+                rawHtmlField.className = 'edit-field';
+                rawHtmlField.style.display = 'none';
+                rawHtmlField.style.marginTop = '0.5rem';
+                rawHtmlField.innerHTML = `
+                    <label style="font-size: 0.75rem; color: var(--text-muted);">Código HTML de Fundo (Avançado)</label>
+                    <textarea id="edit-raw-html" style="height: 120px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(rawHtmlField);
+                
+                rawHtmlField.querySelector('textarea').addEventListener('input', applyLiveEdits);
+                
+                toggleBtn.addEventListener('click', () => {
+                    if (rawHtmlField.style.display === 'none') {
+                        rawHtmlField.style.display = 'flex';
+                        toggleBtn.textContent = 'Ocultar Editor de Código HTML de Fundo';
+                    } else {
+                        rawHtmlField.style.display = 'none';
+                        toggleBtn.textContent = 'Mostrar Editor de Código HTML de Fundo';
+                    }
+                });
+            }
+            
+            modalOverlay.style.display = 'block';
+        };
+
         // Close modal
         function closeModal() {
             modalOverlay.style.display = 'none';
             activeEditBlockIndex = -1;
         }
 
-        closeModalBtn.addEventListener('click', closeModal);
-        modalCancelBtn.addEventListener('click', closeModal);
+        closeModalBtn.addEventListener('click', () => {
+            if (initialTemplateHtml) {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(initialTemplateHtml, 'text/html');
+                updateFromDOM(true);
+            }
+            closeModal();
+        });
+        
+        modalCancelBtn.addEventListener('click', () => {
+            if (initialTemplateHtml) {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(initialTemplateHtml, 'text/html');
+                updateFromDOM(true);
+            }
+            closeModal();
+        });
 
         // Save alterations
         modalSaveBtn.addEventListener('click', () => {
@@ -1947,6 +2363,18 @@
             deviceDesktop.classList.remove('active');
             frameWrapper.classList.remove('desktop');
             frameWrapper.classList.add('mobile');
+        });
+
+        // Ctrl+Z Undo key binding (excluding active text input areas to allow native browser undo/redo)
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+                const activeEl = document.activeElement;
+                const isInput = activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA');
+                if (!isInput) {
+                    e.preventDefault();
+                    window.triggerUndo();
+                }
+            }
         });
     </script>
 </body>
