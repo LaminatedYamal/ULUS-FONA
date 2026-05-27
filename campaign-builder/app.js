@@ -79,7 +79,7 @@ let currentLang = 'pt';
 let courses = [];
 let adsConfig = {};
 let adsConfigSha = null;
-let activeCourseName = null;
+let activeCourseId = null;
 let activeCourseObj = null;
 let previewDevice = 'mobile';
 
@@ -163,7 +163,7 @@ function toggleLanguage() {
     document.getElementById('lang-toggle-text').textContent = currentLang.toUpperCase();
     initLanguage();
     renderCourseList();
-    if (activeCourseName) {
+    if (activeCourseId) {
         const descEl = document.getElementById('active-course-desc');
         const t = TRANSLATIONS[currentLang];
         const displayDegree = t["degree-mapping"][activeCourseObj.degree_type] || activeCourseObj.degree_type;
@@ -567,7 +567,7 @@ function renderCourseList(searchQuery = '') {
                 courseLink.style.border = '1px solid rgba(255,255,255,0.04)';
                 courseLink.textContent = course.name;
 
-                if (activeCourseName === course.name) {
+                if (activeCourseId === String(course.id)) {
                     courseLink.style.borderColor = brand.hex;
                     courseLink.style.background = `rgba(${hexToRgb(brand.hex).r}, ${hexToRgb(brand.hex).g}, ${hexToRgb(brand.hex).b}, 0.15)`;
                     courseLink.style.color = '#ffffff';
@@ -584,7 +584,7 @@ function renderCourseList(searchQuery = '') {
                     courseLink.style.background = `rgba(${hexToRgb(brand.hex).r}, ${hexToRgb(brand.hex).g}, ${hexToRgb(brand.hex).b}, 0.15)`;
                     courseLink.style.color = '#ffffff';
                     
-                    loadCourseCampaign(course.name, course);
+                    loadCourseCampaign(String(course.id), course);
                 });
 
                 coursesListContainer.appendChild(courseLink);
@@ -602,12 +602,12 @@ function renderCourseList(searchQuery = '') {
 }
 
 // Load selected course's campaign configuration
-function loadCourseCampaign(courseName, courseRawObj) {
-    activeCourseName = courseName;
+function loadCourseCampaign(courseId, courseRawObj) {
+    activeCourseId = String(courseId);
     
     // Normalize campaign properties on load (handles missing/empty fields)
-    adsConfig[courseName] = normalizeCourseCampaign(adsConfig[courseName], courseRawObj);
-    activeCourseObj = adsConfig[courseName];
+    adsConfig[activeCourseId] = normalizeCourseCampaign(adsConfig[activeCourseId], courseRawObj);
+    activeCourseObj = adsConfig[activeCourseId];
     
     // Apply branding color dynamics
     const brand = BRANDING[activeCourseObj.institution] || { hex: "#00f2ff", bgSub: "#001b3b", logo: "" };
@@ -627,7 +627,7 @@ function loadCourseCampaign(courseName, courseRawObj) {
     
     // Show top-bar and forms workspace
     document.getElementById('dashboard-header-left').style.visibility = 'visible';
-    document.getElementById('active-course-title').textContent = activeCourseName;
+    document.getElementById('active-course-title').textContent = activeCourseObj.name || "Curso";
     
     const t = TRANSLATIONS[currentLang];
     const displayDegree = t["degree-mapping"][activeCourseObj.degree_type] || activeCourseObj.degree_type;
@@ -1375,7 +1375,7 @@ window.setPreviewDevice = function(device) {
 
 // Global landing returns
 window.returnToGlobalLanding = function() {
-    activeCourseName = null;
+    activeCourseId = null;
     activeCourseObj = null;
     document.getElementById('dashboard-header-left').style.visibility = 'hidden';
     document.getElementById('workspace-view').style.display = 'none';
@@ -1402,7 +1402,7 @@ window.toggleSidebar = function() {
 
 // Save and Deploy Campaign logic
 window.deployCampaign = async function() {
-    if (!activeCourseObj || !activeCourseName) return;
+    if (!activeCourseObj || !activeCourseId) return;
     
     const deployBtn = document.getElementById('deploy-btn');
     const originalText = deployBtn.textContent;
@@ -1523,25 +1523,24 @@ window.deployCampaign = async function() {
     activeCourseObj.headlines = headlines;
     activeCourseObj.descriptions = descriptions;
     activeCourseObj.finalUrl = finalUrl;
-    activeCourseObj.path1 = p1;
-    activeCourseObj.path2 = p2;
+    activeCourseObj.path1 = document.getElementById('path1-input').value.trim();
+    activeCourseObj.path2 = document.getElementById('path2-input').value.trim();
     activeCourseObj.sitelinks = sitelinksList;
     activeCourseObj.snippets = {
         header: snippetHeader,
-        values: snippetValues
+        values: snippetVals
     };
-    // keywords and keywordPool are modified in-place via toggle/add/delete/promote, no extra serialization needed here
     
-    // Set status
-    const isChecked = document.getElementById('campaign-status-checkbox').checked;
-    activeCourseObj.status = isChecked ? 'START' : 'PAUSED';
-    activeCourseObj.lastUpdated = new Date().toISOString();
+    // Last Sync & Update Metadata
+    const nowStr = new Date().toISOString();
+    activeCourseObj.lastUpdated = nowStr;
+    activeCourseObj.lastSynced = nowStr;
     
     // 2. Deploy to GitHub via contents API
     const token = await getGitHubToken();
     if (!token) {
         // Save locally in window scope, alert offline mode
-        adsConfig[activeCourseName] = activeCourseObj;
+        adsConfig[activeCourseId] = activeCourseObj;
         alert("⚠️ No GitHub Token found. Changes saved locally in memory only. Please check github_config.json or set token in localStorage.");
         deployBtn.disabled = false;
         deployBtn.textContent = originalText;
@@ -1571,15 +1570,15 @@ window.deployCampaign = async function() {
             throw new Error(`Could not fetch database configuration file from GitHub (HTTP ${getResponse.status})`);
         }
         
-        // Merge activeCourseObj into current database representation
-        dbConfig[activeCourseName] = activeCourseObj;
+        // Update local object
+        dbConfig[activeCourseId] = activeCourseObj;
         
         // UTF-8 base64 encoding helper
         const jsonString = JSON.stringify(dbConfig, null, 2);
         const base64Content = btoa(unescape(encodeURIComponent(jsonString)));
         
         const putPayload = {
-            message: `Deploy campaign configuration for course: ${activeCourseName} [skip ci]`,
+            message: `Deploy campaign configuration for course: ${activeCourseObj.name || activeCourseId} [skip ci]`,
             content: base64Content,
             sha: dbSha,
             branch: 'main'
@@ -1598,12 +1597,12 @@ window.deployCampaign = async function() {
             const putResObj = await putResponse.json();
             adsConfigSha = putResObj.content.sha; // update internal SHA
             adsConfig = dbConfig;
-            activeCourseObj = adsConfig[activeCourseName];
+            activeCourseObj = adsConfig[activeCourseId];
             
             // Mark activeCourseObj status as DEPLOYED (since push succeeded)
             activeCourseObj.status = 'DEPLOYED';
             
-            alert(`🚀 Sincronização Concluída! Campanha "${activeCourseName}" guardada com sucesso no GitHub e agendada para sincronização no Google Ads.`);
+            alert(`🚀 Sincronização Concluída! Campanha "${activeCourseObj.name || activeCourseId}" guardada com sucesso no GitHub e agendada para sincronização no Google Ads.`);
             populateForms(); // Refresh forms to show Deployed status
         } else {
             const errInfo = await putResponse.text();
