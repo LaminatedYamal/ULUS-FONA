@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ULUS-FONA | Footer Switcher & Logo Stripper</title>
+    <title>ULUS-FONA | Advanced Email Block Editor</title>
     <!-- Google Fonts Inter & Montserrat & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,7 +100,7 @@
         /* Container Layout */
         main {
             flex: 1;
-            max-width: 1400px;
+            max-width: 1500px;
             width: 100%;
             margin: 2rem auto;
             padding: 0 2rem;
@@ -148,7 +148,7 @@
         .drop-zone {
             border: 2px dashed rgba(255, 255, 255, 0.15);
             border-radius: 12px;
-            padding: 2rem 1.5rem;
+            padding: 1.5rem;
             text-align: center;
             cursor: pointer;
             transition: border-color 0.3s, background-color 0.3s;
@@ -162,10 +162,10 @@
         }
 
         .drop-zone svg {
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             transition: color 0.3s, transform 0.3s;
         }
 
@@ -175,13 +175,13 @@
         }
 
         .drop-zone p {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .drop-zone span {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: rgba(255, 255, 255, 0.3);
         }
 
@@ -192,12 +192,11 @@
         /* Raw Textarea area */
         .textarea-container {
             margin-top: 1rem;
-            position: relative;
         }
 
         .html-textarea {
             width: 100%;
-            height: 120px;
+            height: 100px;
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--card-border);
             border-radius: 8px;
@@ -225,7 +224,7 @@
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            padding: 1rem 0.5rem;
+            padding: 0.75rem 0.5rem;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -233,30 +232,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             position: relative;
             overflow: hidden;
-        }
-
-        .institution-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
         }
 
         .institution-btn:hover {
             background: rgba(255, 255, 255, 0.05);
             transform: translateY(-2px);
-        }
-
-        .institution-btn:hover::before {
-            opacity: 1;
         }
 
         .institution-btn.active {
@@ -267,8 +250,8 @@
 
         .institution-btn .icon {
             font-weight: 800;
-            font-size: 0.9rem;
-            padding: 0.25rem 0.6rem;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.5rem;
             border-radius: 6px;
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
@@ -282,13 +265,13 @@
         }
 
         .institution-btn .name {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: var(--text-main);
         }
 
         .institution-btn .desc {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             color: var(--text-muted);
         }
 
@@ -298,8 +281,8 @@
             color: #0b0f19;
             border: none;
             border-radius: 12px;
-            padding: 1rem;
-            font-size: 0.95rem;
+            padding: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 700;
             cursor: pointer;
             display: flex;
@@ -309,17 +292,12 @@
             width: 100%;
             transition: all 0.3s;
             box-shadow: 0 4px 20px var(--accent-primary-glow);
-            position: relative;
         }
 
         .action-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(16, 185, 129, 0.3);
             filter: brightness(1.1);
-        }
-
-        .action-btn:active {
-            transform: translateY(0);
         }
 
         .action-btn:disabled {
@@ -332,55 +310,42 @@
             filter: none;
         }
 
-        /* Assembly Line Diagnostics log output */
+        /* Diagnostics log area */
         .diagnostics-log {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--card-border);
             border-radius: 12px;
-            padding: 1rem;
-            max-height: 220px;
+            padding: 0.75rem;
+            max-height: 180px;
             overflow-y: auto;
             font-family: var(--font-mono);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .log-entry {
             display: flex;
             align-items: flex-start;
             gap: 0.5rem;
-            line-height: 1.4;
         }
 
         .log-entry .timestamp {
             color: rgba(255, 255, 255, 0.2);
-            flex-shrink: 0;
         }
 
-        .log-entry.info {
-            color: var(--text-muted);
-        }
-
-        .log-entry.success {
-            color: var(--accent-primary);
-        }
-
-        .log-entry.warning {
-            color: #f59e0b; /* Amber */
-        }
-
-        .log-entry.error {
-            color: #ef4444; /* Red */
-        }
+        .log-entry.info { color: var(--text-muted); }
+        .log-entry.success { color: var(--accent-primary); }
+        .log-entry.warning { color: #f59e0b; }
+        .log-entry.error { color: #ef4444; }
 
         /* Right Preview Area */
         .panel-right {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            min-height: 500px;
+            min-height: 600px;
         }
 
         .preview-header {
@@ -389,12 +354,12 @@
             justify-content: space-between;
             border-bottom: 1px solid var(--card-border);
             padding-bottom: 1rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .tab-buttons {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.25rem;
             background: rgba(255, 255, 255, 0.03);
             padding: 0.25rem;
             border-radius: 8px;
@@ -420,7 +385,7 @@
 
         .device-toggle {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
 
         .device-btn {
@@ -428,11 +393,8 @@
             border: 1px solid var(--card-border);
             border-radius: 6px;
             color: var(--text-muted);
-            padding: 0.5rem;
+            padding: 0.4rem;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             transition: all 0.2s;
         }
 
@@ -449,10 +411,8 @@
             background: rgba(0, 0, 0, 0.2);
             border: 1px solid var(--card-border);
             display: flex;
-            align-items: center;
-            justify-content: center;
             position: relative;
-            min-height: 450px;
+            min-height: 500px;
         }
 
         /* Sandbox Frame container */
@@ -464,15 +424,8 @@
             transition: width 0.3s;
         }
 
-        .frame-wrapper.desktop {
-            width: 100%;
-        }
-
-        .frame-wrapper.mobile {
-            width: 380px;
-            border-left: 1px solid var(--card-border);
-            border-right: 1px solid var(--card-border);
-        }
+        .frame-wrapper.desktop { width: 100%; }
+        .frame-wrapper.mobile { width: 380px; margin: 0 auto; border-left: 1px solid var(--card-border); border-right: 1px solid var(--card-border); }
 
         .preview-iframe {
             width: 100%;
@@ -490,10 +443,101 @@
             padding: 1.5rem;
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: #38bdf8; /* Light sky blue */
+            color: #38bdf8;
             white-space: pre-wrap;
             background: #090d16;
-            text-align: left;
+        }
+
+        /* Block Editor List Layout */
+        .block-list-wrapper {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 1.5rem;
+            gap: 1rem;
+        }
+
+        .block-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.25s;
+        }
+
+        .block-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .block-type-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 150px;
+            justify-content: center;
+        }
+
+        .block-card.text .block-type-badge { color: #3b82f6; border-color: rgba(59, 130, 246, 0.3); background: rgba(59, 130, 246, 0.05); }
+        .block-card.image .block-type-badge { color: #a855f7; border-color: rgba(168, 85, 247, 0.3); background: rgba(168, 85, 247, 0.05); }
+        .block-card.divider .block-type-badge { color: #6b7280; }
+        .block-card.spacebar .block-type-badge { color: #f59e0b; }
+        .block-card.footer .block-type-badge { color: #10b981; border-color: rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.05); }
+        .block-card.logo .block-type-badge { color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.05); }
+
+        .block-content-preview {
+            font-size: 0.8rem;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 1rem;
+        }
+
+        .block-controls {
+            display: flex;
+            gap: 0.4rem;
+            align-items: center;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-muted);
+            padding: 0.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            color: var(--text-main);
+            background: var(--card-border);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .control-btn.delete:hover {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.3);
         }
 
         /* Overlay Placeholder */
@@ -522,16 +566,130 @@
             color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Floating Glow decoration */
-        .floating-glow {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: -1;
-            filter: blur(40px);
+        /* Inline modal edit dialog */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .edit-modal {
+            background: #111827;
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            width: 600px;
+            max-width: 90%;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 0.75rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .close-modal-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .edit-inputs-list {
+            max-height: 350px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-right: 0.5rem;
+        }
+
+        .edit-field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .edit-field label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .edit-field textarea {
+            width: 100%;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            outline: none;
+            resize: vertical;
+        }
+
+        .edit-field textarea:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: flex-end;
+            border-top: 1px solid var(--card-border);
+            padding-top: 1rem;
+        }
+
+        .modal-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-btn.cancel {
+            background: transparent;
+            border: 1px solid var(--card-border);
+            color: var(--text-muted);
+        }
+
+        .modal-btn.cancel:hover {
+            color: var(--text-main);
+            background: var(--card-border);
+        }
+
+        .modal-btn.save {
+            background: var(--accent-primary);
+            border: none;
+            color: #0b0f19;
+        }
+
+        .modal-btn.save:hover {
+            filter: brightness(1.1);
         }
 
         @keyframes pulse {
@@ -549,25 +707,6 @@
             border-top: 1px solid var(--card-border);
             margin-top: auto;
         }
-
-        /* Scrollbar decoration */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -575,9 +714,9 @@
     <header>
         <div class="logo-container">
             <div class="logo-glow"></div>
-            <h1>ULUS-FONA | Footer Switcher</h1>
+            <h1>ULUS-FONA | Advanced Email Block Editor</h1>
         </div>
-        <div class="badge">V1.0.0 Stable</div>
+        <div class="badge">V1.1.0 Interactive</div>
     </header>
 
     <main>
@@ -669,6 +808,7 @@
             <div class="preview-header">
                 <div class="tab-buttons">
                     <button class="tab-btn active" id="tab-preview">Visualizar</button>
+                    <button class="tab-btn" id="tab-editor">Editor de Blocos</button>
                     <button class="tab-btn" id="tab-code">Código HTML</button>
                 </div>
 
@@ -696,11 +836,15 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                     <h3>Nenhum ficheiro carregado</h3>
-                    <p style="font-size: 0.85rem; max-width: 320px;">Carregue um template de email na barra lateral e clique em "Processar" para ver o resultado aqui.</p>
+                    <p style="font-size: 0.85rem; max-width: 320px;">Carregue um template de email na barra lateral e clique em "Processar" para iniciar o editor.</p>
                 </div>
 
                 <div class="frame-wrapper desktop" id="frame-wrapper">
                     <iframe class="preview-iframe" id="preview-iframe" title="HTML Preview"></iframe>
+                </div>
+
+                <div class="block-list-wrapper" id="block-list-wrapper">
+                    <!-- Visual Blocks List dynamically rendered here -->
                 </div>
 
                 <div class="code-wrapper" id="code-wrapper"></div>
@@ -709,8 +853,27 @@
         </div>
     </main>
 
+    <!-- Overlay modal edit dialog -->
+    <div class="modal-overlay" id="edit-modal-overlay">
+        <div class="edit-modal">
+            <div class="modal-header">
+                <h3 id="modal-title">Editar Conteúdo do Bloco</h3>
+                <button class="close-modal-btn" id="close-modal-btn">
+                    <svg style="width: 18px; height: 18px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="edit-inputs-list" id="edit-inputs-list">
+                <!-- Textarea fields dynamically generated here -->
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="modal-cancel-btn">Cancelar</button>
+                <button class="modal-btn save" id="modal-save-btn">Guardar Alterações</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="app-footer">
-        ULUS-FONA Email Template Pipeline &copy; 2026. Made with ❤️ by Antigravity.
+        ULUS-FONA Advanced Email Block Editor &copy; 2026. Powered by Antigravity.
     </footer>
 
     <script>
@@ -743,6 +906,11 @@
         let rawHtmlContent = '';
         let processedHtmlContent = '';
         let currentInstitution = 'gaia';
+        
+        // Block parser states
+        let parsedDoc = null;
+        let blocks = [];
+        let activeEditBlockIndex = -1;
 
         // DOM Nodes
         const dropZone = document.getElementById('drop-zone');
@@ -755,12 +923,21 @@
         const previewIframe = document.getElementById('preview-iframe');
         const codeWrapper = document.getElementById('code-wrapper');
         const frameWrapper = document.getElementById('frame-wrapper');
+        const blockListWrapper = document.getElementById('block-list-wrapper');
         
         // Tab elements
         const tabPreview = document.getElementById('tab-preview');
+        const tabEditor = document.getElementById('tab-editor');
         const tabCode = document.getElementById('tab-code');
         const deviceDesktop = document.getElementById('device-desktop');
         const deviceMobile = document.getElementById('device-mobile');
+
+        // Modal elements
+        const modalOverlay = document.getElementById('edit-modal-overlay');
+        const modalInputsList = document.getElementById('edit-inputs-list');
+        const modalSaveBtn = document.getElementById('modal-save-btn');
+        const modalCancelBtn = document.getElementById('modal-cancel-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
 
         // Setup drop zone click
         dropZone.addEventListener('click', () => fileInput.click());
@@ -828,87 +1005,31 @@
         processBtn.addEventListener('click', () => {
             if (!rawHtmlContent) return;
             
-            addLog('info', 'A iniciar pipeline de conversão...');
+            addLog('info', 'A iniciar pipeline de conversão e parsing dos blocos...');
             
             try {
-                const result = processHTML(rawHtmlContent, currentInstitution);
-                processedHtmlContent = result.html;
+                // Initialize parser DOM
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
                 
-                // Show logs
-                result.logs.forEach(log => {
-                    addLog(log.status, log.message);
-                });
+                // Run footer substitution logic directly on the parsed DOM first
+                runFooterReplacementOnDOM(parsedDoc, currentInstitution);
                 
-                // Display in iframe
-                const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
-                doc.open();
-                doc.write(processedHtmlContent);
-                doc.close();
-
-                // Display in code wrapper
-                codeWrapper.textContent = processedHtmlContent;
+                // Synchronize lists & rendering
+                updateFromDOM();
                 
                 // Toggle view states
                 emptyPlaceholder.style.display = 'none';
                 downloadBtn.disabled = false;
                 
-                addLog('success', 'Pipeline de processamento concluído com sucesso!');
+                addLog('success', 'Pipeline de processamento concluído com sucesso! Pode reordenar e editar blocos.');
             } catch (err) {
                 addLog('error', `Falha no processamento: ${err.message}`);
                 console.error(err);
             }
         });
 
-        // Download output file
-        downloadBtn.addEventListener('click', () => {
-            if (!processedHtmlContent) return;
-            
-            // Build file name
-            const dotIdx = uploadedFileName.lastIndexOf('.');
-            const nameWithoutExt = dotIdx !== -1 ? uploadedFileName.substring(0, dotIdx) : 'template';
-            const outputName = `${nameWithoutExt}_${currentInstitution}.html`;
-
-            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8;' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.setAttribute('download', outputName);
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            addLog('success', `Ficheiro descarregado: ${outputName}`);
-        });
-
-        // Tab selection UI
-        tabPreview.addEventListener('click', () => {
-            tabPreview.classList.add('active');
-            tabCode.classList.remove('active');
-            frameWrapper.style.display = 'flex';
-            codeWrapper.style.display = 'none';
-        });
-
-        tabCode.addEventListener('click', () => {
-            tabCode.classList.add('active');
-            tabPreview.classList.remove('active');
-            frameWrapper.style.display = 'none';
-            codeWrapper.style.display = 'block';
-        });
-
-        // Device toggle UI
-        deviceDesktop.addEventListener('click', () => {
-            deviceDesktop.classList.add('active');
-            deviceMobile.classList.remove('active');
-            frameWrapper.classList.remove('mobile');
-            frameWrapper.classList.add('desktop');
-        });
-
-        deviceMobile.addEventListener('click', () => {
-            deviceMobile.classList.add('active');
-            deviceDesktop.classList.remove('active');
-            frameWrapper.classList.remove('desktop');
-            frameWrapper.classList.add('mobile');
-        });
-
-        // Helper logger
+        // Diagnostics Log helper
         function addLog(status, message) {
             const time = new Date().toTimeString().split(' ')[0];
             const logRow = document.createElement('div');
@@ -927,44 +1048,280 @@
                 .replace(/'/g, "&#039;");
         }
 
-        // Logic processing engine
-        function processHTML(htmlText, institution) {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(htmlText, 'text/html');
-            const logs = [];
+        // Parse DOM rows into blocks
+        function syncBlocksFromDOM() {
+            if (!parsedDoc) return;
             
-            logs.push({ status: 'info', message: 'A ler e analisar a estrutura DOM do documento...' });
+            // Find all template rows (TR elements that contain td.txtsize as direct cells)
+            const trs = Array.from(parsedDoc.querySelectorAll('tr')).filter(tr => {
+                return Array.from(tr.children).some(cell => cell.tagName === 'TD' && cell.classList.contains('txtsize'));
+            });
             
-            if (!doc.body || doc.body.innerHTML.trim() === '') {
-                throw new Error('O ficheiro inserido não contém um corpo HTML válido.');
+            blocks = trs.map((tr) => {
+                const td = tr.querySelector('td.txtsize');
+                const id = td ? td.id : '';
+                const wrapper = tr.querySelector('.zpelement-wrapper');
+                
+                let type = 'text';
+                let typeLabel = 'Bloco Texto';
+                let detail = '';
+                
+                if (id === 'elm_1753955915805') {
+                    type = 'footer';
+                    typeLabel = 'Rodapé';
+                    detail = 'Contacto';
+                } else if (id === 'elm_1753955881776') {
+                    type = 'logo';
+                    typeLabel = 'Logo PRR';
+                    detail = 'PRR Banner';
+                } else if (id === 'elm_1753955813280') {
+                    type = 'logo';
+                    typeLabel = 'Logo Lusófona';
+                    detail = 'Universidade';
+                } else if (wrapper) {
+                    if (wrapper.classList.contains('divider')) {
+                        type = 'divider';
+                        typeLabel = 'Separador';
+                    } else if (wrapper.classList.contains('spacebar')) {
+                        type = 'spacebar';
+                        typeLabel = 'Espaço';
+                    } else if (wrapper.classList.contains('image')) {
+                        type = 'image';
+                        typeLabel = 'Imagem';
+                        const img = wrapper.querySelector('img');
+                        detail = img ? img.src.substring(img.src.lastIndexOf('/') + 1) : '';
+                    } else if (wrapper.classList.contains('zpcol-layout')) {
+                        type = 'layout';
+                        typeLabel = 'Grelha Colunas';
+                    }
+                }
+                
+                let textPreview = '';
+                if (type === 'text' || type === 'footer') {
+                    textPreview = tr.textContent.trim().replace(/\s+/g, ' ').substring(0, 80);
+                } else if (type === 'image') {
+                    textPreview = detail || 'URL Imagem';
+                } else {
+                    textPreview = 'Elemento decorativo ou layout';
+                }
+                
+                return {
+                    element: tr,
+                    type: type,
+                    typeLabel: typeLabel,
+                    id: id,
+                    detail: detail,
+                    textPreview: textPreview
+                };
+            });
+        }
+
+        // Update previews and code views after block array modification
+        function updateFromDOM() {
+            syncBlocksFromDOM();
+            
+            // Re-serialize doc to processedHtmlContent
+            let doctypeString = '';
+            if (parsedDoc.doctype) {
+                doctypeString = new XMLSerializer().serializeToString(parsedDoc.doctype) + '\n';
             }
-            logs.push({ status: 'success', message: 'Análise estrutural concluída.' });
+            processedHtmlContent = doctypeString + parsedDoc.documentElement.outerHTML;
+
+            // Update previews
+            const doc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+            doc.open();
+            doc.write(processedHtmlContent);
+            doc.close();
+
+            codeWrapper.textContent = processedHtmlContent;
+            
+            // Render block editor list
+            renderBlockList();
+        }
+
+        // Render Block List UI in Editor tab
+        function renderBlockList() {
+            blockListWrapper.innerHTML = '';
+            
+            if (blocks.length === 0) {
+                blockListWrapper.innerHTML = '<div style="text-align: center; color: var(--text-muted);">Nenhum bloco detetado.</div>';
+                return;
+            }
+            
+            blocks.forEach((block, index) => {
+                const card = document.createElement('div');
+                card.className = `block-card ${block.type}`;
+                
+                // Drag handle or Up/Down controls
+                const upBtnDisabled = index === 0 ? 'disabled' : '';
+                const downBtnDisabled = index === blocks.length - 1 ? 'disabled' : '';
+                
+                // Build text editors condition
+                const hasEditableText = block.type === 'text' || block.type === 'footer';
+                const editBtnHtml = hasEditableText ? `
+                    <button class="control-btn" onclick="openBlockTextEditor(${index})" title="Editar Texto">
+                        <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+                    </button>
+                ` : '';
+
+                card.innerHTML = `
+                    <div class="block-type-badge">
+                        <span>${block.typeLabel}</span>
+                    </div>
+                    
+                    <div class="block-content-preview">
+                        ${escapeHtml(block.textPreview)}
+                    </div>
+                    
+                    <div class="block-controls">
+                        <button class="control-btn" onclick="moveBlock(${index}, 'up')" ${upBtnDisabled} title="Mover para Cima">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+                        </button>
+                        <button class="control-btn" onclick="moveBlock(${index}, 'down')" ${downBtnDisabled} title="Mover para Baixo">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                        </button>
+                        ${editBtnHtml}
+                        <button class="control-btn delete" onclick="deleteBlock(${index})" title="Eliminar Bloco">
+                            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                        </button>
+                    </div>
+                `;
+                
+                blockListWrapper.appendChild(card);
+            });
+        }
+
+        // Block controller actions
+        window.moveBlock = function(index, direction) {
+            if (direction === 'up' && index > 0) {
+                const parent = blocks[index].element.parentNode;
+                parent.insertBefore(blocks[index].element, blocks[index - 1].element);
+                addLog('info', `Bloco ${index + 1} movido para a posição ${index}.`);
+            } else if (direction === 'down' && index < blocks.length - 1) {
+                const parent = blocks[index].element.parentNode;
+                parent.insertBefore(blocks[index + 1].element, blocks[index].element);
+                addLog('info', `Bloco ${index + 1} movido para a posição ${index + 2}.`);
+            }
+            updateFromDOM();
+        };
+
+        window.deleteBlock = function(index) {
+            const typeName = blocks[index].typeLabel;
+            blocks[index].element.remove();
+            addLog('warning', `Bloco "${typeName}" eliminado.`);
+            updateFromDOM();
+        };
+
+        // Modal editor
+        window.openBlockTextEditor = function(index) {
+            activeEditBlockIndex = index;
+            const block = blocks[index];
+            const tr = block.element;
+            
+            modalInputsList.innerHTML = '';
+            
+            // Gather all text elements inside the row (p, span, font, a, td) that have text
+            const textContainers = Array.from(tr.querySelectorAll('p, span, font, a')).filter(el => {
+                return Array.from(el.childNodes).some(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
+            });
+            
+            if (textContainers.length === 0) {
+                // Let them edit innerHTML directly if no subelements
+                const divField = document.createElement('div');
+                divField.className = 'edit-field';
+                divField.innerHTML = `
+                    <label>Conteúdo HTML do Bloco</label>
+                    <textarea id="edit-raw-html" style="height: 160px; font-family: var(--font-mono); font-size: 0.75rem;">${escapeHtml(tr.innerHTML)}</textarea>
+                `;
+                modalInputsList.appendChild(divField);
+            } else {
+                textContainers.forEach((el, idx) => {
+                    // Extract only text node content
+                    const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
+                    const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
+                    
+                    const field = document.createElement('div');
+                    field.className = 'edit-field';
+                    
+                    // Label helper
+                    const tagName = el.tagName.toLowerCase();
+                    const labelText = `Elemento &lt;${tagName}&gt; #${idx + 1}`;
+                    
+                    field.innerHTML = `
+                        <label>${labelText}</label>
+                        <textarea class="modal-text-input" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                    `;
+                    
+                    // Link elements to DOM nodes using attributes/expando properties
+                    field.querySelector('textarea')._targetElement = el;
+                    field.querySelector('textarea')._textNode = textNode;
+                    
+                    modalInputsList.appendChild(field);
+                });
+            }
+            
+            modalOverlay.style.display = 'flex';
+        };
+
+        // Close modal
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            activeEditBlockIndex = -1;
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modalCancelBtn.addEventListener('click', closeModal);
+
+        // Save alterations
+        modalSaveBtn.addEventListener('click', () => {
+            if (activeEditBlockIndex === -1) return;
+            
+            const rawHtmlArea = document.getElementById('edit-raw-html');
+            
+            if (rawHtmlArea) {
+                // Direct HTML rewrite
+                blocks[activeEditBlockIndex].element.innerHTML = rawHtmlArea.value;
+            } else {
+                // Text elements rewrite
+                const inputs = modalInputsList.querySelectorAll('.modal-text-input');
+                inputs.forEach(input => {
+                    const el = input._targetElement;
+                    const node = input._textNode;
+                    if (node) {
+                        node.textContent = input.value;
+                    } else if (el) {
+                        el.textContent = input.value;
+                    }
+                });
+            }
+            
+            addLog('success', `Texto do bloco ${activeEditBlockIndex + 1} atualizado.`);
+            closeModal();
+            updateFromDOM();
+        });
+
+        // Run Footer Substitution logic directly on DOM tree
+        function runFooterReplacementOnDOM(doc, institution) {
+            logs = [];
             
             // 1. Remove Lusofona logo block row (elm_1753955813280)
             const lusofonaLogo = doc.getElementById('elm_1753955813280');
             if (lusofonaLogo) {
-                logs.push({ status: 'info', message: 'Bloco de Logotipo Lusófona detetado. A remover...' });
                 const tr = lusofonaLogo.closest('tr');
                 if (tr) {
                     tr.remove();
-                    logs.push({ status: 'success', message: 'Linha correspondente ao Logotipo Lusófona removida do DOM.' });
+                    addLog('success', 'Lusófona logo row stripped successfully.');
                 } else {
                     lusofonaLogo.remove();
-                    logs.push({ status: 'success', message: 'Elemento do Logotipo Lusófona removido.' });
                 }
-            } else {
-                logs.push({ status: 'info', message: 'Nenhum Logotipo Lusófona detetado na posição padrão. A ignorar.' });
             }
             
-            // 2. Locate footer block (elm_1753955915805)
+            // 2. Locate footer block
             const footerTd = doc.getElementById('elm_1753955915805');
             let replaced = false;
             const targetFooter = footers[institution];
             
             if (footerTd) {
-                logs.push({ status: 'info', message: 'Bloco do rodapé (elm_1753955915805) localizado.' });
-                
-                // Color formatting to solid black background
                 const outerDiv = footerTd.classList.contains('zpelement-wrapper') ? footerTd : footerTd.querySelector('.zpelement-wrapper');
                 const innerTable = footerTd.querySelector('table');
                 const innerTd = footerTd.querySelector('td.paddingcomp');
@@ -975,7 +1332,6 @@
                     innerTable.setAttribute('bgcolor', '#000000');
                 }
                 
-                // Style inner cells and replace paragraphs
                 const finalTd = innerTd || footerTd;
                 finalTd.style.backgroundColor = '#000000';
                 finalTd.setAttribute('bgcolor', '#000000');
@@ -989,12 +1345,11 @@
                     finalTd.innerHTML = `<div style="line-height: 11pt;"><span style="line-height: 11pt;">${targetFooter.html}</span></div>`;
                 }
                 replaced = true;
-                logs.push({ status: 'success', message: `Rodapé configurado para o tema preto e populado com os dados da instituição ${targetFooter.title}.` });
+                addLog('success', `Substituição do rodapé (${targetFooter.title}) efetuada.`);
             }
             
             if (!replaced) {
-                logs.push({ status: 'warning', message: 'ID do rodapé (elm_1753955915805) não encontrado. A usar o mecanismo de inserção automática no final da tabela principal.' });
-                
+                addLog('warning', 'ID do rodapé não encontrado na estrutura. A inserir no final da tabela.');
                 const mainTable = doc.querySelector('table');
                 if (mainTable) {
                     const tbody = mainTable.querySelector('tbody') || mainTable;
@@ -1011,29 +1366,73 @@
                         </td>
                     `;
                     tbody.appendChild(newRow);
-                    logs.push({ status: 'success', message: 'Tabela de rodapé genérica inserida ao final da tabela.' });
-                } else {
-                    const fallbackDiv = doc.createElement('div');
-                    fallbackDiv.style.backgroundColor = '#000000';
-                    fallbackDiv.style.padding = '20px';
-                    fallbackDiv.innerHTML = targetFooter.html;
-                    doc.body.appendChild(fallbackDiv);
-                    logs.push({ status: 'success', message: 'Rodapé genérico adicionado ao final do body.' });
                 }
             }
-            
-            // Re-serialize back to output HTML string
-            let doctypeString = '';
-            if (doc.doctype) {
-                doctypeString = new XMLSerializer().serializeToString(doc.doctype) + '\n';
-            }
-            const finalHtml = doctypeString + doc.documentElement.outerHTML;
-            
-            return {
-                html: finalHtml,
-                logs: logs
-            };
         }
+
+        // Download output file
+        downloadBtn.addEventListener('click', () => {
+            if (!processedHtmlContent) return;
+            
+            const dotIdx = uploadedFileName.lastIndexOf('.');
+            const nameWithoutExt = dotIdx !== -1 ? uploadedFileName.substring(0, dotIdx) : 'template';
+            const outputName = `${nameWithoutExt}_${currentInstitution}.html`;
+
+            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.setAttribute('download', outputName);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            addLog('success', `Download do ficheiro concluído: ${outputName}`);
+        });
+
+        // Tab selection UI
+        tabPreview.addEventListener('click', () => {
+            tabPreview.classList.add('active');
+            tabEditor.classList.remove('active');
+            tabCode.classList.remove('active');
+            
+            frameWrapper.style.display = 'flex';
+            blockListWrapper.style.display = 'none';
+            codeWrapper.style.display = 'none';
+        });
+
+        tabEditor.addEventListener('click', () => {
+            tabEditor.classList.add('active');
+            tabPreview.classList.remove('active');
+            tabCode.classList.remove('active');
+            
+            frameWrapper.style.display = 'none';
+            blockListWrapper.style.display = 'flex';
+            codeWrapper.style.display = 'none';
+        });
+
+        tabCode.addEventListener('click', () => {
+            tabCode.classList.add('active');
+            tabPreview.classList.remove('active');
+            tabEditor.classList.remove('active');
+            
+            frameWrapper.style.display = 'none';
+            blockListWrapper.style.display = 'none';
+            codeWrapper.style.display = 'block';
+        });
+
+        // Device toggle UI
+        deviceDesktop.addEventListener('click', () => {
+            deviceDesktop.classList.add('active');
+            deviceMobile.classList.remove('active');
+            frameWrapper.classList.remove('mobile');
+            frameWrapper.classList.add('desktop');
+        });
+
+        deviceMobile.addEventListener('click', () => {
+            deviceMobile.classList.add('active');
+            deviceDesktop.classList.remove('active');
+            frameWrapper.classList.remove('desktop');
+            frameWrapper.classList.add('mobile');
+        });
     </script>
 </body>
 </html>
