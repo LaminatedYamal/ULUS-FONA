@@ -1596,6 +1596,18 @@
                     const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
                     const currentColor = getElementColor(el);
                     
+                    // Check if this text element is a link or nested inside one
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    let linkHtml = '';
+                    if (linkEl) {
+                        linkHtml = `
+                            <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">URL do Link (Hyperlink):</label>
+                                <input type="text" class="modal-link-href-input" data-index="${idx}" value="${linkEl.getAttribute('href') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                            </div>
+                        `;
+                    }
+                    
                     const field = document.createElement('div');
                     field.className = 'edit-field';
                     field.style.border = '1px solid var(--card-border)';
@@ -1611,6 +1623,8 @@
                             <span>${labelText}</span>
                         </label>
                         <textarea class="modal-text-input" style="margin-top: 0.5rem; height: 60px;" data-index="${idx}">${escapeHtml(originalText)}</textarea>
+                        
+                        ${linkHtml}
                         
                         <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
                             <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
@@ -1703,6 +1717,7 @@
                 inputs.forEach(input => {
                     const el = input._targetElement;
                     const node = input._textNode;
+                    const idx = input.dataset.index;
                     
                     // Update text node content
                     if (node) {
@@ -1712,10 +1727,18 @@
                     }
                     
                     // Update text element color
-                    const idx = input.dataset.index;
                     const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
                     if (el && hexInput && hexInput.value) {
                         el.style.color = hexInput.value;
+                    }
+                    
+                    // Update hyperlink URL if applicable
+                    const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
+                    if (linkEl) {
+                        const hrefInput = modalInputsList.querySelector(`.modal-link-href-input[data-index="${idx}"]`);
+                        if (hrefInput) {
+                            linkEl.setAttribute('href', hrefInput.value);
+                        }
                     }
                 });
             }
