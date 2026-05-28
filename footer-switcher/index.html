@@ -1572,9 +1572,9 @@
                 const upBtnDisabled = index === 0 ? 'disabled' : '';
                 const downBtnDisabled = index === blocks.length - 1 ? 'disabled' : '';
                 
-                const hasEditableText = block.type === 'text' || block.type === 'footer';
+                const hasEditableText = block.type === 'text' || block.type === 'footer' || block.type === 'image';
                 const editBtnHtml = hasEditableText ? `
-                    <button class="control-btn" onclick="openBlockTextEditor(${index})" title="Editar Texto">
+                    <button class="control-btn" onclick="openBlockTextEditor(${index})" title="Editar Bloco">
                         <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                     </button>
                 ` : '';
@@ -1987,6 +1987,27 @@
                         }
                     }
                 });
+
+                // Update images
+                const imgInputs = modalInputsList.querySelectorAll('.modal-img-src-input');
+                imgInputs.forEach(input => {
+                    const idx = parseInt(input.dataset.imgIndex);
+                    const img = tr.querySelectorAll('img')[idx];
+                    if (img) {
+                        img.setAttribute('src', input.value);
+                        const altInput = modalInputsList.querySelector(`.modal-img-alt-input[data-img-index="${idx}"]`);
+                        if (altInput) {
+                            img.setAttribute('alt', altInput.value);
+                        }
+                        const linkInput = modalInputsList.querySelector(`.modal-img-link-href-input[data-img-index="${idx}"]`);
+                        if (linkInput) {
+                            const linkEl = img.closest('a');
+                            if (linkEl) {
+                                linkEl.setAttribute('href', linkInput.value);
+                            }
+                        }
+                    }
+                });
             }
             
             // Re-serialize doc to processedHtmlContent
@@ -2148,7 +2169,7 @@
                     );
                     const editableTags = ['p', 'span', 'font', 'a', 'b', 'strong', 'i', 'em', 'h1', 'h2', 'h3', 'h4', 'td', 'div'];
                     const tagName = node.tagName.toLowerCase();
-                    if (hasDirectText && editableTags.includes(tagName)) {
+                    if (hasDirectText && editableTags.includes(tagName) && tagName !== 'a' && tagName !== 'table' && tagName !== 'tbody' && tagName !== 'tr') {
                         textContainers.push(node);
                     }
                     Array.from(node.children).forEach(findTextContainers);
@@ -2156,7 +2177,9 @@
             }
             findTextContainers(tr);
             
-            if (textContainers.length === 0) {
+            const imgElements = tr.querySelectorAll('img');
+            
+            if (textContainers.length === 0 && imgElements.length === 0) {
                 const divField = document.createElement('div');
                 divField.className = 'edit-field';
                 divField.innerHTML = `
@@ -2167,6 +2190,7 @@
                 
                 divField.querySelector('textarea').addEventListener('input', applyLiveEdits);
             } else {
+                // Render editable text elements
                 textContainers.forEach((el, idx) => {
                     const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
                     const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
@@ -2237,6 +2261,48 @@
                     }
                     
                     modalInputsList.appendChild(field);
+                });
+
+                // Render editable image elements
+                imgElements.forEach((img, idx) => {
+                    const linkEl = img.closest('a');
+                    let linkHtml = '';
+                    if (linkEl) {
+                        linkHtml = `
+                            <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">URL do Link na Imagem (Hyperlink):</label>
+                                <input type="text" class="modal-img-link-href-input" data-img-index="${idx}" value="${linkEl.getAttribute('href') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                            </div>
+                        `;
+                    }
+                    
+                    const field = document.createElement('div');
+                    field.className = 'edit-field';
+                    field.style.border = '1px solid var(--card-border)';
+                    field.style.borderRadius = '10px';
+                    field.style.padding = '0.75rem';
+                    field.style.background = 'rgba(255,255,255,0.01)';
+                    field.style.marginTop = '0.5rem';
+                    
+                    field.innerHTML = `
+                        <label style="color: var(--accent-secondary); font-weight: 700;">Imagem #${idx + 1}</label>
+                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">URL da Imagem:</label>
+                            <input type="text" class="modal-img-src-input" data-img-index="${idx}" value="${img.getAttribute('src') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                        </div>
+                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Texto Alternativo (Alt):</label>
+                            <input type="text" class="modal-img-alt-input" data-img-index="${idx}" value="${img.getAttribute('alt') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
+                        </div>
+                        ${linkHtml}
+                    `;
+                    modalInputsList.appendChild(field);
+                    
+                    field.querySelector('.modal-img-src-input').addEventListener('input', applyLiveEdits);
+                    field.querySelector('.modal-img-alt-input').addEventListener('input', applyLiveEdits);
+                    if (linkEl) {
+                        field.querySelector('.modal-img-link-href-input').addEventListener('input', applyLiveEdits);
+                    }
                 });
                 
                 // Expander for Raw HTML at the bottom
@@ -2347,6 +2413,27 @@
                         const hrefInput = modalInputsList.querySelector(`.modal-link-href-input[data-index="${idx}"]`);
                         if (hrefInput) {
                             linkEl.setAttribute('href', hrefInput.value);
+                        }
+                    }
+                });
+
+                // Update images
+                const imgInputs = modalInputsList.querySelectorAll('.modal-img-src-input');
+                imgInputs.forEach(input => {
+                    const idx = parseInt(input.dataset.imgIndex);
+                    const img = tr.querySelectorAll('img')[idx];
+                    if (img) {
+                        img.setAttribute('src', input.value);
+                        const altInput = modalInputsList.querySelector(`.modal-img-alt-input[data-img-index="${idx}"]`);
+                        if (altInput) {
+                            img.setAttribute('alt', altInput.value);
+                        }
+                        const linkInput = modalInputsList.querySelector(`.modal-img-link-href-input[data-img-index="${idx}"]`);
+                        if (linkInput) {
+                            const linkEl = img.closest('a');
+                            if (linkEl) {
+                                linkEl.setAttribute('href', linkInput.value);
+                            }
                         }
                     }
                 });
