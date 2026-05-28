@@ -306,6 +306,45 @@ function normalizeCourseCampaign(obj, courseRawObj) {
     }
     if (!Array.isArray(obj.keywords)) obj.keywords = [];
     if (!Array.isArray(obj.keywordPool)) obj.keywordPool = [];
+    if (obj.keywordPool.length === 0 && courseRawObj) {
+        const seen = new Set();
+        // Add GSC (organic) keywords first
+        if (Array.isArray(courseRawObj.gscKeywords)) {
+            courseRawObj.gscKeywords.forEach(k => {
+                const term = k.term || '';
+                const termClean = term.trim().toLowerCase();
+                if (termClean && !seen.has(termClean)) {
+                    seen.add(termClean);
+                    obj.keywordPool.push({
+                        text: term,
+                        volume: k.impressions ? `${k.impressions} imps` : '',
+                        competition: k.clicks ? `${k.clicks} clicks (GSC)` : 'GSC',
+                        bids: ''
+                    });
+                }
+            });
+        }
+        // Add Ads (competitor/paid) keywords next
+        if (Array.isArray(courseRawObj.adsKeywords)) {
+            courseRawObj.adsKeywords.forEach(k => {
+                const term = k.term || '';
+                const termClean = term.trim().toLowerCase();
+                if (termClean && !seen.has(termClean)) {
+                    seen.add(termClean);
+                    let bids = '';
+                    if (k.low || k.high) {
+                        bids = `${k.low || 0} - ${k.high || 0}`;
+                    }
+                    obj.keywordPool.push({
+                        text: term,
+                        volume: k.impressions ? `${k.impressions} imps` : (k.vol ? `${k.vol} searches` : ''),
+                        competition: k.clicks ? `${k.clicks} clicks (Ads)` : 'Competitor',
+                        bids: bids
+                    });
+                }
+            });
+        }
+    }
     if (!obj.livePulse || typeof obj.livePulse !== 'object') {
         obj.livePulse = {
             budget: '-- €',
