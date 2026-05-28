@@ -33,6 +33,9 @@ const TRANSLATIONS = {
         "url-label": "Final URL",
         "mobile-btn": "📱 Mobile",
         "desktop-btn": "💻 Desktop",
+        "browsing": "Browsing",
+        "at": "at",
+        "choose-course": "Choose a Course...",
         "degree-mapping": {
             'TeSP': 'Vocational Training (TeSP)',
             'Licenciatura': "Bachelor's Degrees",
@@ -63,6 +66,9 @@ const TRANSLATIONS = {
         "url-label": "URL Final",
         "mobile-btn": "📱 Telemóvel",
         "desktop-btn": "💻 Computador",
+        "browsing": "Navegando em",
+        "at": "em",
+        "choose-course": "Selecionar Curso...",
         "degree-mapping": {
             'TeSP': 'CTeSP',
             'Licenciatura': 'Licenciaturas',
@@ -498,6 +504,7 @@ function getContrastColor(hex) {
 }
 
 // Render course nav list
+// Render course nav list
 function renderCourseList(searchQuery = '') {
     const nav = document.getElementById('course-list');
     if (!nav) return;
@@ -522,6 +529,7 @@ function renderCourseList(searchQuery = '') {
 
     const instOrder = ['Lusófona Lisboa', 'Lusófona Porto', 'IPLUSO', 'ISLA Gaia', 'ISMAT', 'Grupo Lusófona'];
     const t = TRANSLATIONS[currentLang];
+    const displayMapping = t["degree-mapping"];
 
     Object.keys(grouped).sort((a, b) => {
         const indexA = instOrder.indexOf(a);
@@ -573,71 +581,74 @@ function renderCourseList(searchQuery = '') {
             return indexA - indexB;
         }).forEach(degree => {
             // Degree header inside institution
-            const degreeHdr = document.createElement('div');
-            degreeHdr.className = 'nav-degree-btn';
-            degreeHdr.textContent = t["degree-mapping"][degree] || degree;
-            degreeHdr.style.fontWeight = 'bold';
-            degreeHdr.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+            const degreeBtn = document.createElement('div');
+            degreeBtn.className = 'nav-degree-btn';
+            degreeBtn.textContent = displayMapping[degree] || degree;
             
-            const coursesListContainer = document.createElement('div');
-            coursesListContainer.style.padding = '0 0 10px 12px';
-            coursesListContainer.style.display = 'none';
-            coursesListContainer.style.flexDirection = 'column';
-            coursesListContainer.style.gap = '4px';
-
-            degreeHdr.addEventListener('click', (e) => {
+            degreeBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                const isShowing = coursesListContainer.style.display === 'flex';
-                coursesListContainer.style.display = isShowing ? 'none' : 'flex';
-                degreeHdr.classList.toggle('active', !isShowing);
+                document.querySelectorAll('.nav-degree-btn').forEach(b => b.classList.remove('active'));
+                degreeBtn.classList.add('active');
+                selectDegreeHub(inst, degree, grouped[inst][degree]);
             });
 
-            degreeContainer.appendChild(degreeHdr);
-            degreeContainer.appendChild(coursesListContainer);
-
-            // Sort courses by name
-            grouped[inst][degree].sort((a, b) => a.name.localeCompare(b.name)).forEach(course => {
-                const courseLink = document.createElement('div');
-                courseLink.className = 'nav-degree-btn';
-                courseLink.style.fontSize = '12px';
-                courseLink.style.padding = '8px 12px';
-                courseLink.style.borderRadius = '8px';
-                courseLink.style.background = 'rgba(255,255,255,0.02)';
-                courseLink.style.border = '1px solid rgba(255,255,255,0.04)';
-                courseLink.textContent = course.name;
-
-                if (activeCourseId === String(course.id)) {
-                    courseLink.style.borderColor = brand.hex;
-                    courseLink.style.background = `rgba(${hexToRgb(brand.hex).r}, ${hexToRgb(brand.hex).g}, ${hexToRgb(brand.hex).b}, 0.15)`;
-                    courseLink.style.color = '#ffffff';
-                }
-
-                courseLink.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    document.querySelectorAll('#course-list .nav-degree-btn').forEach(btn => {
-                        btn.style.background = '';
-                        btn.style.borderColor = '';
-                        btn.style.color = '';
-                    });
-                    courseLink.style.borderColor = brand.hex;
-                    courseLink.style.background = `rgba(${hexToRgb(brand.hex).r}, ${hexToRgb(brand.hex).g}, ${hexToRgb(brand.hex).b}, 0.15)`;
-                    courseLink.style.color = '#ffffff';
-                    
-                    loadCourseCampaign(String(course.id), course);
-                });
-
-                coursesListContainer.appendChild(courseLink);
-            });
-
-            // Expand if search query matches
-            if (q) {
-                instHeader.classList.add('expanded');
-                degreeContainer.classList.add('expanded');
-                coursesListContainer.style.display = 'flex';
-                degreeHdr.classList.add('active');
-            }
+            degreeContainer.appendChild(degreeBtn);
         });
+
+        // Expand if search query matches
+        if (q) {
+            instHeader.classList.add('expanded');
+            degreeContainer.classList.add('expanded');
+        }
     });
+}
+
+// Select Degree Category and show the landing dropdown (Main Dashboard style)
+function selectDegreeHub(inst, degree, degreeCourses) {
+    activeCourseId = null;
+    document.getElementById("landing-view").style.display = "flex";
+    document.getElementById("workspace-view").style.display = "none";
+    document.getElementById('dashboard-header-left').style.visibility = "hidden";
+    
+    // Update Header Text
+    document.getElementById('active-course-title').textContent = inst;
+    document.getElementById('active-course-desc').textContent = degree;
+    
+    // Update Landing Logo
+    const brand = BRANDING[inst] || { logo: "", bgSub: "#001b3b" };
+    const logoEl = document.getElementById('landing-logo');
+    if (logoEl) {
+        logoEl.src = brand.logo;
+        logoEl.style.display = brand.logo ? "block" : "none";
+        if (logoEl.parentElement) {
+            logoEl.parentElement.style.backgroundColor = brand.bgSub;
+            logoEl.parentElement.style.padding = "10px";
+            logoEl.parentElement.style.borderRadius = "12px";
+            logoEl.parentElement.style.display = "inline-block";
+        }
+    }
+    
+    // Update Subtitle
+    const subtitle = document.getElementById('landing-subtitle');
+    const t = TRANSLATIONS[currentLang];
+    const displayDegree = t["degree-mapping"][degree] || degree;
+    if (subtitle) {
+        subtitle.textContent = `${t["browsing"]} ${displayDegree} ${t["at"]} ${inst}`;
+    }
+    
+    // Populate Hub Dropdown
+    const hubDropdownContainer = document.getElementById('degree-selection-hub');
+    const dropdown = document.getElementById('course-dropdown-hub');
+    if (dropdown && hubDropdownContainer) {
+        dropdown.innerHTML = `<option value="">${t["choose-course"]}</option>`;
+        degreeCourses.sort((a, b) => a.name.localeCompare(b.name, 'pt')).forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c.id;
+            opt.textContent = c.name;
+            dropdown.appendChild(opt);
+        });
+        hubDropdownContainer.style.display = "block";
+    }
 }
 
 // Load selected course's campaign configuration
