@@ -142,6 +142,17 @@ async function init() {
     await loadAdsConfig();
     renderCourseList();
     initGlobalListeners();
+
+    // Setup AI model selection dropdown
+    const modelSelect = document.getElementById('campaign-ai-model-select');
+    if (modelSelect) {
+        const savedModel = localStorage.getItem('antigravity_active_model') || 'gemini';
+        modelSelect.value = savedModel;
+        modelSelect.addEventListener('change', (e) => {
+            localStorage.setItem('antigravity_active_model', e.target.value);
+            console.log(`[Campaign Builder] Active AI model switched to: ${e.target.value}`);
+        });
+    }
 }
 
 function initLanguage() {
@@ -801,8 +812,25 @@ function generateHeadlineInputs() {
         
         wrap.appendChild(input);
         wrap.appendChild(counter);
+        
+        const aiBtn = document.createElement('button');
+        aiBtn.type = 'button';
+        aiBtn.className = 'ai-rewrite-btn';
+        aiBtn.title = 'AI Rewrite Headline';
+        aiBtn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                <path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5z"/>
+                <path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z"/>
+            </svg>
+        `;
+        aiBtn.addEventListener('click', async () => {
+            await handleAIRewrite(input, 'headline', i, aiBtn);
+        });
+
         row.appendChild(badge);
         row.appendChild(wrap);
+        row.appendChild(aiBtn);
         container.appendChild(row);
         
         // Input Listener using centralized validation
@@ -853,8 +881,25 @@ function generateDescriptionInputs() {
         
         wrap.appendChild(input);
         wrap.appendChild(counter);
+        
+        const aiBtn = document.createElement('button');
+        aiBtn.type = 'button';
+        aiBtn.className = 'ai-rewrite-btn';
+        aiBtn.title = 'AI Rewrite Description';
+        aiBtn.innerHTML = `
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+                <path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5z"/>
+                <path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1z"/>
+            </svg>
+        `;
+        aiBtn.addEventListener('click', async () => {
+            await handleAIRewrite(input, 'description', i, aiBtn);
+        });
+
         row.appendChild(badge);
         row.appendChild(wrap);
+        row.appendChild(aiBtn);
         container.appendChild(row);
         
         // Input Listener using centralized validation
@@ -1678,5 +1723,176 @@ function escapeHtml(unsafe) {
          .replace(/'/g, "&#039;");
 }
 
+function saveObjHeadlines(list) {
+    activeCourseObj.headlines = list;
+}
+
+function saveObjDescriptions(list) {
+    activeCourseObj.descriptions = list;
+}
+
+async function handleAIRewrite(inputEl, type, index, buttonEl) {
+    const activeModel = localStorage.getItem('antigravity_active_model') || 'gemini';
+    const apiKey = localStorage.getItem(`api_key_${activeModel}`) || localStorage.getItem('gemini_api_key');
+    const proxyUrl = localStorage.getItem('antigravity_api_proxy');
+    
+    if (!apiKey) {
+        alert(`No API key found for ${activeModel.toUpperCase()}. Please configure it in the Wallet (💼) on the Main Dashboard!`);
+        return;
+    }
+    
+    const courseName = activeCourseObj ? activeCourseObj.name : 'Curso';
+    const degreeType = activeCourseObj ? activeCourseObj.degree_type : 'Licenciatura';
+    const institution = activeCourseObj ? activeCourseObj.institution : 'Grupo Lusófona';
+    const keywords = (activeCourseObj && activeCourseObj.keywords) ? 
+        activeCourseObj.keywords.filter(k => k.status === 'ENABLED').map(k => k.text).slice(0, 10).join(', ') : '';
+        
+    const currentValue = inputEl.value.trim();
+    
+    // Add visual loading state
+    buttonEl.classList.add('loading');
+    buttonEl.disabled = true;
+    const originalHTML = buttonEl.innerHTML;
+    buttonEl.innerHTML = `
+        <svg class="spinner" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="8"></circle>
+        </svg>
+    `;
+    
+    const limit = type === 'headline' ? 30 : 90;
+    
+    let prompt = `You are a professional Google Ads Copywriter specializing in Responsive Search Ads (RSA).
+Generate or rewrite a single highly optimized ${type} of maximum ${limit} characters (including spaces) for:
+Course: "${courseName}" (${degreeType})
+Institution: "${institution}"
+Keywords context: "${keywords}"
+Current input value (for context/rewriting): "${currentValue}"
+
+Language: Respond in Portuguese (Portugal).
+Strict constraints:
+1. MUST be under ${limit} characters.
+2. Return ONLY the single raw line of text.
+3. No quotes, no markdown, no explanations, no prefix, no greeting.`;
+
+    try {
+        let rewrittenText = "";
+        
+        if (activeModel === 'gemini') {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+            });
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            rewrittenText = data.candidates[0].content.parts[0].text;
+        } else {
+            // Use proxy for other models (Claude, GPT, etc.)
+            const agentId = localStorage.getItem(`agent_id_${activeModel}`) || 'cmor5objoex9gfp01vm7p95jh';
+            const channelId = localStorage.getItem(`channel_id_${activeModel}`) || 'cmp19u43ta5pelx01jckgsqvl';
+            
+            if (!proxyUrl) {
+                throw new Error("Proxy Required. Please configure your Cloudflare Worker proxy in the Wallet on the Main Dashboard.");
+            }
+            
+            // Auto-fix proxy URL protocol
+            let formattedProxy = proxyUrl;
+            if (!formattedProxy.startsWith('http://') && !formattedProxy.startsWith('https://')) {
+                formattedProxy = 'https://' + formattedProxy;
+            }
+            
+            const threadEpochKey = `thread_epoch_${activeModel}`;
+            let threadEpoch = localStorage.getItem(threadEpochKey) || '1';
+            const threadId = `antigravity_rewrite_${activeModel}_${threadEpoch}`;
+            
+            const response = await fetch(formattedProxy, {
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    agent_id: agentId,
+                    api_key: apiKey.trim(),
+                    channel_id: channelId,
+                    thread_id: threadId,
+                    message: prompt
+                })
+            });
+            
+            const rawText = await response.text();
+            if (!response.ok) throw new Error(`Agent API Failed: ${response.status}`);
+            
+            // Try to extract content from parsed payload if it's JSON
+            try {
+                let fullResponse = "";
+                let foundComplete = false;
+                
+                for (let i = 0; i < rawText.length; i++) {
+                    if (rawText[i] === '{') {
+                        let braceCount = 1;
+                        let j = i + 1;
+                        while (j < rawText.length && braceCount > 0) {
+                            if (rawText[j] === '{') braceCount++;
+                            else if (rawText[j] === '}') braceCount--;
+                            j++;
+                        }
+                        if (braceCount === 0) {
+                            const objStr = rawText.substring(i, j);
+                            try {
+                                const parsed = JSON.parse(objStr);
+                                if (parsed.type === "message" && parsed.content && typeof parsed.content === 'object' && parsed.content.content) {
+                                    rewrittenText = parsed.content.content;
+                                    foundComplete = true;
+                                } else if (!foundComplete && parsed.type === "token" && typeof parsed.content === 'string') {
+                                    fullResponse += parsed.content;
+                                }
+                            } catch(e) {}
+                            i = j - 1;
+                        }
+                    }
+                }
+                
+                if (!foundComplete) rewrittenText = fullResponse || rawText;
+            } catch (e) {
+                rewrittenText = rawText;
+            }
+        }
+        
+        // Clean rewrittenText (strip quotes, trim)
+        rewrittenText = rewrittenText.trim().replace(/^["']|["']$/g, '').trim();
+        
+        // Validate length constraint dynamically and truncate if necessary
+        if (rewrittenText.length > limit) {
+            rewrittenText = rewrittenText.substring(0, limit);
+        }
+        
+        // Update input field
+        inputEl.value = rewrittenText;
+        
+        // Trigger listeners
+        runSmartValidation();
+        updateAdPreview();
+        
+        // Save to activeCourseObj
+        if (type === 'headline') {
+            const headlines = objHeadlinesList();
+            headlines[index] = rewrittenText;
+            saveObjHeadlines(headlines);
+        } else {
+            const descriptions = objDescriptionsList();
+            descriptions[index] = rewrittenText;
+            saveObjDescriptions(descriptions);
+        }
+        
+    } catch (e) {
+        console.error("AI Rewrite failed:", e);
+        alert("AI Rewrite failed: " + e.message);
+    } finally {
+        buttonEl.classList.remove('loading');
+        buttonEl.disabled = false;
+        buttonEl.innerHTML = originalHTML;
+    }
+}
+
 // Start everything
 window.addEventListener('DOMContentLoaded', init);
+
