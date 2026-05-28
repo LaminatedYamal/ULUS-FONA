@@ -33393,5 +33393,210 @@
     },
     "lastUpdated": "",
     "lastSynced": ""
+  },
+  "9999": {
+    "id": 9999,
+    "name": "Curso Teste Sandbox",
+    "institution": "Lusófona Lisboa",
+    "degree": "Licenciaturas",
+    "degree_type": "Licenciatura",
+    "status": "ACTIVE",
+    "headlines": [
+      "Curso de Teste Sandbox",
+      "Estudo e Pratica Sandbox",
+      "Universidade Lusofona Teste",
+      "Melhor Curso de Testes",
+      "Faça sua Candidatura Online",
+      "Inscrições Abertas 2026",
+      "Aulas de Teste Sandbox",
+      "Aprenda na Prática",
+      "Formação de Testes",
+      "Estude Testes em Lisboa",
+      "Curso Arqtuitetura acreditado",
+      "Arquitetos cursos superiores",
+      "Urbanismo e Arquitetura Cursos",
+      "Gabinetes arquitetura cursos",
+      "Mestrado Arquiteura ULusofona"
+    ],
+    "descriptions": [
+      "Inscreva-se no Curso de Teste Sandbox da Universidade Lusófona. Aulas teóricas e práticas.",
+      "Candidate-se hoje mesmo ao curso experimental de testes integrados. Vagas limitadas!",
+      "Curso Arquitetura Trabalhe arquitetura ou areas artisticas. Ingresso Universidade Lusófona",
+      "Universidade Lusófona. Candidate-se ao curso arquitetura. Mestrado integrado ser arquiteto"
+    ],
+    "finalUrl": "https://www.ulusofona.pt/lisboa/licenciaturas/curso-teste-sandbox",
+    "path1": "teste",
+    "path2": "sandbox",
+    "sitelinks": [],
+    "snippets": {
+      "header": "Header",
+      "values": [
+        "Valor 1",
+        "Valor 2",
+        "Valor 3"
+      ]
+    },
+    "keywords": [
+      {
+        "text": "curso de teste",
+        "status": "ENABLED"
+      },
+      {
+        "text": "teste de ads",
+        "status": "ENABLED"
+      },
+      {
+        "text": "sandbox ads",
+        "status": "PAUSED"
+      }
+    ],
+    "keywordPool": [
+      {
+        "text": "teste gratis",
+        "status": "ENABLED",
+        "volume": "500",
+        "competition": "Low",
+        "bids": "0.1 - 0.5",
+        "minBid": "0.1",
+        "maxBid": "0.5"
+      },
+      {
+        "text": "ads sandbox gratis",
+        "status": "ENABLED",
+        "volume": "200",
+        "competition": "Medium",
+        "bids": "0.2 - 1.0",
+        "minBid": "0.2",
+        "maxBid": "1.0"
+      },
+      {
+        "text": "campanha experimental",
+        "status": "ENABLED",
+        "volume": "50",
+        "competition": "High",
+        "bids": "0.5 - 2.5",
+        "minBid": "0.5",
+        "maxBid": "2.5"
+      },
+      {
+        "text": "faculdade arquitetura lisboa",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "faculdade de arquitetura lisboa",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "faculdade arquitetura",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "curso de arquitetura",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "arquitetura lisboa",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "faculdade para arquitetura",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "mestrados integrados",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "universidade de arquitetura lisboa",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "mestrado integrado em arquitetura",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "curso arquitetura",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "arquitetura mestrado",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      },
+      {
+        "text": "mestrado em arquitetura",
+        "status": "ENABLED",
+        "volume": "---",
+        "competition": "---",
+        "bids": "---",
+        "minBid": "",
+        "maxBid": ""
+      }
+    ],
+    "livePulse": {
+      "budget": "10.0 €",
+      "clicks": 0,
+      "impressions": 0,
+      "cost": "0 €",
+      "conversions": 0.0,
+      "costPerConv": "0 €",
+      "period": "Últimos 30 Dias"
+    },
+    "lastUpdated": "",
+    "lastSynced": ""
   }
 }
