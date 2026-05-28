@@ -92,6 +92,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
+    height: 100%;
     flex-shrink: 0;
     background: rgba(15, 17, 23, 0.9);
     border-right: 1px solid var(--panel-border);
