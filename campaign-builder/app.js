@@ -146,8 +146,9 @@ async function init() {
     // Setup AI model selection dropdown
     const modelSelect = document.getElementById('campaign-ai-model-select');
     if (modelSelect) {
-        const savedModel = localStorage.getItem('antigravity_active_model') || 'gemini';
+        const savedModel = localStorage.getItem('antigravity_active_model') || (localStorage.getItem('api_key_claude') ? 'claude' : 'gemini');
         modelSelect.value = savedModel;
+        localStorage.setItem('antigravity_active_model', savedModel);
         modelSelect.addEventListener('change', (e) => {
             localStorage.setItem('antigravity_active_model', e.target.value);
             console.log(`[Campaign Builder] Active AI model switched to: ${e.target.value}`);
@@ -1774,13 +1775,28 @@ Strict constraints:
         let rewrittenText = "";
         
         if (activeModel === 'gemini') {
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-            });
-            const data = await response.json();
-            if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            let response;
+            let data;
+            try {
+                // Try stable gemini-1.5-flash first
+                response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                data = await response.json();
+                if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            } catch (err) {
+                console.warn("gemini-1.5-flash failed or busy, retrying with gemini-1.5-pro...", err);
+                // Fallback retry with stable gemini-1.5-pro
+                response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                data = await response.json();
+                if (!response.ok) throw new Error(data.error ? data.error.message : "API Failed");
+            }
             rewrittenText = data.candidates[0].content.parts[0].text;
         } else {
             // Use proxy for other models (Claude, GPT, etc.)
