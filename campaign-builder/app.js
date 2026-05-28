@@ -233,47 +233,43 @@ async function loadCourses() {
 
 // Load ads_config.json (GitHub with local fallback)
 async function loadAdsConfig() {
-    const token = await getGitHubToken();
-    if (token) {
-        try {
-            // Fetch from GitHub
-            const response = await fetch('https://api.github.com/repos/LaminatedYamal/ULUS-FONA/contents/ads_config.json', {
+    // 1. Try to load local file immediately to make the UI instant
+    try {
+        const response = await fetch('../ads_config.json?v=' + Date.now());
+        if (response.ok) {
+            adsConfig = await response.json();
+            console.log("Loaded ads_config.json instantly from local server.");
+        }
+    } catch(e) {
+        console.error("Local ads_config.json load failed:", e);
+    }
+    
+    // 2. Fetch the SHA in the background (non-blocking)
+    getGitHubToken().then(token => {
+        if (token) {
+            fetch('https://api.github.com/repos/LaminatedYamal/ULUS-FONA/contents/ads_config.json', {
                 headers: {
                     'Authorization': `token ${token}`,
                     'Accept': 'application/vnd.github.v3+json'
                 }
-            });
-            if (response.ok) {
-                const data = await response.json();
-                adsConfigSha = data.sha;
-                const rawContent = atob(data.content.replace(/\s/g, ''));
-                const utf8Content = decodeURIComponent(escape(rawContent));
-                adsConfig = JSON.parse(utf8Content);
-                console.log("Successfully loaded ads_config.json from GitHub!");
-                
-                // Set username display from stored credentials
-                const user = localStorage.getItem('hub_user_name') || 'Ads Admin';
-                document.getElementById('user-display-name').textContent = user;
-                return;
-            }
-        } catch (e) {
-            console.error("GitHub API load failed. Falling back to local file...", e);
+            })
+            .then(res => {
+                if (res.ok) return res.json();
+            })
+            .then(data => {
+                if (data) {
+                    adsConfigSha = data.sha;
+                    console.log("Successfully fetched ads_config.json SHA in background:", adsConfigSha);
+                }
+            })
+            .catch(err => console.error("Background SHA fetch error:", err));
         }
-    }
+    });
     
-    // Local fallback
-    try {
-        const response = await fetch('../ads_config.json');
-        if (response.ok) {
-            adsConfig = await response.json();
-            console.log("Loaded ads_config.json from local fallback.");
-        }
-    } catch (e) {
-        console.error("Failed to load ads_config.json locally:", e);
-    }
-    // Always use the authenticated user's name (auth guard above ensures they're logged in)
+    // Always use the authenticated user's name
     const user = localStorage.getItem('hub_user_name') || 'Ads Admin';
-    document.getElementById('user-display-name').textContent = user;
+    const userEl = document.getElementById('user-display-name');
+    if (userEl) userEl.textContent = user;
 }
 
 function stripAccents(str) {
