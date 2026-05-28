@@ -2365,6 +2365,21 @@
             frameWrapper.classList.add('mobile');
         });
 
+        // Download processed HTML
+        downloadBtn.addEventListener('click', () => {
+            if (!processedHtmlContent) return;
+            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'processed_' + uploadedFileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            addLog('success', `Ficheiro descarregado: processed_${uploadedFileName}`);
+        });
+
         // Ctrl+Z Undo key binding (excluding active text input areas to allow native browser undo/redo)
         document.addEventListener('keydown', (e) => {
             if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
