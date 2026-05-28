@@ -41,7 +41,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "engenharia aeronautica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "gestao aeronautica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso aeronautica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade aviação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura aeronautica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "gestao aeronautica",
@@ -128,12 +149,12 @@
     "status": "PAUSED",
     "headlines": [
       "Licenciatura em Artes Visuais",
-      "Curso de Artes plásticas",
-      "Licenciatura artes Lisboa",
-      "Universidade Lusófona  Lisboa",
-      "Candidata-te a Artes visuais",
+      "Curso de Artes Plásticas",
+      "Licenciatura Artes Lisboa",
+      "Universidade Lusófona Lisboa",
+      "Candidata-te a Artes Visuais",
       "Licenciatura Artes Plásticas",
-      "Curso superior Artes plásticas",
+      "Curso superior Artes Plásticas",
       "Candidaturas Artes e Pintura",
       "Lusófona Licenciatura Artes",
       "Faz curso de artes ULusófona",
@@ -145,7 +166,7 @@
     ],
     "descriptions": [
       "Aprende artes plásticas e visuais. Experimenta e produz. Opta pela Universidade Lusófona.",
-      "Contacta com artistas e curadores.Faz curso Artes Visuais na Universidade Lusófona Lisboa",
+      "Contacta com artistas e curadores. Faz curso Artes Visuais na Universidade Lusófona Lisboa",
       "Candidata-te à Lusófona. Aprende a dominar os media da pintura, do desenho e da fotografia",
       "Desenvolve criatividade domina a produção e criação artística. Faz Artes Visuais Lusófona"
     ],
@@ -161,7 +182,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso artes",
+        "status": "PAUSED"
+      },
+      {
+        "text": "Licenciatura em Artes Visuais",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura artes",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "artes visuais",
@@ -308,7 +342,36 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "design de comunicação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso de design",
+        "status": "PAUSED"
+      },
+      {
+        "text": "design comunicação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "comunicação design",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura design",
+        "status": "PAUSED"
+      },
+      {
+        "text": "design comunicacao",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade design",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de design",
@@ -673,7 +736,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso relações internacionais",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura relações internacionais",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura ciência política",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de relação internacional",
@@ -1153,7 +1229,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "sociologia licenciatura",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso sociologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade sociologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura sociologia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura em sociologia",
@@ -1227,10 +1320,10 @@
       "Universidade Lusófona Lisboa",
       "Curso Ilustração Lusófona",
       "Faculdades. Cursos animação",
-      "Lusófona.Escola Ilustração",
+      "Lusófona. Escola Ilustração",
       "Cinema Animação Curso Lusófona",
-      "Artes Digitais.Cursos Lusófona",
-      "Animação 3D.Faculdade Lusófona",
+      "Artes Digitais Cursos Lusófona",
+      "Animação 3D Faculdade Lusófona",
       "ULusófona escola animação",
       "Faculdade animação digital",
       "Animação escola ilustração",
@@ -1238,7 +1331,7 @@
       "Curso superior Animação Lisboa"
     ],
     "descriptions": [
-      "Universidade Lusófona.Vem aprender animação digital na melhor escola de ilustração e media",
+      "Universidade Lusófona. Aprende animação digital na melhor escola de ilustração e media",
       "Candidata-te à Lusófona. Curso desenhado a partir da construção de um filme de animação",
       "Se queres aprender animação e artes digitais escolhe a Lusófona e os melhores equipamentos",
       "Licenciatura Ilustração e artes digitais ULusófona. Animação 3D e stopmotion. Candidate-se"
@@ -1255,7 +1348,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura animação digital",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso animação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "escola animação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade animação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "escola ilustração",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "animação 2d",
@@ -1357,7 +1471,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso sonoplastia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso audio",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura som",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia som",
@@ -1477,7 +1604,32 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso cinema",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura cinema",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade cinema",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade cinema",
+        "status": "PAUSED"
+      },
+      {
+        "text": "cinema curso superior",
+        "status": "PAUSED"
+      },
+      {
+        "text": "escola cinema",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "producao audiovisual",
@@ -1642,7 +1794,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura teatro",
+        "status": "PAUSED"
+      },
+      {
+        "text": "formação atores",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "atriz como ser",
@@ -1789,7 +1950,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura videojogos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso videojogos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso games",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade jogos",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "programaçao jogos",
@@ -1922,7 +2100,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso comunicação social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura comunicação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ciências comunicação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "jornalismo e comunicação",
@@ -2087,7 +2278,32 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso marketing",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura marketing",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso relações publicas",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade marketing",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso publicidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura publicidade",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura em marketing digital",
@@ -2378,7 +2594,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso jornalismo",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura jornalismo",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade jornalismo",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura em ciencias da comunicação",
@@ -2592,7 +2821,32 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura educação fisica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura desporto",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade desporto",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade educação fisica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso desporto",
+        "status": "PAUSED"
+      },
+      {
+        "text": "educação fisica desporto",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso treinador nivel 1",
@@ -3090,7 +3344,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso contabilidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura contabilidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura fiscalidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura auditoria",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de tecnico em contabilidade",
@@ -3507,7 +3778,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "bioeconomia circular",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso bioeconomia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura economia",
@@ -3672,7 +3952,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "bioeconomia circular",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso bioeconomia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "tecnologia biomédica",
@@ -3828,7 +4117,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso biotecnologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "engenharia biotecnologica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura biotecnologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso ciencias biologicas",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura engenharia biotecnologica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia biológica",
@@ -4029,7 +4339,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "engenharia biomedica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso biomedicina",
+        "status": "PAUSED"
+      },
+      {
+        "text": "biomedicina faculdade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura biomedica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso biomedica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "ortoprotesia",
@@ -4203,7 +4534,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "engenharia eletrotecnica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso eletrotecnica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "engenharia de eletrotecnica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia eletrotecnica e de computadores",
@@ -4483,7 +4827,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura matemática",
+        "status": "PAUSED"
+      },
+      {
+        "text": "matemática computação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia informatica",
@@ -4710,7 +5063,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "engenharia informatica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade informatica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de informática em portugal",
@@ -4794,7 +5156,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso telecomunicações",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura telecomunicações",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de informática lisboa",
@@ -5085,7 +5456,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "informática gestão",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura informatica gestão",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura engenharia informática",
@@ -5384,7 +5764,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso psicologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura psicologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade psicologia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de psicologia porto",
@@ -5459,7 +5852,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "faculdade biologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade biologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso ciencias biologicas",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura biologia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciado em biologia",
@@ -5732,7 +6142,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "bioquimica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "ciências farmacêuticas",
@@ -5933,7 +6348,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso nutrição",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura nutrição",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso nutricionista",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade nutrição",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade nutricionista",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura em nutrição",
@@ -6116,7 +6552,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso de cosmetologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso em cosmetologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "estética e cosmetologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura cosmetologia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso profissional de esteticista",
@@ -6290,7 +6743,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso segurança",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura segurança",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso segurança privada",
@@ -6481,7 +6943,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso assistente social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade serviço social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso serviço social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade assistente social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura serviço social",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso educação social",
@@ -6547,7 +7030,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso turismo",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura turismo",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade turismo",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso gestão hoteleira",
@@ -6797,7 +7293,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "doutoramento Porto",
+        "status": "ENABLED"
+      },
+      {
+        "text": "phd Porto",
+        "status": "ENABLED"
+      },
+      {
+        "text": "Bolsas Doutoramento",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -6828,12 +7337,17 @@
       "Mestrado Farmácia Investigação",
       "Lusófona em Mestrado Farmácia",
       "Saúde Mestrado Farmácia Lisboa",
-      "Universidade Lusófona Lisboa"
+      "Universidade Lusófona Lisboa",
+      "Curso ciencias farmaceuticas",
+      "Curso Farmácia ULusofona",
+      "Licenciatura farmácia Lisboa",
+      "Curso superior farmaceutica",
+      "Farmaceutico cursos mestrado"
     ],
     "descriptions": [
       "Farmácia Hospitalar ou comunitária.Mestrado ciências farmacêuticas Universidade Lusófona.",
       "Mestrado em Farmácia da Universidade Lusófona Lisboa. Ciências Farmacêuticas. Candidate-se",
-      "Prática Farmacêutica clínica. Candidate-se a mestrado em Portugal. Universidade Lusófona",
+      "Prática clínica. Candidate-se licenciatura ciencias farmaceuticas. Universidade Lusófona",
       "Farmácia saúde e tecnologia. Faça Mestrado Integrado. Candidate-se à Universidade Lusófona"
     ],
     "finalUrl": "https://www.ulusofona.pt/lisboa/mestrados-integrados/ciencias-farmaceuticas",
@@ -7088,9 +7602,14 @@
       "Mestrado Integrado Veterinára",
       "Veterinária Mestrado Lusófona",
       "Estudar Veterinára em Lisboa",
-      "ULHT Mestrado em Veterinária",
+      "Curso Mestrado em Veterinária",
       "Medicina Cirurgia Veterinária",
-      "Mestrado Médico Veterinário"
+      "Mestrado Médico Veterinário",
+      "Faculdade veterinaria Lusofona",
+      "Licenciatura Veterinaria curso",
+      "Medicos veterinarios Lisboa",
+      "Medicina Veterinária Mestrado",
+      "Hospital veterinário Lusófona"
     ],
     "descriptions": [
       "Mestrado integrado em Medicina Veterinária. Candidate-se  Universidade Lusófona de Lisboa.",
@@ -7908,7 +8427,8 @@
       "Mestrados em full e part-time",
       "Mestrados em tempo parcial",
       "mestrado de moda pós-laboral",
-      "Mestrado Design produção moda"
+      "Mestrado Design produção moda",
+      "Mestrado de moda tempo parcial"
     ],
     "descriptions": [
       "Media e Moda.Candidate-se ao mestrado design e produção de moda da Universidade Lusófona.",
@@ -8249,14 +8769,19 @@
     "headlines": [
       "Mestrado em Pintura Lusófona",
       "Mestrado artes Lusófona Lisboa",
-      "Investigação clínica mestrado",
-      "Fazer mestrado clínica Lisboa",
+      "Universidade Lusófona Lisboa",
+      "Mestrado Pintura belas artes",
       "Inscrever em mestrado Lusófona",
       "Candidatura Pintura Lisboa",
-      "Mestrado Psicologia Clínica",
-      "Saúde Mestrado em Psicologia",
-      "Mestrado Clínica na Lusófona",
-      "Centro Universitário Lisboa"
+      "Fazer mestrado pintura lisboa",
+      "Inscrições mestrados Lisboa",
+      "Estudar Pintura Curso Mestrado",
+      "Centro Universitário Lisboa",
+      "Curso superior Pintura Lisboa",
+      "Mestrado Pintura tempo parcial",
+      "Mestrado Artes plásticas",
+      "Ingresso Mestrado Pintura",
+      "Pinturas Mestrado Artes Lisboa"
     ],
     "descriptions": [
       "Candidate-se Mestrado Pintura ULusófona. Prática e profissionalização projetos artísticos",
@@ -8371,7 +8896,12 @@
       "Governação Mestrado Lusófona",
       "Faça Mestrado Ciência Política",
       "Mestrado na Europa Lusófona",
-      "Centro Universitário Lisboa"
+      "Centro Universitário Lisboa",
+      "fazer mestrado tempo parcial",
+      "Mestrados em part-time Lisboa",
+      "Comunicação ciência política",
+      "Ingresso mestrados Lisboa",
+      "Mestrado Universidade Lusófona"
     ],
     "descriptions": [
       "Candidate-se ao mestrado Ciência Política da Universidade Lusófona.Seja Cientista Político",
@@ -8518,7 +9048,12 @@
       "Fazer Mestrado Comunicação",
       "Inscrever em Mestrado Lusófona",
       "Centro Universitário Lisboa",
-      "Universidade Lusófona Mestrado"
+      "Universidade Lusófona Mestrado",
+      "Assessoria Imprensa Mestrado",
+      "Política Jornalismo Mestrados",
+      "Assessoria política mestrado",
+      "Estudar comunicação política",
+      "ULusofona mestrado comunicação"
     ],
     "descriptions": [
       "Seja Assessor Político em media. Faça Mestrado Comunicação da Universidade Lusófona.",
@@ -8647,7 +9182,12 @@
       "Acesso Mestrado Internacional",
       "Centro Universitário Lisboa",
       "Fazer Mestrado internacional",
-      "Bolsas Universidade Lusófona"
+      "Bolsas Universidade Lusófona",
+      "Mestrados tempo parcial Lisboa",
+      "Mestrado Diplomacia ULusofona",
+      "Política Mestrado Diplomacia",
+      "Bolsa mérito mestrado lusofona",
+      "Curso Diplomacia internacional"
     ],
     "descriptions": [
       "Mestrado Diplomacia e Relações Internacionais. Candidate-se à Universidade Lusófona Lisboa",
@@ -8878,8 +9418,22 @@
     "degree": "Mestrados",
     "degree_type": "Mestrado",
     "status": "PAUSED",
-    "headlines": [],
-    "descriptions": [],
+    "headlines": [
+      "Mestrado Patrimonio Cultural",
+      "Patrimonio cultural imaterial",
+      "Cursos património cultural",
+      "Universidade Lusófona Lisboa",
+      "Mestrados tempo parcial Lisboa",
+      "Curso Gestão Património Lisboa",
+      "Mestrados Gestão Cultural",
+      "Mestrado Património ULusófona"
+    ],
+    "descriptions": [
+      "Mestrado Património cultural imaterial. Seja técnico superior museus Universidade Lusófona",
+      "Trabalhe na área cultural e património. Faça Mestrado ULusofona em Património Cultural",
+      "Exerça como técnico turismo candidate-se mestrado património cultural Faculdade Lusófona",
+      "Valorize a cultura o património imaterial como vereador cultural. Faça mestrado ULusófona"
+    ],
     "finalUrl": "https://www.ulusofona.pt/lisboa/mestrados/patrimonio-cultural-imaterial",
     "path1": "",
     "path2": "",
@@ -16436,7 +16990,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado turismo hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em gestão da inovação",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em gestão",
@@ -16996,7 +17567,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "Mestrado Animais",
+        "status": "ENABLED"
+      },
+      {
+        "text": "Mestrado Imagiologia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "medicina veterinária",
@@ -17184,9 +17764,28 @@
     "degree_type": "Doutoramento",
     "status": "PAUSED",
     "headlines": [
-      "Mestrado integrado Arquitetura"
+      "Mestrado integrado Arquitetura",
+      "Universidade Lusofona Lisboa",
+      "Curso Superior Arquitetura",
+      "Curso Licenciatura Arquitetura",
+      "Candidatura curso arquitetura",
+      "Curso Arquitetura ULusófona",
+      "Estudar Arquitetura Lisboa",
+      "Fazer curso arquitetura Lisboa",
+      "Mestrado Arquitetura Lisboa",
+      "Faculdade Arquitetura Lusófona",
+      "Curso Arqtuitetura acreditado",
+      "Arquitetos cursos superiores",
+      "Urbanismo e Arquitetura Cursos",
+      "Gabinetes arquitetura cursos",
+      "Mestrado Arquiteura ULusofona"
     ],
-    "descriptions": [],
+    "descriptions": [
+      "Candidate-se. Curso Arquitetura reconhecido pela Ordem Arquitetos. Universidade Lusófona",
+      "Profissão Arquiteto. Mestrado integrado Universidade Lusófona. Acesso Licenciaturas",
+      "Curso Arquitetura Trabalhe arquitetura ou areas artisticas. Ingresso Universidade Lusófona",
+      "Universidade Lusófona. Candidate-se ao curso arquitetura. Mestrado integrado ser arquiteto"
+    ],
     "finalUrl": "https://www.ulusofona.pt/lisboa/mestrados-integrados/arquitetura",
     "path1": "",
     "path2": "",
@@ -17391,7 +17990,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "doutoramento media",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "doutoramento marketing",
@@ -17493,7 +18097,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "doutoramento educação",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "doutorado em educação",
@@ -17586,7 +18195,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "doutoramento informática",
+        "status": "ENABLED"
+      },
+      {
+        "text": "phd informatica",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -17637,7 +18255,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "doutoramento em psicologia clinica",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "doutoramento psicologia",
@@ -17734,7 +18357,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso teatro",
+        "status": "PAUSED"
+      },
+      {
+        "text": "artes cenicas",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura teatro",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura artes",
+        "status": "PAUSED"
+      },
+      {
+        "text": "artes dramaticas",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de artes",
@@ -17863,7 +18507,36 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "design de comunicação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso de design",
+        "status": "PAUSED"
+      },
+      {
+        "text": "design comunicação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "comunicação design",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura design",
+        "status": "PAUSED"
+      },
+      {
+        "text": "design comunicacao",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade design",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de design",
@@ -18072,7 +18745,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "estudos europeus",
+        "status": "PAUSED"
+      },
+      {
+        "text": "relações internacionais",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -18123,7 +18805,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "faculdade audiovisual",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura multimedia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura cinema",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso multimedia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade audiovisual",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "design de comunicação",
@@ -18265,7 +18968,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso games",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade jogos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso videojogos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura videojogos",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "design de games",
@@ -18407,7 +19127,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso comunicação social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura comunicação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ciências comunicação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "jornalismo e comunicação",
@@ -18567,7 +19300,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura marketing",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade marketing",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso relações publicas",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "comunicação e jornalismo",
@@ -18844,7 +19590,32 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura educação fisica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura desporto",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade desporto",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade educação fisica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso desporto",
+        "status": "PAUSED"
+      },
+      {
+        "text": "educação fisica desporto",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso treinador nivel 1",
@@ -19139,7 +19910,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura direito",
+        "status": "PAUSED"
+      },
+      {
+        "text": "universidade direito",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade direito",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "direito universidade",
@@ -19456,7 +20240,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura gestão",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso gestão",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "universidades de gestão",
@@ -19593,7 +20386,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso gestão comercial",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade gestão comercial",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -19693,7 +20495,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura recursos humanos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade recursos humanos",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -19744,7 +20555,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "faculdade educacao",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura educação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso educação",
+        "status": "PAUSED"
+      },
+      {
+        "text": "psicologia educação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "ciencias da educação",
@@ -19859,7 +20687,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura matemática",
+        "status": "PAUSED"
+      },
+      {
+        "text": "matemática computação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia informatica",
@@ -20037,7 +20874,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "faculdade engenharia civil",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura proteção civil",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso proteção civil",
+        "status": "PAUSED"
+      },
+      {
+        "text": "engenharia proteção civil",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso proteção civil",
@@ -20210,7 +21064,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso energias renováveis",
+        "status": "PAUSED"
+      },
+      {
+        "text": "engenharia electrotécnica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -20304,7 +21167,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura proteção civil",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso proteção civil",
+        "status": "PAUSED"
+      },
+      {
+        "text": "engenharia proteção civil",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -20404,7 +21280,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "engenharia informatica",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade informatica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de informática em portugal",
@@ -20532,7 +21417,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso psicologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura psicologia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade psicologia",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de psicologia porto",
@@ -20651,7 +21549,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso assistente social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade serviço social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso serviço social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "faculdade assistente social",
+        "status": "PAUSED"
+      },
+      {
+        "text": "licenciatura serviço social",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso educação social",
@@ -20712,7 +21631,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado ciencia politica",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado relações internacionais",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "relações internacionais",
@@ -21203,7 +22131,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado redes",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "tecnologia de informação",
@@ -21327,7 +22260,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado cultura",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "gestão cultural",
@@ -21451,7 +22389,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado media",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em educação social",
@@ -21863,7 +22806,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado desporto",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado futebol",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "ciencias do desporto",
@@ -21978,7 +22930,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado ciencias criminais",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado juridico",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado ciências forenses",
@@ -22318,7 +23279,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "Mestrado em gestão de recursos humanos",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "gestão de recursos humanos",
@@ -23248,7 +24214,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado psicologia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado justiça",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em psicologia criminal",
@@ -23318,7 +24293,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado turismo hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em gestão da inovação",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em gestão",
@@ -23586,7 +24578,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura engenharia informática",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura aplicações",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso em mecatronica",
@@ -23683,7 +24684,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura biomédicas",
+        "status": "ENABLED"
+      },
+      {
+        "text": "ciencias biomédicas",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "ciencias biomedicas laboratoriais",
@@ -23843,7 +24853,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura educação básica",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso educação básica",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura ensino basico",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura educação",
@@ -23922,7 +24945,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura enfermagem",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso enfermagem",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "formação enfermagem",
@@ -24001,7 +25033,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "enfermagem veterinária",
+        "status": "ENABLED"
+      },
+      {
+        "text": "enfermagem animal",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "cursos veterinaria",
@@ -24089,7 +25130,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura engenharia informática",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura aplicações",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia informatica",
@@ -24204,7 +25254,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura farmacêutica",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso farmacêutica",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura farmácia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso farmácia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "faculdades de farmacia",
@@ -24283,7 +25350,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura turismo",
+        "status": "ENABLED"
+      },
+      {
+        "text": "gestao empresas",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura gestao",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "gestão de empresas",
@@ -24371,7 +25451,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "gestão empresarial",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura gestão",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso gestão empresarial",
@@ -24459,7 +25548,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura desenho",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura ilustração",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "desenho vetorial",
@@ -24538,7 +25636,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura radiologia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso radioterapia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso radiologia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso imagem medica e radioterapia",
@@ -24644,7 +25755,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura osteopatia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso osteopatia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de osteopatia",
@@ -24714,7 +25834,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado artes",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado artes visuais",
@@ -24944,7 +26069,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado educação",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado educação pré escolar",
@@ -25525,7 +26655,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado educação",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado saude digital",
@@ -25631,7 +26766,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso profissional infantil",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso profissional de apoio na educação infantil",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "tecnico de educação",
@@ -25710,7 +26854,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso data science",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso ciencia de dados",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico ciencia dados",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso analise de dados",
@@ -25780,7 +26937,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso técnico administração",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso técnico gestão pública",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso tecnico administrativo",
@@ -25850,7 +27016,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso robotica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso automação industrial",
@@ -25929,7 +27100,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso análises",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso saúde",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico analises quimicas",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "técnico de análises laboratoriais curso profissional",
@@ -25999,7 +27183,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp cibersegurança",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "cibersegurança curso",
@@ -26078,7 +27267,32 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso profissional contabilidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso técnico contabilidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ctesp contabilidade",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso profissional gestão",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso técnico gestão",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ctesp gestão",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso tecnico de contabilidade",
@@ -26139,7 +27353,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso IOT",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso desenvolvimento de sistemas",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico eletronica",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "domotica",
@@ -26200,7 +27427,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "desenvolvimento web curso",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso dispositivos moveis",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico desenvolvimento web",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de desenvolvimento de aplicativos",
@@ -26270,7 +27510,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso técnico rh",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso técnico recursos humanos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ctesp recursos humanos",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de recursos humanos",
@@ -26358,7 +27611,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso gestão comercial",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso vendas",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico gestão comercial",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "gestão comercial e vendas",
@@ -26428,7 +27694,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso profissional hotelaria",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso técnico hotelaria",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso profissional restauração",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico restauração",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso profissional de hotelaria e restauração",
@@ -26525,7 +27808,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp gestão marketing",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso gestão marketing",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso gestão de marketing",
@@ -26595,7 +27887,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso e-commerce",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso comercio eletronico",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico gestão e negocios",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "Curso de vendas online",
@@ -26656,7 +27961,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso técnico sistemas informação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso sistemas de informação",
@@ -26744,7 +28054,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso instalações eletricas",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso automação industrial",
@@ -26814,7 +28129,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso forense",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso criminal",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso ciencia forense",
@@ -26884,7 +28208,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso forense",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso criminal",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso gestao de redes sociais",
@@ -26954,7 +28287,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp audiovisuais",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso profissional audiovisuais",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ctesp multimedia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso profissional multimedia",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico audiovisual",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de multimedia/curso de multimédia",
@@ -27033,7 +28387,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso telecomunicações",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso redes",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "sistemas de telecomunicações",
@@ -27333,7 +28696,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "desenvolvimento produtos multimedia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso profissional tecnico multimedia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "multimedia curso",
@@ -27430,7 +28802,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "desenvolvimento web curso",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso dispositivos moveis",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso tecnico desenvolvimento web",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de desenvolvimento de aplicativos",
@@ -27633,7 +29018,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "curso técnico rh",
+        "status": "PAUSED"
+      },
+      {
+        "text": "curso técnico recursos humanos",
+        "status": "PAUSED"
+      },
+      {
+        "text": "ctesp recursos humanos",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso de recursos humanos",
@@ -28111,7 +29509,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp gestão hoteleira",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso profissional de hotelaria e restauração",
@@ -28226,7 +29629,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp marketing digital",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso comércio eletrónico",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "marketing curso",
@@ -28386,7 +29798,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp marketing digital",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso comércio eletrónico",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso ecommerce",
@@ -28474,7 +29895,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "Redes e Sistemas Informáticos",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso profissional de programação de sistemas informáticos",
@@ -28650,7 +30076,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "ctesp turismo",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso agente de viagens",
@@ -28889,7 +30320,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura gestão turismo",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso gestão de turismo",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura turismo",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "curso gestão hoteleira",
@@ -28995,7 +30439,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura comércio eletrónico",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura informática e-commerce",
+        "status": "ENABLED"
+      },
+      {
+        "text": "licenciatura informática comércio",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia informática porto",
@@ -29218,7 +30675,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura multimedia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso multimedia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "faculdade multimedia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura audiovisual e multimédia",
@@ -29315,7 +30785,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado informática",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado sistemas informação",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado tecnologia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia de sistemas",
@@ -29385,7 +30868,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado gestão",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso gestão",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em gestão",
@@ -29482,7 +30974,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "gestão da segurança do trabalho",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em segurança do trabalho",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em gestão",
@@ -29615,7 +31116,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "Mestrado em gestão de recursos humanos",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "gestão de recursos humanos",
@@ -29703,7 +31209,36 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pós graduação data science",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pós graduação data analytics",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pos ciencia de dados",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mba em ciencia de dados",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pos data science",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pós graduação ciência de dados",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pós graduação big data",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -29754,7 +31289,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pós graduação enfermagem",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -29800,7 +31340,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pos graduacao empreendedorismo",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pos graduacao tech startups",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso empreendedorismo startups",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -29886,7 +31439,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pos graduação biblioteca escolar",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pós graduação biblioteca",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -29937,7 +31499,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pós graduação gestão de projetos",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -30023,7 +31590,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pós graduação gestão empresarial",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mba gestão empresarial",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -30074,7 +31650,28 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "MBA Executivo",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mba para executivos",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mba gestao estrategia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mba liderança",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mba em executivo",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -30230,7 +31827,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "pos graduação em segurança do trabalho",
+        "status": "ENABLED"
+      },
+      {
+        "text": "pós graduação qualidade",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [],
     "livePulse": {
       "budget": "10.0 €",
@@ -30316,7 +31922,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura desporto",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso desporto",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso profissional desporto",
+        "status": "ENABLED"
+      },
+      {
+        "text": "Curso educacao fisica desporto",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura desporto",
@@ -30413,7 +32036,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura matemática",
+        "status": "PAUSED"
+      },
+      {
+        "text": "matemática computação",
+        "status": "PAUSED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "engenharia informatica",
@@ -30591,7 +32223,16 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "licenciatura moda",
+        "status": "ENABLED"
+      },
+      {
+        "text": "faculdade design moda",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "licenciatura em moda",
@@ -30733,7 +32374,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "tecnologias criativas",
+        "status": "ENABLED"
+      },
+      {
+        "text": "faculdade tecnologia",
+        "status": "ENABLED"
+      },
+      {
+        "text": "curso tecnologia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "inovação tecnologica",
@@ -30974,7 +32628,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado design",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado design",
@@ -31200,7 +32859,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado design",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em gestão",
@@ -31324,7 +32988,24 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado turismo hospitalidade",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado em gestão da inovação",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrado em gestão",
@@ -31511,7 +33192,12 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado psicologia",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "faculdade de psicologia",
@@ -31644,7 +33330,20 @@
         "Valor 3"
       ]
     },
-    "keywords": [],
+    "keywords": [
+      {
+        "text": "mestrado reabilitação",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado edifícios",
+        "status": "ENABLED"
+      },
+      {
+        "text": "mestrado urbanismo",
+        "status": "ENABLED"
+      }
+    ],
     "keywordPool": [
       {
         "text": "mestrados dges",
