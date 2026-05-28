@@ -886,3 +886,43 @@ body {
     overflow: hidden !important;
     height: 100vh !important;
 }
+
+/* AI Rewrite Button Styles */
+.ai-rewrite-btn {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.ai-rewrite-btn:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+    border-color: rgba(168, 85, 247, 0.4);
+    color: #d8b4fe;
+    transform: scale(1.05);
+}
+
+.ai-rewrite-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Spinner Animation for Loading State */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.ai-rewrite-btn .spinner {
+    animation: spin 1s linear infinite;
+    stroke: currentColor;
+}
+
