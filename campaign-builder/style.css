@@ -865,3 +865,24 @@ body:not(.light-mode) .sleek-input.keyword-match {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* 🛠️ Explicit layout overrides for Sidebar Scrollability */
+.sidebar {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: hidden !important;
+}
+
+.course-nav {
+    flex: 1 !important;
+    overflow-y: auto !important;
+    padding-right: 10px !important;
+}
+
+/* Cache-busting support or overrides */
+body {
+    overflow: hidden !important;
+    height: 100vh !important;
+}
