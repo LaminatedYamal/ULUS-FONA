@@ -964,6 +964,10 @@
                 <!-- Textarea fields dynamically generated here -->
             </div>
             <div class="modal-actions">
+                <button class="modal-btn cancel" id="modal-delete-btn" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.3); margin-right: auto; transition: all 0.2s;" onmouseover="this.style.background='rgba(239, 68, 68, 0.1)';" onmouseout="this.style.background='transparent';">
+                    <svg style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; margin-right: 4px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                    Eliminar Bloco
+                </button>
                 <button class="modal-btn cancel" id="modal-cancel-btn">Cancelar</button>
                 <button class="modal-btn save" id="modal-save-btn">Guardar Alterações</button>
             </div>
@@ -1568,6 +1572,18 @@
             blocks.forEach((block, index) => {
                 const card = document.createElement('div');
                 card.className = `block-card ${block.type}`;
+                card.setAttribute('draggable', 'true');
+                
+                // Add drag events
+                card.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', index);
+                    card.style.opacity = '0.5';
+                    card.classList.add('dragging');
+                });
+                card.addEventListener('dragend', () => {
+                    card.style.opacity = '1';
+                    card.classList.remove('dragging');
+                });
                 
                 const upBtnDisabled = index === 0 ? 'disabled' : '';
                 const downBtnDisabled = index === blocks.length - 1 ? 'disabled' : '';
@@ -1626,6 +1642,57 @@
             addLog('warning', `Bloco "${typeName}" eliminado.`);
             updateFromDOM();
         };
+
+        // Drag and Drop for blockListWrapper
+        blockListWrapper.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const draggingCard = document.querySelector('.dragging');
+            if (!draggingCard) return;
+            const afterElement = getDragAfterElement(blockListWrapper, e.clientY);
+            if (afterElement == null) {
+                blockListWrapper.appendChild(draggingCard);
+            } else {
+                blockListWrapper.insertBefore(draggingCard, afterElement);
+            }
+        });
+
+        blockListWrapper.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const draggingCard = document.querySelector('.dragging');
+            if (!draggingCard) return;
+            
+            const fromIndex = parseInt(e.dataTransfer.getData('text/plain'));
+            const cards = [...blockListWrapper.querySelectorAll('.block-card')];
+            const toIndex = cards.indexOf(draggingCard);
+            
+            if (fromIndex !== toIndex && !isNaN(fromIndex) && !isNaN(toIndex)) {
+                // Determine direction
+                const isMovingDown = toIndex > fromIndex;
+                const parent = blocks[fromIndex].element.parentNode;
+                
+                if (isMovingDown) {
+                    parent.insertBefore(blocks[fromIndex].element, blocks[toIndex].element.nextSibling);
+                } else {
+                    parent.insertBefore(blocks[fromIndex].element, blocks[toIndex].element);
+                }
+                
+                addLog('info', `Bloco movido via Drag & Drop.`);
+                updateFromDOM();
+            }
+        });
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.block-card:not(.dragging)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
 
         // Helpers for Color Parsing and Manipulation
         function parseColorToHex(colorStr) {
@@ -2361,6 +2428,17 @@
             }
             closeModal();
         });
+
+        const modalDeleteBtn = document.getElementById('modal-delete-btn');
+        if (modalDeleteBtn) {
+            modalDeleteBtn.addEventListener('click', () => {
+                if (activeEditBlockIndex === -1) return;
+                if (confirm("Tem a certeza que deseja eliminar este bloco?")) {
+                    deleteBlock(activeEditBlockIndex);
+                    closeModal();
+                }
+            });
+        }
 
         // Save alterations
         modalSaveBtn.addEventListener('click', () => {
