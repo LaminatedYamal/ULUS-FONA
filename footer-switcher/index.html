@@ -2576,15 +2576,36 @@
                 const innerTable = footerTd.querySelector('table');
                 const innerTd = footerTd.querySelector('td.paddingcomp');
                 
-                if (outerDiv) outerDiv.style.backgroundColor = '#000000';
+                // Extract current background color
+                let currentBgColor = '#000000';
+                if (innerTd && innerTd.style.backgroundColor) {
+                    currentBgColor = innerTd.style.backgroundColor;
+                } else if (innerTd && innerTd.getAttribute('bgcolor')) {
+                    currentBgColor = innerTd.getAttribute('bgcolor');
+                } else if (outerDiv && outerDiv.style.backgroundColor) {
+                    currentBgColor = outerDiv.style.backgroundColor;
+                } else if (footerTd.style && footerTd.style.backgroundColor) {
+                    currentBgColor = footerTd.style.backgroundColor;
+                } else if (footerTd.getAttribute && footerTd.getAttribute('bgcolor')) {
+                    currentBgColor = footerTd.getAttribute('bgcolor');
+                } else {
+                    const parentTr = footerTd.closest('tr');
+                    if (parentTr && parentTr.style && parentTr.style.backgroundColor) {
+                        currentBgColor = parentTr.style.backgroundColor;
+                    } else if (parentTr && parentTr.getAttribute('bgcolor')) {
+                        currentBgColor = parentTr.getAttribute('bgcolor');
+                    }
+                }
+                
+                if (outerDiv) outerDiv.style.backgroundColor = currentBgColor;
                 if (innerTable) {
-                    innerTable.style.backgroundColor = '#000000';
-                    innerTable.setAttribute('bgcolor', '#000000');
+                    innerTable.style.backgroundColor = currentBgColor;
+                    innerTable.setAttribute('bgcolor', currentBgColor);
                 }
                 
                 const finalTd = innerTd || footerTd;
-                finalTd.style.backgroundColor = '#000000';
-                finalTd.setAttribute('bgcolor', '#000000');
+                finalTd.style.backgroundColor = currentBgColor;
+                finalTd.setAttribute('bgcolor', currentBgColor);
                 
                 // Force line height to 13pt for U. Lusófona, 11pt for others
                 const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
@@ -2598,21 +2619,30 @@
                     finalTd.innerHTML = `<div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>`;
                 }
                 replaced = true;
-                addLog('success', `Substituição do rodapé (${targetFooter.title}) efetuada.`);
+                addLog('success', `Substituição do rodapé (${targetFooter.title}) efetuada com cor ${currentBgColor}.`);
             }
             
             if (!replaced) {
-                addLog('warning', 'ID do rodapé não encontrado na estrutura. A inserir no final da tabela.');
+                addLog('warning', 'Rodapé não encontrado na estrutura. A inserir no final da tabela.');
                 const mainTable = doc.querySelector('table');
                 if (mainTable) {
+                    let currentBgColor = '#000000';
+                    const lastRow = mainTable.querySelector('tr:last-child');
+                    if (lastRow) {
+                        const lastTd = lastRow.querySelector('td');
+                        if (lastTd && lastTd.style.backgroundColor) currentBgColor = lastTd.style.backgroundColor;
+                        else if (lastTd && lastTd.getAttribute('bgcolor')) currentBgColor = lastTd.getAttribute('bgcolor');
+                        else if (lastRow.style.backgroundColor) currentBgColor = lastRow.style.backgroundColor;
+                    }
+                    
                     const tbody = mainTable.querySelector('tbody') || mainTable;
                     const newRow = doc.createElement('tr');
                     const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
                     newRow.innerHTML = `
                         <td class="txtsize" id="elm_1753955915805" style="border:0px;padding:0px 0px;border-collapse:collapse;" valign="top">
-                            <div class="zpelement-wrapper" id="elm_1753955915805" style=";word-wrap:break-word;overflow:hidden;padding-right:0px;background-color:#000000;">
-                                <table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" class="zpAlignPos" style="font-size:12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:#000000;" width="100%">
-                                    <tbody><tr><td class="paddingcomp" bgcolor="#000000" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:${heightVal};border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:#000000;">
+                            <div class="zpelement-wrapper" id="elm_1753955915805" style=";word-wrap:break-word;overflow:hidden;padding-right:0px;background-color:${currentBgColor};">
+                                <table bgcolor="${currentBgColor}" border="0" cellpadding="0" cellspacing="0" class="zpAlignPos" style="font-size:12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:${currentBgColor};" width="100%">
+                                    <tbody><tr><td class="paddingcomp" bgcolor="${currentBgColor}" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:${heightVal};border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:${currentBgColor};">
                                         <div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>
                                     </td></tr></tbody>
                                 </table>
