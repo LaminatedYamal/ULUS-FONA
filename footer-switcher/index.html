@@ -2227,26 +2227,26 @@
             divider.className = 'section-divider';
             modalInputsList.appendChild(divider);
             
-            // 2. Find and edit text elements recursively to support bold, italic, and nested structures
-            const textContainers = [];
-            function findTextContainers(node) {
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                    const hasDirectText = Array.from(node.childNodes).some(
-                        child => child.nodeType === Node.TEXT_NODE && child.textContent.trim() !== ''
-                    );
-                    const editableTags = ['p', 'span', 'font', 'a', 'b', 'strong', 'i', 'em', 'h1', 'h2', 'h3', 'h4', 'td', 'div'];
-                    const tagName = node.tagName.toLowerCase();
-                    if (hasDirectText && editableTags.includes(tagName) && tagName !== 'a' && tagName !== 'table' && tagName !== 'tbody' && tagName !== 'tr') {
-                        textContainers.push(node);
+            // 2. Find and edit all text nodes recursively to support <br> separated text and nested structures
+            const textNodesData = [];
+            function findTextNodes(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    const textContent = node.textContent.replace(/\u00a0/g, ' ').trim();
+                    if (textContent !== '') {
+                        textNodesData.push({ node: node, el: node.parentElement });
                     }
-                    Array.from(node.children).forEach(findTextContainers);
+                } else if (node.nodeType === Node.ELEMENT_NODE) {
+                    const tagName = node.tagName.toLowerCase();
+                    if (tagName !== 'style' && tagName !== 'script' && tagName !== 'noscript') {
+                        Array.from(node.childNodes).forEach(findTextNodes);
+                    }
                 }
             }
-            findTextContainers(tr);
+            findTextNodes(tr);
             
             const imgElements = tr.querySelectorAll('img');
             
-            if (textContainers.length === 0 && imgElements.length === 0) {
+            if (textNodesData.length === 0 && imgElements.length === 0) {
                 const divField = document.createElement('div');
                 divField.className = 'edit-field';
                 divField.innerHTML = `
@@ -2258,9 +2258,10 @@
                 divField.querySelector('textarea').addEventListener('input', applyLiveEdits);
             } else {
                 // Render editable text elements
-                textContainers.forEach((el, idx) => {
-                    const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '');
-                    const originalText = textNode ? textNode.textContent.trim() : el.textContent.trim();
+                textNodesData.forEach((item, idx) => {
+                    const textNode = item.node;
+                    const el = item.el;
+                    const originalText = textNode.textContent.trim();
                     const currentColor = getElementColor(el);
                     
                     const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
