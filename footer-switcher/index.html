@@ -2538,7 +2538,36 @@
             }
             
             // 2. Locate footer block
-            const footerTd = doc.getElementById('elm_1753955915805');
+            let footerTd = doc.getElementById('elm_1753955915805');
+            
+            if (!footerTd) {
+                // Fallback: look for typical footer content (unsubscribe links, privacy policy, etc.)
+                const links = Array.from(doc.querySelectorAll('a'));
+                const unsubLink = links.find(a => {
+                    const href = a.getAttribute('href') || '';
+                    const text = a.textContent.toLowerCase();
+                    return href.includes('UNSUBSCRIBE') || text.includes('não receber mais') || text.includes('unsubscribe') || text.includes('política de privacidade');
+                });
+                
+                if (unsubLink) {
+                    // Try to find the closest wrapper or table cell
+                    footerTd = unsubLink.closest('.zpelement-wrapper') || unsubLink.closest('td.paddingcomp') || unsubLink.closest('td');
+                }
+            }
+            
+            if (!footerTd) {
+                // Second Fallback: find the last text block containing typical footer phrases
+                const allElements = Array.from(doc.querySelectorAll('td, div, p'));
+                for (let i = allElements.length - 1; i >= 0; i--) {
+                    const el = allElements[i];
+                    const text = el.textContent.toLowerCase();
+                    if (text.includes('enviado por') || text.includes('não receber mais mensagens') || text.includes('direitos reservados')) {
+                        footerTd = el.closest('.zpelement-wrapper') || el.closest('td');
+                        break;
+                    }
+                }
+            }
+
             let replaced = false;
             const targetFooter = footers[institution];
             
