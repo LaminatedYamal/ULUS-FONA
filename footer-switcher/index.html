@@ -1927,8 +1927,7 @@
                 targets.forEach(target => {
                     const tagName = target.tagName.toUpperCase();
                     // Identify if this element is a structural block container
-                    const isStructuralWrapper = (target.classList.contains('txtsize') || 
-                                                target.classList.contains('zpelement-wrapper') || 
+                    const isStructuralWrapper = (target.classList.contains('zpelement-wrapper') || 
                                                 target.classList.contains('zpAlignPos') ||
                                                 tagName === 'BODY' ||
                                                 tagName === 'TBODY' ||
@@ -1970,8 +1969,7 @@
                         let parent = target.parentElement;
                         while (parent && parent !== tr) {
                             const parentTagName = parent.tagName.toUpperCase();
-                            const isParentStructural = (parent.classList.contains('txtsize') || 
-                                                       parent.classList.contains('zpelement-wrapper') || 
+                            const isParentStructural = (parent.classList.contains('zpelement-wrapper') || 
                                                        parent.classList.contains('zpAlignPos') ||
                                                        parentTagName === 'BODY' ||
                                                        parentTagName === 'TBODY' ||
