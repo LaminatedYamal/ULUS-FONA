@@ -1942,9 +1942,7 @@
                                   target.classList.contains('cta') || 
                                   target.classList.contains('buttonElem') ||
                                   (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
-                                  (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button')) ||
-                                  target.querySelector('.button, .btn, .cta, .buttonElem') !== null ||
-                                  (target.querySelector('a') && target.querySelector('a').getAttribute('class') && target.querySelector('a').getAttribute('class').toLowerCase().includes('btn'))
+                                  (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button'))
                     );
                     
                     // Check if it has an explicit custom background color different from the block background color
@@ -1987,8 +1985,7 @@
                                                     parent.classList.contains('cta') || 
                                                     parent.classList.contains('buttonElem') ||
                                                     (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('btn')) ||
-                                                    (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('button')) ||
-                                                    parent.querySelector('.button, .btn, .cta, .buttonElem') !== null;
+                                                    (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('button'));
                                 
                                 // Check if parent has a custom bg
                                 let parentBg = parent.style.backgroundColor || parent.getAttribute('bgcolor');
