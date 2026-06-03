@@ -1835,6 +1835,14 @@
                     target.setAttribute('bgcolor', hexColor);
                 }
             });
+            
+            // Clear explicit background color on inner text containers so they inherit the parent block's background
+            const textContainers = tr.querySelectorAll('p, span, div, font, a, h1, h2, h3, h4, h5, h6, b, i, u');
+            textContainers.forEach(el => {
+                if (el.style && el.style.backgroundColor) {
+                    el.style.backgroundColor = '';
+                }
+            });
         }
 
         function getBlockPadding(tr) {
