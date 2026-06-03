@@ -1894,7 +1894,9 @@
             const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
             for (let target of targets) {
                 if (target.style && target.style.backgroundColor) {
-                    if (target.getAttribute && target.getAttribute('bgcolor')) {
+                    return parseColorToHex(target.style.backgroundColor);
+                }
+                if (target.getAttribute && target.getAttribute('bgcolor')) {
                     return parseColorToHex(target.getAttribute('bgcolor'));
                 }
             }
