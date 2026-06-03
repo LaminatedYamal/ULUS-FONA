@@ -1925,15 +1925,25 @@
             const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div, hr');
             targets.forEach(target => {
                 const tagName = target.tagName.toUpperCase();
-                
-                // Check if it's a button or custom styled element (or parent container of one)
-                const isBtn = target.classList.contains('button') || 
+                // Identify if this element is a structural block container
+                const isStructuralWrapper = target.classList.contains('txtsize') || 
+                                            target.classList.contains('zpelement-wrapper') || 
+                                            target.classList.contains('zpAlignPos') ||
+                                            tagName === 'BODY' ||
+                                            tagName === 'TBODY' ||
+                                            tagName === 'TR' ||
+                                            (target.id && target.id.startsWith('elm_'));
+
+                // Check if it's a button or custom styled element
+                const isBtn = !isStructuralWrapper && (
+                              target.classList.contains('button') || 
                               target.classList.contains('btn') || 
                               target.classList.contains('cta') || 
                               (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
                               (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button')) ||
                               target.querySelector('.button, .btn, .cta') !== null ||
-                              (target.querySelector('a') && target.querySelector('a').getAttribute('class') && target.querySelector('a').getAttribute('class').toLowerCase().includes('btn'));
+                              (target.querySelector('a') && target.querySelector('a').getAttribute('class') && target.querySelector('a').getAttribute('class').toLowerCase().includes('btn'))
+                );
                 
                 // Check if it has an explicit custom background color different from the block background color
                 let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
@@ -1941,10 +1951,6 @@
                 if (hasExplicitBg) {
                     const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
                     if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                        // Do not treat main structural containers (txtsize, zpelement-wrapper, elm_...) as custom background elements
-                        const isStructuralWrapper = target.classList.contains('txtsize') || 
-                                                    target.classList.contains('zpelement-wrapper') || 
-                                                    (target.id && target.id.startsWith('elm_'));
                         if (!isStructuralWrapper) {
                             isCustomBg = true;
                         }
