@@ -1941,7 +1941,13 @@
                 if (hasExplicitBg) {
                     const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
                     if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                        isCustomBg = true;
+                        // Do not treat main structural containers (txtsize, zpelement-wrapper, elm_...) as custom background elements
+                        const isStructuralWrapper = target.classList.contains('txtsize') || 
+                                                    target.classList.contains('zpelement-wrapper') || 
+                                                    (target.id && target.id.startsWith('elm_'));
+                        if (!isStructuralWrapper) {
+                            isCustomBg = true;
+                        }
                     }
                 }
                 
