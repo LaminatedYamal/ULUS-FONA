@@ -1905,6 +1905,15 @@
             const oldBgColor = getBlockBgColor(tr).toUpperCase();
             const newBgColor = hexColor.toUpperCase();
             
+            // Check if this block is a spacer/divider
+            let isSpacerBlock = false;
+            if (typeof activeEditBlockIndex !== 'undefined' && typeof blocks !== 'undefined' && blocks[activeEditBlockIndex]) {
+                const bType = blocks[activeEditBlockIndex].type;
+                if (bType === 'spacebar' || bType === 'divider') {
+                    isSpacerBlock = true;
+                }
+            }
+            
             // Set on the block container itself
             tr.style.backgroundColor = newBgColor;
             if (tr.tagName === 'TD' || tr.tagName === 'TABLE') {
@@ -1912,7 +1921,7 @@
             }
             
             // Find all structural/layout elements inside the block
-            const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div');
+            const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div, hr');
             targets.forEach(target => {
                 const tagName = target.tagName.toUpperCase();
                 
@@ -1936,10 +1945,13 @@
                     }
                 }
                 
-                // ALWAYS update structural elements that have no text (spacers, dividers)
-                // If it HAS text AND it is a custom button or badge, preserve its color
                 let shouldUpdate = true;
-                if (hasText && (isBtn || isCustomBg)) {
+                
+                if (isSpacerBlock) {
+                    // For spacer/divider blocks, ALWAYS update everything to change the line/space color
+                    shouldUpdate = true;
+                } else if (hasText && (isBtn || isCustomBg)) {
+                    // If it HAS text AND it is a custom button or badge, preserve its color
                     shouldUpdate = false;
                 }
                 
@@ -1948,6 +1960,13 @@
                     if (tagName === 'TD' || tagName === 'TABLE') {
                         target.setAttribute('bgcolor', newBgColor);
                     }
+                    if (tagName === 'HR') {
+                        target.style.borderColor = newBgColor;
+                    }
+                    // Update any existing borders that act as dividers
+                    if (target.style.border) target.style.borderColor = newBgColor;
+                    if (target.style.borderTop) target.style.borderTopColor = newBgColor;
+                    if (target.style.borderBottom) target.style.borderBottomColor = newBgColor;
                 }
             });
             
