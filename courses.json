@@ -542,7 +542,7 @@
         "high": 0.0
       },
       {
-        "term": "Mestrado em Design e Produção de moda",
+        "term": "design moda universidade portugal",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -550,7 +550,7 @@
         "high": 0.0
       },
       {
-        "term": "design moda universidade portugal",
+        "term": "Mestrado em Design e Produção de moda",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -16605,6 +16605,22 @@
         "high": 0.0
       },
       {
+        "term": "ctesp telecomunicações",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp eletrónica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -16622,22 +16638,6 @@
       },
       {
         "term": "ctesp informática",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp eletrónica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -20073,8 +20073,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "02/06/2026, 02:30:02",
-    "lastSync": "02/06/2026, 02:30:02",
+    "last_sync_at": "03/06/2026, 02:35:59",
+    "lastSync": "03/06/2026, 02:35:59",
     "totalAdsCourses": 231
   },
   {
