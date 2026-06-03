@@ -1799,6 +1799,17 @@
             return '#333333'; // Default content text color fallback
         }
 
+        function getElementBgColor(el) {
+            let current = el;
+            while (current && current.tagName !== 'TR') {
+                if (current.style && current.style.backgroundColor) {
+                    return parseColorToHex(current.style.backgroundColor);
+                }
+                current = current.parentElement;
+            }
+            return 'transparent'; // Fallback / default transparent background for text
+        }
+
         function getBlockBgColor(tr) {
             if (tr.style && tr.style.backgroundColor) {
                 return parseColorToHex(tr.style.backgroundColor);
@@ -2108,6 +2119,17 @@
                         el.style.color = hexInput.value;
                     }
                     
+                    // Update text element background color
+                    const bgHexInput = modalInputsList.querySelector(`.text-bg-hex[data-index="${idx}"]`);
+                    if (el && bgHexInput) {
+                        const bgVal = bgHexInput.value.trim().toLowerCase();
+                        if (bgVal === 'transparent' || bgVal === '') {
+                            el.style.backgroundColor = '';
+                        } else {
+                            el.style.backgroundColor = bgVal;
+                        }
+                    }
+                    
                     // Update hyperlink URL if applicable
                     const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
                     if (linkEl) {
@@ -2326,6 +2348,8 @@
                     const el = item.el;
                     const originalText = textNode.textContent.trim();
                     const currentColor = getElementColor(el);
+                    const currentBgColor = getElementBgColor(el);
+                    const pickerBgVal = (currentBgColor === 'transparent' || currentBgColor === '') ? '#FFFFFF' : currentBgColor;
                     
                     const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
                     let linkHtml = '';
@@ -2356,11 +2380,20 @@
                         
                         ${linkHtml}
                         
-                        <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-                            <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
-                            <div class="color-picker-container" style="margin-top: 0;">
-                                <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
-                                <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
+                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
+                                <div class="color-picker-container" style="margin-top: 0;">
+                                    <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
+                                    <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <label style="font-size: 0.7rem; color: var(--text-muted);">Fundo do Texto (Text BG):</label>
+                                <div class="color-picker-container" style="margin-top: 0;">
+                                    <input type="color" class="color-picker-preview text-bg-picker" data-index="${idx}" value="${pickerBgVal}">
+                                    <input type="text" class="color-input-hex text-bg-hex" data-index="${idx}" value="${currentBgColor}" placeholder="transparent" maxlength="11">
+                                </div>
                             </div>
                         </div>
                     `;
@@ -2382,6 +2415,23 @@
                     hex.addEventListener('input', (e) => {
                         if (/^#[0-9A-F]{6}$/i.test(e.target.value)) {
                             picker.value = e.target.value;
+                            applyLiveEdits();
+                        }
+                    });
+
+                    const bgPicker = field.querySelector('.text-bg-picker');
+                    const bgHex = field.querySelector('.text-bg-hex');
+                    
+                    bgPicker.addEventListener('input', (e) => {
+                        bgHex.value = e.target.value.toUpperCase();
+                        applyLiveEdits();
+                    });
+                    bgHex.addEventListener('input', (e) => {
+                        const val = e.target.value.trim().toLowerCase();
+                        if (val === 'transparent' || val === '') {
+                            applyLiveEdits();
+                        } else if (/^#[0-9A-F]{6}$/i.test(val)) {
+                            bgPicker.value = val;
                             applyLiveEdits();
                         }
                     });
