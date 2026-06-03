@@ -1902,123 +1902,133 @@
         }
 
         function setBlockBgColor(tr, hexColor) {
-            const oldBgColor = getBlockBgColor(tr).toUpperCase();
-            const newBgColor = hexColor.toUpperCase();
-            
-            // Check if this block is a spacer/divider
-            let isSpacerBlock = false;
-            if (typeof activeEditBlockIndex !== 'undefined' && typeof blocks !== 'undefined' && blocks[activeEditBlockIndex]) {
-                const bType = blocks[activeEditBlockIndex].type;
-                if (bType === 'spacebar' || bType === 'divider') {
-                    isSpacerBlock = true;
-                }
-            }
-            
-            // Set on the block container itself
-            tr.style.setProperty('background-color', newBgColor, 'important');
-            tr.style.setProperty('background', newBgColor, 'important');
-            if (tr.tagName === 'TD' || tr.tagName === 'TABLE') {
-                tr.setAttribute('bgcolor', newBgColor);
-            }
-            
-            // Find all structural/layout elements inside the block
-            const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div, hr');
-            targets.forEach(target => {
-                const tagName = target.tagName.toUpperCase();
-                // Identify if this element is a structural block container
-                const isStructuralWrapper = target.classList.contains('txtsize') || 
-                                            target.classList.contains('zpelement-wrapper') || 
-                                            target.classList.contains('zpAlignPos') ||
-                                            tagName === 'BODY' ||
-                                            tagName === 'TBODY' ||
-                                            tagName === 'TR' ||
-                                            (target.id && target.id.startsWith('elm_'));
-
-                // Check if it's a button or custom styled element
-                const isBtn = !isStructuralWrapper && (
-                              target.classList.contains('button') || 
-                              target.classList.contains('btn') || 
-                              target.classList.contains('cta') || 
-                              (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
-                              (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button')) ||
-                              target.querySelector('.button, .btn, .cta') !== null ||
-                              (target.querySelector('a') && target.querySelector('a').getAttribute('class') && target.querySelector('a').getAttribute('class').toLowerCase().includes('btn'))
-                );
+            try {
+                const oldBgColor = getBlockBgColor(tr).toUpperCase();
+                const newBgColor = hexColor.toUpperCase();
                 
-                // Check if it has an explicit custom background color different from the block background color
-                let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
-                let isCustomBg = false;
-                if (hasExplicitBg) {
-                    const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
-                    if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                        if (!isStructuralWrapper) {
+                // Check if this block is a spacer/divider
+                let isSpacerBlock = false;
+                if (typeof activeEditBlockIndex !== 'undefined' && typeof blocks !== 'undefined' && blocks[activeEditBlockIndex]) {
+                    const bType = blocks[activeEditBlockIndex].type;
+                    if (bType === 'spacebar' || bType === 'divider') {
+                        isSpacerBlock = true;
+                    }
+                }
+                
+                // Set on the block container itself
+                tr.style.setProperty('background-color', newBgColor, 'important');
+                tr.style.setProperty('background', newBgColor, 'important');
+                if (tr.tagName === 'TD' || tr.tagName === 'TABLE') {
+                    tr.setAttribute('bgcolor', newBgColor);
+                }
+                
+                // Find all structural/layout elements inside the block
+                const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div, hr');
+                targets.forEach(target => {
+                    const tagName = target.tagName.toUpperCase();
+                    // Identify if this element is a structural block container
+                    const isStructuralWrapper = target.classList.contains('txtsize') || 
+                                                target.classList.contains('zpelement-wrapper') || 
+                                                target.classList.contains('zpAlignPos') ||
+                                                tagName === 'BODY' ||
+                                                tagName === 'TBODY' ||
+                                                tagName === 'TR' ||
+                                                (target.id && target.id.startsWith('elm_'));
+
+                    // Check if it's a button or custom styled element
+                    const isBtn = !isStructuralWrapper && (
+                                  target.classList.contains('button') || 
+                                  target.classList.contains('btn') || 
+                                  target.classList.contains('cta') || 
+                                  (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
+                                  (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button')) ||
+                                  target.querySelector('.button, .btn, .cta') !== null ||
+                                  (target.querySelector('a') && target.querySelector('a').getAttribute('class') && target.querySelector('a').getAttribute('class').toLowerCase().includes('btn'))
+                    );
+                    
+                    // Check if it has an explicit custom background color different from the block background color
+                    let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
+                    let isCustomBg = false;
+                    if (hasExplicitBg) {
+                        const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
+                        if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
+                            if (!isStructuralWrapper) {
+                                isCustomBg = true;
+                            }
+                        }
+                    }
+                    
+                    let shouldUpdate = true;
+                    
+                    if (isSpacerBlock) {
+                        // For spacer/divider blocks, ALWAYS update everything to change the line/space color
+                        shouldUpdate = true;
+                    } else if (isBtn || isCustomBg) {
+                        // If it is a button/callout structure or has a custom background color, preserve it
+                        shouldUpdate = false;
+                    }
+                    
+                    if (shouldUpdate) {
+                        target.style.setProperty('background-color', newBgColor, 'important');
+                        target.style.setProperty('background', newBgColor, 'important');
+                        if (tagName === 'TD' || tagName === 'TABLE') {
+                            target.setAttribute('bgcolor', newBgColor);
+                        }
+                        if (tagName === 'HR') {
+                            target.style.setProperty('border-color', newBgColor, 'important');
+                        }
+                        
+                        // Force structural/layout border colors to match the new background color to prevent visual lines/breaks
+                        target.style.setProperty('border-color', newBgColor, 'important');
+                        target.style.setProperty('border-top-color', newBgColor, 'important');
+                        target.style.setProperty('border-bottom-color', newBgColor, 'important');
+                        target.style.setProperty('border-left-color', newBgColor, 'important');
+                        target.style.setProperty('border-right-color', newBgColor, 'important');
+                    }
+                });
+                
+                // Clear explicit background color on inner text containers to transparent so they inherit the parent block's background
+                const textContainers = tr.querySelectorAll('p, span, font, a, h1, h2, h3, h4, h5, h6, b, i, u, li, ul, ol');
+                textContainers.forEach(el => {
+                    if (isSpacerBlock) {
+                        el.style.setProperty('background-color', 'transparent', 'important');
+                        el.style.setProperty('background', 'transparent', 'important');
+                        return;
+                    }
+
+                    // Check if it contains any actual/visible text (excluding nbsp and spaces)
+                    const textContentClean = el.textContent.replace(/\u00a0/g, '').trim();
+                    const hasRealText = textContentClean.length > 0;
+                    
+                    if (!hasRealText) {
+                        // Spacer/decorative element masquerading as text container: make it transparent to inherit
+                        el.style.setProperty('background-color', 'transparent', 'important');
+                        el.style.setProperty('background', 'transparent', 'important');
+                        return;
+                    }
+                    
+                    // Check if the text element itself had a custom background color
+                    let hasExplicitBg = el.style.backgroundColor;
+                    let isCustomBg = false;
+                    if (hasExplicitBg) {
+                        const currentBg = parseColorToHex(el.style.backgroundColor).toUpperCase();
+                        if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
                             isCustomBg = true;
                         }
                     }
-                }
-                
-                let shouldUpdate = true;
-                
-                if (isSpacerBlock) {
-                    // For spacer/divider blocks, ALWAYS update everything to change the line/space color
-                    shouldUpdate = true;
-                } else if (isBtn || isCustomBg) {
-                    // If it is a button/callout structure or has a custom background color, preserve it
-                    shouldUpdate = false;
-                }
-                
-                if (shouldUpdate) {
-                    target.style.setProperty('background-color', newBgColor, 'important');
-                    target.style.setProperty('background', newBgColor, 'important');
-                    if (tagName === 'TD' || tagName === 'TABLE') {
-                        target.setAttribute('bgcolor', newBgColor);
+                    
+                    // If it doesn't have a custom background color, force it to transparent to inherit the block bg
+                    if (!isCustomBg) {
+                        el.style.setProperty('background-color', 'transparent', 'important');
+                        el.style.setProperty('background', 'transparent', 'important');
                     }
-                    if (tagName === 'HR') {
-                        target.style.setProperty('border-color', newBgColor, 'important');
-                    }
-                    // Update any existing borders that act as dividers
-                    if (target.style.border) target.style.setProperty('border-color', newBgColor, 'important');
-                    if (target.style.borderTop) target.style.setProperty('border-top-color', newBgColor, 'important');
-                    if (target.style.borderBottom) target.style.setProperty('border-bottom-color', newBgColor, 'important');
+                });
+            } catch (err) {
+                console.error("Error in setBlockBgColor:", err);
+                if (typeof addLog === 'function') {
+                    addLog('error', `Erro ao aplicar cor de fundo: ${err.message}`);
                 }
-            });
-            
-            // Clear explicit background color on inner text containers to transparent so they inherit the parent block's background
-            const textContainers = tr.querySelectorAll('p, span, font, a, h1, h2, h3, h4, h5, h6, b, i, u, li, ul, ol');
-            textContainers.forEach(el => {
-                if (isSpacerBlock) {
-                    el.style.setProperty('background-color', 'transparent', 'important');
-                    el.style.setProperty('background', 'transparent', 'important');
-                    return;
-                }
-
-                // Check if it contains any actual/visible text (excluding nbsp and spaces)
-                const textContentClean = el.textContent.replace(/\u00a0/g, '').trim();
-                const hasRealText = textContentClean.length > 0;
-                
-                if (!hasRealText) {
-                    // Spacer/decorative element masquerading as text container: make it transparent to inherit
-                    el.style.setProperty('background-color', 'transparent', 'important');
-                    el.style.setProperty('background', 'transparent', 'important');
-                    return;
-                }
-                
-                // Check if the text element itself had a custom background color
-                let hasExplicitBg = el.style.backgroundColor;
-                let isCustomBg = false;
-                if (hasExplicitBg) {
-                    const currentBg = parseColorToHex(el.style.backgroundColor).toUpperCase();
-                    if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                        isCustomBg = true;
-                    }
-                }
-                
-                // If it doesn't have a custom background color, force it to transparent to inherit the block bg
-                if (!isCustomBg) {
-                    el.style.setProperty('background-color', 'transparent', 'important');
-                    el.style.setProperty('background', 'transparent', 'important');
-                }
-            });
+            }
         }
 
         function getBlockPadding(tr) {
