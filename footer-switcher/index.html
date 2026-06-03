@@ -980,6 +980,58 @@
         </div>
     </div>
 
+    <!-- Overlay modal download options -->
+    <div class="modal-overlay" id="download-modal-overlay" style="display: none;">
+        <div class="edit-modal" style="max-width: 480px;">
+            <div class="modal-header">
+                <h3 id="dl-modal-title">Opções de Exportação / Export Options</h3>
+                <button class="close-modal-btn" id="close-dl-modal-btn">
+                    <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; overflow-y: auto;">
+                
+                <!-- Format choice -->
+                <div>
+                    <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 0.75rem;">Escolha o Formato / Choose Format:</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
+                            <input type="radio" name="dl-format" value="html" checked style="accent-color: var(--accent-secondary); cursor: pointer;">
+                            <div style="display: flex; flex-direction: column; cursor: pointer;">
+                                <span style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Apenas Ficheiro HTML (.html)</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Descarrega unicamente o ficheiro HTML editado.</span>
+                            </div>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
+                            <input type="radio" name="dl-format" value="zip" style="accent-color: var(--accent-secondary); cursor: pointer;">
+                            <div style="display: flex; flex-direction: column; cursor: pointer;">
+                                <span style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Pacote Completo (.zip)</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">Descarrega uma pasta ZIP com o HTML e as imagens integradas localmente.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Custom save location toggle -->
+                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.25rem;">
+                    <input type="checkbox" id="dl-use-picker" style="width: 16px; height: 16px; accent-color: var(--accent-secondary); cursor: pointer;">
+                    <label for="dl-use-picker" style="font-size: 0.85rem; color: var(--text-main); cursor: pointer; font-weight: 500;">
+                        Escolher localização antes de guardar ("Guardar Como")
+                    </label>
+                </div>
+                
+                <div id="dl-picker-warning" style="display: none; font-size: 0.75rem; color: #f59e0b; padding: 0.5rem 0.75rem; border-radius: 6px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2);">
+                    Nota: O seu navegador não suporta a escolha avançada de pasta. Os ficheiros serão guardados através de download automático na pasta padrão.
+                </div>
+
+            </div>
+            <div class="modal-actions" style="padding: 1rem 1.5rem; background: rgba(0,0,0,0.2); border-top: 1px solid var(--card-border); display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <button class="modal-btn cancel" id="dl-modal-cancel-btn">Cancelar</button>
+                <button class="modal-btn save" id="dl-modal-confirm-btn" style="background: linear-gradient(135deg, var(--accent-secondary), #00b4d8); color: #0b0f19;">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="app-footer">
         ULUS-FONA Advanced Email Block Editor &copy; 2026. Powered by Antigravity.
     </footer>
@@ -2780,20 +2832,248 @@
             setLanguage(currentLang === 'pt' ? 'en' : 'pt');
         });
 
-        // Download processed HTML
+        // Modal elements for download options
+        const dlModalOverlay = document.getElementById('download-modal-overlay');
+        const closeDlModalBtn = document.getElementById('close-dl-modal-btn');
+        const dlModalCancelBtn = document.getElementById('dl-modal-cancel-btn');
+        const dlModalConfirmBtn = document.getElementById('dl-modal-confirm-btn');
+        const dlUsePicker = document.getElementById('dl-use-picker');
+        const dlPickerWarning = document.getElementById('dl-picker-warning');
+
+        // Check showSaveFilePicker browser support
+        if (!('showSaveFilePicker' in window)) {
+            dlUsePicker.checked = false;
+            dlUsePicker.disabled = true;
+            dlPickerWarning.style.display = 'block';
+        } else {
+            dlUsePicker.checked = true;
+        }
+
+        // Open download modal
         downloadBtn.addEventListener('click', () => {
             if (!processedHtmlContent) return;
-            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
+            dlModalOverlay.style.display = 'flex';
+        });
+
+        // Close download modal
+        function closeDlModal() {
+            dlModalOverlay.style.display = 'none';
+        }
+        closeDlModalBtn.addEventListener('click', closeDlModal);
+        dlModalCancelBtn.addEventListener('click', closeDlModal);
+
+        // Helper to dynamically load JSZip on-demand
+        async function loadJSZip() {
+            if (window.JSZip) return window.JSZip;
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
+                script.onload = () => resolve(window.JSZip);
+                script.onerror = (e) => reject(new Error("Falha ao carregar a biblioteca JSZip"));
+                document.head.appendChild(script);
+            });
+        }
+
+        // Helper to extract image URLs from document
+        function extractImageUrls(doc) {
+            const urls = new Set();
+            // <img> tags
+            doc.querySelectorAll('img').forEach(img => {
+                const src = img.getAttribute('src');
+                if (src && !src.startsWith('data:')) {
+                    urls.add(src);
+                }
+            });
+            // background attributes
+            doc.querySelectorAll('[background]').forEach(el => {
+                const bg = el.getAttribute('background');
+                if (bg && !bg.startsWith('data:')) {
+                    urls.add(bg);
+                }
+            });
+            // inline styles url(...)
+            doc.querySelectorAll('[style]').forEach(el => {
+                const style = el.getAttribute('style') || '';
+                const match = style.match(/url\(['"]?([^'")]+)['"]?\)/i);
+                if (match && match[1] && !match[1].startsWith('data:')) {
+                    urls.add(match[1]);
+                }
+            });
+            return Array.from(urls);
+        }
+
+        // Helper to fetch image as blob
+        async function fetchImageAsBlob(url) {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error('Fetch failed');
+                return await res.blob();
+            } catch (e) {
+                console.warn(`Failed to fetch image: ${url}`, e);
+                return null;
+            }
+        }
+
+        // Clean filename from url
+        function getFilenameFromUrl(url) {
+            let filename = '';
+            try {
+                const parsed = new URL(url);
+                filename = parsed.pathname.substring(parsed.pathname.lastIndexOf('/') + 1);
+            } catch (e) {
+                filename = url.substring(url.lastIndexOf('/') + 1);
+            }
+            filename = filename.split(/[?#]/)[0]; // Remove query params or hashes
+            if (!filename) {
+                filename = 'image_' + Math.random().toString(36).substring(2, 7) + '.png';
+            }
+            return filename.replace(/[^a-zA-Z0-9_.-]/g, '_');
+        }
+
+        // Handle Download Confirmation
+        dlModalConfirmBtn.addEventListener('click', async () => {
+            if (!processedHtmlContent) return;
+            
+            // Set loading state
+            dlModalConfirmBtn.disabled = true;
+            const originalText = dlModalConfirmBtn.textContent;
+            dlModalConfirmBtn.textContent = 'Processando...';
+            
+            const format = document.querySelector('input[name="dl-format"]:checked').value;
+            const usePicker = dlUsePicker.checked;
+            
+            const baseName = uploadedFileName.substring(0, uploadedFileName.lastIndexOf('.')) || 'template';
+            const defaultFileName = `processed_${baseName}_${currentInstitution}`;
+            
+            try {
+                if (format === 'html') {
+                    // Single HTML File Download
+                    const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8' });
+                    await triggerFileSave(blob, `${defaultFileName}.html`, 'html', usePicker);
+                } else {
+                    // Zip Package Download
+                    addLog('info', 'A inicializar empacotamento ZIP...');
+                    const JSZip = await loadJSZip();
+                    const zip = new JSZip();
+                    
+                    // Clone document so we can rewrite image paths
+                    const zipDoc = parsedDoc.cloneNode(true);
+                    
+                    // Find all images
+                    const imageUrls = extractImageUrls(zipDoc);
+                    addLog('info', `Encontradas ${imageUrls.length} imagens no template. A descarregar...`);
+                    
+                    const imagesFolder = zip.folder("images");
+                    
+                    for (const url of imageUrls) {
+                        addLog('info', `A descarregar imagem: ${url.substring(0, 50)}...`);
+                        const blob = await fetchImageAsBlob(url);
+                        if (blob) {
+                            const filename = getFilenameFromUrl(url);
+                            // Add image blob to zip images folder
+                            imagesFolder.file(filename, blob);
+                            
+                            // Rewrite paths in cloned document to reference local path
+                            const localPath = `images/${filename}`;
+                            
+                            // Replace in <img> tags
+                            zipDoc.querySelectorAll('img').forEach(img => {
+                                if (img.getAttribute('src') === url) {
+                                    img.setAttribute('src', localPath);
+                                }
+                            });
+                            // Replace in background attributes
+                            zipDoc.querySelectorAll('[background]').forEach(el => {
+                                if (el.getAttribute('background') === url) {
+                                    el.setAttribute('background', localPath);
+                                }
+                            });
+                            // Replace in inline style url(...)
+                            zipDoc.querySelectorAll('[style]').forEach(el => {
+                                let style = el.getAttribute('style') || '';
+                                if (style.includes(url)) {
+                                    const escapedUrl = url.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                                    const regex = new RegExp(`url\\(['"]?${escapedUrl}['"]?\\)`, 'gi');
+                                    style = style.replace(regex, `url('${localPath}')`);
+                                    el.setAttribute('style', style);
+                                }
+                            });
+                            addLog('success', `Imagem empacotada com sucesso: ${filename}`);
+                        } else {
+                            addLog('warning', `Não foi possível descarregar imagem (CORS/Rede): ${url.substring(0, 50)}... A manter URL original.`);
+                        }
+                    }
+                    
+                    // Re-serialize modified document
+                    let doctypeString = '';
+                    if (zipDoc.doctype) {
+                        doctypeString = new XMLSerializer().serializeToString(zipDoc.doctype) + '\n';
+                    }
+                    const finalHtml = doctypeString + zipDoc.documentElement.outerHTML;
+                    
+                    zip.file(`${defaultFileName}.html`, finalHtml);
+                    
+                    addLog('info', 'A gerar arquivo ZIP...');
+                    const zipBlob = await zip.generateAsync({ type: "blob" });
+                    await triggerFileSave(zipBlob, `${defaultFileName}.zip`, 'zip', usePicker);
+                }
+            } catch (err) {
+                console.error("Download processing error", err);
+                addLog('error', `Erro no download: ${err.message}`);
+            } finally {
+                dlModalConfirmBtn.disabled = false;
+                dlModalConfirmBtn.textContent = originalText;
+                closeDlModal();
+            }
+        });
+
+        // Trigger native file save or normal download
+        async function triggerFileSave(contentBlob, defaultFileName, fileType, usePicker) {
+            if (usePicker && 'showSaveFilePicker' in window) {
+                try {
+                    const options = {
+                        suggestedName: defaultFileName,
+                        types: []
+                    };
+                    if (fileType === 'zip') {
+                        options.types.push({
+                            description: 'Pasta Compactada (.zip)',
+                            accept: { 'application/zip': ['.zip'] }
+                        });
+                    } else {
+                        options.types.push({
+                            description: 'Ficheiro HTML (.html)',
+                            accept: { 'text/html': ['.html'] }
+                        });
+                    }
+                    
+                    const handle = await window.showSaveFilePicker(options);
+                    const writable = await handle.createWritable();
+                    await writable.write(contentBlob);
+                    await writable.close();
+                    addLog('success', `Guardado com sucesso em: ${handle.name}`);
+                    return true;
+                } catch (err) {
+                    if (err.name === 'AbortError') {
+                        addLog('info', 'Gravação cancelada pelo utilizador.');
+                        return false;
+                    }
+                    console.error('Save File Picker failed, falling back', err);
+                }
+            }
+            
+            // Standard fallback download link
+            const url = URL.createObjectURL(contentBlob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'processed_' + uploadedFileName;
+            a.download = defaultFileName;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            addLog('success', `Ficheiro descarregado: processed_${uploadedFileName}`);
-        });
+            addLog('success', `Ficheiro descarregado: ${defaultFileName}`);
+            return true;
+        }
 
         // Ctrl+Z Undo key binding (excluding active text input areas to allow native browser undo/redo)
         document.addEventListener('keydown', (e) => {
