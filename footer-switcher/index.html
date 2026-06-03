@@ -1916,6 +1916,9 @@
             targets.forEach(target => {
                 const tagName = target.tagName.toUpperCase();
                 
+                // Check if it has text (ignoring whitespace)
+                const hasText = target.textContent.trim().length > 0;
+                
                 // Check if it's a button or custom styled element
                 const isBtn = target.classList.contains('button') || 
                               target.classList.contains('btn') || 
@@ -1933,8 +1936,14 @@
                     }
                 }
                 
-                // If it is NOT a custom styled button/badge, apply the new background color
-                if (!isBtn && !isCustomBg) {
+                // ALWAYS update structural elements that have no text (spacers, dividers)
+                // If it HAS text AND it is a custom button or badge, preserve its color
+                let shouldUpdate = true;
+                if (hasText && (isBtn || isCustomBg)) {
+                    shouldUpdate = false;
+                }
+                
+                if (shouldUpdate) {
                     target.style.backgroundColor = newBgColor;
                     if (tagName === 'TD' || tagName === 'TABLE') {
                         target.setAttribute('bgcolor', newBgColor);
