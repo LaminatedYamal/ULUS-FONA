@@ -2322,9 +2322,18 @@
                     if (el && bgHexInput) {
                         const bgVal = bgHexInput.value.trim().toLowerCase();
                         if (bgVal === 'transparent' || bgVal === '') {
-                            el.style.backgroundColor = '';
+                            const tagName = el.tagName.toLowerCase();
+                            const inlineTextTags = ['span', 'font', 'a', 'b', 'strong', 'i', 'em', 'u'];
+                            if (inlineTextTags.includes(tagName)) {
+                                el.style.setProperty('background-color', 'transparent', 'important');
+                                el.style.setProperty('background', 'transparent', 'important');
+                            } else {
+                                el.style.removeProperty('background-color');
+                                el.style.removeProperty('background');
+                            }
                         } else {
-                            el.style.backgroundColor = bgVal;
+                            el.style.setProperty('background-color', bgVal, 'important');
+                            el.style.setProperty('background', bgVal, 'important');
                         }
                     }
                     
@@ -2830,8 +2839,15 @@
                     if (el && bgHexInput) {
                         const bgVal = bgHexInput.value.trim().toLowerCase();
                         if (bgVal === 'transparent' || bgVal === '') {
-                            el.style.setProperty('background-color', 'transparent', 'important');
-                            el.style.setProperty('background', 'transparent', 'important');
+                            const tagName = el.tagName.toLowerCase();
+                            const inlineTextTags = ['span', 'font', 'a', 'b', 'strong', 'i', 'em', 'u'];
+                            if (inlineTextTags.includes(tagName)) {
+                                el.style.setProperty('background-color', 'transparent', 'important');
+                                el.style.setProperty('background', 'transparent', 'important');
+                            } else {
+                                el.style.removeProperty('background-color');
+                                el.style.removeProperty('background');
+                            }
                         } else {
                             el.style.setProperty('background-color', bgVal, 'important');
                             el.style.setProperty('background', bgVal, 'important');
