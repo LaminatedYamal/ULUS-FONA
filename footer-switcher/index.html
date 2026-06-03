@@ -1926,20 +1926,32 @@
             targets.forEach(target => {
                 const tagName = target.tagName.toUpperCase();
                 
-                // Check if it's a button or custom styled element
+                // Check if it's a button or custom styled element (or parent container of one)
                 const isBtn = target.classList.contains('button') || 
                               target.classList.contains('btn') || 
                               target.classList.contains('cta') || 
                               (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
-                              (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button'));
+                              (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button')) ||
+                              target.querySelector('.button, .btn, .cta') !== null ||
+                              (target.querySelector('a') && target.querySelector('a').getAttribute('class') && target.querySelector('a').getAttribute('class').toLowerCase().includes('btn'));
+                
+                // Check if it has an explicit custom background color different from the block background color
+                let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
+                let isCustomBg = false;
+                if (hasExplicitBg) {
+                    const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
+                    if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
+                        isCustomBg = true;
+                    }
+                }
                 
                 let shouldUpdate = true;
                 
                 if (isSpacerBlock) {
                     // For spacer/divider blocks, ALWAYS update everything to change the line/space color
                     shouldUpdate = true;
-                } else if (isBtn) {
-                    // If it is a custom button, preserve its color
+                } else if (isBtn || isCustomBg) {
+                    // If it is a button/callout structure or has a custom background color, preserve it
                     shouldUpdate = false;
                 }
                 
