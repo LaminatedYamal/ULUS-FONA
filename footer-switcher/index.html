@@ -1801,7 +1801,9 @@
 
         function getElementBgColor(el) {
             let current = el;
-            while (current && current.tagName !== 'TR') {
+            const stopTags = ['DIV', 'TD', 'TABLE', 'TR', 'TBODY', 'THEAD'];
+            while (current && !stopTags.includes(current.tagName.toUpperCase())) {
+                if (current.classList && current.classList.contains('zpelement-wrapper')) break;
                 if (current.style && current.style.backgroundColor) {
                     return parseColorToHex(current.style.backgroundColor);
                 }
@@ -1900,20 +1902,64 @@
         }
 
         function setBlockBgColor(tr, hexColor) {
-            tr.style.backgroundColor = hexColor;
-            const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
+            const oldBgColor = getBlockBgColor(tr).toUpperCase();
+            const newBgColor = hexColor.toUpperCase();
+            
+            // Set on the block container itself
+            tr.style.backgroundColor = newBgColor;
+            if (tr.tagName === 'TD' || tr.tagName === 'TABLE') {
+                tr.setAttribute('bgcolor', newBgColor);
+            }
+            
+            // Find all structural/layout elements inside the block
+            const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div');
             targets.forEach(target => {
-                target.style.backgroundColor = hexColor;
-                if (target.tagName === 'TD' || target.tagName === 'TABLE') {
-                    target.setAttribute('bgcolor', hexColor);
+                const tagName = target.tagName.toUpperCase();
+                
+                // Check if it's a button or custom styled element
+                const isBtn = target.classList.contains('button') || 
+                              target.classList.contains('btn') || 
+                              target.classList.contains('cta') || 
+                              (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
+                              (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button'));
+                
+                let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
+                let isCustomBg = false;
+                
+                if (hasExplicitBg) {
+                    const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
+                    if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
+                        isCustomBg = true;
+                    }
+                }
+                
+                // If it is NOT a custom styled button/badge, apply the new background color
+                if (!isBtn && !isCustomBg) {
+                    target.style.backgroundColor = newBgColor;
+                    if (tagName === 'TD' || tagName === 'TABLE') {
+                        target.setAttribute('bgcolor', newBgColor);
+                    }
                 }
             });
             
-            // Clear explicit background color on inner text containers so they inherit the parent block's background
-            const textContainers = tr.querySelectorAll('p, span, div, font, a, h1, h2, h3, h4, h5, h6, b, i, u');
+            // Clear explicit background color on inner text containers to transparent so they inherit the parent block's background
+            const textContainers = tr.querySelectorAll('p, span, font, a, h1, h2, h3, h4, h5, h6, b, i, u, li, ul, ol');
             textContainers.forEach(el => {
-                if (el.style && el.style.backgroundColor) {
-                    el.style.backgroundColor = '';
+                const tagName = el.tagName.toUpperCase();
+                
+                // Check if the text element itself had a custom background color
+                let hasExplicitBg = el.style.backgroundColor;
+                let isCustomBg = false;
+                if (hasExplicitBg) {
+                    const currentBg = parseColorToHex(el.style.backgroundColor).toUpperCase();
+                    if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
+                        isCustomBg = true;
+                    }
+                }
+                
+                // If it doesn't have a custom background color, force it to transparent to inherit the block bg
+                if (!isCustomBg) {
+                    el.style.backgroundColor = 'transparent';
                 }
             });
         }
@@ -1921,43 +1967,81 @@
         function getBlockPadding(tr) {
             let pt = 0;
             let pb = 0;
-            const td = tr.querySelector('td.paddingcomp') || tr.querySelector('td');
-            const wrapper = tr.querySelector('.zpelement-wrapper') || tr;
-            const source = td || wrapper;
-            if (source && source.style) {
-                if (source.style.paddingTop) pt = parseInt(source.style.paddingTop) || 0;
-                if (source.style.paddingBottom) pb = parseInt(source.style.paddingBottom) || 0;
-            }
+            
             const componentDiv = tr.querySelector('[componentpaddingtop]');
             if (componentDiv) {
-                if (pt === 0 && componentDiv.getAttribute('componentpaddingtop')) {
-                    pt = parseInt(componentDiv.getAttribute('componentpaddingtop')) || 0;
-                }
-                if (pb === 0 && componentDiv.getAttribute('componentpaddingbottom')) {
-                    pb = parseInt(componentDiv.getAttribute('componentpaddingbottom')) || 0;
-                }
+                pt = parseInt(componentDiv.getAttribute('componentpaddingtop')) || parseInt(componentDiv.style.paddingTop) || 0;
+                pb = parseInt(componentDiv.getAttribute('componentpaddingbottom')) || parseInt(componentDiv.style.paddingBottom) || 0;
+                return { top: pt, bottom: pb };
             }
+            
+            const paddingcompTd = tr.querySelector('td.paddingcomp');
+            if (paddingcompTd) {
+                if (paddingcompTd.style.paddingTop) pt = parseInt(paddingcompTd.style.paddingTop) || 0;
+                if (paddingcompTd.style.paddingBottom) pb = parseInt(paddingcompTd.style.paddingBottom) || 0;
+                return { top: pt, bottom: pb };
+            }
+            
+            const wrapper = tr.querySelector('.zpelement-wrapper');
+            if (wrapper) {
+                if (wrapper.style.paddingTop) pt = parseInt(wrapper.style.paddingTop) || 0;
+                if (wrapper.style.paddingBottom) pb = parseInt(wrapper.style.paddingBottom) || 0;
+                return { top: pt, bottom: pb };
+            }
+            
+            const directTds = Array.from(tr.children).filter(c => c.tagName === 'TD');
+            if (directTds.length > 0) {
+                const td = directTds[0];
+                if (td.style.paddingTop) pt = parseInt(td.style.paddingTop) || 0;
+                if (td.style.paddingBottom) pb = parseInt(td.style.paddingBottom) || 0;
+                return { top: pt, bottom: pb };
+            }
+            
+            if (tr.style.paddingTop) pt = parseInt(tr.style.paddingTop) || 0;
+            if (tr.style.paddingBottom) pb = parseInt(tr.style.paddingBottom) || 0;
             return { top: pt, bottom: pb };
         }
 
         function setBlockPadding(tr, topVal, bottomVal) {
-            const tds = tr.querySelectorAll('td');
-            tds.forEach(td => {
-                td.style.paddingTop = topVal + 'px';
-                td.style.paddingBottom = bottomVal + 'px';
-            });
-            const wrappers = tr.querySelectorAll('.zpelement-wrapper');
-            wrappers.forEach(w => {
-                w.style.paddingTop = topVal + 'px';
-                w.style.paddingBottom = bottomVal + 'px';
-            });
+            // Find the primary padding element(s) in the block and apply padding only at that level to prevent expansion
             const componentDivs = tr.querySelectorAll('[componentpaddingtop]');
-            componentDivs.forEach(div => {
-                div.setAttribute('componentpaddingtop', topVal + 'px');
-                div.setAttribute('componentpaddingbottom', bottomVal + 'px');
-                div.style.paddingTop = topVal + 'px';
-                div.style.paddingBottom = bottomVal + 'px';
-            });
+            const paddingcompTd = tr.querySelector('td.paddingcomp');
+            const wrapper = tr.querySelector('.zpelement-wrapper');
+            const directTds = Array.from(tr.children).filter(c => c.tagName === 'TD');
+            
+            if (componentDivs.length > 0) {
+                componentDivs.forEach(div => {
+                    let parent = div.parentElement;
+                    let isNestedDiv = false;
+                    while (parent && parent !== tr) {
+                        if (parent.hasAttribute('componentpaddingtop')) {
+                            isNestedDiv = true;
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
+                    if (!isNestedDiv) {
+                        div.setAttribute('componentpaddingtop', topVal + 'px');
+                        div.setAttribute('componentpaddingbottom', bottomVal + 'px');
+                        div.style.paddingTop = topVal + 'px';
+                        div.style.paddingBottom = bottomVal + 'px';
+                    }
+                });
+            } else if (paddingcompTd) {
+                paddingcompTd.style.paddingTop = topVal + 'px';
+                paddingcompTd.style.paddingBottom = bottomVal + 'px';
+            } else if (wrapper) {
+                wrapper.style.paddingTop = topVal + 'px';
+                wrapper.style.paddingBottom = bottomVal + 'px';
+            } else if (directTds.length > 0) {
+                directTds.forEach(td => {
+                    td.style.paddingTop = topVal + 'px';
+                    td.style.paddingBottom = bottomVal + 'px';
+                });
+            } else {
+                tr.style.paddingTop = topVal + 'px';
+                tr.style.paddingBottom = bottomVal + 'px';
+            }
         }
 
         // Modal editor
