@@ -1915,7 +1915,8 @@
             }
             
             // Set on the block container itself
-            tr.style.backgroundColor = newBgColor;
+            tr.style.setProperty('background-color', newBgColor, 'important');
+            tr.style.setProperty('background', newBgColor, 'important');
             if (tr.tagName === 'TD' || tr.tagName === 'TABLE') {
                 tr.setAttribute('bgcolor', newBgColor);
             }
@@ -1946,17 +1947,18 @@
                 }
                 
                 if (shouldUpdate) {
-                    target.style.backgroundColor = newBgColor;
+                    target.style.setProperty('background-color', newBgColor, 'important');
+                    target.style.setProperty('background', newBgColor, 'important');
                     if (tagName === 'TD' || tagName === 'TABLE') {
                         target.setAttribute('bgcolor', newBgColor);
                     }
                     if (tagName === 'HR') {
-                        target.style.borderColor = newBgColor;
+                        target.style.setProperty('border-color', newBgColor, 'important');
                     }
                     // Update any existing borders that act as dividers
-                    if (target.style.border) target.style.borderColor = newBgColor;
-                    if (target.style.borderTop) target.style.borderTopColor = newBgColor;
-                    if (target.style.borderBottom) target.style.borderBottomColor = newBgColor;
+                    if (target.style.border) target.style.setProperty('border-color', newBgColor, 'important');
+                    if (target.style.borderTop) target.style.setProperty('border-top-color', newBgColor, 'important');
+                    if (target.style.borderBottom) target.style.setProperty('border-bottom-color', newBgColor, 'important');
                 }
             });
             
@@ -1977,7 +1979,8 @@
                 
                 // If it doesn't have a custom background color, force it to transparent to inherit the block bg
                 if (!isCustomBg) {
-                    el.style.backgroundColor = 'transparent';
+                    el.style.setProperty('background-color', 'transparent', 'important');
+                    el.style.setProperty('background', 'transparent', 'important');
                 }
             });
         }
