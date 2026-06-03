@@ -2416,9 +2416,15 @@
                     field.style.marginTop = '0.5rem';
                     
                     field.innerHTML = `
-                        <label style="color: var(--accent-secondary); font-weight: 700;">Imagem #${idx + 1}</label>
+                        <label style="color: var(--accent-secondary); font-weight: 700; display: flex; justify-content: space-between;">
+                            <span>Imagem #${idx + 1}</span>
+                        </label>
                         <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-                            <label style="font-size: 0.7rem; color: var(--text-muted);">URL da Imagem:</label>
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Substituir por imagem local / Replace with local image:</label>
+                            <input type="file" class="modal-img-file-input" data-img-index="${idx}" accept="image/*" style="background: rgba(0,0,0,0.2); border: 1px dashed var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%; cursor: pointer;">
+                        </div>
+                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Ou URL da Imagem / Or Image URL:</label>
                             <input type="text" class="modal-img-src-input" data-img-index="${idx}" value="${img.getAttribute('src') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
                         </div>
                         <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
@@ -2429,7 +2435,22 @@
                     `;
                     modalInputsList.appendChild(field);
                     
-                    field.querySelector('.modal-img-src-input').addEventListener('input', applyLiveEdits);
+                    const srcInput = field.querySelector('.modal-img-src-input');
+                    const fileInput = field.querySelector('.modal-img-file-input');
+                    
+                    fileInput.addEventListener('change', (e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = (event) => {
+                                srcInput.value = event.target.result;
+                                applyLiveEdits();
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                    
+                    srcInput.addEventListener('input', applyLiveEdits);
                     field.querySelector('.modal-img-alt-input').addEventListener('input', applyLiveEdits);
                     if (linkEl) {
                         field.querySelector('.modal-img-link-href-input').addEventListener('input', applyLiveEdits);
@@ -2902,6 +2923,21 @@
             return Array.from(urls);
         }
 
+        // Helper to convert base64 data URL to Blob
+        function dataURLtoBlob(dataurl) {
+            try {
+                let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+                while(n--){
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+                return new Blob([u8arr], {type:mime});
+            } catch (e) {
+                console.error("Base64 parsing failed", e);
+                return null;
+            }
+        }
+
         // Helper to fetch image as blob
         async function fetchImageAsBlob(url) {
             try {
@@ -2965,11 +3001,25 @@
                     
                     const imagesFolder = zip.folder("images");
                     
+                    let base64Count = 0;
                     for (const url of imageUrls) {
-                        addLog('info', `A descarregar imagem: ${url.substring(0, 50)}...`);
-                        const blob = await fetchImageAsBlob(url);
+                        let blob = null;
+                        let filename = '';
+                        
+                        if (url.startsWith('data:')) {
+                            base64Count++;
+                            blob = dataURLtoBlob(url);
+                            let ext = 'png';
+                            const mimeMatch = url.match(/data:image\/([a-zA-Z+]+);base64/);
+                            if (mimeMatch) ext = mimeMatch[1];
+                            filename = `imagem_carregada_${base64Count}.${ext}`;
+                        } else {
+                            addLog('info', `A descarregar imagem: ${url.substring(0, 50)}...`);
+                            blob = await fetchImageAsBlob(url);
+                            if (blob) filename = getFilenameFromUrl(url);
+                        }
+                        
                         if (blob) {
-                            const filename = getFilenameFromUrl(url);
                             // Add image blob to zip images folder
                             imagesFolder.file(filename, blob);
                             
