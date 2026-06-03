@@ -1966,6 +1966,45 @@
                     } else if (isBtn || isCustomBg) {
                         // If it is a button/callout structure or has a custom background color, preserve it
                         shouldUpdate = false;
+                    } else {
+                        // Check if any ancestor is a button or custom bg container (to protect nested elements)
+                        let parent = target.parentElement;
+                        while (parent && parent !== tr) {
+                            const parentTagName = parent.tagName.toUpperCase();
+                            const isParentStructural = parent.classList.contains('txtsize') || 
+                                                       parent.classList.contains('zpelement-wrapper') || 
+                                                       parent.classList.contains('zpAlignPos') ||
+                                                       parentTagName === 'BODY' ||
+                                                       parentTagName === 'TBODY' ||
+                                                       parentTagName === 'TR' ||
+                                                       (parent.id && parent.id.startsWith('elm_'));
+                                                       
+                            if (!isParentStructural) {
+                                // Check if parent is a button
+                                const isParentBtn = parent.classList.contains('button') || 
+                                                    parent.classList.contains('btn') || 
+                                                    parent.classList.contains('cta') || 
+                                                    (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('btn')) ||
+                                                    (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('button')) ||
+                                                    parent.querySelector('.button, .btn, .cta') !== null;
+                                
+                                // Check if parent has a custom bg
+                                let parentBg = parent.style.backgroundColor || parent.getAttribute('bgcolor');
+                                let isParentCustomBg = false;
+                                if (parentBg) {
+                                    const pBg = parseColorToHex(parentBg).toUpperCase();
+                                    if (pBg !== oldBgColor && pBg !== 'TRANSPARENT' && pBg !== '') {
+                                        isParentCustomBg = true;
+                                    }
+                                }
+                                
+                                if (isParentBtn || isParentCustomBg) {
+                                    shouldUpdate = false;
+                                    break;
+                                }
+                            }
+                            parent = parent.parentElement;
+                        }
                     }
                     
                     if (shouldUpdate) {
