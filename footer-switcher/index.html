@@ -1935,23 +1935,13 @@
                               (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
                               (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button'));
                 
-                let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
-                let isCustomBg = false;
-                
-                if (hasExplicitBg) {
-                    const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
-                    if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                        isCustomBg = true;
-                    }
-                }
-                
                 let shouldUpdate = true;
                 
                 if (isSpacerBlock) {
                     // For spacer/divider blocks, ALWAYS update everything to change the line/space color
                     shouldUpdate = true;
-                } else if (hasText && (isBtn || isCustomBg)) {
-                    // If it HAS text AND it is a custom button or badge, preserve its color
+                } else if (hasText && isBtn) {
+                    // If it HAS text AND it is a custom button, preserve its color
                     shouldUpdate = false;
                 }
                 
