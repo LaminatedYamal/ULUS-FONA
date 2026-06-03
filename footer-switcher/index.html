@@ -1926,9 +1926,6 @@
             targets.forEach(target => {
                 const tagName = target.tagName.toUpperCase();
                 
-                // Check if it has text (ignoring whitespace)
-                const hasText = target.textContent.trim().length > 0;
-                
                 // Check if it's a button or custom styled element
                 const isBtn = target.classList.contains('button') || 
                               target.classList.contains('btn') || 
@@ -1941,8 +1938,8 @@
                 if (isSpacerBlock) {
                     // For spacer/divider blocks, ALWAYS update everything to change the line/space color
                     shouldUpdate = true;
-                } else if (hasText && isBtn) {
-                    // If it HAS text AND it is a custom button, preserve its color
+                } else if (isBtn) {
+                    // If it is a custom button, preserve its color
                     shouldUpdate = false;
                 }
                 
@@ -1965,7 +1962,22 @@
             // Clear explicit background color on inner text containers to transparent so they inherit the parent block's background
             const textContainers = tr.querySelectorAll('p, span, font, a, h1, h2, h3, h4, h5, h6, b, i, u, li, ul, ol');
             textContainers.forEach(el => {
-                const tagName = el.tagName.toUpperCase();
+                if (isSpacerBlock) {
+                    el.style.setProperty('background-color', 'transparent', 'important');
+                    el.style.setProperty('background', 'transparent', 'important');
+                    return;
+                }
+
+                // Check if it contains any actual/visible text (excluding nbsp and spaces)
+                const textContentClean = el.textContent.replace(/\u00a0/g, '').trim();
+                const hasRealText = textContentClean.length > 0;
+                
+                if (!hasRealText) {
+                    // Spacer/decorative element masquerading as text container: make it transparent to inherit
+                    el.style.setProperty('background-color', 'transparent', 'important');
+                    el.style.setProperty('background', 'transparent', 'important');
+                    return;
+                }
                 
                 // Check if the text element itself had a custom background color
                 let hasExplicitBg = el.style.backgroundColor;
@@ -2811,6 +2823,19 @@
                     const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
                     if (el && hexInput && hexInput.value) {
                         el.style.color = hexInput.value;
+                    }
+                    
+                    // Update text element background color
+                    const bgHexInput = modalInputsList.querySelector(`.text-bg-hex[data-index="${idx}"]`);
+                    if (el && bgHexInput) {
+                        const bgVal = bgHexInput.value.trim().toLowerCase();
+                        if (bgVal === 'transparent' || bgVal === '') {
+                            el.style.setProperty('background-color', 'transparent', 'important');
+                            el.style.setProperty('background', 'transparent', 'important');
+                        } else {
+                            el.style.setProperty('background-color', bgVal, 'important');
+                            el.style.setProperty('background', bgVal, 'important');
+                        }
                     }
                     
                     // Update hyperlink URL if applicable
