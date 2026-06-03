@@ -995,18 +995,20 @@
                 <div>
                     <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 0.75rem;">Escolha o Formato / Choose Format:</label>
                     <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                        <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
+                         <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
                             <input type="radio" name="dl-format" value="html" checked style="accent-color: var(--accent-secondary); cursor: pointer;">
-                            <div style="display: flex; flex-direction: column; cursor: pointer;">
+                            <div style="display: flex; flex-direction: column; cursor: pointer; gap: 0.15rem;">
                                 <span style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Apenas Ficheiro HTML (.html)</span>
                                 <span style="font-size: 0.75rem; color: var(--text-muted);">Descarrega unicamente o ficheiro HTML editado.</span>
+                                <span style="font-size: 0.7rem; color: #ef4444; font-weight: 500;">⚠️ Não use se carregou ficheiros de imagem locais (rejeitado pelo Zoho).</span>
                             </div>
                         </label>
                         <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
                             <input type="radio" name="dl-format" value="zip" style="accent-color: var(--accent-secondary); cursor: pointer;">
-                            <div style="display: flex; flex-direction: column; cursor: pointer;">
+                            <div style="display: flex; flex-direction: column; cursor: pointer; gap: 0.15rem;">
                                 <span style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Pacote Completo (.zip)</span>
                                 <span style="font-size: 0.75rem; color: var(--text-muted);">Descarrega uma pasta ZIP com o HTML e as imagens integradas localmente.</span>
+                                <span style="font-size: 0.7rem; color: #10b981; font-weight: 500;">✓ Recomendado para Zoho Campaigns ao usar imagens locais do computador.</span>
                             </div>
                         </label>
                     </div>
@@ -1892,9 +1894,7 @@
             const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
             for (let target of targets) {
                 if (target.style && target.style.backgroundColor) {
-                    return parseColorToHex(target.style.backgroundColor);
-                }
-                if (target.getAttribute && target.getAttribute('bgcolor')) {
+                    if (target.getAttribute && target.getAttribute('bgcolor')) {
                     return parseColorToHex(target.getAttribute('bgcolor'));
                 }
             }
@@ -1922,86 +1922,59 @@
                     tr.setAttribute('bgcolor', newBgColor);
                 }
                 
+                // Build a Set of protected elements (buttons, custom components, and their wrappers/descendants)
+                const protectedElements = new Set();
+                
+                // Find button candidates (based on class, id, or typical button tags/attributes)
+                const btnCandidates = tr.querySelectorAll('.button, .btn, .cta, .buttonElem, [class*="btn" i], [class*="button" i], [id*="btn" i], [id*="button" i]');
+                btnCandidates.forEach(btn => {
+                    protectedElements.add(btn);
+                    // Protect all descendants of the button
+                    btn.querySelectorAll('*').forEach(desc => protectedElements.add(desc));
+                    
+                    // Protect immediate table/td wrapper hierarchy of the button
+                    let parent = btn.parentElement;
+                    while (parent && parent !== tr) {
+                        const pTag = parent.tagName.toUpperCase();
+                        if (pTag === 'TD' || pTag === 'TR' || pTag === 'TBODY' || pTag === 'TABLE') {
+                            protectedElements.add(parent);
+                        }
+                        // Stop if we hit a known block structural container
+                        if (parent.classList.contains('zpelement-wrapper') || 
+                            parent.classList.contains('zpAlignPos') || 
+                            (parent.getAttribute && parent.getAttribute('width') === '100%')) {
+                            break;
+                        }
+                        parent = parent.parentElement;
+                    }
+                });
+
+                // Find elements with explicit custom backgrounds and protect them and their descendants
+                const allElements = tr.querySelectorAll('*');
+                allElements.forEach(el => {
+                    let hasExplicitBg = el.style.backgroundColor || el.getAttribute('bgcolor');
+                    if (hasExplicitBg) {
+                        const currentBg = parseColorToHex(el.style.backgroundColor || el.getAttribute('bgcolor')).toUpperCase();
+                        if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
+                            protectedElements.add(el);
+                            el.querySelectorAll('*').forEach(desc => protectedElements.add(desc));
+                        }
+                    }
+                });
+                
                 // Find all structural/layout elements inside the block
                 const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div, hr');
                 targets.forEach(target => {
                     const tagName = target.tagName.toUpperCase();
-                    // Identify if this element is a structural block container
-                    const isStructuralWrapper = (target.classList.contains('zpelement-wrapper') || 
-                                                target.classList.contains('zpAlignPos') ||
-                                                tagName === 'BODY' ||
-                                                tagName === 'TBODY' ||
-                                                tagName === 'TR' ||
-                                                (target.id && target.id.startsWith('elm_'))) && !target.classList.contains('buttonElem');
-
-                    // Check if it's a button or custom styled element
-                    const isBtn = !isStructuralWrapper && (
-                                  target.classList.contains('button') || 
-                                  target.classList.contains('btn') || 
-                                  target.classList.contains('cta') || 
-                                  target.classList.contains('buttonElem') ||
-                                  (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('btn')) ||
-                                  (target.getAttribute('class') && target.getAttribute('class').toLowerCase().includes('button'))
-                    );
-                    
-                    // Check if it has an explicit custom background color different from the block background color
-                    let hasExplicitBg = target.style.backgroundColor || target.getAttribute('bgcolor');
-                    let isCustomBg = false;
-                    if (hasExplicitBg) {
-                        const currentBg = parseColorToHex(target.style.backgroundColor || target.getAttribute('bgcolor')).toUpperCase();
-                        if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                            if (!isStructuralWrapper) {
-                                isCustomBg = true;
-                            }
-                        }
-                    }
                     
                     let shouldUpdate = true;
                     
                     if (isSpacerBlock) {
                         // For spacer/divider blocks, ALWAYS update everything to change the line/space color
                         shouldUpdate = true;
-                    } else if (isBtn || isCustomBg) {
-                        // If it is a button/callout structure or has a custom background color, preserve it
+                    } else if (protectedElements.has(target)) {
+                        // If it is protected (button or custom component structure), preserve it
                         shouldUpdate = false;
-                    } else {
-                        // Check if any ancestor is a button or custom bg container (to protect nested elements)
-                        let parent = target.parentElement;
-                        while (parent && parent !== tr) {
-                            const parentTagName = parent.tagName.toUpperCase();
-                            const isParentStructural = (parent.classList.contains('zpelement-wrapper') || 
-                                                       parent.classList.contains('zpAlignPos') ||
-                                                       parentTagName === 'BODY' ||
-                                                       parentTagName === 'TBODY' ||
-                                                       parentTagName === 'TR' ||
-                                                       (parent.id && parent.id.startsWith('elm_'))) && !parent.classList.contains('buttonElem');
-                                                       
-                            if (!isParentStructural) {
-                                // Check if parent is a button
-                                const isParentBtn = parent.classList.contains('button') || 
-                                                    parent.classList.contains('btn') || 
-                                                    parent.classList.contains('cta') || 
-                                                    parent.classList.contains('buttonElem') ||
-                                                    (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('btn')) ||
-                                                    (parent.getAttribute('class') && parent.getAttribute('class').toLowerCase().includes('button'));
-                                
-                                // Check if parent has a custom bg
-                                let parentBg = parent.style.backgroundColor || parent.getAttribute('bgcolor');
-                                let isParentCustomBg = false;
-                                if (parentBg) {
-                                    const pBg = parseColorToHex(parentBg).toUpperCase();
-                                    if (pBg !== oldBgColor && pBg !== 'TRANSPARENT' && pBg !== '') {
-                                        isParentCustomBg = true;
-                                    }
-                                }
-                                
-                                if (isParentBtn || isParentCustomBg) {
-                                    shouldUpdate = false;
-                                    break;
-                                }
-                            }
-                            parent = parent.parentElement;
-                        }
                     }
                     
                     if (shouldUpdate) {
@@ -2026,12 +1999,16 @@
                 // Clear explicit background color on inner text containers to transparent so they inherit the parent block's background
                 const textContainers = tr.querySelectorAll('p, span, font, a, h1, h2, h3, h4, h5, h6, b, i, u, li, ul, ol');
                 textContainers.forEach(el => {
+                    if (protectedElements.has(el)) {
+                        return; // Skip modifying text formatting inside button/custom components
+                    }
+                    
                     if (isSpacerBlock) {
                         el.style.setProperty('background-color', 'transparent', 'important');
                         el.style.setProperty('background', 'transparent', 'important');
                         return;
                     }
-
+                    
                     // Check if it contains any actual/visible text (excluding nbsp and spaces)
                     const textContentClean = el.textContent.replace(/\u00a0/g, '').trim();
                     const hasRealText = textContentClean.length > 0;
@@ -2063,6 +2040,9 @@
                 console.error("Error in setBlockBgColor:", err);
                 if (typeof addLog === 'function') {
                     addLog('error', `Erro ao aplicar cor de fundo: ${err.message}`);
+                }
+            }
+        }ro ao aplicar cor de fundo: ${err.message}`);
                 }
             }
         }
@@ -2768,6 +2748,9 @@
                         <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
                             <label style="font-size: 0.7rem; color: var(--text-muted);">Substituir por imagem local / Replace with local image:</label>
                             <input type="file" class="modal-img-file-input" data-img-index="${idx}" accept="image/*" style="background: rgba(0,0,0,0.2); border: 1px dashed var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%; cursor: pointer;">
+                            <div style="margin-top: 0.25rem; font-size: 0.65rem; color: #f59e0b; background: rgba(245, 158, 11, 0.05); padding: 0.35rem 0.5rem; border-radius: 6px; border: 1px solid rgba(245, 158, 11, 0.2); line-height: 1.3;">
+                                ⚠️ <strong>Aviso / Warning:</strong> Imagens locais são convertidas para base64. O Zoho Campaigns <strong>não aceita</strong> base64 (dá erro de "Missing Image"). Se usar imagens locais, exporte como <strong>Pacote ZIP</strong> ao descarregar. Caso contrário, insira uma URL pública abaixo.
+                            </div>
                         </div>
                         <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
                             <label style="font-size: 0.7rem; color: var(--text-muted);">Ou URL da Imagem / Or Image URL:</label>
