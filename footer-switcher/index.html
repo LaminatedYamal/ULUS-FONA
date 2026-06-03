@@ -2296,7 +2296,19 @@
             const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
             
             if (isRawHtmlVisible) {
-                tr.innerHTML = rawHtmlArea.value;
+                if (document.activeElement === rawHtmlArea) {
+                    tr.innerHTML = rawHtmlArea.value;
+                    // Re-apply background color and padding to the loaded HTML structure
+                    if (bgHex && bgHex.value) {
+                        setBlockBgColor(tr, bgHex.value);
+                    }
+                    if (ptInput && pbInput) {
+                        setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
+                    }
+                } else {
+                    // Update HTML editor text to show background and padding changes injected
+                    rawHtmlArea.value = tr.innerHTML;
+                }
             } else {
                 const inputs = modalInputsList.querySelectorAll('.modal-text-input');
                 inputs.forEach(input => {
@@ -2814,6 +2826,12 @@
             
             if (isRawHtmlVisible) {
                 tr.innerHTML = rawHtmlArea.value;
+                if (bgHex && bgHex.value) {
+                    setBlockBgColor(tr, bgHex.value);
+                }
+                if (ptInput && pbInput) {
+                    setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
+                }
             } else {
                 const inputs = modalInputsList.querySelectorAll('.modal-text-input');
                 inputs.forEach(input => {
