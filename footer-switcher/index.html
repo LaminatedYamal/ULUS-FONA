@@ -1810,6 +1810,79 @@
             return 'transparent'; // Fallback / default transparent background for text
         }
 
+        function getUniqueDocumentColors() {
+            const colors = new Set();
+            if (!parsedDoc) return [];
+            
+            // Check bgcolor attributes
+            parsedDoc.querySelectorAll('[bgcolor]').forEach(el => {
+                const color = el.getAttribute('bgcolor');
+                if (color) {
+                    const hex = parseColorToHex(color);
+                    if (hex && hex.startsWith('#') && hex !== '#FFFFFF' && hex !== '#000000') {
+                        colors.add(hex.toUpperCase());
+                    }
+                }
+            });
+            
+            // Check style.backgroundColor and style.color
+            parsedDoc.querySelectorAll('[style]').forEach(el => {
+                const bg = el.style.backgroundColor;
+                if (bg) {
+                    const hex = parseColorToHex(bg);
+                    if (hex && hex.startsWith('#') && hex !== '#FFFFFF' && hex !== '#000000') {
+                        colors.add(hex.toUpperCase());
+                    }
+                }
+                const fg = el.style.color;
+                if (fg) {
+                    const hex = parseColorToHex(fg);
+                    if (hex && hex.startsWith('#') && hex !== '#FFFFFF' && hex !== '#000000') {
+                        colors.add(hex.toUpperCase());
+                    }
+                }
+            });
+            
+            return Array.from(colors).slice(0, 12); // limit to top 12 unique colors
+        }
+
+        function addSwatchesToContainer(container, targetPicker, targetHex) {
+            const docColors = getUniqueDocumentColors();
+            if (docColors.length > 0) {
+                const swatchesDiv = document.createElement('div');
+                swatchesDiv.style.display = 'flex';
+                swatchesDiv.style.flexWrap = 'wrap';
+                swatchesDiv.style.gap = '0.3rem';
+                swatchesDiv.style.marginTop = '0.35rem';
+                swatchesDiv.style.alignItems = 'center';
+                
+                const label = document.createElement('span');
+                label.style.fontSize = '0.65rem';
+                label.style.color = 'var(--text-muted)';
+                label.style.marginRight = '0.2rem';
+                label.textContent = 'Paleta:';
+                swatchesDiv.appendChild(label);
+                
+                docColors.forEach(color => {
+                    const swatch = document.createElement('div');
+                    swatch.style.width = '14px';
+                    swatch.style.height = '14px';
+                    swatch.style.borderRadius = '3px';
+                    swatch.style.backgroundColor = color;
+                    swatch.style.border = '1px solid rgba(255,255,255,0.1)';
+                    swatch.style.cursor = 'pointer';
+                    swatch.title = color;
+                    swatch.addEventListener('click', () => {
+                        targetPicker.value = color;
+                        targetHex.value = color;
+                        applyLiveEdits();
+                    });
+                    swatchesDiv.appendChild(swatch);
+                });
+                container.appendChild(swatchesDiv);
+            }
+        }
+
         function getBlockBgColor(tr) {
             if (tr.style && tr.style.backgroundColor) {
                 return parseColorToHex(tr.style.backgroundColor);
@@ -2303,6 +2376,7 @@
                     applyLiveEdits();
                 }
             });
+            addSwatchesToContainer(bgField.querySelector('.color-picker-container'), bgPicker, bgHex);
 
             // Spacing Slider sync & live update logic
             const ptSlider = bgField.querySelector('#block-padding-top-slider');
@@ -2443,6 +2517,12 @@
                             applyLiveEdits();
                         }
                     });
+                    
+                    const colorContainers = field.querySelectorAll('.color-picker-container');
+                    if (colorContainers.length >= 2) {
+                        addSwatchesToContainer(colorContainers[0], picker, hex);
+                        addSwatchesToContainer(colorContainers[1], bgPicker, bgHex);
+                    }
                     
                     if (linkEl) {
                         const hrefInput = field.querySelector('.modal-link-href-input');
