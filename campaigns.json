@@ -2,12 +2,12 @@
   {
     "Campaign": "ULHT_Licenciaturas",
     "Status": "ENABLED",
-    "Budget": 241.0,
-    "Impressions": 0.0,
-    "Clicks": 0.0,
-    "Cost": 0.0,
+    "Budget": 208.0,
+    "Impressions": 59.0,
+    "Clicks": 4.0,
+    "Cost": 2.426272,
     "Conversions": 0.0,
-    "CTR": "0",
+    "CTR": "0,0678",
     "CostPerConv": 0.0
   },
   {
@@ -453,7 +453,7 @@
   {
     "Campaign": "ULHT_Licenciaturas Experiências",
     "Status": "ENABLED",
-    "Budget": 241.0,
+    "Budget": 208.0,
     "Impressions": 0.0,
     "Clicks": 0.0,
     "Cost": 0.0,

@@ -278,6 +278,14 @@
         "high": 0.0
       },
       {
+        "term": "licenciatura em artes visuais",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "educação artistica",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -415,6 +423,46 @@
       {
         "term": "curso comunicação visual",
         "impressions": 11.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso de design",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "design de comunicação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "design comunicação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "comunicação design",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "design comunicacao",
+        "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1266,7 +1314,7 @@
     "adsKeywords": [
       {
         "term": "engenharia som",
-        "impressions": 4218.0,
+        "impressions": 4223.0,
         "clicks": 904.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1274,7 +1322,7 @@
       },
       {
         "term": "licenciatura som",
-        "impressions": 848.0,
+        "impressions": 850.0,
         "clicks": 153.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1729,6 +1777,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "universidades fotografia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -1930,8 +1986,8 @@
       },
       {
         "term": "licenciatura comunicação",
-        "impressions": 5758.0,
-        "clicks": 581.0,
+        "impressions": 5803.0,
+        "clicks": 585.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2151,6 +2207,14 @@
         "term": "licenciatura marketing lisboa",
         "impressions": 15.0,
         "clicks": 5.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura comunicação aplicada",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2430,6 +2494,22 @@
         "high": 0.0
       },
       {
+        "term": "curso educação fisica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade educação fisica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "faculdade educação fisica quantos anos",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -2648,17 +2728,17 @@
         "high": 0.0
       },
       {
-        "term": "curso advocacia",
-        "impressions": 4405300.0,
-        "clicks": 773200.0,
+        "term": "curso de advocacia",
+        "impressions": 652600.0,
+        "clicks": 36900.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "licenciatura direito",
-        "impressions": 2903500.0,
-        "clicks": 259300.0,
+        "term": "curso advocacia",
+        "impressions": 44053.0,
+        "clicks": 7732.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2667,6 +2747,14 @@
         "term": "mestrado direito",
         "impressions": 42378.0,
         "clicks": 5421.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura direito",
+        "impressions": 29035.0,
+        "clicks": 2593.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2683,14 +2771,6 @@
         "term": "faculdade direito portugal",
         "impressions": 10538.0,
         "clicks": 1249.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso de advocacia",
-        "impressions": 6526.0,
-        "clicks": 369.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2873,6 +2953,14 @@
       },
       {
         "term": "quantos anos dura faculdade direito",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado direito publico",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -3297,6 +3385,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "mestrado gestão empresas",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -3406,6 +3502,46 @@
         "high": 0.0
       },
       {
+        "term": "curso recursos humanos",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso rh",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade recursos humanos",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso de hr",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso de gestão de hr",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "licenciatura recursos humanos lisboa",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -3481,7 +3617,72 @@
         "impressions": 258
       }
     ],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "faculdade educacao",
+        "impressions": 38291.0,
+        "clicks": 4751.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura educação",
+        "impressions": 26534.0,
+        "clicks": 3080.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso educação",
+        "impressions": 5578.0,
+        "clicks": 924.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "faculdade educação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura educação social",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "educação social",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "psicologia educação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura em educação social",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": [
       {
         "term": "curso educação",
@@ -3614,6 +3815,14 @@
         "high": 0.0
       },
       {
+        "term": "curso bioeconomia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "curso bioquímica",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -3623,6 +3832,14 @@
       },
       {
         "term": "licenciatura bioquímica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "bioeconomia circular",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -3836,7 +4053,23 @@
         "high": 0.0
       },
       {
+        "term": "licenciatura biomedica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "licenciatura biomédica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso biomedica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -3964,6 +4197,14 @@
         "term": "mestrado engenharia civil lisboa",
         "impressions": 16.0,
         "clicks": 4.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura civil",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4287,7 +4528,7 @@
       },
       {
         "term": "licenciatura ciência de dados",
-        "impressions": 5491.0,
+        "impressions": 5493.0,
         "clicks": 494.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4319,7 +4560,7 @@
       },
       {
         "term": "licenciatura data science",
-        "impressions": 656.0,
+        "impressions": 658.0,
         "clicks": 66.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4492,6 +4733,14 @@
         "high": 0.0
       },
       {
+        "term": "licenciatura informatica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "ciências computação",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -4509,6 +4758,14 @@
       },
       {
         "term": "curso computação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "engenharia informatica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -4713,6 +4970,14 @@
       },
       {
         "term": "escola informática",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura informatica gestão",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -5521,6 +5786,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "curso em cosmetologia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -5722,6 +5995,14 @@
         "term": "mestrado serviço social lisboa",
         "impressions": 12.0,
         "clicks": 2.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura servico social",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6224,6 +6505,30 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "curso farmácia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ciencias farmaceuticas",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado farmácia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -6314,6 +6619,14 @@
         "term": "+quanto +custa +faculdade +veterinaria",
         "impressions": 7.0,
         "clicks": 1.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "medicina veterinaria",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6623,7 +6936,16 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/comunicacao-politica",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado comunicação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -7425,6 +7747,30 @@
     "gscKeywords": [],
     "adsKeywords": [
       {
+        "term": "direito financeiro",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "curso direito financeiro",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "direito mercado",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "Curso Direito do Mercado",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -7464,6 +7810,14 @@
         "term": "Mestrado Segurança Social",
         "impressions": 77.0,
         "clicks": 18.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado direito empresarial",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7643,6 +7997,38 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "gestão de rh",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado em gestão de recursos humanos",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado em recursos humanos",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado gestão de recursos humanos",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -7784,24 +8170,16 @@
       },
       {
         "term": "faculdade educacao",
-        "impressions": 38291.0,
-        "clicks": 4751.0,
+        "impressions": 144.0,
+        "clicks": 23.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura educação",
-        "impressions": 26534.0,
-        "clicks": 3080.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "curso educação",
-        "impressions": 5578.0,
-        "clicks": 924.0,
+        "impressions": 129.0,
+        "clicks": 23.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7815,7 +8193,7 @@
         "high": 0.0
       },
       {
-        "term": "psicologia educação",
+        "term": "mestrado educação lisboa",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -7823,7 +8201,15 @@
         "high": 0.0
       },
       {
-        "term": "mestrado educação lisboa",
+        "term": "curso educação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "psicologia educação",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -8079,6 +8465,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "mestrado ciência dados geográfico",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -8112,6 +8506,14 @@
         "term": "mestrado sistemas informação",
         "impressions": 1133.0,
         "clicks": 86.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado infomatica",
+        "impressions": 0.0,
+        "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8249,6 +8651,14 @@
       {
         "term": "mestrado neuropsicologia lisboa",
         "impressions": 5.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado quimica",
+        "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8563,6 +8973,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "curso ciencia religião",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": [
@@ -8685,6 +9103,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "mestrado quimica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -8792,6 +9218,14 @@
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
+      },
+      {
+        "term": "turismo e desenvolvimento sustentável",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
       }
     ],
     "rankingsKeywords": []
@@ -8861,7 +9295,16 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/cirurgia-em-animais-de-companhia",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado cirurgia animal",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -8920,7 +9363,24 @@
     "institution": "Lusófona Lisboa",
     "url": "https://www.ulusofona.pt/lisboa/mestrados/imagiologia-clinica-em-animais-de-companhia",
     "gscKeywords": [],
-    "adsKeywords": [],
+    "adsKeywords": [
+      {
+        "term": "mestrado animais",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado imagiologia",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      }
+    ],
     "rankingsKeywords": []
   },
   {
@@ -9513,6 +9973,14 @@
       },
       {
         "term": "php educação",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "mestrado educação fisica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -12084,14 +12552,6 @@
         "high": 0.0
       },
       {
-        "term": "licenciatura comunicação aplicada",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "universidade de comunicação em portugal",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -12101,6 +12561,14 @@
       },
       {
         "term": "universidade publicidade e propaganda portugal",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "licenciatura comunicação aplicada",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -16605,22 +17073,6 @@
         "high": 0.0
       },
       {
-        "term": "ctesp telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp eletrónica",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -16638,6 +17090,22 @@
       },
       {
         "term": "ctesp informática",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp telecomunicações",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp eletrónica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -20073,9 +20541,9 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "05/06/2026, 02:06:39",
-    "lastSync": "05/06/2026, 02:06:39",
-    "totalAdsCourses": 231
+    "last_sync_at": "06/06/2026, 01:58:04",
+    "lastSync": "06/06/2026, 01:58:04",
+    "totalAdsCourses": 235
   },
   {
     "id": 9999,
