@@ -231,8 +231,8 @@
     "adsKeywords": [
       {
         "term": "curso artes",
-        "impressions": 49295.0,
-        "clicks": 5390.0,
+        "impressions": 49329.0,
+        "clicks": 5392.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1314,7 +1314,7 @@
     "adsKeywords": [
       {
         "term": "engenharia som",
-        "impressions": 4223.0,
+        "impressions": 4225.0,
         "clicks": 904.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1970,7 +1970,7 @@
     "adsKeywords": [
       {
         "term": "ciencias comunicação",
-        "impressions": 39072.0,
+        "impressions": 39073.0,
         "clicks": 5689.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1978,7 +1978,7 @@
       },
       {
         "term": "faculdade comunicação social",
-        "impressions": 20311.0,
+        "impressions": 20316.0,
         "clicks": 3620.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1986,7 +1986,7 @@
       },
       {
         "term": "licenciatura comunicação",
-        "impressions": 5803.0,
+        "impressions": 5832.0,
         "clicks": 585.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2415,8 +2415,8 @@
     "adsKeywords": [
       {
         "term": "curso desporto",
-        "impressions": 42696.0,
-        "clicks": 6861.0,
+        "impressions": 42718.0,
+        "clicks": 6864.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4528,7 +4528,7 @@
       },
       {
         "term": "licenciatura ciência de dados",
-        "impressions": 5493.0,
+        "impressions": 5496.0,
         "clicks": 494.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4536,7 +4536,7 @@
       },
       {
         "term": "ciência de dados ISCTE",
-        "impressions": 2077.0,
+        "impressions": 2079.0,
         "clicks": 150.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4560,7 +4560,7 @@
       },
       {
         "term": "licenciatura data science",
-        "impressions": 658.0,
+        "impressions": 659.0,
         "clicks": 66.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4702,8 +4702,8 @@
     "adsKeywords": [
       {
         "term": "engenharia informática",
-        "impressions": 126897.0,
-        "clicks": 19169.0,
+        "impressions": 126951.0,
+        "clicks": 19172.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5051,16 +5051,16 @@
     "adsKeywords": [
       {
         "term": "psicologia lisboa",
-        "impressions": 82365.0,
-        "clicks": 15177.0,
+        "impressions": 82409.0,
+        "clicks": 15179.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso psicologia",
-        "impressions": 48443.0,
-        "clicks": 8617.0,
+        "impressions": 48486.0,
+        "clicks": 8621.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5318,7 +5318,7 @@
     "adsKeywords": [
       {
         "term": "faculdade biologia",
-        "impressions": 25424.0,
+        "impressions": 25444.0,
         "clicks": 4512.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5326,7 +5326,7 @@
       },
       {
         "term": "curso ciencias biologicas",
-        "impressions": 15126.0,
+        "impressions": 15127.0,
         "clicks": 2629.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5489,7 +5489,7 @@
       },
       {
         "term": "licenciatura bioquímica",
-        "impressions": 491.0,
+        "impressions": 493.0,
         "clicks": 31.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17073,6 +17073,22 @@
         "high": 0.0
       },
       {
+        "term": "ctesp telecomunicações",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp eletrónica",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -17090,22 +17106,6 @@
       },
       {
         "term": "ctesp informática",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp eletrónica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -20541,8 +20541,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "06/06/2026, 01:58:04",
-    "lastSync": "06/06/2026, 01:58:04",
+    "last_sync_at": "07/06/2026, 02:13:53",
+    "lastSync": "07/06/2026, 02:13:53",
     "totalAdsCourses": 235
   },
   {
