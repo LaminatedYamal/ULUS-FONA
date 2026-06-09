@@ -3743,9 +3743,9 @@
                     // Configuration for docx-preview
                     const options = {
                         className: "docx", // default class name
-                        inWrapper: true, // enables rendering of wrapper around document content
-                        ignoreWidth: false, // disable rendering width of page
-                        ignoreHeight: false, // disable rendering height of page
+                        inWrapper: false, // DO NOT render wrapper to avoid blowing out sidebar
+                        ignoreWidth: true, // disable fixed rendering width of page
+                        ignoreHeight: true, // disable fixed rendering height of page
                         ignoreFonts: false, // disable fonts rendering
                         breakPages: true, // enable page breaking as <section>
                         ignoreLastRenderedPageBreak: true,
