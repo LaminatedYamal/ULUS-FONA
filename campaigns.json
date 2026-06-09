@@ -3,11 +3,11 @@
     "Campaign": "ULHT_Licenciaturas",
     "Status": "ENABLED",
     "Budget": 208.0,
-    "Impressions": 637.0,
-    "Clicks": 39.0,
-    "Cost": 26.796746,
+    "Impressions": 1074.0,
+    "Clicks": 63.0,
+    "Cost": 46.970455,
     "Conversions": 0.0,
-    "CTR": "0,06122",
+    "CTR": "0,05866",
     "CostPerConv": 0.0
   },
   {
@@ -45,7 +45,7 @@
   },
   {
     "Campaign": "ULP_Licenciaturas_Search",
-    "Status": "ENABLED",
+    "Status": "PAUSED",
     "Budget": 128.0,
     "Impressions": 0.0,
     "Clicks": 0.0,
