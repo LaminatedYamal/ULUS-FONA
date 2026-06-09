@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- docx-preview and JSZip for high-fidelity DOCX rendering (preserves page breaks/styles) -->
-    <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
-    <script src="https://unpkg.com/docx-preview/dist/docx-preview.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx-preview@0.3.2/dist/docx-preview.min.js"></script>
     
     <style>
         :root {
@@ -3754,7 +3754,7 @@
                         debug: false
                     };
                     
-                    docx.renderAsync(arrayBuffer, docxPreviewArea, null, options)
+                    docx.renderAsync(arrayBuffer, docxPreviewArea, docxPreviewArea, options)
                         .then(() => {
                             // Extract the rendered HTML structure
                             currentDocxHtml = docxPreviewArea.innerHTML;
