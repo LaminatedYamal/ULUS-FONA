@@ -786,6 +786,301 @@
             color: var(--text-main);
             border-color: rgba(255, 255, 255, 0.2);
         }
+
+        /* ======= HTML PAGE MODE - MODE TOGGLE & OPTIONS PANEL ======= */
+        .mode-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mode-selector label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .mode-select {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.4rem 0.75rem;
+            cursor: pointer;
+            outline: none;
+            transition: all 0.2s;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23b0b0b0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            padding-right: 1.75rem;
+        }
+
+        .mode-select:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mode-select:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 8px var(--accent-primary-glow);
+        }
+
+        .mode-select option {
+            background: #0b0f19;
+            color: var(--text-main);
+        }
+
+        /* HTML Options Panel */
+        .html-options-panel {
+            display: none;
+        }
+
+        .html-options-panel.visible {
+            display: block;
+        }
+
+        .options-details {
+            width: 100%;
+        }
+
+        .options-details summary {
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .options-details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .options-details summary::before {
+            content: '▶';
+            font-size: 0.6rem;
+            transition: transform 0.2s;
+            color: var(--accent-primary);
+        }
+
+        .options-details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .options-details summary:hover {
+            color: var(--text-main);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            padding-top: 0.75rem;
+        }
+
+        .option-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            transition: all 0.2s;
+        }
+
+        .option-row:hover {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .option-label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .option-label .option-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .option-label .option-desc {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            width: 38px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: 0.25s;
+        }
+
+        .toggle-slider::before {
+            content: "";
+            position: absolute;
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background: var(--text-muted);
+            border-radius: 50%;
+            transition: 0.25s;
+        }
+
+        .toggle-switch input:checked + .toggle-slider {
+            background: var(--accent-primary);
+        }
+
+        .toggle-switch input:checked + .toggle-slider::before {
+            transform: translateX(18px);
+            background: #0b0f19;
+        }
+
+        /* Mini Select inside option row */
+        .option-select {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 6px;
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.3rem 0.5rem;
+            cursor: pointer;
+            outline: none;
+            flex-shrink: 0;
+            transition: border-color 0.2s;
+        }
+
+        .option-select:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .option-select option {
+            background: #0b0f19;
+            color: var(--text-main);
+        }
+
+        /* Custom CSS textarea in options */
+        .custom-css-area {
+            width: 100%;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: #38bdf8;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+            margin-top: 0.4rem;
+        }
+
+        .custom-css-area:focus {
+            border-color: var(--accent-primary);
+        }
+
+        /* Bulk action buttons */
+        .bulk-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .bulk-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            transition: all 0.2s;
+        }
+
+        .bulk-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .bulk-btn.danger:hover {
+            color: #f87171;
+            border-color: rgba(248, 113, 113, 0.3);
+            background: rgba(248, 113, 113, 0.05);
+        }
+
+        /* Mode indicator badge */
+        .mode-indicator {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            transition: all 0.3s;
+        }
+
+        .mode-indicator.email-mode {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--accent-primary);
+        }
+
+        .mode-indicator.html-mode {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            color: #a855f7;
+        }
+
+        /* Hide email-only elements in HTML mode */
+        body.html-page-mode .email-only {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -800,6 +1095,14 @@
             <h1>ULUS-FONA | Advanced Email Block Editor</h1>
         </div>
         <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="mode-selector">
+                <label for="editor-mode-select" id="mode-label">Modo:</label>
+                <select id="editor-mode-select" class="mode-select">
+                    <option value="email">📧 Email</option>
+                    <option value="html">🌐 HTML Page</option>
+                </select>
+            </div>
+            <span id="mode-indicator" class="mode-indicator email-mode">EMAIL</span>
             <button id="lang-toggle-btn" class="control-btn" style="display: flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.75rem; border-radius: 6px; font-size: 0.8rem; background: rgba(255,255,255,0.05); color: var(--text-main); border: 1px solid var(--card-border);" title="Mudar Idioma / Switch Language">
                 <span>EN</span>
             </button>
@@ -807,7 +1110,7 @@
                 <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
                 <span>Desfazer (Ctrl+Z)</span>
             </button>
-            <div class="badge">V1.1.0 Interactive</div>
+            <div class="badge">V2.0.0 Dual Mode</div>
         </div>
     </header>
 
@@ -836,8 +1139,8 @@
                 </div>
             </div>
 
-            <!-- Institution Selector Card -->
-            <div class="glass-card">
+            <!-- Institution Selector Card (Email mode only) -->
+            <div class="glass-card email-only" id="institution-card">
                 <div class="card-title" id="select-footer-title-text">
                     <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                     2. Selecionar Rodapé
@@ -873,12 +1176,139 @@
                         <span class="name">U. Lusófona</span>
                         <span class="desc">Lisboa / Porto</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="institution-btn" data-institution="isdom">
-                        <div class="icon">ID</div>
-                        <span class="name">ISDOM</span>
-                        <span class="desc">Marinha Grande</span>
+            <!-- HTML Page Options Panel (HTML mode only) -->
+            <div class="glass-card html-options-panel" id="html-options-panel">
+                <div class="card-title" id="html-options-title">
+                    <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Opções HTML Page
+                </div>
+                <details class="options-details" open>
+                    <summary id="html-link-options-summary">Opções de Links</summary>
+                    <div class="options-grid">
+                        <!-- Link Target -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-link-target-name">Destino dos Links</span>
+                                <span class="option-desc" id="opt-link-target-desc">Define como os links abrem</span>
+                            </div>
+                            <select id="opt-link-target" class="option-select">
+                                <option value="same">Mesma Aba</option>
+                                <option value="new">Nova Aba</option>
+                                <option value="prompt">Sem Alteração</option>
+                            </select>
+                        </div>
+                        <!-- External-Only New Tab -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-external-name">Externos em Nova Aba</span>
+                                <span class="option-desc" id="opt-external-desc">Apenas links externos abrem numa nova aba</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-external-new-tab">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Add rel="noopener noreferrer" -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-noopener-name">Adicionar rel=noopener</span>
+                                <span class="option-desc" id="opt-noopener-desc">Segurança: adiciona rel="noopener noreferrer" a todos os links</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-add-noopener">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Convert Links to Text -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-convert-name">Converter Links em Texto</span>
+                                <span class="option-desc" id="opt-convert-desc">Substitui &lt;a&gt; pelo seu texto visível</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-convert-links">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
                     </div>
+                </details>
+
+                <details class="options-details">
+                    <summary id="html-security-options-summary">Segurança & Sanitização</summary>
+                    <div class="options-grid">
+                        <!-- Sanitise Dangerous Tags -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-sanitise-name">Sanitizar Tags Perigosas</span>
+                                <span class="option-desc" id="opt-sanitise-desc">Remove &lt;script&gt;, &lt;iframe&gt;, onclick, etc.</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-sanitise">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Force UTF-8 Meta -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-utf8-name">Forçar UTF-8 Meta</span>
+                                <span class="option-desc" id="opt-utf8-desc">Insere &lt;meta charset="UTF-8"&gt; se ausente</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-force-utf8" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <!-- Disable Footer Replacement -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-no-footer-name">Desativar Rodapé</span>
+                                <span class="option-desc" id="opt-no-footer-desc">Não substitui o rodapé no modo HTML Page</span>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="opt-disable-footer" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="options-details">
+                    <summary id="html-advanced-options-summary">Avançado</summary>
+                    <div class="options-grid">
+                        <!-- Custom CSS Injection -->
+                        <div class="option-row" style="flex-direction: column; align-items: stretch;">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-css-name">CSS Personalizado</span>
+                                <span class="option-desc" id="opt-css-desc">Injeta CSS extra no &lt;head&gt; do documento</span>
+                            </div>
+                            <textarea id="opt-custom-css" class="custom-css-area" placeholder="/* Adicione CSS personalizado aqui */"></textarea>
+                        </div>
+                        <!-- Preview Mode -->
+                        <div class="option-row">
+                            <div class="option-label">
+                                <span class="option-name" id="opt-preview-name">Modo de Pré-visualização</span>
+                                <span class="option-desc" id="opt-preview-desc">Alterna entre vista Live e só Código</span>
+                            </div>
+                            <select id="opt-preview-mode" class="option-select">
+                                <option value="live">Live</option>
+                                <option value="code">Só Código</option>
+                            </select>
+                        </div>
+                    </div>
+                </details>
+
+                <div class="bulk-actions">
+                    <button class="bulk-btn" id="btn-bulk-convert-links" title="Converter todos os links em texto simples">
+                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                        <span id="btn-bulk-convert-text">Converter Links</span>
+                    </button>
+                    <button class="bulk-btn danger" id="btn-bulk-strip-scripts" title="Remover todos os scripts perigosos">
+                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+                        <span id="btn-bulk-strip-text">Limpar Scripts</span>
+                    </button>
                 </div>
             </div>
 
@@ -980,60 +1410,6 @@
         </div>
     </div>
 
-    <!-- Overlay modal download options -->
-    <div class="modal-overlay" id="download-modal-overlay" style="display: none;">
-        <div class="edit-modal" style="max-width: 480px;">
-            <div class="modal-header">
-                <h3 id="dl-modal-title">Opções de Exportação / Export Options</h3>
-                <button class="close-modal-btn" id="close-dl-modal-btn">
-                    <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-            </div>
-            <div class="modal-body" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; overflow-y: auto;">
-                
-                <!-- Format choice -->
-                <div>
-                    <label style="color: var(--accent-secondary); font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 0.75rem;">Escolha o Formato / Choose Format:</label>
-                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                         <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
-                            <input type="radio" name="dl-format" value="html" checked style="accent-color: var(--accent-secondary); cursor: pointer;">
-                            <div style="display: flex; flex-direction: column; cursor: pointer; gap: 0.15rem;">
-                                <span style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Apenas Ficheiro HTML (.html)</span>
-                                <span style="font-size: 0.75rem; color: var(--text-muted);">Descarrega unicamente o ficheiro HTML editado.</span>
-                                <span style="font-size: 0.7rem; color: #ef4444; font-weight: 500;">⚠️ Não use se carregou ficheiros de imagem locais (rejeitado pelo Zoho).</span>
-                            </div>
-                        </label>
-                        <label style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--card-border); cursor: pointer; background: rgba(255,255,255,0.01); margin: 0; width: 100%; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--accent-secondary)';" onmouseout="this.style.borderColor='var(--card-border)';">
-                            <input type="radio" name="dl-format" value="zip" style="accent-color: var(--accent-secondary); cursor: pointer;">
-                            <div style="display: flex; flex-direction: column; cursor: pointer; gap: 0.15rem;">
-                                <span style="font-weight: 600; font-size: 0.85rem; color: var(--text-main);">Pacote Completo (.zip)</span>
-                                <span style="font-size: 0.75rem; color: var(--text-muted);">Descarrega uma pasta ZIP com o HTML e as imagens integradas localmente.</span>
-                                <span style="font-size: 0.7rem; color: #10b981; font-weight: 500;">✓ Recomendado para Zoho Campaigns ao usar imagens locais do computador.</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Custom save location toggle -->
-                <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 0.25rem;">
-                    <input type="checkbox" id="dl-use-picker" style="width: 16px; height: 16px; accent-color: var(--accent-secondary); cursor: pointer;">
-                    <label for="dl-use-picker" style="font-size: 0.85rem; color: var(--text-main); cursor: pointer; font-weight: 500;">
-                        Escolher localização antes de guardar ("Guardar Como")
-                    </label>
-                </div>
-                
-                <div id="dl-picker-warning" style="display: none; font-size: 0.75rem; color: #f59e0b; padding: 0.5rem 0.75rem; border-radius: 6px; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2);">
-                    Nota: O seu navegador não suporta a escolha avançada de pasta. Os ficheiros serão guardados através de download automático na pasta padrão.
-                </div>
-
-            </div>
-            <div class="modal-actions" style="padding: 1rem 1.5rem; background: rgba(0,0,0,0.2); border-top: 1px solid var(--card-border); display: flex; justify-content: flex-end; gap: 0.75rem;">
-                <button class="modal-btn cancel" id="dl-modal-cancel-btn">Cancelar</button>
-                <button class="modal-btn save" id="dl-modal-confirm-btn" style="background: linear-gradient(135deg, var(--accent-secondary), #00b4d8); color: #0b0f19;">Confirmar</button>
-            </div>
-        </div>
-    </div>
-
     <footer class="app-footer">
         ULUS-FONA Advanced Email Block Editor &copy; 2026. Powered by Antigravity.
     </footer>
@@ -1065,11 +1441,6 @@
                 title: 'Universidade Lusófona',
                 address: 'Lisboa & Porto',
                 html: `<p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><b style="">Enviado por Universidade Lusófona</b></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><span style="line-height: 13pt;">Campo Grande, 376<br>1749-024 Lisboa - Portugal</span></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff"><span style="line-height: 13pt;">Rua Augusto Rosa, nº 24<br>4000-098 Porto - Portugal</span><br></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif"><font style="font-size: 9pt; line-height: 13pt;" color="#ffffff">Se deseja não receber mais mensagens como esta, <a title="clique aqui" target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="http://$[LI:UNSUBSCRIBE]$" alt="clique aqui"><font style="color:#ffffff;" color="#ffffff">clique aqui</font></a>.</font><br></font></p><p style="text-align: center; line-height: 13pt; margin: 0; color: #ffffff;" align="center"><font style="line-height: 13pt;"><font style="font-size: 9pt; line-height: 13pt;" face="Montserrat, helvetica, arial, sans-serif" color="#ffffff">Consulte a nossa <a title="política de privacidade" target="_blank" style="color: #ffffff; text-decoration: underline;" rel="noopener noreferrer" href="https://www.ensinolusofona.pt/pt/politica-de-privacidade" alt="política de privacidade"><font style="color:#ffffff;" color="#ffffff">política de privacidade</font></a>.</font></font></p>`
-            },
-            isdom: {
-                title: 'Instituto Superior D. Dinis',
-                address: 'Av. 1º de Maio nº 164, 2430 Marinha Grande',
-                html: `<p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><b>Instituto Superior D&ordm; Dinis</b></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Av. 1º de Maio nº 164, 2430 Marinha Grande</font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><span style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif"><a href="http://www.isdom.pt" style="color: #ffffff; text-decoration: underline;" target="_blank">www.isdom.pt</a> | <a href="mailto:informacoes@isdom.pt" style="color: #ffffff; text-decoration: underline;">informacoes@isdom.pt</a></font></span></p><p align="center" style="font-family:Arial,verdana;font-size:12px; color:#ffffff;padding:0px;margin: 0;line-height: 11pt; text-align: center;"><font color="#ffffff" style="color: #ffffff; font-size: 10pt; line-height: 11pt;"><font face="Montserrat, helvetica, arial, sans-serif">Está a receber este email porque faz parte da nossa lista de base de dados. Não deseja voltar a receber as nossas comunicações? <a alt="Cancelar subscrição" href="http://$[LI:UNSUBSCRIBE]$" rel="noopener noreferrer" style="text-decoration:underline;color: #ffffff;" target="_blank" title="Cancelar subscrição"><font color="#ffffff" style="color: #ffffff; line-height: 11pt;">Clique aqui para cancelar a subscrição</font></a>.</font><br></font></p>`
             }
         };
 
@@ -1095,7 +1466,40 @@
                 backBtn: "Voltar",
                 modalTitle: "Editar Conteúdo do Bloco",
                 modalCancel: "Cancelar",
-                modalSave: "Guardar Alterações"
+                modalSave: "Guardar Alterações",
+                modeLabel: "Modo:",
+                modeEmail: "📧 Email",
+                modeHtml: "🌐 HTML Page",
+                htmlOptionsTitle: "Opções HTML Page",
+                linkOptionsSummary: "Opções de Links",
+                securityOptionsSummary: "Segurança & Sanitização",
+                advancedOptionsSummary: "Avançado",
+                optLinkTargetName: "Destino dos Links",
+                optLinkTargetDesc: "Define como os links abrem",
+                optLinkSame: "Mesma Aba",
+                optLinkNew: "Nova Aba",
+                optLinkPrompt: "Sem Alteração",
+                optExternalName: "Externos em Nova Aba",
+                optExternalDesc: "Apenas links externos abrem numa nova aba",
+                optNoopenerName: "Adicionar rel=noopener",
+                optNoopenerDesc: 'Segurança: adiciona rel="noopener noreferrer" a todos os links',
+                optConvertName: "Converter Links em Texto",
+                optConvertDesc: "Substitui <a> pelo seu texto visível",
+                optSanitiseName: "Sanitizar Tags Perigosas",
+                optSanitiseDesc: "Remove <script>, <iframe>, onclick, etc.",
+                optUtf8Name: "Forçar UTF-8 Meta",
+                optUtf8Desc: 'Insere <meta charset="UTF-8"> se ausente',
+                optNoFooterName: "Desativar Rodapé",
+                optNoFooterDesc: "Não substitui o rodapé no modo HTML Page",
+                optCssName: "CSS Personalizado",
+                optCssDesc: "Injeta CSS extra no <head> do documento",
+                optPreviewName: "Modo de Pré-visualização",
+                optPreviewDesc: "Alterna entre vista Live e só Código",
+                optPreviewLive: "Live",
+                optPreviewCode: "Só Código",
+                btnBulkConvert: "Converter Links",
+                btnBulkStrip: "Limpar Scripts",
+                cssPH: "/* Adicione CSS personalizado aqui */"
             },
             en: {
                 title: "ULUS-FONA | Advanced Email Block Editor",
@@ -1116,7 +1520,40 @@
                 backBtn: "Back",
                 modalTitle: "Edit Block Content",
                 modalCancel: "Cancel",
-                modalSave: "Save Changes"
+                modalSave: "Save Changes",
+                modeLabel: "Mode:",
+                modeEmail: "📧 Email",
+                modeHtml: "🌐 HTML Page",
+                htmlOptionsTitle: "HTML Page Options",
+                linkOptionsSummary: "Link Options",
+                securityOptionsSummary: "Security & Sanitisation",
+                advancedOptionsSummary: "Advanced",
+                optLinkTargetName: "Link Target",
+                optLinkTargetDesc: "Defines how links open",
+                optLinkSame: "Same Tab",
+                optLinkNew: "New Tab",
+                optLinkPrompt: "No Change",
+                optExternalName: "External Links in New Tab",
+                optExternalDesc: "Only external links open in a new tab",
+                optNoopenerName: "Add rel=noopener",
+                optNoopenerDesc: 'Security: adds rel="noopener noreferrer" to all links',
+                optConvertName: "Convert Links to Text",
+                optConvertDesc: "Replaces <a> with its visible text",
+                optSanitiseName: "Sanitise Dangerous Tags",
+                optSanitiseDesc: "Removes <script>, <iframe>, onclick, etc.",
+                optUtf8Name: "Force UTF-8 Meta",
+                optUtf8Desc: 'Inserts <meta charset="UTF-8"> if missing',
+                optNoFooterName: "Disable Footer",
+                optNoFooterDesc: "Skips footer replacement in HTML Page mode",
+                optCssName: "Custom CSS",
+                optCssDesc: "Injects extra CSS into the document <head>",
+                optPreviewName: "Preview Mode",
+                optPreviewDesc: "Toggle between Live view and Code Only",
+                optPreviewLive: "Live",
+                optPreviewCode: "Code Only",
+                btnBulkConvert: "Convert Links",
+                btnBulkStrip: "Strip Scripts",
+                cssPH: "/* Add custom CSS here */"
             }
         };
 
@@ -1168,6 +1605,75 @@
             modalCancelBtn.textContent = t.modalCancel;
             modalSaveBtn.textContent = t.modalSave;
             
+            // HTML Mode translations
+            document.getElementById('mode-label').textContent = t.modeLabel;
+            const modeSelectEl = document.getElementById('editor-mode-select');
+            modeSelectEl.options[0].text = t.modeEmail;
+            modeSelectEl.options[1].text = t.modeHtml;
+            
+            const htmlOptTitle = document.getElementById('html-options-title');
+            if (htmlOptTitle) {
+                const optSvg = htmlOptTitle.querySelector('svg').outerHTML;
+                htmlOptTitle.innerHTML = `${optSvg} ${t.htmlOptionsTitle}`;
+            }
+            
+            // Options summaries
+            const linkSummary = document.getElementById('html-link-options-summary');
+            if (linkSummary) linkSummary.textContent = t.linkOptionsSummary;
+            const secSummary = document.getElementById('html-security-options-summary');
+            if (secSummary) secSummary.textContent = t.securityOptionsSummary;
+            const advSummary = document.getElementById('html-advanced-options-summary');
+            if (advSummary) advSummary.textContent = t.advancedOptionsSummary;
+            
+            // Option names and descriptions
+            const optMap = {
+                'opt-link-target-name': t.optLinkTargetName,
+                'opt-link-target-desc': t.optLinkTargetDesc,
+                'opt-external-name': t.optExternalName,
+                'opt-external-desc': t.optExternalDesc,
+                'opt-noopener-name': t.optNoopenerName,
+                'opt-noopener-desc': t.optNoopenerDesc,
+                'opt-convert-name': t.optConvertName,
+                'opt-convert-desc': t.optConvertDesc,
+                'opt-sanitise-name': t.optSanitiseName,
+                'opt-sanitise-desc': t.optSanitiseDesc,
+                'opt-utf8-name': t.optUtf8Name,
+                'opt-utf8-desc': t.optUtf8Desc,
+                'opt-no-footer-name': t.optNoFooterName,
+                'opt-no-footer-desc': t.optNoFooterDesc,
+                'opt-css-name': t.optCssName,
+                'opt-css-desc': t.optCssDesc,
+                'opt-preview-name': t.optPreviewName,
+                'opt-preview-desc': t.optPreviewDesc
+            };
+            Object.entries(optMap).forEach(([id, text]) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = text;
+            });
+            
+            // Select option texts
+            const linkTargetSel = document.getElementById('opt-link-target');
+            if (linkTargetSel) {
+                linkTargetSel.options[0].text = t.optLinkSame;
+                linkTargetSel.options[1].text = t.optLinkNew;
+                linkTargetSel.options[2].text = t.optLinkPrompt;
+            }
+            const previewSel = document.getElementById('opt-preview-mode');
+            if (previewSel) {
+                previewSel.options[0].text = t.optPreviewLive;
+                previewSel.options[1].text = t.optPreviewCode;
+            }
+            
+            // Bulk buttons
+            const bulkConvert = document.getElementById('btn-bulk-convert-text');
+            if (bulkConvert) bulkConvert.textContent = t.btnBulkConvert;
+            const bulkStrip = document.getElementById('btn-bulk-strip-text');
+            if (bulkStrip) bulkStrip.textContent = t.btnBulkStrip;
+            
+            // CSS placeholder
+            const cssArea = document.getElementById('opt-custom-css');
+            if (cssArea) cssArea.placeholder = t.cssPH;
+            
             renderBlockList();
         }
 
@@ -1185,6 +1691,20 @@
         // Undo history state and initial backup state
         const undoStack = [];
         let initialTemplateHtml = '';
+
+        // ========== EDITOR MODE STATE ==========
+        let editorMode = localStorage.getItem('editorMode') || 'email';
+        const htmlSettings = {
+            linkTarget: localStorage.getItem('htmlLinkTarget') || 'same',
+            convertLinksToText: localStorage.getItem('htmlConvertLinks') === 'true',
+            addNoopener: localStorage.getItem('htmlAddNoopener') === 'true',
+            externalNewTab: localStorage.getItem('htmlExternalNewTab') === 'true',
+            disableFooter: localStorage.getItem('htmlDisableFooter') !== 'false', // default true
+            sanitise: localStorage.getItem('htmlSanitise') === 'true',
+            forceUtf8: localStorage.getItem('htmlForceUtf8') !== 'false', // default true
+            customCSS: localStorage.getItem('htmlCustomCSS') || '',
+            previewMode: localStorage.getItem('htmlPreviewMode') || 'live'
+        };
 
         // DOM Nodes
         const dropZone = document.getElementById('drop-zone');
@@ -1286,15 +1806,20 @@
         processBtn.addEventListener('click', () => {
             if (!rawHtmlContent) return;
             
-            addLog('info', 'A iniciar pipeline de conversão e parsing dos blocos...');
+            addLog('info', `A iniciar pipeline (Modo: ${editorMode.toUpperCase()})...`);
             
             try {
                 // Initialize parser DOM
                 const parser = new DOMParser();
                 parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
                 
-                // Run footer substitution logic directly on the parsed DOM first
-                runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                if (editorMode === 'email') {
+                    // EMAIL MODE: Run footer substitution logic
+                    runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                } else {
+                    // HTML PAGE MODE: Apply HTML page processing pipeline
+                    processHtmlPageMode(parsedDoc);
+                }
                 
                 // Synchronize lists & rendering
                 updateFromDOM();
@@ -1653,12 +2178,12 @@
                 const upBtnDisabled = index === 0 ? 'disabled' : '';
                 const downBtnDisabled = index === blocks.length - 1 ? 'disabled' : '';
                 
-                const hasEditableText = true;
-                const editBtnHtml = `
+                const hasEditableText = block.type === 'text' || block.type === 'footer' || block.type === 'image';
+                const editBtnHtml = hasEditableText ? `
                     <button class="control-btn" onclick="openBlockTextEditor(${index})" title="Editar Bloco">
                         <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
                     </button>
-                `;
+                ` : '';
 
                 card.innerHTML = `
                     <div class="block-type-badge">
@@ -1801,92 +2326,6 @@
             return '#333333'; // Default content text color fallback
         }
 
-        function getElementBgColor(el) {
-            let current = el;
-            const stopTags = ['DIV', 'TD', 'TABLE', 'TR', 'TBODY', 'THEAD'];
-            while (current && !stopTags.includes(current.tagName.toUpperCase())) {
-                if (current.classList && current.classList.contains('zpelement-wrapper')) break;
-                if (current.style && current.style.backgroundColor) {
-                    return parseColorToHex(current.style.backgroundColor);
-                }
-                current = current.parentElement;
-            }
-            return 'transparent'; // Fallback / default transparent background for text
-        }
-
-        function getUniqueDocumentColors() {
-            const colors = new Set();
-            if (!parsedDoc) return [];
-            
-            // Check bgcolor attributes
-            parsedDoc.querySelectorAll('[bgcolor]').forEach(el => {
-                const color = el.getAttribute('bgcolor');
-                if (color) {
-                    const hex = parseColorToHex(color);
-                    if (hex && hex.startsWith('#') && hex !== '#FFFFFF' && hex !== '#000000') {
-                        colors.add(hex.toUpperCase());
-                    }
-                }
-            });
-            
-            // Check style.backgroundColor and style.color
-            parsedDoc.querySelectorAll('[style]').forEach(el => {
-                const bg = el.style.backgroundColor;
-                if (bg) {
-                    const hex = parseColorToHex(bg);
-                    if (hex && hex.startsWith('#') && hex !== '#FFFFFF' && hex !== '#000000') {
-                        colors.add(hex.toUpperCase());
-                    }
-                }
-                const fg = el.style.color;
-                if (fg) {
-                    const hex = parseColorToHex(fg);
-                    if (hex && hex.startsWith('#') && hex !== '#FFFFFF' && hex !== '#000000') {
-                        colors.add(hex.toUpperCase());
-                    }
-                }
-            });
-            
-            return Array.from(colors).slice(0, 12); // limit to top 12 unique colors
-        }
-
-        function addSwatchesToContainer(container, targetPicker, targetHex) {
-            const docColors = getUniqueDocumentColors();
-            if (docColors.length > 0) {
-                const swatchesDiv = document.createElement('div');
-                swatchesDiv.style.display = 'flex';
-                swatchesDiv.style.flexWrap = 'wrap';
-                swatchesDiv.style.gap = '0.3rem';
-                swatchesDiv.style.marginTop = '0.35rem';
-                swatchesDiv.style.alignItems = 'center';
-                
-                const label = document.createElement('span');
-                label.style.fontSize = '0.65rem';
-                label.style.color = 'var(--text-muted)';
-                label.style.marginRight = '0.2rem';
-                label.textContent = 'Paleta:';
-                swatchesDiv.appendChild(label);
-                
-                docColors.forEach(color => {
-                    const swatch = document.createElement('div');
-                    swatch.style.width = '14px';
-                    swatch.style.height = '14px';
-                    swatch.style.borderRadius = '3px';
-                    swatch.style.backgroundColor = color;
-                    swatch.style.border = '1px solid rgba(255,255,255,0.1)';
-                    swatch.style.cursor = 'pointer';
-                    swatch.title = color;
-                    swatch.addEventListener('click', () => {
-                        targetPicker.value = color;
-                        targetHex.value = color;
-                        applyLiveEdits();
-                    });
-                    swatchesDiv.appendChild(swatch);
-                });
-                container.appendChild(swatchesDiv);
-            }
-        }
-
         function getBlockBgColor(tr) {
             if (tr.style && tr.style.backgroundColor) {
                 return parseColorToHex(tr.style.backgroundColor);
@@ -1904,226 +2343,56 @@
         }
 
         function setBlockBgColor(tr, hexColor) {
-            try {
-                const oldBgColor = getBlockBgColor(tr).toUpperCase();
-                const newBgColor = hexColor.toUpperCase();
-                
-                // Check if this block is a spacer/divider
-                let isSpacerBlock = false;
-                if (typeof activeEditBlockIndex !== 'undefined' && typeof blocks !== 'undefined' && blocks[activeEditBlockIndex]) {
-                    const bType = blocks[activeEditBlockIndex].type;
-                    if (bType === 'spacebar' || bType === 'divider') {
-                        isSpacerBlock = true;
-                    }
+            tr.style.backgroundColor = hexColor;
+            const targets = tr.querySelectorAll('td, .zpelement-wrapper, table');
+            targets.forEach(target => {
+                target.style.backgroundColor = hexColor;
+                if (target.tagName === 'TD' || target.tagName === 'TABLE') {
+                    target.setAttribute('bgcolor', hexColor);
                 }
-                
-                // Set on the block container itself
-                tr.style.setProperty('background-color', newBgColor, 'important');
-                tr.style.setProperty('background', newBgColor, 'important');
-                if (tr.tagName === 'TD' || tr.tagName === 'TABLE') {
-                    tr.setAttribute('bgcolor', newBgColor);
-                }
-                
-                // Build a Set of protected elements (buttons, custom components, and their wrappers/descendants)
-                const protectedElements = new Set();
-                
-                // Find button candidates (based on class, id, or typical button tags/attributes)
-                const btnCandidates = tr.querySelectorAll('.button, .btn, .cta, .buttonElem, [class*="btn" i], [class*="button" i], [id*="btn" i], [id*="button" i]');
-                btnCandidates.forEach(btn => {
-                    protectedElements.add(btn);
-                    // Protect all descendants of the button
-                    btn.querySelectorAll('*').forEach(desc => protectedElements.add(desc));
-                    
-                    // Protect immediate table/td wrapper hierarchy of the button
-                    let parent = btn.parentElement;
-                    while (parent && parent !== tr) {
-                        const pTag = parent.tagName.toUpperCase();
-                        if (pTag === 'TD' || pTag === 'TR' || pTag === 'TBODY' || pTag === 'TABLE') {
-                            protectedElements.add(parent);
-                        }
-                        // Stop if we hit a known block structural container
-                        if (parent.classList.contains('zpelement-wrapper') || 
-                            parent.classList.contains('zpAlignPos') || 
-                            (parent.getAttribute && parent.getAttribute('width') === '100%')) {
-                            break;
-                        }
-                        parent = parent.parentElement;
-                    }
-                });
-
-                // Find elements with explicit custom backgrounds and protect them and their descendants
-                const allElements = tr.querySelectorAll('*');
-                allElements.forEach(el => {
-                    let hasExplicitBg = el.style.backgroundColor || el.getAttribute('bgcolor');
-                    if (hasExplicitBg) {
-                        const currentBg = parseColorToHex(el.style.backgroundColor || el.getAttribute('bgcolor')).toUpperCase();
-                        if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                            protectedElements.add(el);
-                            el.querySelectorAll('*').forEach(desc => protectedElements.add(desc));
-                        }
-                    }
-                });
-                
-                // Find all structural/layout elements inside the block
-                const targets = tr.querySelectorAll('td, table, tbody, tr, .zpelement-wrapper, div, hr');
-                targets.forEach(target => {
-                    const tagName = target.tagName.toUpperCase();
-                    
-                    let shouldUpdate = true;
-                    
-                    if (isSpacerBlock) {
-                        // For spacer/divider blocks, ALWAYS update everything to change the line/space color
-                        shouldUpdate = true;
-                    } else if (protectedElements.has(target)) {
-                        // If it is protected (button or custom component structure), preserve it
-                        shouldUpdate = false;
-                    }
-                    
-                    if (shouldUpdate) {
-                        target.style.setProperty('background-color', newBgColor, 'important');
-                        target.style.setProperty('background', newBgColor, 'important');
-                        if (tagName === 'TD' || tagName === 'TABLE') {
-                            target.setAttribute('bgcolor', newBgColor);
-                        }
-                        if (tagName === 'HR') {
-                            target.style.setProperty('border-color', newBgColor, 'important');
-                        }
-                        
-                        // Force structural/layout border colors to match the new background color to prevent visual lines/breaks
-                        target.style.setProperty('border-color', newBgColor, 'important');
-                        target.style.setProperty('border-top-color', newBgColor, 'important');
-                        target.style.setProperty('border-bottom-color', newBgColor, 'important');
-                        target.style.setProperty('border-left-color', newBgColor, 'important');
-                        target.style.setProperty('border-right-color', newBgColor, 'important');
-                    }
-                });
-                
-                // Clear explicit background color on inner text containers to transparent so they inherit the parent block's background
-                const textContainers = tr.querySelectorAll('p, span, font, a, h1, h2, h3, h4, h5, h6, b, i, u, li, ul, ol');
-                textContainers.forEach(el => {
-                    if (protectedElements.has(el)) {
-                        return; // Skip modifying text formatting inside button/custom components
-                    }
-                    
-                    if (isSpacerBlock) {
-                        el.style.setProperty('background-color', 'transparent', 'important');
-                        el.style.setProperty('background', 'transparent', 'important');
-                        return;
-                    }
-                    
-                    // Check if it contains any actual/visible text (excluding nbsp and spaces)
-                    const textContentClean = el.textContent.replace(/\u00a0/g, '').trim();
-                    const hasRealText = textContentClean.length > 0;
-                    
-                    if (!hasRealText) {
-                        // Spacer/decorative element masquerading as text container: make it transparent to inherit
-                        el.style.setProperty('background-color', 'transparent', 'important');
-                        el.style.setProperty('background', 'transparent', 'important');
-                        return;
-                    }
-                    
-                    // Check if the text element itself had a custom background color
-                    let hasExplicitBg = el.style.backgroundColor;
-                    let isCustomBg = false;
-                    if (hasExplicitBg) {
-                        const currentBg = parseColorToHex(el.style.backgroundColor).toUpperCase();
-                        if (currentBg !== oldBgColor && currentBg !== 'TRANSPARENT' && currentBg !== '') {
-                            isCustomBg = true;
-                        }
-                    }
-                    
-                    // If it doesn't have a custom background color, force it to transparent to inherit the block bg
-                    if (!isCustomBg) {
-                        el.style.setProperty('background-color', 'transparent', 'important');
-                        el.style.setProperty('background', 'transparent', 'important');
-                    }
-                });
-            } catch (err) {
-                console.error("Error in setBlockBgColor:", err);
-                if (typeof addLog === 'function') {
-                    addLog('error', `Erro ao aplicar cor de fundo: ${err.message}`);
-                }
-            }
+            });
         }
 
         function getBlockPadding(tr) {
             let pt = 0;
             let pb = 0;
-            
+            const td = tr.querySelector('td.paddingcomp') || tr.querySelector('td');
+            const wrapper = tr.querySelector('.zpelement-wrapper') || tr;
+            const source = td || wrapper;
+            if (source && source.style) {
+                if (source.style.paddingTop) pt = parseInt(source.style.paddingTop) || 0;
+                if (source.style.paddingBottom) pb = parseInt(source.style.paddingBottom) || 0;
+            }
             const componentDiv = tr.querySelector('[componentpaddingtop]');
             if (componentDiv) {
-                pt = parseInt(componentDiv.getAttribute('componentpaddingtop')) || parseInt(componentDiv.style.paddingTop) || 0;
-                pb = parseInt(componentDiv.getAttribute('componentpaddingbottom')) || parseInt(componentDiv.style.paddingBottom) || 0;
-                return { top: pt, bottom: pb };
+                if (pt === 0 && componentDiv.getAttribute('componentpaddingtop')) {
+                    pt = parseInt(componentDiv.getAttribute('componentpaddingtop')) || 0;
+                }
+                if (pb === 0 && componentDiv.getAttribute('componentpaddingbottom')) {
+                    pb = parseInt(componentDiv.getAttribute('componentpaddingbottom')) || 0;
+                }
             }
-            
-            const paddingcompTd = tr.querySelector('td.paddingcomp');
-            if (paddingcompTd) {
-                if (paddingcompTd.style.paddingTop) pt = parseInt(paddingcompTd.style.paddingTop) || 0;
-                if (paddingcompTd.style.paddingBottom) pb = parseInt(paddingcompTd.style.paddingBottom) || 0;
-                return { top: pt, bottom: pb };
-            }
-            
-            const wrapper = tr.querySelector('.zpelement-wrapper');
-            if (wrapper) {
-                if (wrapper.style.paddingTop) pt = parseInt(wrapper.style.paddingTop) || 0;
-                if (wrapper.style.paddingBottom) pb = parseInt(wrapper.style.paddingBottom) || 0;
-                return { top: pt, bottom: pb };
-            }
-            
-            const directTds = Array.from(tr.children).filter(c => c.tagName === 'TD');
-            if (directTds.length > 0) {
-                const td = directTds[0];
-                if (td.style.paddingTop) pt = parseInt(td.style.paddingTop) || 0;
-                if (td.style.paddingBottom) pb = parseInt(td.style.paddingBottom) || 0;
-                return { top: pt, bottom: pb };
-            }
-            
-            if (tr.style.paddingTop) pt = parseInt(tr.style.paddingTop) || 0;
-            if (tr.style.paddingBottom) pb = parseInt(tr.style.paddingBottom) || 0;
             return { top: pt, bottom: pb };
         }
 
         function setBlockPadding(tr, topVal, bottomVal) {
-            // Find the primary padding element(s) in the block and apply padding only at that level to prevent expansion
+            const tds = tr.querySelectorAll('td');
+            tds.forEach(td => {
+                td.style.paddingTop = topVal + 'px';
+                td.style.paddingBottom = bottomVal + 'px';
+            });
+            const wrappers = tr.querySelectorAll('.zpelement-wrapper');
+            wrappers.forEach(w => {
+                w.style.paddingTop = topVal + 'px';
+                w.style.paddingBottom = bottomVal + 'px';
+            });
             const componentDivs = tr.querySelectorAll('[componentpaddingtop]');
-            const paddingcompTd = tr.querySelector('td.paddingcomp');
-            const wrapper = tr.querySelector('.zpelement-wrapper');
-            const directTds = Array.from(tr.children).filter(c => c.tagName === 'TD');
-            
-            if (componentDivs.length > 0) {
-                componentDivs.forEach(div => {
-                    let parent = div.parentElement;
-                    let isNestedDiv = false;
-                    while (parent && parent !== tr) {
-                        if (parent.hasAttribute('componentpaddingtop')) {
-                            isNestedDiv = true;
-                            break;
-                        }
-                        parent = parent.parentElement;
-                    }
-                    if (!isNestedDiv) {
-                        div.setAttribute('componentpaddingtop', topVal + 'px');
-                        div.setAttribute('componentpaddingbottom', bottomVal + 'px');
-                        div.style.paddingTop = topVal + 'px';
-                        div.style.paddingBottom = bottomVal + 'px';
-                    }
-                });
-            } else if (paddingcompTd) {
-                paddingcompTd.style.paddingTop = topVal + 'px';
-                paddingcompTd.style.paddingBottom = bottomVal + 'px';
-            } else if (wrapper) {
-                wrapper.style.paddingTop = topVal + 'px';
-                wrapper.style.paddingBottom = bottomVal + 'px';
-            } else if (directTds.length > 0) {
-                directTds.forEach(td => {
-                    td.style.paddingTop = topVal + 'px';
-                    td.style.paddingBottom = bottomVal + 'px';
-                });
-            } else {
-                tr.style.paddingTop = topVal + 'px';
-                tr.style.paddingBottom = bottomVal + 'px';
-            }
+            componentDivs.forEach(div => {
+                div.setAttribute('componentpaddingtop', topVal + 'px');
+                div.setAttribute('componentpaddingbottom', bottomVal + 'px');
+                div.style.paddingTop = topVal + 'px';
+                div.style.paddingBottom = bottomVal + 'px';
+            });
         }
 
         // Modal editor
@@ -2345,19 +2614,7 @@
             const isRawHtmlVisible = rawHtmlArea && rawHtmlArea.parentElement.style.display !== 'none';
             
             if (isRawHtmlVisible) {
-                if (document.activeElement === rawHtmlArea) {
-                    tr.innerHTML = rawHtmlArea.value;
-                    // Re-apply background color and padding to the loaded HTML structure
-                    if (bgHex && bgHex.value) {
-                        setBlockBgColor(tr, bgHex.value);
-                    }
-                    if (ptInput && pbInput) {
-                        setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
-                    }
-                } else {
-                    // Update HTML editor text to show background and padding changes injected
-                    rawHtmlArea.value = tr.innerHTML;
-                }
+                tr.innerHTML = rawHtmlArea.value;
             } else {
                 const inputs = modalInputsList.querySelectorAll('.modal-text-input');
                 inputs.forEach(input => {
@@ -2376,26 +2633,6 @@
                     const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
                     if (el && hexInput && hexInput.value) {
                         el.style.color = hexInput.value;
-                    }
-                    
-                    // Update text element background color
-                    const bgHexInput = modalInputsList.querySelector(`.text-bg-hex[data-index="${idx}"]`);
-                    if (el && bgHexInput) {
-                        const bgVal = bgHexInput.value.trim().toLowerCase();
-                        if (bgVal === 'transparent' || bgVal === '') {
-                            const tagName = el.tagName.toLowerCase();
-                            const inlineTextTags = ['span', 'font', 'a', 'b', 'strong', 'i', 'em', 'u'];
-                            if (inlineTextTags.includes(tagName)) {
-                                el.style.setProperty('background-color', 'transparent', 'important');
-                                el.style.setProperty('background', 'transparent', 'important');
-                            } else {
-                                el.style.removeProperty('background-color');
-                                el.style.removeProperty('background');
-                            }
-                        } else {
-                            el.style.setProperty('background-color', bgVal, 'important');
-                            el.style.setProperty('background', bgVal, 'important');
-                        }
                     }
                     
                     // Update hyperlink URL if applicable
@@ -2563,7 +2800,6 @@
                     applyLiveEdits();
                 }
             });
-            addSwatchesToContainer(bgField.querySelector('.color-picker-container'), bgPicker, bgHex);
 
             // Spacing Slider sync & live update logic
             const ptSlider = bgField.querySelector('#block-padding-top-slider');
@@ -2617,8 +2853,6 @@
                     const el = item.el;
                     const originalText = textNode.textContent.trim();
                     const currentColor = getElementColor(el);
-                    const currentBgColor = getElementBgColor(el);
-                    const pickerBgVal = (currentBgColor === 'transparent' || currentBgColor === '') ? '#FFFFFF' : currentBgColor;
                     
                     const linkEl = el.tagName.toLowerCase() === 'a' ? el : el.closest('a');
                     let linkHtml = '';
@@ -2649,20 +2883,11 @@
                         
                         ${linkHtml}
                         
-                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
-                                <div class="color-picker-container" style="margin-top: 0;">
-                                    <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
-                                    <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
-                                </div>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <label style="font-size: 0.7rem; color: var(--text-muted);">Fundo do Texto (Text BG):</label>
-                                <div class="color-picker-container" style="margin-top: 0;">
-                                    <input type="color" class="color-picker-preview text-bg-picker" data-index="${idx}" value="${pickerBgVal}">
-                                    <input type="text" class="color-input-hex text-bg-hex" data-index="${idx}" value="${currentBgColor}" placeholder="transparent" maxlength="11">
-                                </div>
+                        <div style="margin-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">Cor do Texto:</label>
+                            <div class="color-picker-container" style="margin-top: 0;">
+                                <input type="color" class="color-picker-preview text-color-picker" data-index="${idx}" value="${currentColor}">
+                                <input type="text" class="color-input-hex text-color-hex" data-index="${idx}" value="${currentColor}" maxlength="7">
                             </div>
                         </div>
                     `;
@@ -2687,29 +2912,6 @@
                             applyLiveEdits();
                         }
                     });
-
-                    const bgPicker = field.querySelector('.text-bg-picker');
-                    const bgHex = field.querySelector('.text-bg-hex');
-                    
-                    bgPicker.addEventListener('input', (e) => {
-                        bgHex.value = e.target.value.toUpperCase();
-                        applyLiveEdits();
-                    });
-                    bgHex.addEventListener('input', (e) => {
-                        const val = e.target.value.trim().toLowerCase();
-                        if (val === 'transparent' || val === '') {
-                            applyLiveEdits();
-                        } else if (/^#[0-9A-F]{6}$/i.test(val)) {
-                            bgPicker.value = val;
-                            applyLiveEdits();
-                        }
-                    });
-                    
-                    const colorContainers = field.querySelectorAll('.color-picker-container');
-                    if (colorContainers.length >= 2) {
-                        addSwatchesToContainer(colorContainers[0], picker, hex);
-                        addSwatchesToContainer(colorContainers[1], bgPicker, bgHex);
-                    }
                     
                     if (linkEl) {
                         const hrefInput = field.querySelector('.modal-link-href-input');
@@ -2741,18 +2943,9 @@
                     field.style.marginTop = '0.5rem';
                     
                     field.innerHTML = `
-                        <label style="color: var(--accent-secondary); font-weight: 700; display: flex; justify-content: space-between;">
-                            <span>Imagem #${idx + 1}</span>
-                        </label>
+                        <label style="color: var(--accent-secondary); font-weight: 700;">Imagem #${idx + 1}</label>
                         <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-                            <label style="font-size: 0.7rem; color: var(--text-muted);">Substituir por imagem local / Replace with local image:</label>
-                            <input type="file" class="modal-img-file-input" data-img-index="${idx}" accept="image/*" style="background: rgba(0,0,0,0.2); border: 1px dashed var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%; cursor: pointer;">
-                            <div style="margin-top: 0.25rem; font-size: 0.65rem; color: #f59e0b; background: rgba(245, 158, 11, 0.05); padding: 0.35rem 0.5rem; border-radius: 6px; border: 1px solid rgba(245, 158, 11, 0.2); line-height: 1.3;">
-                                ⚠️ <strong>Aviso / Warning:</strong> Imagens locais são convertidas para base64. O Zoho Campaigns <strong>não aceita</strong> base64 (dá erro de "Missing Image"). Se usar imagens locais, exporte como <strong>Pacote ZIP</strong> ao descarregar. Caso contrário, insira uma URL pública abaixo.
-                            </div>
-                        </div>
-                        <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
-                            <label style="font-size: 0.7rem; color: var(--text-muted);">Ou URL da Imagem / Or Image URL:</label>
+                            <label style="font-size: 0.7rem; color: var(--text-muted);">URL da Imagem:</label>
                             <input type="text" class="modal-img-src-input" data-img-index="${idx}" value="${img.getAttribute('src') || ''}" style="background: rgba(0,0,0,0.4); border: 1px solid var(--card-border); border-radius: 6px; padding: 0.35rem 0.5rem; color: var(--text-main); font-size: 0.8rem; outline: none; width: 100%;">
                         </div>
                         <div style="margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;">
@@ -2763,22 +2956,7 @@
                     `;
                     modalInputsList.appendChild(field);
                     
-                    const srcInput = field.querySelector('.modal-img-src-input');
-                    const fileInput = field.querySelector('.modal-img-file-input');
-                    
-                    fileInput.addEventListener('change', (e) => {
-                        const file = e.target.files[0];
-                        if (file) {
-                            const reader = new FileReader();
-                            reader.onload = (event) => {
-                                srcInput.value = event.target.result;
-                                applyLiveEdits();
-                            };
-                            reader.readAsDataURL(file);
-                        }
-                    });
-                    
-                    srcInput.addEventListener('input', applyLiveEdits);
+                    field.querySelector('.modal-img-src-input').addEventListener('input', applyLiveEdits);
                     field.querySelector('.modal-img-alt-input').addEventListener('input', applyLiveEdits);
                     if (linkEl) {
                         field.querySelector('.modal-img-link-href-input').addEventListener('input', applyLiveEdits);
@@ -2878,12 +3056,6 @@
             
             if (isRawHtmlVisible) {
                 tr.innerHTML = rawHtmlArea.value;
-                if (bgHex && bgHex.value) {
-                    setBlockBgColor(tr, bgHex.value);
-                }
-                if (ptInput && pbInput) {
-                    setBlockPadding(tr, parseInt(ptInput.value) || 0, parseInt(pbInput.value) || 0);
-                }
             } else {
                 const inputs = modalInputsList.querySelectorAll('.modal-text-input');
                 inputs.forEach(input => {
@@ -2902,26 +3074,6 @@
                     const hexInput = modalInputsList.querySelector(`.text-color-hex[data-index="${idx}"]`);
                     if (el && hexInput && hexInput.value) {
                         el.style.color = hexInput.value;
-                    }
-                    
-                    // Update text element background color
-                    const bgHexInput = modalInputsList.querySelector(`.text-bg-hex[data-index="${idx}"]`);
-                    if (el && bgHexInput) {
-                        const bgVal = bgHexInput.value.trim().toLowerCase();
-                        if (bgVal === 'transparent' || bgVal === '') {
-                            const tagName = el.tagName.toLowerCase();
-                            const inlineTextTags = ['span', 'font', 'a', 'b', 'strong', 'i', 'em', 'u'];
-                            if (inlineTextTags.includes(tagName)) {
-                                el.style.setProperty('background-color', 'transparent', 'important');
-                                el.style.setProperty('background', 'transparent', 'important');
-                            } else {
-                                el.style.removeProperty('background-color');
-                                el.style.removeProperty('background');
-                            }
-                        } else {
-                            el.style.setProperty('background-color', bgVal, 'important');
-                            el.style.setProperty('background', bgVal, 'important');
-                        }
                     }
                     
                     // Update hyperlink URL if applicable
@@ -2960,35 +3112,6 @@
             closeModal();
             updateFromDOM();
         });
-
-        // Helper to check if a color is light/bright to adjust text contrast
-        function isLightColor(color) {
-            if (!color || color === 'transparent' || color === 'initial' || color === 'inherit') return true;
-            color = color.trim().toLowerCase();
-            if (color === 'white' || color === '#fff' || color === '#ffffff') return true;
-            
-            let r = 255, g = 255, b = 255;
-            if (color.startsWith('rgb')) {
-                const rgbValues = color.match(/\d+/g);
-                if (rgbValues && rgbValues.length >= 3) {
-                    r = parseInt(rgbValues[0]);
-                    g = parseInt(rgbValues[1]);
-                    b = parseInt(rgbValues[2]);
-                }
-            } else if (color.startsWith('#')) {
-                let hex = color.substring(1);
-                if (hex.length === 3) {
-                    hex = hex.split('').map(c => c + c).join('');
-                }
-                if (hex.length === 6) {
-                    r = parseInt(hex.substring(0, 2), 16);
-                    g = parseInt(hex.substring(2, 4), 16);
-                    b = parseInt(hex.substring(4, 6), 16);
-                }
-            }
-            const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-            return yiq >= 180;
-        }
 
         // Run Footer Substitution logic directly on DOM tree
         function runFooterReplacementOnDOM(doc, institution) {
@@ -3035,34 +3158,16 @@
                 }
             }
 
-            // Extract template background color to match the "rest of the file" (body/outer table background)
-            let currentBgColor = '';
+            let replaced = false;
+            const targetFooter = footers[institution];
             
-            // 1. Try body bgcolor
-            if (doc.body) {
-                const bg = doc.body.style.backgroundColor || doc.body.getAttribute('bgcolor');
-                if (bg && bg !== 'transparent' && bg !== 'initial' && bg !== 'inherit') {
-                    currentBgColor = bg;
-                }
-            }
-            
-            // 2. Try outermost table bgcolor
-            if (!currentBgColor) {
-                const outerTable = doc.querySelector('table');
-                if (outerTable) {
-                    const bg = outerTable.style.backgroundColor || outerTable.getAttribute('bgcolor');
-                    if (bg && bg !== 'transparent' && bg !== 'initial' && bg !== 'inherit') {
-                        currentBgColor = bg;
-                    }
-                }
-            }
-            
-            // 3. Try fallback to footer itself
-            if (!currentBgColor && footerTd) {
+            if (footerTd) {
                 const outerDiv = footerTd.classList.contains('zpelement-wrapper') ? footerTd : footerTd.querySelector('.zpelement-wrapper');
                 const innerTable = footerTd.querySelector('table');
                 const innerTd = footerTd.querySelector('td.paddingcomp');
                 
+                // Extract current background color
+                let currentBgColor = '#000000';
                 if (innerTd && innerTd.style.backgroundColor) {
                     currentBgColor = innerTd.style.backgroundColor;
                 } else if (innerTd && innerTd.getAttribute('bgcolor')) {
@@ -3081,36 +3186,6 @@
                         currentBgColor = parentTr.getAttribute('bgcolor');
                     }
                 }
-            }
-            
-            if (!currentBgColor) {
-                currentBgColor = '#000000'; // Default black fallback if completely unstyled
-            }
-
-            let replaced = false;
-            const targetFooter = footers[institution];
-            
-            // Adapt text/link colors dynamically if matching a bright/light background
-            let footerHtml = targetFooter.html;
-            if (isLightColor(currentBgColor)) {
-                footerHtml = footerHtml
-                    .replace(/color:\s*#ffffff/gi, 'color: #333333')
-                    .replace(/color:\s*#eeeeee/gi, 'color: #555555')
-                    .replace(/color:\s*#ffffff;/gi, 'color: #333333;')
-                    .replace(/color:\s*#eeeeee;/gi, 'color: #555555;')
-                    .replace(/color="#ffffff"/gi, 'color="#333333"')
-                    .replace(/color="#EEEEEE"/gi, 'color="#555555"')
-                    .replace(/color="#eeeeee"/gi, 'color="#555555"')
-                    .replace(/style="color:\s*#ffffff;/gi, 'style="color: #333333;')
-                    .replace(/style="color:\s*#EEEEEE;/gi, 'style="color: #555555;')
-                    .replace(/style="color:\s*#eeeeee;/gi, 'style="color: #555555;')
-                    .replace(/color:\s*#fff/gi, 'color: #333333');
-            }
-            
-            if (footerTd) {
-                const outerDiv = footerTd.classList.contains('zpelement-wrapper') ? footerTd : footerTd.querySelector('.zpelement-wrapper');
-                const innerTable = footerTd.querySelector('table');
-                const innerTd = footerTd.querySelector('td.paddingcomp');
                 
                 if (outerDiv) outerDiv.style.backgroundColor = currentBgColor;
                 if (innerTable) {
@@ -3129,9 +3204,9 @@
                 const divWrapper = finalTd.querySelector('div');
                 if (divWrapper) {
                     divWrapper.style.lineHeight = heightVal;
-                    divWrapper.innerHTML = `<span style="line-height: ${heightVal};">${footerHtml}</span>`;
+                    divWrapper.innerHTML = `<span style="line-height: ${heightVal};">${targetFooter.html}</span>`;
                 } else {
-                    finalTd.innerHTML = `<div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${footerHtml}</span></div>`;
+                    finalTd.innerHTML = `<div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>`;
                 }
                 replaced = true;
                 addLog('success', `Substituição do rodapé (${targetFooter.title}) efetuada com cor ${currentBgColor}.`);
@@ -3141,6 +3216,15 @@
                 addLog('warning', 'Rodapé não encontrado na estrutura. A inserir no final da tabela.');
                 const mainTable = doc.querySelector('table');
                 if (mainTable) {
+                    let currentBgColor = '#000000';
+                    const lastRow = mainTable.querySelector('tr:last-child');
+                    if (lastRow) {
+                        const lastTd = lastRow.querySelector('td');
+                        if (lastTd && lastTd.style.backgroundColor) currentBgColor = lastTd.style.backgroundColor;
+                        else if (lastTd && lastTd.getAttribute('bgcolor')) currentBgColor = lastTd.getAttribute('bgcolor');
+                        else if (lastRow.style.backgroundColor) currentBgColor = lastRow.style.backgroundColor;
+                    }
+                    
                     const tbody = mainTable.querySelector('tbody') || mainTable;
                     const newRow = doc.createElement('tr');
                     const heightVal = institution === 'lusofona' ? '13pt' : '11pt';
@@ -3149,7 +3233,7 @@
                             <div class="zpelement-wrapper" id="elm_1753955915805" style=";word-wrap:break-word;overflow:hidden;padding-right:0px;background-color:${currentBgColor};">
                                 <table bgcolor="${currentBgColor}" border="0" cellpadding="0" cellspacing="0" class="zpAlignPos" style="font-size:12px;padding:0px;border:0px;border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;word-break:break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:${currentBgColor};" width="100%">
                                     <tbody><tr><td class="paddingcomp" bgcolor="${currentBgColor}" style="border:0px;padding:7px 15px;font-size:12pt;font-family:Arial,Helvetica;line-height:${heightVal};border-top:0px none ;   border-bottom:0px none ;padding-top:20px;padding-bottom:20px;padding-right:15px;padding-left:15px;background-color:${currentBgColor};">
-                                        <div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${footerHtml}</span></div>
+                                        <div style="line-height: ${heightVal};"><span style="line-height: ${heightVal};">${targetFooter.html}</span></div>
                                     </td></tr></tbody>
                                 </table>
                             </div>
@@ -3207,277 +3291,20 @@
             setLanguage(currentLang === 'pt' ? 'en' : 'pt');
         });
 
-        // Modal elements for download options
-        const dlModalOverlay = document.getElementById('download-modal-overlay');
-        const closeDlModalBtn = document.getElementById('close-dl-modal-btn');
-        const dlModalCancelBtn = document.getElementById('dl-modal-cancel-btn');
-        const dlModalConfirmBtn = document.getElementById('dl-modal-confirm-btn');
-        const dlUsePicker = document.getElementById('dl-use-picker');
-        const dlPickerWarning = document.getElementById('dl-picker-warning');
-
-        // Check showSaveFilePicker browser support
-        if (!('showSaveFilePicker' in window)) {
-            dlUsePicker.checked = false;
-            dlUsePicker.disabled = true;
-            dlPickerWarning.style.display = 'block';
-        } else {
-            dlUsePicker.checked = true;
-        }
-
-        // Open download modal
+        // Download processed HTML
         downloadBtn.addEventListener('click', () => {
             if (!processedHtmlContent) return;
-            dlModalOverlay.style.display = 'flex';
-        });
-
-        // Close download modal
-        function closeDlModal() {
-            dlModalOverlay.style.display = 'none';
-        }
-        closeDlModalBtn.addEventListener('click', closeDlModal);
-        dlModalCancelBtn.addEventListener('click', closeDlModal);
-
-        // Helper to dynamically load JSZip on-demand
-        async function loadJSZip() {
-            if (window.JSZip) return window.JSZip;
-            return new Promise((resolve, reject) => {
-                const script = document.createElement('script');
-                script.src = "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js";
-                script.onload = () => resolve(window.JSZip);
-                script.onerror = (e) => reject(new Error("Falha ao carregar a biblioteca JSZip"));
-                document.head.appendChild(script);
-            });
-        }
-
-        // Helper to extract image URLs from document
-        function extractImageUrls(doc) {
-            const urls = new Set();
-            // <img> tags
-            doc.querySelectorAll('img').forEach(img => {
-                const src = img.getAttribute('src');
-                if (src && !src.startsWith('data:')) {
-                    urls.add(src);
-                }
-            });
-            // background attributes
-            doc.querySelectorAll('[background]').forEach(el => {
-                const bg = el.getAttribute('background');
-                if (bg && !bg.startsWith('data:')) {
-                    urls.add(bg);
-                }
-            });
-            // inline styles url(...)
-            doc.querySelectorAll('[style]').forEach(el => {
-                const style = el.getAttribute('style') || '';
-                const match = style.match(/url\(['"]?([^'")]+)['"]?\)/i);
-                if (match && match[1] && !match[1].startsWith('data:')) {
-                    urls.add(match[1]);
-                }
-            });
-            return Array.from(urls);
-        }
-
-        // Helper to convert base64 data URL to Blob
-        function dataURLtoBlob(dataurl) {
-            try {
-                let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
-                    bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
-                while(n--){
-                    u8arr[n] = bstr.charCodeAt(n);
-                }
-                return new Blob([u8arr], {type:mime});
-            } catch (e) {
-                console.error("Base64 parsing failed", e);
-                return null;
-            }
-        }
-
-        // Helper to fetch image as blob
-        async function fetchImageAsBlob(url) {
-            try {
-                const res = await fetch(url);
-                if (!res.ok) throw new Error('Fetch failed');
-                return await res.blob();
-            } catch (e) {
-                console.warn(`Failed to fetch image: ${url}`, e);
-                return null;
-            }
-        }
-
-        // Clean filename from url
-        function getFilenameFromUrl(url) {
-            let filename = '';
-            try {
-                const parsed = new URL(url);
-                filename = parsed.pathname.substring(parsed.pathname.lastIndexOf('/') + 1);
-            } catch (e) {
-                filename = url.substring(url.lastIndexOf('/') + 1);
-            }
-            filename = filename.split(/[?#]/)[0]; // Remove query params or hashes
-            if (!filename) {
-                filename = 'image_' + Math.random().toString(36).substring(2, 7) + '.png';
-            }
-            return filename.replace(/[^a-zA-Z0-9_.-]/g, '_');
-        }
-
-        // Handle Download Confirmation
-        dlModalConfirmBtn.addEventListener('click', async () => {
-            if (!processedHtmlContent) return;
-            
-            // Set loading state
-            dlModalConfirmBtn.disabled = true;
-            const originalText = dlModalConfirmBtn.textContent;
-            dlModalConfirmBtn.textContent = 'Processando...';
-            
-            const format = document.querySelector('input[name="dl-format"]:checked').value;
-            const usePicker = dlUsePicker.checked;
-            
-            const baseName = uploadedFileName.substring(0, uploadedFileName.lastIndexOf('.')) || 'template';
-            const defaultFileName = `processed_${baseName}_${currentInstitution}`;
-            
-            try {
-                if (format === 'html') {
-                    // Single HTML File Download
-                    const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8' });
-                    await triggerFileSave(blob, `${defaultFileName}.html`, 'html', usePicker);
-                } else {
-                    // Zip Package Download
-                    addLog('info', 'A inicializar empacotamento ZIP...');
-                    const JSZip = await loadJSZip();
-                    const zip = new JSZip();
-                    
-                    // Clone document so we can rewrite image paths
-                    const zipDoc = parsedDoc.cloneNode(true);
-                    
-                    // Find all images
-                    const imageUrls = extractImageUrls(zipDoc);
-                    addLog('info', `Encontradas ${imageUrls.length} imagens no template. A descarregar...`);
-                    
-                    const imagesFolder = zip.folder("images");
-                    
-                    let base64Count = 0;
-                    for (const url of imageUrls) {
-                        let blob = null;
-                        let filename = '';
-                        
-                        if (url.startsWith('data:')) {
-                            base64Count++;
-                            blob = dataURLtoBlob(url);
-                            let ext = 'png';
-                            const mimeMatch = url.match(/data:image\/([a-zA-Z+]+);base64/);
-                            if (mimeMatch) ext = mimeMatch[1];
-                            filename = `imagem_carregada_${base64Count}.${ext}`;
-                        } else {
-                            addLog('info', `A descarregar imagem: ${url.substring(0, 50)}...`);
-                            blob = await fetchImageAsBlob(url);
-                            if (blob) filename = getFilenameFromUrl(url);
-                        }
-                        
-                        if (blob) {
-                            // Add image blob to zip images folder
-                            imagesFolder.file(filename, blob);
-                            
-                            // Rewrite paths in cloned document to reference local path
-                            const localPath = `images/${filename}`;
-                            
-                            // Replace in <img> tags
-                            zipDoc.querySelectorAll('img').forEach(img => {
-                                if (img.getAttribute('src') === url) {
-                                    img.setAttribute('src', localPath);
-                                }
-                            });
-                            // Replace in background attributes
-                            zipDoc.querySelectorAll('[background]').forEach(el => {
-                                if (el.getAttribute('background') === url) {
-                                    el.setAttribute('background', localPath);
-                                }
-                            });
-                            // Replace in inline style url(...)
-                            zipDoc.querySelectorAll('[style]').forEach(el => {
-                                let style = el.getAttribute('style') || '';
-                                if (style.includes(url)) {
-                                    const escapedUrl = url.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                                    const regex = new RegExp(`url\\(['"]?${escapedUrl}['"]?\\)`, 'gi');
-                                    style = style.replace(regex, `url('${localPath}')`);
-                                    el.setAttribute('style', style);
-                                }
-                            });
-                            addLog('success', `Imagem empacotada com sucesso: ${filename}`);
-                        } else {
-                            addLog('warning', `Não foi possível descarregar imagem (CORS/Rede): ${url.substring(0, 50)}... A manter URL original.`);
-                        }
-                    }
-                    
-                    // Re-serialize modified document
-                    let doctypeString = '';
-                    if (zipDoc.doctype) {
-                        doctypeString = new XMLSerializer().serializeToString(zipDoc.doctype) + '\n';
-                    }
-                    const finalHtml = doctypeString + zipDoc.documentElement.outerHTML;
-                    
-                    zip.file(`${defaultFileName}.html`, finalHtml);
-                    
-                    addLog('info', 'A gerar arquivo ZIP...');
-                    const zipBlob = await zip.generateAsync({ type: "blob" });
-                    await triggerFileSave(zipBlob, `${defaultFileName}.zip`, 'zip', usePicker);
-                }
-            } catch (err) {
-                console.error("Download processing error", err);
-                addLog('error', `Erro no download: ${err.message}`);
-            } finally {
-                dlModalConfirmBtn.disabled = false;
-                dlModalConfirmBtn.textContent = originalText;
-                closeDlModal();
-            }
-        });
-
-        // Trigger native file save or normal download
-        async function triggerFileSave(contentBlob, defaultFileName, fileType, usePicker) {
-            if (usePicker && 'showSaveFilePicker' in window) {
-                try {
-                    const options = {
-                        suggestedName: defaultFileName,
-                        types: []
-                    };
-                    if (fileType === 'zip') {
-                        options.types.push({
-                            description: 'Pasta Compactada (.zip)',
-                            accept: { 'application/zip': ['.zip'] }
-                        });
-                    } else {
-                        options.types.push({
-                            description: 'Ficheiro HTML (.html)',
-                            accept: { 'text/html': ['.html'] }
-                        });
-                    }
-                    
-                    const handle = await window.showSaveFilePicker(options);
-                    const writable = await handle.createWritable();
-                    await writable.write(contentBlob);
-                    await writable.close();
-                    addLog('success', `Guardado com sucesso em: ${handle.name}`);
-                    return true;
-                } catch (err) {
-                    if (err.name === 'AbortError') {
-                        addLog('info', 'Gravação cancelada pelo utilizador.');
-                        return false;
-                    }
-                    console.error('Save File Picker failed, falling back', err);
-                }
-            }
-            
-            // Standard fallback download link
-            const url = URL.createObjectURL(contentBlob);
+            const blob = new Blob([processedHtmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = defaultFileName;
+            a.download = 'processed_' + uploadedFileName;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            addLog('success', `Ficheiro descarregado: ${defaultFileName}`);
-            return true;
-        }
+            addLog('success', `Ficheiro descarregado: processed_${uploadedFileName}`);
+        });
 
         // Ctrl+Z Undo key binding (excluding active text input areas to allow native browser undo/redo)
         document.addEventListener('keydown', (e) => {
@@ -3490,6 +3317,311 @@
                 }
             }
         });
+
+        // ===============================================================
+        // ===================== HTML PAGE MODE LOGIC ====================
+        // ===============================================================
+
+        // --- Core processing functions ---
+
+        function applyLinkSettings(doc, settings) {
+            const anchors = Array.from(doc.querySelectorAll('a'));
+            const processed = [];
+            
+            anchors.forEach(a => {
+                const href = a.getAttribute('href') || '';
+                const isExternal = /^(https?:)?\/\//i.test(href) && !href.includes(location.hostname);
+                
+                // 1. Target handling
+                if (settings.linkTarget === 'new') {
+                    a.setAttribute('target', '_blank');
+                } else if (settings.linkTarget === 'same') {
+                    a.removeAttribute('target');
+                }
+                // 'prompt' => leave untouched
+                
+                // 2. External-only new tab (overrides general setting for externals)
+                if (settings.externalNewTab && isExternal) {
+                    a.setAttribute('target', '_blank');
+                }
+                
+                // 3. rel="noopener noreferrer"
+                if (settings.addNoopener) {
+                    const rel = a.getAttribute('rel') || '';
+                    const parts = new Set(rel.split(' ').filter(Boolean));
+                    parts.add('noopener');
+                    parts.add('noreferrer');
+                    a.setAttribute('rel', Array.from(parts).join(' '));
+                }
+                
+                // 4. Convert to text (collect, don't modify during iteration)
+                if (settings.convertLinksToText) {
+                    processed.push(a);
+                }
+            });
+            
+            // Convert links to text after iteration to avoid modifying live NodeList
+            if (settings.convertLinksToText) {
+                processed.forEach(a => {
+                    const textNode = doc.createTextNode(a.textContent);
+                    if (a.parentNode) {
+                        a.parentNode.replaceChild(textNode, a);
+                    }
+                });
+                addLog('info', `${processed.length} link(s) convertidos em texto.`);
+            }
+            
+            return anchors.length - processed.length;
+        }
+
+        function sanitiseDocument(doc) {
+            let removed = 0;
+            // Remove dangerous tags
+            const dangerousTags = ['script', 'iframe', 'object', 'embed', 'applet'];
+            dangerousTags.forEach(tag => {
+                const els = doc.querySelectorAll(tag);
+                els.forEach(el => { el.remove(); removed++; });
+            });
+            
+            // Remove inline event handlers (onclick, onload, onerror, etc.)
+            const allElements = doc.querySelectorAll('*');
+            allElements.forEach(el => {
+                const attrs = Array.from(el.attributes || []);
+                attrs.forEach(attr => {
+                    if (attr.name.toLowerCase().startsWith('on')) {
+                        el.removeAttribute(attr.name);
+                        removed++;
+                    }
+                });
+                // Remove javascript: hrefs
+                if (el.tagName === 'A' && el.getAttribute('href') && el.getAttribute('href').trim().toLowerCase().startsWith('javascript:')) {
+                    el.setAttribute('href', '#');
+                    removed++;
+                }
+            });
+            
+            if (removed > 0) {
+                addLog('success', `Sanitização: ${removed} elemento(s)/atributo(s) perigosos removidos.`);
+            }
+            return removed;
+        }
+
+        function injectCustomCSS(doc, css) {
+            if (!css || !css.trim()) return;
+            const existing = doc.querySelector('style[data-custom-inject]');
+            if (existing) existing.remove();
+            const styleEl = doc.createElement('style');
+            styleEl.setAttribute('data-custom-inject', 'true');
+            styleEl.textContent = css;
+            if (doc.head) {
+                doc.head.appendChild(styleEl);
+            } else {
+                doc.documentElement.insertBefore(styleEl, doc.documentElement.firstChild);
+            }
+            addLog('info', 'CSS personalizado injetado.');
+        }
+
+        function enforceUtf8Meta(doc) {
+            if (!doc.head) return;
+            const existing = doc.querySelector('meta[charset]');
+            if (!existing) {
+                const meta = doc.createElement('meta');
+                meta.setAttribute('charset', 'UTF-8');
+                doc.head.insertBefore(meta, doc.head.firstChild);
+                addLog('info', 'Meta charset UTF-8 inserido.');
+            }
+        }
+
+        function processHtmlPageMode(doc) {
+            addLog('info', 'Modo HTML Page: A aplicar pipeline...');
+            
+            // 1. Footer replacement (conditional)
+            if (!htmlSettings.disableFooter) {
+                runFooterReplacementOnDOM(doc, currentInstitution);
+            } else {
+                addLog('info', 'Substituição de rodapé desativada (modo HTML).');
+            }
+            
+            // 2. UTF-8 enforcement
+            if (htmlSettings.forceUtf8) {
+                enforceUtf8Meta(doc);
+            }
+            
+            // 3. Sanitisation
+            if (htmlSettings.sanitise) {
+                sanitiseDocument(doc);
+            }
+            
+            // 4. Link settings
+            const remaining = applyLinkSettings(doc, htmlSettings);
+            addLog('info', `${remaining} link(s) processados com configurações de links.`);
+            
+            // 5. Custom CSS injection
+            if (htmlSettings.customCSS.trim()) {
+                injectCustomCSS(doc, htmlSettings.customCSS);
+            }
+            
+            addLog('success', 'Pipeline HTML Page concluído.');
+        }
+
+        // --- Mode Switching ---
+
+        const modeSelect = document.getElementById('editor-mode-select');
+        const modeIndicator = document.getElementById('mode-indicator');
+        const htmlOptionsPanel = document.getElementById('html-options-panel');
+
+        function switchMode(mode) {
+            editorMode = mode;
+            localStorage.setItem('editorMode', mode);
+            
+            // Update indicator badge
+            if (mode === 'email') {
+                modeIndicator.textContent = 'EMAIL';
+                modeIndicator.className = 'mode-indicator email-mode';
+                document.body.classList.remove('html-page-mode');
+                htmlOptionsPanel.classList.remove('visible');
+            } else {
+                modeIndicator.textContent = 'HTML';
+                modeIndicator.className = 'mode-indicator html-mode';
+                document.body.classList.add('html-page-mode');
+                htmlOptionsPanel.classList.add('visible');
+            }
+            
+            addLog('info', `Modo alterado para: ${mode === 'email' ? 'Email' : 'HTML Page'}`);
+            
+            // If document already loaded, re-process
+            if (parsedDoc && rawHtmlContent) {
+                const parser = new DOMParser();
+                parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
+                if (mode === 'email') {
+                    runFooterReplacementOnDOM(parsedDoc, currentInstitution);
+                } else {
+                    processHtmlPageMode(parsedDoc);
+                }
+                updateFromDOM();
+            }
+        }
+
+        modeSelect.addEventListener('change', (e) => {
+            switchMode(e.target.value);
+        });
+
+        // --- Options Panel Persistence ---
+
+        function saveHtmlSetting(key, value) {
+            htmlSettings[key] = value;
+            localStorage.setItem('html' + key.charAt(0).toUpperCase() + key.slice(1), String(value));
+        }
+
+        // Wire option controls
+        const optLinkTarget = document.getElementById('opt-link-target');
+        const optExternalNewTab = document.getElementById('opt-external-new-tab');
+        const optAddNoopener = document.getElementById('opt-add-noopener');
+        const optConvertLinks = document.getElementById('opt-convert-links');
+        const optSanitise = document.getElementById('opt-sanitise');
+        const optForceUtf8 = document.getElementById('opt-force-utf8');
+        const optDisableFooter = document.getElementById('opt-disable-footer');
+        const optCustomCSS = document.getElementById('opt-custom-css');
+        const optPreviewMode = document.getElementById('opt-preview-mode');
+
+        // Initialize UI from saved settings
+        function initHtmlModeUI() {
+            modeSelect.value = editorMode;
+            optLinkTarget.value = htmlSettings.linkTarget;
+            optExternalNewTab.checked = htmlSettings.externalNewTab;
+            optAddNoopener.checked = htmlSettings.addNoopener;
+            optConvertLinks.checked = htmlSettings.convertLinksToText;
+            optSanitise.checked = htmlSettings.sanitise;
+            optForceUtf8.checked = htmlSettings.forceUtf8;
+            optDisableFooter.checked = htmlSettings.disableFooter;
+            optCustomCSS.value = htmlSettings.customCSS;
+            optPreviewMode.value = htmlSettings.previewMode;
+            
+            // Apply initial mode
+            if (editorMode === 'html') {
+                modeIndicator.textContent = 'HTML';
+                modeIndicator.className = 'mode-indicator html-mode';
+                document.body.classList.add('html-page-mode');
+                htmlOptionsPanel.classList.add('visible');
+            }
+        }
+
+        // Bind change events
+        optLinkTarget.addEventListener('change', (e) => {
+            saveHtmlSetting('linkTarget', e.target.value);
+        });
+
+        optExternalNewTab.addEventListener('change', (e) => {
+            saveHtmlSetting('externalNewTab', e.target.checked);
+        });
+
+        optAddNoopener.addEventListener('change', (e) => {
+            saveHtmlSetting('addNoopener', e.target.checked);
+        });
+
+        optConvertLinks.addEventListener('change', (e) => {
+            saveHtmlSetting('convertLinksToText', e.target.checked);
+        });
+
+        optSanitise.addEventListener('change', (e) => {
+            saveHtmlSetting('sanitise', e.target.checked);
+        });
+
+        optForceUtf8.addEventListener('change', (e) => {
+            saveHtmlSetting('forceUtf8', e.target.checked);
+        });
+
+        optDisableFooter.addEventListener('change', (e) => {
+            saveHtmlSetting('disableFooter', e.target.checked);
+        });
+
+        optCustomCSS.addEventListener('input', (e) => {
+            saveHtmlSetting('customCSS', e.target.value);
+        });
+
+        optPreviewMode.addEventListener('change', (e) => {
+            saveHtmlSetting('previewMode', e.target.value);
+            // If in code-only mode, switch to code tab
+            if (e.target.value === 'code' && parsedDoc) {
+                showTab('code');
+            }
+        });
+
+        // --- Bulk Action Buttons ---
+
+        document.getElementById('btn-bulk-convert-links').addEventListener('click', () => {
+            if (!parsedDoc) {
+                addLog('warning', 'Nenhum documento carregado para converter links.');
+                return;
+            }
+            const anchors = Array.from(parsedDoc.querySelectorAll('a'));
+            let count = 0;
+            anchors.forEach(a => {
+                const textNode = parsedDoc.createTextNode(a.textContent);
+                if (a.parentNode) {
+                    a.parentNode.replaceChild(textNode, a);
+                    count++;
+                }
+            });
+            updateFromDOM();
+            addLog('success', `${count} link(s) convertidos em texto simples.`);
+        });
+
+        document.getElementById('btn-bulk-strip-scripts').addEventListener('click', () => {
+            if (!parsedDoc) {
+                addLog('warning', 'Nenhum documento carregado para sanitizar.');
+                return;
+            }
+            const removed = sanitiseDocument(parsedDoc);
+            updateFromDOM();
+            if (removed === 0) {
+                addLog('info', 'Documento já está limpo – nenhum elemento perigoso encontrado.');
+            }
+        });
+
+        // --- Initialize ---
+        initHtmlModeUI();
+
     </script>
 </body>
 </html>
