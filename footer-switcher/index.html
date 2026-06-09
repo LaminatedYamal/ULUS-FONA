@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Mammoth.js for DOCX to HTML conversion -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <!-- docx-preview and JSZip for high-fidelity DOCX rendering (preserves page breaks/styles) -->
+    <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+    <script src="https://unpkg.com/docx-preview/dist/docx-preview.min.js"></script>
     
     <style>
         :root {
@@ -3731,32 +3732,41 @@
                 reader.onload = function(event) {
                     const arrayBuffer = event.target.result;
                     
-                    if (typeof mammoth === 'undefined') {
-                        addLog('error', 'Biblioteca Mammoth.js não carregada!');
+                    if (typeof docx === 'undefined') {
+                        addLog('error', 'Biblioteca docx-preview não carregada!');
                         return;
                     }
                     
-                    mammoth.convertToHtml({arrayBuffer: arrayBuffer})
-                        .then(function(result) {
-                            currentDocxHtml = result.value;
-                            const messages = result.messages;
+                    // Clear previous content
+                    docxPreviewArea.innerHTML = '';
+                    
+                    // Configuration for docx-preview
+                    const options = {
+                        className: "docx", // default class name
+                        inWrapper: true, // enables rendering of wrapper around document content
+                        ignoreWidth: false, // disable rendering width of page
+                        ignoreHeight: false, // disable rendering height of page
+                        ignoreFonts: false, // disable fonts rendering
+                        breakPages: true, // enable page breaking as <section>
+                        ignoreLastRenderedPageBreak: true,
+                        experimental: false,
+                        trimXmlDeclaration: true,
+                        debug: false
+                    };
+                    
+                    docx.renderAsync(arrayBuffer, docxPreviewArea, null, options)
+                        .then(() => {
+                            // Extract the rendered HTML structure
+                            currentDocxHtml = docxPreviewArea.innerHTML;
                             
-                            // Remove empty paragraphs for cleaner output
-                            currentDocxHtml = currentDocxHtml.replace(/<p><\/p>/g, '');
-                            
-                            docxPreviewArea.innerHTML = currentDocxHtml;
                             btnDocxCopy.disabled = false;
                             btnDocxInject.disabled = false;
                             
-                            addLog('success', 'Conversão DOCX concluída com sucesso!');
-                            if(messages.length > 0) {
-                                console.warn("Mammoth messages:", messages);
-                                addLog('warning', `Aviso na conversão: ${messages.length} mensagens`);
-                            }
+                            addLog('success', 'Documento processado com sucesso! A estrutura original foi preservada.');
                         })
-                        .catch(function(err) {
-                            console.error("Erro na conversão DOCX:", err);
-                            addLog('error', `Erro na conversão DOCX: ${err.message}`);
+                        .catch(err => {
+                            console.error("Erro na renderização DOCX:", err);
+                            addLog('error', `Erro na renderização DOCX: ${err.message || 'Falha desconhecida'}`);
                         });
                 };
                 reader.readAsArrayBuffer(file);
