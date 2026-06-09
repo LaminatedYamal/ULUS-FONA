@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
+    <!-- Mammoth.js for DOCX to HTML conversion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    
     <style>
         :root {
             --bg-color: #0a0c10;
@@ -1054,6 +1057,36 @@
             background: rgba(248, 113, 113, 0.05);
         }
 
+        /* Docx Preview Area */
+        .docx-upload-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        .docx-preview-box {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: inherit;
+        }
+        .docx-preview-box:empty::before {
+            content: "Nenhum documento carregado...";
+            font-style: italic;
+            opacity: 0.5;
+        }
+        .docx-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .docx-actions button {
+            flex: 1;
+        }
+
         /* Mode indicator badge */
         .mode-indicator {
             font-size: 0.65rem;
@@ -1300,6 +1333,35 @@
                     </div>
                 </details>
 
+                <!-- Docx to HTML Converter -->
+                <details class="options-details">
+                    <summary id="html-docx-options-summary">Word/Doc → HTML</summary>
+                    <div class="options-grid">
+                        <div class="option-row" style="flex-direction: column; align-items: stretch; width: 100%;">
+                            <div class="docx-upload-container">
+                                <label class="file-label" style="text-align: center; border-radius: 6px; padding: 0.8rem; border: 1px dashed rgba(255,255,255,0.2); cursor: pointer;">
+                                    <input type="file" id="docx-file-input" accept=".docx" style="display: none;">
+                                    <svg style="width: 20px; height: 20px; margin-bottom: 0.5rem; color: var(--accent-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+                                    <div id="docx-upload-text" style="font-size: 0.85rem; color: var(--text-muted);">Carregar ficheiro .docx</div>
+                                </label>
+                                
+                                <div id="docx-preview-area" class="docx-preview-box"></div>
+                                
+                                <div class="docx-actions">
+                                    <button class="bulk-btn" id="btn-docx-copy" disabled title="Copiar HTML gerado">
+                                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                        <span id="btn-docx-copy-text">Copiar HTML</span>
+                                    </button>
+                                    <button class="bulk-btn" id="btn-docx-inject" disabled title="Inserir no editor">
+                                        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/></svg>
+                                        <span id="btn-docx-inject-text">Inserir no Editor</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
                 <div class="bulk-actions">
                     <button class="bulk-btn" id="btn-bulk-convert-links" title="Converter todos os links em texto simples">
                         <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
@@ -1499,7 +1561,12 @@
                 optPreviewCode: "Só Código",
                 btnBulkConvert: "Converter Links",
                 btnBulkStrip: "Limpar Scripts",
-                cssPH: "/* Adicione CSS personalizado aqui */"
+                cssPH: "/* Adicione CSS personalizado aqui */",
+                docxTitle: "Word/Doc → HTML",
+                docxUpload: "Carregar ficheiro .docx",
+                docxCopy: "Copiar HTML",
+                docxInject: "Inserir no Editor",
+                docxEmptyPreview: "Nenhum documento carregado..."
             },
             en: {
                 title: "ULUS-FONA | Advanced Email Block Editor",
@@ -1553,7 +1620,12 @@
                 optPreviewCode: "Code Only",
                 btnBulkConvert: "Convert Links",
                 btnBulkStrip: "Strip Scripts",
-                cssPH: "/* Add custom CSS here */"
+                cssPH: "/* Add custom CSS here */",
+                docxTitle: "Word/Doc → HTML",
+                docxUpload: "Upload .docx file",
+                docxCopy: "Copy HTML",
+                docxInject: "Insert into Editor",
+                docxEmptyPreview: "No document loaded..."
             }
         };
 
@@ -1673,6 +1745,28 @@
             // CSS placeholder
             const cssArea = document.getElementById('opt-custom-css');
             if (cssArea) cssArea.placeholder = t.cssPH;
+            
+            // Docx UI translations
+            const docxSummary = document.getElementById('html-docx-options-summary');
+            if (docxSummary) docxSummary.textContent = t.docxTitle;
+            const docxUploadText = document.getElementById('docx-upload-text');
+            if (docxUploadText) docxUploadText.textContent = t.docxUpload;
+            const docxCopyText = document.getElementById('btn-docx-copy-text');
+            if (docxCopyText) docxCopyText.textContent = t.docxCopy;
+            const docxInjectText = document.getElementById('btn-docx-inject-text');
+            if (docxInjectText) docxInjectText.textContent = t.docxInject;
+            
+            const docxPreviewBox = document.getElementById('docx-preview-area');
+            if (docxPreviewBox && docxPreviewBox.innerHTML === '') {
+                // Update empty state via pseudo-element dynamically by adding a style rule
+                let styleEl = document.getElementById('dynamic-translations-style');
+                if (!styleEl) {
+                    styleEl = document.createElement('style');
+                    styleEl.id = 'dynamic-translations-style';
+                    document.head.appendChild(styleEl);
+                }
+                styleEl.textContent = `.docx-preview-box:empty::before { content: "${t.docxEmptyPreview}"; }`;
+            }
             
             renderBlockList();
         }
@@ -3618,6 +3712,101 @@
                 addLog('info', 'Documento já está limpo – nenhum elemento perigoso encontrado.');
             }
         });
+
+        // --- Docx to HTML Logic ---
+        const docxFileInput = document.getElementById('docx-file-input');
+        const docxPreviewArea = document.getElementById('docx-preview-area');
+        const btnDocxCopy = document.getElementById('btn-docx-copy');
+        const btnDocxInject = document.getElementById('btn-docx-inject');
+        let currentDocxHtml = '';
+
+        if (docxFileInput) {
+            docxFileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                addLog('info', `A processar ficheiro DOCX: ${file.name}`);
+                
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const arrayBuffer = event.target.result;
+                    
+                    if (typeof mammoth === 'undefined') {
+                        addLog('error', 'Biblioteca Mammoth.js não carregada!');
+                        return;
+                    }
+                    
+                    mammoth.convertToHtml({arrayBuffer: arrayBuffer})
+                        .then(function(result) {
+                            currentDocxHtml = result.value;
+                            const messages = result.messages;
+                            
+                            // Remove empty paragraphs for cleaner output
+                            currentDocxHtml = currentDocxHtml.replace(/<p><\/p>/g, '');
+                            
+                            docxPreviewArea.innerHTML = currentDocxHtml;
+                            btnDocxCopy.disabled = false;
+                            btnDocxInject.disabled = false;
+                            
+                            addLog('success', 'Conversão DOCX concluída com sucesso!');
+                            if(messages.length > 0) {
+                                console.warn("Mammoth messages:", messages);
+                                addLog('warning', `Aviso na conversão: ${messages.length} mensagens`);
+                            }
+                        })
+                        .catch(function(err) {
+                            console.error("Erro na conversão DOCX:", err);
+                            addLog('error', `Erro na conversão DOCX: ${err.message}`);
+                        });
+                };
+                reader.readAsArrayBuffer(file);
+            });
+        }
+        
+        if (btnDocxCopy) {
+            btnDocxCopy.addEventListener('click', () => {
+                if (!currentDocxHtml) return;
+                navigator.clipboard.writeText(currentDocxHtml).then(() => {
+                    addLog('success', 'HTML do documento copiado para a área de transferência.');
+                }).catch(err => {
+                    addLog('error', 'Falha ao copiar HTML.');
+                });
+            });
+        }
+        
+        if (btnDocxInject) {
+            btnDocxInject.addEventListener('click', () => {
+                if (!currentDocxHtml) return;
+                
+                if (editorMode !== 'html') {
+                    addLog('warning', 'A injeção apenas é recomendada no Modo HTML Page.');
+                }
+                
+                // If there's an existing document, append to body, else set as new document
+                if (parsedDoc && parsedDoc.body) {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = currentDocxHtml;
+                    while (tempDiv.firstChild) {
+                        parsedDoc.body.appendChild(tempDiv.firstChild);
+                    }
+                    rawHtmlContent = parsedDoc.documentElement.outerHTML;
+                } else {
+                    rawHtmlContent = `<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>${currentDocxHtml}</body></html>`;
+                    const parser = new DOMParser();
+                    parsedDoc = parser.parseFromString(rawHtmlContent, 'text/html');
+                }
+                
+                if (editorMode === 'html') {
+                    processHtmlPageMode(parsedDoc);
+                }
+                
+                updateFromDOM();
+                emptyPlaceholder.style.display = 'none';
+                downloadBtn.disabled = false;
+                
+                addLog('success', 'HTML do documento inserido no editor.');
+            });
+        }
 
         // --- Initialize ---
         initHtmlModeUI();
