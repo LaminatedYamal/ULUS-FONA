@@ -231,8 +231,8 @@
     "adsKeywords": [
       {
         "term": "curso artes",
-        "impressions": 49410.0,
-        "clicks": 5397.0,
+        "impressions": 49429.0,
+        "clicks": 5399.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -590,7 +590,7 @@
         "high": 0.0
       },
       {
-        "term": "Mestrado em Design e Produção de moda",
+        "term": "design moda universidade portugal",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -598,7 +598,7 @@
         "high": 0.0
       },
       {
-        "term": "design moda universidade portugal",
+        "term": "Mestrado em Design e Produção de moda",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -1314,7 +1314,7 @@
     "adsKeywords": [
       {
         "term": "engenharia som",
-        "impressions": 4235.0,
+        "impressions": 4241.0,
         "clicks": 906.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1322,8 +1322,8 @@
       },
       {
         "term": "licenciatura som",
-        "impressions": 852.0,
-        "clicks": 155.0,
+        "impressions": 853.0,
+        "clicks": 156.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1970,15 +1970,15 @@
     "adsKeywords": [
       {
         "term": "ciencias comunicação",
-        "impressions": 39149.0,
-        "clicks": 5692.0,
+        "impressions": 39192.0,
+        "clicks": 5695.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade comunicação social",
-        "impressions": 20334.0,
+        "impressions": 20345.0,
         "clicks": 3621.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1986,7 +1986,7 @@
       },
       {
         "term": "licenciatura comunicação",
-        "impressions": 5855.0,
+        "impressions": 5859.0,
         "clicks": 586.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2415,8 +2415,8 @@
     "adsKeywords": [
       {
         "term": "curso desporto",
-        "impressions": 42877.0,
-        "clicks": 6874.0,
+        "impressions": 42934.0,
+        "clicks": 6876.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4528,15 +4528,15 @@
       },
       {
         "term": "licenciatura ciência de dados",
-        "impressions": 5506.0,
-        "clicks": 494.0,
+        "impressions": 5510.0,
+        "clicks": 495.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "ciência de dados ISCTE",
-        "impressions": 2080.0,
+        "impressions": 2081.0,
         "clicks": 150.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4560,7 +4560,7 @@
       },
       {
         "term": "licenciatura data science",
-        "impressions": 661.0,
+        "impressions": 663.0,
         "clicks": 66.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4702,8 +4702,8 @@
     "adsKeywords": [
       {
         "term": "engenharia informática",
-        "impressions": 127037.0,
-        "clicks": 19178.0,
+        "impressions": 127047.0,
+        "clicks": 19181.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5051,16 +5051,16 @@
     "adsKeywords": [
       {
         "term": "psicologia lisboa",
-        "impressions": 82498.0,
-        "clicks": 15183.0,
+        "impressions": 82543.0,
+        "clicks": 15188.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso psicologia",
-        "impressions": 48614.0,
-        "clicks": 8631.0,
+        "impressions": 48686.0,
+        "clicks": 8637.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5318,7 +5318,7 @@
     "adsKeywords": [
       {
         "term": "faculdade biologia",
-        "impressions": 25487.0,
+        "impressions": 25509.0,
         "clicks": 4513.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5489,7 +5489,7 @@
       },
       {
         "term": "licenciatura bioquímica",
-        "impressions": 513.0,
+        "impressions": 517.0,
         "clicks": 31.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9964,7 +9964,7 @@
         "high": 0.0
       },
       {
-        "term": "php educação",
+        "term": "mestrado educação fisica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -9972,7 +9972,7 @@
         "high": 0.0
       },
       {
-        "term": "mestrado educação fisica",
+        "term": "php educação",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -20591,8 +20591,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "09/06/2026, 01:54:55",
-    "lastSync": "09/06/2026, 01:54:55",
+    "last_sync_at": "10/06/2026, 02:06:29",
+    "lastSync": "10/06/2026, 02:06:29",
     "totalAdsCourses": 237
   },
   {
