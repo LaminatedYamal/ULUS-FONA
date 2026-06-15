@@ -1,4 +1,4 @@
-console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData = [
+console.log('Telemetry Sync (Special): 2026-06-15 10:21:18'); window.specialData = [
     {
         "Url":  "https://www.ensinolusofona.pt",
         "Course":  "Www.Ensinolusofona.Pt",
@@ -6,7 +6,7 @@ console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-15 09:51:17",
+        "LastChecked":  "2026-06-15 10:21:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -17,7 +17,7 @@ console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-15 09:51:18",
+        "LastChecked":  "2026-06-15 10:21:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -28,7 +28,7 @@ console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-15 09:51:18",
+        "LastChecked":  "2026-06-15 10:21:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -39,7 +39,7 @@ console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-15 09:51:18",
+        "LastChecked":  "2026-06-15 10:21:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -50,7 +50,7 @@ console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-15 09:51:19",
+        "LastChecked":  "2026-06-15 10:21:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -61,7 +61,7 @@ console.log('Telemetry Sync (Special): 2026-06-15 09:51:19'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-15 09:51:19",
+        "LastChecked":  "2026-06-15 10:21:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     }
