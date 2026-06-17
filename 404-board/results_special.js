@@ -1,68 +1,68 @@
-console.log('Telemetry Sync (Special): 2026-06-17 16:04:41'); window.specialData = [
+console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData = [
     {
         "Url":  "https://www.ensinolusofona.pt",
         "Course":  "Www.Ensinolusofona.Pt",
         "Institution":  "Outros",
-        "StatusCode":  301,
-        "Status":  "OK",
-        "Message":  "HTTP 301",
-        "LastChecked":  "2026-06-17 16:04:28",
-        "FirstDownDate":  "",
-        "ConsecutiveDaysDown":  0
+        "StatusCode":  500,
+        "Status":  "Error",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:42",
+        "FirstDownDate":  "2026-06-17",
+        "ConsecutiveDaysDown":  1
     },
     {
         "Url":  "https://www.ismat.pt",
         "Course":  "Www.Ismat.Pt",
         "Institution":  "ISMAT",
-        "StatusCode":  200,
-        "Status":  "OK",
-        "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 16:04:29",
-        "FirstDownDate":  "",
-        "ConsecutiveDaysDown":  0
+        "StatusCode":  500,
+        "Status":  "Error",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:42",
+        "FirstDownDate":  "2026-06-17",
+        "ConsecutiveDaysDown":  1
     },
     {
         "Url":  "https://www.ipluso.pt",
         "Course":  "Www.Ipluso.Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  200,
-        "Status":  "OK",
-        "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 16:04:32",
-        "FirstDownDate":  "",
-        "ConsecutiveDaysDown":  0
+        "StatusCode":  500,
+        "Status":  "Error",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:42",
+        "FirstDownDate":  "2026-06-17",
+        "ConsecutiveDaysDown":  1
     },
     {
         "Url":  "https://www.islagaia.pt",
         "Course":  "Www.Islagaia.Pt",
         "Institution":  "ISLA Gaia",
-        "StatusCode":  200,
-        "Status":  "OK",
-        "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 16:04:36",
-        "FirstDownDate":  "",
-        "ConsecutiveDaysDown":  0
+        "StatusCode":  500,
+        "Status":  "Error",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:42",
+        "FirstDownDate":  "2026-06-17",
+        "ConsecutiveDaysDown":  1
     },
     {
         "Url":  "https://www.islasantarem.pt",
         "Course":  "Www.Islasantarem.Pt",
         "Institution":  "Outros",
-        "StatusCode":  200,
-        "Status":  "OK",
-        "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 16:04:36",
-        "FirstDownDate":  "",
-        "ConsecutiveDaysDown":  0
+        "StatusCode":  500,
+        "Status":  "Error",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:42",
+        "FirstDownDate":  "2026-06-17",
+        "ConsecutiveDaysDown":  1
     },
     {
         "Url":  "https://investigacao.ulusofona.pt",
         "Course":  "Investigacao.Ulusofona.Pt",
         "Institution":  "Outros",
-        "StatusCode":  200,
-        "Status":  "OK",
-        "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 16:04:41",
-        "FirstDownDate":  "",
-        "ConsecutiveDaysDown":  0
+        "StatusCode":  500,
+        "Status":  "Error",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:42",
+        "FirstDownDate":  "2026-06-17",
+        "ConsecutiveDaysDown":  1
     }
 ];
