@@ -1,4 +1,4 @@
-console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData = [
+console.log('Telemetry Sync (Special): 2026-06-17 16:50:44'); window.specialData = [
     {
         "Url":  "https://www.ensinolusofona.pt",
         "Course":  "Www.Ensinolusofona.Pt",
@@ -6,7 +6,7 @@ console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:20:42",
+        "LastChecked":  "2026-06-17 16:50:44",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -17,7 +17,7 @@ console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:20:42",
+        "LastChecked":  "2026-06-17 16:50:44",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -28,7 +28,7 @@ console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:20:42",
+        "LastChecked":  "2026-06-17 16:50:44",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -39,7 +39,7 @@ console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:20:42",
+        "LastChecked":  "2026-06-17 16:50:44",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -50,7 +50,7 @@ console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:20:42",
+        "LastChecked":  "2026-06-17 16:50:44",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -61,7 +61,7 @@ console.log('Telemetry Sync (Special): 2026-06-17 16:20:42'); window.specialData
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:20:42",
+        "LastChecked":  "2026-06-17 16:50:44",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     }
