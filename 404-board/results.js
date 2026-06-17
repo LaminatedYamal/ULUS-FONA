@@ -1,4 +1,4 @@
-console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData = [
+console.log('Telemetry Sync (Main): 2026-06-17 16:20:38'); window.telemetryData = [
     {
         "Url":  "https://www.ulusofona.pt/lisboa/licenciaturas/gestao-aeronautica",
         "Course":  "Gestao Aeronautica",
@@ -6,7 +6,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:01",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -17,7 +17,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:01",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -28,7 +28,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:01",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -39,7 +39,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -50,7 +50,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -61,7 +61,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -72,7 +72,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -83,7 +83,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -94,7 +94,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:02",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -105,7 +105,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -116,7 +116,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -127,7 +127,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -138,7 +138,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -149,7 +149,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -160,7 +160,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:02",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -171,7 +171,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -182,7 +182,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -193,7 +193,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -204,7 +204,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:03",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -215,7 +215,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -226,7 +226,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -237,7 +237,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -248,7 +248,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -259,7 +259,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -270,7 +270,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -281,7 +281,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:03",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -292,7 +292,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:04",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -303,7 +303,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:04",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -314,7 +314,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:04",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -325,7 +325,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:04",
+        "LastChecked":  "2026-06-17 16:20:04",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -336,7 +336,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:04",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -347,7 +347,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:04",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -358,7 +358,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -369,7 +369,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -380,7 +380,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -391,7 +391,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -402,7 +402,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -413,7 +413,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -424,7 +424,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -435,7 +435,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -446,7 +446,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:05",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -457,7 +457,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -468,7 +468,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:05",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -479,7 +479,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -490,7 +490,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -501,7 +501,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -512,7 +512,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -523,7 +523,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -534,7 +534,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -545,7 +545,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -556,7 +556,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -567,7 +567,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:06",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -578,7 +578,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -589,7 +589,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -600,7 +600,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:06",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -611,7 +611,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -622,7 +622,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -633,7 +633,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -644,7 +644,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -655,7 +655,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -666,7 +666,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -677,7 +677,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -688,7 +688,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -699,7 +699,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:07",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -710,7 +710,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -721,7 +721,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -732,7 +732,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:07",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -743,7 +743,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -754,7 +754,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -765,7 +765,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -776,7 +776,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -787,7 +787,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -798,7 +798,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -809,7 +809,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -820,7 +820,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -831,7 +831,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:08",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -842,7 +842,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -853,7 +853,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:08",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -864,7 +864,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -875,7 +875,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -886,7 +886,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -897,7 +897,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -908,7 +908,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -919,7 +919,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -930,7 +930,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -941,7 +941,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -952,7 +952,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:09",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -963,7 +963,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -974,7 +974,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:09",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -985,7 +985,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -996,7 +996,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1007,7 +1007,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1018,7 +1018,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1029,7 +1029,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1040,7 +1040,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1051,7 +1051,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1062,7 +1062,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1073,7 +1073,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1084,7 +1084,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:10",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1095,7 +1095,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1106,7 +1106,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:10",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1117,7 +1117,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1128,7 +1128,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1139,7 +1139,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1150,7 +1150,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1161,7 +1161,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1172,7 +1172,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1183,7 +1183,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1194,7 +1194,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1205,7 +1205,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:11",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1216,7 +1216,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1227,7 +1227,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1238,7 +1238,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:11",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1249,7 +1249,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1260,7 +1260,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1271,7 +1271,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1282,7 +1282,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1293,7 +1293,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1304,7 +1304,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1315,7 +1315,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1326,7 +1326,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:12",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1337,7 +1337,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1348,7 +1348,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1359,7 +1359,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:12",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1370,7 +1370,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1381,7 +1381,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1392,7 +1392,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1403,7 +1403,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1414,7 +1414,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1425,7 +1425,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1436,7 +1436,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1447,7 +1447,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:13",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1458,7 +1458,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1469,7 +1469,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:13",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1480,7 +1480,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1491,7 +1491,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1502,7 +1502,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1513,7 +1513,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1524,7 +1524,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1535,7 +1535,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1546,7 +1546,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1557,7 +1557,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1568,7 +1568,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:14",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1579,7 +1579,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1590,7 +1590,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:14",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1601,7 +1601,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1612,7 +1612,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1623,7 +1623,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1634,7 +1634,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1645,7 +1645,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1656,7 +1656,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1667,7 +1667,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1678,7 +1678,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1689,7 +1689,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1700,7 +1700,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:15",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1711,7 +1711,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:15",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1722,7 +1722,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1733,7 +1733,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1744,7 +1744,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1755,7 +1755,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1766,7 +1766,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1777,7 +1777,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1788,7 +1788,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1799,7 +1799,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1810,7 +1810,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:16",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1821,7 +1821,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1832,7 +1832,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:16",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1843,7 +1843,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1854,7 +1854,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1865,7 +1865,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1876,7 +1876,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1887,7 +1887,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1898,7 +1898,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1909,7 +1909,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1920,7 +1920,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1931,7 +1931,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:17",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1942,7 +1942,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1953,7 +1953,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:17",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1964,7 +1964,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1975,7 +1975,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1986,7 +1986,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -1997,7 +1997,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2008,7 +2008,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2019,7 +2019,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2030,7 +2030,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2041,7 +2041,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2052,7 +2052,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:18",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2063,7 +2063,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2074,7 +2074,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2085,7 +2085,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:18",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2096,7 +2096,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2107,7 +2107,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2118,7 +2118,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2129,7 +2129,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2140,7 +2140,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2151,7 +2151,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  404,
         "Status":  "Error",
         "Message":  "HTTP 404",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "2026-06-15",
         "ConsecutiveDaysDown":  3
     },
@@ -2162,7 +2162,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2173,7 +2173,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2184,7 +2184,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:19",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2195,7 +2195,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:19",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2206,7 +2206,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2217,7 +2217,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2228,7 +2228,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2239,7 +2239,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2250,7 +2250,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2261,7 +2261,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2272,7 +2272,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2283,7 +2283,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2294,7 +2294,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2305,7 +2305,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:20",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2316,7 +2316,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:20",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2327,7 +2327,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2338,7 +2338,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2349,7 +2349,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2360,7 +2360,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2371,7 +2371,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2382,7 +2382,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2393,7 +2393,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2404,7 +2404,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2415,7 +2415,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2426,7 +2426,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:21",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2437,7 +2437,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2448,7 +2448,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:21",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2459,7 +2459,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2470,7 +2470,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2481,7 +2481,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2492,7 +2492,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2503,7 +2503,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2514,7 +2514,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2525,7 +2525,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2536,7 +2536,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2547,7 +2547,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2558,7 +2558,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:22",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2569,7 +2569,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:22",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2580,7 +2580,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2591,7 +2591,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2602,7 +2602,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2613,7 +2613,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2624,7 +2624,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2635,7 +2635,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2646,7 +2646,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2657,7 +2657,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2668,7 +2668,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2679,7 +2679,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:23",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2690,7 +2690,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:23",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2701,7 +2701,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2712,7 +2712,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2723,7 +2723,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2734,7 +2734,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2745,7 +2745,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2756,7 +2756,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2767,7 +2767,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2778,7 +2778,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2789,7 +2789,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:24",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2800,7 +2800,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:24",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2811,7 +2811,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2822,7 +2822,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2833,7 +2833,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2844,7 +2844,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2855,7 +2855,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2866,7 +2866,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2877,7 +2877,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2888,7 +2888,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2899,7 +2899,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:25",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2910,7 +2910,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:25",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2921,7 +2921,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2932,7 +2932,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2943,7 +2943,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2954,7 +2954,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2965,7 +2965,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2976,7 +2976,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2987,7 +2987,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -2998,7 +2998,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3009,7 +3009,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3020,7 +3020,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:26",
+        "LastChecked":  "2026-06-17 16:20:26",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3031,7 +3031,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3042,7 +3042,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3053,7 +3053,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3064,7 +3064,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3075,7 +3075,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3086,7 +3086,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3097,7 +3097,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3108,7 +3108,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3119,7 +3119,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3130,7 +3130,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3141,7 +3141,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:27",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3152,7 +3152,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:27",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3163,7 +3163,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3174,7 +3174,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3185,7 +3185,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3196,7 +3196,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3207,7 +3207,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3218,7 +3218,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3229,7 +3229,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3240,7 +3240,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3251,7 +3251,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:28",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3262,7 +3262,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3273,7 +3273,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:28",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3284,7 +3284,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3295,7 +3295,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3306,7 +3306,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3317,7 +3317,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3328,7 +3328,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3339,7 +3339,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3350,7 +3350,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3361,7 +3361,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3372,7 +3372,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:29",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3383,7 +3383,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:30",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3394,7 +3394,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-06-17 15:50:30",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -3402,10 +3402,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/arte-multimedia-pt",
         "Course":  "Arte Multimedia Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:50:45",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:29",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3413,10 +3413,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/automacao-e-sistemas-informaticos-pt",
         "Course":  "Automacao E Sistemas Informaticos Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:51:00",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3424,10 +3424,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/ciencias-biomedicas-laboratoriais-pt",
         "Course":  "Ciencias Biomedicas Laboratoriais Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:51:15",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3435,10 +3435,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/contabilidade-e-financas-pt",
         "Course":  "Contabilidade E Financas Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:51:30",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3446,10 +3446,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/educacao-basica-pt",
         "Course":  "Educacao Basica Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:51:45",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3457,10 +3457,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/enfermagem-pt",
         "Course":  "Enfermagem Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:52:00",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3468,10 +3468,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/enfermagem-veterinaria-pt",
         "Course":  "Enfermagem Veterinaria Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:52:15",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3479,10 +3479,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/engenharia-informatica-e-aplicacoes-pt",
         "Course":  "Engenharia Informatica E Aplicacoes Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:52:30",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3490,10 +3490,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/farmacia-pt",
         "Course":  "Farmacia Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:52:45",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3501,10 +3501,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/gestao-comercial-pt",
         "Course":  "Gestao Comercial Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:53:00",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3512,10 +3512,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/gestao-de-empresas-do-turismo-pt",
         "Course":  "Gestao De Empresas Do Turismo Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:53:15",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3523,10 +3523,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/gestao-empresarial-pt",
         "Course":  "Gestao Empresarial Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:53:30",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3534,10 +3534,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/ilustracao-e-desenho-pt",
         "Course":  "Ilustracao E Desenho Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:53:45",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3545,10 +3545,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/imagem-medica-e-radioterapia-pt",
         "Course":  "Imagem Medica E Radioterapia Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:54:00",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3556,10 +3556,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/licenciaturas/osteopatia-pt",
         "Course":  "Osteopatia Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:54:15",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3567,10 +3567,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/artes-visuais-e-media-digitais-pt",
         "Course":  "Artes Visuais E Media Digitais Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:54:30",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:30",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3578,10 +3578,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/desenho-pt",
         "Course":  "Desenho Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:54:45",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3589,10 +3589,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/educacao-pre-escolar-pt",
         "Course":  "Educacao Pre Escolar Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:55:00",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3600,10 +3600,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/educacao-pre-escolar-e-ensino-do-1o-ciclo-do-ensino-basico-pt",
         "Course":  "Educacao Pre Escolar E Ensino Do 1O Ciclo Do Ensino Basico Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:55:15",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3611,10 +3611,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/enfermagem-veterinaria-clinica-pt",
         "Course":  "Enfermagem Veterinaria Clinica Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:55:30",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3622,10 +3622,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/ensino-do-1o-ciclo-do-ensino-basico-e-de-matematica-e-ciencias-naturais-no-2o-ciclo-do-ensino-basico-pt",
         "Course":  "Ensino Do 1O Ciclo Do Ensino Basico E De Matematica E Ciencias Naturais No 2O Ciclo Do Ensino Basico Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:55:45",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3633,10 +3633,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/gestao-empresarial-e-negocios-digitais-pt",
         "Course":  "Gestao Empresarial E Negocios Digitais Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:56:00",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3644,10 +3644,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/ilustracao-experimental-e-narrativas-graficas-pt",
         "Course":  "Ilustracao Experimental E Narrativas Graficas Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:56:15",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3655,10 +3655,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/mestrados/saude-digital-pt",
         "Course":  "Saude Digital Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:56:30",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3666,10 +3666,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/automacao-e-seguranca-em-sistemas-informaticos-pt",
         "Course":  "Automacao E Seguranca Em Sistemas Informaticos Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:56:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3677,10 +3677,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/enfermagem-veterinaria-clinica-pt",
         "Course":  "Enfermagem Veterinaria Clinica Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:57:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3688,10 +3688,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/gestao-de-recursos-humanos-na-area-socioeducativa-pt",
         "Course":  "Gestao De Recursos Humanos Na Area Socioeducativa Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:57:16",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3699,10 +3699,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/gestao-financeira-e-fiscalidade-pt",
         "Course":  "Gestao Financeira E Fiscalidade Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:57:31",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3710,10 +3710,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/mandarim-e-cultura-chinesa-pt",
         "Course":  "Mandarim E Cultura Chinesa Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:57:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3721,10 +3721,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/osteopatia-estrutural-no-desporto-pt",
         "Course":  "Osteopatia Estrutural No Desporto Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:58:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3732,10 +3732,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/pos-graduacoes/recursos-graficos-e-visualizacao-pt",
         "Course":  "Recursos Graficos E Visualizacao Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:58:16",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3743,10 +3743,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/acompanhamento-de-criancas-e-jovens-pt",
         "Course":  "Acompanhamento De Criancas E Jovens Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:58:31",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:31",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3754,10 +3754,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/aplicacoes-informaticas-para-ciencias-de-dados-pt",
         "Course":  "Aplicacoes Informaticas Para Ciencias De Dados Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:58:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3765,10 +3765,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/assessoria-em-administracao-e-gestao-publica-pt",
         "Course":  "Assessoria Em Administracao E Gestao Publica Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:59:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3776,10 +3776,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/automacao-e-robotica-pt",
         "Course":  "Automacao E Robotica Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:59:16",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3787,10 +3787,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/bioanalises-e-controlo-pt",
         "Course":  "Bioanalises E Controlo Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:59:31",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3798,10 +3798,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/ciberseguranca-pt",
         "Course":  "Ciberseguranca Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 15:59:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3809,10 +3809,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/contabilidade-e-gestao-pt",
         "Course":  "Contabilidade E Gestao Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:00:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3820,10 +3820,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/desenvolvimento-de-sistemas-para-internet-das-coisas-pt",
         "Course":  "Desenvolvimento De Sistemas Para Internet Das Coisas Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:00:16",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3831,10 +3831,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/desenvolvimento-para-a-web-e-dispositivos-moveis-pt",
         "Course":  "Desenvolvimento Para A Web E Dispositivos Moveis Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:00:31",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3842,10 +3842,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/gestao-administrativa-de-recursos-humanos-pt",
         "Course":  "Gestao Administrativa De Recursos Humanos Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:00:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3853,10 +3853,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/gestao-comercial-e-vendas-pt",
         "Course":  "Gestao Comercial E Vendas Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:01:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3864,10 +3864,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/gestao-de-hotelaria-e-restauracao-pt",
         "Course":  "Gestao De Hotelaria E Restauracao Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:01:16",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3875,10 +3875,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/gestao-de-marketing-pt",
         "Course":  "Gestao De Marketing Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:01:31",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3886,10 +3886,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/gestao-de-negocios-e-comercio-eletronico-pt",
         "Course":  "Gestao De Negocios E Comercio Eletronico Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:01:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3897,10 +3897,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/gestao-de-sistemas-de-informacao-pt",
         "Course":  "Gestao De Sistemas De Informacao Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:02:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3908,10 +3908,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/instalacoes-eletricas-e-automacao-pt",
         "Course":  "Instalacoes Eletricas E Automacao Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:02:16",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3919,10 +3919,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/laboratorio-forense-e-criminal-pt",
         "Course":  "Laboratorio Forense E Criminal Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:02:31",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:32",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3930,10 +3930,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/marketing-digital-pt",
         "Course":  "Marketing Digital Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:02:46",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3941,10 +3941,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/producao-de-conteudos-audiovisuais-pt",
         "Course":  "Producao De Conteudos Audiovisuais Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:01",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3952,10 +3952,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/ctesp/sistemas-de-telecomunicacoes-eletronica-e-comunicacoes-pt",
         "Course":  "Sistemas De Telecomunicacoes Eletronica E Comunicacoes Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:17",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3963,10 +3963,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/formacao/cuidados-a-pessoa-em-fim-de-vida-pt",
         "Course":  "Cuidados A Pessoa Em Fim De Vida Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:32",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3974,10 +3974,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.ipluso.pt/pt/formacao/sustentabilidade-em-servicos-de-saude-pt",
         "Course":  "Sustentabilidade Em Servicos De Saude Pt",
         "Institution":  "IPLUSO",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:47",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3985,10 +3985,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.islagaia.pt/pt/ctesp/ciberseguranca-pt",
         "Course":  "Ciberseguranca Pt",
         "Institution":  "ISLA Gaia",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:49",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -3996,10 +3996,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.islagaia.pt/pt/ctesp/comunicacao-digital-pt",
         "Course":  "Comunicacao Digital Pt",
         "Institution":  "ISLA Gaia",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:51",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4007,10 +4007,10 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "Url":  "https://www.islagaia.pt/pt/ctesp/contabilidade-e-gestao-pt",
         "Course":  "Contabilidade E Gestao Pt",
         "Institution":  "ISLA Gaia",
-        "StatusCode":  0,
+        "StatusCode":  500,
         "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-06-17 16:03:53",
+        "Message":  "HTTP 500",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4021,7 +4021,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:03:59",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4032,7 +4032,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:03:59",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4043,7 +4043,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:03:59",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4054,7 +4054,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:03:59",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4065,7 +4065,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:03:59",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4076,7 +4076,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4087,7 +4087,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4098,7 +4098,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:33",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4109,7 +4109,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4120,7 +4120,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4131,7 +4131,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4142,7 +4142,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4153,7 +4153,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4164,7 +4164,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4175,7 +4175,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4186,7 +4186,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4197,7 +4197,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4208,7 +4208,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4219,7 +4219,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4230,7 +4230,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4241,7 +4241,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:00",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4252,7 +4252,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4263,7 +4263,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:34",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4274,7 +4274,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4285,7 +4285,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4296,7 +4296,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4307,7 +4307,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4318,7 +4318,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4329,7 +4329,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4340,7 +4340,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4351,7 +4351,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4362,7 +4362,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4373,7 +4373,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4384,7 +4384,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4395,7 +4395,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4406,7 +4406,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4417,7 +4417,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:01",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4428,7 +4428,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4439,7 +4439,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:35",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4450,7 +4450,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4461,7 +4461,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4472,7 +4472,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4483,7 +4483,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4494,7 +4494,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4505,7 +4505,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4516,7 +4516,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4527,7 +4527,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4538,7 +4538,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4549,7 +4549,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4560,7 +4560,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4571,7 +4571,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:02",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4582,7 +4582,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4593,7 +4593,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4604,7 +4604,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4615,7 +4615,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:36",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4626,7 +4626,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4637,7 +4637,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4648,7 +4648,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4659,7 +4659,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4670,7 +4670,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4681,7 +4681,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4692,7 +4692,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4703,7 +4703,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4714,7 +4714,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4725,7 +4725,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4736,7 +4736,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:03",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4747,7 +4747,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4758,7 +4758,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4769,7 +4769,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4780,7 +4780,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4791,7 +4791,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:37",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4802,7 +4802,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:38",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4813,7 +4813,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:38",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4824,7 +4824,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:38",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4835,7 +4835,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:38",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     },
@@ -4846,7 +4846,7 @@ console.log('Telemetry Sync (Main): 2026-06-17 16:04:04'); window.telemetryData 
         "StatusCode":  500,
         "Status":  "Error",
         "Message":  "HTTP 500",
-        "LastChecked":  "2026-06-17 16:04:04",
+        "LastChecked":  "2026-06-17 16:20:38",
         "FirstDownDate":  "2026-06-17",
         "ConsecutiveDaysDown":  1
     }
