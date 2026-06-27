@@ -1,10 +1,10 @@
 const BRANDING = {
-  "Lusófona Lisboa": { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
-  "Lusófona Porto":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" },
+  "Lusófona Lisboa": { hex: "#002D62", bgSub: "#001b3b", logo: "https://www.ulusofona.pt/assets/svg/logo.svg" },
+  "Lusófona Porto":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://www.ulusofona.pt/assets/svg/logo.svg" },
   "IPLUSO":          { hex: "#A20736", bgSub: "#780528", logo: "https://i.postimg.cc/fLR0Nksd/Logo-IPLUSO-ECIA-2.png" },
   "ISLA Gaia":       { hex: "#BB969B", bgSub: "#9C797E", logo: "https://i.postimg.cc/kGyZtjz7/Versa-o-Horizontal-Branco-2048x853.png" },
   "ISMAT":           { hex: "#7AC7CD", bgSub: "#5CA2A8", logo: "https://i.postimg.cc/0jpvXd31/logo-ISMAT-02.png" },
-  "Grupo Lusófona":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://i.postimg.cc/Z0k5QStc/logotipo-geral-horizontal-branco-png.png" }
+  "Grupo Lusófona":  { hex: "#002D62", bgSub: "#001b3b", logo: "https://www.ulusofona.pt/assets/svg/logo.svg" }
 };
 
 let courses = [];
