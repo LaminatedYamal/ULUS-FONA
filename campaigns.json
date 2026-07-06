@@ -3,78 +3,78 @@
     "Campaign": "ULHT_Licenciaturas",
     "Status": "ENABLED",
     "Budget": 208.0,
-    "Impressions": 73774.0,
-    "Clicks": 4704.0,
-    "Cost": 6094.88663,
-    "Conversions": 75.4,
-    "CTR": "0,06376",
-    "CostPerConv": 80.83404019
+    "Impressions": 76979.0,
+    "Clicks": 4875.0,
+    "Cost": 6345.474077,
+    "Conversions": 78.4,
+    "CTR": "0,06333",
+    "CostPerConv": 80.93716935
   },
   {
     "Campaign": "ULHT_Geral",
     "Status": "ENABLED",
     "Budget": 41.0,
-    "Impressions": 28940.0,
-    "Clicks": 13897.0,
-    "Cost": 944.840979,
-    "Conversions": 203.666668,
-    "CTR": "0,4802",
-    "CostPerConv": 4.639153713
+    "Impressions": 29733.0,
+    "Clicks": 14260.0,
+    "Cost": 983.465084,
+    "Conversions": 205.666668,
+    "CTR": "0,4796",
+    "CostPerConv": 4.781839924
   },
   {
     "Campaign": "ULHT_Doutoramentos",
     "Status": "ENABLED",
     "Budget": 25.0,
-    "Impressions": 4200.0,
-    "Clicks": 323.0,
-    "Cost": 594.250165,
+    "Impressions": 4365.0,
+    "Clicks": 340.0,
+    "Cost": 634.840165,
     "Conversions": 0.0,
-    "CTR": "0,0769",
+    "CTR": "0,07789",
     "CostPerConv": 0.0
   },
   {
     "Campaign": "ULHT_Mestrados",
     "Status": "ENABLED",
     "Budget": 125.0,
-    "Impressions": 23489.0,
-    "Clicks": 2631.0,
-    "Cost": 2890.465955,
-    "Conversions": 15.933332,
-    "CTR": "0,11201",
-    "CostPerConv": 181.4100124
+    "Impressions": 24677.0,
+    "Clicks": 2765.0,
+    "Cost": 3069.017158,
+    "Conversions": 18.933332,
+    "CTR": "0,11205",
+    "CostPerConv": 162.0959881
   },
   {
     "Campaign": "ULP_Licenciaturas_Search",
     "Status": "ENABLED",
     "Budget": 83.0,
-    "Impressions": 20587.0,
-    "Clicks": 1785.0,
-    "Cost": 1908.877211,
+    "Impressions": 21179.0,
+    "Clicks": 1832.0,
+    "Cost": 1970.465944,
     "Conversions": 12.960606,
-    "CTR": "0,08671",
-    "CostPerConv": 147.2830214
+    "CTR": "0,0865",
+    "CostPerConv": 152.0350163
   },
   {
     "Campaign": "ULP_Mestrados_Search",
     "Status": "ENABLED",
     "Budget": 58.0,
-    "Impressions": 7625.0,
-    "Clicks": 495.0,
-    "Cost": 1343.585822,
+    "Impressions": 7992.0,
+    "Clicks": 519.0,
+    "Cost": 1405.268932,
     "Conversions": 6.0,
-    "CTR": "0,06492",
-    "CostPerConv": 223.9309703
+    "CTR": "0,06494",
+    "CostPerConv": 234.2114887
   },
   {
     "Campaign": "ULP_Doutoramentos_Search",
     "Status": "ENABLED",
     "Budget": 20.0,
-    "Impressions": 861.0,
-    "Clicks": 55.0,
-    "Cost": 193.616066,
+    "Impressions": 884.0,
+    "Clicks": 56.0,
+    "Cost": 194.896066,
     "Conversions": 2.0,
-    "CTR": "0,06388",
-    "CostPerConv": 96.808033
+    "CTR": "0,06335",
+    "CostPerConv": 97.448033
   },
   {
     "Campaign": "ULHT_Display_Áreas_Remarketing",
@@ -124,12 +124,12 @@
     "Campaign": "ULP_Geral Institucional_Search",
     "Status": "ENABLED",
     "Budget": 41.0,
-    "Impressions": 17835.0,
-    "Clicks": 4890.0,
-    "Cost": 941.177688,
-    "Conversions": 35.039394,
-    "CTR": "0,27418",
-    "CostPerConv": 26.86055838
+    "Impressions": 18253.0,
+    "Clicks": 5004.0,
+    "Cost": 971.527053,
+    "Conversions": 40.039394,
+    "CTR": "0,27415",
+    "CostPerConv": 24.26427965
   },
   {
     "Campaign": "ULHT_Display_Áreas",
@@ -721,9 +721,9 @@
     "Impressions": 5202.0,
     "Clicks": 1608.0,
     "Cost": 144.971535,
-    "Conversions": 17.392892,
+    "Conversions": 19.392892,
     "CTR": "0,30911",
-    "CostPerConv": 8.335102351
+    "CostPerConv": 7.475498497
   },
   {
     "Campaign": "IPLUSO_CTesP_Search",
@@ -743,9 +743,9 @@
     "Impressions": 10778.0,
     "Clicks": 829.0,
     "Cost": 876.389713,
-    "Conversions": 9.0,
+    "Conversions": 10.0,
     "CTR": "0,07692",
-    "CostPerConv": 97.37663478
+    "CostPerConv": 87.6389713
   },
   {
     "Campaign": "IPLUSO_Mestrados_Search",
@@ -883,12 +883,12 @@
     "Campaign": "ISMAT_Licenciaturas_Search",
     "Status": "ENABLED",
     "Budget": 58.0,
-    "Impressions": 11733.0,
-    "Clicks": 739.0,
-    "Cost": 825.516617,
+    "Impressions": 11742.0,
+    "Clicks": 740.0,
+    "Cost": 825.740297,
     "Conversions": 3.0,
-    "CTR": "0,06298",
-    "CostPerConv": 275.1722057
+    "CTR": "0,06302",
+    "CostPerConv": 275.2467657
   },
   {
     "Campaign": "Display Notoriedade",
@@ -949,33 +949,33 @@
     "Campaign": "ISLA GAIA_CTeSP_Search",
     "Status": "ENABLED",
     "Budget": 41.0,
-    "Impressions": 3169.0,
-    "Clicks": 261.0,
-    "Cost": 659.626251,
+    "Impressions": 3322.0,
+    "Clicks": 271.0,
+    "Cost": 675.400876,
     "Conversions": 0.0,
-    "CTR": "0,08236",
+    "CTR": "0,08158",
     "CostPerConv": 0.0
   },
   {
     "Campaign": "ISLA GAIA_Licenciaturas_Search",
     "Status": "ENABLED",
     "Budget": 58.0,
-    "Impressions": 7729.0,
-    "Clicks": 473.0,
-    "Cost": 938.645144,
+    "Impressions": 8171.0,
+    "Clicks": 495.0,
+    "Cost": 1005.799303,
     "Conversions": 1.0,
-    "CTR": "0,0612",
-    "CostPerConv": 938.645144
+    "CTR": "0,06058",
+    "CostPerConv": 1005.799303
   },
   {
     "Campaign": "ISLA GAIA_Mestrados",
     "Status": "ENABLED",
     "Budget": 41.0,
-    "Impressions": 4556.0,
-    "Clicks": 251.0,
-    "Cost": 687.386726,
+    "Impressions": 4637.0,
+    "Clicks": 258.0,
+    "Cost": 705.07567,
     "Conversions": 0.0,
-    "CTR": "0,05509",
+    "CTR": "0,05564",
     "CostPerConv": 0.0
   },
   {
@@ -1004,12 +1004,12 @@
     "Campaign": "ISLA GAIA_Geral",
     "Status": "ENABLED",
     "Budget": 16.0,
-    "Impressions": 4395.0,
-    "Clicks": 1680.0,
-    "Cost": 266.744779,
+    "Impressions": 4637.0,
+    "Clicks": 1784.0,
+    "Cost": 283.321494,
     "Conversions": 4.0,
-    "CTR": "0,38225",
-    "CostPerConv": 66.68619475
+    "CTR": "0,38473",
+    "CostPerConv": 70.8303735
   },
   {
     "Campaign": "ISLA GAIA_Brasil_Geral",
