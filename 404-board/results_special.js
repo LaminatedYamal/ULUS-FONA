@@ -1,4 +1,4 @@
-console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData = [
+console.log('Telemetry Sync (Special): 2026-07-16 11:00:58'); window.specialData = [
     {
         "Url":  "https://www.ensinolusofona.pt",
         "Course":  "Www.Ensinolusofona.Pt",
@@ -6,7 +6,7 @@ console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-07-16 10:12:33",
+        "LastChecked":  "2026-07-16 11:00:57",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -17,7 +17,7 @@ console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-07-16 10:12:34",
+        "LastChecked":  "2026-07-16 11:00:57",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -28,7 +28,7 @@ console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-07-16 10:12:34",
+        "LastChecked":  "2026-07-16 11:00:57",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -36,12 +36,12 @@ console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData
         "Url":  "https://www.islagaia.pt",
         "Course":  "Www.Islagaia.Pt",
         "Institution":  "ISLA Gaia",
-        "StatusCode":  0,
-        "Status":  "Error",
-        "Message":  "HTTP 0",
-        "LastChecked":  "2026-07-16 10:12:34",
-        "FirstDownDate":  "2026-07-15",
-        "ConsecutiveDaysDown":  2
+        "StatusCode":  200,
+        "Status":  "OK",
+        "Message":  "HTTP 200",
+        "LastChecked":  "2026-07-16 11:00:57",
+        "FirstDownDate":  "",
+        "ConsecutiveDaysDown":  0
     },
     {
         "Url":  "https://www.islasantarem.pt",
@@ -50,7 +50,7 @@ console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-07-16 10:12:34",
+        "LastChecked":  "2026-07-16 11:00:57",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     },
@@ -61,7 +61,7 @@ console.log('Telemetry Sync (Special): 2026-07-16 10:12:34'); window.specialData
         "StatusCode":  200,
         "Status":  "OK",
         "Message":  "HTTP 200",
-        "LastChecked":  "2026-07-16 10:12:34",
+        "LastChecked":  "2026-07-16 11:00:58",
         "FirstDownDate":  "",
         "ConsecutiveDaysDown":  0
     }
