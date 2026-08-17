@@ -36,7 +36,7 @@
     "adsKeywords": [
       {
         "term": "engenharia aeronautica",
-        "impressions": 23406.0,
+        "impressions": 23412.0,
         "clicks": 2824.0,
         "vol": 0.0,
         "low": 0.0,
@@ -44,32 +44,32 @@
       },
       {
         "term": "curso aeronautica",
-        "impressions": 10419.0,
-        "clicks": 895.0,
+        "impressions": 10430.0,
+        "clicks": 896.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "gestao aeronautica",
-        "impressions": 9471.0,
-        "clicks": 2075.0,
+        "impressions": 9480.0,
+        "clicks": 2078.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade aviação",
-        "impressions": 4207.0,
-        "clicks": 461.0,
+        "impressions": 4261.0,
+        "clicks": 463.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura aeronautica",
-        "impressions": 1317.0,
-        "clicks": 176.0,
+        "impressions": 1326.0,
+        "clicks": 178.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -231,15 +231,15 @@
     "adsKeywords": [
       {
         "term": "curso artes",
-        "impressions": 51204.0,
-        "clicks": 5508.0,
+        "impressions": 51247.0,
+        "clicks": 5510.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura artes",
-        "impressions": 11606.0,
+        "impressions": 11616.0,
         "clicks": 1449.0,
         "vol": 0.0,
         "low": 0.0,
@@ -247,7 +247,7 @@
       },
       {
         "term": "mestrado artes visuais",
-        "impressions": 9102.0,
+        "impressions": 9110.0,
         "clicks": 1382.0,
         "vol": 0.0,
         "low": 0.0,
@@ -255,8 +255,8 @@
       },
       {
         "term": "licenciatura em artes visuais",
-        "impressions": 1334.0,
-        "clicks": 78.0,
+        "impressions": 1380.0,
+        "clicks": 80.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -382,7 +382,7 @@
     "adsKeywords": [
       {
         "term": "faculdade design",
-        "impressions": 56978.0,
+        "impressions": 56983.0,
         "clicks": 7175.0,
         "vol": 0.0,
         "low": 0.0,
@@ -398,8 +398,8 @@
       },
       {
         "term": "licenciatura design",
-        "impressions": 12127.0,
-        "clicks": 1739.0,
+        "impressions": 12134.0,
+        "clicks": 1740.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -414,7 +414,7 @@
       },
       {
         "term": "curso de design",
-        "impressions": 700.0,
+        "impressions": 714.0,
         "clicks": 49.0,
         "vol": 0.0,
         "low": 0.0,
@@ -422,7 +422,7 @@
       },
       {
         "term": "design comunicação",
-        "impressions": 566.0,
+        "impressions": 572.0,
         "clicks": 19.0,
         "vol": 0.0,
         "low": 0.0,
@@ -438,7 +438,7 @@
       },
       {
         "term": "design de comunicação",
-        "impressions": 264.0,
+        "impressions": 268.0,
         "clicks": 6.0,
         "vol": 0.0,
         "low": 0.0,
@@ -446,8 +446,16 @@
       },
       {
         "term": "comunicação design",
-        "impressions": 174.0,
+        "impressions": 179.0,
         "clicks": 3.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "design comunicacao",
+        "impressions": 78.0,
+        "clicks": 1.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -455,14 +463,6 @@
       {
         "term": "curso comunicação visual",
         "impressions": 11.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "design comunicacao",
-        "impressions": 6.0,
         "clicks": 0.0,
         "vol": 0.0,
         "low": 0.0,
@@ -495,15 +495,15 @@
     "adsKeywords": [
       {
         "term": "curso design moda",
-        "impressions": 28587.0,
-        "clicks": 3801.0,
+        "impressions": 28614.0,
+        "clicks": 3802.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura moda",
-        "impressions": 4063.0,
+        "impressions": 4065.0,
         "clicks": 910.0,
         "vol": 0.0,
         "low": 0.0,
@@ -551,8 +551,8 @@
       },
       {
         "term": "mestrado de moda",
-        "impressions": 354.0,
-        "clicks": 57.0,
+        "impressions": 355.0,
+        "clicks": 58.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -590,7 +590,7 @@
         "high": 0.0
       },
       {
-        "term": "design moda universidade portugal",
+        "term": "Mestrado em Design e Produção de moda",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -598,7 +598,7 @@
         "high": 0.0
       },
       {
-        "term": "Mestrado em Design e Produção de moda",
+        "term": "design moda universidade portugal",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -645,23 +645,23 @@
     "adsKeywords": [
       {
         "term": "curso relações internacionais",
-        "impressions": 52001.0,
-        "clicks": 8967.0,
+        "impressions": 52020.0,
+        "clicks": 8968.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso politica",
-        "impressions": 9671.0,
-        "clicks": 1258.0,
+        "impressions": 9687.0,
+        "clicks": 1261.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura ciencia politica",
-        "impressions": 6264.0,
+        "impressions": 6276.0,
         "clicks": 899.0,
         "vol": 0.0,
         "low": 0.0,
@@ -677,8 +677,8 @@
       },
       {
         "term": "faculdade relações internacionais",
-        "impressions": 2573.0,
-        "clicks": 148.0,
+        "impressions": 2655.0,
+        "clicks": 149.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -693,8 +693,8 @@
       },
       {
         "term": "relações internacionais universidades",
-        "impressions": 829.0,
-        "clicks": 61.0,
+        "impressions": 848.0,
+        "clicks": 62.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -864,7 +864,7 @@
     "adsKeywords": [
       {
         "term": "licenciatura relações internacionais",
-        "impressions": 18116.0,
+        "impressions": 18152.0,
         "clicks": 2363.0,
         "vol": 0.0,
         "low": 0.0,
@@ -872,8 +872,8 @@
       },
       {
         "term": "curso relações internacionais",
-        "impressions": 13338.0,
-        "clicks": 1506.0,
+        "impressions": 13358.0,
+        "clicks": 1507.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -887,17 +887,17 @@
         "high": 0.0
       },
       {
-        "term": "faculdade relações internacionais portugal",
-        "impressions": 377.0,
-        "clicks": 83.0,
+        "term": "licenciatura ciência política",
+        "impressions": 382.0,
+        "clicks": 20.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "licenciatura ciência política",
-        "impressions": 372.0,
-        "clicks": 20.0,
+        "term": "faculdade relações internacionais portugal",
+        "impressions": 377.0,
+        "clicks": 83.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -987,16 +987,16 @@
     "adsKeywords": [
       {
         "term": "curso estudos portugueses",
-        "impressions": 5045.0,
-        "clicks": 259.0,
+        "impressions": 5346.0,
+        "clicks": 269.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "Licenciatura estudos portugueses",
-        "impressions": 2974.0,
-        "clicks": 184.0,
+        "impressions": 3056.0,
+        "clicks": 187.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1041,32 +1041,32 @@
     "adsKeywords": [
       {
         "term": "curso sociologia",
-        "impressions": 14376.0,
-        "clicks": 2068.0,
+        "impressions": 14381.0,
+        "clicks": 2069.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade sociologia",
-        "impressions": 8279.0,
-        "clicks": 1490.0,
+        "impressions": 8294.0,
+        "clicks": 1491.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "sociologia licenciatura",
-        "impressions": 6262.0,
-        "clicks": 410.0,
+        "impressions": 6315.0,
+        "clicks": 412.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura sociologia",
-        "impressions": 1236.0,
-        "clicks": 139.0,
+        "impressions": 1382.0,
+        "clicks": 145.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1166,8 +1166,8 @@
     "adsKeywords": [
       {
         "term": "curso animação",
-        "impressions": 12075.0,
-        "clicks": 1248.0,
+        "impressions": 12079.0,
+        "clicks": 1249.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1182,7 +1182,7 @@
       },
       {
         "term": "faculdade animação",
-        "impressions": 675.0,
+        "impressions": 678.0,
         "clicks": 104.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1339,8 +1339,8 @@
       },
       {
         "term": "curso audio",
-        "impressions": 1498.0,
-        "clicks": 119.0,
+        "impressions": 1523.0,
+        "clicks": 120.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1355,7 +1355,7 @@
       },
       {
         "term": "curso sonoplastia",
-        "impressions": 559.0,
+        "impressions": 560.0,
         "clicks": 99.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1474,7 +1474,7 @@
     "adsKeywords": [
       {
         "term": "universidade cinema",
-        "impressions": 15569.0,
+        "impressions": 15571.0,
         "clicks": 3664.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1482,23 +1482,23 @@
       },
       {
         "term": "curso cinema",
-        "impressions": 11954.0,
-        "clicks": 1620.0,
+        "impressions": 11965.0,
+        "clicks": 1621.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "escola cinema",
-        "impressions": 8815.0,
-        "clicks": 1157.0,
+        "impressions": 8831.0,
+        "clicks": 1158.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade cinema",
-        "impressions": 5544.0,
+        "impressions": 5557.0,
         "clicks": 1061.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1506,8 +1506,8 @@
       },
       {
         "term": "licenciatura cinema",
-        "impressions": 2655.0,
-        "clicks": 479.0,
+        "impressions": 2662.0,
+        "clicks": 480.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1530,8 +1530,8 @@
       },
       {
         "term": "cinema curso superior",
-        "impressions": 264.0,
-        "clicks": 25.0,
+        "impressions": 284.0,
+        "clicks": 26.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1673,8 +1673,8 @@
     "adsKeywords": [
       {
         "term": "formação atores",
-        "impressions": 10799.0,
-        "clicks": 1071.0,
+        "impressions": 10871.0,
+        "clicks": 1072.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1689,8 +1689,8 @@
       },
       {
         "term": "licenciatura teatro",
-        "impressions": 1637.0,
-        "clicks": 199.0,
+        "impressions": 1639.0,
+        "clicks": 200.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1733,8 +1733,8 @@
       },
       {
         "term": "licenciatura fotografia",
-        "impressions": 3486.0,
-        "clicks": 586.0,
+        "impressions": 3505.0,
+        "clicks": 589.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1749,7 +1749,7 @@
       },
       {
         "term": "mestrado fotografia",
-        "impressions": 1449.0,
+        "impressions": 1452.0,
         "clicks": 382.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1757,7 +1757,7 @@
       },
       {
         "term": "universidades fotografia",
-        "impressions": 767.0,
+        "impressions": 769.0,
         "clicks": 155.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1868,7 +1868,7 @@
     "adsKeywords": [
       {
         "term": "curso videojogos",
-        "impressions": 6449.0,
+        "impressions": 6453.0,
         "clicks": 796.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1876,7 +1876,7 @@
       },
       {
         "term": "faculdade jogos",
-        "impressions": 4403.0,
+        "impressions": 4405.0,
         "clicks": 782.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1884,7 +1884,7 @@
       },
       {
         "term": "licenciatura videojogos",
-        "impressions": 3029.0,
+        "impressions": 3040.0,
         "clicks": 472.0,
         "vol": 0.0,
         "low": 0.0,
@@ -1892,8 +1892,8 @@
       },
       {
         "term": "curso games",
-        "impressions": 1849.0,
-        "clicks": 223.0,
+        "impressions": 1867.0,
+        "clicks": 226.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -1987,23 +1987,23 @@
     "adsKeywords": [
       {
         "term": "ciencias comunicação",
-        "impressions": 42695.0,
-        "clicks": 5866.0,
+        "impressions": 42732.0,
+        "clicks": 5869.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade comunicação social",
-        "impressions": 21218.0,
-        "clicks": 3658.0,
+        "impressions": 21229.0,
+        "clicks": 3660.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura comunicação",
-        "impressions": 6394.0,
+        "impressions": 6397.0,
         "clicks": 619.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2011,7 +2011,7 @@
       },
       {
         "term": "curso comunicação",
-        "impressions": 2963.0,
+        "impressions": 2965.0,
         "clicks": 358.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2134,15 +2134,15 @@
     "adsKeywords": [
       {
         "term": "faculdade marketing",
-        "impressions": 41480.0,
-        "clicks": 5786.0,
+        "impressions": 41486.0,
+        "clicks": 5787.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura marketing",
-        "impressions": 22301.0,
+        "impressions": 22309.0,
         "clicks": 2652.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2150,15 +2150,15 @@
       },
       {
         "term": "curso relações publicas",
-        "impressions": 13302.0,
-        "clicks": 1680.0,
+        "impressions": 13375.0,
+        "clicks": 1682.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso publicidade",
-        "impressions": 6856.0,
+        "impressions": 6861.0,
         "clicks": 712.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2166,7 +2166,7 @@
       },
       {
         "term": "curso marketing",
-        "impressions": 6509.0,
+        "impressions": 6519.0,
         "clicks": 782.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2174,7 +2174,7 @@
       },
       {
         "term": "licenciatura publicidade",
-        "impressions": 1697.0,
+        "impressions": 1720.0,
         "clicks": 96.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2319,7 +2319,7 @@
     "adsKeywords": [
       {
         "term": "curso jornalismo",
-        "impressions": 20655.0,
+        "impressions": 20666.0,
         "clicks": 3168.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2327,7 +2327,7 @@
       },
       {
         "term": "licenciatura jornalismo",
-        "impressions": 5270.0,
+        "impressions": 5276.0,
         "clicks": 965.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2335,7 +2335,7 @@
       },
       {
         "term": "faculdade jornalismo",
-        "impressions": 3600.0,
+        "impressions": 3602.0,
         "clicks": 680.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2432,15 +2432,15 @@
     "adsKeywords": [
       {
         "term": "curso desporto",
-        "impressions": 46205.0,
-        "clicks": 7115.0,
+        "impressions": 46254.0,
+        "clicks": 7117.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura desporto",
-        "impressions": 23222.0,
+        "impressions": 23238.0,
         "clicks": 3676.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2464,8 +2464,8 @@
       },
       {
         "term": "faculdade educação fisica",
-        "impressions": 959.0,
-        "clicks": 66.0,
+        "impressions": 966.0,
+        "clicks": 67.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2496,7 +2496,7 @@
       },
       {
         "term": "curso educação fisica",
-        "impressions": 254.0,
+        "impressions": 256.0,
         "clicks": 17.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2762,8 +2762,8 @@
       },
       {
         "term": "mestrado direito",
-        "impressions": 45761.0,
-        "clicks": 5708.0,
+        "impressions": 45818.0,
+        "clicks": 5715.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2810,8 +2810,8 @@
       },
       {
         "term": "doutoramento direito",
-        "impressions": 4037.0,
-        "clicks": 321.0,
+        "impressions": 4041.0,
+        "clicks": 322.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2842,7 +2842,7 @@
       },
       {
         "term": "phd direito",
-        "impressions": 681.0,
+        "impressions": 682.0,
         "clicks": 37.0,
         "vol": 0.0,
         "low": 0.0,
@@ -2850,8 +2850,8 @@
       },
       {
         "term": "curso direito público",
-        "impressions": 583.0,
-        "clicks": 40.0,
+        "impressions": 600.0,
+        "clicks": 42.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -2914,7 +2914,7 @@
       },
       {
         "term": "mestrado direito publico",
-        "impressions": 40.0,
+        "impressions": 41.0,
         "clicks": 11.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3041,15 +3041,15 @@
     "adsKeywords": [
       {
         "term": "curso contabilidade",
-        "impressions": 22706.0,
-        "clicks": 2195.0,
+        "impressions": 22724.0,
+        "clicks": 2196.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura contabilidade",
-        "impressions": 5109.0,
+        "impressions": 5110.0,
         "clicks": 920.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3158,7 +3158,7 @@
     "adsKeywords": [
       {
         "term": "faculdade economia",
-        "impressions": 50063.0,
+        "impressions": 50120.0,
         "clicks": 6397.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3166,16 +3166,16 @@
       },
       {
         "term": "mestrado economia",
-        "impressions": 12368.0,
-        "clicks": 1156.0,
+        "impressions": 12383.0,
+        "clicks": 1157.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura economia",
-        "impressions": 9504.0,
-        "clicks": 824.0,
+        "impressions": 9597.0,
+        "clicks": 829.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3261,7 +3261,7 @@
     "adsKeywords": [
       {
         "term": "gestão empresas",
-        "impressions": 73225.0,
+        "impressions": 73245.0,
         "clicks": 9249.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3301,7 +3301,7 @@
       },
       {
         "term": "curso gestão empresarial",
-        "impressions": 4577.0,
+        "impressions": 4661.0,
         "clicks": 348.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3309,8 +3309,8 @@
       },
       {
         "term": "mestrado empresas",
-        "impressions": 3786.0,
-        "clicks": 299.0,
+        "impressions": 3802.0,
+        "clicks": 301.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3333,7 +3333,7 @@
       },
       {
         "term": "licenciatura gestão empresas",
-        "impressions": 1234.0,
+        "impressions": 1251.0,
         "clicks": 108.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3341,15 +3341,15 @@
       },
       {
         "term": "faculdade gestão empresarial",
-        "impressions": 507.0,
-        "clicks": 52.0,
+        "impressions": 512.0,
+        "clicks": 53.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso administração empresas",
-        "impressions": 425.0,
+        "impressions": 439.0,
         "clicks": 52.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3480,7 +3480,7 @@
     "adsKeywords": [
       {
         "term": "licenciatura recursos humanos",
-        "impressions": 11150.0,
+        "impressions": 11176.0,
         "clicks": 1279.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3488,8 +3488,8 @@
       },
       {
         "term": "curso de hr",
-        "impressions": 864.0,
-        "clicks": 42.0,
+        "impressions": 892.0,
+        "clicks": 43.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3504,15 +3504,15 @@
       },
       {
         "term": "faculdade recursos humanos",
-        "impressions": 336.0,
-        "clicks": 22.0,
+        "impressions": 351.0,
+        "clicks": 23.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso rh",
-        "impressions": 329.0,
+        "impressions": 331.0,
         "clicks": 15.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3528,8 +3528,8 @@
       },
       {
         "term": "curso recursos humanos",
-        "impressions": 97.0,
-        "clicks": 3.0,
+        "impressions": 99.0,
+        "clicks": 4.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3637,7 +3637,7 @@
       },
       {
         "term": "licenciatura educação",
-        "impressions": 27703.0,
+        "impressions": 27724.0,
         "clicks": 3156.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3645,15 +3645,15 @@
       },
       {
         "term": "curso educação",
-        "impressions": 6597.0,
-        "clicks": 1001.0,
+        "impressions": 6608.0,
+        "clicks": 1003.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade educação",
-        "impressions": 4017.0,
+        "impressions": 4082.0,
         "clicks": 286.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3661,7 +3661,7 @@
       },
       {
         "term": "licenciatura em educação social",
-        "impressions": 1048.0,
+        "impressions": 1049.0,
         "clicks": 46.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3669,7 +3669,7 @@
       },
       {
         "term": "educação social",
-        "impressions": 640.0,
+        "impressions": 656.0,
         "clicks": 28.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3677,7 +3677,7 @@
       },
       {
         "term": "licenciatura educação social",
-        "impressions": 164.0,
+        "impressions": 185.0,
         "clicks": 10.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3750,8 +3750,8 @@
     "adsKeywords": [
       {
         "term": "bioeconomia circular",
-        "impressions": 479.0,
-        "clicks": 63.0,
+        "impressions": 481.0,
+        "clicks": 65.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3817,8 +3817,8 @@
     "adsKeywords": [
       {
         "term": "Biomedicina",
-        "impressions": 8985.0,
-        "clicks": 487.0,
+        "impressions": 9039.0,
+        "clicks": 488.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -3908,15 +3908,15 @@
     "adsKeywords": [
       {
         "term": "curso biotecnologia",
-        "impressions": 14815.0,
-        "clicks": 2639.0,
+        "impressions": 14854.0,
+        "clicks": 2640.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura biotecnologia",
-        "impressions": 2477.0,
+        "impressions": 2489.0,
         "clicks": 274.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3924,7 +3924,7 @@
       },
       {
         "term": "engenharia biotecnologica",
-        "impressions": 418.0,
+        "impressions": 426.0,
         "clicks": 27.0,
         "vol": 0.0,
         "low": 0.0,
@@ -3932,7 +3932,7 @@
       },
       {
         "term": "curso ciencias biologicas",
-        "impressions": 270.0,
+        "impressions": 273.0,
         "clicks": 13.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4007,7 +4007,7 @@
     "adsKeywords": [
       {
         "term": "biomedicina faculdade",
-        "impressions": 22165.0,
+        "impressions": 22178.0,
         "clicks": 3783.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4047,15 +4047,15 @@
       },
       {
         "term": "curso biomedica",
-        "impressions": 1474.0,
-        "clicks": 42.0,
+        "impressions": 1539.0,
+        "clicks": 44.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura biomedica",
-        "impressions": 272.0,
+        "impressions": 288.0,
         "clicks": 21.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4132,15 +4132,15 @@
     "adsKeywords": [
       {
         "term": "curso engenheiro civil",
-        "impressions": 34634.0,
-        "clicks": 5276.0,
+        "impressions": 34681.0,
+        "clicks": 5281.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade engenharia civil",
-        "impressions": 8894.0,
+        "impressions": 8905.0,
         "clicks": 1431.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4148,8 +4148,8 @@
       },
       {
         "term": "mestrado engenharia civil",
-        "impressions": 4592.0,
-        "clicks": 656.0,
+        "impressions": 4597.0,
+        "clicks": 657.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4180,7 +4180,7 @@
       },
       {
         "term": "licenciatura civil",
-        "impressions": 632.0,
+        "impressions": 638.0,
         "clicks": 85.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4265,7 +4265,7 @@
       },
       {
         "term": "mestrado ambiente",
-        "impressions": 5226.0,
+        "impressions": 5227.0,
         "clicks": 508.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4281,7 +4281,7 @@
       },
       {
         "term": "curso ambiente",
-        "impressions": 769.0,
+        "impressions": 771.0,
         "clicks": 91.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4289,7 +4289,7 @@
       },
       {
         "term": "mestrado engenharia ambiente",
-        "impressions": 517.0,
+        "impressions": 522.0,
         "clicks": 51.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4297,7 +4297,7 @@
       },
       {
         "term": "faculdade ambiental",
-        "impressions": 421.0,
+        "impressions": 436.0,
         "clicks": 25.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4313,7 +4313,7 @@
       },
       {
         "term": "licenciatura engenharia ambiente",
-        "impressions": 180.0,
+        "impressions": 184.0,
         "clicks": 11.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4370,7 +4370,7 @@
     "adsKeywords": [
       {
         "term": "engenharia gestão industrial",
-        "impressions": 23724.0,
+        "impressions": 23743.0,
         "clicks": 2518.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4378,7 +4378,7 @@
       },
       {
         "term": "mestrado gestão industrial",
-        "impressions": 4962.0,
+        "impressions": 4965.0,
         "clicks": 487.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4386,7 +4386,7 @@
       },
       {
         "term": "licenciatura industrial",
-        "impressions": 3489.0,
+        "impressions": 3515.0,
         "clicks": 406.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4394,7 +4394,7 @@
       },
       {
         "term": "curso engenharia produção",
-        "impressions": 2952.0,
+        "impressions": 2961.0,
         "clicks": 397.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4510,7 +4510,7 @@
     "adsKeywords": [
       {
         "term": "licenciatura ambiente",
-        "impressions": 310.0,
+        "impressions": 311.0,
         "clicks": 8.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4538,23 +4538,23 @@
       },
       {
         "term": "curso ciência dados",
-        "impressions": 9032.0,
-        "clicks": 648.0,
+        "impressions": 9043.0,
+        "clicks": 651.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura ciência de dados",
-        "impressions": 5871.0,
-        "clicks": 513.0,
+        "impressions": 5881.0,
+        "clicks": 514.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "ciência de dados ISCTE",
-        "impressions": 3140.0,
+        "impressions": 3144.0,
         "clicks": 193.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4562,7 +4562,7 @@
       },
       {
         "term": "mestrado ciência dados",
-        "impressions": 2319.0,
+        "impressions": 2324.0,
         "clicks": 256.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4570,8 +4570,8 @@
       },
       {
         "term": "licenciatura data science",
-        "impressions": 1428.0,
-        "clicks": 104.0,
+        "impressions": 1458.0,
+        "clicks": 105.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4651,16 +4651,16 @@
     "adsKeywords": [
       {
         "term": "licenciatura matemática",
-        "impressions": 6000.0,
-        "clicks": 352.0,
+        "impressions": 6019.0,
+        "clicks": 353.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "matemática computação",
-        "impressions": 1400.0,
-        "clicks": 109.0,
+        "impressions": 1421.0,
+        "clicks": 110.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4720,15 +4720,15 @@
     "adsKeywords": [
       {
         "term": "engenharia informática",
-        "impressions": 130145.0,
-        "clicks": 19340.0,
+        "impressions": 130256.0,
+        "clicks": 19342.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade informatica",
-        "impressions": 49195.0,
+        "impressions": 49204.0,
         "clicks": 6421.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4752,8 +4752,8 @@
       },
       {
         "term": "licenciatura informatica",
-        "impressions": 729.0,
-        "clicks": 41.0,
+        "impressions": 759.0,
+        "clicks": 42.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -4901,7 +4901,7 @@
       },
       {
         "term": "licenciatura telecomunicações",
-        "impressions": 1236.0,
+        "impressions": 1242.0,
         "clicks": 111.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4909,7 +4909,7 @@
       },
       {
         "term": "curso telecomunicações",
-        "impressions": 1091.0,
+        "impressions": 1096.0,
         "clicks": 135.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4956,7 +4956,7 @@
     "adsKeywords": [
       {
         "term": "informática gestão",
-        "impressions": 41683.0,
+        "impressions": 41688.0,
         "clicks": 4933.0,
         "vol": 0.0,
         "low": 0.0,
@@ -4964,7 +4964,7 @@
       },
       {
         "term": "licenciatura informatica gestão",
-        "impressions": 1952.0,
+        "impressions": 1959.0,
         "clicks": 95.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5069,16 +5069,16 @@
     "adsKeywords": [
       {
         "term": "psicologia lisboa",
-        "impressions": 87889.0,
-        "clicks": 15524.0,
+        "impressions": 88082.0,
+        "clicks": 15535.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso psicologia",
-        "impressions": 51171.0,
-        "clicks": 8788.0,
+        "impressions": 51204.0,
+        "clicks": 8794.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5093,16 +5093,16 @@
       },
       {
         "term": "licenciatura psicologia",
-        "impressions": 12502.0,
-        "clicks": 2005.0,
+        "impressions": 12610.0,
+        "clicks": 2013.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "doutoramento psicologia",
-        "impressions": 10807.0,
-        "clicks": 1451.0,
+        "impressions": 10830.0,
+        "clicks": 1459.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5165,8 +5165,8 @@
       },
       {
         "term": "doutoramento em psicologia clinica",
-        "impressions": 388.0,
-        "clicks": 64.0,
+        "impressions": 390.0,
+        "clicks": 65.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5344,7 +5344,7 @@
     "adsKeywords": [
       {
         "term": "faculdade biologia",
-        "impressions": 26225.0,
+        "impressions": 26242.0,
         "clicks": 4547.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5352,7 +5352,7 @@
       },
       {
         "term": "curso ciencias biologicas",
-        "impressions": 15453.0,
+        "impressions": 15460.0,
         "clicks": 2649.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5360,7 +5360,7 @@
       },
       {
         "term": "universidade biologia",
-        "impressions": 12377.0,
+        "impressions": 12380.0,
         "clicks": 2318.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5376,7 +5376,7 @@
       },
       {
         "term": "licenciatura biologia",
-        "impressions": 3686.0,
+        "impressions": 3726.0,
         "clicks": 539.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5515,8 +5515,8 @@
       },
       {
         "term": "bioquimica",
-        "impressions": 2598.0,
-        "clicks": 107.0,
+        "impressions": 2645.0,
+        "clicks": 109.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5622,7 +5622,7 @@
     "adsKeywords": [
       {
         "term": "curso nutricionista",
-        "impressions": 52896.0,
+        "impressions": 52897.0,
         "clicks": 8429.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5630,7 +5630,7 @@
       },
       {
         "term": "faculdade nutrição",
-        "impressions": 12204.0,
+        "impressions": 12208.0,
         "clicks": 2014.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5638,15 +5638,15 @@
       },
       {
         "term": "curso nutrição",
-        "impressions": 7710.0,
-        "clicks": 1024.0,
+        "impressions": 7718.0,
+        "clicks": 1025.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura nutrição",
-        "impressions": 5026.0,
+        "impressions": 5027.0,
         "clicks": 581.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5670,7 +5670,7 @@
       },
       {
         "term": "faculdade nutricionista",
-        "impressions": 1064.0,
+        "impressions": 1089.0,
         "clicks": 69.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5791,8 +5791,8 @@
     "adsKeywords": [
       {
         "term": "estética e cosmetologia",
-        "impressions": 14181.0,
-        "clicks": 2552.0,
+        "impressions": 14217.0,
+        "clicks": 2555.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5807,7 +5807,7 @@
       },
       {
         "term": "licenciatura cosmetologia",
-        "impressions": 1117.0,
+        "impressions": 1118.0,
         "clicks": 401.0,
         "vol": 0.0,
         "low": 0.0,
@@ -5888,16 +5888,16 @@
     "adsKeywords": [
       {
         "term": "curso segurança",
-        "impressions": 13957.0,
-        "clicks": 1318.0,
+        "impressions": 13983.0,
+        "clicks": 1319.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura segurança",
-        "impressions": 9481.0,
-        "clicks": 1866.0,
+        "impressions": 9496.0,
+        "clicks": 1869.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5963,16 +5963,16 @@
     "adsKeywords": [
       {
         "term": "faculdade serviço social",
-        "impressions": 25461.0,
-        "clicks": 5172.0,
+        "impressions": 25492.0,
+        "clicks": 5175.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso assistente social",
-        "impressions": 14003.0,
-        "clicks": 2016.0,
+        "impressions": 14052.0,
+        "clicks": 2019.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -5987,16 +5987,16 @@
       },
       {
         "term": "faculdade assistente social",
-        "impressions": 2917.0,
-        "clicks": 683.0,
+        "impressions": 2925.0,
+        "clicks": 684.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura servico social",
-        "impressions": 968.0,
-        "clicks": 73.0,
+        "impressions": 1008.0,
+        "clicks": 78.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6128,7 +6128,7 @@
     "adsKeywords": [
       {
         "term": "curso turismo",
-        "impressions": 70500.0,
+        "impressions": 70539.0,
         "clicks": 7096.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6144,7 +6144,7 @@
       },
       {
         "term": "faculdade turismo",
-        "impressions": 7328.0,
+        "impressions": 7332.0,
         "clicks": 1227.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6160,8 +6160,8 @@
       },
       {
         "term": "licenciatura turismo",
-        "impressions": 2897.0,
-        "clicks": 459.0,
+        "impressions": 2904.0,
+        "clicks": 460.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6357,8 +6357,8 @@
     "adsKeywords": [
       {
         "term": "faculdade arquitetura",
-        "impressions": 39253.0,
-        "clicks": 6157.0,
+        "impressions": 39255.0,
+        "clicks": 6158.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6389,8 +6389,8 @@
       },
       {
         "term": "doutoramento arquitetura",
-        "impressions": 2167.0,
-        "clicks": 222.0,
+        "impressions": 2174.0,
+        "clicks": 226.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6486,8 +6486,8 @@
       },
       {
         "term": "curso ciencias farmaceuticas",
-        "impressions": 52638.0,
-        "clicks": 8387.0,
+        "impressions": 52646.0,
+        "clicks": 8388.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6502,7 +6502,7 @@
       },
       {
         "term": "ciencias farmaceuticas",
-        "impressions": 1627.0,
+        "impressions": 1638.0,
         "clicks": 202.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6510,16 +6510,16 @@
       },
       {
         "term": "curso farmácia",
-        "impressions": 1272.0,
-        "clicks": 108.0,
+        "impressions": 1290.0,
+        "clicks": 110.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura ciencias farmaceuticas",
-        "impressions": 1079.0,
-        "clicks": 124.0,
+        "impressions": 1084.0,
+        "clicks": 125.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6542,7 +6542,7 @@
       },
       {
         "term": "mestrado farmácia",
-        "impressions": 316.0,
+        "impressions": 317.0,
         "clicks": 33.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6726,7 +6726,7 @@
     "adsKeywords": [
       {
         "term": "mestrado urbanismo",
-        "impressions": 1420.0,
+        "impressions": 1431.0,
         "clicks": 151.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6742,7 +6742,7 @@
       },
       {
         "term": "mestrado reabilitação urbana",
-        "impressions": 124.0,
+        "impressions": 134.0,
         "clicks": 12.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6769,8 +6769,8 @@
     "adsKeywords": [
       {
         "term": "mestrado design",
-        "impressions": 11314.0,
-        "clicks": 1048.0,
+        "impressions": 11317.0,
+        "clicks": 1049.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6938,7 +6938,7 @@
     "adsKeywords": [
       {
         "term": "mestrado ciencia politica",
-        "impressions": 7318.0,
+        "impressions": 7324.0,
         "clicks": 938.0,
         "vol": 0.0,
         "low": 0.0,
@@ -6965,8 +6965,8 @@
     "adsKeywords": [
       {
         "term": "mestrado comunicação",
-        "impressions": 461.0,
-        "clicks": 37.0,
+        "impressions": 476.0,
+        "clicks": 38.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -6985,8 +6985,8 @@
     "adsKeywords": [
       {
         "term": "mestrado relações internacionais",
-        "impressions": 9107.0,
-        "clicks": 1185.0,
+        "impressions": 9113.0,
+        "clicks": 1187.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7001,7 +7001,7 @@
       },
       {
         "term": "mestrado diplomacia",
-        "impressions": 648.0,
+        "impressions": 653.0,
         "clicks": 96.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7068,7 +7068,7 @@
     "adsKeywords": [
       {
         "term": "mestrado patrimonio",
-        "impressions": 300.0,
+        "impressions": 310.0,
         "clicks": 28.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7132,7 +7132,7 @@
     "adsKeywords": [
       {
         "term": "mestrado artes",
-        "impressions": 11202.0,
+        "impressions": 11208.0,
         "clicks": 916.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7197,7 +7197,7 @@
       },
       {
         "term": "game design",
-        "impressions": 1754.0,
+        "impressions": 1755.0,
         "clicks": 97.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7213,7 +7213,7 @@
       },
       {
         "term": "mestrado videojogos",
-        "impressions": 75.0,
+        "impressions": 78.0,
         "clicks": 15.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7248,7 +7248,7 @@
     "adsKeywords": [
       {
         "term": "mestrado cinema",
-        "impressions": 975.0,
+        "impressions": 981.0,
         "clicks": 135.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7256,7 +7256,7 @@
       },
       {
         "term": "mestrado audiovisual",
-        "impressions": 121.0,
+        "impressions": 126.0,
         "clicks": 16.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7317,7 +7317,7 @@
     "adsKeywords": [
       {
         "term": "Mestrado Inteligência Artificial",
-        "impressions": 1402.0,
+        "impressions": 1405.0,
         "clicks": 132.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7353,7 +7353,7 @@
       },
       {
         "term": "mestrado audiovisual",
-        "impressions": 1943.0,
+        "impressions": 1944.0,
         "clicks": 219.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7402,7 +7402,7 @@
       },
       {
         "term": "mestrado som",
-        "impressions": 912.0,
+        "impressions": 913.0,
         "clicks": 152.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7459,8 +7459,8 @@
     "adsKeywords": [
       {
         "term": "mestrado comunicação",
-        "impressions": 17499.0,
-        "clicks": 1794.0,
+        "impressions": 17504.0,
+        "clicks": 1796.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7479,8 +7479,8 @@
     "adsKeywords": [
       {
         "term": "mestrado marketing",
-        "impressions": 14504.0,
-        "clicks": 1219.0,
+        "impressions": 14509.0,
+        "clicks": 1220.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7547,8 +7547,8 @@
     "adsKeywords": [
       {
         "term": "mestrado jornalismo",
-        "impressions": 4122.0,
-        "clicks": 461.0,
+        "impressions": 4125.0,
+        "clicks": 462.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7669,7 +7669,7 @@
     "adsKeywords": [
       {
         "term": "mestrado futebol",
-        "impressions": 2042.0,
+        "impressions": 2047.0,
         "clicks": 458.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7704,15 +7704,15 @@
     "adsKeywords": [
       {
         "term": "mestrado desporto",
-        "impressions": 9339.0,
-        "clicks": 1139.0,
+        "impressions": 9342.0,
+        "clicks": 1140.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado treino",
-        "impressions": 2029.0,
+        "impressions": 2034.0,
         "clicks": 318.0,
         "vol": 0.0,
         "low": 0.0,
@@ -7753,8 +7753,8 @@
     "adsKeywords": [
       {
         "term": "mestrado ciências criminais",
-        "impressions": 848.0,
-        "clicks": 143.0,
+        "impressions": 892.0,
+        "clicks": 146.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7912,8 +7912,8 @@
     "adsKeywords": [
       {
         "term": "Mestrado Direito Empresarial",
-        "impressions": 1323.0,
-        "clicks": 192.0,
+        "impressions": 1325.0,
+        "clicks": 193.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -7956,7 +7956,7 @@
     "adsKeywords": [
       {
         "term": "mestrado fiscalidade",
-        "impressions": 3241.0,
+        "impressions": 3245.0,
         "clicks": 438.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8053,8 +8053,8 @@
       },
       {
         "term": "mestrado recursos humanos",
-        "impressions": 13253.0,
-        "clicks": 1656.0,
+        "impressions": 13260.0,
+        "clicks": 1657.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8069,15 +8069,15 @@
       },
       {
         "term": "gestão de rh",
-        "impressions": 1606.0,
-        "clicks": 183.0,
+        "impressions": 1616.0,
+        "clicks": 186.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado em gestão de recursos humanos",
-        "impressions": 370.0,
+        "impressions": 375.0,
         "clicks": 44.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8093,7 +8093,7 @@
       },
       {
         "term": "mestrado em recursos humanos",
-        "impressions": 116.0,
+        "impressions": 119.0,
         "clicks": 11.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8170,7 +8170,7 @@
     "adsKeywords": [
       {
         "term": "mestrado educação",
-        "impressions": 27740.0,
+        "impressions": 27745.0,
         "clicks": 2911.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8178,7 +8178,7 @@
       },
       {
         "term": "mestrado ciencia cognitiva",
-        "impressions": 769.0,
+        "impressions": 771.0,
         "clicks": 49.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8186,7 +8186,7 @@
       },
       {
         "term": "mestrado cognitivo",
-        "impressions": 731.0,
+        "impressions": 735.0,
         "clicks": 37.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8231,8 +8231,8 @@
     "adsKeywords": [
       {
         "term": "mestrado educação",
-        "impressions": 48313.0,
-        "clicks": 5146.0,
+        "impressions": 48358.0,
+        "clicks": 5150.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8306,8 +8306,8 @@
     "adsKeywords": [
       {
         "term": "mestrado educação especial",
-        "impressions": 13319.0,
-        "clicks": 2770.0,
+        "impressions": 13344.0,
+        "clicks": 2773.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8365,8 +8365,8 @@
     "adsKeywords": [
       {
         "term": "mestrado ensino informatica",
-        "impressions": 9166.0,
-        "clicks": 1796.0,
+        "impressions": 9182.0,
+        "clicks": 1800.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8565,8 +8565,8 @@
       },
       {
         "term": "mestrado engenharia informatica",
-        "impressions": 6005.0,
-        "clicks": 480.0,
+        "impressions": 6020.0,
+        "clicks": 482.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8632,8 +8632,8 @@
     "adsKeywords": [
       {
         "term": "mestrado inteligência artificial",
-        "impressions": 148.0,
-        "clicks": 24.0,
+        "impressions": 159.0,
+        "clicks": 25.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8652,7 +8652,7 @@
     "adsKeywords": [
       {
         "term": "mestrado terapia",
-        "impressions": 186.0,
+        "impressions": 187.0,
         "clicks": 16.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8696,7 +8696,7 @@
     "adsKeywords": [
       {
         "term": "mestrado neuropsicologia",
-        "impressions": 6802.0,
+        "impressions": 6806.0,
         "clicks": 1049.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8704,7 +8704,7 @@
       },
       {
         "term": "curso neuropsicologia",
-        "impressions": 3432.0,
+        "impressions": 3442.0,
         "clicks": 515.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8775,15 +8775,15 @@
     "adsKeywords": [
       {
         "term": "mestrado psicologia clinica",
-        "impressions": 16075.0,
-        "clicks": 2702.0,
+        "impressions": 16082.0,
+        "clicks": 2704.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado psicologia saude",
-        "impressions": 572.0,
+        "impressions": 577.0,
         "clicks": 67.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8851,7 +8851,7 @@
     "adsKeywords": [
       {
         "term": "psicologia forense",
-        "impressions": 36842.0,
+        "impressions": 36852.0,
         "clicks": 5110.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8859,15 +8859,15 @@
       },
       {
         "term": "mestrado psicologia forense",
-        "impressions": 6182.0,
-        "clicks": 1265.0,
+        "impressions": 6219.0,
+        "clicks": 1270.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado psicologia criminal",
-        "impressions": 275.0,
+        "impressions": 278.0,
         "clicks": 31.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8930,8 +8930,8 @@
     "adsKeywords": [
       {
         "term": "mestrado psicologia",
-        "impressions": 40113.0,
-        "clicks": 4721.0,
+        "impressions": 40133.0,
+        "clicks": 4723.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -8973,7 +8973,7 @@
     "adsKeywords": [
       {
         "term": "curso sexologia",
-        "impressions": 8710.0,
+        "impressions": 8711.0,
         "clicks": 1160.0,
         "vol": 0.0,
         "low": 0.0,
@@ -8981,7 +8981,7 @@
       },
       {
         "term": "mestrado sexologia",
-        "impressions": 1579.0,
+        "impressions": 1581.0,
         "clicks": 423.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9022,15 +9022,15 @@
     "adsKeywords": [
       {
         "term": "mestrado religião",
-        "impressions": 1580.0,
-        "clicks": 255.0,
+        "impressions": 1585.0,
+        "clicks": 256.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso ciencia religião",
-        "impressions": 143.0,
+        "impressions": 145.0,
         "clicks": 14.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9087,8 +9087,8 @@
     "adsKeywords": [
       {
         "term": "Mestrado Bioquimica",
-        "impressions": 1076.0,
-        "clicks": 57.0,
+        "impressions": 1090.0,
+        "clicks": 58.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9115,7 +9115,7 @@
     "adsKeywords": [
       {
         "term": "mestrado embriologia",
-        "impressions": 1143.0,
+        "impressions": 1144.0,
         "clicks": 388.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9156,7 +9156,7 @@
     "adsKeywords": [
       {
         "term": "mestrado nutrição",
-        "impressions": 1896.0,
+        "impressions": 1901.0,
         "clicks": 221.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9228,15 +9228,15 @@
     "adsKeywords": [
       {
         "term": "mestrado serviço social",
-        "impressions": 8903.0,
-        "clicks": 1288.0,
+        "impressions": 8908.0,
+        "clicks": 1290.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado politica social",
-        "impressions": 741.0,
+        "impressions": 747.0,
         "clicks": 115.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9291,7 +9291,7 @@
     "adsKeywords": [
       {
         "term": "mestrado turismo",
-        "impressions": 8184.0,
+        "impressions": 8187.0,
         "clicks": 945.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9424,8 +9424,8 @@
     "adsKeywords": [
       {
         "term": "Mestrado Enfermagem Veterinária",
-        "impressions": 546.0,
-        "clicks": 112.0,
+        "impressions": 561.0,
+        "clicks": 115.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9444,7 +9444,7 @@
     "adsKeywords": [
       {
         "term": "mestrado animais",
-        "impressions": 175.0,
+        "impressions": 176.0,
         "clicks": 16.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9452,7 +9452,7 @@
       },
       {
         "term": "mestrado imagiologia",
-        "impressions": 18.0,
+        "impressions": 21.0,
         "clicks": 1.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9516,8 +9516,8 @@
     "adsKeywords": [
       {
         "term": "doutoramento arquitetura",
-        "impressions": 2092.0,
-        "clicks": 190.0,
+        "impressions": 2094.0,
+        "clicks": 192.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9577,7 +9577,7 @@
     "adsKeywords": [
       {
         "term": "doutoramento urbanismo",
-        "impressions": 1079.0,
+        "impressions": 1087.0,
         "clicks": 155.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9585,8 +9585,8 @@
       },
       {
         "term": "phd urbanismo",
-        "impressions": 157.0,
-        "clicks": 18.0,
+        "impressions": 159.0,
+        "clicks": 19.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9646,8 +9646,8 @@
       },
       {
         "term": "doutoramento sociomuseologia",
-        "impressions": 306.0,
-        "clicks": 86.0,
+        "impressions": 315.0,
+        "clicks": 90.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9719,7 +9719,7 @@
     "adsKeywords": [
       {
         "term": "doutoramento media",
-        "impressions": 1516.0,
+        "impressions": 1520.0,
         "clicks": 274.0,
         "vol": 0.0,
         "low": 0.0,
@@ -9788,8 +9788,8 @@
     "adsKeywords": [
       {
         "term": "doutoramento comunicação",
-        "impressions": 3674.0,
-        "clicks": 432.0,
+        "impressions": 3687.0,
+        "clicks": 434.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9831,8 +9831,8 @@
       },
       {
         "term": "doutoramento educação física",
-        "impressions": 574.0,
-        "clicks": 179.0,
+        "impressions": 586.0,
+        "clicks": 180.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9898,16 +9898,16 @@
     "adsKeywords": [
       {
         "term": "doutoramento direito",
-        "impressions": 5020.0,
-        "clicks": 487.0,
+        "impressions": 5023.0,
+        "clicks": 488.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "phd direito",
-        "impressions": 1506.0,
-        "clicks": 191.0,
+        "impressions": 1519.0,
+        "clicks": 193.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -9979,8 +9979,8 @@
     "adsKeywords": [
       {
         "term": "doutoramento educação",
-        "impressions": 14209.0,
-        "clicks": 1318.0,
+        "impressions": 14227.0,
+        "clicks": 1320.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -10027,7 +10027,7 @@
       },
       {
         "term": "mestrado educação fisica",
-        "impressions": 1239.0,
+        "impressions": 1250.0,
         "clicks": 261.0,
         "vol": 0.0,
         "low": 0.0,
@@ -10130,8 +10130,8 @@
     "adsKeywords": [
       {
         "term": "doutoramento informática",
-        "impressions": 2667.0,
-        "clicks": 267.0,
+        "impressions": 2672.0,
+        "clicks": 268.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12125,7 +12125,7 @@
     "adsKeywords": [
       {
         "term": "curso teatro",
-        "impressions": 14160.0,
+        "impressions": 14163.0,
         "clicks": 1417.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12133,8 +12133,8 @@
       },
       {
         "term": "artes cenicas",
-        "impressions": 3119.0,
-        "clicks": 330.0,
+        "impressions": 3126.0,
+        "clicks": 331.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12203,7 +12203,7 @@
     "adsKeywords": [
       {
         "term": "faculdade design",
-        "impressions": 27915.0,
+        "impressions": 27920.0,
         "clicks": 2913.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12211,7 +12211,7 @@
       },
       {
         "term": "licenciatura design",
-        "impressions": 4796.0,
+        "impressions": 4797.0,
         "clicks": 528.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12349,7 +12349,7 @@
     "adsKeywords": [
       {
         "term": "relações internacionais",
-        "impressions": 33594.0,
+        "impressions": 33597.0,
         "clicks": 3562.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12365,7 +12365,7 @@
       },
       {
         "term": "estudos europeus",
-        "impressions": 5176.0,
+        "impressions": 5184.0,
         "clicks": 377.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12381,7 +12381,7 @@
       },
       {
         "term": "licenciatura estudos europeus",
-        "impressions": 132.0,
+        "impressions": 139.0,
         "clicks": 9.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12464,7 +12464,7 @@
       },
       {
         "term": "faculdade audiovisual",
-        "impressions": 4614.0,
+        "impressions": 4622.0,
         "clicks": 649.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12472,7 +12472,7 @@
       },
       {
         "term": "licenciatura multimedia",
-        "impressions": 2581.0,
+        "impressions": 2583.0,
         "clicks": 256.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12480,7 +12480,7 @@
       },
       {
         "term": "licenciatura cinema",
-        "impressions": 1360.0,
+        "impressions": 1361.0,
         "clicks": 183.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12488,7 +12488,7 @@
       },
       {
         "term": "universidade audiovisual",
-        "impressions": 1161.0,
+        "impressions": 1171.0,
         "clicks": 90.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12541,7 +12541,7 @@
     "adsKeywords": [
       {
         "term": "curso games",
-        "impressions": 6453.0,
+        "impressions": 6457.0,
         "clicks": 683.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12600,7 +12600,7 @@
     "adsKeywords": [
       {
         "term": "ciências comunicação",
-        "impressions": 17012.0,
+        "impressions": 17016.0,
         "clicks": 1783.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12608,15 +12608,15 @@
       },
       {
         "term": "licenciatura comunicação",
-        "impressions": 4374.0,
-        "clicks": 400.0,
+        "impressions": 4386.0,
+        "clicks": 401.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso comunicação social",
-        "impressions": 3852.0,
+        "impressions": 3856.0,
         "clicks": 453.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12706,15 +12706,15 @@
     "adsKeywords": [
       {
         "term": "curso desporto",
-        "impressions": 40347.0,
-        "clicks": 4466.0,
+        "impressions": 40356.0,
+        "clicks": 4469.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "universidade desporto",
-        "impressions": 11769.0,
+        "impressions": 11775.0,
         "clicks": 1584.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12722,7 +12722,7 @@
       },
       {
         "term": "licenciatura desporto",
-        "impressions": 6248.0,
+        "impressions": 6249.0,
         "clicks": 713.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12730,7 +12730,7 @@
       },
       {
         "term": "universidade educação fisica",
-        "impressions": 3651.0,
+        "impressions": 3657.0,
         "clicks": 560.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12746,7 +12746,7 @@
       },
       {
         "term": "educação fisica desporto",
-        "impressions": 856.0,
+        "impressions": 857.0,
         "clicks": 119.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12766,15 +12766,15 @@
     "adsKeywords": [
       {
         "term": "faculdade direito",
-        "impressions": 61487.0,
-        "clicks": 9308.0,
+        "impressions": 61546.0,
+        "clicks": 9310.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade marketing",
-        "impressions": 21549.0,
+        "impressions": 21551.0,
         "clicks": 2343.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12782,7 +12782,7 @@
       },
       {
         "term": "universidade direito",
-        "impressions": 11992.0,
+        "impressions": 12000.0,
         "clicks": 1472.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12790,7 +12790,7 @@
       },
       {
         "term": "licenciatura direito",
-        "impressions": 8703.0,
+        "impressions": 8705.0,
         "clicks": 1090.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12798,7 +12798,7 @@
       },
       {
         "term": "licenciatura marketing",
-        "impressions": 7716.0,
+        "impressions": 7717.0,
         "clicks": 747.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12806,8 +12806,8 @@
       },
       {
         "term": "curso relações publicas",
-        "impressions": 4593.0,
-        "clicks": 464.0,
+        "impressions": 4603.0,
+        "clicks": 466.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12852,8 +12852,8 @@
     "adsKeywords": [
       {
         "term": "licenciatura economia",
-        "impressions": 913.0,
-        "clicks": 88.0,
+        "impressions": 918.0,
+        "clicks": 89.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -12896,7 +12896,7 @@
     "adsKeywords": [
       {
         "term": "curso gestão",
-        "impressions": 48227.0,
+        "impressions": 48255.0,
         "clicks": 3821.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12904,7 +12904,7 @@
       },
       {
         "term": "licenciatura gestão",
-        "impressions": 7502.0,
+        "impressions": 7506.0,
         "clicks": 566.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12912,7 +12912,7 @@
       },
       {
         "term": "curso gestão do ambiente",
-        "impressions": 111.0,
+        "impressions": 113.0,
         "clicks": 10.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12940,7 +12940,7 @@
     "adsKeywords": [
       {
         "term": "curso gestão comercial",
-        "impressions": 4435.0,
+        "impressions": 4438.0,
         "clicks": 502.0,
         "vol": 0.0,
         "low": 0.0,
@@ -12994,7 +12994,7 @@
     "adsKeywords": [
       {
         "term": "faculdade recursos humanos",
-        "impressions": 11395.0,
+        "impressions": 11399.0,
         "clicks": 1344.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13002,7 +13002,7 @@
       },
       {
         "term": "licenciatura recursos humanos",
-        "impressions": 6741.0,
+        "impressions": 6747.0,
         "clicks": 950.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13030,15 +13030,15 @@
       },
       {
         "term": "faculdade educacao",
-        "impressions": 1964.0,
-        "clicks": 113.0,
+        "impressions": 1975.0,
+        "clicks": 115.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso educação",
-        "impressions": 797.0,
+        "impressions": 799.0,
         "clicks": 68.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13237,7 +13237,7 @@
       },
       {
         "term": "faculdade engenharia civil",
-        "impressions": 2253.0,
+        "impressions": 2255.0,
         "clicks": 258.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13291,7 +13291,7 @@
     "adsKeywords": [
       {
         "term": "engenharia ambiente",
-        "impressions": 6026.0,
+        "impressions": 6029.0,
         "clicks": 588.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13299,7 +13299,7 @@
       },
       {
         "term": "faculdade engenharia ambiental",
-        "impressions": 165.0,
+        "impressions": 167.0,
         "clicks": 7.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13366,7 +13366,7 @@
     "adsKeywords": [
       {
         "term": "Engenharia Eletrotécnica",
-        "impressions": 2302.0,
+        "impressions": 2310.0,
         "clicks": 104.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13511,7 +13511,7 @@
     "adsKeywords": [
       {
         "term": "engenharia informatica",
-        "impressions": 59426.0,
+        "impressions": 59433.0,
         "clicks": 5579.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13519,7 +13519,7 @@
       },
       {
         "term": "faculdade informatica",
-        "impressions": 14014.0,
+        "impressions": 14018.0,
         "clicks": 1607.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13565,23 +13565,23 @@
     "adsKeywords": [
       {
         "term": "faculdade psicologia",
-        "impressions": 56347.0,
-        "clicks": 8603.0,
+        "impressions": 56370.0,
+        "clicks": 8606.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso psicologia",
-        "impressions": 27834.0,
-        "clicks": 3502.0,
+        "impressions": 27844.0,
+        "clicks": 3504.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura psicologia",
-        "impressions": 13148.0,
+        "impressions": 13150.0,
         "clicks": 1816.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13627,7 +13627,7 @@
     "adsKeywords": [
       {
         "term": "curso assistente social",
-        "impressions": 8667.0,
+        "impressions": 8679.0,
         "clicks": 1521.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13643,7 +13643,7 @@
       },
       {
         "term": "licenciatura serviço social",
-        "impressions": 2601.0,
+        "impressions": 2605.0,
         "clicks": 362.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13651,7 +13651,7 @@
       },
       {
         "term": "faculdade serviço social",
-        "impressions": 2434.0,
+        "impressions": 2435.0,
         "clicks": 422.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13742,8 +13742,8 @@
     "adsKeywords": [
       {
         "term": "mestrado marketing",
-        "impressions": 2144.0,
-        "clicks": 159.0,
+        "impressions": 2149.0,
+        "clicks": 161.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -13826,7 +13826,7 @@
     "adsKeywords": [
       {
         "term": "mestrado media",
-        "impressions": 398.0,
+        "impressions": 402.0,
         "clicks": 17.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13846,7 +13846,7 @@
     "adsKeywords": [
       {
         "term": "mestrado desporto",
-        "impressions": 1344.0,
+        "impressions": 1350.0,
         "clicks": 123.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13862,7 +13862,7 @@
       },
       {
         "term": "mestrado futebol",
-        "impressions": 143.0,
+        "impressions": 146.0,
         "clicks": 11.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13991,8 +13991,8 @@
     "adsKeywords": [
       {
         "term": "mestrado direito",
-        "impressions": 12092.0,
-        "clicks": 1150.0,
+        "impressions": 12127.0,
+        "clicks": 1152.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14072,8 +14072,8 @@
     "adsKeywords": [
       {
         "term": "mestrado recursos humanos",
-        "impressions": 2546.0,
-        "clicks": 237.0,
+        "impressions": 2554.0,
+        "clicks": 238.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14177,8 +14177,8 @@
     "adsKeywords": [
       {
         "term": "mestrado proteção",
-        "impressions": 577.0,
-        "clicks": 112.0,
+        "impressions": 579.0,
+        "clicks": 113.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14277,8 +14277,8 @@
       },
       {
         "term": "curso Neuropsicologia",
-        "impressions": 216.0,
-        "clicks": 24.0,
+        "impressions": 224.0,
+        "clicks": 25.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14627,7 +14627,7 @@
     "adsKeywords": [
       {
         "term": "Licenciatura Multimédia",
-        "impressions": 529.0,
+        "impressions": 534.0,
         "clicks": 48.0,
         "vol": 0.0,
         "low": 0.0,
@@ -14681,8 +14681,8 @@
       },
       {
         "term": "licenciatura engenharia informática",
-        "impressions": 721.0,
-        "clicks": 37.0,
+        "impressions": 731.0,
+        "clicks": 38.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14767,16 +14767,16 @@
       },
       {
         "term": "ciencias biomédicas",
-        "impressions": 1958.0,
-        "clicks": 104.0,
+        "impressions": 2010.0,
+        "clicks": 110.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura biomédicas",
-        "impressions": 1368.0,
-        "clicks": 177.0,
+        "impressions": 1382.0,
+        "clicks": 178.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14891,7 +14891,7 @@
     "adsKeywords": [
       {
         "term": "curso educação básica",
-        "impressions": 43418.0,
+        "impressions": 43423.0,
         "clicks": 8951.0,
         "vol": 0.0,
         "low": 0.0,
@@ -14899,16 +14899,16 @@
       },
       {
         "term": "licenciatura educação básica",
-        "impressions": 24419.0,
-        "clicks": 4070.0,
+        "impressions": 24426.0,
+        "clicks": 4071.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura ensino basico",
-        "impressions": 14520.0,
-        "clicks": 2295.0,
+        "impressions": 14563.0,
+        "clicks": 2299.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -14969,16 +14969,16 @@
     "adsKeywords": [
       {
         "term": "curso enfermagem",
-        "impressions": 181494.0,
-        "clicks": 24762.0,
+        "impressions": 181529.0,
+        "clicks": 24771.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura enfermagem",
-        "impressions": 11579.0,
-        "clicks": 1531.0,
+        "impressions": 11585.0,
+        "clicks": 1533.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -15039,8 +15039,8 @@
     "adsKeywords": [
       {
         "term": "enfermagem veterinária",
-        "impressions": 55973.0,
-        "clicks": 10903.0,
+        "impressions": 55984.0,
+        "clicks": 10904.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -15117,8 +15117,8 @@
       },
       {
         "term": "licenciatura engenharia informática",
-        "impressions": 1354.0,
-        "clicks": 80.0,
+        "impressions": 1380.0,
+        "clicks": 82.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -15171,15 +15171,15 @@
     "adsKeywords": [
       {
         "term": "curso farmacêutica",
-        "impressions": 53397.0,
-        "clicks": 5719.0,
+        "impressions": 53402.0,
+        "clicks": 5720.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso farmácia",
-        "impressions": 28032.0,
+        "impressions": 28033.0,
         "clicks": 2709.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15187,7 +15187,7 @@
       },
       {
         "term": "licenciatura farmácia",
-        "impressions": 7864.0,
+        "impressions": 7865.0,
         "clicks": 941.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15195,7 +15195,7 @@
       },
       {
         "term": "licenciatura farmacêutica",
-        "impressions": 969.0,
+        "impressions": 971.0,
         "clicks": 70.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15281,7 +15281,7 @@
       },
       {
         "term": "licenciatura comercial",
-        "impressions": 430.0,
+        "impressions": 434.0,
         "clicks": 27.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15327,7 +15327,7 @@
     "adsKeywords": [
       {
         "term": "licenciatura turismo",
-        "impressions": 15394.0,
+        "impressions": 15404.0,
         "clicks": 1353.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15351,7 +15351,7 @@
       },
       {
         "term": "licenciatura gestao",
-        "impressions": 739.0,
+        "impressions": 748.0,
         "clicks": 68.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15359,8 +15359,8 @@
       },
       {
         "term": "gestao empresas",
-        "impressions": 325.0,
-        "clicks": 21.0,
+        "impressions": 333.0,
+        "clicks": 22.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -15405,16 +15405,16 @@
     "adsKeywords": [
       {
         "term": "gestão empresarial",
-        "impressions": 34635.0,
-        "clicks": 2861.0,
+        "impressions": 34644.0,
+        "clicks": 2862.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura gestão",
-        "impressions": 33264.0,
-        "clicks": 2252.0,
+        "impressions": 33318.0,
+        "clicks": 2259.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -15437,7 +15437,7 @@
       },
       {
         "term": "mestrado gestao",
-        "impressions": 569.0,
+        "impressions": 571.0,
         "clicks": 43.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15537,15 +15537,15 @@
     "adsKeywords": [
       {
         "term": "curso radiologia",
-        "impressions": 31187.0,
-        "clicks": 5988.0,
+        "impressions": 31194.0,
+        "clicks": 5991.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso radioterapia",
-        "impressions": 7890.0,
+        "impressions": 7891.0,
         "clicks": 1024.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15553,7 +15553,7 @@
       },
       {
         "term": "licenciatura radiologia",
-        "impressions": 3305.0,
+        "impressions": 3309.0,
         "clicks": 578.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15623,7 +15623,7 @@
     "adsKeywords": [
       {
         "term": "curso osteopatia",
-        "impressions": 34994.0,
+        "impressions": 34995.0,
         "clicks": 5527.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15631,7 +15631,7 @@
       },
       {
         "term": "licenciatura osteopatia",
-        "impressions": 9807.0,
+        "impressions": 9810.0,
         "clicks": 1546.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15801,7 +15801,7 @@
     "adsKeywords": [
       {
         "term": "mestrado educação",
-        "impressions": 114334.0,
+        "impressions": 114338.0,
         "clicks": 10742.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15809,7 +15809,7 @@
       },
       {
         "term": "mestrado educacao",
-        "impressions": 1737.0,
+        "impressions": 1741.0,
         "clicks": 101.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15866,7 +15866,7 @@
     "adsKeywords": [
       {
         "term": "mestrado Enfermagem Veterinária",
-        "impressions": 606.0,
+        "impressions": 607.0,
         "clicks": 82.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15874,7 +15874,7 @@
       },
       {
         "term": "mestrado enfermagem veterinaria",
-        "impressions": 119.0,
+        "impressions": 120.0,
         "clicks": 16.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15928,7 +15928,7 @@
     "adsKeywords": [
       {
         "term": "mestrado ensino",
-        "impressions": 1052.0,
+        "impressions": 1053.0,
         "clicks": 77.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16204,7 +16204,7 @@
       },
       {
         "term": "curso profissional infantil",
-        "impressions": 142.0,
+        "impressions": 148.0,
         "clicks": 10.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16287,7 +16287,7 @@
     "adsKeywords": [
       {
         "term": "curso técnico administração",
-        "impressions": 9638.0,
+        "impressions": 9639.0,
         "clicks": 1144.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16341,7 +16341,7 @@
     "adsKeywords": [
       {
         "term": "curso robotica",
-        "impressions": 13984.0,
+        "impressions": 13987.0,
         "clicks": 1628.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16387,7 +16387,7 @@
     "adsKeywords": [
       {
         "term": "curso saúde",
-        "impressions": 82587.0,
+        "impressions": 82588.0,
         "clicks": 7385.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16449,8 +16449,8 @@
     "adsKeywords": [
       {
         "term": "ctesp cibersegurança",
-        "impressions": 6956.0,
-        "clicks": 1312.0,
+        "impressions": 6974.0,
+        "clicks": 1315.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -16503,7 +16503,7 @@
       },
       {
         "term": "curso técnico gestão",
-        "impressions": 15077.0,
+        "impressions": 15079.0,
         "clicks": 1617.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16519,8 +16519,8 @@
       },
       {
         "term": "ctesp gestão",
-        "impressions": 6499.0,
-        "clicks": 944.0,
+        "impressions": 6517.0,
+        "clicks": 945.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -16581,7 +16581,7 @@
     "adsKeywords": [
       {
         "term": "curso tecnico eletronica",
-        "impressions": 9365.0,
+        "impressions": 9374.0,
         "clicks": 855.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16589,7 +16589,7 @@
       },
       {
         "term": "curso desenvolvimento de sistemas",
-        "impressions": 5762.0,
+        "impressions": 5769.0,
         "clicks": 444.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16651,7 +16651,7 @@
     "adsKeywords": [
       {
         "term": "desenvolvimento web curso",
-        "impressions": 5030.0,
+        "impressions": 5037.0,
         "clicks": 353.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16745,16 +16745,16 @@
     "adsKeywords": [
       {
         "term": "curso técnico recursos humanos",
-        "impressions": 7695.0,
-        "clicks": 835.0,
+        "impressions": 7714.0,
+        "clicks": 837.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "ctesp recursos humanos",
-        "impressions": 2048.0,
-        "clicks": 421.0,
+        "impressions": 2062.0,
+        "clicks": 423.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -16815,7 +16815,7 @@
       },
       {
         "term": "curso gestão comercial",
-        "impressions": 5269.0,
+        "impressions": 5270.0,
         "clicks": 584.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16869,7 +16869,7 @@
     "adsKeywords": [
       {
         "term": "curso profissional hotelaria",
-        "impressions": 37734.0,
+        "impressions": 37742.0,
         "clicks": 3489.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16939,8 +16939,8 @@
     "adsKeywords": [
       {
         "term": "curso gestão marketing",
-        "impressions": 9291.0,
-        "clicks": 683.0,
+        "impressions": 9298.0,
+        "clicks": 684.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17071,8 +17071,8 @@
     "adsKeywords": [
       {
         "term": "curso técnico sistemas informação",
-        "impressions": 622.0,
-        "clicks": 48.0,
+        "impressions": 641.0,
+        "clicks": 49.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17125,7 +17125,7 @@
       },
       {
         "term": "curso instalações eletricas",
-        "impressions": 1262.0,
+        "impressions": 1277.0,
         "clicks": 144.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17179,7 +17179,7 @@
     "adsKeywords": [
       {
         "term": "curso forense",
-        "impressions": 73345.0,
+        "impressions": 73364.0,
         "clicks": 13398.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17187,8 +17187,8 @@
       },
       {
         "term": "curso criminal",
-        "impressions": 68849.0,
-        "clicks": 12308.0,
+        "impressions": 68866.0,
+        "clicks": 12311.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17249,7 +17249,7 @@
       },
       {
         "term": "ctesp marketing digital",
-        "impressions": 465.0,
+        "impressions": 470.0,
         "clicks": 38.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17327,7 +17327,7 @@
     "adsKeywords": [
       {
         "term": "curso profissional multimedia",
-        "impressions": 31309.0,
+        "impressions": 31313.0,
         "clicks": 3413.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17335,23 +17335,23 @@
       },
       {
         "term": "curso profissional audiovisuais",
-        "impressions": 5946.0,
-        "clicks": 631.0,
+        "impressions": 5966.0,
+        "clicks": 635.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "ctesp multimedia",
-        "impressions": 3845.0,
-        "clicks": 614.0,
+        "impressions": 3872.0,
+        "clicks": 619.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso tecnico audiovisual",
-        "impressions": 3096.0,
+        "impressions": 3097.0,
         "clicks": 446.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17405,7 +17405,7 @@
     "adsKeywords": [
       {
         "term": "curso telecomunicações",
-        "impressions": 8928.0,
+        "impressions": 8929.0,
         "clicks": 945.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17511,15 +17511,15 @@
     "adsKeywords": [
       {
         "term": "curso segurança informática",
-        "impressions": 4266.0,
-        "clicks": 306.0,
+        "impressions": 4287.0,
+        "clicks": 309.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso técnico cibersegurança",
-        "impressions": 1916.0,
+        "impressions": 1929.0,
         "clicks": 142.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17527,7 +17527,7 @@
       },
       {
         "term": "ctesp cibersegurança",
-        "impressions": 1759.0,
+        "impressions": 1767.0,
         "clicks": 208.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17589,8 +17589,8 @@
       },
       {
         "term": "ctesp comunicação",
-        "impressions": 1467.0,
-        "clicks": 194.0,
+        "impressions": 1477.0,
+        "clicks": 196.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17621,7 +17621,7 @@
       },
       {
         "term": "ctesp digital",
-        "impressions": 400.0,
+        "impressions": 404.0,
         "clicks": 41.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17683,7 +17683,7 @@
       },
       {
         "term": "curso técnico gestão",
-        "impressions": 496.0,
+        "impressions": 498.0,
         "clicks": 48.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17719,16 +17719,16 @@
     "adsKeywords": [
       {
         "term": "curso Análises Laboratoriais",
-        "impressions": 3334.0,
-        "clicks": 349.0,
+        "impressions": 3345.0,
+        "clicks": 350.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "ctesp Análises Laboratoriais",
-        "impressions": 695.0,
-        "clicks": 75.0,
+        "impressions": 700.0,
+        "clicks": 76.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -17781,7 +17781,7 @@
     "adsKeywords": [
       {
         "term": "curso tecnico inteligencia artificial",
-        "impressions": 805.0,
+        "impressions": 807.0,
         "clicks": 100.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17789,7 +17789,7 @@
       },
       {
         "term": "ctesp inteligencia artificial",
-        "impressions": 339.0,
+        "impressions": 343.0,
         "clicks": 39.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17937,7 +17937,7 @@
       },
       {
         "term": "curso desenvolvimento web",
-        "impressions": 604.0,
+        "impressions": 609.0,
         "clicks": 34.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18257,8 +18257,8 @@
     "adsKeywords": [
       {
         "term": "ctesp desporto",
-        "impressions": 7515.0,
-        "clicks": 817.0,
+        "impressions": 7548.0,
+        "clicks": 822.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -18311,7 +18311,7 @@
       },
       {
         "term": "curso marketing digital",
-        "impressions": 500.0,
+        "impressions": 501.0,
         "clicks": 26.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18319,7 +18319,7 @@
       },
       {
         "term": "ctesp marketing",
-        "impressions": 416.0,
+        "impressions": 424.0,
         "clicks": 22.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18459,7 +18459,7 @@
     "adsKeywords": [
       {
         "term": "ctesp marketing digital",
-        "impressions": 249.0,
+        "impressions": 254.0,
         "clicks": 25.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18663,7 +18663,7 @@
       },
       {
         "term": "redes e sistemas informáticos",
-        "impressions": 772.0,
+        "impressions": 778.0,
         "clicks": 46.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18733,7 +18733,7 @@
     "adsKeywords": [
       {
         "term": "ctesp som",
-        "impressions": 1188.0,
+        "impressions": 1216.0,
         "clicks": 90.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18749,7 +18749,7 @@
       },
       {
         "term": "ctesp imagem",
-        "impressions": 12.0,
+        "impressions": 14.0,
         "clicks": 1.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18827,7 +18827,7 @@
       },
       {
         "term": "ctesp turismo",
-        "impressions": 485.0,
+        "impressions": 491.0,
         "clicks": 60.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18873,8 +18873,8 @@
     "adsKeywords": [
       {
         "term": "licenciatura comunicação",
-        "impressions": 6845.0,
-        "clicks": 437.0,
+        "impressions": 6858.0,
+        "clicks": 438.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -18935,7 +18935,7 @@
       },
       {
         "term": "engenharia segurança trabalho",
-        "impressions": 1790.0,
+        "impressions": 1794.0,
         "clicks": 316.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18943,8 +18943,8 @@
       },
       {
         "term": "licenciatura trabalho",
-        "impressions": 1099.0,
-        "clicks": 172.0,
+        "impressions": 1104.0,
+        "clicks": 173.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19005,15 +19005,15 @@
       },
       {
         "term": "informatica gestao",
-        "impressions": 9766.0,
-        "clicks": 715.0,
+        "impressions": 9781.0,
+        "clicks": 716.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura informatica",
-        "impressions": 4237.0,
+        "impressions": 4242.0,
         "clicks": 506.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19083,8 +19083,8 @@
       },
       {
         "term": "licenciatura gestão",
-        "impressions": 3652.0,
-        "clicks": 347.0,
+        "impressions": 3667.0,
+        "clicks": 349.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19153,15 +19153,15 @@
       },
       {
         "term": "licenciatura recursos humanos",
-        "impressions": 12744.0,
-        "clicks": 1550.0,
+        "impressions": 12791.0,
+        "clicks": 1554.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade recursos humanos",
-        "impressions": 3333.0,
+        "impressions": 3338.0,
         "clicks": 451.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19169,7 +19169,7 @@
       },
       {
         "term": "curso recursos humanos",
-        "impressions": 2522.0,
+        "impressions": 2524.0,
         "clicks": 304.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19215,7 +19215,7 @@
     "adsKeywords": [
       {
         "term": "licenciatura turismo",
-        "impressions": 8363.0,
+        "impressions": 8364.0,
         "clicks": 903.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19231,7 +19231,7 @@
       },
       {
         "term": "curso gestão de turismo",
-        "impressions": 691.0,
+        "impressions": 695.0,
         "clicks": 56.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19267,7 +19267,7 @@
       },
       {
         "term": "licenciatura e-commerce",
-        "impressions": 764.0,
+        "impressions": 776.0,
         "clicks": 85.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19303,15 +19303,15 @@
     "adsKeywords": [
       {
         "term": "licenciatura IA",
-        "impressions": 1292.0,
-        "clicks": 139.0,
+        "impressions": 1334.0,
+        "clicks": 142.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso IA",
-        "impressions": 496.0,
+        "impressions": 499.0,
         "clicks": 49.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19373,7 +19373,7 @@
       },
       {
         "term": "faculdade multimedia",
-        "impressions": 7628.0,
+        "impressions": 7650.0,
         "clicks": 580.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19381,7 +19381,7 @@
       },
       {
         "term": "licenciatura multimedia",
-        "impressions": 3908.0,
+        "impressions": 3911.0,
         "clicks": 484.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19397,16 +19397,16 @@
       },
       {
         "term": "desenvolvimento produtos multimedia",
-        "impressions": 973.0,
-        "clicks": 67.0,
+        "impressions": 1009.0,
+        "clicks": 70.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso profissional tecnico multimedia",
-        "impressions": 619.0,
-        "clicks": 30.0,
+        "impressions": 621.0,
+        "clicks": 31.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19467,23 +19467,23 @@
     "adsKeywords": [
       {
         "term": "mestrado informática",
-        "impressions": 13360.0,
-        "clicks": 955.0,
+        "impressions": 13386.0,
+        "clicks": 959.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado tecnologia",
-        "impressions": 7598.0,
-        "clicks": 516.0,
+        "impressions": 7605.0,
+        "clicks": 517.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado sistemas informação",
-        "impressions": 781.0,
+        "impressions": 788.0,
         "clicks": 38.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19529,7 +19529,7 @@
     "adsKeywords": [
       {
         "term": "mestrado informatica",
-        "impressions": 1773.0,
+        "impressions": 1797.0,
         "clicks": 102.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19612,16 +19612,16 @@
     "adsKeywords": [
       {
         "term": "mestrado gestão",
-        "impressions": 34168.0,
-        "clicks": 2849.0,
+        "impressions": 34176.0,
+        "clicks": 2850.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso gestão",
-        "impressions": 33791.0,
-        "clicks": 2125.0,
+        "impressions": 33829.0,
+        "clicks": 2129.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19636,8 +19636,8 @@
       },
       {
         "term": "mestrado em gestão de recursos humanos",
-        "impressions": 1410.0,
-        "clicks": 157.0,
+        "impressions": 1434.0,
+        "clicks": 160.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -19660,14 +19660,14 @@
       },
       {
         "term": "curso tecnico rh",
-        "impressions": 430.0,
+        "impressions": 442.0,
         "clicks": 46.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
-        "term": "mestrado finanças",
+        "term": "ctesp gestao",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -19675,7 +19675,7 @@
         "high": 0.0
       },
       {
-        "term": "ctesp gestao",
+        "term": "mestrado finanças",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -19754,15 +19754,15 @@
       },
       {
         "term": "mestrado em segurança do trabalho",
-        "impressions": 732.0,
-        "clicks": 89.0,
+        "impressions": 744.0,
+        "clicks": 92.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "gestão da segurança do trabalho",
-        "impressions": 88.0,
+        "impressions": 89.0,
         "clicks": 10.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20119,8 +20119,8 @@
       },
       {
         "term": "ciencia de dados",
-        "impressions": 2314.0,
-        "clicks": 84.0,
+        "impressions": 2330.0,
+        "clicks": 87.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20135,8 +20135,8 @@
       },
       {
         "term": "curso ciencia de dados",
-        "impressions": 828.0,
-        "clicks": 32.0,
+        "impressions": 864.0,
+        "clicks": 35.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20213,7 +20213,7 @@
     "adsKeywords": [
       {
         "term": "licenciatura desporto",
-        "impressions": 23171.0,
+        "impressions": 23181.0,
         "clicks": 3370.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20221,8 +20221,8 @@
       },
       {
         "term": "curso desporto",
-        "impressions": 3616.0,
-        "clicks": 260.0,
+        "impressions": 3655.0,
+        "clicks": 261.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20257,15 +20257,15 @@
     "adsKeywords": [
       {
         "term": "licenciatura matemática",
-        "impressions": 3806.0,
-        "clicks": 228.0,
+        "impressions": 3825.0,
+        "clicks": 229.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "matemática computação",
-        "impressions": 1780.0,
+        "impressions": 1782.0,
         "clicks": 77.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20285,23 +20285,23 @@
     "adsKeywords": [
       {
         "term": "curso design",
-        "impressions": 21939.0,
-        "clicks": 1685.0,
+        "impressions": 21954.0,
+        "clicks": 1686.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade design",
-        "impressions": 18953.0,
-        "clicks": 1656.0,
+        "impressions": 18967.0,
+        "clicks": 1657.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura design",
-        "impressions": 6413.0,
+        "impressions": 6414.0,
         "clicks": 590.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20347,16 +20347,16 @@
     "adsKeywords": [
       {
         "term": "faculdade design moda",
-        "impressions": 12846.0,
-        "clicks": 1322.0,
+        "impressions": 12854.0,
+        "clicks": 1323.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura moda",
-        "impressions": 1331.0,
-        "clicks": 170.0,
+        "impressions": 1335.0,
+        "clicks": 171.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20401,7 +20401,7 @@
     "adsKeywords": [
       {
         "term": "faculdade direito",
-        "impressions": 61813.0,
+        "impressions": 61880.0,
         "clicks": 7562.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20409,32 +20409,32 @@
       },
       {
         "term": "curso direito",
-        "impressions": 44585.0,
-        "clicks": 5596.0,
+        "impressions": 44619.0,
+        "clicks": 5600.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "escola direito",
-        "impressions": 39146.0,
-        "clicks": 5045.0,
+        "impressions": 39276.0,
+        "clicks": 5052.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura direito",
-        "impressions": 24341.0,
-        "clicks": 2776.0,
+        "impressions": 24399.0,
+        "clicks": 2780.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado direito do trabalho",
-        "impressions": 483.0,
-        "clicks": 74.0,
+        "impressions": 503.0,
+        "clicks": 77.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20485,15 +20485,15 @@
       },
       {
         "term": "engenharia informatica",
-        "impressions": 1506.0,
-        "clicks": 59.0,
+        "impressions": 1536.0,
+        "clicks": 62.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso informatica",
-        "impressions": 794.0,
+        "impressions": 824.0,
         "clicks": 27.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20501,8 +20501,8 @@
       },
       {
         "term": "licenciatura informatica",
-        "impressions": 299.0,
-        "clicks": 15.0,
+        "impressions": 326.0,
+        "clicks": 16.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20571,15 +20571,15 @@
       },
       {
         "term": "licenciatura recursos humanos",
-        "impressions": 11056.0,
-        "clicks": 1473.0,
+        "impressions": 11126.0,
+        "clicks": 1481.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso rh",
-        "impressions": 10034.0,
+        "impressions": 10053.0,
         "clicks": 1127.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20595,7 +20595,7 @@
       },
       {
         "term": "licenciatura empresas",
-        "impressions": 1276.0,
+        "impressions": 1300.0,
         "clicks": 88.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20603,16 +20603,16 @@
       },
       {
         "term": "gestao empresas",
-        "impressions": 856.0,
-        "clicks": 47.0,
+        "impressions": 908.0,
+        "clicks": 50.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "gestao recursos humanos",
-        "impressions": 579.0,
-        "clicks": 21.0,
+        "impressions": 594.0,
+        "clicks": 23.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20693,7 +20693,7 @@
     "adsKeywords": [
       {
         "term": "gestão turismo",
-        "impressions": 14950.0,
+        "impressions": 14976.0,
         "clicks": 1873.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20701,8 +20701,8 @@
       },
       {
         "term": "licenciatura turismo",
-        "impressions": 128.0,
-        "clicks": 7.0,
+        "impressions": 151.0,
+        "clicks": 8.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20763,15 +20763,15 @@
     "adsKeywords": [
       {
         "term": "faculdade psicologia",
-        "impressions": 62740.0,
-        "clicks": 9791.0,
+        "impressions": 62769.0,
+        "clicks": 9794.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "curso psicologia",
-        "impressions": 51631.0,
+        "impressions": 51646.0,
         "clicks": 7287.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20779,24 +20779,24 @@
       },
       {
         "term": "escola psicologia",
-        "impressions": 33505.0,
-        "clicks": 4532.0,
+        "impressions": 33590.0,
+        "clicks": 4541.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "mestrado psicologia",
-        "impressions": 31077.0,
-        "clicks": 2539.0,
+        "impressions": 31183.0,
+        "clicks": 2551.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "licenciatura psicologia",
-        "impressions": 28223.0,
-        "clicks": 3131.0,
+        "impressions": 28262.0,
+        "clicks": 3132.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20841,24 +20841,24 @@
     "adsKeywords": [
       {
         "term": "curso tecnologia",
-        "impressions": 17512.0,
-        "clicks": 1483.0,
+        "impressions": 17521.0,
+        "clicks": 1484.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade tecnologia",
-        "impressions": 11955.0,
-        "clicks": 1064.0,
+        "impressions": 12016.0,
+        "clicks": 1071.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "tecnologias criativas",
-        "impressions": 254.0,
-        "clicks": 53.0,
+        "impressions": 261.0,
+        "clicks": 54.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20885,15 +20885,15 @@
     "adsKeywords": [
       {
         "term": "curso arquitetura",
-        "impressions": 44472.0,
-        "clicks": 5749.0,
+        "impressions": 44496.0,
+        "clicks": 5752.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
       },
       {
         "term": "faculdade arquitetura",
-        "impressions": 21007.0,
+        "impressions": 21015.0,
         "clicks": 2352.0,
         "vol": 0.0,
         "low": 0.0,
@@ -20901,8 +20901,8 @@
       },
       {
         "term": "licenciatura arquitetura",
-        "impressions": 8904.0,
-        "clicks": 1103.0,
+        "impressions": 8936.0,
+        "clicks": 1106.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -20958,7 +20958,7 @@
     "adsKeywords": [
       {
         "term": "curso biodesign",
-        "impressions": 164.0,
+        "impressions": 167.0,
         "clicks": 3.0,
         "vol": 0.0,
         "low": 0.0,
@@ -21012,8 +21012,8 @@
     "adsKeywords": [
       {
         "term": "mestrado Design",
-        "impressions": 1509.0,
-        "clicks": 87.0,
+        "impressions": 1527.0,
+        "clicks": 89.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -21085,8 +21085,8 @@
     "adsKeywords": [
       {
         "term": "mestrado artes",
-        "impressions": 3412.0,
-        "clicks": 289.0,
+        "impressions": 3440.0,
+        "clicks": 294.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -21177,8 +21177,8 @@
     "adsKeywords": [
       {
         "term": "mestrado turismo",
-        "impressions": 3811.0,
-        "clicks": 207.0,
+        "impressions": 3874.0,
+        "clicks": 210.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -21250,8 +21250,8 @@
     "adsKeywords": [
       {
         "term": "mestrado urbanismo",
-        "impressions": 277.0,
-        "clicks": 25.0,
+        "impressions": 289.0,
+        "clicks": 27.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -21341,8 +21341,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "16/08/2026, 00:33:52",
-    "lastSync": "16/08/2026, 00:33:52",
+    "last_sync_at": "17/08/2026, 00:31:54",
+    "lastSync": "17/08/2026, 00:31:54",
     "totalAdsCourses": 251
   },
   {
