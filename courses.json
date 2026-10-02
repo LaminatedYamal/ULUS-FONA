@@ -13519,7 +13519,7 @@
     "adsKeywords": [
       {
         "term": "engenharia informatica",
-        "impressions": 61083.0,
+        "impressions": 61084.0,
         "clicks": 5681.0,
         "vol": 0.0,
         "low": 0.0,
@@ -13581,7 +13581,7 @@
       },
       {
         "term": "curso psicologia",
-        "impressions": 28366.0,
+        "impressions": 28365.0,
         "clicks": 3542.0,
         "vol": 0.0,
         "low": 0.0,
@@ -15817,7 +15817,7 @@
       },
       {
         "term": "mestrado educacao",
-        "impressions": 2836.0,
+        "impressions": 2837.0,
         "clicks": 194.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16457,7 +16457,7 @@
     "adsKeywords": [
       {
         "term": "ctesp cibersegurança",
-        "impressions": 9461.0,
+        "impressions": 9462.0,
         "clicks": 1540.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16761,7 +16761,7 @@
       },
       {
         "term": "ctesp recursos humanos",
-        "impressions": 5055.0,
+        "impressions": 5057.0,
         "clicks": 620.0,
         "vol": 0.0,
         "low": 0.0,
@@ -16815,7 +16815,7 @@
     "adsKeywords": [
       {
         "term": "curso vendas",
-        "impressions": 9562.0,
+        "impressions": 9563.0,
         "clicks": 814.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17343,7 +17343,7 @@
       },
       {
         "term": "curso profissional audiovisuais",
-        "impressions": 8405.0,
+        "impressions": 8409.0,
         "clicks": 786.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17527,7 +17527,7 @@
       },
       {
         "term": "curso técnico cibersegurança",
-        "impressions": 2518.0,
+        "impressions": 2519.0,
         "clicks": 183.0,
         "vol": 0.0,
         "low": 0.0,
@@ -17597,7 +17597,7 @@
       },
       {
         "term": "ctesp comunicação",
-        "impressions": 2845.0,
+        "impressions": 2846.0,
         "clicks": 260.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18561,7 +18561,7 @@
       },
       {
         "term": "ctesp marketing digital",
-        "impressions": 461.0,
+        "impressions": 462.0,
         "clicks": 35.0,
         "vol": 0.0,
         "low": 0.0,
@@ -18664,7 +18664,7 @@
       {
         "term": "redes e sistemas informáticos",
         "impressions": 1669.0,
-        "clicks": 104.0,
+        "clicks": 102.0,
         "vol": 0.0,
         "low": 0.0,
         "high": 0.0
@@ -18741,7 +18741,7 @@
     "adsKeywords": [
       {
         "term": "ctesp som",
-        "impressions": 3033.0,
+        "impressions": 3034.0,
         "clicks": 194.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19475,7 +19475,7 @@
     "adsKeywords": [
       {
         "term": "mestrado informática",
-        "impressions": 15209.0,
+        "impressions": 15210.0,
         "clicks": 1108.0,
         "vol": 0.0,
         "low": 0.0,
@@ -19675,7 +19675,7 @@
         "high": 0.0
       },
       {
-        "term": "ctesp gestao",
+        "term": "mestrado finanças",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -19683,7 +19683,7 @@
         "high": 0.0
       },
       {
-        "term": "mestrado finanças",
+        "term": "ctesp gestao",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -20857,7 +20857,7 @@
       },
       {
         "term": "faculdade tecnologia",
-        "impressions": 17235.0,
+        "impressions": 17236.0,
         "clicks": 1362.0,
         "vol": 0.0,
         "low": 0.0,
@@ -21349,8 +21349,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "01/10/2026, 02:49:19",
-    "lastSync": "01/10/2026, 02:49:19",
+    "last_sync_at": "02/10/2026, 02:52:18",
+    "lastSync": "02/10/2026, 02:52:18",
     "totalAdsCourses": 251
   },
   {
