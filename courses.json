@@ -17444,22 +17444,6 @@
         "high": 0.0
       },
       {
-        "term": "ctesp telecomunicações",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
-        "term": "ctesp eletrónica",
-        "impressions": 0.0,
-        "clicks": 0.0,
-        "vol": 0.0,
-        "low": 0.0,
-        "high": 0.0
-      },
-      {
         "term": "curso informática",
         "impressions": 0.0,
         "clicks": 0.0,
@@ -17477,6 +17461,22 @@
       },
       {
         "term": "ctesp informática",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp telecomunicações",
+        "impressions": 0.0,
+        "clicks": 0.0,
+        "vol": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      {
+        "term": "ctesp eletrónica",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -19675,7 +19675,7 @@
         "high": 0.0
       },
       {
-        "term": "mestrado finanças",
+        "term": "ctesp gestao",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -19683,7 +19683,7 @@
         "high": 0.0
       },
       {
-        "term": "ctesp gestao",
+        "term": "mestrado finanças",
         "impressions": 0.0,
         "clicks": 0.0,
         "vol": 0.0,
@@ -21349,8 +21349,8 @@
   {
     "type": "metadata",
     "last_sync_by": "Automated Pipeline Sync",
-    "last_sync_at": "08/10/2026, 03:18:23",
-    "lastSync": "08/10/2026, 03:18:23",
+    "last_sync_at": "09/10/2026, 03:24:23",
+    "lastSync": "09/10/2026, 03:24:23",
     "totalAdsCourses": 251
   },
   {
